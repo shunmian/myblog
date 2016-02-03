@@ -3,7 +3,9 @@ layout: post
 title: block 和 ReactiveCocoa的理解（一）
 categories: [general, setup, demo]
 tags: [demo, dbyll, dbtek, setup]
-fullview: true
+fullview: false
+shortinfo: 虽然接触iOS已经8个月了，block 作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.
+
 ---
 
 ## 1. block的最大用处：回调(callback)
