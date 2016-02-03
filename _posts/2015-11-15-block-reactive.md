@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello World!
+title: block 和 ReactiveCocoa的理解（一）
 categories: [general, setup, demo]
 tags: [demo, dbyll, dbtek, setup]
 fullview: true
