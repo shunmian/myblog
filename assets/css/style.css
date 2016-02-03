@@ -101,6 +101,12 @@ article{
 	color: #BAC0C2;
 }
 
+.post-title{
+	font-size: 17px;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	color: #686C6E;
+}
 article {
 	padding: 0 5% 0;
 }
