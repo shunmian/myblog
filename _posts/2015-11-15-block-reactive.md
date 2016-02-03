@@ -74,7 +74,8 @@ fullview: true
 
 **因此“回调”是block我个人认为最大的用处。**
 
-##2. ReactiveCocoa的subscription原理
+## 2. ReactiveCocoa的subscription原理
+
 作为响应式函数编程的iOS实现，ReactiveCocoa将iOS编程带入了一个新纪元，其最大的贡献在于：
 >统一消息传递机制：iOS 开发中有着各种消息传递机制，包括 KVO、Notification、delegation、block 以及 target-action 方式。
 
