@@ -6,7 +6,7 @@ exclude: ["README.md"] # files to exclude
 pygments: true
 markdown: kramdown
 
-title: dbyll
+title: Shunmian
 description: Stylish Jekyll Theme
 disqus: dbyll-ghost # add disqus short name here
 author:
