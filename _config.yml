@@ -1,14 +1,24 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
+
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
-pygments: true
-markdown: kramdown
+highlighter: pygments
+
+markdown:    kramdown
+
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
 
 title: Shunmian
 description: Stylish Jekyll Theme
-disqus: dbyll-ghost # add disqus short name here
+disqus: shunmianjohnson # add disqus short name here
 author:
   name: Shunmian
   email: shunmian@gmail.com
@@ -23,4 +33,6 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
-BASE_PATH: http://shunmian.github.io/myblog
+BASE_PATH:   #''http://shunmian.github.io/myblog''
+
+gems: [jekyll-paginate]
