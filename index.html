@@ -6,12 +6,10 @@ title: Blog
 {% for post in paginator.posts %}
 
 <article class="home">
-
-
-
     <span>
       <a class = "post-title" href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
 </span>
+<br/>
   <div>
     {% if post.fullview %}
     {{ post.content }}

@@ -4,7 +4,7 @@ title: block 和 ReactiveCocoa的理解（一）
 categories: [general, setup, demo]
 tags: [demo, dbyll, dbtek, setup]
 fullview: false
-shortinfo: 虽然接触iOS已经8个月了，block 作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.
+shortinfo: 虽然接触iOS已经8个月了，block 作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.在《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义
 
 ---
 
