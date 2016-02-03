@@ -8,14 +8,11 @@ markdown: kramdown
 
 title: Shunmian
 description: Stylish Jekyll Theme
-disqus: dbyll-ghost # add disqus short name here
+disqus: shunmianjohnson # add disqus short name here
 author:
   name: Shunmian
   email: shunmian@gmail.com
   github: shunmian
-  twitter: dbtek
-  pinterest: asd123
-  linkedin: asd123
   bio: 技术分享博客，记录搬砖的点滴！
   email_md5: 02eefecba7f0b21939d12a37f94bf5df
 
