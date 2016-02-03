@@ -10,9 +10,9 @@ title: dbyll
 description: Stylish Jekyll Theme
 disqus: dbyll-ghost # add disqus short name here
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
+  name: Johnson
+  email: shunmian@gmail.com
+  github: fzyr
   twitter: dbtek
   pinterest: asd123
   linkedin: asd123
@@ -23,4 +23,4 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
-BASE_PATH: http://dbtek.github.io/dbyll
+BASE_PATH: http://fzyr.github.io/mgblog
