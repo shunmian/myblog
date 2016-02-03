@@ -3,7 +3,7 @@ layout: post
 title: block 和 ReactiveCocoa的理解（一）
 categories: [general, setup, demo]
 tags: [demo, dbyll, dbtek, setup]
-fullview: true
+fullview: false
 ---
 
 ##1. block的最大用处：回调(callback)
