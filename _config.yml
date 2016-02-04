@@ -2,8 +2,11 @@
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
+gems: [jekyll-paginate]
+
+
 exclude: ["README.md"] # files to exclude
-pygments: true
+highlighter: pygments
 markdown: kramdown
 
 title: Shunmian
