@@ -1,10 +1,10 @@
 <! -- sidebar.html -->
 <header class="sidebar-header" role="banner">
-	<a href="{{ site.BASE_PATH }}/">
+	<a href="{{ site.baseurl}}/">
 		<img src="http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=150" class="img-circle" />
 	</a>
 	<h3 class="title">
-        <a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
+        <a href="{{ site.baseurl}}/">{{ site.title }}</a>
     </h3>
 </header>
 
@@ -17,7 +17,7 @@
 <div id="contact-list" class="text-center">
 	<ul class="list-unstyled list-inline">
 		<li>
-			<a class="btn btn-default btn-sm" href="{{ site.BASE_PATH }}">
+			<a class="btn btn-default btn-sm" href="{{ site.baseurl}}">
 				<i class="fa fa-list fa-lg"></i>
 			</a>
 		</li>
@@ -59,7 +59,7 @@
 		</li>
 		{% endif %}
 		<li>
-			<a class="btn btn-default btn-sm" href="{{ site.BASE_PATH }}/{{ site.rss_path }}">
+			<a class="btn btn-default btn-sm" href="{{ site.baseurl}}/{{ site.rss_path }}">
 				<i class="fa fa-rss fa-lg"></i>
 			</a>
 		</li>
