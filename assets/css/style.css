@@ -188,3 +188,22 @@ footer {
 #post-shortInfo{
 	color: #858585
 }
+
+
+
+.btn-primary {
+    color: #E74C3C;
+    background-color: #FFF;
+    border-color: #E74C3C; /*set the color you want here*/
+		border-radius: 30px;
+		height: 20px；
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #FFF;
+    background-color: #E74C3C;
+    border-color: #FFF; /*set the color you want here*/
+}
+
+.h1-blog{
+	color: #1E5263;
+}

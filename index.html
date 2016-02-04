@@ -30,8 +30,10 @@ title: Blog
     {{ post.date |  date: "%Y-%m-%d" }}  •
   </span>
   <span class="post-date">
-    {{ post.tags }}
+    {{ post.tags[0] }}  •
   </span>
+
+  <span class = "post-date "><a href = "{{baseurl}}{{post.url}}"> <button type="button" class="btn btn-primary">阅读更多...</button></a></span>
 
 </article>
 <hr/>
