@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: default
 title: Categories
 header: Posts By Category
 group: navigation
 ---
-
+<div class="post_page_padding">
+<div class="post_title">Categories</div>
+<br />
 <div class="col-sm-3 col-xs-6">
     <ul class="nav nav-tabs-vertical">
       {% assign categories_list = site.categories %}
@@ -47,5 +49,6 @@ group: navigation
     </div>
   {% endfor %}
 </div>
-
+</div>
 <div class="clearfix"></div>
+<div class="categories_bottom_padding"></div>
