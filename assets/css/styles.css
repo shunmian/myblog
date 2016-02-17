@@ -16,21 +16,26 @@
     position: fixed;
     top:  0px;
     padding-top: 5%;
-    background-color: #1E5263;
+
     color: #fff;
+    background: linear-gradient(to bottom, #648880, #1E5263, #293f50);
+
 }
 .sidebar_bio{
 
 
 }
 .sidebar_header  .title {
-
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 .sidebar_header  .title a{
     color: #fff;
+}
+.title a:hover{
+    text-decoration: none;;
+
 }
 
 /*post-------------------------------------------------------------------------------------------------*/
@@ -43,7 +48,10 @@
     font-size: 30px;
     letter-spacing: 1px;
     color: #333333;
+}
 
+.post_title:hover   {
+    text-decoration: none;
 }
 
 .post_shortinfo {
