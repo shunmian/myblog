@@ -4,7 +4,9 @@ title: Block 和 ReactiveCocoa的理解（一）
 categories: [Objective-C]
 tags: [Block, ReactiveCocoa]
 fullview: false
-shortinfo: 虽然接触iOS已经8个月了，block 作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.在《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义
+shortinfo: 虽然接触iOS已经8个月了，block作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.在《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义. 虽然接触iOS已经8个月了，block 作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.在《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义
+
+note: “Block是拥有自动变量(可以在block声明的语义环境里捕捉变量的状态)的匿名(使函数体(code)成为和数据(data)一样的一等公民，作为函数调用时输入的实参(argument))回调函数。”
 
 ---
 
