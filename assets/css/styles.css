@@ -117,6 +117,10 @@
 .tags_bottom_padding{
     padding-bottom: 140px;
 }
+.tags_padding {
+    padding: 70px 50px 20px 50px;
+
+}
 /*Tags-------------------------------------------------------------------------------------------------*/
 .categories_bottom_padding{
     padding-bottom: 220px;
