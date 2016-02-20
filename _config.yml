@@ -4,7 +4,7 @@ gems: [jekyll-paginate]
 
 
 exclude: ["README.md"] # files to exclude
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 
 title: Shunmian

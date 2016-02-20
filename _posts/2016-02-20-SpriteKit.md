@@ -20,10 +20,12 @@ SpriteKit是Apple官方的2D游戏框架，让开发者在iOS 和OS 平台上更
 
 这三个方面分别对应SpriteKit里面的SKNode, SKPhysicsBody, SKAction.
 
-## 2. SKNode, SKPhysicsBody, SKAction理解##
-### 2.1 SKNode###
+## 2. SKNode, SKPhysicsBody, SKAction理解
+### 2.1 SKNode
 SKNode 是 SpriteKit 显示 视图的Building Block(基块)。我们一般不直接用它，它下面有几个子类:
 - SKEffectNode: 用于缓存，渲染，加滤镜于图片。它的子类SKScene 用于展示所有的SKNode, 是游戏场景。
+      SKSpriteNode *Maria = [SKSpriteNode spriteNodeWithImageNamed:@"Maria"];
+
 - SKSpriteNode: 用于展示精灵，如超级马里奥图片；
 - SKLabelNode: 用于展示单行文本，如游戏时间;
 - SKEmitterNode: 用于展示粒子，例如boss下面滚动的火焰;
