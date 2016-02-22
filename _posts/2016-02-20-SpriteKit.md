@@ -102,5 +102,6 @@ SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一�
 #### 2.1.3 SKLabelNode###
 SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。
 1. subclass一个SK：
-![](2016-02-20/SKEmitterNode_2.png) 
-![](2016-02-20/SKEmitterNode_1.png)
+    ![](../assets/images/posts/2016-02-20/SKEmitterNode_1.png)
+
+    ![](../assets/images/posts/2016-02-20/SKEmitterNode_2.png)
