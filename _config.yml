@@ -5,7 +5,13 @@ gems: [jekyll-paginate]
 
 exclude: ["README.md"] # files to exclude
 highlighter: pygments
+
+
 markdown: kramdown
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: false
+highlighter: rouge
 
 title: Shunmian
 description: Stylish Jekyll Theme
