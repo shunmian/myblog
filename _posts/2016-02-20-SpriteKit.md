@@ -62,6 +62,7 @@ SKScene 是游戏关口(level)，游戏中的一个场景，例如马里奥的�
 
     属性：
     .view       //关口的父视图，是一个SKView, 用来展示各个SKScene关口；
+    .physicsWorld //世界的物理模型, 是一个SKPhysicsWorld实例，这个后面会介绍；
 
     方法：
     -initWithSize:        // 初始化方法;
@@ -77,3 +78,29 @@ SKSpriteNode是用来展示sprite，那么何为sprite呢，sprite有什么作�
 sprite是从整个display独立出来渲染的2D图片。如何理解这句话呢，在sprite出现之前，2D游戏要渲染一帧图片(比如马里奥在一个蓝天白云的背景前)，需要把整个图片(马里奥+背景)计算完后再渲染，其中背景的渲染在每一帧中都重复。sprite的出现正是为了避免这一重复。马里奥是一个sprite，他在一个固定的背景前跳跃，只需要将马里奥的每一帧渲染出来叠在背景(背景不需要重复计算渲染)即可，这就是为什么sprite被称为从整个display独立出来渲染的2D图片。sprite的思想在几十年前就已经有了，SpriteKit只是沿袭了2D游戏设计中运用sprite这一思想，用SKSpriteNode来表示sprite类。我们来看下SKSpriteNode的属性和方法
 
     SKSpriteNode Class
+
+    属性：
+    .size            // 大小；
+    .physicsBody // 物体的物理模型，是一个SKPhysicsBody实例，这个后面会介绍；
+
+    方法:
+    + spriteNodeWithImageNamed:     // 类工厂方法，用图片创建sprite
+
+#### 2.1.3 SKLabelNode###
+SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一点需要注意的是它只能显示单行文本。
+
+    SKLabelNode Class
+
+    属性：
+    .fontSize             // 字体大小；
+    .color                  // 字体颜色；
+    .fontName          // 字体名字；
+
+    方法:
+     - initWithFontNamed:    // 通过字体名字初始化方法；
+
+#### 2.1.3 SKLabelNode###
+SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。
+1. subclass一个SK：
+![](2016-02-20/SKEmitterNode_2.png) 
+![](2016-02-20/SKEmitterNode_1.png)
