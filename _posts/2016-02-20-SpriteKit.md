@@ -1,6 +1,6 @@
 ---
 layout: post
-title: iOS 2D Game Framework-SpriteKit入门
+title: iOS 2D Game-SpriteKit入门
 categories: [Objective-C]
 tags: [SpriteKit]
 fullview: false
@@ -8,6 +8,13 @@ shortinfo: 虽然接触iOS已经8个月了，block作为Objective C中对于回�
 
 
 ---
+<div class = "article_content_title">目录</div>
+
+
+* TOC
+{:toc}
+
+<hr class = "hr-short-left"/>
 
 ## 1. SpriteKit 概览##
 
@@ -100,7 +107,7 @@ SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一�
     方法:
      - initWithFontNamed:    // 通过字体名字初始化方法；
 
-#### 2.1.3 SKLabelNode####
+#### 2.1.4 SKEmitterNode ####
 SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。
 1. subclass一个SK：
 
