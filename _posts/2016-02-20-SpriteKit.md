@@ -26,6 +26,7 @@ Physics
 
 
 ## 2. SKNode, SKPhysicsBody, SKAction理解##
+
 ### 2.1 SKNode###
 
 SKNode 是 SpriteKit 显示 视图的Building Block。它能提供一个游戏视图的基本属性和方法，例如
@@ -55,7 +56,7 @@ SKNode 是 SpriteKit 显示 视图的Building Block。它能提供一个游戏�
 
 下面我们就这四个类做一个简单的介绍。
 
-#### 2.1.1 SKScene###
+#### 2.1.1 SKScene####
 SKScene 是游戏关口(level)，游戏中的一个场景，例如马里奥的第一关和第二关分别是两个SKCene实例。在这个场景中，包含了次关口的所有其他SKNode(或者其子类)，比如马里奥(SKSpriteNode), 游戏时间(SKLabelNode), 喷射火焰的岩浆(SKEmitterNode)。它的主要属性和方法有
 
     SKScene Class
@@ -70,7 +71,7 @@ SKScene 是游戏关口(level)，游戏中的一个场景，例如马里奥的�
     -didMoveToView: // 当SKScene实例被SKView展示时调用，类似UIView的-didMoveToSuperview；
     -addChild:              // 增加子SKNode, 如马里奥(SKSpriteNode)；
 
-#### 2.1.2 SKSpriteNode###
+#### 2.1.2 SKSpriteNode####
 SKSpriteNode是用来展示sprite，那么何为sprite呢，sprite有什么作用呢? Wiki中是这样定义的。
 
 >sprite: two-dimensional image or animation that is integrated into a larger scene.Initially including just graphical objects handled **separately** from the memory bitmap of a video display, this now includes various manners of graphical overlays.
@@ -86,7 +87,7 @@ sprite是从整个display独立出来渲染的2D图片。如何理解这句话�
     方法:
     + spriteNodeWithImageNamed:     // 类工厂方法，用图片创建sprite
 
-#### 2.1.3 SKLabelNode###
+#### 2.1.3 SKLabelNode####
 SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一点需要注意的是它只能显示单行文本。
 
     SKLabelNode Class
@@ -99,10 +100,9 @@ SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一�
     方法:
      - initWithFontNamed:    // 通过字体名字初始化方法；
 
-#### 2.1.3 SKLabelNode###
+#### 2.1.3 SKLabelNode####
 SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。
 1. subclass一个SK：
 
-    ![](https://github.com/myblog/assets/images/posts/2016-02-20/SKEmitterNode_1.png)
 
-    ![](../assets/images/posts/2016-02-20/SKEmitterNode_2.png)
+![SKEmitterNode](/assets/images/posts/2016-02-20/SKEmitterNode_2.png)
