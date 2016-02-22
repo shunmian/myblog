@@ -9,7 +9,7 @@ shortinfo: 虽然接触iOS已经8个月了，block作为Objective C中对于回�
 
 ---
 
-##1. SpriteKit 概览##
+## 1. SpriteKit 概览##
 
 SpriteKit是Apple官方的2D游戏框架，让开发者在iOS 和OS 平台上更高效的开发2D游戏。
 
