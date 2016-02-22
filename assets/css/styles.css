@@ -49,6 +49,7 @@
     font-size: 30px;
     letter-spacing: 1px;
     color: #333333;
+
 }
 
 .post_title:hover   {
@@ -59,6 +60,8 @@
     text-align: justify;
     font-size: 110%;
     color:  #333333;
+    font-weight: bold;
+    opacity: 0.7;
 }
 
 .post_date {
