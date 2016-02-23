@@ -53,36 +53,40 @@
 
 }
 
-.post_title {
+.post_mainTitle {
     font-size: 30px;
     letter-spacing: 1px;
     color: #333333;
+    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
 }
 
-.post_title:hover   {
+.post_mainTitle:hover   {
     text-decoration: none;
+
 }
 
-.post_shortinfo {
-    text-align: justify;
-    font-size: 110%;
-    color:  #333333;
-    font-weight: bold;
-    opacity: 0.7;
+.post_mainShortinfo {
+    /*text-align: justify;*/
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size:105%;
+    color:  rgba(51,51,51,0.5);
+    line-height: 180%;
+    font-family: 'Microsoft Yahei', 'Open Sans', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
 }
 
 .post_date {
     font-size: 12px;
     letter-spacing: 1px;
-    color: #333333;
-    font-family: 'Open Sans', sans-serif;
+    color: rgba(51,51,51,0.3);
+    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
 }
 
 .post_category {
     font-size: 12px;
     letter-spacing: 1px;
-    color: #1E5263;
-    font-family: 'Open Sans', sans-serif;
+    color: rgba(30,82,99,0.3);
+    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
 }
 
 /*button-------------------------------------------------------------------------------------------------*/
@@ -137,11 +141,11 @@
 /*article-------------------------------------------------------------------------------------------------*/
 
 .article_mainTitle{
-    font-size: 40px;
-    letter-spacing: 1px;
-    color: #333333;
-    font-weight: normal;
-    font-family:"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；
+    font-size: 36px;
+    color: #555555;
+    font-weight: 500;
+    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
+
 }
 .article_content_title{
     font-size: 100%;
@@ -171,12 +175,14 @@
     margin-bottom: 20px;
     color:  rgba(51,51,51,0.7);
     font-size: 120%;
-    font-family:"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；
+    font-weight: 300;
+    /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
+    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
 }
 
 .article_mainBody img{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 45%;
+
 }
 
 .article_mainBody blockquote{
@@ -214,4 +220,8 @@
 
 .article a:hover{
     color: rgba(71,113,125,0.9);
+}
+.article p{
+    margin-bottom: 10px;
+
 }

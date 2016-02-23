@@ -1,10 +1,10 @@
 ---
 layout: post
-title: iOS 2D Game-SpriteKit入门
+title: iOS 2D Game - SpriteKit入门
 categories: [Objective-C]
 tags: [SpriteKit]
 fullview: false
-shortinfo: 虽然接触iOS已经8个月了，block作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.在《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义. 虽然接触iOS已经8个月了，block 作为Objective C中对于回调(callback)的实现，理解起来还是有点模棱两可.在《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义
+shortinfo: SpriteKit是Apple官方的2D游戏框架，让开发者在iOS 和OS 平台上更高效的开发2D游戏。学习SpriteKit，最权威的资料应该是苹果官方文档-SpriteKit Programming Guide</a>。该文档很全面但是不适合初学者。对于初学者，理解SpriteKit背后的设计rationale才能更好的应用它。那么SpriteKit的设计rationale是什么呢？
 
 
 ---
@@ -108,7 +108,8 @@ SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一�
 
 #### 2.1.4 SKEmitterNode ####
 SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。
+
 1. subclass一个SK：
 
-
-![SKEmitterNode](/assets/images/posts/2016-02-20/SKEmitterNode_2.png)
+    ![SKEmitterNode_1](/assets/images/posts/2016-02-20/SKEmitterNode_1.png)
+    ![SKEmitterNode_2](/assets/images/posts/2016-02-20/SKEmitterNode_2.png)

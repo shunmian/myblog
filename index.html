@@ -8,10 +8,10 @@ title: Blog
 
     <artical class="home">
         <span>
-            <a class="post_title" href="{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+            <a class="post_mainTitle" href="{{site.baseurl}}{{post.url}}">{{post.title}}</a>
             <div class="padding_bottom_10"></div>
         </span>
-        <div class="post_shortinfo">
+        <div class="post_mainShortinfo">
             {% if post.fullview==true %}
             {{ post.content}}
             {% else %}
