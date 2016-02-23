@@ -20,7 +20,7 @@ shortinfo: SpriteKit是Apple官方的2D游戏框架， 让开发者在iOS 和OS 
 
 SpriteKit是Apple官方的2D游戏框架， 让开发者在iOS 和OS 平台上更高效的开发2D游戏。
 
-学习SpriteKit， 最权威的资料应该是苹果官方文档-
+学习SpriteKit， 最权威的资料应该是苹果官方文档 -
 [SpriteKit Programming Guide](https://developer.apple.com/library/ios/documentation/GraphicsAnimation/Conceptual/SpriteKit_PG/Introduction/Introduction.html)。 该文档很全面但是不适合初学者。 对于初学者， 理解SpriteKit背后的设计rationale才能更好的应用它。 那么SpriteKit的设计rationale是什么呢？
 
 对于一个2D游戏来说， 设计应该分为三个部分（以超级马里奥为例）：
@@ -42,16 +42,16 @@ SKNode 是 SpriteKit 显示 视图的Building Block。它能提供一个游戏�
     SKNode Class
 
     属性：
-      .zPosition       //视图的z方向的距离，用于标定重叠视图的显示顺序；
-      .xScale           //x方向的视图放大倍数；
-      .yScale           //y方向的视图放大倍数；
-      .alpha             //视图的alpha值；
-      .hidden           //视图是否隐藏。
+      .zPosition            //视图的z方向的距离，用于标定重叠视图的显示顺序；
+      .xScale               //x方向的视图放大倍数；
+      .yScale               //y方向的视图放大倍数；
+      .alpha                //视图的alpha值；
+      .hidden               //视图是否隐藏。
 
      方法：
-      -addChild:                    //增加子SKNode，与UIView 的 -addSubView: 类似
+      -addChild:            //增加子SKNode，与UIView 的 -addSubView: 类似
       -removeFromParent:    //从父SKNode移除，与 UIView的removeFromSuperview 类似
-      -runAction:                   //运行一个SKAction
+      -runAction:           //运行一个SKAction
 
 
 我们一般不直接用它，它下面有几个子类, 其中最常见的是以下4个:
@@ -69,13 +69,13 @@ SKScene 是游戏关口(level)，游戏中的一个场景，例如马里奥的�
     SKScene Class
 
     属性：
-    .view       //关口的父视图，是一个SKView, 用来展示各个SKScene关口；
-    .physicsWorld //世界的物理模型, 是一个SKPhysicsWorld实例，这个后面会介绍；
+    .view                   //关口的父视图，是一个SKView, 用来展示各个SKScene关口；
+    .physicsWorld           //世界的物理模型, 是一个SKPhysicsWorld实例，这个后面会介绍；
 
     方法：
-    -initWithSize:        // 初始化方法;
-    +SceneWithSize:   // 初始化类工厂方法；
-    -didMoveToView: // 当SKScene实例被SKView展示时调用，类似UIView的-didMoveToSuperview；
+    -initWithSize:          // 初始化方法;
+    +SceneWithSize:         // 初始化类工厂方法；
+    -didMoveToView:         // 当SKScene实例被SKView展示时调用，类似UIView的-didMoveToSuperview；
     -addChild:              // 增加子SKNode, 如马里奥(SKSpriteNode)；
 
 #### 2.1.2 SKSpriteNode####
@@ -88,11 +88,11 @@ sprite是从整个display独立出来渲染的2D图片。如何理解这句话�
     SKSpriteNode Class
 
     属性：
-    .size            // 大小；
-    .physicsBody // 物体的物理模型，是一个SKPhysicsBody实例，这个后面会介绍；
+    .size                       // 大小；
+    .physicsBody                // 物体的物理模型，是一个SKPhysicsBody实例，这个后面会介绍；
 
     方法:
-    + spriteNodeWithImageNamed:     // 类工厂方法，用图片创建sprite
+    + spriteNodeWithImageNamed: // 类工厂方法，用图片创建sprite
 
 #### 2.1.3 SKLabelNode####
 SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一点需要注意的是它只能显示单行文本。
@@ -100,12 +100,12 @@ SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一�
     SKLabelNode Class
 
     属性：
-    .fontSize             // 字体大小；
+    .fontSize               // 字体大小；
     .color                  // 字体颜色；
-    .fontName          // 字体名字；
+    .fontName               // 字体名字；
 
     方法:
-     - initWithFontNamed:    // 通过字体名字初始化方法；
+     - initWithFontNamed:   // 通过字体名字初始化方法；
 
 #### 2.1.4 SKEmitterNode ####
 SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。
@@ -171,7 +171,7 @@ SKPhysicsBody代表物理模型里的物体，它有质量，体积(2D 游戏里
     +bodyWithEdgeLoopFromRect:  //创建Edge-physicsBody的一种类工厂方法；
     -applyImpulse:              //被施加外部瞬时力;
     -applyForce:                //被施加外部永恒力;
-    -runAction:             //运行一个SKAction实例；
+    -runAction:                 //运行一个SKAction实例；
 
  .dynamics 是一个BOOL，设置为NO时，静止（可以理解为与SKPhyisicsWorld相连），位置不受碰撞前后影响， 例如马里奥里的乌龟壳，碰到水管后反弹，水管静止，这里水管的dynamic就是NO， 乌龟壳的dynmaics就是YES。
 
@@ -240,21 +240,21 @@ SKAction表示一个动作，由SKNode得 -runAction: 方法执行，它有几�
     SKAction Class
 
     初始化方法：
-    +moveByX:y:duration         //移动一个SKNode;
-    +rotationByAngule:duration  //转动一个SKNode;
-    +hide                         //隐藏一个SKNode， 对应的还有 +unhide；
-    +applyForce:duration:       //施加力；
-    +playSoundFileNamed:waitForCompletion   //播放音频文件；
-    +removeFromParent       //将SKNode从父node里移除；
-    +waitForDuration:       //等待的动作，在SKAction group和sequence里用到；
+    +moveByX:y:duration:                    //移动一个SKNode;
+    +rotationByAngule:duration:             //转动一个SKNode;
+    +hide                                   //隐藏一个SKNode， 对应的还有 +unhide；
+    +applyForce:duration:                   //施加力；
+    +playSoundFileNamed:waitForCompletion:  //播放音频文件；
+    +removeFromParent                       //将SKNode从父node里移除；
+    +waitForDuration:                       //等待的动作，在SKAction group和sequence里用到；
 
-    +group：     //组合几个SKAction，从时间起始点，这几个SKAction同时开始；
-    +sequence:  //串联几个SKAction，从时间起始点，下一个的开始在上一个结束后才执行；
-    +repeatActionForever:       //永远重复SKAction；
-    -reversedAction：        //逆向一个SKAction，如原来从左到右2秒，现在从右到左两秒；
+    +group：                                //组合几个SKAction，从时间起点，这几个SKAction同时开始；
+    +sequence：                             //串联几个SKAction，从时间起始点，下一个的开始在上一个结束后才执行；
+    +repeatActionForever：                  //永远重复SKAction；
+    -reversedAction：                       //逆向一个SKAction，如原来从左到右2秒，现在从右到左两秒；
 
-    +runBlock:queque:       //在队列里执行SKAction；
-    +customActionWithDuration:actionBlock；      //定制SKAction；
+    +runBlock:queque：                      //在队列里执行SKAction；
+    +customActionWithDuration:actionBlock： //定制SKAction；
 
 例如马里奥中需要一个空中台阶，“”从左到右2秒，等待0.5秒，从右到左2秒，等待0.5秒 ”的sequence永远运行下去，code如下：
 
