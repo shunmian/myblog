@@ -18,7 +18,7 @@
     padding-top: 5%;
 
     color: #fff;
-    background: linear-gradient(to bottom, #648880, #1E5263, #293f50);
+    background: linear-gradient(to bottom, rgba(97,134,127,0.5), #1E5263, #293f50);
     /*background: linear-gradient(to bottom, #648880, #1E5263, #5792C4);*/
 
 }
@@ -40,6 +40,8 @@
 }
 
 /*post-------------------------------------------------------------------------------------------------*/
+
+
 .post_page_padding{
     padding: 70px 70px 20px 70px;
 
@@ -49,7 +51,6 @@
     font-size: 30px;
     letter-spacing: 1px;
     color: #333333;
-
 }
 
 .post_title:hover   {
@@ -127,17 +128,19 @@
         padding-bottom: 500px;
 }
 
-/*_posts-------------------------------------------------------------------------------------------------*/
+/*article-------------------------------------------------------------------------------------------------*/
 
-.article_title{
+.article_mainTitle{
     font-size: 40px;
     letter-spacing: 1px;
     color: #333333;
+    font-weight: normal;
+    font-family:"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；
 }
 .article_content_title{
     font-size: 100%;
     font-weight: normal;;
-    color: #347BB7;
+    color: rgba(71,113,125,0.7);;
 }
 .article_content_body{
     padding-left: -100px;
@@ -152,36 +155,57 @@
     font-size: 100%;
 }
 
+
 #markdown-toc li{
     list-style-type: none;
 }
 
-.article_body   {
+.article_mainBody   {
     margin-top:  10px;
     margin-bottom: 20px;
-    color:  #333333;
+    color:  rgba(51,51,51,0.7);
     font-size: 120%;
+    font-family:"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；
 }
 
-.article_body img{
+.article_mainBody img{
     max-width: 100%;
     max-height: 100%;
 }
 
-.article_body blockquote{
-    border-left: solid red;
-    background-color: #5F5F5F;
+.article_mainBody blockquote{
+    border-left: solid 10px rgba(97,134,127,0.5);
+    background-color: rgba(176,195,191,0.05);
 }
-.article_body h2, h3, h4, h5 {
-    font-weight: bold;
+.article_mainBody pre{
+    background-color: rgba(176,195,191,0.05);
+}
+.article_mainBody code{
+    color:  rgba(51,51,51,0.7);
+}
+.article_mainBody h2{
+    font-size: 27:
+}
+
+
+.article_mainBody h2, h3, h4, h5 {
+    color:  rgba(51,51,51,0.9);
+    font-weight: normal;
     padding-top: 15px;
 
 }
-.article_body h4{
+.article_mainBody h4{
     font-size: 22px;
 }
 
 .share {
     color: #43609C;
     border-color: #43609C;
+}
+.article a{
+    color: rgba(71,113,125,0.7);
+}
+
+.article a:hover{
+    color: rgba(71,113,125,0.9);
 }
