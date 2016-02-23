@@ -5,7 +5,7 @@ header: Posts By Tag
 group: navigation
 ---
 <div class="tags_padding">
-<div class="post_title">Tags</div>
+<div class="post_mainTitle">Tags</div>
 <br />
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
@@ -13,7 +13,7 @@ group: navigation
 
 
 <div class="col-sm-3 col-xs-6">
-    <ul class="nav nav-tabs-vertical">
+    <ul class="nav nav-tabs-vertical tags_subtitle">
     {% for item in (0..site.tags.size) %}{% unless forloop.last %}
       {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
       <li>

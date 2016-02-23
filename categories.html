@@ -4,11 +4,11 @@ title: Categories
 header: Posts By Category
 group: navigation
 ---
-<div class="post_page_padding">
-<div class="post_title">Categories</div>
+<div class="categories_padding">
+<div class="post_mainTitle">Categories</div>
 <br />
 <div class="col-sm-3 col-xs-6">
-    <ul class="nav nav-tabs-vertical">
+    <ul class="nav nav-tabs-vertical categories_subtitle">
       {% assign categories_list = site.categories %}
       {% if categories_list.first[0] == null %}
         {% for category in categories_list %}

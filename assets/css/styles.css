@@ -110,15 +110,18 @@
 
 /*Tags-------------------------------------------------------------------------------------------------*/
 .tags_bottom_padding{
-    padding-bottom: 140px;
+    padding-bottom: 100px;
 }
 .tags_padding {
     padding: 70px 50px 20px 50px;
-
 }
 /*Tags-------------------------------------------------------------------------------------------------*/
+.categories_padding {
+    padding: 70px 50px 10px 50px;
+}
+
 .categories_bottom_padding{
-    padding-bottom: 220px;
+    padding-bottom: 210px;
 }
 /*padding-------------------------------------------------------------------------------------------------*/
 .padding_left_10{
@@ -182,7 +185,7 @@
 
 .article_mainBody img{
     max-width: 45%;
-
+    padding: 0px 10px 10px 10px;
 }
 
 .article_mainBody blockquote{
@@ -224,4 +227,21 @@
 .article p{
     margin-bottom: 10px;
 
+}
+
+/*categories-------------------------------------------------------------------------------------------------*/
+.categories_subtitle a{
+    color: rgba(71,113,125,0.7);
+}
+
+.categories_subtitle a:hover{
+    color: rgba(71,113,125,0.9);
+}
+
+.tags_subtitle a{
+    color: rgba(71,113,125,0.7);
+}
+
+.tags_subtitle a:hover{
+    color: rgba(71,113,125,0.9);
 }
