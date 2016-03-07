@@ -198,6 +198,15 @@
 }
 .article_mainBody code{
     color:  rgba(51,51,51,0.7);
+        font-weight: normal;
+        color:  rgba(51,51,51,0.7);
+        font-size: 100%;
+        font-weight: 300;
+        /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
+        font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
+        padding: 0 0;
+        margin: 0 0;
+
 }
 .article_mainBody h2{
     font-size: 27:
