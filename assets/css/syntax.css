@@ -89,6 +89,6 @@ code{
     font-weight: 300;
     /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
     font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
-    padding: 0 1;
-    margin: 0 1;
+    padding: 0 0;
+    margin: 0 0;
 }
