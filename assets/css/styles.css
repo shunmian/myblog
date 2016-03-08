@@ -185,9 +185,19 @@
 }
 
 .article_mainBody img{
+    margin-top: 10px;
     max-width: 45%;
     padding: 0px 10px 10px 10px;
+    -webkit-filter: drop-shadow(7px 7px 7px  rgba(71, 71, 71, 0.5));
+    filter: drop-shadow(7px 7px 7px rgba(71, 71, 71, 0.5));
 }
+
+.article_mainBody .img_middle{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 
 .article_mainBody blockquote{
     border-left: solid 10px rgba(97,134,127,0.5);
