@@ -64,15 +64,18 @@
 
 .highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
 .highlight .code pre, .highlight .gutter pre { border-color: rgba(255, 255, 255, 0.0); background-color: rgba(255,255,255,0);  padding-top: : 0; padding-bottom: 0}
-.highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid red; margin-top: 7px;}
+.highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid red; margin-top: 13px;}
  .highlight .gutter pre {border-right:1px solid #ccc; margin-right: 5px}
 
-.lineno-container .highlight {}
+.highlight > pre > code {
+    border-color: rgba(255,255,255,0);
+    background-color: rgba(255,255,255,0);
+}
 
-.highlight pre {
+.highlight > pre {
     margin: 0 0;
-
     padding: 2px;
+    background-color:rgba(104,139,145,0.05);
 }
 p code{
     background-color: #eeeeee

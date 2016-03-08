@@ -197,7 +197,7 @@
     background-color: rgba(176,195,191,0.05);
 }
 .article_mainBody code{
-    background-color:rgba(104,139,145,0.1);
+    background-color:rgba(104,139,145,0.01);
     color:  rgba(51,51,51,0.5);
     font-weight: normal;
     font-size: 100%;
@@ -205,12 +205,7 @@
         /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
     font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
     padding: 0 0;
-    margin-top: -5px;
-    margin-bottom: -5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-right: 2px;
-    padding-left: 2px;
+    margin: 0 0;
 
     border:1px solid #ccc
 
