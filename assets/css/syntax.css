@@ -85,15 +85,3 @@ p{
     margin-top: 10px;
 }
 
-.iOSClassDocuments{
-
-    margin: 0 0;
-    padding: 2px;
-    background-color:rgba(104,139,145,0.05);
-
-}
-.iOSClassDocuments code{
-
-border-color: rgba(255, 255, 255, 0.0); background-color: rgba(255,255,255,0)
-
-}
