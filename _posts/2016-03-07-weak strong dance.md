@@ -2,10 +2,10 @@
 layout: post
 title: Weak Strong Dance
 categories: [Swift]
-tags: [guard]
+tags: [Memory Manamement]
 number: [5.5.1]
 fullview: false
-shortinfo: Swift 和 Objective-C 内存管理的一个重要课题是防止循环引用引起的内存泄露，其中对于匿名函数和self的循环引用问题最为常见。解决方式之一就是"weak strong dance"。本文探讨循环引用的一些模糊的问题，以及weak strong dance的原理，
+shortinfo: Swift 和 Objective-C 内存管理的一个重要问题是防止循环引用引起的内存泄露，其中对于匿名函数和self的循环引用问题最为常见。解决方式之一就是"Weak Strong Dance"。本文探讨循环引用的的问题，以及Weak Strong Dance的原理，
 ---
 目录
 {:.article_content_title}
