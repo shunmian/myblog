@@ -184,7 +184,7 @@ for book in customizedBookList{
     Book-------name: c; price 12.0
 */
 {% endhighlight %}
-## 3 SequenceType:map, filter, reduce
+## 3 SequenceType: map, filter, reduce
 SequenceType 默认实现了很多高阶函数，例如map, filter, reduce等，因此实现SequenceType的类就可以用这些函数，举例如下:
 
 
