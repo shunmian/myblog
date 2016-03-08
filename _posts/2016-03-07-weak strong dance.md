@@ -73,7 +73,7 @@ Retain Cycle 的Apple的定义:
 typedef void (^AnimationBlock)();
 
 @interface ViewController ()
-@property (nonatomic, strong) UIView * rectangleView;
+@property (nonatomic, strong) UIView *rectangleView;
 @property (nonatomic, copy) AnimationBlock animationBlock;
 @end
 
@@ -110,7 +110,7 @@ typedef void (^AnimationBlock)();
 {% highlight objc linenos %}
 ...
 - (void)viewDidLoad {
-    weak ViewController * weakSelf = self;
+    __weak ViewController *weakSelf = self;
     self.animationBlock = ^{
         CGPoint center = weakSelf.rectangleView.center;
         center.x +=50;
@@ -131,7 +131,7 @@ typedef void (^AnimationBlock)();
 {% highlight objc linenos %}
 ...
 - (void)viewDidLoad {
-    weak ViewController * weakSelf = self;
+    __weak ViewController *weakSelf = self;
     self.animationBlock = ^{
         CGPoint center = weakSelf.rectangleView.center;
         center.x +=50;
@@ -154,9 +154,9 @@ typedef void (^AnimationBlock)();
 {% highlight objc linenos %}
 ...
 - (void)viewDidLoad {
-    weak ViewController * weakSelf = self;
+    __weak ViewController *weakSelf = self;
     self.animationBlock = ^{
-        ViewController * strongSelf = weakSelf;
+        ViewController *strongSelf = weakSelf;
         CGPoint center = strongSelf.rectangleView.center;
         center.x +=50;
         center.y +=50;
@@ -194,4 +194,4 @@ class ViewController: UIViewController{
 
 
 ## 3 总结 ##
-Weak Strong Dance 是用了打破循环引用的问题。对于self和匿名函数的循环引用问题，一个weakSelf可以打破循环引用，但是会引起self执行一部分方法的问题。解决方法是strongSelf， 要么全执行，要么全不执行。strongSelf结合weakSelf就是人们所谓的Weak Strong Dance。希望本文对于循环引用的问题的探讨对您有用。
+Weak Strong Dance 是用来打破循环引用的问题。对于self和匿名函数的循环引用问题，一个weakSelf可以打破循环引用，但是会引起self执行一部分方法的问题。解决方法是strongSelf， 要么全执行，要么全不执行。strongSelf结合weakSelf就是人们所谓的Weak Strong Dance。希望本文对于循环引用的问题的探讨对您有用。
