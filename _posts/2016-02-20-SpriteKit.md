@@ -256,7 +256,7 @@ bullet.contactTestBitMask = TortoiseCategory;
 
 了解了categoryBitMask 和contactTestBitMask， 我们再来看collisionBitMask就简单了，它表示物体之间会不会intersect，也是32位数。默认是32个1，表示与任何物体碰撞都不会穿过那个物体。如果你需要将某个物体穿过另一个物体，比如子弹打到马里奥，直接穿过(当然游戏中不可能发生):
 
-{% highlight objective-c linenos %}
+{% highlight objec linenos %}
 maria.collisionBitMask = ~BulletCategory;
 {% endhighlight %}
 最后力的施加我们在SKAction里介绍。
