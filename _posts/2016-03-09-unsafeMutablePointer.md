@@ -5,7 +5,7 @@ categories: [Swift]
 tags: [pointer]
 number: [3.7.8]
 fullview: false
-shortinfo: 在swift中，对于指针的操作都被限制地最低，能不适用尽量不适用。但是还是有一些场合需要我们使用指针。Swift处理指针主要是UnsafePointer和其可变类UnsafeMutablePointer。本文主要介绍它们的用法。
+shortinfo: 在swift中，对于指针的操作都被限制到最低，能不使用尽量不使用。但是还是有一些场合需要我们使用指针。Swift处理指针主要是UnsafePointer和其可变类UnsafeMutablePointer。本文主要介绍它们的用法。
 ---
 目录
 {:.article_content_title}
