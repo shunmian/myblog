@@ -20,17 +20,11 @@ shortinfo: 在swift中，我们可以对Array用"for...in"快捷语句进行枚�
 ## 1. SequenceType 介绍 ##
 工欲善其事必先利其器。对于面向对象编程来说，面向接口编程优于面向继承编程(Swift和Objective-C一样都是单继承)。接口在Swift就是protocol. Swift从一开始就是一门protocol oriented programming language, 其强大的protocol功能(包括泛型, extension的默认实现，associated type等)给其其他语言无法比拟的灵活性和全面性。Swift内建了70多个公共接口，这些每个接口就像梯子的每个台阶一样，从各个角度来定义某种接口需要的属性和方法，同时在一个又一个的完美的台阶上，搭建出了例如Array, NSDictionary等功能丰富的内置类。理解Swift内置接口对于实现我们自己的类起着事半功倍的效果---我们要解决的问题，swift工程师可能已经有成熟的解决方案了。让我们借着用SequenceType这个protocol实现"for...in"枚举功能，来看看swift的内置协议。
 
-我们再来看看Sequence的定义
+我对SequenceType的定义
 
->A sequence of events or things is a number of events or things that come one after another in a particular order
+><b>SequenceType(序列类)</b>：只有一个功能，那就是可以用for..in进行快捷遍历。 其本质是对GeneratorType进行包装, 有一个产生GeneratorType的工厂方法`generate() -> Generator`, Generator在其关联类别名中定义。
 
-即Sequence是指有先后顺序的一列东西，SequenceType我们可以翻译成序列类。
-我们再来看看SequenceType 在Swift 文档中的定义：
-
-
-
-
-
+下面是SequenceType 在Swift 文档中的定义，供参考：
 
 {% highlight objective-c linenos %}
 SequenceType protocol：A Type that can be iterated with a for...in loop。
@@ -42,10 +36,12 @@ func generate() ->Self.Generator //required, return a generator over the element
 {% endhighlight %}
 
 
-文档中说的比较清楚，SequenceType只有一个功能，那就是可以用for..in 循环进行迭代。
-SquenceType有一个associate type: Generator(本身继承自GeneratorType 协议), 作为迭代的接口(迭代器，或者产生器)；它还有一个required的方法generate()，返回值是Self.Generator。
 
-我们再来看看GeneratorType在Swift文档中的定义
+
+我对GeneratorType的定义
+><b>GeneratorType(生成器)</b>：一个生成一个序列的机器，解决下一个生成"哪个""类"的实例的问题。生成器犹如一个自动乒乓机, 你告诉他弹出什么(关联类别名Element),以及弹出哪个(next() ->Element?，可以正向或者反向弹出，或者弹出Int序列，作为Array的下标)。每次调用next()，就像按一个开关，自动乒乓机就弹出乒乓球(或者其他类)或者nil。SequnceType的for...in语法就是对next()的调用的封装。
+
+下面是GeneratorType在Swift文档中的定义供参考
 
 {% highlight objective-c linenos %}
 GeneratorType protocol: Encapsulates iteration state and interface for interation over a sequence.

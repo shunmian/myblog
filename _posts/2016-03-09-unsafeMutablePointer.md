@@ -191,7 +191,10 @@ var eInt = UnsafeMutablePointer<Int>.alloc(1)
 eInt.initialize(40)
 
 var fInt = UnsafeMutablePointer<Int>.alloc(1)
-fInt.initializeFrom(eInt, count: 1) //initialize by copy deferenced value from eInt
+var gInt = UnsafeMutablePointer<Int>.alloc(1)
+fInt.initializeFrom(eInt, count: 1)     //initialize by copy deferenced value from eInt
+gInt.moveInitializeFrom(eInt, count: 1) //initialize by copy deferenced value from eInt + destroy eInt
+
 fInt.memory     //40
 {% endhighlight %}
 

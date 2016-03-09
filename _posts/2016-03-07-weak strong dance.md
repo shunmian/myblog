@@ -29,7 +29,7 @@ Retain Cycle 的Apple的定义:
 
 >A problem, known as a retain cycle, can therefore arise if two objects may have <b>cyclical references</b>—that is, they have a strong reference to each other (either directly, or through a chain of other objects each with a strong reference to the next leading back to the first).
 
-这里"cyclical reference"非常重要，它指出了Retain Cycle的核心，即循环强引用。有循环强引用才有循坏引用问题；没有循环强引用就没有循环引用问题。仔细阅读上面这句话，别看它类似一句“废话”，它几乎可以回答所有在Stack OverFlow上面的循环引用的问题。我们将用下面几个例子来解释Retain Cycle和它的解决方法Weak Strong Dance。
+这里"cyclical reference"非常重要，它指出了Retain Cycle的核心，即循环强引用。有循环强引用才有循环引用问题；没有循环强引用就没有循环引用问题。仔细阅读上面这句话，别看它类似一句“废话”，它几乎可以回答所有在Stack OverFlow上面的循环引用的问题。我们将用下面几个例子来解释Retain Cycle和它的解决方法Weak Strong Dance。
 
 ### 2.1 Retain Cycle 问题 ###
 其中一个很典型的与匿名函数（Objective-C 中是 block）相关的Retain Cycle 如下面这个Objective-C的例1:
@@ -99,10 +99,10 @@ typedef void (^AnimationBlock)();
 @end
 {% endhighlight %}
 
-在这个例子里，block作为一个属性被self捕获，同时self也和第一个例子一样在block'被其捕获，因此产生了循环引用。
+在这个例子里，block作为一个属性被self捕获，同时self也和第一个例子一样在block被其捕获，因此产生了循环引用。
 因此请牢记下面这句话：
 
->有循环强引用才有循坏引用问题。
+>有循环强引用才有循环引用问题。
 
 ### 2.2 Retain Cycle 解决方法：Weak Strong Dance ###
 那么如何解决循环引用问题呢。相信大家对此都不陌生，那就是打破"循环强引用"，要么解决"循环"，要么解决"强"。显然解决""循环""会影响我们的业务逻辑，因此只能从解决"强"入手---将其中一个强引用设为弱引用，我们可以将例2改为如下例3：
@@ -126,7 +126,7 @@ typedef void (^AnimationBlock)();
 ...
 {% endhighlight %}
 
-这个时候，由于block对self的引用是若引用，因此打破了循环强引用，所以不会有Retain Cycle问题。但是这个方法不是Weak Strong Dance, 只是其一部分。如果硬要给它起个名字，应该叫Weak Dance 比较合适。这个方法有什么问题呢，我们来看看下面这个例4：
+这个时候，由于block对self的引用是弱引用，因此打破了循环强引用，所以不会有Retain Cycle问题。但是这个方法不是Weak Strong Dance, 只是其一部分。如果硬要给它起个名字，应该叫Weak Dance 比较合适。这个方法有什么问题呢，我们来看看下面这个例4：
 
 {% highlight objc linenos %}
 ...
