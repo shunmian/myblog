@@ -22,7 +22,7 @@ shortinfo: 在swift中，我们可以对Array用"for...in"快捷语句进行枚�
 
 我对SequenceType的定义
 
-><b>SequenceType(序列类)</b>：只有一个功能，那就是可以用for..in进行快捷遍历。 其本质是对GeneratorType进行包装, 有一个产生GeneratorType的工厂方法`generate() -> Generator`, Generator在其关联类别名中定义。
+><b>SequenceType(序列类)</b>：可以用for...in进行快捷遍历。 解释: 其本质是对`GeneratorType`进行包装, 有一个产生GeneratorType的工厂方法`generate() -> Generator`, `Generator`在其关联类别名中定义。
 
 下面是SequenceType 在Swift 文档中的定义，供参考：
 
@@ -39,7 +39,8 @@ func generate() ->Self.Generator //required, return a generator over the element
 
 
 我对GeneratorType的定义
-><b>GeneratorType(生成器)</b>：一个生成一个序列的机器，解决下一个生成"哪个""类"的实例的问题。生成器犹如一个自动乒乓机, 你告诉他弹出什么(关联类别名Element),以及弹出哪个(next() ->Element?，可以正向或者反向弹出，或者弹出Int序列，作为Array的下标)。每次调用next()，就像按一个开关，自动乒乓机就弹出乒乓球(或者其他类)或者nil。SequnceType的for...in语法就是对next()的调用的封装。
+
+><b>GeneratorType(生成器)</b>：一个生成一个序列的机器，解决下一个生成"哪个""类"的实例的问题。解释: 生成器犹如一个自动乒乓机, 你告诉他弹出什么(关联类别名Element),以及弹出哪个(next() ->Element?，可以正向或者反向弹出，或者弹出Int序列，作为Array的下标)。每次调用next()，就像按一个开关，自动乒乓机就弹出乒乓球(或者其他类)或者nil。SequnceType的for...in语法就是对next()的调用的封装。
 
 下面是GeneratorType在Swift文档中的定义供参考
 
@@ -52,7 +53,6 @@ mutating func next() ->Self.Element //required, advance to the next element and 
 
 {% endhighlight %}
 
-GeneratorType有一个associate type Element, 是self 产生的type； 还有一个方法next(), 返回Element?。
 下面我们举一个简单的例子来实现我们一个BookList的for...in 功能。
 
 
@@ -101,7 +101,7 @@ class BookListGenerator: GeneratorType{
 
 /*  BookList类，初始化为一[Book]空数组。
     关联类别名是BookListGenerator, 方法generate返回BookListGenerator。*/
-class BookList:SequenceType {
+class BookList{
     var bookList:[Book]?
     
     init(){
@@ -115,7 +115,9 @@ class BookList:SequenceType {
     func removeBookAtIndex(index: Int){
         self.bookList?.removeAtIndex(index)
     }
-    
+}
+
+extension BookList: SequenceType{
     typealias Generator = BookListGenerator
     func generate() -> Generator {
         return BookListGenerator(bookList: self.bookList)
@@ -180,6 +182,33 @@ for book in customizedBookList{
     Book-------name: c; price 12.0
 */
 {% endhighlight %}
+
+### 2.3 BookList for...in遍历使用内置生成器AnyGenerator###
+如果每次实现定制类的for...in遍历都需要自己实现GeneratorType的类很不方便，Swift提供了一内置的生成器AnyGenerator。
+我对AnyGenerator的定义如下:
+
+><b>AnyGenerator(任何生成器)</b>: 用一个全局函数尾随闭包来解决下一个生成"哪个""类"的实例的问题的内置生成器。解释:
+生成AnyGenerator的方法是, func anyGenerator<Element>(body: () -> Element?) -> AnyGenerator<Element>
+    是一个全局函数，输入是() -> Element?类型的函数，与next()作用一样，输出是AnyGenerator<Element>。
+
+我们来看看如何改写2.1
+
+{% highlight swift linenos %}
+...
+extension BookList: SequenceType{
+    typealias Generator = AnyGenerator<Book>
+    func generate() -> AnyGenerator<Book> {
+        self.currentIndex = 0
+        return anyGenerator(){ self.currentIndex < self.bookList?.count ? self.bookList![self.currentIndex++] : nil}
+    }
+/*  func anyGenerator<Element>(body: () -> Element?) -> AnyGenerator<Element>
+    是一个全局函数，输入是() -> Element?类型的函数，与next()作用一样，输出是AnyGenerator<Element>*/
+}
+...
+{% endhighlight %}
+
+这样我们就不需要自己建一个新的Generator的子类了，非常方便。
+
 ## 3 SequenceType: map, filter, reduce
 SequenceType 默认实现了很多高阶函数，例如map, filter, reduce等，因此实现SequenceType的类就可以用这些函数，举例如下:
 
@@ -215,7 +244,67 @@ print("Highest Price Book-------name: \(highestPriceBook.name); price \(highestP
 
 {% endhighlight %}
 
+## 4 Indexable protocol ##
+
+我对其定义如下
+
+><b>Indexable(可索引)</b>: 定义了下标取值的接口。解释: 两个属性一个方法，`startIndex`是索引起点，`endIndex`是索引终点+1; `subscript(position: Int) ->Book`定义了下标方法。
 
 
-## 4 总结 ##
-用正向和方向遍历的例子想要得出的结论是for...in的枚举顺序我们可以通过SequenceType来定制。同时实现了SequenceType接口的类可以享用其默认实现了的高阶函数, 如map，filter，reduce等。
+code见下
+
+{% highlight swift linenos %}
+extension BookList: Indexable{
+    var startIndex: Int { return 0 }
+    var endIndex: Int {
+        guard let list = self.bookList else{ return 0 }
+        return list.count
+    }
+    
+    subscript(position: Int) ->Book?{
+        return (startIndex ..< endIndex).contains(position) ? self.bookList?[position]: nil
+    }
+}
+{% endhighlight %}
+
+{% highlight swift linenos %}
+var book1 = Book(name: "c", price: 12.0)
+var book2 = Book(name: "iOS", price: 18.0)
+var book3 = Book(name: "Swift", price: 24.0)
+
+var customizedBookList = BookList()
+customizedBookList.addBook(book1)
+customizedBookList.addBook(book2)
+customizedBookList.addBook(book3)
+
+
+print(bookList.endIndex)
+print(bookList.startIndex)
+for(var i = 0; i < customizedBookList.endIndex; i++){
+    print("\(customizedBookList[i]!.name)")
+}
+/*  输出:
+    3
+    0
+    c
+    iOS
+    Swift
+*/
+{% endhighlight %}
+
+## 5 CollectonType ##
+以上我们同时给BookList实现了`SequenceType`(fo...in loop)和`Indexable`(下标索引) protocol, 而这正是`CollectionType`的定义:
+
+><b>ColletionType(集合类)</b>: 即可快速遍历又可下标索引的类。解释: 继承自`SequenceType`和`Indexable`。
+
+有很多Swift内置类实现了`CollectionType`,如Array, Dictionary, Set等。
+
+
+## 6 总结 ##
+`SequenceType`是序列类，生成了for...in的便捷遍历方法。其为生成器类的包装，有一个生成器类的工厂方法。 生成器类解决了下一个生成"哪个""类"的实例的问题。`SequenceType`可以生成自定义继承自GeneratorType的类，也可以用anyGnerator()的Swift全局方法定义一个AnyGenerator类(方便于不用每次自定义)。GeneratorType里的next()方法让我们自定义如何取下一个实例(如正向，反向，Range<Int>作为array下标，无穷Range等)。同时实现了SequenceType接口的类可以享用其默认实现了的高阶函数, 如map，filter，reduce等。
+
+`Indexable`定义了下标取值的接口。`startIndex`是索引起点，`endIndex`是索引终点+1; `subscript(position: Int) ->Book`定义了下标方法。
+
+`SequenceType` + `Indexable` = `CollectionType`。有很多Swift内置类实现了`CollectionType`,如Array, Dictionary, Set等
+
+
