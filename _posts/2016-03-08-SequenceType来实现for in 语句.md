@@ -197,7 +197,7 @@ for book in customizedBookList{
 ...
 extension BookList: SequenceType{
     typealias Generator = AnyGenerator<Book>
-    func generate() -> AnyGenerator<Book> {
+    func generate() -> Generator {
         self.currentIndex = 0
         return anyGenerator(){ self.currentIndex < self.bookList?.count ? self.bookList![self.currentIndex++] : nil}
     }
