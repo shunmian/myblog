@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CollectionType = SequnceType(AnyGnerator：GeneratorType) + Indexable
+title: CollectionType = SequnceType(AnyGenerator：GeneratorType) + Indexable
 categories: [Swift]
 tags: [protocol]
 number: [4.8.1]
