@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SequenceType实现"for...in"语句
+title: CollectionType = SequnceType(AnyGnerator: GeneratorType) + Indexable
 categories: [Swift]
 tags: [protocol]
 number: [4.8.1]
@@ -292,7 +292,7 @@ for(var i = 0; i < customizedBookList.endIndex; i++){
 */
 {% endhighlight %}
 
-## 5 CollectonType ##
+## 5 CollectonType protocol ##
 以上我们同时给BookList实现了`SequenceType`(fo...in loop)和`Indexable`(下标索引) protocol, 而这正是`CollectionType`的定义:
 
 ><b>ColletionType(集合类)</b>: 即可快速遍历又可下标索引的类。解释: 继承自`SequenceType`和`Indexable`。
@@ -301,7 +301,7 @@ for(var i = 0; i < customizedBookList.endIndex; i++){
 
 
 ## 6 总结 ##
-`SequenceType`是序列类，生成了for...in的便捷遍历方法。其为生成器类的包装，有一个生成器类的工厂方法。 生成器类解决了下一个生成"哪个""类"的实例的问题。`SequenceType`可以生成自定义继承自GeneratorType的类，也可以用anyGnerator()的Swift全局方法定义一个AnyGenerator类(方便于不用每次自定义)。GeneratorType里的next()方法让我们自定义如何取下一个实例(如正向，反向，Range<Int>作为array下标，无穷Range等)。同时实现了SequenceType接口的类可以享用其默认实现了的高阶函数, 如map，filter，reduce等。
+`SequenceType`是序列类，生成了for...in的便捷遍历方法。其为生成器类的包装，有一个生成器类的工厂方法。 生成器类解决了下一个生成"哪个""类"的实例的问题。`SequenceType`可以生成自定义继承自`GeneratorType`的类，也可以用`anyGnerator()`的Swift全局方法定义一个`AnyGenerator`类(方便于不用每次自定义)。`GeneratorType`里的`next()`方法让我们自定义如何取下一个实例(如正向，反向，Range<Int>作为array下标，无穷Range等)。同时实现了`SequenceType`接口的类可以享用其默认实现了的高阶函数, 如`map`，`filter`，`reduce`等。
 
 `Indexable`定义了下标取值的接口。`startIndex`是索引起点，`endIndex`是索引终点+1; `subscript(position: Int) ->Book`定义了下标方法。
 
