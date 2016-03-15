@@ -19,7 +19,7 @@ shortinfo: 在Objective C 中，一旦类被定义好了，想扩展它的iVar�
 
 ## 1. iVar VS Property ##
 
-Obective C 的类，本质是struct objc_class结构体，它的定义如下：
+Obective C 的类，本质是`struct objc_class`结构体，它的定义如下：
 
 {% highlight c linenos %}
 typedef struct objc_class *Class; 
@@ -37,7 +37,9 @@ struct objc_class {
 {% endhighlight %}
 
 `objc_ivar_list *ivars`是一个存储了`objc_ivar`的list。在Objective C中我们知道`@property`是声明了setter和getter的语法糖,
- `@synthesis` 是实现了setter和getter的语法糖(Xcode 4.4及之后的版本可以省略)。在类中声明的每一个property都被一个`iVar` backup（property 名字前加_）。这同样体现在`objc_ivar_list`中。我们看下面代码。
+ `@synthesis` 是实现了setter和getter的语法糖(Xcode 4.4及之后的版本可以省略)。在类中声明的每一个property都被一个`iVar` backup（property 名字前加_）。`objc_method_list **methodLists`是一个指针的指针。通过修改该指针指向的指针的值，就可以实现动态地为某一个类增加成员方法。这也是Category实现的原理。同时也说明了为什么Category只可为对象增加成员方法，却不能增加成员变量。
+
+ 关于`objc_ivar_list`, 我们看下面代码。
 
 {% highlight objc linenos %}
 Person.h
@@ -87,7 +89,7 @@ for(int i = 0; i < ivarNumber; i++){
 
 ## 2. Associated Objects在匿名类中增加属性  ##
 
-我们知道`Category`可以用来扩展方法，但扩展不了类的iVar。Associated Objects 的出现就是为了解决这一问题。它让`ategory`增加属性，就好像类本身定义中的属性一样可以用dot notation进行存取。但是它不加入类的`objc_ivar_list`中，而是存储在一个哈希表中。我们来看下面代码，给`Person+AssociatedObjects`增加一个属性类型为NSString *的associatedObjctName:
+我们知道`Category`可以用来扩展方法，但扩展不了类的iVar。Associated Objects 的出现就是为了解决这一问题。它让`Category`增加属性，就好像类本身定义中的属性一样可以用dot notation进行存取。但是它不加入类的`objc_ivar_list`中，而是存储在一个哈希表中。我们来看下面代码，给`Person+AssociatedObjects`增加一个属性类型为NSString *`的associatedObjctName`:
 
 
 {% highlight objc linenos %}
@@ -140,7 +142,7 @@ for(int i = 0; i < ivarNumber; i++){
 //
 {% endhighlight %}
 
-我们可以看见`objc_ivar_lis`t并没有新加入的associated objects。
+我们可以看见`objc_ivar_list`并没有新加入的associated objects。
 
 ## 3. Associated Objects在runtime API中动态增加属性  ##
 当用runtime API 动态创建类，添加方法和实例变量过程中，当类创建完毕后（调用`objc_registerClassPair`后）再用`class_addIvar(...)`添加的iVar不会出现在类的`objc_ivar_list`中，见如下代码。
