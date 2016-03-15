@@ -146,7 +146,7 @@ for(int i = 0; i < ivarNumber; i++){
 
 我们可以看见`objc_ivar_list`并没有新加入的associated objects。
 
-### 3. 在Runtime API中动态增加属性  ###
+### 2.2 在Runtime API中动态增加属性  ###
 当用runtime API 动态创建类，添加方法和实例变量过程中，当类创建完毕后（调用`objc_registerClassPair`后）再用`class_addIvar(...)`添加的iVar不会出现在类的`objc_ivar_list`中，见如下代码。
 
 {% highlight objc linenos %}
@@ -200,7 +200,7 @@ for(int i = 0; i < ivarNumber; i++){
 
 可见当用runtime API动态创建类时，当创建完毕后，添加的iVar就不加入到`objc_ivar_list`.
 
-### 4. Associated Objects runtime API  ###
+### 2.3. Runtime API介绍  ###
 
 以上介绍了Associated Objects的实现，我们现在来看看其runtime API,包括以下3个方法：
 
@@ -219,7 +219,7 @@ for(int i = 0; i < ivarNumber; i++){
 由于第3种方式最为优雅和简洁，在上面的例子中我们用的就是selector。
 
 
-## 5 总结 ##
+## 3 总结 ##
 Associated Objects用于扩展类的属性，使得外部在用dot notation存取属性时分不出两者的区别，这解决了Objective C属性扩展的问题。但是在内部实现中，Associated Objects和类本身的iVar和Property还是有区别的：
 
 1. 类的定义结束后(无论是Objective-C还是runtime API动态创建类)`objc_ivar_list`是不能变得。
