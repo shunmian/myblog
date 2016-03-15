@@ -87,7 +87,9 @@ for(int i = 0; i < ivarNumber; i++){
 
 可见在一个类的本身定义中, iVar和Property都被加在`objc_ivar_list`中。
 
-## 2. Associated Objects在匿名类中增加属性  ##
+## 2 Associated Objects增加属性  ##
+
+### 2.1在匿名类中增加属性  ###
 
 我们知道`Category`可以用来扩展方法，但扩展不了类的iVar。Associated Objects 的出现就是为了解决这一问题。它让`Category`增加属性，就好像类本身定义中的属性一样可以用dot notation进行存取。但是它不加入类的`objc_ivar_list`中，而是存储在一个哈希表中。我们来看下面代码，给`Person+AssociatedObjects`增加一个属性类型为NSString *`的associatedObjctName`:
 
@@ -144,7 +146,7 @@ for(int i = 0; i < ivarNumber; i++){
 
 我们可以看见`objc_ivar_list`并没有新加入的associated objects。
 
-## 3. Associated Objects在runtime API中动态增加属性  ##
+### 3. 在Runtime API中动态增加属性  ###
 当用runtime API 动态创建类，添加方法和实例变量过程中，当类创建完毕后（调用`objc_registerClassPair`后）再用`class_addIvar(...)`添加的iVar不会出现在类的`objc_ivar_list`中，见如下代码。
 
 {% highlight objc linenos %}
@@ -198,7 +200,7 @@ for(int i = 0; i < ivarNumber; i++){
 
 可见当用runtime API动态创建类时，当创建完毕后，添加的iVar就不加入到`objc_ivar_list`.
 
-## 4. Associated Objects runtime API  ##
+### 4. Associated Objects runtime API  ###
 
 以上介绍了Associated Objects的实现，我们现在来看看其runtime API,包括以下3个方法：
 
