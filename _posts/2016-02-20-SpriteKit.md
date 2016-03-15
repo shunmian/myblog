@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS 2D Game - SpriteKit入门(一)
-categories: [objective-c]
+categories: [Objective-C]
 tags: [SpriteKit]
 fullview: false
 shortinfo: SpriteKit是Apple官方的2D游戏框架， 让开发者在iOS 和OS 平台上更高效的开发2D游戏。 学习SpriteKit， 最权威的资料应该是苹果官方文档-SpriteKit Programming Guide。该文档很全面但是不适合初学者。 对于初学者， 理解SpriteKit背后的设计rationale才能更好的应用它。 什么是2D游戏设计的几个基本问题， 什么是sprite， SpriteKit 里面有哪些重要的类及其他们之间的关系等等，本文带着您一起梳理一遍...
