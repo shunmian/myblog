@@ -19,7 +19,7 @@ shortinfo: 在Objective C 中，一旦类被定义好了，想扩展它的iVar�
 
 ## 1. iVar VS Property ##
 
-Obective C 的类，本质是struc objc_class结构体，它的定义如下：
+Obective C 的类，本质是struct objc_class结构体，它的定义如下：
 
 {% highlight c linenos %}
 typedef struct objc_class *Class; 
@@ -37,10 +37,10 @@ struct objc_class {
 {% endhighlight %}
 
 `objc_ivar_list *ivars`是一个存储了`objc_ivar`的list。在Objective C中我们知道`@property`是声明了setter和getter的语法糖,
- @synthesis 是实现了setter和getter的语法糖(Xcode 4.4及之后的版本可以省略)。在类中声明的每一个property都被一个`iVar` backup（property 名字前加_）。这同样体现在objc_ivar_list中。我们看下面代码。
+ `@synthesis` 是实现了setter和getter的语法糖(Xcode 4.4及之后的版本可以省略)。在类中声明的每一个property都被一个`iVar` backup（property 名字前加_）。这同样体现在`objc_ivar_list`中。我们看下面代码。
 
 {% highlight objc linenos %}
-Person+AssociatedObjects.h
+Person.h
 
 @interface Person : NSObject{
     NSString *ivarName;
@@ -49,7 +49,7 @@ Person+AssociatedObjects.h
 @end
 
 
-Person+AssociatedObjects.m
+Person.m
 
 @implementation Person
 @synthesize propertyName = _propertyName;//可省略
@@ -63,7 +63,7 @@ Person+AssociatedObjects.m
 @end
 {% endhighlight %}
 
-我们创建了一个Person类，其有一个iVar为NSString *类型的ivarName，一个property为NSString *类型的propertyName。我们打印Person类的objc_ivar_list *ivars:
+我们创建了一个`Person`类，其有一个iVar为NSString *类型的`ivarName`，一个property为NSString *类型的`propertyName`。我们打印Person类的`objc_ivar_list *ivars`:
 
 {% highlight objc linenos %}
 
@@ -83,16 +83,16 @@ for(int i = 0; i < ivarNumber; i++){
 //
 {% endhighlight %}
 
-可见在一个类的本身定义中,iVar和Property都被加在objc_ivar_list中。
+可见在一个类的本身定义中, iVar和Property都被加在`objc_ivar_list`中。
 
 ## 2. Associated Objects在匿名类中增加属性  ##
 
-我们知道Category可以用来扩展方法，但扩展不了类的iVar。Associated Objects 的出现就是为了解决这一问题。它让Category增加属性，就好像类本身定义中的属性一样可以用dot notation进行存取。但是它不加入类的objc_ivar_list中，而是存储在一个哈希表中。我们来看下面代码，给Person类增加一个属性类型为NSString *的associatedObjctName:
+我们知道`Category`可以用来扩展方法，但扩展不了类的iVar。Associated Objects 的出现就是为了解决这一问题。它让`ategory`增加属性，就好像类本身定义中的属性一样可以用dot notation进行存取。但是它不加入类的`objc_ivar_list`中，而是存储在一个哈希表中。我们来看下面代码，给`Person+AssociatedObjects`增加一个属性类型为NSString *的associatedObjctName:
 
 
 {% highlight objc linenos %}
 
-
+Person+AssociatedObjects.h
 
 #import "Person.h"
 #import <objc/runtime.h>
@@ -100,6 +100,9 @@ for(int i = 0; i < ivarNumber; i++){
 @interface Person (AssociatedObjects)
 @property (nonatomic, copy) NSString *associatedObjcName;
 @end
+
+
+Person+AssociatedObjects.m
 
 @implementation Person (AssociatedObjects)
 
@@ -114,7 +117,7 @@ for(int i = 0; i < ivarNumber; i++){
 
 {% endhighlight %}
 
-我们在Person(AssociatedObjects)的Category中增加了属性类型为NSString *的associatedObjctName,并用runtime的API实现了其setter和getter方法。我们再来运行下面代码:
+我们在`Person(AssociatedObjects)`中增加了属性类型为NSString *的`associatedObjctName`,并用runtime的API实现了其setter和getter方法。我们再来运行下面代码:
 
 
 {% highlight objc linenos %}
@@ -137,10 +140,10 @@ for(int i = 0; i < ivarNumber; i++){
 //
 {% endhighlight %}
 
-我们可以看见objc_ivar_list并没有新加入的associated objects。
+我们可以看见`objc_ivar_lis`t并没有新加入的associated objects。
 
 ## 3. Associated Objects在runtime API中动态增加属性  ##
-当用runtime API 动态创建类，添加方法和实例变量过程中，当类创建完毕后（调用objc_registerClassPair后）再用class_addIvar(...)添加的iVar不会出现在类的objc_ivar_list中，见如下代码。
+当用runtime API 动态创建类，添加方法和实例变量过程中，当类创建完毕后（调用`objc_registerClassPair`后）再用`class_addIvar(...)`添加的iVar不会出现在类的`objc_ivar_list`中，见如下代码。
 
 {% highlight objc linenos %}
  //dynamically create a Peron Class
@@ -185,37 +188,37 @@ for(int i = 0; i < ivarNumber; i++){
 
 //输出为:
 //Hello World!
-Johnson
-Lu
-nameBeforeRegister 
-
+//Johnson
+//Lu
+//nameBeforeRegister 
+//
 {% endhighlight %}
 
-可见
+可见当用runtime API动态创建类时，当创建完毕后，添加的iVar就不加入到`objc_ivar_list`.
 
 ## 4. Associated Objects runtime API  ##
 
 以上介绍了Associated Objects的实现，我们现在来看看其runtime API,包括以下3个方法：
 
-1. objc_setAssociatedObject 用于给对象添加关联对象，传入 nil 则可以移除已有的关联对象；
-2. objc_getAssociatedObject 用于获取关联对象；
-3. objc_removeAssociatedObjects 用于移除一个对象的所有关联对象。
+1. `objc_setAssociatedObject` 用于给对象添加关联对象，传入 nil 则可以移除已有的关联对象；
+2. `objc_getAssociatedObject` 用于获取关联对象；
+3. `objc_removeAssociatedObjects` 用于移除一个对象的所有关联对象。
 
-关于其key值
 
-关于前两个函数中的 key 值是我们需要重点关注的一个点，这个 key 值必须保证是一个对象级别（为什么是对象级别？看完下面的章节你就会明白了）的唯一常量。一般来说，有以下三种推荐的 key 值：
+
+关于前两个函数中的 key 值是我们需要重点关注的一个点，一般来说，有以下三种推荐的 key 值：
 
 1. 声明 static char kAssociatedObjectKey; ，使用 &kAssociatedObjectKey 作为 key 值;
 2. 声明 static void *kAssociatedObjectKey = &kAssociatedObjectKey; ，使用 kAssociatedObjectKey 作为 key 值；
 3. 用 selector ，使用 getter 方法的名称作为 key 值。
 
-第3种方式最为优雅和简洁，在上面的例子中我们用的就是这种。
+由于第3种方式最为优雅和简洁，在上面的例子中我们用的就是selector。
 
 
 ## 5 总结 ##
 Associated Objects用于扩展类的属性，使得外部在用dot notation存取属性时分不出两者的区别，这解决了Objective C属性扩展的问题。但是在内部实现中，Associated Objects和类本身的iVar和Property还是有区别的：
 
-1. 类的定义结束后(无论是Objective-C还是runtime API动态创建类)objc_ivar_list是不能变得。
-2. 关联类和被关联类在内存中是分开存储的。被关联类的objc_ivar_list只存储其本身的iVar和Property。
-3. 这同样体现在用runtime动态创建类中，class_addIvar(...)在objc_registerClassPair前和后调用时的情况。当class_addIvar(...)在objc_registerClassPair前调用时，加入的iVar是在类本身的定义中，存储在其objc_ivar_list；在objc_registerClassPair后调用，class_addIvar(...)，增加的iVar和本身的类分开存储。
+1. 类的定义结束后(无论是Objective-C还是runtime API动态创建类)`objc_ivar_list`是不能变得。
+2. 关联类和被关联类在内存中是分开存储的。被关联类的`objc_ivar_list`只存储其本身的iVar和Property。
+3. 这同样体现在用runtime动态创建类中，`class_addIvar(...)`在`objc_registerClassPair`前和后调用时的情况。当`class_addIvar(...)`在`objc_registerClassPair`前调用时，加入的iVar是在类本身的定义中，存储在其`objc_ivar_list`；在`objc_registerClassPair`后调用，`class_addIvar(...)`，增加的iVar和本身的类分开存储。
 
