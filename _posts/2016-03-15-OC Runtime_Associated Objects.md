@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Objective C Runtime(一) Associated Objects
+title: OC Runtime(一)： Associated Objects
 categories: [Objective-C]
 tags: [Associated Objects]
 number: [0.14.1.2]
