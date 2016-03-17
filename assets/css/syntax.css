@@ -75,10 +75,10 @@
 .highlight > pre {
     margin: 0 0;
     padding: 2px;
-    background-color:rgba(104,139,145,0.03);
+    background-color:rgba(104,139,145,0.05);
 }
 p code{
-    background-color: rgba(104,139,145,0.03);
+    background-color: #eeeeee
 
 }
 p{
