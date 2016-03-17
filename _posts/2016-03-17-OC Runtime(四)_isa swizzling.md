@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OC Runtime(二)： isa swizziling
+title: OC Runtime(四)： isa Swizziling
 categories: [Objective-C]
 tags: [Associated Objects]
 number: [0.14.1.2]

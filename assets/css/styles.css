@@ -198,6 +198,12 @@
     text-align: center;
 }
 
+.article_mainBody .img_middle_lg{
+    display: block;
+    width: 100%;
+    text-align: center;
+
+}
 
 .article_mainBody blockquote{
     border-left: solid 10px rgba(97,134,127,0.5);
