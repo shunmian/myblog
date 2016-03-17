@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OC Runtime(一)：Sending Message
+title: OC Runtime(一)： Sending Message
 categories: [Objective-C]
 tags: [Associated Objects]
 number: [0.14.1.2]
