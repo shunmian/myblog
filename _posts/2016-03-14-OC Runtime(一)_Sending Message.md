@@ -5,7 +5,7 @@ categories: [Objective-C]
 tags: [Sending Message]
 number: [0.14.1.2]
 fullview: false
-shortinfo: Objective-C中的消息发送和C中的函数调用有着本质的区别。后者在编译阶段已经确定了函数的具体实现, 而前者在运行时还可以更改方法发送的具体实现，这给Objective-C注入了崭新的动态活力。而这都得益于Objective-C的Runtime系统。可以说Objective-C的Runtime是其语言区别与其他语言的基石。而Runtime里的sending message(消息发送)又是其最主要的特性。本文将带您感受下Runtime的sending message机制。
+shortinfo: Objective-C中的消息发送和C中的函数调用有着本质的区别。后者在编译阶段已经确定了函数的具体实现, 而前者在运行时还可以更改消息发送的具体实现，这给Objective-C注入了崭新的动态活力。而这都得益于Objective-C的Runtime系统。可以说Objective-C的Runtime是其语言区别与其他语言的基石。而Runtime里的sending message(消息发送)又是其最主要的特性。本文将带您感受下Runtime的sending message机制。
 ---
 目录
 {:.article_content_title}
