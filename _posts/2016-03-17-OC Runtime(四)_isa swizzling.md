@@ -2,7 +2,7 @@
 layout: post
 title: OC Runtime(四)： isa Swizziling
 categories: [Objective-C]
-tags: [Associated Objects]
+tags: [isa Swizzling]
 number: [0.14.1.2]
 fullview: false
 shortinfo: 在Objective C 中，一旦类被定义好了，想扩展它的iVar是被禁止的，除非重写改写类本身。我们知道Category可以被用来扩展方法而非iVar，而Associated Objects技术就是用来在遵循实例变量不能扩展的前提下，增加property的。这样在外部看来可以用dot notatoin access 所有的属性，就像达到了iVar可以被扩展的假象。本文就来详细介绍一下Objective C Runtime的Associated Objects。

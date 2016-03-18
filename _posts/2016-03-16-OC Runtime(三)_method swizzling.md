@@ -2,7 +2,7 @@
 layout: post
 title: OC Runtime(三)： Method Swizziling
 categories: [Objective-C]
-tags: [Associated Objects]
+tags: [Method Swizzling]
 number: [0.14.1.2]
 fullview: false
 shortinfo: Objective-C 的runtime给这门语言添加了许多dynamic特性, 包括sending message, dynamic bundle loading, introspection等。其中以sending message的dynamic特性最为突出，通过isa查找类，再在 vtable查找相应selector的IMP来最终执行消息。这个过程提供了许多"黑魔法", 替换isa(isa Swizzling)和替换IMP(Method Swizzling)。本文就Method Swzzling做一个简单的介绍。
