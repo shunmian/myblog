@@ -270,7 +270,7 @@ static void *const kPersonConext = &kPersonConext;
 
 
 ## 4. 总结 ##
-KVO是Cocoa对于Observer Pattern的内置实现，需要我们通过"订阅"-”响应“-”取消订阅“来设置自动, 手动或者值依赖KVO。KVO的API有一些坑需要注意，比如keyPath的选择，context的用法, ”响应“的混乱逻辑等。对于KVO的isa swizzle实现原理，我们将在后面OC Runtime系列列会详细介绍。
+KVO是Cocoa对于Observer Pattern的内置实现，需要我们通过"订阅"-”响应“-”取消订阅“来设置自动, 手动或者值依赖KVO。KVO的API有一些坑需要注意，比如keyPath的选择，context的用法, ”响应“的混乱逻辑等。对于KVO的isa swizzle实现原理，我们将在后面OC Runtime系列会详细介绍。
 
 
 ## 5. 参考资料 ##
