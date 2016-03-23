@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OC Runtime(七)： Test
+title: OC Runtime(七)： Test2
 categories: [Objective-C]
 tags: [isa Swizzling]
 number: [0.14.1.2]
