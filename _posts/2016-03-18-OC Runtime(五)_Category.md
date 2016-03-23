@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OC Runtime(四)： isa Swizziling
+title: OC Runtime(五)： Category
 categories: [Objective-C]
 tags: [isa Swizzling]
 number: [0.14.1.2]
@@ -26,17 +26,17 @@ Obeserving Pattern 是Gang Of Four里面提到的24种面向对象设计模式�
 
 上图是Observing Pattern的UML。Subject是一个接口，声明了三个方法：
 
-1. addObserver(Observer), 注册observer(即将observer加入到observers数组)；
-2. notify(), 通知observers(observers数组里的每个observer都调用其update()方法)；
-3. removeObserver(Observer), 注销observer(即observers数组里删除observer)。
+1. `addObserver(Observer)`, 注册observer(即将observer加入到observers数组)；
+2. `notify()`, 通知observers(observers数组里的每个observer都调用其update()方法)；
+3. `removeObserver(Observer)`, 注销observer(即observers数组里删除observer)。
 
-Observer也是一个接口，声明了一个方法：update(),用来Subject iVar改变时响应。 
+Observer也是一个接口，声明了一个方法：`update()`,用来Subject iVar改变时响应。 
 
-ConcreteSubjectA实现了Subject接口，在iVar的setter里加了notify(), 因此在每一次iVar值改变时，都会提醒observers里的每一个observer相应update()。ConcreteObserver实现了Observer接口。这个UML理解起来比较清晰。
+`ConcreteSubjectA`实现了`Subject`接口，在iVar的setter里加了`notify()`, 因此在每一次iVar值改变时，都会提醒observers里的每一个`Observer`相应`update()`。`ConcreteObserver`实现了`Observer`接口。这个UML理解起来比较清晰。
 
 ## 2. 三种实现 ##
 
-我们知道Objective C对 Observer Pattern的实现是用Key Value Observeing。我们下面用三种方法在Objective C中实现Observer Pattern：普通实现(即按照上面UML图来实现)， isa Swizzling实现KVO， method Swizzling实现KVO。
+我们知道Objective C对 Observer Pattern的实现是用Key Value Observeing(KVO)。我们下面用三种方法在Objective C中实现Observer Pattern：普通实现(即按照上面UML图来实现)， isa Swizzling实现KVO， method Swizzling实现KVO。
 
 ### 2.1 普通实现 ###
 
@@ -205,6 +205,7 @@ void kvo_setter(id obj, SEL _cmd, id newValue){
 不知道同学们注意到没有，其实isa Swizzling实现KVO的本质是创建中间类，然后在中间类的setter里用Method Swizzling重写。Method Swizzling的介绍请见传送门[OC Runtime(三)： Method Swizziling]({{site.baseurl}}/objective-c/2016/03/16/OC-Runtime(三)_method-swizzling.html){:target="_blank"}。创建中间类的好处是使得原类的实现不被KVO改变。实际上我们完全可以不用isa Swizlling而只用Method Swizzling来实现KVO, 代码如下:
 
 
+
 {% highlight objc linenos %}
 #import <Foundation/Foundation.h>
 typedef void (^LALKVOBlock)(id obsever, id subject, NSString *keyPath, id oldValue, id newValue);
@@ -298,7 +299,7 @@ void kvo_setter(id obj, SEL _cmd, id newValue){
 
 - [如何自己动手实现 KVO](http://tech.glowing.com/cn/implement-kvo/);
 
-- [如何自己动手实现 KVO](http://tech.glowing.com/cn/implement-kvo/);
+- [深入理解KVO](http://zhangbuhuai.com/2015/04/29/understanding-KVO/);
 
 
 

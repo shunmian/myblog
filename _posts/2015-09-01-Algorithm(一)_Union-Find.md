@@ -1,15 +1,18 @@
 ---
 layout: post
-title: OC Runtime(四)： isa Swizziling
+title: Algorithm(一): Union-Find 并查集
 categories: [Objective-C]
-tags: [isa Swizzling]
+tags: [Algorithm]
 number: [0.14.1.2]
 fullview: false
-shortinfo: 在Objective C中, Key Value Observing 是用来对Observing Pattern的Apple官方实现。 它的实现原理用的是isa Swizzling。但是apple对其细节没有多讲。本文用三种方式来实现Oberving Pattern：普通设计模式, isa Swizzling和Method Swizzling。希望通过本文能让您对Observing Pattern有一个全面的认识。
+shortinfo: code = algorithm + data Strcuture。这是一个系列的数据结构和算法的博客，学习资料来自于 Princeton的教授Kevin Wayne, Robert Sedgewick的Algorithmn PartI & Part II 课程(Youtube上有视频)。该课程用的是Java语言，我们用C来重新实现。第一篇我们来学习Union-Find并查集作为一个入门，感受下算法的魅力。
 ---
 目录
 {:.article_content_title}
+我们先来看下面一个问题:
 
+{: .img_middle_lg}
+![Percolation](/assets/images/posts/2015-09-01/percolation.png)
 
 * TOC
 {:toc}
@@ -26,17 +29,17 @@ Obeserving Pattern 是Gang Of Four里面提到的24种面向对象设计模式�
 
 上图是Observing Pattern的UML。Subject是一个接口，声明了三个方法：
 
-1. addObserver(Observer), 注册observer(即将observer加入到observers数组)；
-2. notify(), 通知observers(observers数组里的每个observer都调用其update()方法)；
-3. removeObserver(Observer), 注销observer(即observers数组里删除observer)。
+1. `addObserver(Observer)`, 注册observer(即将observer加入到observers数组)；
+2. `notify()`, 通知observers(observers数组里的每个observer都调用其update()方法)；
+3. `removeObserver(Observer)`, 注销observer(即observers数组里删除observer)。
 
-Observer也是一个接口，声明了一个方法：update(),用来Subject iVar改变时响应。 
+Observer也是一个接口，声明了一个方法：`update()`,用来Subject iVar改变时响应。 
 
-ConcreteSubjectA实现了Subject接口，在iVar的setter里加了notify(), 因此在每一次iVar值改变时，都会提醒observers里的每一个observer相应update()。ConcreteObserver实现了Observer接口。这个UML理解起来比较清晰。
+`ConcreteSubjectA`实现了`Subject`接口，在iVar的setter里加了`notify()`, 因此在每一次iVar值改变时，都会提醒observers里的每一个`Observer`相应`update()`。`ConcreteObserver`实现了`Observer`接口。这个UML理解起来比较清晰。
 
 ## 2. 三种实现 ##
 
-我们知道Objective C对 Observer Pattern的实现是用Key Value Observeing。我们下面用三种方法在Objective C中实现Observer Pattern：普通实现(即按照上面UML图来实现)， isa Swizzling实现KVO， method Swizzling实现KVO。
+我们知道Objective C对 Observer Pattern的实现是用Key Value Observeing(KVO)。我们下面用三种方法在Objective C中实现Observer Pattern：普通实现(即按照上面UML图来实现)， isa Swizzling实现KVO， method Swizzling实现KVO。
 
 ### 2.1 普通实现 ###
 
@@ -205,6 +208,7 @@ void kvo_setter(id obj, SEL _cmd, id newValue){
 不知道同学们注意到没有，其实isa Swizzling实现KVO的本质是创建中间类，然后在中间类的setter里用Method Swizzling重写。Method Swizzling的介绍请见传送门[OC Runtime(三)： Method Swizziling]({{site.baseurl}}/objective-c/2016/03/16/OC-Runtime(三)_method-swizzling.html){:target="_blank"}。创建中间类的好处是使得原类的实现不被KVO改变。实际上我们完全可以不用isa Swizlling而只用Method Swizzling来实现KVO, 代码如下:
 
 
+
 {% highlight objc linenos %}
 #import <Foundation/Foundation.h>
 typedef void (^LALKVOBlock)(id obsever, id subject, NSString *keyPath, id oldValue, id newValue);
@@ -298,7 +302,7 @@ void kvo_setter(id obj, SEL _cmd, id newValue){
 
 - [如何自己动手实现 KVO](http://tech.glowing.com/cn/implement-kvo/);
 
-- [如何自己动手实现 KVO](http://tech.glowing.com/cn/implement-kvo/);
+- [深入理解KVO](http://zhangbuhuai.com/2015/04/29/understanding-KVO/);
 
 
 

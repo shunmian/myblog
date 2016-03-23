@@ -85,3 +85,6 @@ p{
     margin-top: 10px;
 }
 
+.nestedList, .nestedList li{
+	list-style-type: none;
+}
