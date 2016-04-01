@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Algorithm(一)： Union-Find 并查集
+title: Algorithm(四)： Sorting 排序
 categories: [Algorithm]
-tags: [Union-Find]
-number: [0.14.1.2]
+tags: [Sorting]
+number: [-2.2.4]
 fullview: false
-shortinfo: code = algorithm + data Strcuture。这是一个系列的数据结构和算法的博客，学习资料来自于 Princeton的教授Kevin Wayne, Robert Sedgewick的Algorithmn PartI & Part II 课程(Youtube上有视频)。该课程用的是Java语言，我们用C来重新实现。第一篇我们来学习Union-Find并查集作为一个入门，感受下算法的魅力。
+shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。本文介绍其实现及用其解决一个具体的Percolation问题。
 ---
 目录
 {:.article_content_title}
@@ -21,8 +21,8 @@ shortinfo: code = algorithm + data Strcuture。这是一个系列的数据结构
 我们先来看下面一个问题:
 
 {: .img_middle_lg}
-![Percolation](/assets/images/posts/2015-09-01/percolation.png)
-![Percolation](/assets/images/posts/2015-09-01/thresh.png)
+![Percolation](/assets/images/posts/2015-09-03/percolation.png)
+![Percolation](/assets/images/posts/2015-09-03/thresh.png)
 
 上图是一个n*n的网格，起初每个网格都是关闭的（显示黑色）。我们开启一个个网格(白色)。求开启多少个网格后，上面才会和下面联通,即想象网格上面是水流，网格是一个管道，开启的格子可以流水，得平均开启多少个网格后水流才能通过网格流下来。求这个开启网格占总网格的比例。
 
