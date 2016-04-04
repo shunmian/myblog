@@ -190,7 +190,7 @@ public class UF_WieghtedQuickUnion extends UF{
 
 
 {: .img_middle_lg}
-![Percolation](/assets/images/posts/2015-09-01/Union_Find_complexity.png)
+![Percolation](/assets/images/posts/2015-09-03/Union_Find_complexity.png)
 
 ## 3 Percolation 问题解答 ##
 
