@@ -430,11 +430,7 @@ public class PercolationStats {
 
 1. Union-Find利用quick union + weighted + path compression 可以将Union和Find的时间复杂度从O(N)降为log<sub>2</sub>N;
 2. 我们用这个WQUUF数据结构处理了Percolation问题，并得到了概率阈值 p = 0.593;
-3. 大O表示法表示算法时间复杂度的上限，通常我们考虑这个即可。下图是典型复杂度的曲线和例子。
 
-{: .img_middle_lg}
-![Percolation](/assets/images/posts/2015-09-01/time complexity.png)
-![Percolation](/assets/images/posts/2015-09-01/time complexity graph.png)
 
 ## 5 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
