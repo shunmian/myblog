@@ -136,7 +136,7 @@ UF_QuickUnion的`find`时间复杂度是o(N),`union`也是o(N)。如果我们要
 9. Ancestor: A node reachable by repeated proceeding from child to parent.
 
 {: .img_middle_lg}
-![Percolation](/assets/images/posts/2015-09-01/tree.png)
+![Percolation](/assets/images/posts/2015-09-03/tree.png)
 
 然后我们来看下`UF_WieghtedQuickUnion`的实现:
 
