@@ -198,9 +198,9 @@
     text-align: center;
 }
 
-.article_mainBody .img_middle_lg{
+.article_mainBody .img_middle_lg img{
     display: block;
-    width: 100%;
+    max-width: 100%;
     text-align: center;
 
 }

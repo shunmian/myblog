@@ -19,6 +19,9 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。本文介�
 
 ## 1. 搜索介绍 ##
 
+
+
+
 ## 2. 搜索算法 ##
 
 {% highlight java linenos %}
@@ -127,8 +130,126 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
 
 binary search(by ordered array)Inserting a new key into an ordered array of size N uses ~ 2N array accesses in the worst case, so inserting N keys into an initially empty table uses ~ N 2 array accesses in the worst case.
 
+小结: 2.1顺序搜索(无序链表)实现和2.2二分法搜索(有序数组)实现的peformance总结如下表:
+
+{: .img_middle_lg}
+![Basic Symbol-table Implementation](/assets/images/posts/2015-09-05/searching performance1.png)
+
+我们能否可以实现某种算法使得insert和search都是O(logN)的时间复杂度？ 答案是YES！这要用到下面介绍的二叉树(binary search tree) by using array(O(logN)) search advantage and linked list quick insertion advantage.
+
 ### 2.3 二叉搜索树实现 ###
 
+binary search tree combines the flexibility of insertion in a linked list with the efficiency of search in an ordered array. Use two links per node(instead of the one link per node found in linked lists).
+
+> <b>Binary Search Tree(BST)</b>: a binary tree where each node has a Comparabe key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree.
+
+{: .img_middle}
+![Binary Tree](/assets/images/posts/2015-09-05/binary tree.png)
+![Binary Search Tree](/assets/images/posts/2015-09-05/binary search tree.png)
+
+
+
+
+{% highlight java linenos %}
+public class BST<Key extends Comparable<Key>,Value>  {
+    
+    Node root = null;
+    
+    class Node{
+        Key key;
+        Value val;
+        int N;
+        Node left;
+        Node right;
+
+        public Node(Key key, Value value, int N){
+            this.key = key;
+            this.val = value;
+            this.N = N;
+        }
+    }
+    
+    public Value get(Key key){
+        return get(root, key);
+    }
+    
+    private Value get(Node x, Key key){
+        if(x == null) return null;
+        int cmp = x.key.compareTo(key);
+        if(cmp < 0) return get(x.right, key);
+        else if(cmp > 0) return get(x.left, key);
+        else return x.val;
+    }
+    
+    
+    public void put(Key key, Value value){
+        put(root, key, value);
+    }
+    
+    private Node put(Node x, Key key, Value val){
+        if (x == null) return new Node(key, val, 1);
+        int cmp = key.compareTo(x.key);
+        if      (cmp < 0) x.left  = put(x.left,  key, val);
+        else if (cmp > 0) x.right = put(x.right, key, val);
+        else x.val = val;
+        x.N = size(x.left) + size(x.right) + 1;
+        return x;
+    }
+}
+{% endhighlight %}
+
+Search hits in a BST built from N random keys require ~ 2lnN compares on the average, correspondence to QuickSort partitioning. But the worst case is that it is not balanced which requires N compares。
+
+{: .img_middle}
+![Binary Tree](/assets/images/posts/2015-09-05/binary search tree situation.png)
+
+二叉搜索树的performance如下：
+
+{: .img_middle_lg}
+![Binary Tree](/assets/images/posts/2015-09-05/searching performance2.png)
+
+
+### 2.4 平衡二叉搜索树(红黑树)实现###
+
+2.3二叉搜索树在average case下insert/search 时间复杂度是O(logN)，但是在worst-case下是O(N)。如何保证在任何情况下insert/search 都是O(logN)呢。这就是我们要介绍的平衡二叉搜索树。理想情况下，我们想要保持我们的binary search tree perfectly balanced使得所有的search 时间复杂度都是O(logN)。但是不幸的是，保持perfectly blanaced 需要通过昂贵的insertion操作。因此我们变通一下，下面介绍 2-3 search tree。 
+
+<blockquote><b>2-3 search tree (2-3搜索树)</b>>: is either
+<ul>
+<li>a tree that is empty; </li>
+<li>a 2-node with one key (and associated value) and two links, a left link to a 2-3 search treee with smaller keys, and a right link to a 2-3 search tree with larger keys; </li>
+<li>a 3-node, with two keys (and associated values) and three links, a left link to a 2-3 search tree with smaller keys, a middle link to a 2-3 search tree with keys between the node's keys, and a right link to a 2-3 search tree with larger keys。</li>
+</ul>
+</blockquote>
+
+{: .img_middle}
+![Binary Tree](/assets/images/posts/2015-09-05/2-3 search tree2.png)
+
+
+#### 2.4.1 Red-black BST ###
+2-3 search tree 的实现并不困难，但是有一种更为易懂的实现叫做Red-black BST。
+
+<blockquote><b>Red-black BST(红黑二叉搜索树)</b>: 
+<ul>
+<li>represent 2-3 tree as a BST; </li>
+<li>use "internal" left-leaning links as "glue" for 3-nodes;</li>
+<li>every path from root to null link has the same number of black links(perfect black balance).</li>
+</ul>
+</blockquote>
+
+
+{: .img_middle}
+![Binary Tree](/assets/images/posts/2015-09-05/red-black BST.png)
+![Binary Tree](/assets/images/posts/2015-09-05/red-black BST2.png)
+
+
+我们先定义三种基本操作，
+
+{: .img_middle_lg}
+![Binary Tree](/assets/images/posts/2015-09-05/red-black BST 3 basic operatoin.png)
+
+
+
+### 2.5 哈希表实现 ###
 
 ## 4 总结 ##
 

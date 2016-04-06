@@ -1,6 +1,8 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
-gems: [jekyll-paginate]
+gems: 
+- jekyll-paginate
+- jekyll-feed
 
 
 exclude: ["README.md"] # files to exclude
@@ -25,6 +27,7 @@ kramdown:
 
 
 highlighter: rouge
+safe: false
 
 title: SHUNMIAN
 description: Stylish Jekyll Theme
@@ -37,7 +40,8 @@ author:
   bio: 节物风光不相待，桑田碧海须臾改，唯有美食和code不可辜负。
   email_md5: 02eefecba7f0b21939d12a37f94bf5df
 
-rss_path: feed.xml
+feed:
+  path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 
