@@ -23,7 +23,7 @@ shortinfo: code = algorithm + data Strcuture。这是一个系列的数据结构
 ## 2. 时间复杂度 ##
 我们以大O表示法表示上确界，即不会超过该复杂度乘以常数。时间复杂度分为以下几类函数: O(1), O(logN), O(N), O(NlogN), O(N<sup>2</sup>),O(N<sup>3</sup>), O(2<sup>N</sup>)。前四种表示优秀的算法，即计算量随N呈线性或以下关系。
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![time complexity](/assets/images/posts/2015-09-01/time complexity.png)
 ![time complexity](/assets/images/posts/2015-09-01/time complexity graph.png)
 
@@ -31,10 +31,10 @@ shortinfo: code = algorithm + data Strcuture。这是一个系列的数据结构
 
 空间复杂度比时间复杂度要简单。对于java来说，几种元类型的数据大小如下图所示。要注意的是Object有16 bytes的overhead用于存储Object的信息; 指针大小为8 bytes; padding是确保每一个Object的大小都是8的倍数; 如果有内部类，则有额外的reference 8 byte指向所在的类。
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![space complexity](/assets/images/posts/2015-09-01/memory0.png)
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![space complexity](/assets/images/posts/2015-09-01/memory1.png)
 ![space complexity](/assets/images/posts/2015-09-01/memory2.png)
 

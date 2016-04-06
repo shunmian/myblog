@@ -28,7 +28,7 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。本文介�
 
 {% endhighlight %}
 {: .img_middle_lg}
-![Sorting Algorithms](/assets/images/posts/2015-09-04/sorting algorithm.png)
+![Sorting Algorithms](/assets/images/posts/2015-09-05/searching performance0.png)
 
 ### 2.1 顺序搜索(无序链表)实现 ###
 
@@ -132,8 +132,7 @@ binary search(by ordered array)Inserting a new key into an ordered array of size
 
 小结: 2.1顺序搜索(无序链表)实现和2.2二分法搜索(有序数组)实现的peformance总结如下表:
 
-{: .img_middle_lg}
-![Basic Symbol-table Implementation](/assets/images/posts/2015-09-05/searching performance1.png)
+
 
 我们能否可以实现某种算法使得insert和search都是O(logN)的时间复杂度？ 答案是YES！这要用到下面介绍的二叉树(binary search tree) by using array(O(logN)) search advantage and linked list quick insertion advantage.
 
@@ -143,7 +142,7 @@ binary search tree combines the flexibility of insertion in a linked list with t
 
 > <b>Binary Search Tree(BST)</b>: a binary tree where each node has a Comparabe key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree.
 
-{: .img_middle}
+{: .img_middle_mid}
 ![Binary Tree](/assets/images/posts/2015-09-05/binary tree.png)
 ![Binary Search Tree](/assets/images/posts/2015-09-05/binary search tree.png)
 
@@ -200,13 +199,9 @@ public class BST<Key extends Comparable<Key>,Value>  {
 
 Search hits in a BST built from N random keys require ~ 2lnN compares on the average, correspondence to QuickSort partitioning. But the worst case is that it is not balanced which requires N compares。
 
-{: .img_middle}
+{: .img_middle_mid}
 ![Binary Tree](/assets/images/posts/2015-09-05/binary search tree situation.png)
 
-二叉搜索树的performance如下：
-
-{: .img_middle_lg}
-![Binary Tree](/assets/images/posts/2015-09-05/searching performance2.png)
 
 
 ### 2.4 平衡二叉搜索树(红黑树)实现###
@@ -221,11 +216,9 @@ Search hits in a BST built from N random keys require ~ 2lnN compares on the ave
 </ul>
 </blockquote>
 
-{: .img_middle}
+{: .img_middle_mid}
 ![Binary Tree](/assets/images/posts/2015-09-05/2-3 search tree2.png)
 
-
-#### 2.4.1 Red-black BST ###
 2-3 search tree 的实现并不困难，但是有一种更为易懂的实现叫做Red-black BST。
 
 <blockquote><b>Red-black BST(红黑二叉搜索树)</b>: 
@@ -237,7 +230,7 @@ Search hits in a BST built from N random keys require ~ 2lnN compares on the ave
 </blockquote>
 
 
-{: .img_middle}
+{: .img_middle_mid}
 ![Binary Tree](/assets/images/posts/2015-09-05/red-black BST.png)
 ![Binary Tree](/assets/images/posts/2015-09-05/red-black BST2.png)
 
@@ -249,7 +242,65 @@ Search hits in a BST built from N random keys require ~ 2lnN compares on the ave
 
 
 
+
+{% highlight java linenos %}
+public class RedBlackBST<Key extends Comparable<Key>, Value>{
+    private Node root;
+    private class Node // BST node with color bit (see page 433)
+    private boolean isRed(Node h)    
+    private Node rotateLeft(Node h)  
+    private Node rotateRight(Node h) 
+    private void flipColors(Node h)  
+    private int size()               
+
+    public void put(Key key, Value val){  // Search for key. Update value if found; grow table if new.
+        root = put(root, key, val);
+        root.color = BLACK;
+    }
+
+    // get remain untouched.
+    public Value get(Key key) {
+        return get(root, key);
+    }
+
+   
+    private Value get(Node x, Key key) {
+        while (x != null) {
+            int cmp = key.compareTo(x.key);
+            if      (cmp < 0) x = x.left;
+            else if (cmp > 0) x = x.right;
+            else              return x.val;
+        }
+        return null;
+    }
+
+    private Node put(Node h, Key key, Value val){
+    if (h == null)return new Node(key, val, 1, RED);  // Do standard insert, with red link to parent.
+    int cmp = key.compareTo(h.key);
+    if      (cmp < 0) h.left  = put(h.left,  key, val);
+    else if (cmp > 0) h.right = put(h.right, key, val);
+    else h.val = val;
+
+    if (isRed(h.right) && !isRed(h.left))    h = rotateLeft(h);
+    if (isRed(h.left) && isRed(h.left.left)) h = rotateRight(h);
+    if (isRed(h.left) && isRed(h.right))     flipColors(h);
+    h.N = size(h.left) + size(h.right) + 1;
+    return h; 
+    }
+}
+{% endhighlight %}
+
+红黑二叉搜索树的height is no more than 2lgN, N is the number of total nodes. In worst case & average case, search/insert O(lgN).
+
 ### 2.5 哈希表实现 ###
+
+> Hash Function: computing array index(Hash Code) based on key.
+
+> Hash Table:
+
+实现哈希表需要注意一下几点：
+1. Collision Resolution, 当两个key产生同一个Hash Code时;
+2. Equality Test, checking whether two keys are equal.
 
 ## 4 总结 ##
 

@@ -23,7 +23,7 @@ shortinfo: 包，队列，栈是基本的数据结构，在计算机科学里有
 ## 2. 链表(Linked-List)，数组(Array) ##
 链表便于增删(O(1))，查找效率低(O(N)); 数组便于查找(用下标O(1)),增删效率低(由于固定长度，增加减少元素时要copy到新的Array。最优算法：items = capacity时，capactiy double; items = 1/4 *capacity时,capacity half。时间复杂度是(O(N))。链表和数组的空间复杂度都是O(N)。
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![LinkedList&Array](/assets/images/posts/2015-09-02/LinkedList.png)
 
 ## 3. 包(Bag)，队列(Queue)，栈(Stack) ##

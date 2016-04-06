@@ -20,7 +20,7 @@ shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。�
 ## 1. Union-Find(并查集)介绍 ##
 我们先来看下面一个问题:
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![Percolation](/assets/images/posts/2015-09-03/percolation.png)
 ![Percolation](/assets/images/posts/2015-09-03/thresh.png)
 
@@ -135,7 +135,7 @@ UF_QuickUnion的`find`时间复杂度是o(N),`union`也是o(N)。如果我们要
 8. Descendant: A node reachable by repeated proceeding from parent to child.
 9. Ancestor: A node reachable by repeated proceeding from child to parent.
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![Percolation](/assets/images/posts/2015-09-03/tree.png)
 
 然后我们来看下`UF_WieghtedQuickUnion`的实现:
@@ -189,7 +189,7 @@ public class UF_WieghtedQuickUnion extends UF{
 ### 2.4 三种时间空间复杂度比较 ###
 
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![Percolation](/assets/images/posts/2015-09-03/Union_Find_complexity.png)
 
 ## 3 Percolation 问题解答 ##

@@ -244,13 +244,13 @@ public class QuickSort3Way {
 
 优先队列用(Elementary Implemment)有序，无序数组很容易实现。但是他们insert和remove maximum操作不能同时达到logN。如果用binary heap(二叉堆)， 则可以实现。
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![Priority Queue Implementation](/assets/images/posts/2015-09-04/priority queue.png)
 
 
 > 二叉堆(Binary Heap): represented by heap-ordered binary tree so that the key in each node is larger than or equal to the keys in that node's two children(if any).
 
-{: .img_middle_lg}
+{: .img_middle_mid}
 ![Priority Queue Implementation](/assets/images/posts/2015-09-04/heap representations.png)
 
 二叉堆有如下性质:

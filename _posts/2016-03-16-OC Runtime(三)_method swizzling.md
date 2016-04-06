@@ -8,7 +8,7 @@ fullview: false
 shortinfo: Objective-C 的runtime给这门语言添加了许多dynamic特性, 包括sending message, dynamic bundle loading, introspection等。其中以sending message的dynamic特性最为突出，通过isa查找类，再在 vtable查找相应selector的IMP来最终执行消息。这个过程提供了许多"黑魔法", 替换isa(isa Swizzling)和替换IMP(Method Swizzling)。本文就Method Swzzling做一个简单的介绍。
 ---
 目录
-{:.article\_content\_title}
+{:.article_content_title}
 
 
 * TOC
@@ -21,7 +21,7 @@ shortinfo: Objective-C 的runtime给这门语言添加了许多dynamic特性, �
 
 首先回顾一下Objective-C 消息发送过程:
 
-{: .img\_middle\_lg}
+{: .img_middle_lg}
 
 ![SendingMessage](/assets/images/posts/2016-03-16/sending message.png)
 
@@ -47,17 +47,17 @@ shortinfo: Objective-C 的runtime给这门语言添加了许多dynamic特性, �
 介绍了消息发送之后，我们来具体看看Method Swizzling。 既然是Method Swizziling，那什么是`Method`呢，在`/usr/include/objc`中的我们可以找到这样的定义:
 
 {% highlight objc linenos %}
-typedef objc\_method \*Method
-struct objc\_method {
+typedef objc_method *Method
+struct objc_method {
 	SEL method_name       OBJC2_UNAVAILABLE; //method 的 selector，SEL
 	char *method_types    OBJC2_UNAVAILABLE; //method 的 输入输出参数类型, signature
 	IMP method_imp        OBJC2_UNAVAILABLE; //method 的 实现，IMP
 } 
 {% endhighlight %}
 
-一个Method是一个指向objc\_method结构体的指针，这个结构体包含三个变量，分别是SEL，signature和IMP。一个vtalbe的entry既是Method, 第一列是SEL,第二列是IMP。一个SEL对应一个IMP，如下图。
+一个Method是一个指向objc_method结构体的指针，这个结构体包含三个变量，分别是SEL，signature和IMP。一个vtalbe的entry既是Method, 第一列是SEL,第二列是IMP。一个SEL对应一个IMP，如下图。
 
-{: .img\_middle}
+{: .img_middle_mid}
 ![vtable1][image-1]
 ![vtable2][image-2]
 
@@ -71,8 +71,8 @@ struct objc\_method {
 
 Swizzle.h
 
-# import \<Foundation/Foundation.h\>
-# import \<objc/runtime.h\>
+# import <Foundation/Foundation.h>
+# import <objc/runtime.h>
 @interface Swizzle : NSObject
 +(void)swizzleClass:(id)objecClass fromSelector:(SEL)sel1 toSelector:(SEL)sel2;
 @end
@@ -114,7 +114,7 @@ Swizzle类只有一个类方法`+(void)swizzleClass:(id)objecClass fromSelector:
 好了我们来看看如何用这个Swizzle,
 
 {% highlight objc linenos %}
-NSString \*originalString = @"hello,WORLD!";
+NSString *originalString = @"hello,WORLD!";
 NSLog(@"original string  : %@",originalString);
 NSLog(@"before Method Swizzle---------");
 NSLog(@"lower case String: %@", [originalString lowercaseString]);
@@ -149,11 +149,11 @@ NSLog(@"upper case string: %@", [originalString uppercaseString]);
 {% highlight objc linenos %}
 UIViewController + Swizzle.h
 
-# import \<UIKit/UIKit.h\>
+# import <UIKit/UIKit.h>
 # import "Swizzle.h"
 
 @interface UIViewController (Swizzle)
--(void)swizzle\_viewDidAppear:(BOOL)animated;
+-(void)swizzle_viewDidAppear:(BOOL)animated;
 @end
 
 
@@ -165,7 +165,7 @@ UIViewController + Swizzle.m
 	[Swizzle swizzleClass:[self class] fromSelector:@selector(viewDidAppear:) toSelector:@selector(swizzle_viewDidAppear:)];
 }
 
--(void)swizzle\_viewDidAppear:(BOOL)animated{
+-(void)swizzle_viewDidAppear:(BOOL)animated{
 	[self swizzle_viewDidAppear:animated];
 	NSLog(@"the current appeared ViewController: %@",[self class]);
 }
@@ -195,7 +195,7 @@ UIViewController + Swizzle.m
 在用Method Swizzling的时候，有一些坑需要注意：
 1. 要尽可能早的执行swizzle，因此在`+(void)load`而不是在`+(id)initialize`里;
 2. 用GCD的d`ispatch_once`保证其线程安全且执行一次;
-3. 要注意方法命名冲突，用swizzle\_前缀比较合适，表示Method Swizzle的方法。
+3. 要注意方法命名冲突，用swizzle_前缀比较合适，表示Method Swizzle的方法。
 
 
 
