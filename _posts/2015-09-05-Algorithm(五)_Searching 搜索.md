@@ -296,11 +296,108 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 
 > Hash Function: computing array index(Hash Code) based on key.
 
-> Hash Table:
+哈希函数:
+
+1. all class in java implements a method hashCode(), which retunrs 32-bit int. 
+2. Default implementation is the memeory address.
+3. Java customized some typical class such as Integer, Double, String, URL, Date...
+
+{: .img_middle_lg}
+![Binary Tree](/assets/images/posts/2015-09-05/hashCode implementation.png)
 
 实现哈希表需要注意一下几点：
 1. Collision Resolution, 当两个key产生同一个Hash Code时;
 2. Equality Test, checking whether two keys are equal.
+
+对于Collision Resolution, 通常两种方法, Separate Chaining和Linear Probing.
+
+#### 2.5.1 单独链表法 ####
+
+{: .img_middle_mid}
+![Binary Tree](/assets/images/posts/2015-09-05/hash separate chaining.png)
+
+{% highlight java linenos %}
+
+public class SeparateChainingHashST<Key,Value>  {
+    private int M = 97;                         // number of chains
+    private Node[] st = (Node[]) new Object[M]; // array of chains
+    
+    class Node{
+        private Object key;
+        private Object value;
+        private Node next;
+        
+        public Node(Key key, Value value, Node x){
+            this.key = key;
+            this.value = value;
+            Node old = x;
+            x = this;
+            this.next = old;
+        }
+    }
+    
+    private int hash(Key key){
+        return (key.hashCode() & 0x7fffffff) % M; //omit sign bit, and convert into array index
+    }
+    
+    private Value get(Key key){
+        int i = hash(key);
+        for (Node x = st[i]; x!= null; x = x.next)
+            if(key.equals(x.key)) return (Value)x.value;
+        return null;
+    }
+    
+    public void put(Key key, Value value){
+        int i = hash(key);
+        for (Node x = st[i]; x!=null; x= x.next)
+            if(key.equals(x.key)) {
+                x.value = value; return;
+            }
+        st[i] = new Node(key, value, st[i]);
+    }
+}
+{% endhighlight %}
+
+
+#### 2.5.2 线性探查法 ####
+
+
+{: .img_middle_mid}
+![Binary Tree](/assets/images/posts/2015-09-05/hash linear probing.png)
+
+
+
+{% highlight java linenos %}
+public class SeparateChainingHashST<Key,Value>  {
+    
+    private int M = 30000;                          
+    private Value[]  vals = (Value[]) new Object[M];
+    private Key[]    keys = (Key[])   new Object[M]; 
+    
+    private int hash(Key key){
+        return (key.hashCode() & 0x7fffffff) % M; //omit sign bit, and convert into array index
+    }
+    
+    private Value get(Key key){
+        for (int i = hash(key); keys[i] != null; i = (i+1) % M)
+            if(keys[i].equals(key))
+                return vals[i];
+        return null;
+    }
+    
+    
+    public void put(Key key, Value value){
+        int i;
+        for (i = hash(key); keys[i] != null; i = (i+1) % M)
+            if(keys[i].equals(key)) break;
+        keys[i] = key;
+        vals[i] = value;
+    }
+}
+{% endhighlight %}
+
+
+
 
 ## 4 总结 ##
 

@@ -350,7 +350,16 @@ stable: sort age, then sort name, the result is first sorted by age, within same
 {: .img_middle_lg}
 ![Sorting Algorithms](/assets/images/posts/2015-09-04/sorting algorithm.png)
 
-## 4 总结 ##
+
+## 4.sorting programming example: 8 Puzzle ##
+
+
+
+
+
+
+
+## 5 总结 ##
 
 本文介绍了6种经典的排序方法: 
 
