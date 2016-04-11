@@ -427,7 +427,6 @@ private class SearchNode implements Comparable{
             s.append("move:" + this.moves + "\n");
             s.append("priority:" + this.priority + "\n");
             return s.toString();
-
         }
     }
 {% endhighlight %}
