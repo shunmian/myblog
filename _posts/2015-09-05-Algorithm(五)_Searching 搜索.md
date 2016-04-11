@@ -397,90 +397,6 @@ public class SeparateChainingHashST<Key,Value>  {
 }
 {% endhighlight %}
 
-## 3. 8Puzzle programming assignment ####
-
->8Puzzle: 在3×3的格子中填满1-8的整数，有一个格子是空的。交换空格子和其相邻的格子，以达到最终有序的状态。请给出使得任意N*N（2<N<128）的格子用最少的步数达到有序状态的解。
-
-{: .img_middle_mid}
-![8puzzle](/assets/images/posts/2015-09-05/8Puzzle.jpg)
-
-有两个类用来解决这个问题。
-
-{% highlight java linenos %}
-public class Board {
-    public Board(int[][] blocks)           // construct a board from an N-by-N array of blocks
-                                           // (where blocks[i][j] = block in row i, column j)
-    public int dimension()                 // board dimension N
-    public int hamming()                   // number of blocks out of place
-    public int manhattan()                 // sum of Manhattan distances between blocks and goal
-    public boolean isGoal()                // is this board the goal board?
-    public Board twin()                    // a board that is obtained by exchanging any pair of blocks
-    public boolean equals(Object y)        // does this board equal y?
-    public Iterable<Board> neighbors()     // all neighboring boards
-    public String toString()               // string representation of this board (in the output format specified below)
-
-    public static void main(String[] args) // unit tests (not graded)
-}
-
-public class Solver {
-    public Solver(Board initial)           // find a solution to the initial board (using the A* algorithm)
-    public boolean isSolvable()            // is the initial board solvable?
-    public int moves()                     // min number of moves to solve initial board; -1 if unsolvable
-    public Iterable<Board> solution()      // sequence of boards in a shortest solution; null if unsolvable
-    public static void main(String[] args) // solve a slider puzzle (given below)
-}
-
-{% endhighlight %}
-
-我们用一个MinPQ存储每一个搜索节点SearchNode,每一个搜索节点包括一个Board，一个moves，一个priority，一个manhattan。我们把初始的SearchNode放入MinPQ，然后删除其最小的priority，放入其neighour。重复此步骤直到manhanttan == 0。这里有几点需要注意：
-
-1. MinPQ<SearchNode>的比较需要SearchNode实现Comparable，比较priority,若相同则比较manhattan;
-2. 不是每一个Board都可解，但是每一个Board和他的twin(交换任意两个相邻的格子)有且仅有一个可解。
-3. 如何获得最终solution？获取最后一个SearchNode(Manhattan == 0),然后previous取其上一个SearchNode直到previous == null;
-4. mahattan函数，计算每一个格子需要几步走到(直接移动)最终的格子的步数，然后求1-8的格子的和。
-
-
-{% highlight java linenos %}
-private class SearchNode implements Comparable{
-        private Board board;
-        private int moves;
-        private SearchNode previous;
-        private int priority;
-        
-        public SearchNode(Board board, int moves, SearchNode previous){
-            this.board = board;
-            this.moves = moves;
-            this.previous = previous;
-            this.priority = this.moves + this.board.manhattan();
-        }
-        
-        @Override
-        public int compareTo(Object x) {
-            SearchNode searchNodeX = (SearchNode)x;
-            if(this.priority >searchNodeX.priority) return 1;
-            else if(this.priority < searchNodeX.priority) return -1;
-            else{
-                if(this.board.manhattan() > searchNodeX.board.manhattan()) return 1;
-                else if(this.board.manhattan() < searchNodeX.board.manhattan()) return -1;
-                else return 0;
-            }
-        }
-        
-        public String toString(){
-            
-            StringBuilder s = new StringBuilder(this.board.toString());
-            s.append("move:" + this.moves + "\n");
-            s.append("priority:" + this.priority + "\n");
-            return s.toString();
-
-        }
-    }
-{% endhighlight %}
-
-
-
-{: .img_middle_lg}
-![8puzzle](/assets/images/posts/2015-09-05/8puzzle game tree.png)
 
 
 
@@ -498,6 +414,8 @@ private class SearchNode implements Comparable{
 5. 哈希表实现(单独链表法 & 线性探查法)
 
 其中哈希表的搜索在最坏的情况下是~lg(N)，在最好的情况下是~(O)，是5个算法中最优的算法。但是需要注意hashCode冲突的情况。
+
+
 
 ## 5 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);

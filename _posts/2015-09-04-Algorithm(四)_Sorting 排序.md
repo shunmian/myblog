@@ -397,6 +397,7 @@ public class Solver {
 
 {% highlight java linenos %}
 private class SearchNode implements Comparable{
+
         private Board board;
         private int moves;
         private SearchNode previous;
@@ -422,7 +423,6 @@ private class SearchNode implements Comparable{
         }
         
         public String toString(){
-            
             StringBuilder s = new StringBuilder(this.board.toString());
             s.append("move:" + this.moves + "\n");
             s.append("priority:" + this.priority + "\n");
