@@ -208,7 +208,7 @@ Search hits in a BST built from N random keys require ~ 2lnN compares on the ave
 
 2.3二叉搜索树在average case下insert/search 时间复杂度是O(logN)，但是在worst-case下是O(N)。如何保证在任何情况下insert/search 都是O(logN)呢。这就是我们要介绍的平衡二叉搜索树。理想情况下，我们想要保持我们的binary search tree perfectly balanced使得所有的search 时间复杂度都是O(logN)。但是不幸的是，保持perfectly blanaced 需要通过昂贵的insertion操作。因此我们变通一下，下面介绍 2-3 search tree。 
 
-<blockquote><b>2-3 search tree (2-3搜索树)</b>>: is either
+<blockquote><b>2-3 search tree (2-3搜索树)</b>: is either
 <ul>
 <li>a tree that is empty; </li>
 <li>a 2-node with one key (and associated value) and two links, a left link to a 2-3 search treee with smaller keys, and a right link to a 2-3 search tree with larger keys; </li>
@@ -229,6 +229,7 @@ Search hits in a BST built from N random keys require ~ 2lnN compares on the ave
 </ul>
 </blockquote>
 
+2-3 tree 有一个极好的特性是: every path from root to null link has same length.
 
 {: .img_middle_mid}
 ![Binary Tree](/assets/images/posts/2015-09-05/red-black BST.png)
@@ -289,6 +290,13 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
     }
 }
 {% endhighlight %}
+
+下图是几种操作例子。
+
+{: .img_middle_mid}
+![Binary Tree](/assets/images/posts/2015-09-05/red-black BST example.png)
+
+
 
 红黑二叉搜索树的height is no more than 2lgN, N is the number of total nodes. In worst case & average case, search/insert O(lgN).
 
@@ -398,7 +406,18 @@ public class SeparateChainingHashST<Key,Value>  {
 {% endhighlight %}
 
 
+## 3 application ##
 
+搜索算法有着广泛的应用，除了搜索想要的key所对应的value，还能用于图形搜索。例如
+
+1. 1d range search;
+2. line segment intersection;
+3. kd-tree;
+4. interval search trees。
+
+
+{: .img_middle_lg}
+![Binary Tree](/assets/images/posts/2015-09-05/search application.png)
 
 
 
@@ -413,7 +432,7 @@ public class SeparateChainingHashST<Key,Value>  {
 4. 平衡二叉搜索树(红黑树)实现
 5. 哈希表实现(单独链表法 & 线性探查法)
 
-其中哈希表的搜索在最坏的情况下是~lg(N)，在最好的情况下是~(O)，是5个算法中最优的算法。但是需要注意hashCode冲突的情况。
+其中哈希表的搜索在最坏的情况下是~lg(N)，在最好的情况下是~O(1)，是5个算法中最优的算法。但是需要注意hashCode冲突的情况。
 
 
 
