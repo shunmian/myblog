@@ -424,6 +424,159 @@ public class KosarajuSharirSCC{
 
 ### 2.3 最小生成树  ###
 
+><b>Minimum Spanning Tree</b>:a minimum <b>spanning</b>(includes all vertices) <b>tree</b>(connected acyclic) is a spanning tree whose weight (the sum of the weights of its edges) is no larger than the weight of any other spanning tree.
+
+
+Given any cut in an edge- weighted graph, the crossing edge of minimum weight is in the MST of the graph.
+
+#### 2.3.1 Greedy Algorithm  ####
+
+<blockquote>
+<b>Cut</b>: A cut of a graph is a partition of its vertices into two nonempty disjoint sets. A crossing edge of a cut is an edge that connects a vertex in one set with a vertex in the other.<br/>
+<b>Cut property</b>: Given any cut in an edge- weighted graph, the crossing edge of minimum weight is in the MST of the graph.
+</blockquote>
+
+
+#### 2.3.2 API  ####
+
+首先定义Edge，包括连个顶点和一个weight。
+{% highlight java linenos %}
+public class Edge implements Comparable<Edge>{
+  
+   private final int v;
+   private final int w;
+   private final double weight;
+   
+   public Edge(int v, int w, double weight){
+      this.v = v;
+      this.w = w;
+      this.weight = weight;
+   }
+
+   public double weight(){  return weight;  }       //edge weight     
+   public int either(){  return v;  }               //one vertex
+   public int other(int vertex){                    //the other vertex
+       if      (vertex == v) return w;
+      else if (vertex == w) return v;
+      else throw new RuntimeException("Inconsistent edge");
+   }
+   
+   public int compareTo(Edge that){
+      if      (this.weight() < that.weight()) return -1;
+      else if (this.weight() > that.weight()) return +1;
+      else                                    return  0;
+   }
+   
+   public String toString(){
+     return String.format("%d-%d %.5f", v, w, weight);  
+   }
+}
+{% endhighlight %}
+
+其次实现EdgeWeightedGraph，用邻接表实现，同一个edge出现两次引用，但是只有一个Edge object.
+
+{: .img_middle_lg}
+![adjacency-list](/assets/images/posts/2015-09-06/MST adjacent list.png)
+
+
+{% highlight java linenos %}
+public class EdgeWeightedGraph{
+  
+   private final int V;             //number of vertices
+   private int E;                   //number of edges
+   private Bag<Edge>[] adj;         //adjacency lists
+   
+   public EdgeWeightedGraph(int V){
+      this.V = V;
+      this.E = 0;
+      adj = (Bag<Edge>[]) new Bag[V];
+      for (int v = 0; v < V; v++)
+         adj[v] = new Bag<Edge>();
+   }
+   
+   public int V() {  return V;  }       
+   public int E() {  return E;  }       
+   
+   public void addEdge(Edge e){         
+      int v = e.either(), w = e.other(v);
+      adj[v].add(e);
+      adj[w].add(e);
+      E++;
+   }
+   public Iterable<Edge> adj(int v){ return adj[v];  }
+   
+   public Iterable<Edge> edges(){
+     Bag<Edge> b = new Bag<Edge>();
+       for (int v = 0; v < V; v++)
+          for (Edge e : adj[v])
+             if (e.other(v) > v) b.add(e);
+  return b;
+   }
+
+}
+{% endhighlight %}
+
+
+
+
+
+最后是MST的API，其实现算法在2.3.3和2.3.4介绍。
+{% highlight java linenos %}
+public class MST {
+  public MST(EdgeWeightedGraph G);  //constructor
+  Iterable<Edge> edges();       //all of the MST edges
+  double weight()           //weight of MST
+}
+{% endhighlight %}
+
+
+#### 2.3.3 Kruskal MST 算法  ####
+
+<blockquote>
+<b>Kruskal MST Algorithm</b>: 
+<ul>
+<li>considerting edges in ascending order of weight.<br/></li>
+<li>Add next edge to trees unless doing so would create acyclic(using union-find)</li>
+</ul>
+</blockquote>
+
+
+
+{: .img_middle_lg}
+![adjacency-list](/assets/images/posts/2015-09-06/Kruskal.png)
+
+{% highlight java linenos %}
+public class KruskalMST{
+  
+   private Queue<Edge> mst;
+   
+   public KruskalMST(EdgeWeightedGraph G){
+      mst = new Queue<Edge>();
+      MinPQ<Edge> pq = new MinPQ<Edge>();
+      for (Edge e : G.edges())
+         pq.insert(e);
+      UF uf = new UF(G.V());
+      
+      while (!pq.isEmpty() && mst.size() < G.V()-1){
+         Edge e = pq.delMin();                        // Get min weight edge on pq
+         int v = e.either(), w = e.other(v);          // and its vertices.
+         if (uf.connected(v, w)) continue;            // Ignore ineligible edges.
+         uf.union(v, w);                              // Merge components.
+         mst.enqueue(e);                              // Add edge to mst.
+      }
+   }
+   
+   public Iterable<Edge> edges(){ return mst;  }
+   
+   public double weight();   
+} 
+{% endhighlight %}
+
+
+
+#### 2.3.4 Prim MST 算法  ####
+
+
 ### 2.4 最短路径 ###
 
 
