@@ -333,7 +333,7 @@ public class DirectedDFS{
 
 
 {: .img_middle_mid}
-![adjacency-list](/assets/images/posts/2015-09-06/Topological Sort.png)
+![Topological Sort](/assets/images/posts/2015-09-06/Topological Sort.png)
 
 
 1. Run depth-first search
@@ -389,7 +389,7 @@ is also strongly connected to x.</li>
 </blockquote>
 
 {: .img_middle_mid}
-![adjacency-list](/assets/images/posts/2015-09-06/Strong Connectivity.png)
+![Connectivity](/assets/images/posts/2015-09-06/Strong Connectivity.png)
 
 {% highlight java linenos %}
 public class KosarajuSharirSCC{
@@ -543,7 +543,7 @@ public class MST {
 
 
 {: .img_middle_lg}
-![adjacency-list](/assets/images/posts/2015-09-06/Kruskal.png)
+![Kruskal](/assets/images/posts/2015-09-06/Kruskal.png)
 
 {% highlight java linenos %}
 public class KruskalMST{
@@ -572,9 +572,98 @@ public class KruskalMST{
 } 
 {% endhighlight %}
 
-
-
 #### 2.3.4 Prim MST 算法  ####
+
+><b>Prim's MST Algorithm</b>: Start with any vertex as a single vertex tree; then add V-1 edges to it, always taking next (coloring black) the minimum weight edge that connects a vertex on the tree to a vertex not yet on the tree (a crossing edge for the cut de ned by tree vertices). Two versions, lazy & eager.
+
+Lazy Version.
+
+
+{: .img_middle_lg}
+![Prim lazy](/assets/images/posts/2015-09-06/prim lazy.png)
+
+{% highlight java linenos %}
+public class LazyPrimMST{
+  
+   private boolean[] marked;                        // MST vertices
+   private Queue<Edge> mst;                         // MST edges
+   private MinPQ<Edge> pq;                          // crossing (and ineligible) edges
+
+   public LazyPrimMST(EdgeWeightedGraph G){
+     pq = new MinPQ<Edge>();
+     marked = new boolean[G.V()];
+     mst = new Queue<Edge>();
+     visit(G, 0);                                   // assumes G is connected
+     
+     while (!pq.isEmpty()){
+       Edge e = pq.delMin();                        // Get lowest-weight
+       int v = e.either(), w = e.other(v);          // edge from pq.
+       if (marked[v] && marked[w]) continue;        // Skip if ineligible.
+          mst.enqueue(e);                           //Add edge to tree.
+          if (!marked[v]) visit(G, v);              //Add vertex to tree
+          if (!marked[w]) visit(G, w);              // (either v or w).
+     }
+   }
+
+
+   private void visit(EdgeWeightedGraph G, int v){  // Mark v and add to pq all edges from v to unmarked vertices.
+      marked[v] = true;
+      for (Edge e : G.adj(v))
+         if (!marked[e.other(v)]) pq.insert(e);
+   }
+   
+   public Iterable<Edge> edges(){return mst;}
+   
+   public double weight()
+}
+{% endhighlight %}
+
+Eager Version.
+
+{: .img_middle_lg}
+![Prim eager](/assets/images/posts/2015-09-06/prim eager.png)
+
+{% highlight java linenos %}
+public class EagerPrimMST{
+ 
+  private Edge[] edgeTo;                            // shortest edge from tree vertex
+  private double[] distTo;                          // distTo[w] = edgeTo[w].weight()
+  private boolean[] marked;                         // true if v on tree
+  private IndexMinPQ<Double> pq;                    // eligible crossing edges
+
+  public EagerPrimMST(EdgeWeightedGraph G){
+    edgeTo = new Edge[G.V()];
+    distTo = new double[G.V()];
+    marked = new boolean[G.V()];
+    for (int v = 0; v < G.V(); v++)
+      distTo[v] = Double.POSITIVE_INFINITY;
+    pq = new IndexMinPQ<Double>(G.V());
+    distTo[0] = 0.0;
+    pq.insert(0, 0.0);                              // Initialize pq with 0, weight 0.
+    while (!pq.isEmpty())
+      visit(G, pq.delMin());                        // Add closest vertex to tree.
+  }
+  
+  private void visit(EdgeWeightedGraph G, int v){   // Add v to tree; update data structures.
+    marked[v] = true;
+    for (Edge e : G.adj(v)){
+      int w = e.other(v);
+      if (marked[w]) continue;                      //v-w is ineligible.
+      if (e.weight() < distTo[w]){                  // Edge e is new best connection from tree to w.
+        edgeTo[w] = e;
+        distTo[w] = e.weight();
+        if (pq.contains(w)) pq.changeKey(w, distTo[w]);
+        else                pq.insert(w, distTo[w]);
+      }
+    }
+  }
+  
+  public Iterable<Edge> edges();
+  
+  public double weight();
+}
+
+{% endhighlight %}
 
 
 ### 2.4 最短路径 ###
