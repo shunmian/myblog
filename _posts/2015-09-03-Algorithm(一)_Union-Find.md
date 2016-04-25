@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Algorithm(三)： Union-Find 并查集
+title: Algorithm(1)： Union-Find 并查集
 categories: [Algorithm]
 tags: [Union-Find]
-number: [-2.2.3]
+number: [-1.1]
 fullview: false
 shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。本文介绍其实现及用其解决一个具体的Percolation问题。
 ---
@@ -192,7 +192,11 @@ public class UF_WieghtedQuickUnion extends UF{
 {: .img_middle_mid}
 ![Percolation](/assets/images/posts/2015-09-03/Union_Find_complexity.png)
 
-## 3 Percolation 问题解答 ##
+## 3 算法分析初步 ##
+
+### 3.1 八卦 ###
+
+## 4 Percolation 问题解答 ##
 
 下面我们回过头来看Percolation的问题,它给定公共API如下：
 
@@ -425,7 +429,7 @@ public class PercolationStats {
 
 
 
-## 4 总结 ##
+## 5 总结 ##
 本文用我们用Union-Find 并查集实现了Percolation threshhold p = 0.593的计算。Good Code = Algorithm + Data Structure 这句话我们有了更深入的认识。好的数据结构和算法可以降低程序的时间复杂度，使不可能的计算任务变为可能; 单单增加计算机运算速度是不能解决问题，因为同时你可以处理的数据大小也增加了。现对Week 1总结如下:
 
 1. Union-Find利用quick union + weighted + path compression 可以将Union和Find的时间复杂度从O(N)降为log<sub>2</sub>N;
