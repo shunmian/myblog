@@ -5,7 +5,7 @@ categories: [Algorithm]
 tags: [Union-Find]
 number: [-1.1]
 fullview: false
-shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。本文介绍其实现及用其解决一个具体的Percolation问题。
+shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。本文介绍其实现并借此讨论什么是好的算法。最后用其解决一个具体的Percolation问题。
 ---
 目录
 {:.article_content_title}

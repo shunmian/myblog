@@ -77,10 +77,12 @@
     padding: 2px;
     background-color:rgba(104,139,145,0.05);
 }
+
 p code{
     background-color:rgba(164,186,184,0.05);
-
+    color:rgba(164,186,184,0.5);
 }
+
 p{
     margin-top: 10px;
 }
