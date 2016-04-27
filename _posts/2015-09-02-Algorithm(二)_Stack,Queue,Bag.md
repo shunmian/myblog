@@ -210,15 +210,38 @@ public interface Iterator<Item>
 }
 {% endhighlight %}
 
+## 6 Programming Assingment: Deque and RandomizedQueue##
 
-## 6 总结 ##
+本周作业如下:
+
+Deque(可以从头尾入队出队)，RandomizedQueue(随机出队)。
+
+Deque的思路是用一个双向的`node(Item item, Node previous, Node next)`来用链表实现。
+
+RandomizedQueue的实现用数组很容易想到，用stdRandom.uniform(N)来取item，关键的问题是如何维护这个数组:
+
+1. Step 1, 容量不足double数组，容量1/4,half 数组。这样才能满足均摊时间复杂度为O(1)的要求；
+2. Step 2, 但是仔细一想dequeue的实现，随机出队一个a[i]，则在resize条件未满足前(Step 1)，数组a的中间有空的元素，那么下次dequeue，在同样的数组a下，如何剔除掉这个空的元素？方法是一直取随机数i，直到取到下一个不为null的a[i]；
+3. Step 3, enqueue策略如何选择？可以用一个iVar int tail来保存数组最后一个有效item的index，每次enqueue先判断Step1，再加到tail++。那么enqueue的是时候如何判断step1呢？是用N(item 个数)还是tail呢？答案是用tail，当tail<a.length/4的时候，resize(a.length/2)。
+
+主要思路如上，其中有一些细节需要读者仔细斟酌。下面贴一张跑分图。
+
+{: .img_middle_lg}
+![Assessment](/assets/images/posts/2015-09-02/assessment.png)
+
+
+
+
+
+
+## 7 总结 ##
 
 1. Stack：需要一个接口位，有list和array两种实现，最后给了Stack的应用栗子；
 2. Queue：重点介绍了两种衍生数据结构**Deque**和**RandomizedQueue(即Bag)**
 3. 为了增强Stack和Queue的工程实用性，介绍了泛型和可迭代接口。
 
 
-## 7 参考资料 ##
+## 8 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
 - [Visualize Algorithm](http://visualgo.net/);
 - [[ALGORITHMS] STACKS AND QUEUES](http://aaronxic.com/algorithms-week2-stacks-and-queues/#.Vx3WL6N941g);

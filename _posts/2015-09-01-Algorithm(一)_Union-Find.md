@@ -399,7 +399,7 @@ a[k] = -(a[i] + a[j])
 
 在内存已经如此廉价的今天，已经没有太大必要深究内存的占用情况，一种性价比高的方法是开启`-XX:+UseCompressedOops`选项，这个选项会把Object Reference有16bytes降到8bytes，其他的就多使用原始类型吧，详细的优化原理请参见[这里](http://btoddb-java-sizing.blogspot.hk/)
 
-## 4 Percolation 问题解答 ##
+## 4 Programming Assingment: Percolation##
 
 下面我们回过头来看Percolation的问题,它给定公共API如下：
 
@@ -438,7 +438,7 @@ public class Percolation {
 3. 我们用这个WQUUF数据结构处理了Percolation问题，并得到了概率阈值 p = 0.593；
 
 
-## 5 参考资料 ##
+## 6 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
 
 - [Visualize Algorithm](http://visualgo.net/);
