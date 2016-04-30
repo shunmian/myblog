@@ -6,6 +6,14 @@
     height: 1px;
 }
 
+.hr_short_low {
+    margin-top:5px;
+    margin-bottom:5px;
+    width: 60%;
+    opacity: 0.1;
+    height: 1px;
+}
+
 .hr_middle {
     width: 70%;
     opacity: 0.1;
@@ -22,13 +30,23 @@
     /*background: linear-gradient(to bottom, #648880, #1E5263, #5792C4);*/
 
 }
+.sidebar_img{
+    margin-top: -10%;
+}
+
 .sidebar_bio{
+    margin: auto;
+    width: 80%;
+    line-height: 200%;
 
 }
 .sidebar_header  .title {
+    margin-top: 2%;
     letter-spacing: 3px;
     /*text-transform: uppercase;*/
 }
+
+
 
 .sidebar_header  .title a{
     color: #fff;

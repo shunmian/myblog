@@ -1,7 +1,7 @@
 <!--sidebar.html-->
         <header class="sidebar_header " role="banner">
             <a href="{{site.baseurl}}/index.html">
-                <img src = "http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=150" class="img-circle img-responsive center-block" />
+                <img src = "http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=150" class="img-circle img-responsive center-block sidebar_logo sidebar_img" />
             </a>
 
 
@@ -16,7 +16,12 @@
         <div id = "bio" class="text-center sidebar_bio">
             {% if site.author.bio%}
 
-                <p>节物风光不相待，桑田碧海须臾改，<br />唯有美食和code不可辜负。</p>
+                <p>嗨，欢迎来到我的博客。<br/>
+                我是Shunmian，一名iOS开发者。<br/>
+                <hr class = "hr_short_low">
+                正在学习Algorithm，Functional Programming，Machine Learning，Data Mining 和 Cloud Computation。 
+
+                </p>
 
             {% endif %}
         </div>

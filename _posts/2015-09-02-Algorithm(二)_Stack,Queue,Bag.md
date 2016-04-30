@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Algorithm(二)：Stack(栈),Queue(队列) 
+title: Algorithm(二)： Stack 栈，Queue 队列 
 categories: [Algorithm]
 tags: [Queue, Bag, Stack, LinkedList, Array, Generics, Iterable]
-number: [-2.2.2]
+number: [-1.2]
 fullview: false
 shortinfo: 包，队列，栈是基本的数据结构，在计算机科学里有着广泛的应用。本文用链表和数组来实现包，队列和栈。借着这三个数据结构我们还介绍泛型(Generics)和可迭代(Iterable)接口。
 ---
