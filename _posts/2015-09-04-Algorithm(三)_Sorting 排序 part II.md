@@ -449,8 +449,7 @@ public static void sort(Comparable[] pq){
 
 
 
-{: .img_middle_lg}
-![Complete Binary Tree](/assets/images/posts/2015-09-04/1.png)
+
 
 
 
@@ -473,7 +472,7 @@ public static void sort(Comparable[] pq){
 
 最后用MinPQ来实现8Puzzle自动求解的问题。
 
-## 6 参考资料 ##
+## 4 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
 
 - [Visualize Algorithm](http://visualgo.net/);
