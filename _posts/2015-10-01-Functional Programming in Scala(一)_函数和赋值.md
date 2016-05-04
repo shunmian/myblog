@@ -93,7 +93,7 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 我们可以看到sqrt(2)和sqrt(4)的值都是正确的，但是当输入x很小(结果不准确)或者很大时(无限循环)该函数运行结果不正确。原因在于`isGoodEnough(guess: Double, x: Double): Boolean`这个函数不应该用绝对值比较，而应该和输入的x做相对比较(因为x很小时，0.001不够小；x很大时，不会记录小数点后3三位，无法收敛导致无限循环)，我们将其改为如下：
 
 
-{% highlight java linenos %}
+{% highlight scala linenos %}
 {
 ...
     def isGoodEnough(guess: Double, x: Double): Boolean =
@@ -120,7 +120,7 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 
 由于block可以看到上下文中的变量，因此之前的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
 
-{% highlight java linenos %}
+{% highlight scala linenos %}
 def sqrt2(x: Double): Double = {
 
     def abs(x: Double): Double = if (x < 0) -x else x
@@ -194,7 +194,7 @@ def sqrt2(x: Double): Double = {
 由于第n次阶乘的表达式的一部分(这里是 n *)都需要保留在**栈**中，每当进入一个函数调用，栈就会加一层**栈帧**，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致**栈溢出**。我们应在递归函数中**尽量使用尾递归避免栈溢出**。
 
 那么我们可以改写阶乘函数为尾递归函数吗，答案是肯定的，请看下面代码：
-{% highlight java linenos %}
+{% highlight scala linenos %}
  def factorial(n:Int):Int = {
     def factLoop(n:Int, acc:Int):Int = {
         if (n==0) acc
@@ -208,32 +208,32 @@ def sqrt2(x: Double): Double = {
 
 这个新改写的函数每次调用factLoop的时候，返回下一个factLoop的值。
 
-
-## 3 总结 ##
-
-
-再次贴上全文一开始的一张图：
+## 3 Assignment ##
 
 {: .img_middle_lg}
-![Sorting algorithm](/assets/images/posts/2015-09-04/sorting algorithm.png)
+![Assignment](/assets/images/posts/2015-10-01/assignment.png)
 
-现在再看这张图，是不是有全新的感受了，我们看到比较接近**holy sorting grail**的算法就是归并排序，快速排序和堆排序。这也就是为什么他们三个常常用来相提并论的原因，各有所长，适用于不同的场合。
++ **Pascal triangle**：递归比较简单，退出条件也很明显，分别是`c==0`和`c==r`的时候；
++ **Parenthesis Balance**：用一个`acc：Int`来存储，每遇见一个`{`+1,`}`-1。退出条件是`chars.isEmpty`或者`acc < 0`；
++ **Counting Money**稍微需要仔细思考，退出条件是`Money == 0`，和`Money < 0 || coins.isEmpty`。
 
-本文介绍了6种经典的排序方法: 
+具体代码见[这里](http://users.aims.ac.za/~mackay/sorting/sorting.html)。
 
-1. 基础排序: 选择排序和插入排序；
-2. 希尔排序(插入排序基础上);
-3. 合并排序和快速排序(分而治之);
-4. 二叉堆排序(二叉树结构)。
 
-最后用MinPQ来实现8Puzzle自动求解的问题。
+## 4 总结 ##
 
-## 4 参考资料 ##
-- [Algorithm](http://algs4.cs.princeton.edu/home/);
+本节我们对什么是函数式编程做了一个总结：
 
-- [Visualize Algorithm](http://visualgo.net/);
+1. 函数无副作用；
+2. 通过函数转换不可变数据而非改变原有数据来获取新数据；
+3. 数据围绕函数而非函数围绕数据，函数也是一等公民。
 
-- [数学之美番外篇：快排为什么样快](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/);
+通过函数和变量的声明与定义的比较，可以看出他们同样拥有**关键词**，**名称**，**类型**，**数据**，因此有理由在一个更抽象的层面将函数和变量统一对待。对于函数，**类型 + 数据(其实是函数体)**就是**匿名函数**，也就是**Block**。
 
+
+## 5 参考资料 ##
+- [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
+- [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
+- [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
 
 
