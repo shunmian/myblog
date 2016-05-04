@@ -228,6 +228,11 @@
     max-width: 80%;
 }
 
+.article_mainBody .img_middle_hg img{
+    min-width: 100%;
+    max-width: 100%;
+}
+
 .article_mainBody blockquote{
     border-left: solid 10px rgba(97,134,127,0.5);
     background-color: rgba(176,195,191,0.05);

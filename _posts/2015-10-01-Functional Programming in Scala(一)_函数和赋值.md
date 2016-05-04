@@ -48,14 +48,17 @@ shortinfo: 函数式编程(Functional Programming)。
 
 关于值替换模型，我们可以看下面这个例子，`sumOfSquare(3,4)`就是一步步将函数替换成函数的返回值**(不断赋值)**。
 
+{: .img_middle_hg}
+![evaluation](/assets/images/posts/2015-10-01/evaluation.png)
+
 + 赋值的策略有两种：**Call-By-Value(CBV)**，**Call-By-name**；
 + **CBV**先reduce argument，再evaluate Function；**CBN**use unreduced argument to evaluate Function；
 + 在Scala里，默认`x:Int`形式是CBV，如果要CBN，则用`x: =>Int`。
 + 如果一个函数CBV terminates(不会无限循环)，则CBN也terminates。反之不成立，反例请看下图。
 + `def`，定义函数的关键字，是CBN，`val`，定义变量（不可变）的关键字，是CBV。
 
-{: .img_middle_hg}
-![evaluation](/assets/images/posts/2015-10-01/evaluation.png)
+
+
 
 
 ### 2.2 Conditonals ###
