@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Functional Programming in Scala(一)：函数和赋值
+title: Functional Programming in Scala(一)：λ-演算 Part I
 categories: [Functional Programming]
-tags: [Function, Evaluation]
+tags: [λ-Calculus, Expression, Function, Application]
 number: [-2.1]
 fullview: false
 shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种截然不同的编程范式。前者数据围绕函数，后者函数围绕数据，并且对于函数副作用也有不同的要求。函数式编程将函数真正上升到和数据一样的一等公民。可是如何将函数式编程结合到OOP(面向对象编程)来抽象出更高级的语言呢(而不是命令式一个指令接着一个指令)？Scala正是为解决如何有效结合函数式编程和OOP编程而诞生的。我们跟随Martin Odersky(Scala的作者)在Coursera上的课程《Functional Programming Principles in Scala》一起学习函数式编程。
@@ -36,15 +36,96 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 
 因此如果要扎实地学好Swift，除了从Objective-C入手外，还得熟悉Scala。下面我们来看看Scala的**函数(Function)**和**赋值(Evaluation)**。  
 
-## 2 函数(Function)和赋值(Evaluation) ##
 
-### 2.1 Evaluation ###
+## 2 函数式编程的理论基础：λ-Calculus##
 
-> **λ演算(λ-Calculus)**：是一应用于研究**函数定义**、**函数应用**和**递归**的形式系统。它可以被称为最小的通用程序设计语言。它包括一条变换规则（变量替换）和一条函数定义方式，Lambda演算之通用在于，任何一个可计算函数都能用这种形式来表达和求值。因而，它是等价于图灵机的。尽管如此，Lambda演算强调的是变换规则的运用，而非实现它们的具体机器。可以认为这是一种更接近软件而非硬件的方式。Lambda演算对**函数式编程语言有巨大的影响**，比如Lisp语言、ML语言和Haskell语言。
+既然认识了函数式编程，那么你肯定会问它三个终极问题：
 
-> **值替换模型(Substituion Model)**：由于不依赖外部变量，给定**输入**函数的返回**结果永远不变**，在**λ演算的基础上**，我们可以用值替换的方式（substitution model）化繁为简，轻松得出一段程序的计算结果。
+1. 你是谁？
+2. 你从哪里来？
+3. 你到哪里去？
 
-> **赋值(Evaluation)**：函数的值替换动作。
+下面我们来聊聊函数式编程的前世今生。
+
+在上个世纪30s年代，正是美国经历大萧条的时期。经济萧条就像病毒一样，扩散到美国每一寸土地，老百姓衣不遮体，食不果腹(万恶的资本主义社会啊)。但是在美国的一个角落里，却有那么一些人免于贫瘠带来的生活上的困扰。他们每天端着一杯咖啡穿梭于宽敞的办公室，和幽静的花园小径，讨论着高深莫测的学术问题。这个角落就是Princeton大学，在这些人中，有四位专注于研究**形式系统(formal system)**的数学家叫做**Alonzo Church**，**Alan Turing**，**John von Neumann**和**Kurt Gödel**。他们的工作的共同之处在于研究**计算(Computation)**：如果我们有一台拥有无限计算能力的电脑，我们能解决什么类型的问题，是否能自动解决这些问题，是否有一些问题是在其能力范围外的？其中有一个问题是：
+
+> 不同设计的机器是否在计算能力上等价?
+
+为了回答这个问题，**Alonzo Church**在与其他人的合作中创造出一套名叫**λ-Calculus**的**形式系统**。**λ-Calculus**的本质是以函数作为输入输出的**函数**为中心的一门**编程语言**（由于那个时候计算机还没发展起来，更准确的说其实不是**编程语言**而是建立在虚拟计算机上的一套**计算规则**）。这句话我们现在来讲就是**λ-Calculus**的本质是**函数(包括一阶和高阶函数)**。
+
+同时**Alan Turing**也在进行着相近的工作，他创造出一套不同的**形式系统**：**图灵机(Turing machine)**(当时应该不叫这个名字吧，会取自己的名字么)。不久后
+
+>**λ-Calculus**和**Turing machine**被证明在计算能力上是等价的。
+**命令式编程和函数式编程分别基于图灵机和λ-Calculus发展起来**。
+因此命令式编程和函数式编程的计算能力是等价的。
+
+下面我们具体来看看**λ-Calculus**的定义：
+
+>**λ-Calculus**的中心是**&lt;expression&gt;**，它被递归定义如下：<br/>
+**&lt;expression&gt;**   := **&lt;constant&gt;** |**&lt;variable&gt;** | **&lt;function&gt;** |**&lt;application&gt;**<br/>
+**&lt;function&gt;**   := **λ&lt;variable&gt;**.**&lt;expression&gt;**<br/>
+**&lt;application&gt;**  := **&lt;expression&gt;****&lt;expression&gt;**
+
+
+
+
+### 2.1 表达式(Expression) ###
+
+其中**λ-Calculus**的核心是**&lt;expression&gt;**，它可以是这几种组合：
+
+1. **&lt;expression&gt;** 即可以是一个**&lt;constant&gt;**(常量)，一个**&lt;variable&gt;**(变量)，一个**&lt;function&gt;**，也可以是一个**&lt;application&gt;**；
+2. **&lt;function&gt;**用一个**λ**关键词，后面紧跟输入参数**&lt;variable&gt;**和函数的body**&lt;expression&gt;**，这其实就是我们熟知的匿名函数的定义；
+3. **&lt;applicaton&gt;**第一个**&lt;expression&gt;**可以是**&lt;function&gt;**，第二个**&lt;expression&gt;**可以是**&lt;variable&gt;**或者**&lt;constant&gt;**。这其实就是函数的调用。注意**λ-Calculus**的**&lt;function&gt;**只有一个输入变量**&lt;variable&gt;**。
+
+下面举个栗子：
+
+{: .img_middle_lg}
+![λ Calculus vs Scala](/assets/images/posts/2015-10-01/λ Calculus vs Scala.png)
+
+
+### 2.2 函数(Function) 和 Block(匿名函数) ###
+
+> **Block**：借用《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义“拥有自动变量（可以在block声明的语义环境里捕捉变量的状态）的匿名（使函数体(code)成为和数据(data)一样的一等公民，作为函数调用时输入的实参（argument））函数。”
+
+要理解这一点我们先看看什么是函数。其实函数和变量是一回事，定义的时候有**关键词**，有**名字**，有**类型**，有**字面值(Literal)**。匿名函数(Block)是函数的**字面值**，只不过在写匿名函数的时候需要显式注明输入输出类型，如`(x：Int):Int =>x*x`而不是只写`x*x`;由于变量的字面值可以推断其类型，因此匿名值(应该没有这个叫法吧，这里指字面值)直接写字面值即可，如3表示整型。
+
+{: .img_middle_mid}
+![function and variable](/assets/images/posts/2015-10-01/function and variable.png)
+
+由于block可以看到上下文中的变量，因此之前的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
+
+{% highlight scala linenos %}
+def sqrt2(x: Double): Double = {
+
+    def abs(x: Double): Double = if (x < 0) -x else x
+
+    def sqrtIter(guess: Double): Double =
+      if (isGoodEnough(guess)) guess
+      else sqrtIter(improved(guess))
+
+    def isGoodEnough(guess: Double): Boolean =
+      abs(guess * guess - x) / x < 0.000001
+
+    def improved(guess: Double): Double =
+      (guess + x / guess) / 2
+
+    sqrtIter(1)
+  }                                        
+
+  sqrt2(2)                                 //> res5: Double = 1.4142135623746899
+  sqrt(4)                                  //> res6: Double = 2.000609756097561
+  sqrt(1e-6)                               //> res7: Double = 0.0010000001533016628
+  sqrt(1e60)                               //> res8: Double = 1.0000788456669446E30
+
+{% endhighlight %}
+
+### 2.3 赋值(Application) ###
+
+赋值英文有些地方用Evaluation可能更准确。
+
+> **值替换模型(Substituion Model)**：由于不依赖外部变量，给定**输入**函数的返回**结果永远不变**，在**λ演算的基础上**，我们可以用值替换的方式（substitutionmodel）化繁为简，轻松得出一段程序的计算结果。
+
+> **赋值(Application)**：函数的值替换动作，即**λ-Calculus**定义里的**&lt;application&gt;**，也就是**&lt;function&gt;** 的调用。
 
 关于值替换模型，我们可以看下面这个例子，`sumOfSquare(3,4)`就是一步步将函数替换成函数的返回值**(不断赋值)**。
 
@@ -57,11 +138,7 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 + 如果一个函数CBV terminates(不会无限循环)，则CBN也terminates。反之不成立，反例请看下图。
 + `def`，定义函数的关键字，是CBN，`val`，定义变量（不可变）的关键字，是CBV。
 
-
-
-
-
-### 2.2 Conditonals ###
+### 2.4 Conditonals ###
 
 Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿方法计算平方根`sqrt(x: Double):Double`：
 
@@ -112,45 +189,11 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 {% endhighlight %}
 此时运行结果是正确的。
 
-### 2.3 Function and Blocks###
-
-> **Block**：借用《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义“拥有自动变量（可以在block声明的语义环境里捕捉变量的状态）的匿名（使函数体(code)成为和数据(data)一样的一等公民，作为函数调用时输入的实参（argument））函数。”
-
-要理解这一点我们先看看什么是函数。其实函数和变量是一回事，定义的时候有**关键词**，有**名字**，有**类型**，有**字面值(Literal)**。匿名函数(Block)是函数的**字面值**，只不过在写匿名函数的时候需要显式注明输入输出类型，如`(x：Int):Int =>x*x`而不是只写`x*x`;由于变量的字面值可以推断其类型，因此匿名值(应该没有这个叫法吧，这里指字面值)直接写字面值即可，如3表示整型。
-
-{: .img_middle_mid}
-![function and variable](/assets/images/posts/2015-10-01/function and variable.png)
-
-由于block可以看到上下文中的变量，因此之前的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
-
-{% highlight scala linenos %}
-def sqrt2(x: Double): Double = {
-
-    def abs(x: Double): Double = if (x < 0) -x else x
-
-    def sqrtIter(guess: Double): Double =
-      if (isGoodEnough(guess)) guess
-      else sqrtIter(improved(guess))
-
-    def isGoodEnough(guess: Double): Boolean =
-      abs(guess * guess - x) / x < 0.000001
-
-    def improved(guess: Double): Double =
-      (guess + x / guess) / 2
-
-    sqrtIter(1)
-  }                                        
-
-  sqrt2(2)                                 //> res5: Double = 1.4142135623746899
-  sqrt(4)                                  //> res6: Double = 2.000609756097561
-  sqrt(1e-6)                               //> res7: Double = 0.0010000001533016628
-  sqrt(1e60)                               //> res8: Double = 1.0000788456669446E30
-
-{% endhighlight %}
 
 
 
-### 2.4 Tail Recursion ###
+
+### 2.5 Tail Recursion ###
 
 要理解尾递归得先理解递归，那么什么是递归呢？
 
@@ -225,13 +268,15 @@ def sqrt2(x: Double): Double = {
 
 ## 4 总结 ##
 
-本节我们对什么是函数式编程做了一个总结：
+本节我们首先对什么是函数式编程做了一个总结：
 
 1. 函数无副作用；
 2. 通过函数转换不可变数据而非改变原有数据来获取新数据；
 3. 数据围绕函数而非函数围绕数据，函数也是一等公民。
 
-通过函数和变量的声明与定义的比较，可以看出他们同样拥有**关键词**，**名称**，**类型**，**字面值**，因此有理由在一个更抽象的层面将函数和变量统一对待。对于函数，**类型 + 数据(其实是函数体)**就是**匿名函数**，也就是**Block**。
+在这基础上，理解了**λ-Calculus**作为函数式编程理论基础的前世今生。**λ-Calculus**里最重要的3个概念是**&lt;expression&gt;**，**&lt;function&gt;**， **&lt;application&gt;**。**&lt;function&gt;**就是函数，**&lt;application&gt;**可以理解成函数调用。以函数为基础的**λ-Calculus**和以操作为基础的**图灵机**在计算能力上被证明是等价的，任何计算形式都可以被他们实现。现在的**函数式编程**和**命令式编程**正是基于**λ-Calculus**和**图灵机**发展过来。函数式编程的未来发展方向是和OOP结合，这也就是Scala背后的设计哲学。
+
+对于函数，通过函数和变量的声明与定义的比较，可以看出他们同样拥有**关键词**，**名称**，**类型**，**字面值**，因此有理由在一个更抽象的层面将函数和变量统一对待。函数中**类型 + 数据(其实是函数体)**就是**匿名函数**，也就是**Block**。
 
 
 ## 5 参考资料 ##

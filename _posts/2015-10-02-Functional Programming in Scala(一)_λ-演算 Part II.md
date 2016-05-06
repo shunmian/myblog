@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Functional Programming in Scala(二)：高阶函数和柯里化
+title: Functional Programming in Scala(一)：λ-演算 Part II
 categories: [Functional Programming]
-tags: [High Order Function, Curring]
+tags: [High Order Function, Currying]
 number: [-2.2]
 fullview: false
 shortinfo: 什么是λ-Calculus，函数式编程的理论基础是什么，什么是高阶函数, 为什么有Currying, 函数式编程为什么需要单参数函数？本文将为您抽丝剥茧，一一梳理。
@@ -161,19 +161,21 @@ sum((x:Int)=> x*x*x)(1,3)                           //36
 
 为了回答这个问题，**Alonzo Church**在与其他人的合作中创造出一套名叫**λ-Calculus**的**形式系统**。**λ-Calculus**的本质是以函数作为输入输出的**函数**为中心的一门**编程语言**（由于那个时候计算机还没发展起来，更准确的说其实不是**编程语言**而是建立在虚拟计算机上的一套**计算规则**）。这句话我们现在来讲就是**λ-Calculus**的本质是**函数(包括一阶和高阶函数)**。
 
-同时**Alan Turing**也在进行着相近的工作，他创造出一套不同的**形式系统**：**图灵机(Turing machine)**(当时应该不叫这个名字吧，会取自己的名字么)。不久后**λ-Calculus**和**Turing machine**被证明在计算能力上是等价的。
+同时**Alan Turing**也在进行着相近的工作，他创造出一套不同的**形式系统**：**图灵机(Turing machine)**(当时应该不叫这个名字吧，会取自己的名字么)。不久后
 
->**命令式编程和函数式编程分别基于图灵机和λ-Calculus发展起来**。
+>**λ-Calculus**和**Turing machine**被证明在计算能力上是等价的。
+**命令式编程和函数式编程分别基于图灵机和λ-Calculus发展起来**。
+因此命令式编程和函数式编程的计算能力是等价的。
 
-因此命令式编程和函数式编程的计算能力是等价的。我们再接着看。那么什么是**λ-Calculus**呢？
+我们再接着看。那么什么是**λ-Calculus**呢？回顾一下上篇[文章]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_函数和赋值.html#functionevaluation)的对它的定义：
 
 >**λ-Calculus**的中心是**&lt;expression&gt;**，它被递归定义如下：<br/>
-**&lt;expression&gt;**   := **&lt;name&gt;** | **&lt;Function&gt;** |**&lt;application&gt;**<br/>
+**&lt;expression&gt;**   := **&lt;name&gt;** | **&lt;function&gt;** |**&lt;application&gt;**<br/>
   **&lt;function&gt;**   := **λ&lt;name&gt;**.**&lt;expression&gt;**<br/>
 **&lt;application&gt;**  := **&lt;expression&gt;****&lt;expression&gt;**
 
 
-其中**&lt;expression&gt;** 即可以是一个**&lt;name&gt;**，一个**&lt;Function&gt;**，也可以是一个**&lt;application&gt;**。**&lt;name&gt;**是variable(变量)；**&lt;applicaton&gt;**更像是一个**&lt;function&gt;**的调用，即第一个**&lt;expression&gt;**是**&lt;function&gt;**，第二个**&lt;expression&gt;**是**&lt;name&gt;**(变量)。你可以看到λ-Calculus的**&lt;function&gt;**只有一个输入变量**&lt;name&gt;**。
+其中**&lt;expression&gt;** 即可以是一个**&lt;name&gt;**，一个**&lt;function&gt;**，也可以是一个**&lt;application&gt;**。**&lt;name&gt;**是variable(变量)；**&lt;applicaton&gt;**更像是一个**&lt;function&gt;**的调用，即第一个**&lt;expression&gt;**是**&lt;function&gt;**，第二个**&lt;expression&gt;**是**&lt;name&gt;**(变量)。你可以看到λ-Calculus的**&lt;function&gt;**只有一个输入变量**&lt;name&gt;**。
 
 
 那么以上这套形式系统的定义有什么好处呢。

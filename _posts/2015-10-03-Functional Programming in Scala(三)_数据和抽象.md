@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Functional Programming in Scala(三)：数据和抽象
+title: Functional Programming in Scala(二)：数据和抽象
 categories: [Functional Programming]
 tags: [High Order Function, Curring]
 number: [-2.2]
