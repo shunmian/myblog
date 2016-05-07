@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Functional Programming in Scala(一)：λ-演算 Part I
+title: Functional Programming in Scala(一)：λ-演算 Part I：表达式，函数和赋值
 categories: [Functional Programming]
 tags: [λ-Calculus, Expression, Function, Application]
 number: [-2.1]
@@ -26,10 +26,10 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 
 命令式编程和函数式编程的区别有如下几点：
 
-1. 从**数据的可变性**角度，命令式编程专注于**逐步更改可变数据**，函数式编程专注于**转换不可变数据**。但函数式编程也可以保存state，只不过他们不用变量来保存，而是用函数的输入参数保存(存在函数调用的栈中)；
+1. 从**数据的可变性**角度，命令式编程专注于**逐步更改可变数据**，函数式编程专注于**转换不可变数据**。但函数式编程也可以保存state，只不过他们不用变量来保存，而是用函数的输入参数保存(存在函数调用的栈中)。同时variable在命令式编程中更是一个存储数据的容器，可以更改，而variable在函数式编程中只是数据的一个名字，不能更改。
 2. 从**函数的副作用**角度，命令式编程的Function允许**有副作用**，比如有一个函数`trimFileNames()`，从当前文件夹读入子文件夹，处理它们的名字(去掉空格)，然后存储文件夹名字。在这个过程中，`trimFileNames()`涉及如何获取input data，处理input data 得到result data，最后如何利用result data。函数式编程的Function**不允许有副作用**，它不关心(也不用关心)如何获取input data和如何利用result data，他只要有一个映射，将input data 转成 result data 返回即可。
 4. 从**数据和函数的关系**角度，命令式编程是**函数围绕数据**，对数据进行读，改，存；函数式编程是**数据围绕函数**，函数是一等公民。
-5. 从**多线程**角度，命令式编程由于数据的可变性，因此不同线程对同一个全局变量的赋值会导致不同的结果**(Non-deterministic = Parallel Programming + Mutable data)**，不同线程之间的纠缠会令编程异常困难，但是同时对于存储空间的要求并不高，因为数据可以共享。函数式编程由于数据的不可变性，因此不同线程对于**不可变数据共享是安全的**，函数式编程是处理多线程的一个有效编程范式。
+5. 从**多线程**角度，命令式编程由于数据的可变性，因此不同线程对同一个全局变量的赋值会导致不同的结果**(Non-deterministic = Parallel Programming + Mutable data)**，不同线程之间的纠缠会令编程异常困难，但是同时对于存储空间的要求并不高，因为数据可以共享。函数式编程由于数据的不可变性，因此不同线程对于**不可变数据共享是安全的**，函数式编程是处理多线程的一个有效编程范式。也就是说从**时间的角度**，命令式编程将时间作为一个变量加入到程序里(改变量)，而函数式编程将时间排除在外(任何时候你调用一个函数，只要输入一样，输出肯定一样)。
 6. 函数式编程可以使得很多OOP中**设计模式**所需要解决的问题全然消失。因此**设计模式**对于函数式是个伪命题，就像跟开飞机的讨论开汽车面临的路面交通拥挤一样。
 
 如何将OOP和命令式编程结合已经是上个世纪50s年代的事情了，到现在21世纪的20s年代，OOP已经发展的非常成熟了，我们现在用的Java，Objective-C，C++，C#都是这一结合的典范。如何将OOP和函数式编程结合却是刚刚崭露头角的编程的研究方向。Scala语言正是基于这一理念发展起来，而现在苹果开发的Swift更是将OOP，命令式编程与函数式编程结合起来（Swift的函数式语法和理念和Scala相似，由于Scala先于Swift存在，因此有理由相信Swift是借鉴于Scala）。
@@ -62,7 +62,7 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 下面我们具体来看看**λ-Calculus**的定义：
 
 >**λ-Calculus**的中心是**&lt;expression&gt;**，它被递归定义如下：<br/>
-**&lt;expression&gt;**   := **&lt;constant&gt;** |**&lt;variable&gt;** | **&lt;function&gt;** |**&lt;application&gt;**<br/>
+**&lt;expression&gt;**   := **&lt;const&gt;** |**&lt;variable&gt;** | **&lt;function&gt;** |**&lt;application&gt;**<br/>
 **&lt;function&gt;**   := **λ&lt;variable&gt;**.**&lt;expression&gt;**<br/>
 **&lt;application&gt;**  := **&lt;expression&gt;****&lt;expression&gt;**
 
@@ -73,9 +73,9 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 
 其中**λ-Calculus**的核心是**&lt;expression&gt;**，它可以是这几种组合：
 
-1. **&lt;expression&gt;** 即可以是一个**&lt;constant&gt;**(常量)，一个**&lt;variable&gt;**(变量)，一个**&lt;function&gt;**，也可以是一个**&lt;application&gt;**；
+1. **&lt;expression&gt;** 即可以是一个**&lt;const&gt;**(常量)，一个**&lt;variable&gt;**(变量)，一个**&lt;function&gt;**，也可以是一个**&lt;application&gt;**；
 2. **&lt;function&gt;**用一个**λ**关键词，后面紧跟输入参数**&lt;variable&gt;**和函数的body**&lt;expression&gt;**，这其实就是我们熟知的匿名函数的定义；
-3. **&lt;applicaton&gt;**第一个**&lt;expression&gt;**可以是**&lt;function&gt;**，第二个**&lt;expression&gt;**可以是**&lt;variable&gt;**或者**&lt;constant&gt;**。这其实就是函数的调用。注意**λ-Calculus**的**&lt;function&gt;**只有一个输入变量**&lt;variable&gt;**。
+3. **&lt;applicaton&gt;**第一个**&lt;expression&gt;**可以是**&lt;function&gt;**，第二个**&lt;expression&gt;**可以是**&lt;variable&gt;**或者**&lt;const&gt;**。这其实就是函数的调用。注意**λ-Calculus**的**&lt;function&gt;**只有一个输入变量**&lt;variable&gt;**。
 
 下面举个栗子：
 
@@ -85,14 +85,22 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 
 ### 2.2 函数(Function) 和 Block(匿名函数) ###
 
-> **Block**：借用《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义“拥有自动变量（可以在block声明的语义环境里捕捉变量的状态）的匿名（使函数体(code)成为和数据(data)一样的一等公民，作为函数调用时输入的实参（argument））函数。”
+在**λ-Calculus**里，我们定义了**Primitive Data Type**(int，doulbe，boolean等)和**Primitive Procedure**(， +，-，*，/，和[conditionals]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#conditonals)）。如何运用Primitive Procedure来创造Compound Procedure从而可以更模块化，更抽象化地提高语言的表达能力呢？这个时候我们就要用到函数了。
 
-要理解这一点我们先看看什么是函数。其实函数和变量是一回事，定义的时候有**关键词**，有**名字**，有**类型**，有**字面值(Literal)**。匿名函数(Block)是函数的**字面值**，只不过在写匿名函数的时候需要显式注明输入输出类型，如`(x：Int):Int =>x*x`而不是只写`x*x`;由于变量的字面值可以推断其类型，因此匿名值(应该没有这个叫法吧，这里指字面值)直接写字面值即可，如3表示整型。
+>**Function**：the compound procedure based on primitive procedures to improve modularity，conceptual level and expressive ability of the language.
+
+因此函数就是复合型基础操作。
+
+其实函数和变量在形式上是一回事，定义的时候有**关键词**，有**名字**，有**类型**，有**字面值(Literal)**。匿名函数(Block)是函数的**字面值**，只不过在写匿名函数的时候需要显式注明输入输出类型，如`(x：Int):Int =>x*x`而不是只写`x*x`;由于变量的字面值可以推断其类型，因此匿名值(应该没有这个叫法吧，这里指字面值)直接写字面值即可，如3表示整型。
 
 {: .img_middle_mid}
 ![function and variable](/assets/images/posts/2015-10-01/function and variable.png)
 
-由于block可以看到上下文中的变量，因此之前的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
+接下来我们来看看Block。
+
+> **Block**：借用《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义“拥有自动变量（可以在block声明的语义环境里捕捉变量的状态）的匿名（使函数体(code)成为和数据(data)一样的一等公民，作为函数调用时输入的实参（argument））函数。”
+
+由于block可以看到上下文中的变量，因此[2.4Conditionals]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#conditonals)中的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
 
 {% highlight scala linenos %}
 def sqrt2(x: Double): Double = {
@@ -274,7 +282,7 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 2. 通过函数转换不可变数据而非改变原有数据来获取新数据；
 3. 数据围绕函数而非函数围绕数据，函数也是一等公民。
 
-在这基础上，理解了**λ-Calculus**作为函数式编程理论基础的前世今生。**λ-Calculus**里最重要的3个概念是**&lt;expression&gt;**，**&lt;function&gt;**， **&lt;application&gt;**。**&lt;function&gt;**就是函数，**&lt;application&gt;**可以理解成函数调用。以函数为基础的**λ-Calculus**和以操作为基础的**图灵机**在计算能力上被证明是等价的，任何计算形式都可以被他们实现。现在的**函数式编程**和**命令式编程**正是基于**λ-Calculus**和**图灵机**发展过来。函数式编程的未来发展方向是和OOP结合，这也就是Scala背后的设计哲学。
+在这基础上，我们回顾了作为函数式编程理论基础的**λ-Calculus**。**λ-Calculus**里最重要的3个概念是**&lt;expression&gt;**，**&lt;function&gt;**， **&lt;application&gt;**。**&lt;function&gt;**就是函数，**&lt;application&gt;**可以理解成函数调用。以函数为基础的**λ-Calculus**和以操作为基础的**图灵机**在计算能力上被证明是等价的，任何计算形式都可以被他们实现。现在的**函数式编程**和**命令式编程**正是基于**λ-Calculus**和**图灵机**发展过来。函数式编程的未来发展方向是和OOP结合，这也就是Scala背后的设计哲学。
 
 对于函数，通过函数和变量的声明与定义的比较，可以看出他们同样拥有**关键词**，**名称**，**类型**，**字面值**，因此有理由在一个更抽象的层面将函数和变量统一对待。函数中**类型 + 数据(其实是函数体)**就是**匿名函数**，也就是**Block**。
 
