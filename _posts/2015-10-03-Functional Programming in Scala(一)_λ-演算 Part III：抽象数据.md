@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Functional Programming in Scala(一)：λ-演算 Part III：抽象数据 
+title: FP in Scala(一)：λ-演算 Part III：抽象数据 
 categories: [Functional Programming]
 tags: [Data Abstraction]
 number: [-2.1]

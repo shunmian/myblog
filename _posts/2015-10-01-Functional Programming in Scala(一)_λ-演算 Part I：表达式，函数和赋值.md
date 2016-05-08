@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Functional Programming in Scala(一)：λ-演算 Part I：表达式，函数和赋值
+title: FP in Scala(一)：λ-演算 Part I：表达式，函数和赋值
 categories: [Functional Programming]
 tags: [λ-Calculus, Expression, Function, Application]
 number: [-2.1]

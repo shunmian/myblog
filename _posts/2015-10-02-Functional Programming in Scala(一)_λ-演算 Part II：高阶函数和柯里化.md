@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Functional Programming in Scala(一)：λ-演算 Part II：高阶函数和柯里化
+title: FP in Scala(一)：λ-演算 Part II：高阶函数和柯里化
 categories: [Functional Programming]
 tags: [High Order Function, Currying]
 number: [-2.1]
@@ -146,7 +146,7 @@ sum((x:Int)=> x*x*x)(1,3)                           //36
 
 {% endhighlight %}
 
-对于为什么有Currying的存在，结合[上篇文章]({{ site.baseurl}}/http://localhost:4000/functional%20programming/2015/10/02/Functional-Programming-in-Scala(%E4%B8%80)_%CE%BB-%E6%BC%94%E7%AE%97-Part-II.html#calculus)对**λ-Calculus**的介绍，我们来整理下思路：
+对于为什么有Currying的存在，结合[上篇文章]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#calculus)对**λ-Calculus**的介绍，我们来整理下思路：
 
 1. λ calculus可以完成所有的计算，它是建立在函数基础上；
 2. λ calculus的重要形式之一是函数只能是单参数；
