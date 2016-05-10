@@ -367,15 +367,11 @@ trait Movable{
 这里暂且不表，具体请先参见[Objective-C的runtime系列]({{ site.baseurl}}/objective-c/2016/03/14/OC-Runtime(一)_Sending-Message.html)。
 
 
-## 4. 函数式特性的体现 ##
-
-### 4.1 Recursion && Immutable ###
-
-### 4.2 Pattern Match ###
+## 4. 函数式特性的体现:Pattern Matching ##
 
 **pattern match**是Scala为了避免为同一类添加一个新方法导致大量修改子类。由于**OOP和λ-Calculus**结合的函数式(递归)特性催生了这一**pattern match**模式。下面我们以一个算术表达式为例子(有Number，表示数字；Sum，有左Operand和右Operand)，逐步理解**pattern match**的来历，优点及不足。
 
-#### 4.2.1 Decomposition ####
+#### 4.1 OOP Decomposition ####
 
 >**Object-oriented decomposition**： breaks a large system down into progressively smaller classes or objects that are responsible for some part of the problem domain。
 
@@ -495,30 +491,143 @@ object ExprTest extends App{
 
 </ol>
 
-因此我们总结一下以上三种方法。
+
+
+#### 4.2 Pattern Match 语法 ####
 
 {: .img_middle_lg}
-![3 way compare](/assets/images/posts/2015-10-04/3 way compare.png)
+![why pattern matching](/assets/images/posts/2015-10-04/why pattern matching.png)
+
+我们来对前面的问题做一个小结，我们的任务是想要同时在**扩展子类**和**扩展接口方法**(接口方法指的是适合所有子类，定义在接口里，而具体实现需要access subclass's own method implementation，即**子类方法**)上获取一个普适的方便的方法：
+
+1. 第一种方法，是将子类**classificatoin**和**子类方法**全部声明在接口中，这样做的弊端是产生了很多不必要的方法，**原有方法的实现**和**扩展类的个数**呈**平方**关系，这还不包括**扩展新的接口方法**，因此这种方法效率极其低下，耦合太紧；
+2. 第二种non-solution，在**接口方法**里用**type tests**和**type casts**分别调用**子类方法**。这样如果**扩展子类**只需要在新子类中自己实现相应的**接口方法**调用的**子类方法**，然后在**接口**方法里增加对于这个新的子类的**type tests**和**type casts**。这样做相比于第一个方法貌似灵活了许多，但是却是**low-level**和**unsafe**的；
+3. 第三种方法是OOP的decomposition，这其实是我们现在对**接口**的最常用的方法。现在看起来理所当然的方法，但是当我们一步步从这之前走到decomposition所要比较和改进的思路不是那么容易的。OOP的decomposition即在接口里定义**接口方法**，然后在**子类**中直接实现。如果需要**扩展子类**，只需要在子类中实现已有的**接口方法**；如果需要**扩展接口方法**，只需要在接口里**定义新接口方法**，然后分别在**子类里增加实现**。这样我们将**扩展子类**和**扩展接口方法**解耦，使得OOP的Class有着灵活的扩展性。但是对于**扩展接口方法**我们能否做的更好呢？下面我们看看**Pattern Match**。
+
+先上代码。
 
 
 
-#### 4.2.2 Pattern Match 语法 ####
+{% highlight scala linenos %}
 
-#### 4.2.3 Pattern Match 例子 ####
+object ExprTest extends App{
+  trait Expr
+  case class Number(n:Int) extends Expr
+  case class Sum(e1:Expr,e2:Expr) extends Expr
+  
+  /* implicit define the companion factory method,Number(2) would be Number.apply(2). No need to use new Number(2) anymore
+    object Number{
+    def apply(n:Int) = new Number(n)
+  }
+  
+  object Sum{
+    def apply(e1:Expr,e2:Expr) = new Sum(e1,e2)
+  }
+  */
+  
+  //pattern match 
+  def eval(e:Expr):Int = e match{
+    case Number(n) => n
+    case Sum(e1,e2) => eval(e1) + eval(e2)
+  }  
+  
+  def show(e:Expr):String = e match{
+    case Number(n) => n.toString()
+    case Sum(e1,e2) => "( " + show(e1) + " + " + show(e2) + " )"
+  }
+  
+  val x = Sum(Number(1), Number(2))
+  println(show(x))
+}
+
+{% endhighlight %}
+
+我们来一一解释：
+
+1. 首先定义了一个接口 Expr，然后显示表示这个接口的子类是一个所有需要的子类的**枚举**，关键词是**case**。在Scala里这就隐式声明了各个需要子类的工厂方法，当你调用`Number(2)`的时候，会被转换成`Number.apply(2)`(apply的实现就是`new Number(n)`，即new了一个新的Number实例)。
+
+2.然后在接口里直接实现了接口方法，用的就是**Pattern Match**。枚举分流接口方法的子类类型，这里可以看到有在`Sum`里有递归调用，这是**函数式的体现**。
+
+3. 如果我们需要**扩展接口方法**，比如增加一个`Show`的接口方法，同样的使用**Pattern Match**。这样对比与OOP的decomposiont的**扩展接口方法**，可以看到更加简洁方便(不需要在每一个子类中分别实现**接口方法**)。
+
+>因此**Pattern Matching**可以说是函数式OOP的核心(递归调用)，是对命令式OOP接口decompostion的一个提升。**Pattern Matching**建立在scala的**trait**可以有method的实现，和函数式的递归基础上。
+
+**Pattern Matching**的语法如下图
+
+{: .img_middle_lg}
+![pattern matching](/assets/images/posts/2015-10-04/pattern matching.png)
+
+#### 4.3 Pattern Match 例子 ####
+
+现在我们将上面这个例子重新改写，将pattern matching 封装在`Expr`里。
+
+{% highlight scala linenos %}
+object ExprTest extends App {
+  //将pattern matching 封装在trait里
+  trait Expr {
+    //pattern match 
+    def eval(): Int = this match {
+      case Number(n)   => n
+      case Sum(e1, e2) => e1.eval + e2.eval
+    }
+
+    def show(e: Expr): String = e match {
+      case Number(n)   => n.toString()
+      case Sum(e1, e2) => "( " + show(e1) + " + " + show(e2) + " )"
+    }
+  }
+  case class Number(n: Int) extends Expr
+  case class Sum(e1: Expr, e2: Expr) extends Expr
+
+  /* implicit define the companion factory method,Number(2) would be Number.apply(2). No need to use new Number(2) anymore
+    object Number{
+    def apply(n:Int) = new Number(n)
+  }
+  
+  object Sum{
+    def apply(e1:Expr,e2:Expr) = new Sum(e1,e2)
+  }
+  */
+
+  val x = Sum(Number(1), Number(2)).eval()
+  println(x)
+
+}
+
+{% endhighlight %}
+
+这就是`Expr`的最终的实现形式，如果需要**扩展子类**和**扩展接口方法**，聪明的你，肯定知道怎么做了^_^。
+
+### 4.4 Pattern Matching vs OOP decomposition ###
+
+{: .img_middle_lg}
+![pattern matching vs oop decompostion](/assets/images/posts/2015-10-04/pattern matching vs oop decompostion.png)
+
+**Pattern Maching**和**OOP Decompostion**各有优劣，那么在我们实际编程中，该如何选择呢：
+
++ 如果更多的是**扩展子类**，则用**OOP Decompostion**；
++ 如果更多的是**扩展接口方法**，则用**Pattern Matching**
+
+## 5 总结 ##
+
+当**OOP**遇上**λ-Calculus**，Scala给出了自己的实现方案：
+
+1. 万物皆类。**Primitive Data**，**Compound Data**，**Primitive Procedure**，**Compound Procedture(Function)**都是类。
+2. 函数式的体现不仅在于将函数也表示成类，而且在于实现**Data**的时候优先考虑递归和用**Pattern Matching**更方便的将接口实现用于**扩展接口方法**。当然函数式体现还体现在**Data**实现里的immutable特性。
+
+最后将本节内容总结成一张图。
+
+{: .img_middle_lg}
+![OOP with λ-Calculus summary](/assets/images/posts/2015-10-04/OOP with λ-Calculus summary.png)
 
 
 
-
-
-{: .img_middle_mid}
-![Currying](/assets/images/posts/2015-10-02/Currying.png)
-
-## 5 参考资料 ##
+## 6 参考资料 ##
 - [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
 - [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
 - [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
 - [Programming Languages: Lambda Calculus](https://www.youtube.com/watch?v=v1IlyzxP6Sg);
 - [Functional Programming For The Rest of Us](http://www.defmacro.org/ramblings/fp.html);
-
+- [Scala Functions vs Methods](http://jim-mcbeath.blogspot.hk/2009/05/scala-functions-vs-methods.html);
 
 

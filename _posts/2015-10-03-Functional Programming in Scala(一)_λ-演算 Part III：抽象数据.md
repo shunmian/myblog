@@ -82,8 +82,68 @@ object Main extends App {
 
 这个例子很好的诠释了**Compound Data**，即基础型数据类型组合起来的新的数据类型，c语言里的结构体就是**Compound Data**。
 
+## 3. Assignment ##
 
-## 3. λ-Calculus总结##
+这次作业我们先看二叉堆用函数式如何实现。
+{% highlight scala linenos %}
+object Insets extends App{
+  val t1 = new NonEmpty(4, new Empty, new Empty)
+  val t2 = t1.incl(3)
+  
+  println(t1)
+  println(t2)
+}
+
+
+abstract class Inset{
+  def contains(x:Int):Boolean
+  def incl(x:Int):Inset
+}
+
+class Empty extends Inset{
+  def contains(x:Int):Boolean = false
+  def incl(x:Int):Inset = new NonEmpty(x, new Empty, new Empty)
+  override def toString():String = "." 
+}
+
+class NonEmpty(elem:Int, left:Inset, right: Inset) extends Inset{
+    def contains(x:Int):Boolean = {
+      if(x < elem) left.contains(x)
+      else if (x > elem) right.contains(x)
+      else true
+    }
+    
+    def incl(x:Int):Inset = {
+      if(x < elem) new NonEmpty(elem, left.incl(x), right)
+      else if(x > elem) new NonEmpty(x, left, right.incl(x))
+      else this
+    }
+    override def toString():String = "{" + left + elem + right + "}"  
+}
+{% endhighlight %}
+
+这里比较tricky的地方是如何理解union操作，递归何时终止呢？
+
+{: .img_middle_lg}
+![union1](/assets/images/posts/2015-10-03/union1.png)
+
+每一次递归，都会减少一个`elem`到`incl(elem)`操作，因此递归最后会到`Empty`，也就是退出条件。显然，按照这样的思路，我们可以有好几种实现，`left`和`right`交换是一样的，但是`left`和`right`先`union`还是`left`或`right`先`union other`却有着本质的不同。我们来比较一下
+
+{: .img_middle_lg}
+![union comparision](/assets/images/posts/2015-10-03/union comparision.png)
+
+其中<b>S<sub>n</sub></b>是一个有**n**个元素的**Inset**，**u**表示`union`操作。表格里的数字是`union`调用的次数，我们可以看到它只和<b>S<sub>n</sub></b>中的**n**有关，因此我们用**T(N)**表示<b>S<sub>n</sub></b><b>u</b><b>S<sub>M</sub></b>所需要的时间，**T(0) = 1**，也就是`Empty`的`union`操作。
+
+对于第一种实现((LuR)uO)inclE，假设L包含M个元素，则R包含N-M-1个元素，LuR返回N-1个元素。所以T(AuO) = T(N) = T(M) + T(N-1) + 1，即LuR需要T(M)的时间，然后返回N-1的Inset继续。最好的情况是M为0，则T(N) ~ O(N)；最坏的情况是 M = N-M-1,T(N) ~ O(2<sup>N</sup>)。
+
+对于第二种实现Lu(Ru(OinclE))，T(AuO) = T(N) = T(M) + T(N-M-1) + 1。则T(N) ~ O(N)。
+
+因此第二种情况要优于第一种情况，课程里的`union`的实现效率其实是非常低的。所以在作业中要用第二种实现。除此之外，assignment中剩下的就是细节问题了，具体实现见[这里](https://github.com/shunmian/-2_Functional-Programming-in-Scala)。
+
+
+
+
+## 4. λ-Calculus总结##
 
 到现在为止，我们都还没有涉及OOP的概念，在non-OOP的前提下，我们实现了如下关于函数和数据类型的概念：
 
@@ -109,6 +169,7 @@ object Main extends App {
 - [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
 - [Programming Languages: Lambda Calculus](https://www.youtube.com/watch?v=v1IlyzxP6Sg);
 - [Functional Programming For The Rest of Us](http://www.defmacro.org/ramblings/fp.html);
+- [Scala Bility](http://www.socouldanyone.com/2014/12/scala-bility.html);
 
 
 
