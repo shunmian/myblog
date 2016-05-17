@@ -608,7 +608,36 @@ object ExprTest extends App {
 + 如果更多的是**扩展子类**，则用**OOP Decompostion**；
 + 如果更多的是**扩展接口方法**，则用**Pattern Matching**
 
-## 5 总结 ##
+
+## 5 Assignment ##
+
+本周作业是霍夫曼编码，其中的难点是如何用tuple来做pattern matching来简化实现，举个具体的例子，`def decode(tree: CodeTree, bits: List[Bit]): List[Char]`将整数链表转换成字母链表。用`tuple`只需要4个pattern。但是需要格外小心的是4个pattern的先后顺序，一个实用的经验是从一次完整的函数调用来排列case的顺序。比如这里，对于一个正常的`tree:CodeTree`，如果`bits0`是0开头，则进入左边的`subtree`，1开头则进入右边的`subtree`；如果碰到叶子节点，则将`char`加入到`acc`，然后从头开始调用`tree`和剩下的`bits0`；最后当`bits0`满足`Nil`时，返回`acc`。
+
+这里请同学们思考一个问题，如果将第三个case的`a`改成`x::xs`，结果还是正确的吗？答案是不正确的，因为最后一个字母没有被加入到`acc`里(`x::xs`将`Nil`的情况给剔除了)。
+
+{% highlight scala linenos %}
+  /**
+   * This function decodes the bit sequence `bits` using the code tree `tree` and returns
+   * the resulting list of characters.
+   */
+
+  def decode(tree: CodeTree, bits: List[Bit]): List[Char] = {
+
+    def decode0(tree0: CodeTree, bits0: List[Bit], acc: List[Char]): List[Char] = (tree0, bits0) match {
+      case (Fork(left, right, chars, weight), 0 :: xs) => decode0(left, xs, acc)
+      case (Fork(left, right, chars, weight), 1 :: xs) => decode0(right, xs, acc)
+      case (Leaf(char, weight), a)                     => decode0(tree, a, acc :+ char)
+      case (x, Nil)                                    => acc
+    }
+
+    decode0(tree, bits, List())
+  }
+
+  {% endhighlight %}
+
+  具体代码见[这里](https://github.com/shunmian/-2_Functional-Programming-in-Scala)。
+
+## 6 总结 ##
 
 当**OOP**遇上**λ-Calculus**，Scala给出了自己的实现方案：
 
@@ -622,7 +651,7 @@ object ExprTest extends App {
 
 
 
-## 6 参考资料 ##
+## 7 参考资料 ##
 - [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
 - [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
 - [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);

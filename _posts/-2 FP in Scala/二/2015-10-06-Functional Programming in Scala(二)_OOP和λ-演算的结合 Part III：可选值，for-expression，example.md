@@ -214,8 +214,51 @@ object lecture7 {
 
 对比一下scala,**20loc**以内解决问题，而且不用担心遍历Collection时的边界条件，实在令我们印象深刻。**Scala**函数式语言的强大可见一斑，这主要依赖基于函数式数据结构实现的Collection的强大且简捷的高阶函数。
 
+## 3 Assignment ##
 
-## 3 总结 ##
+本周的作业是写Sentence的Anagram，其中`foldLeft`的紧凑在这里得到了良好的体现，本来需要好十几行的代码，用`foldLeft`几行就能解决，其中巧妙，需要细细体会。`foldLeft`其实是对`monoids`的一种应用。`monoids`将在后续文章中讨论。
+
+{% highlight scala linenos %}
+
+  /**
+   * Returns the list of all subsets of the occurrence list.
+   *  This includes the occurrence itself, i.e. `List(('k', 1), ('o', 1))`
+   *  is a subset of `List(('k', 1), ('o', 1))`.
+   *  It also include the empty subset `List()`.
+   *
+   *  Example: the subsets of the occurrence list `List(('a', 2), ('b', 2))` are:
+   *
+   *    List(
+   *      List(),
+   *      List(('a', 1)),
+   *      List(('a', 2)),
+   *      List(('b', 1)),
+   *      List(('a', 1), ('b', 1)),
+   *      List(('a', 2), ('b', 1)),
+   *      List(('b', 2)),
+   *      List(('a', 1), ('b', 2)),
+   *      List(('a', 2), ('b', 2))
+   *    )
+   *
+   *  Note that the order of the occurrence list subsets does not matter -- the subsets
+   *  in the example above could have been displayed in some other order.
+   */
+      
+  def combinations(occurrences: Occurrences): List[Occurrences] = {
+    occurrences.foldLeft(List[Occurrences](Nil))((acc, item) => {
+      for {
+        oc <- acc //oc: List[(Char,Int)]
+        x <- (for (i <- 0 to item._2) yield (item._1, i)).toList //x: (Char,Int)
+      } yield if (x._2 == 0) oc else oc ++ List(x)
+    })
+  }
+
+{% endhighlight %}
+
+具体代码见[这里](https://github.com/shunmian/-2_Functional-Programming-in-Scala)。
+
+
+## 4 总结 ##
 
 
 
@@ -223,7 +266,7 @@ object lecture7 {
 {: .img_middle_lg}
 ![for-expression && Option](/assets/images/posts/2015-10-06/for-expression && Option.png)
 
-## 4 参考资料 ##
+## 5 参考资料 ##
 - [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
 - [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
 - [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
