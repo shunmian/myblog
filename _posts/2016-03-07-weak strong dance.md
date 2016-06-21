@@ -173,6 +173,9 @@ typedef void (^AnimationBlock)();
 {% endhighlight %}
 在例5中，当`self.animationBlock` 作为`[UIView animationWithDuration: animations:]`的最后一个参数运行时，传给strongSelf要么是nil，要么是短暂强引用self，因为strongSelf是block的变量(有生命周期)。因此在打破循环引用的同时，又解决了第二种情况，要么全执行，要么全不执行。这对于我们的程序非常有利。这就是人们所谓的Weak Strong Dance。
 
+在这里，可以用@weakify(self) 和@strongigy(self)代替上面栗5中的`__weak ViewController *weakSelf = self;` 和 `ViewController *strongSelf = weakSelf;`。weakify 创建了一个新的weak self 来替代原来的self，strongify 则相反。也就是说weakify和strongify使得变量`self`的引用属性在`weak`和`strong`里自由转换。
+
+
 Weak Strong Dance 在swift中可以结合guard使用，如例6:
 
 {% highlight swift linenos %}

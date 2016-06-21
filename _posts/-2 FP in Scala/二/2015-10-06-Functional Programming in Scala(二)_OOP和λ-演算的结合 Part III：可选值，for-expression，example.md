@@ -1,6 +1,6 @@
 ---
 layout: post
-title: FP in Scala(二)：OOP和λ-演算的结合 Part III：可选值，for，例子
+title: FP in Scala(二)：OOP和λ-演算的结合 Part III：可选值，for-exp
 categories: [Functional Programming]
 tags: [OOP&&FP]
 number: [-2.2]

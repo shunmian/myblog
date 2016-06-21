@@ -61,6 +61,8 @@ shortinfo: List是函数式Data Structure的一个典型，结合函数式的pat
 
 ### 2.2 流的语法和本质 ###
 
+>**lazy evaluation**的理论基础：**函数式编程的输出**只和输入有关，与时间没有关系，因此可以将函数的调用推迟到需要的时候。这是命令式编程所不具备的。
+
 这究竟是怎么实现的呢？细细回想，不知道同学们还记不记得本系列[第一篇文章]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#application)）中对于赋值有两种方式，一种是**call by value(CBV)**，另一种是**call by name(CBN)**。没错，聪明的你一定想到`Stream`的实现和**CBN**有关。
 
 {% highlight scala linenos %}
