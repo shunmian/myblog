@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/posts/favico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/posts/favico/favico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/posts/favico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/posts/favico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/posts/favico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/posts/favico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/posts/favico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/posts/favico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/posts/favico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/posts/favico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/posts/favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/posts/favico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/posts/favico/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/posts/favico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/images/posts/favico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">   
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+    <link href="/assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+<!--     <script type="text/javascript" src="http://api.youziku.com/webfont/FastJS/yzk_976E121ED7CC0870"></script> -->
+
+    <title>SHUNMIAN</title>
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 sidebar hidden-xs sidebar">
+                
+<!--sidebar.html-->
+        <header class="sidebar_header " role="banner">
+            <a href="http://www.shunmian.me/index.html">
+                <img src = "https://www.gravatar.com/avatar/02eefecba7f0b21939d12a37f94bf5df?s=150" class="img-circle img-responsive center-block sidebar_logo sidebar_img" />
+            </a>
+
+
+            <h3 class="title text-center">
+                <a href="http://www.shunmian.me/index.html">SHUNMIAN</a>
+            </h3>
+
+        </header>
+
+
+        <hr class="hr_short"/>
+        <div id = "bio" class="text-center sidebar_bio">
+            
+
+                <p>嗨，欢迎来到我的博客。<br/>
+                我是Shunmian，一名iOS开发者。<br/>
+                <hr class = "hr_short_low">
+                正在学习Algorithm，Functional Programming，Machine Learning，Data Mining 和 Cloud Computation。 
+
+                </p>
+
+            
+        </div>
+
+
+        <hr class="hr_middle"/>
+        <div id = "contact-list" class="text-center">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    
+                    <a class="btn btn_info_outline" href="mailto:shunmian@gmail.com"><i class="fa fa-envelope fa-lg"></i></a>
+                    
+                </li>
+
+                <li>
+                    
+                    <a class="btn btn_info_outline" href="https://github.com/shunmian"><i class="fa fa-github fa-lg"></i></a>
+                    
+                </li>
+
+                <li>
+                    
+                    <a class="btn btn_info_outline" href="https://github.com/shunmian"><i class="fa fa-twitter fa-lg"></i></a>
+                    
+                </li>
+
+                <li>
+                    <a class="btn btn_info_outline" href="http://www.shunmian.me/feed.xml"><i class="fa fa-rss fa-lg"></i></a>
+                </li>
+        </div>
+
+
+        <hr class="hr_short"/>
+        <div id = "contact-list" class="text-center">
+            <ul class="unstyled-list list-inline">
+                <li>
+                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/index.html"><i class="fa fa-home fa-md"></i> 主页</a>
+                </li>
+
+                <li>
+                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/tags.html"><i class="fa fa-tags fa-md"></i> 标签</a>
+                </li>
+
+                <li>
+                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/categories.html"><i class="fa fa-list fa-md"></i> 分类</a>
+                </li>
+            </ul>
+        </div>
+        <div class="padding_bottom_500"></div>
+
+
+
+
+<!--sidebar.html end-->
+
+            </div>
+
+            <div class="col-sm-9 col-sm-offset-3">
+                
+
+<div class="page-header col-sm-10 col-sm-offset-1">
+    <h1 class="article_mainTitle">Key Value Observing </h1>
+    <span class="post_date">
+        2016-02-18 •
+    </span>
+    <span class="post_category">
+        Objective-C
+    </span>
+</div>
+
+<article class="article">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="article_mainBody">
+            <p class="article_content_title">目录</p>
+
+<ul id="markdown-toc">
+  <li><a href="#key-value-observing-" id="markdown-toc-key-value-observing-">1. Key Value Observing 介绍</a></li>
+  <li><a href="#key-value-observing--1" id="markdown-toc-key-value-observing--1">2. Key Value Observing 三种应用</a>    <ul>
+      <li><a href="#section" id="markdown-toc-section">2.1. 自动观察</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">2.2. 手动观察</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">2.3. 依赖值观察</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-3" id="markdown-toc-section-3">3. 坑及应对</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">4. 总结</a></li>
+  <li><a href="#section-5" id="markdown-toc-section-5">5. 参考资料</a></li>
+</ul>
+
+<hr class="hr-short-left" />
+
+<h2 id="key-value-observing-">1. Key Value Observing 介绍</h2>
+
+<p>Observer Pattern 是”GOF”提到的24种面向对象设计模式中的一种， 它可以让subject(被观察者)的iVar改变时通知observer（观察者）。Key Value Observing 是Cocoa对于Observing Pattern的具体实现。 这在Model-View-Controller模式里提供了一种在Controller里，Model和View各自变化实时更新彼此的实现。
+KVO实现的原理是subject拥有观察者们的引用(array)，在iVar的setter的更改值前后加入通知观察者。令人疑惑的是Cocoa的KVO的API在没有重写subject的setter的同时又实现了通知观察者，这里用到了isa swizzling的方法，我们暂时不讲。本文着重介绍Key Value Observing的API应用, 包括自动观察，手动观察，依赖值观察，以及KVO的各种坑及应对方法。</p>
+
+<h2 id="key-value-observing--1">2. Key Value Observing 三种应用</h2>
+
+<p>Key Value Observing 的应用逻辑遵循 ”订阅“-”响应“-”取消订阅“的基本方式。</p>
+
+<h3 id="section">2.1. 自动观察</h3>
+
+<p>先来看一段代码。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre></td><td class="code"><pre><span class="n">Bank</span><span class="p">.</span><span class="n">h</span>
+<span class="k">@class</span> <span class="nc">Person</span><span class="p">;</span>
+<span class="k">@interface</span> <span class="nc">Bank</span> <span class="p">:</span> <span class="nc">NSObject</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSNumber</span><span class="o">*</span> <span class="n">accountDomestic</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">Person</span><span class="o">*</span> <span class="n">person</span><span class="p">;</span>
+<span class="k">-</span><span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithPerson</span><span class="p">:(</span><span class="n">Person</span> <span class="o">*</span><span class="p">)</span><span class="nv">person</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="n">Bank</span><span class="p">.</span><span class="n">m</span>
+<span class="k">@implementation</span> <span class="nc">Bank</span>
+<span class="k">-</span><span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithPerson</span><span class="p">:(</span><span class="n">Person</span> <span class="o">*</span><span class="p">)</span><span class="nv">person</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="nf">init</span><span class="p">]){</span>
+        <span class="n">_person</span> <span class="o">=</span> <span class="n">person</span><span class="p">;</span>
+        <span class="p">[</span><span class="n">self</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">_person</span> <span class="nf">forKeyPath</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))</span> <span class="n">options</span><span class="o">:</span><span class="n">NSKeyValueObservingOptionOld</span><span class="o">|</span><span class="n">NSKeyValueObservingOptionNew</span> <span class="n">context</span><span class="o">:</span><span class="n">bankContext</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">dealloc</span><span class="p">{</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">_person</span> <span class="nf">forKeyPath</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))];</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+
+
+<span class="n">Person</span><span class="p">.</span><span class="n">h</span>
+<span class="k">@interface</span> <span class="nc">Person</span> <span class="p">:</span> <span class="nc">NSObject</span>
+<span class="k">@end</span>
+
+<span class="n">Person</span><span class="p">.</span><span class="n">m</span>
+<span class="k">@implementation</span> <span class="nc">Person</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">observeValueForKeyPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">keyPath</span> <span class="nf">ofObject</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">object</span> <span class="nf">change</span><span class="p">:(</span><span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span><span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">change</span> <span class="nf">context</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">([</span><span class="n">object</span> <span class="nf">isKindOfClass</span><span class="p">:[</span><span class="n">Bank</span> <span class="nf">class</span><span class="p">]]){</span>
+        <span class="k">if</span><span class="p">([</span><span class="n">keyPath</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))]){</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">oldValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeOldKey</span><span class="p">];</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">newValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeNewKey</span><span class="p">];</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"--------------------------"</span><span class="p">);</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountDomestic old value: %@"</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">);</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountDomestic new value: %@"</span><span class="p">,</span> <span class="n">newValue</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+
+
+<span class="n">ViewController</span><span class="p">.</span><span class="n">m</span>
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">Bank</span> <span class="o">*</span><span class="n">bank</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">Person</span> <span class="o">*</span><span class="n">person</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">delta</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">person</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Person</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">delta</span> <span class="o">=</span> <span class="mi">@10</span><span class="p">;</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">bank</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Bank</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithPerson</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">person</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="o">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="n">accountBalanceIncreaseButtonDidTouch</span><span class="o">:</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">bank</span><span class="p">.</span><span class="n">accountDomestic</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">delta</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">delta</span> <span class="nf">intValue</span><span class="p">];</span>
+    <span class="n">temp</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">delta</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="n">temp</span><span class="p">];</span> 
+<span class="p">}</span>
+<span class="c1">//输出:按两次button
+//--------------------------
+//accountDomestic old value: &lt;null&gt;
+//accountDomestic new value: 10
+//--------------------------
+//accountDomestic old value: 10
+//accountDomestic new value: 20
+</span><span class="o">//</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>我们先来看”订阅”。这里<code class="highlighter-rouge">Bank</code>类有一个iVar是<code class="highlighter-rouge">accountDomestic</code>,还有一个客户<code class="highlighter-rouge">Person</code>,在<code class="highlighter-rouge">Bank</code>初始化时, <code class="highlighter-rouge">Person</code>订阅了<code class="highlighter-rouge">accountDomestic</code>的KVO服务, 被加入到观察者中。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addObserver</span><span class="p">:(</span><span class="n">NSObject</span> <span class="o">*</span><span class="p">)</span><span class="nv">observer</span> 
+         <span class="nf">forKeyPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">keyPath</span> 
+            <span class="nf">options</span><span class="p">:(</span><span class="n">NSKeyValueObservingOptions</span><span class="p">)</span><span class="nv">options</span> 
+            <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>这里<code class="highlighter-rouge">observer</code>是<code class="highlighter-rouge">person</code>,观察者;<code class="highlighter-rouge">keyPath</code>是iVar的名字, 应该是<code class="highlighter-rouge">@"accountDomestic"</code>,由于手动输入只能在运行时才能确认对错，用<code class="highlighter-rouge">NSStringFromSelecotr(@selector(accountDomestic))</code>替代更为合适; <code class="highlighter-rouge">option</code>是一个<code class="highlighter-rouge">NSKeyValueObservingOptions</code>的enum，可以有四个值，一般用的是旧值<code class="highlighter-rouge">NSKeyValueObservingOptionOld</code>和新值<code class="highlighter-rouge">NSKeyValueObservingOptionNew</code>; <code class="highlighter-rouge">context</code>通常是null也可以用作唯一的ID来区别这个类的观察和父类的观察，这个我们后面讲。</p>
+
+<p>下面我们看”响应“。Person类实现了以下方法。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">observeValueForKeyPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">keyPath</span> 
+                      <span class="nf">ofObject</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">object</span> 
+                        <span class="nf">change</span><span class="p">:(</span><span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span><span class="o">*</span><span class="p">,</span> <span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">change</span> 
+                        <span class="nf">context</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><code class="highlighter-rouge">keyPath</code>是<code class="highlighter-rouge">Person</code>类添加的键，本例中是至少有一个为<code class="highlighter-rouge">NSStringFromSelecotr(@selector(accountDomestic))</code>；<code class="highlighter-rouge">object</code>是subject(被观察者),这里是<code class="highlighter-rouge">Bank</code>实例。<code class="highlighter-rouge">change</code>为一个<code class="highlighter-rouge">NSDictionary</code>，当订阅时的<code class="highlighter-rouge">option</code>是用的是旧值<code class="highlighter-rouge">NSKeyValueObservingOptionOld</code>和新值<code class="highlighter-rouge">NSKeyValueObservingOptionNew</code>时，可以分别通过<code class="highlighter-rouge">change[NSKeyValueChangeOldKey]</code>和<code class="highlighter-rouge">change[NSKeyValueChangeNewKey]</code>来访问;<code class="highlighter-rouge">context</code>和订阅时的<code class="highlighter-rouge">context</code>一样。</p>
+
+<p>本例中我们首先判断响应是否来源于Bank,再判断是否是<code class="highlighter-rouge">NSStringFromSelecotr(@selector(accountDomestic))</code>,然后再执行相关业务。由于KVO的响应不能像<code class="highlighter-rouge">UIControl</code>的实例方法<code class="highlighter-rouge">-addTarget:action:forControlEvents:</code>一样可以添加selector, 因此所有的响应都在<code class="highlighter-rouge">-observeValueForKeyPath:ofObject:change:context:</code>中执行，这是KVO广为诟病的一大缺点之一。</p>
+
+<p>最后我们来看取消订阅:</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeObserver</span><span class="p">:(</span><span class="n">NSObject</span> <span class="o">*</span><span class="p">)</span><span class="nv">observer</span> 
+            <span class="nf">forKeyPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">keyPath</span><span class="p">;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>当subject<code class="highlighter-rouge">dealloc</code>时，我们取消订阅。</p>
+
+<h3 id="section-1">2.2. 手动观察</h3>
+
+<p>有时候观察者需要对被观察的某个键进或者几个键的通知发送进行控制, 比如<code class="highlighter-rouge">Bank</code>还有一个属性<code class="highlighter-rouge">accountForeign</code>, <code class="highlighter-rouge">Person</code>同时也观察这个<code class="highlighter-rouge">key</code>。但是现在<code class="highlighter-rouge">Person</code>暂时想把<code class="highlighter-rouge">accountForeign</code>改变时的发送通知给停止掉，或者暂停掉后又想开启。见如下代码。</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></td><td class="code"><pre><span class="n">Bank</span><span class="p">.</span><span class="n">m</span>
+<span class="k">@implementation</span> <span class="nc">Bank</span>
+<span class="k">-</span><span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithPerson</span><span class="p">:(</span><span class="n">Person</span> <span class="o">*</span><span class="p">)</span><span class="nv">person</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="nf">init</span><span class="p">]){</span>
+        <span class="n">_person</span> <span class="o">=</span> <span class="n">person</span><span class="p">;</span>
+        <span class="p">[</span><span class="n">self</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">_person</span> <span class="nf">forKeyPath</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))</span> <span class="n">options</span><span class="o">:</span><span class="n">NSKeyValueObservingOptionOld</span><span class="o">|</span><span class="n">NSKeyValueObservingOptionNew</span> <span class="n">context</span><span class="o">:</span><span class="n">bankContext</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">self</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">_person</span> <span class="nf">forKeyPath</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))</span> <span class="n">options</span><span class="o">:</span> <span class="n">NSKeyValueObservingOptionOld</span><span class="o">|</span><span class="n">NSKeyValueObservingOptionNew</span> <span class="n">context</span><span class="o">:</span><span class="n">bankContext</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">+</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">automaticallyNotifiesObserversForKey</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">key</span><span class="p">{</span>
+<span class="c1">//当key时NSStringFromSelector(@selector(accountForeign)）停止自动发送通知。
+</span>    <span class="k">if</span><span class="p">([</span><span class="n">key</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))]){</span>
+        <span class="k">return</span> <span class="nb">NO</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">dealloc</span><span class="p">{</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">_person</span> <span class="nf">forKeyPath</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))];</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">_person</span> <span class="nf">forKeyPath</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))];</span>
+<span class="p">}</span>
+
+<span class="n">Person</span><span class="p">.</span><span class="n">m</span>
+<span class="k">@implementation</span> <span class="nc">Person</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">observeValueForKeyPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">keyPath</span> <span class="nf">ofObject</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">object</span> <span class="nf">change</span><span class="p">:(</span><span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span><span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">change</span> <span class="nf">context</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">([</span><span class="n">object</span> <span class="nf">isKindOfClass</span><span class="p">:[</span><span class="n">Bank</span> <span class="nf">class</span><span class="p">]]){</span>
+        <span class="k">if</span><span class="p">([</span><span class="n">keyPath</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))]){</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">oldValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeOldKey</span><span class="p">];</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">newValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeNewKey</span><span class="p">];</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"--------------------------"</span><span class="p">);</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountBalance old value: %@"</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">);</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountBalance new value: %@"</span><span class="p">,</span> <span class="n">newValue</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">([</span><span class="n">keyPath</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))]){</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">oldValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeOldKey</span><span class="p">];</span>
+            <span class="n">NSString</span> <span class="o">*</span><span class="n">newValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeNewKey</span><span class="p">];</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"--------------------------"</span><span class="p">);</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountForeign old value: %@"</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">);</span>
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountForeign new value: %@"</span><span class="p">,</span> <span class="n">newValue</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">ViewController</span><span class="p">.</span><span class="n">m</span>
+<span class="p">...</span>
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+<span class="p">...</span>
+<span class="o">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="n">accountBalanceIncreaseButtonDidTouch</span><span class="o">:</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">bank</span><span class="p">.</span><span class="n">accountDomestic</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">delta</span><span class="p">;</span>
+<span class="c1">//同时更改accountForeign的值。
+</span>    <span class="n">self</span><span class="p">.</span><span class="n">bank</span><span class="p">.</span><span class="n">accountForeign</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">delta</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">delta</span> <span class="nf">intValue</span><span class="p">];</span>
+    <span class="n">temp</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">delta</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="n">temp</span><span class="p">];</span> 
+<span class="p">}</span>
+<span class="c1">//输出:按两次button
+//--------------------------
+//accountDomestic old value: &lt;null&gt;
+//accountDomestic new value: 10
+//
+</span><span class="k">@end</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>这里<code class="highlighter-rouge">+(BOOL)automaticallyNotifiesObserversForKey:(NSString *)key</code>对<code class="highlighter-rouge">accountForeign</code>返回<code class="highlighter-rouge">NO</code>,停止了它的值改变时自动发送通知，虽然它和<code class="highlighter-rouge">accountDomestic</code>一样实现了”订阅“-”响应“-”取消订阅“。</p>
+
+<p>如果要开启的话，要么更改<code class="highlighter-rouge">+(BOOL)automaticallyNotifiesObserversForKey:(NSString *)key</code>对<code class="highlighter-rouge">accountForeign</code>返回<code class="highlighter-rouge">YES</code>; 要么在<code class="highlighter-rouge">Bank</code>中插入下列代码:</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setAccountForeign</span><span class="p">:(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">accountForeign</span><span class="p">{</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">willChangeValueForKey</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))];</span>
+    <span class="n">_accountForeign</span> <span class="o">=</span> <span class="n">accountForeign</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">self</span> <span class="nf">didChangeValueForKey</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))];</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><code class="highlighter-rouge">- (void)willChangeValueForKey:(NSString *)key</code>和<code class="highlighter-rouge">- (void)didChangeValueForKey:(NSString *)key</code>分别在setter里面值改变前后通知观察者。这时候在改变它的值得时候，就会收到通知继而触发响应了。</p>
+
+<h3 id="section-2">2.3. 依赖值观察</h3>
+<p>再比如，<code class="highlighter-rouge">Bank</code>有一个<code class="highlighter-rouge">totalAmount</code>iVar，它是<code class="highlighter-rouge">accountDomestic</code>和<code class="highlighter-rouge">accountForeign</code>的和, 我们希望<code class="highlighter-rouge">accountDomestic</code>和<code class="highlighter-rouge">accountForeign</code>任何一个的改变都会使得totalBalance也有一样KVO的功能。这就是所谓的依赖值观察。这里<code class="highlighter-rouge">totalAmount</code>的”订阅”-“响应”-“取消订阅”的实现和<code class="highlighter-rouge">accountDomestic</code>或者<code class="highlighter-rouge">accountForeign</code>一样。唯一不同的是我们在<code class="highlighter-rouge">Bank</code>里要加入如下代码:</p>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="c1">//重写totalAmount的getter,体现其数值关系。
+</span><span class="k">-</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="n">totalAmount</span><span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:([</span><span class="n">self</span><span class="p">.</span><span class="n">accountDomestic</span> <span class="nf">intValue</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">accountForeign</span> <span class="nf">intValue</span><span class="p">])];</span>
+<span class="p">}</span>
+<span class="c1">//keyPathsForValuesAffectingTotalAmount里返回两个依赖的key作为NSSet。
+</span><span class="o">+</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="p">)</span><span class="n">keyPathsForValuesAffectingTotalAmount</span><span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">NSSet</span> <span class="nf">setWithObjects</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">)),</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">)),</span> <span class="nb">nil</span><span class="p">];</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>这样任何一个<code class="highlighter-rouge">accountDomestic</code>或者<code class="highlighter-rouge">accountForeign</code>的改变，都会发送<code class="highlighter-rouge">totalAmount</code>改变的通知。</p>
+
+<h2 id="section-3">3. 坑及应对</h2>
+<p>KVO有一些坑需要注意, 否则有时候会产生莫名其妙的bug;</p>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">keyPath</code>最好不要用动态输入，如N<code class="highlighter-rouge">SStringFromSelector(@selector(accountDomestic))</code>代替<code class="highlighter-rouge">@"accountDomestic"</code>；</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">context</code>用来区分本类和super类的通知，例如<code class="highlighter-rouge">Person</code>继承自<code class="highlighter-rouge">Client</code>(<code class="highlighter-rouge">Client</code>还有子类是<code class="highlighter-rouge">Company</code>),<code class="highlighter-rouge">Client</code>类里已经实现了对Bank某个属性的观察，这个时候在<code class="highlighter-rouge">Person</code>里实现响应的时候，应该做如下处理:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></td><td class="code"><pre><span class="n">Person</span><span class="p">.</span><span class="n">m</span>
+<span class="c1">//定义了一个静态常数指针，值为自身的地址，用来表示一个KVO的observer的token
+</span><span class="k">static</span> <span class="kt">void</span> <span class="o">*</span><span class="k">const</span> <span class="n">kPersonConext</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">kPersonConext</span><span class="p">;</span>
+<span class="k">@implementation</span> <span class="nc">Person</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">observeValueForKeyPath</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">keyPath</span> <span class="nf">ofObject</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">object</span> <span class="nf">change</span><span class="p">:(</span><span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span><span class="n">id</span><span class="o">&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">change</span> <span class="nf">context</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">{</span>
+    <span class="c1">//首先判断是不是自身的KVO响应，
+</span>    <span class="k">if</span><span class="p">(</span><span class="n">context</span> <span class="o">==</span> <span class="n">kPersonConext</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">([</span><span class="n">object</span> <span class="nf">isKindOfClass</span><span class="p">:[</span><span class="n">Bank</span> <span class="nf">class</span><span class="p">]]){</span>
+            <span class="k">if</span><span class="p">([</span><span class="n">keyPath</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountDomestic</span><span class="p">))]){</span>
+                <span class="n">NSString</span> <span class="o">*</span><span class="n">oldValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeOldKey</span><span class="p">];</span>
+                <span class="n">NSString</span> <span class="o">*</span><span class="n">newValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeNewKey</span><span class="p">];</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"--------------------------"</span><span class="p">);</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountBalance old value: %@"</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">);</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountBalance new value: %@"</span><span class="p">,</span> <span class="n">newValue</span><span class="p">);</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">([</span><span class="n">keyPath</span> <span class="nf">isEqualToString</span><span class="p">:</span><span class="n">NSStringFromSelector</span><span class="p">(</span><span class="k">@selector</span><span class="p">(</span><span class="n">accountForeign</span><span class="p">))]){</span>
+                <span class="n">NSString</span> <span class="o">*</span><span class="n">oldValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeOldKey</span><span class="p">];</span>
+                <span class="n">NSString</span> <span class="o">*</span><span class="n">newValue</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="nf">NSKeyValueChangeNewKey</span><span class="p">];</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"--------------------------"</span><span class="p">);</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountForeign old value: %@"</span><span class="p">,</span> <span class="n">oldValue</span><span class="p">);</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@"accountForeign new value: %@"</span><span class="p">,</span> <span class="n">newValue</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="c1">//不是则调用父类。
+</span>        <span class="p">[</span><span class="n">super</span> <span class="nf">observeValueForKeyPath</span><span class="p">:</span><span class="n">keyPath</span> <span class="nf">ofObject</span><span class="p">:</span><span class="n">object</span> <span class="n">change</span><span class="o">:</span><span class="n">change</span> <span class="n">context</span><span class="o">:</span><span class="n">context</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><code class="highlighter-rouge">static void *const kPersonConext = &amp;kPersonConext</code>用来作为本类observer的token，区分父类。</p>
+
+<ol>
+  <li>在”响应”里<code class="highlighter-rouge">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSString *,id&gt; *)change context:(void *)context</code>，由于没有selector参数，因此所有的响应都要写在这个函数的实现里，逻辑比较混乱，要多注意。</li>
+</ol>
+
+<h2 id="section-4">4. 总结</h2>
+<p>KVO是Cocoa对于Observer Pattern的内置实现，需要我们通过”订阅”-”响应“-”取消订阅“来设置自动, 手动或者值依赖KVO。KVO的API有一些坑需要注意，比如keyPath的选择，context的用法, ”响应“的混乱逻辑等。对于KVO的isa swizzle实现原理，我们将在后面OC Runtime系列会详细介绍。</p>
+
+<h2 id="section-5">5. 参考资料</h2>
+<ul>
+  <li><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html">Key-Value Observing Programming Guide</a>;</li>
+  <li><a href="http://zhangbuhuai.com/2015/04/29/understanding-KVO/">深入理解KVO</a>;</li>
+  <li><a href="https://mikeash.com/pyblog/key-value-observing-done-right.html">Key-Value Observing Done Right</a>;</li>
+  <li><a href="http://khanlou.com/2013/12/kvo-considered-harmful/">KVO Considered Harmful</a>;</li>
+  <li><a href="http://tech.glowing.com/cn/implement-kvo/">如何自己动手实现 KVO</a>;</li>
+</ul>
+
+            <div class="clearfix"></div>
+        </div>
+
+
+    
+    <ul class="tag_box list-unstyled list-inline">
+      <li><i class="fa fa-folder-open"></i></li>
+      
+      
+      
+        <li><a href="http://www.shunmian.me/categories.html#Objective-C-ref">
+          Objective-C <span>(10)</span>
+          
+        </a></li>
+      
+      
+    </ul>
+    
+
+    
+    <ul class="list-inline">
+      <li><i class="fa fa-tags"></i></li>
+      
+      
+      
+        <li>
+          <a href="http://www.shunmian.me/tags.html#KVO-ref">
+          KVO <span>(1)</span>
+          
+          </a>
+        </li>
+      
+      
+      
+    </ul>
+    
+
+<hr />
+<div >
+    <section class="col-sm-7">
+        <h4>Share Post</h4>
+        <a class="btn btn-default btn-sm" href="http://twitter.com/share?text=Key Value Observing&via=Wanderl29817400" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fa fa-twitter fa-sm"></i>
+        Twitter
+        </a>
+
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fa fa-facebook fa-sm"></i>
+          Facebook
+        </a>
+
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fa fa-google-plus fa-sm"></i>
+          Google+
+        </a>
+    </section>
+
+    <section class="col-sm-5">
+        <img src = "https://www.gravatar.com/avatar/02eefecba7f0b21939d12a37f94bf5df" class="img-rounded" />
+        <h4>Shunmian</h4>
+        <p class="author-bio">节物风光不相待，桑田碧海须臾改，唯有美食和code不可辜负。</p>
+
+    </section>
+
+</div>
+<div class="clearfix"></div>
+
+<ul class="pager">
+    
+    <li class="previous"><a href="http://www.shunmian.me/objective-c/2015/11/15/block-reactive.html" title= "">&larr; Previous</a></li>
+    
+    
+    <li class="next">"<a href="http://www.shunmian.me/objective-c/2016/02/20/SpriteKit.html" title= "iOS 2D Game - SpriteKit入门(一)">Next &rarr;</a></li>
+    
+</ul>
+
+    <hr />
+    
+    <section class="comments" style="margin-top:15px;">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'shunmianjohnson'; // required: replace example with your forum shortname
+        if(disqus_shortname){
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        }
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+    
+    </div>
+    <div class="col-sm-1sidebar-2"></div>
+    <div class="clearfix"></div>
+</article>
+<div class="clearfix"></div>
+
+
+                <div class="footer">
+                    <footer>
+                        <hr />
+                        <p> &copy: 2015 Shunmian with jekyll. Theme: <a href="https://github.com/dbtek/dbyll"dbyll</a> by dbtek.
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/assets/js/jquery-2.2.0.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script type="text/javascript">
+
+$youziku.load(".sidebar_bio", "bdcc72b8235345649b02c123dac5610b", "SiYuan-ExtraLight");
+
+
+   $youziku.draw();
+</script>
+
+</body>
+
+</html>
+
