@@ -30,6 +30,7 @@ shortinfo: Regular Expression(正则表达式)是匹配一系列匹配某个句�
 4. 组与环顾；
 5. 量词与替代。
 
+以下内容来自于[regexr](http://www.regexr.com/)的总结。
 
 ## 1 Character Classes ##
 

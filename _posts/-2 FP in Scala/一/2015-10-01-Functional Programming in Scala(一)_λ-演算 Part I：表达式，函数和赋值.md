@@ -59,14 +59,14 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 **命令式编程和函数式编程分别基于图灵机和λ-Calculus发展起来**。
 因此命令式编程和函数式编程的计算能力是等价的。
 
-下面我们具体来看看**λ-Calculus**的定义：
+下面我们具体来看看**λ-Calculus**以及基于它的**λ expression**的定义：
 
->**λ-Calculus**的中心是**&lt;expression&gt;**，它被递归定义如下：<br/>
+>**λ演算(λ-Calculus)**的中心是**&lt;expression&gt;**，它被递归定义如下：<br/>
 **&lt;expression&gt;**   := **&lt;const&gt;** |**&lt;variable&gt;** | **&lt;function&gt;** |**&lt;application&gt;**<br/>
 **&lt;function&gt;**   := **λ&lt;variable&gt;**.**&lt;expression&gt;**<br/>
 **&lt;application&gt;**  := **&lt;expression&gt;****&lt;expression&gt;**
 
-
+>**λ表达式(λ expression)**：an anonymous function that you can use to create delegates or expression tree types. By using lambda expressions, you can write **local functions** that can be **passed as arguments** or **returned as the value** of **function calls**.
 
 
 ### 2.1 表达式(Expression) ###

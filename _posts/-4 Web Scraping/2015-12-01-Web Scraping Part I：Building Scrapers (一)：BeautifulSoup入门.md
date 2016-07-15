@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Web Scraping Part I：Building Scrapers (一)：BeautifulSoup入门
-categories: [Scraping]
-tags: [Scraping, BeaufitulSoup]
+categories: [Web Scraping]
+tags: [Web Scraping, BeaufitulSoup]
 number: [-4.1.1]
 fullview: false
 shortinfo: 
