@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Web Scraping Part I：Building Scrapers (一)：第一个网络爬虫
+title: Web Scraping Part I：Building Scrapers (一)：BeautifulSoup入门
 categories: [Scraping]
 tags: [Scraping, BeaufitulSoup]
 number: [-4.1.1]
@@ -18,7 +18,7 @@ shortinfo:
 ---
 {:.hr-short-left}
 
-## 1 What is Web Scraping ##
+## 1. What is Web Scraping ##
 
 我们要想了解**Web Scraping**是什么，以及它处于网络的什么位置，那就不可避免的要先介绍什么是网络。
 
@@ -80,7 +80,7 @@ Why web scraping:
 
 **Beautiful Soup**是**Python**语言下**Web Scraping**的一个最为重要和流行的框架，用于访问HTML和XML文件。
 
-## 2 urllib ##
+## 2. urllib ##
 
 > **urllib**：a Python module that provides a simple interface for network resource access， 例如**HTML** files, **image** fiels, or any other file stream. It is An abstraction and simplification over **Socket**.
 
@@ -104,7 +104,7 @@ print(html.read())                                             #读取html文件
 
 
 
-## 3 BeautifulSoup ##
+## 3. BeautifulSoup ##
 
 我们用一个小程序作为我们第一个网络爬虫，来感受下BeautifulSoup。
 
@@ -148,20 +148,24 @@ else:
 {% endhighlight %}
 
 
-## 4 总结##
+## 4. 总结##
 
 本文作为Web Scraping系列的第一篇文章，从Big Picture上介绍了Web Scraping处于Network的什么位置. 在此基础上，我们介绍了用Python进行WebScraping的两个重要Module：
+
 1. **urllib**，作为Socket的升级版，将网络请求和数据的接受和发送简化为几行代码。
 2. **BeautifulSoup**，将html文件和xml文件转换为Python object(这里我们刚接触到的是BeautifulSoup object)来进行方面快速强大的数据访问。
 
-关于**BeautifulSoup**的详细介绍，请看下篇[文章](https://www.shunmian.me/scraping/2015/12/02/Web-Scraping-Part-I-Building-Scrapers-(二)-BeautifulSoup进阶.html)。
+关于**BeautifulSoup**的详细介绍，请看下篇[文章](https://www.shunmian.me/scraping/2015/12/01/Web-Scraping-Part-I-Building-Scrapers-(一)-BeautifulSoup入门.html)。
 
 
 
-## 5 参考资料 ##
-- [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
-- [《Python 3 Documentation》](https://docs.python.org/3/);
-- [《An Introduction to Networking Terminology, Interfaces, and Protocols》](https://www.digitalocean.com/community/tutorials/an-introduction-to-networking-terminology-interfaces-and-protocols);
+## 4 参考资料 ##
+- [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
+- [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
+- [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
+- [Programming Languages: Lambda Calculus](https://www.youtube.com/watch?v=v1IlyzxP6Sg);
+- [Functional Programming For The Rest of Us](http://www.defmacro.org/ramblings/fp.html);
+- [Scala Bility](http://www.socouldanyone.com/2014/12/scala-bility.html);
 
 
 

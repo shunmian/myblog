@@ -18,153 +18,204 @@ shortinfo:
 ---
 {:.hr-short-left}
 
-## 1. What is Web Scraping ##
 
-我们要想了解**Web Scraping**是什么，以及它处于网络的什么位置，那就不可避免的要先介绍什么是网络。
+上篇[文章](https://www.shunmian.me/scraping/2015/12/01/Web-Scraping-Part-I-Building-Scrapers-(一)-BeautifulSoup入门.html)我们已经介绍过**BeautifulSoup**是一个提供一些简单的、python式的函数用来处理**HTML**和**XML**导航、搜索、修改分析树等功能的解释器。本文我们来详细介绍Advanced HTML Parsing。
 
-### 1.1 What is Network ###
+## 1 BeautifulSoup的4大类 ##
+
+### 1.1 BeautifulSoup ###
+
+**BeautifulSoup**：该对象表示的是一个文档的全部内容(**文档树**).大部分时候,可以把它当作**Tag**对象，是一个特殊的**Tag**，，我们可以分别获取它的名称，属性，文本以及类型来感受一下。
+
+{% highlight python linenos %}
+
+bsObj = BeautifulSoup(htmlHandler.read(), "html.parser")
+
+print("name:", bsObj.name)                             #name: [document]
+print("attrs:", bsObj.attrs)                           #attrs: {}
+print("string:", bsObj.string)                         #string: None
+print("type:", type(bsObj))                            #type: <class 'bs4.BeautifulSoup'>
+
+{% endhighlight %}
+
+### 1.2 Tag ###
+**Tag**：就是HTML中的一个个标签。
+
+{% highlight python linenos %}
+
+people = bsObj.find("span",{"class":"green"})
+print(people)                                          #<span class="green">Anna Pavlovna Scherer</span>
+print("name:", people.name,type(people.name))          #name: span <class 'str'>
+print("attrs:", people.attrs,type(people.attrs))       #attrs: {'class': ['green']} <class 'dict'>
+print("string:", people.string,type(people.string))    #string: Anna Pavlovna Scherer <class 'bs4.element.NavigableString'>
+print("type:", type(people))                           #type: <class 'bs4.element.Tag'>
+
+{% endhighlight %}
+
+### 1.3 NavigableString ###
+
+**NavigableString**：Tag的string属性的类型，上面的``type(people.string)``即是**NavigableString**。
+
+### 1.4 Comment ###
+
+**Comment**：是一个特殊类型的**NavigableString**对象，表示注释。
+
+## 2 搜索文档树##
+
+### 2.1 findAll() ###
+
+> **findAll(tag, attributes, recursive, text, limit, keywords)**：是BeautifulSoup类型里最重要的方法，它搜索当前tag的所有tag子节点，并判断是否符合过滤器的条件。返回值是bs4.element.ResultSet，ResultSet是List的子类。
+
+在95%的情况下，你只需用到前两个参数。但是我们还是全面的深入了解各参数的意义。
+
+**tag**：可以输入a string或者 a list(tuple也可以，因为list是mutable，tuple是immutable list在Python里) of string as tag names， 例如:
+
+{% highlight python linenos %}
+
+htmlHandler = urlopen("http://www.pythonscraping.com/pages/warandpeace.html")
+bsObj = BeautifulSoup(htmlHandler.read(), "html.parser")
+names = bsObj.findAll(("h1","h2","h3","h4","h5"))       #输出所有的h1,h2,h3,h4,h5
+print(names)
+
+{% endhighlight %}
 
 
-{: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-01/Web Scraping.png)
+**attributes**：用attributes dictionary 作为filter条件，返回任何满足attribute的tag，可以用于帅选CSS的Class，例如:
 
-**Network**是一个较为复杂的概念，上图是用**Four Layer Reference Model**来表示**Network**。首先是4层Layer，分别是**Application Layer**,**Transport Layer**, **Internet Layer**, **Link Layer**，每一层layer有自己的多种协议。
-
-1. **Application Layer**：包括HTTP协议(Hypertext Transfer Protocol，是万维网，即www，传输数据的基础)，SMTP协议(Simple Mail Transfer Protocol，电子邮件传输协议)，RTP协议(Real-time transport protocal，用于通过IP来传输音频和视频)和DNS协议(域名解析协议，即网址和IP一一对应的解析协议)。 
-
-2. **Transport Layer**：包括TCP协议(Transmission Control Protocol，建立在IP协议之上，将IP协议的数据传输单位Packet，提升至Segment，即特定序列的Packet)。
-
-3. **Internet Layer**：IP协议(Internet protocol，是在protocol stack(协议栈)中间连接物理层和软件层的协议，是最窄的腰部，但是确是最重要的必经的协议)。
-
-4. **Link Layer**： 包括Ethernet，3G，802.11，Cable，DSL等网络连接协议。
-
-### 1.2 What is Socket ###
-
-在**Four Layer Reference Model**中，更为准确地说，**Transport Layer**, **Internet Layer**, **Link Layer**属于**Network**，而**Application Layer**是属于**App**。因此连接**Network**和**App**的界面的框架称之为**Socket**。**Socket**的客户端和服务端需要进行一系列顺序对话才能完成数据的传输，如下图所示。关于**Socket**的具体介绍，请参见网络系列的博文。
-
-{: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-01/Socket.png)
-
-### 1.3 What is Network Data Type ###
-
-1. **HTML**：Hyper Text Markup Language，超文本标记语言。“超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。
-
-2. **XML**：Extensible Markup Language，可扩展标记语言。**XML**用于传输数据，**html**用于展示数据。
-
-3. **JSON**：JavaScript Object Notation，一种轻量级的数据交换格式。相比于**XML**，**JSON**通常解析速度提高30％,占用空间少30％，但是前者标记更完全。
-
-4. **CSS**：Cascading Style Sheets，层叠样式表。用于规定html的展示形式。
-
-### 1.4 What is Browser ###
-
-> **Web Browser** (commonly referred to as a browser)： a **software application**, focus on HTML formatting, CSS styling, JavaScript execution, XML or JSON serialization and de-serialization via **World Wide Web**, for information(located by a Uniform Resource Identifier (URI/URL)) retriving and presention. 
-
-### 1.5 What is and Why Web Scraping ###
-
-> **Web Scraping**：extracting information from websites other than Browser.
-
-Why web scraping:
-
-1. Browser不能有效收集信息，太分散；
-
-2. 网站API没有，或者不符合你的要求，需要自己写一个网络爬虫来收集信息；
-
-3. 市场预测，机器语言翻译，等等。
+{% highlight python linenos %}
+...
+names = bsObj.findAll("span",{"class":"green"})         #输出class=green的span
+...
+{% endhighlight %}
 
 
+**recursive**：是否搜索所有子孙节点，默认是。如果只想搜索tag的直接子节点,可以使用参数 recursive=False
+
+{% highlight python linenos %}
+...
+names = bsObj.findAll("span",{"class":"green"}，False)   #输出bsObj的满足class=green的直接子节点span
+...
+{% endhighlight %}
+
+**text**：搜索满足相应条件的text的Tag。比如要text是"the princce"，即tag的text完全等同于the princce，并不是包括，代码如下：
+
+{% highlight python linenos %}
+...
+names = bsObj.findAll(text="the prince")                #输出bsObj的满足text="the prince"的所有tag
+...
+{% endhighlight %}
 
 
-### 1.6 What is BeautifulSoup ###
+**limit**：limit是结果的个数。find() 是findAll(limit=1)的情况。
 
-> **Beautiful Soup**： a Python library for pulling data out of HTML and XML files. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree. It commonly saves programmers hours or days of work。
+**keyword**：在上述参数不能满足的情况下，keyword可以用来搜索一个特定的attribute(当然也可以用attributes参数)例如搜索所有id="text"的tag：
 
-**Beautiful Soup**是**Python**语言下**Web Scraping**的一个最为重要和流行的框架，用于访问HTML和XML文件。
+{% highlight python linenos %}
+...
+names = bsObj.findAll(id="the prince")                   #输出bsObj的满足id="text"的所有tag
+...
+{% endhighlight %}
 
-## 2. urllib ##
 
-> **urllib**：a Python module that provides a simple interface for network resource access， 例如**HTML** files, **image** fiels, or any other file stream. It is An abstraction and simplification over **Socket**.
+### 2.2 find() ###
 
-It has 4 submodules and the urlopen method in urllib.request takes string or request object and return http.client.HTTPResponse object for HTTP and HTTPs URLs. 
+> **find(tag, attributes, recursive, text, limit, keywords)**：是BeautifulSoup类型里findAll()方法limit=1的特殊情况，返回当前Tag的子孙节点里第一个满足筛选条件的Tag。
+{% highlight python linenos %}
+...
+people = bsObj.find("span",{"class":"green"})           #返回第一个clss=grenn的span
+...
+
+{% endhighlight %}
+
+
+## 3 遍历文档树 ##
+
+基于目标Tag的name和attribute，我们可以用``find()``和``findAll()``来搜索满足条件的Tag。考虑另一种情况，如果需要基于一个Tag的当前位置来搜索相应的Tag(如兄弟，孩子，子孙，父母Tag)，那么我们就要通过遍历文档树来访问。
+
+### 3.1 Children and Descendants ###
+
+> **Children**：指直接子节点，类比于人类的孩子。通过tag的``.children`` 生成器，可以对tag的孩子子节点进行循环。
+
+{% highlight python linenos %}
+...
+for child in bsObj.find("table",{"id":"giftList"}).children:      #输出第一个id="giftList"的table Tag的所有孩子Tag
+    print(child)                
+...
+{% endhighlight %}
+
+
+> **Descendants**：指所有子节点，类比于人类的子孙。**Descendant**包括**Children**。通过tag的``.descendants`` 生成器，可以对tag的子孙节点进行循环。
+
+{% highlight python linenos %}
+...
+for child in bsObj.find("table",{"id":"giftList"}).descendants:      #输出第一个id="giftList"的table Tag的所有子孙Tag，因此包括孩子，然后一层层剥离。
+    print(child)                
+...
+{% endhighlight %}
+
+
+
+
+### 3.2 Siblings ###
+
+> **Siblings**：指兄妹。通过tag的``.next_sibling(s)`` 生成器，可以对tag的下一兄妹(们)循环；通过tag的``.previous_sibling(s)`` 生成器，可以对tag的上一兄妹(们)循环。
+
+
+{% highlight python linenos %}
+...
+for child in bsObj.find("table",{"id":"giftList"}).tr.next_siblings: #输出第一个id="giftList"的table Tag的第一个tr Tag的下一兄妹们。
+    print(child)               
+...
+{% endhighlight %}
+
+{% highlight python linenos %}
+...
+for child in bsObj.find("table",{"id":"giftList"}).tr.next_siblings: #输出第一个id="giftList"的table Tag的第一个tr Tag的所有上一兄妹们。
+    print(child)               
+...
+{% endhighlight %}
+
+### 3.3 Parents ###
+
+> **Parents**：指父辈。通过tag的``.parent`` 生成器，可以定位到父亲；通过tag的``.parents`` 生成器，可以定位到父亲，爷爷，一直往上到根Tag。
+
+
+{% highlight python linenos %}
+...
+print(bsObj.find("img",{"src":"../img/gifts/img1.jpg"}).parent.previous_sibling.get_text())       //找到符合条件的img Tag的父亲的哥哥的文本。       
+...
+{% endhighlight %}
+
+
+
+## 4 Regular Expression ##
+
+### 4.1 Regular Expression Basics ###
+
+### 4.2 Regular Expression With BeautifulSoup ###
+
+## 5 Accessing Attributes ##
+
+## 6 Lambda Expression ##
+
+## 7 Summary ##
+
 
 {: .img_middle_lg}
 ![web scraping](/assets/images/posts/2015-12-01/urllib.png)
 
-
-{% highlight py linenos %}
-from urllib.request import urlopen
-
-html = urlopen("http://pythonscraping.com/pages/page1.html")   #获取html文件句柄
-print(html.read())                                             #读取html文件内容并打印
-
-{% endhighlight %}
-
-
-
-
-
-
-
-## 3. BeautifulSoup ##
-
-我们用一个小程序作为我们第一个网络爬虫，来感受下BeautifulSoup。
-
 {% highlight python linenos %}
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-
-htmlHandler = urlopen("http://pythonscraping.com/pages/page1.html")   #获取html文件句柄
-bsObj = BeautifulSoup(htmlHandler.read(),"html.parser")               #读取html文件内容,然后实例化BeautifulSoup
-print(bsObj.h1)                                                       #打印 h1 tag, 完整的是bsObj.html.body.h1
-#输出: <h1>An Interesting Title</h1>
 {% endhighlight %}
 
-
-**健壮性**：由于网络会出现各种不确定性，如连接断开，服务端关闭，服务端html目录错误找不到等，都会产生异常。因此我们要周到的考虑异常的处理，上面code的健壮性完善后如下。
-
-{% highlight python linenos %}
-from urllib.request import urlopen
-from urllib.error import HTTPError
-from bs4 import BeautifulSoup
-
-
-def getTitle(url):
-    try:
-        html = urlopen(url)
-    except HTTPError as e:
-        return None                                                  #若HTTPResponse为HTTPError，处理异常
-
-    try:
-        bsObj = BeautifulSoup(html.read(), "html.parser")
-        title = bsObj.h1                                             #若h1不存在，则title为None；若用title，则返回AttributeError。这里统一处理
-    except AttributeError as e:
-        return None
-    return title
-
-title = getTitle("http://www.pythonscraping.com/pages/page1.html")
-if title == None:                                                    #check title是不是None，再继续
-    print("title couldn't be found")
-else:
-    print(title)
-{% endhighlight %}
-
-
-## 4. 总结##
-
-本文作为Web Scraping系列的第一篇文章，从Big Picture上介绍了Web Scraping处于Network的什么位置. 在此基础上，我们介绍了用Python进行WebScraping的两个重要Module：
-1. **urllib**，作为Socket的升级版，将网络请求和数据的接受和发送简化为几行代码。
-2. **BeautifulSoup**，将html文件和xml文件转换为Python object(这里我们刚接触到的是BeautifulSoup object)来进行方面快速强大的数据访问。
-
-关于**BeautifulSoup**的详细介绍，请看下篇文章。
+[文章](https://www.shunmian.me/scraping/2015/12/02/Web-Scraping-Part-I-Building-Scrapers-(二)-BeautifulSoup进阶.html)。
 
 
 
-## 4 参考资料 ##
-- [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
-- [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
-- [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
-- [Programming Languages: Lambda Calculus](https://www.youtube.com/watch?v=v1IlyzxP6Sg);
-- [Functional Programming For The Rest of Us](http://www.defmacro.org/ramblings/fp.html);
-- [Scala Bility](http://www.socouldanyone.com/2014/12/scala-bility.html);
+## 8 参考资料 ##
+
+- [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
+- [《Python 3 Documentation》](https://docs.python.org/3/);
+- [《An Introduction to Networking Terminology, Interfaces, and Protocols》](https://www.digitalocean.com/community/tutorials/an-introduction-to-networking-terminology-interfaces-and-protocols);
 
 
 
