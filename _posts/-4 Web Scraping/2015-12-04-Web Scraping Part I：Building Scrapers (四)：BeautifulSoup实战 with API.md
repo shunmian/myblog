@@ -19,7 +19,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 {:.hr-short-left}
 
 
-上篇[文章]({{ site.baseurl}}/web%20scraping/2015/12/02/Web-Scraping-Part-I-Building-Scrapers-(%E4%BA%8C)-BeautifulSoup%E8%BF%9B%E9%98%B6.html)我们已经介绍过**BeautifulSoup**Advanced HTML Parsing的用法。本文我们用几个对真实网站抓取的例子来应用一下**BeautifulSoup**。这些例子根据涉及的域名数可以分为**单域名**和**多域名**，根据抓取的数量又可以分为**随机抓取**和**完全抓取**。
+上篇[文章](https://www.shunmian.me/scraping/2015/12/01/Web-Scraping-Part-I-Building-Scrapers-(一)-BeautifulSoup入门.html)我们已经介绍过**BeautifulSoup**是一个提供一些简单的、python式的函数用来处理**HTML**和**XML**导航、搜索、修改分析树等功能的解释器。本文我们来详细介绍Advanced HTML Parsing。
 
 ## 1 Singe-Domain##
 
@@ -410,11 +410,19 @@ followExternalOnly("http://www.hku.hk")
 
 本文从**Single-Domain(Randm Walk && Total Walk(External Links+Internal Links, Site Map, Site Data))**及**Multi-Domain(Random Walk)**这5个基础的例子，从真实的网站中带我们领略了BeautifulSoup的功能，也给我们日后的Web Scraping设立了5个基本的任务范本。最后将本文内容总结成下图以供参考。
 
+
+
+
+
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-03/BeautifulSoup实战总结.png)
+![web scraping](/assets/images/posts/2015-12-02/BeautifulSoup进阶.png)
 
+[这里]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#calculus)
 
-## 5 参考资料 ##
+{% highlight python linenos %}
+{% endhighlight %}
+
+## 8 参考资料 ##
 
 - [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
 - [《Python 3 Documentation》](https://docs.python.org/3/);

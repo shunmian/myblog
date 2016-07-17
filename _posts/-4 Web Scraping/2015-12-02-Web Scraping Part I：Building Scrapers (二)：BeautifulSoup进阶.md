@@ -3,9 +3,9 @@ layout: post
 title: Web Scraping Part I：Building Scrapers (二)：BeautifulSoup进阶
 categories: [Web Scraping]
 tags: [Web Scraping, BeaufitulSoup]
-number: [-4.1.1]
+number: [-4.1.2]
 fullview: false
-shortinfo: 
+shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第2篇笔记，将带您全面深入了解BeautifulSoup框架。
 
 ---
 目录

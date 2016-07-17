@@ -5,8 +5,7 @@ categories: [Web Scraping]
 tags: [Web Scraping, BeaufitulSoup]
 number: [-4.1.1]
 fullview: false
-shortinfo: 
-
+shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第1篇笔记。通过本文的阅读，您可以了解除了用Browser，我们还有什么途径来接触Network上的数据？Web Scraping是什么，在整个Network中处于什么位置， 如何在Python下用BeautifulSoup解析HTML文件。
 ---
 目录
 {:.article_content_title}
@@ -18,7 +17,7 @@ shortinfo:
 ---
 {:.hr-short-left}
 
-## 1. What is Web Scraping ##
+## 1 What is Web Scraping ##
 
 我们要想了解**Web Scraping**是什么，以及它处于网络的什么位置，那就不可避免的要先介绍什么是网络。
 
@@ -80,7 +79,7 @@ Why web scraping:
 
 **Beautiful Soup**是**Python**语言下**Web Scraping**的一个最为重要和流行的框架，用于访问HTML和XML文件。
 
-## 2. urllib ##
+## 2 urllib ##
 
 > **urllib**：a Python module that provides a simple interface for network resource access， 例如**HTML** files, **image** fiels, or any other file stream. It is An abstraction and simplification over **Socket**.
 
@@ -104,7 +103,7 @@ print(html.read())                                             #读取html文件
 
 
 
-## 3. BeautifulSoup ##
+## 3 BeautifulSoup ##
 
 我们用一个小程序作为我们第一个网络爬虫，来感受下BeautifulSoup。
 
@@ -148,7 +147,7 @@ else:
 {% endhighlight %}
 
 
-## 4. 总结##
+## 4 总结##
 
 本文作为Web Scraping系列的第一篇文章，从Big Picture上介绍了Web Scraping处于Network的什么位置. 在此基础上，我们介绍了用Python进行WebScraping的两个重要Module：
 
@@ -159,7 +158,7 @@ else:
 
 
 
-## 4 参考资料 ##
+## 5 参考资料 ##
 - [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
 - [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
 - [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
