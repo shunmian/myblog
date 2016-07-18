@@ -154,6 +154,12 @@ else:
 1. **urllib**，作为Socket的升级版，将网络请求和数据的接受和发送简化为几行代码。
 2. **BeautifulSoup**，将html文件和xml文件转换为Python object(这里我们刚接触到的是BeautifulSoup object)来进行方面快速强大的数据访问。
 
+下图是对本文的总结。
+
+
+{: .img_middle_hg}
+![web scraping](/assets/images/posts/2015-12-01/Network Summary.png)
+
 关于**BeautifulSoup**的详细介绍，请看下篇[文章](https://www.shunmian.me/scraping/2015/12/01/Web-Scraping-Part-I-Building-Scrapers-(一)-BeautifulSoup入门.html)。
 
 
