@@ -21,7 +21,9 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 
 上篇[文章]({{ site.baseurl}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Building-Scrapers-(三)-BeautifulSoup实战.html)我们已经介绍过**BeautifulSoup**实战中对多**单域名**和**多域名**以及**随机抓取**和**完全抓取**等5个任务的实现。本文我们来看看如何通过**API**进行Web Scraping。
 
-## 1 API概览##
+## 1 API ##
+
+### 1.1 API概览###
 
 
 

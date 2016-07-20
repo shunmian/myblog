@@ -5,7 +5,7 @@ categories: [Web Scraping]
 tags: [Web Scraping, BeaufitulSoup]
 number: [-4.1.3]
 fullview: false
-shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第3篇笔记，通过前2篇笔记，您已经掌握了BeautifulSoup的基本用法。本文将用几个实战的例子，带您用BeautifulSoup在真实的互联网上获取数据。
+shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第4篇笔记。API与Web Scraping初看是两个互补的获取网络数据的方式，大部分情况下是我们在没有找到合适API的基础上，才会试图用Web Scraping获取数据。而实际上，两者的界限并没有这么明显，而且大部分情况下，我们完全可以结合两者来获取多个database的数据来完成我们的目的。本文首先介绍API的基础，然后通过一个具体例子将API和BeautifulSoup结合起来，让我们略略体会其中的趣味。
 
 ---
 目录
