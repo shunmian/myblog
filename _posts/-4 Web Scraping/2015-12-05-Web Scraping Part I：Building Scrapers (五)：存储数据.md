@@ -223,64 +223,266 @@ finally:
 
 > **MySQL**：开放源代码的关系数据库管理系统(relational database management system)。关系数据库(relational database)指比如user A goes to place B，则user A可以在users table里找到，place B可以在places table里找到。**MySQL**是一个非常适合Web Scraping的数据库，我们会在本系列中用到它！
 
-### 3.1 Installing MySQL ###
+### 3.1 安装和入门 ###
 
-安装MySQL过程比较简单，有两种。
-
-1. 注册一个oracle账号；
-
-2. 下载 [the installation package](http://dev.mysql.com/downloads/mysql/)(.dmg package)；
-
-3. 双击下载文件安装。
-
-或者terminal输入: ``brew install mysql``。
-
-### 3.2 Some Basic Commands ###
-
-安装完mysql后，在terminal输入: ``mysql -u root -p`` 其中-u表示username，默认是root;-p表示password，默认是root。然后输入密码。MySQL就启动了。
-
-{% highlight python linenos %}
-
-LALdeMacBook-Pro:~ LAL$ mysql -u root -p
-Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 9
-Server version: 5.7.11 Homebrew
-
-Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql>
-
-{% endhighlight %}
-
-MySQL的模型总结和基本的增删改查命令总结在下图，如果同学们对深入了解MySQL感兴趣
+[请戳我]({{ site.baseurl}}/database/2015/06/01/MySQL入门.html)。
 
 ### 3.3 Integrating with Python ###
 
+Python的**pymysql module**是MySQL在Python上实现的客户端。
+使用pip命令行安装**pymysql module**非常方便。
+
+{% highlight python linenos %}
+pip3 install PyMySQL
+{% endhighlight %}
+
+这里pip3表示安装在python3的库里。
+
+{% highlight python linenos %}
+
+import pymysql
+
+#1.1 create connection object
+connection = pymysql.connect(host='127.0.0.1', unix_socket='/tmp/mysql.sock',user='root',password='*****',db='mysql')
+#1.2 create cursor object
+cursor = connection.cursor()
+#2.1 xecyte SQL
+cursor.execute("USE scraping")
+cursor.execute("SELECT * FROM pages WHERE title LIKE 'title%'")
+#2.2 获取data
+for row in cursor.fetchall():
+    print(row)
+
+#3.1 close cursor
+cursor.close()
+#3.2 close connection
+connection.close()
+
+
+#Output:
+# (4, 'title1', 'content1', datetime.datetime(2016, 7, 20, 17, 32, 36))
+# (5, 'title2', 'content2', datetime.datetime(2016, 7, 20, 17, 32, 36))
+# (6, 'title6', 'content6', datetime.datetime(2016, 7, 20, 17, 55, 35))
+# (7, 'title7', 'content7', datetime.datetime(2016, 7, 20, 17, 55, 35))
+
+{% endhighlight %}
+
+
+
+我们可以用之前**Wikipedia**的**Kevin Bacon**页面，进行single domain random walk，并且将每个page的title和content(first paragraph)记录在MySQL里。以下是代码。
+
+{% highlight python linenos %}
+
+import pymysql
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import datetime
+import random
+import re
+
+connection = pymysql.connect(host       ='127.0.0.1',
+                             unix_socket='/tmp/mysql.sock',
+                             user       ='root',
+                             password   ='******',
+                             charset    ='utf8')
+
+cursor = connection.cursor()
+cursor.execute("USE scraping")
+
+random.seed(datetime.datetime.now())
+
+def store(title, content):
+    '''
+    :param title: if title already exist, return, else store
+    :param content:
+    :return:
+    '''
+
+    #use encaosulate string with \"%s\" tackles the NULL tiltle(otherwise error appear), why?
+    cursor.execute("SELECT * FROM pages WHERE title=\"%s\"", title)
+    if(len(cursor.fetchall()) > 0):
+        return;
+    else:
+        # the title and content should be 'title' and 'content' in the
+        cursor.execute("INSERT INTO pages (title,content) VALUES (\"%s\",\"%s\")",(title,content))
+        cursor.connection.commit()
+
+def getLinks(articalUrl):
+    htmlFileHandler = urlopen("https://en.wikipedia.org" + articalUrl)
+    bsObj = BeautifulSoup(htmlFileHandler.read(),"html.parser")
+    title = bsObj.find("h1",{"id":"firstHeading"}).string
+    content = bsObj.find("div",id="mw-content-text").find('p').get_text()
+    print(content[0:100])
+    store(title, content[0:100])
+
+    return bsObj.find("div",{"id":"bodyContent"}).findAll("a",href=re.compile("^(/wiki/)((?!:).)*$"))
+
+links = getLinks("/wiki/Kevin_Bacon")
+try:
+    while(len(links)>0):
+        newArticleHref = links[random.randint(0,len(links)-1)].attrs["href"]
+        print(newArticleHref)
+        getLinks(newArticleHref)
+
+finally:
+    cursor.close()
+    connection.close()
+
+#Output:
+# +-----+------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------+
+# | id  | title                        | content                                                                                                          | created             |
+# +-----+------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------+
+# | 119 | 'Kevin Bacon'                | 'Kevin Norwood Bacon  (born July 8, 1958)[2] is an American actor and musician whose films include '             | 2016-07-20 22:18:52 |
+# | 120 | 'Kathleen Quinlan'           | 'Kathleen Denise Quinlan (born November 19, 1954) is an American film and television actress. She rec'           | 2016-07-20 22:18:54 |
+# | 121 | 'Andrew Lincoln'             | 'Andrew James Clutterbuck (born 14 September 1973),[1] better known by his stage name Andrew Lincoln,'           | 2016-07-20 22:19:00 |
+# | 122 | 'Kevin Costner'              | 'Kevin Michael Costner (born January 18, 1955) is an American actor, film director, producer, musicia'           | 2016-07-20 22:19:03 |
+# | 123 | 'Jamie Foxx'                 | 'Eric Marlon Bishop (born December 13, 1967),[1] known professionally by his stage name Jamie Foxx, i'           | 2016-07-20 22:19:07 |
+# | 124 | 'Ménage à trois'             | 'A ménage à trois (French for "household of three") is a domestic arrangement in which three people h'           | 2016-07-20 22:19:08 |
+# | 125 | 'He Said, She Said'          | 'He Said, She Said is a 1991 American romantic comedy directed by Ken Kwapis and Marisa Silver and st'           | 2016-07-20 22:19:09 |
+# +-----+------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------+
+
+
+
+{% endhighlight %}
+
+
 ### 3.4 Database Techniques and Good Practice ###
+
+数据库是计算机科学的一门重要的研究领域，许多人究其一生来研究数据库。你我或许不是这样的研究者，但是有以下几点建议可以让你的数据库运行的更加快速。
+
+1. **在大部分情况下，增加一个id column 作为PRIMARY KEY，并且设置为AUTO_INCREMENT**；
+
+2. **使用智能索引**。举个例子，在字典里，每一个条目是按照单词从a-z顺序排列，而不是单词的定义；实际使用中，我们肯定会用前者去查条目。但是在计算机领域，使用后者的场景并不少见；试想一下，给你一个定义，按一下命令去查找条目``SELECT * FROM dictionary WHERE definition="A small furry animal that says meow";``这样的查找效率就比较低下。实际上，你可以让MySQL给定义的前10个字符创建索引``
+CREATE INDEX definition ON dictionary (id, definition(16));``，这样搜索起来就快多了并且不会增加太多空间负担。
+
+3. **将一个Table拆分成多个Table存储以减少存储空间**。
+
+4. **除非使用第三方日志模块，你很难去获取Row怎删改查的时间，所以记得给Table加一个`` createdTime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP``Field**。
+
 
 ### 3.5 "Six Degrees" in MySQL ###
 
-## 4. Email Notification ##
+我们之前在[第三篇笔记]({{ site.baseurl}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Building-Scrapers-(三)-BeautifulSoup实战.html)里提到的"Six Degree of Wikipedia"问题，可以在这里利用数据库来存储小于6个点的信息。话不多说，上代码。
 
-## 5. 总结 ##
-
-
-{: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-02/BeautifulSoup进阶.png)
-
-[这里]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#calculus)
 
 {% highlight python linenos %}
+
+from urllib.request import urlopen
+import pymysql
+from bs4 import BeautifulSoup
+import re
+
+connection = pymysql.connect(host       ='127.0.0.1',
+                             unix_socket='/tmp/mysql.sock',
+                             user       ='root',
+                             password   ='******',
+                             charset    ='utf8')
+
+cursor = connection.cursor()
+cursor.execute("USE wikipedia")
+
+def insertPageIfNotExists(url):
+    '''
+    :param url: if url already exist, return its id; else insert first, then return its id
+    :return: id
+    '''
+
+    #use encaosulate string with \"%s\" tackles the NULL tiltle(otherwise error appear), why?
+    cursor.execute("SELECT * FROM pages WHERE url=%s", url)
+    if cursor.rowcount == 0:
+        # the title and content should be 'title' and 'content' in the
+        cursor.execute("INSERT INTO pages (url) VALUES (%s)", url)
+        cursor.connection.commit()
+        return cursor.lastrowid
+    else:
+        return cursor.fetchone()[0];
+
+
+def insertLink(fromPageId,toPageId):
+    '''
+    :param fromPageId,toPageId: if (fromPageId,toPageId) not exist, insert into links table
+    :return:
+    '''
+
+    #use encaosulate string with \"%s\" tackles the NULL tiltle(otherwise error appear), why?
+    cursor.execute("SELECT * FROM links WHERE fromPageId=%s AND toPageId=%s", (int(fromPageId),int(toPageId)))
+    if cursor.rowcount == 0:
+        # the title and content should be 'title' and 'content' in the
+        cursor.execute("INSERT INTO links (fromPageId,toPageId) VALUES (%s,%s)", (fromPageId,toPageId))
+        cursor.connection.commit()
+    else:
+        return;
+
+pages = set()
+
+def getLinks(pageUrl,recursionLevel):
+    global pages
+    # 大于4的pageUrl扔掉
+    if recursionLevel > 4:
+        return
+    pageId = insertPageIfNotExists(pageUrl)
+    print(pageId,type(pageId))
+    htmlFileHandler = urlopen("https://en.wikipedia.org" + pageUrl)
+    bsObj = BeautifulSoup(htmlFileHandler.read(),"html.parser")
+    linkTags = bsObj.find("div",{"id":"bodyContent"}).findAll("a",href=re.compile("^(/wiki/)((?!:).)*$"))
+
+    for linkTag in linkTags:
+        linkHref = linkTag.attrs["href"]
+        insertLink(pageId,insertPageIfNotExists(linkHref))
+        if linkHref not in pages:
+            pages.add(linkHref)
+            getLinks(linkHref,recursionLevel+1)
+
+try:
+    getLinks("/wiki/Kevin_Bacon",0)
+finally:
+    cursor.close()
+    connection.close()
+
+#Output:
+
+# mysql> SELECT * FROM pages;
+# +----+-----------------------------------------+---------------------+
+# | id | url                                     | created             |
+# +----+-----------------------------------------+---------------------+
+# |  1 | /wiki/Kevin_bacon                       | 2016-07-20 23:11:47 |
+# |  2 | /wiki/Kevin_Bacon_(disambiguation)      | 2016-07-20 23:12:49 |
+# |  3 | /wiki/San_Diego_Comic-Con_International | 2016-07-20 23:24:33 |
+# |  4 | /wiki/Comic_Con_(disambiguation)        | 2016-07-20 23:24:47 |
+# +----+-----------------------------------------+---------------------+
+# 3 rows in set (0.00 sec)
+#
+# mysql> SELECT * FROM links;
+# +-----+------------+----------+---------------------+
+# | id  | fromPageId | toPageId | created             |
+# +-----+------------+----------+---------------------+
+# |   1 |          1 |        2 | 2016-07-20 23:24:24 |
+# |   2 |          2 |        1 | 2016-07-20 23:24:25 |
+# |   3 |          1 |        3 | 2016-07-20 23:24:33 |
+# |   4 |          3 |        4 | 2016-07-20 23:24:47 |
+# |   5 |          4 |        3 | 2016-07-20 23:24:48 |
+# |   6 |          4 |        5 | 2016-07-20 23:24:48 |
+# |   7 |          4 |        6 | 2016-07-20 23:24:48 |
+# |   8 |          4 |        7 | 2016-07-20 23:24:48 |
+# |   9 |          4 |        8 | 2016-07-20 23:24:48 |
+# |  10 |          4 |        9 | 2016-07-20 23:24:48 |
+# |  11 |          4 |       10 | 2016-07-20 23:24:48 |
+# |  12 |          4 |       11 | 2016-07-20 23:24:48 |
+# |  13 |          4 |       12 | 2016-07-20 23:24:48 |
+# +-----+------------+----------+---------------------+
+
 {% endhighlight %}
 
-## 8 参考资料 ##
+
+## 4. 总结 ##
+
+最后将本文总结成下图。
+
+{: .img_middle_hg}
+![web scraping](/assets/images/posts/2015-12-05/storing data summary.png)
+
+
+## 5 参考资料 ##
 
 - [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
 - [《Python 3 Documentation》](https://docs.python.org/3/);
