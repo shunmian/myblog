@@ -286,7 +286,7 @@ reading document summary
 
 ## 4 Web Scraping Part I：Basic Scrapers 总结 ##
 
-到此为止，我们的WebScraping系列的第一部分，***Basic Scrapers**就已经全部结束。通过这6篇笔记，详细您对Web scraping已经有了一个初步的了解，比如如何获取数据(Retrieve Data)，解析不同文件类型的数据(Parse Data, includes html,xml,txt,pdf,csv,doc&docx等)。我们将本部分总结成下图以供参考。
+到此为止，我们的WebScraping系列的第一部分，**Basic Scrapers**就已经全部结束。通过这6篇笔记，相信您对Web scraping已经有了一个初步的了解，比如如何获取数据(Retrieve Data)，解析不同文件类型的数据(Parse Data, includes html,xml,txt,pdf,csv,doc&docx等)。我们将本部分总结成下图以供参考。
 
 {: .img_middle_hg}
 ![web scraping](/assets/images/posts/2015-12-06/Web Scraping Part I Basic Scrapers summary.png)
