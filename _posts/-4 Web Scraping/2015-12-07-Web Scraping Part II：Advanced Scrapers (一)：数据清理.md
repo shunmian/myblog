@@ -3,7 +3,7 @@ layout: post
 title: Web Scraping Part II：Advanced Scrapers (一)：数据清理
 categories: [Web Scraping]
 tags: [Web Scraping, BeaufitulSoup]
-number: [-4.1.3]
+number: [-4.1.7]
 fullview: false
 shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第1篇笔记。之前我们获得原始数据都是规范好的干净的数据(Clean Data)，比如API返回的XML；或者容易规范的原始数据，如**六度维基理论**存储的ID和url。如果我们获取的原始数据是凌乱的数据(Dirty Data)，要怎么清理，清理后又需要做什么处理？本文就这两个问题展开详细讨论。
 
