@@ -461,14 +461,10 @@ for sentence in sentences:
 
 最后我们将本文整理成下图以供参考。
 
-[Cleaning in code]({{ site.baseurl}}/web%20scraping/2015/12/07/Web-Scraping-Part-II-Advanced-Scrapers-(一)-数据清理.html#cleaining-in-code)
 
-{: .img_middle_ld}
+{: .img_middle_lg}
 ![web scraping](/assets/images/posts/2015-12-08/NL Summary.png)
 
-{% highlight python linenos %}
-
-{% endhighlight %}
 
 ## 6 参考资料 ##
 
