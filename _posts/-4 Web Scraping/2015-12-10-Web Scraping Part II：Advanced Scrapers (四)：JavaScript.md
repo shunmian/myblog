@@ -5,7 +5,7 @@ categories: [Web Scraping]
 tags: [Web Scraping, BeaufitulSoup]
 number: [-4.1.10]
 fullview: false
-shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第1篇笔记，。
+shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第4篇笔记。JavaScript是动态页面技术的基石(包括Ajax,DHTML)，将HTML的数据展示层和数据更新层进行了解耦，使得HTML文件不变却能更改数据展示。JavaScript使得我们之前用静态网页抓取的技术统统失效。解决的办法在于如何写出用Web Scraper解析JavaScript的程序。幸运的是，第三方库Selenium使得我们可以抓取一个真实运行在浏览器上的网页，让一切变的如此简单。本文我们主要来看看动态网页如何利用Selenium进行抓取。
 
 ---
 目录
@@ -18,11 +18,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 ---
 {:.hr-short-left}
 
-
-在《Web Scraping With Python》第一部分，Basic Srapers，我们覆盖了Web Scraping的基础部分，即如何获取数据，解析数据和存储数据。之所以说它是基础，是因为获取的数据都是整理好存储在既定格式(如html，xml，json，doc，txt，pdf，csv等)里的；并且我们没有涉及到反爬虫程序(antiscraping measures)，JavaScript，登录表格，流数据等话题。第二部分，Advanced Scraper，我们就来关注这些Advanced的话题。
-
-首先，本文作为第二部分Advanced Scraper的第1篇笔记，我们来了解下如何从将**原始数据**清理，规范化以成为我们需要的数据，即**数据清理**。
-
+**JavaScript**是动态页面技术的基石(包括Ajax,DHTML)，将HTML的数据展示层和数据更新层进行了解耦，使得我们在浏览动态网页的时候看到内容在更新HTML文件却没变。**JavaScript**使得我们之前用静态网页抓取的技术统统失效。解决的办法在于如何写出用Web Scraper解析**JavaScript**的程序。幸运的是，第三方库**Selenium**使得我们可以抓取一个真实运行在浏览器上的网页，让一切变的如此简单。本文我们主要来看看动态网页如何利用**Selenium**进行抓取。
 
 
 客户端脚本语言是运行在浏览器而不是服务器的语言。因此客户端脚本的成功运行基于浏览器解析和执行该脚本的正确性。这就是为什么你可以如此轻松的在浏览器关闭JavaScript。
@@ -79,7 +75,7 @@ console.log(fibInstance()+" is in the Fibonacci sequence");
 
 
 
-### 1.1 Common JavaScript Libraries ###
+常见的JavaScript库有以下几种，供读者参考。
 
 > **jQuery**： a cross-platform JavaScript library designed to simplify the client-side scripting of HTML。
 
@@ -89,9 +85,9 @@ console.log(fibInstance()+" is in the Fibonacci sequence");
 
 用Python来执行包括这些JavaScript Libararies的代码非常消耗时间和CPU。
 
-## 2 Ajax and Dynamic HTML ##
+## 2 Selenium ##
 
-到目前为止，我们与服务器发收数据的唯一方式是通过HTTP请求来获得响应。如果你遇到一个网页在更新数据却没有重载页面(reload page)，那这个网页很大可能在用**Ajax**。
+到目前为止，我们与服务器发收数据的唯一方式是通过HTTP请求来获得响应。如果你遇到一个网页在更新数据却没有重载页面(reload page)，那这个网页很大可能在用**Ajax**或者**HTML**。
 
 > **Ajax**：short for asynchronous JavaScript and XML)，is a set of web development techniques using many web technologies on the **client-side** to create **asynchronous** Web applications by decoupling the **data interchange layer** from the **presentation layer**，which means updating diplay content without reload the entire page。
 
@@ -105,24 +101,54 @@ console.log(fibInstance()+" is in the Fibonacci sequence");
 
 2. 使用能**执行JavaScript**的Python module然后从网页中scrape就像你正常浏览一个网站一样。
 
-### 2.1 Executing Javascript in Python  with Selenium ###
-
-> **Selenium**：a powerful **web scraping tool** developed originally for website testing by **automating browsers** to load the website, retrieve the required data, and even take screenshots or assert that certain actions happen on the website。
-
-[Selenium](http://www.seleniumhq.org/)是一个Python Module，可以用``pip3 install selenium``下载安装。**Selenium**没有自己的浏览器，必须和第三方浏览器结合使用。你在使用的时候会发现有一个浏览器弹出，按照你写好的程序运行。但是你可以用一个**PhantomJS**的**headless browser**是你的程序安静运行在后台而不会弹出浏览器。
-
-> **PhantomJS**：a **headless** WebKit scriptable with a **JavaScript API**。It has fast and native support for various web standards: DOM handling，CSS selector，JSON，Canvas，and SVG。**PhantomJS** makes it a similar browsing environment to **Safari** and Google **Chrome**。
-
-[PhantomJS](http://phantomjs.org/)不是一个Python Module，所以需要你手动下载到程序
+关于用Selenium 执行 JavaScript进行Web Scrape请见[这里]({{site.baseurl}}/web%20scraping/2015/12/15/Web-Scraping-A1-Selenium.html)。
 
 ## 3 Handling Redirects ##
 
+> **URL Redicret**：分为两种情况。<br />
+1.服务器端的Redirects，会在页面加载前自动更改url，因此可以简单地用Python的urllib执行(自动处理)。需要注意的是，最后地址栏返回的url可能不是你刚开始输入的url。<br />
+2.客户端的Redirects是在客户的浏览器上执行的Javascript，因此我们也可以用**Selenium**抓取。问题的关键在于如何告诉**Selenium**JavaScript执行的结束。
+
+下列代码用一种巧妙的办法将Redicect的结束和原HTML的tag的消失绑定在一起。
+
+
+{% highlight python linenos %}
+
+from selenium import webdriver
+import time
+from selenium.common.exceptions import StaleElementReferenceException
+
+def waitForLoad(driver):
+    elem = driver.find_element_by_tag_name("html")
+    count = 0
+    while True:
+        count += 1
+        if count > 20:
+            print("Timing out after 10 seconds and returning")
+            return
+        time.sleep(1)
+        try:
+            elem == driver.find_element_by_tag_name("html")
+        except StaleElementReferenceException:
+            print("original page disappear")
+            return
+
+driver = webdriver.PhantomJS(executable_path='/Applications/phantomjs-2.1.1-macosx 2/bin/phantomjs')
+driver.get("http://pythonscraping.com/pages/javascript/redirectDemo1.html")
+waitForLoad(driver)
+print(driver.page_source)
+
+{% endhighlight %}
+
 ## 4 总结 ##
 
-[Cleaning in code]({{ site.baseurl}}/web%20scraping/2015/12/07/Web-Scraping-Part-II-Advanced-Scrapers-(一)-数据清理.html#cleaining-in-code)
+本文着重介绍了如何用Python **scrape JavaScript**。由于Python自己对JavaScript执行的低效，我们可以借助第三方库**Selenium**来抓取页面，同时也可以用它来处理客户端的Redirects。
+
+最后，本文总结成下图以供参考。
+
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-07/Data Cleaning Summary.png)
+![web scraping](/assets/images/posts/2015-12-10/Scraping JavaScript Summary.png)
 
 {% highlight python linenos %}
 
@@ -132,7 +158,9 @@ console.log(fibInstance()+" is in the Fibonacci sequence");
 
 - [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
 - [《Python 3 Documentation》](https://docs.python.org/3/);
-- [《OpenRefine》](http://openrefine.org/);
+- [《Selenium WebDriver》](http://www.seleniumhq.org/docs/03_webdriver.jsp#introducing-webdriver);
+- [《Selenium WebDriver Python Documentation》](https://seleniumhq.github.io/selenium/docs/api/py/api.html);
+- [《Selenium with Python》](http://selenium-python.readthedocs.io/);
 
 
 
