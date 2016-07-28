@@ -2,7 +2,7 @@
 layout: post
 title: Web Scraping Part II：Advanced Scrapers (六)：网络爬虫陷阱
 categories: [Web Scraping]
-tags: [Web Scraping, BeaufitulSoup]
+tags: [Web Scraping, HTTP header, cookie]
 number: [-4.1.12]
 fullview: false
 shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第12篇笔记。重点介绍如何规避反抓取陷阱。
@@ -295,9 +295,8 @@ for input in inputs:
 
 ## 6 参考资料 ##
 
-- [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
 - [《Python 3 Documentation》](https://docs.python.org/3/);
-- [《OpenRefine》](http://openrefine.org/);
+
 
 
 

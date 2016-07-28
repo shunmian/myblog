@@ -2,7 +2,7 @@
 layout: post
 title: Web Scraping Part II：Advanced Scrapers (二)：读写自然语言
 categories: [Web Scraping]
-tags: [Web Scraping, BeaufitulSoup]
+tags: [Web Scraping, NLTK]
 number: [-4.1.8]
 fullview: false
 shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第2篇笔记，读写自然语言。之前的文本，我们将raw data清理成fact后完没有进一步分析利用这些facts。本文我们从统计概率和词性两个方面来看看如何分析文本数据。
@@ -317,7 +317,7 @@ except SolutionFound as e:
 2. 安装完nltk module相关module。terminal 输入``python3  #进入python3``
 ``import nltk  nltk.download()``。
 
-### 3.2 NTLTK概率分析 ###
+### 3.2 NLTK概率分析 ###
 
 下面我们从**text object**，**frequency distribution**，**ngrams**以及iteration来略略感受下nltk的强大。
 

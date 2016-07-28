@@ -2,7 +2,7 @@
 layout: post
 title: Web Scraping Part II：Advanced Scrapers (四)：JavaScript
 categories: [Web Scraping]
-tags: [Web Scraping, BeaufitulSoup]
+tags: [Web Scraping, Selenium, JavaScript]
 number: [-4.1.10]
 fullview: false
 shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第4篇笔记。JavaScript是动态页面技术的基石(包括Ajax,DHTML)，将HTML的数据展示层和数据更新层进行了解耦，使得HTML文件不变却能更改数据展示。JavaScript使得我们之前用静态网页抓取的技术统统失效。解决的办法在于如何写出用Web Scraper解析JavaScript的程序。幸运的是，第三方库Selenium使得我们可以抓取一个真实运行在浏览器上的网页，让一切变的如此简单。本文我们主要来看看动态网页如何利用Selenium进行抓取。

@@ -2,7 +2,7 @@
 layout: post
 title: Web Scraping Part II：Advanced Scrapers (三)：表单和登录
 categories: [Web Scraping]
-tags: [Web Scraping, BeaufitulSoup]
+tags: [Web Scraping, Python requests]
 number: [-4.1.9]
 fullview: false
 shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第3篇笔记。重点介绍Requests module以及如何利用它来提交表单和登录网站。
