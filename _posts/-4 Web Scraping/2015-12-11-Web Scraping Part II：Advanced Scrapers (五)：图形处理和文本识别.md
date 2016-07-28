@@ -5,7 +5,7 @@ categories: [Web Scraping]
 tags: [Web Scraping, BeaufitulSoup]
 number: [-4.1.11]
 fullview: false
-shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第1篇笔记，。
+shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第5篇笔记。重点介绍图片的OCR和APTACHA的识别与提交。
 
 ---
 目录
