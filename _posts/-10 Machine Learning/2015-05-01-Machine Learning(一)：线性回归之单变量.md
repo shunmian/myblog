@@ -5,7 +5,7 @@ categories: [Machine Learning]
 tags: [Machine Learning]
 number: [-10.1]
 fullview: false
-shortinfo: MySQL是关系数据库管理系统的代表，在互联网上有广泛的应用。本文我们来简单介绍MySQL的基本知识，并且总结它95%的用途，以供日后使用参考。
+shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获得学习的能力，这在现代计算机科学中有着广泛的应用，从google的搜索分类，到OCR的训练以及AlphaGo的人工智能等等。本文是Coursera上吴恩达教授的《Machine Learning》系列课程的第一篇笔记：线性回归之单变量。
 
 ---
 目录
