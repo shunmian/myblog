@@ -3,7 +3,7 @@ layout: post
 title: Machine Learning(一)：线性回归之单变量
 categories: [Machine Learning]
 tags: [Machine Learning]
-number: [-10.1]
+number: [-11.1]
 fullview: false
 shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获得学习的能力，这在现代计算机科学中有着广泛的应用，从google的搜索分类，到OCR的训练以及AlphaGo的人工智能等等。本文是Coursera上吴恩达教授的《Machine Learning》系列课程的第一篇笔记：线性回归之单变量。
 
@@ -52,7 +52,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 
 ## 2 线性回归之单变量 ##
 
-**单变量线性回归**是**监督式学习回归**的一种最简单问题。它利用单一变量和其映射的输出，来获取预测函数，使得给定一个变量，能获得最准确的输出。
+**单变量线性回归**是**监督式学习回归**的一种最简单问题。它利用单一变量(即只有一个输入变量x)和其映射的输出，来获取预测函数，使得给定一个变量，能获得最准确的输出。
 
 
 {: .img_middle_mid}
@@ -72,10 +72,10 @@ $$
 我们可以测试预测函数的准确性，用方差来表示，称其为成本函数$J(\theta)$：
 
 $$
-J(\theta) = \frac 1 {2m} \sum_{i=1}^m (h_\theta(x_i)-y_i)^2
+J(\theta) = \frac 1 {2m} \sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2
 $$
 
-其中$\frac 1 2$表示一个特殊系数，$\frac 1 m$表示平均到每一对数据，${h_\theta(x_i)-y_i}^2$表示预测函数的$y_i$和实际的$y_i$的差距。因此我们需要找到一对$\theta_0$和$\theta_1$使得$J(\theta)$最小。
+其中$\frac 1 2$表示一个特殊系数，$\frac 1 m$表示平均到每一对数据，$(h_\theta(x^{(i)})-y^{(i)})^2$表示预测函数的$y^{(i)}$和实际的$y^{(i)}$的差距。因此我们需要找到一对$\theta_0$和$\theta_1$使得$J(\theta)$最小。
 
 
 ### 2.3 预测函数和成本函数的关系 ###
@@ -118,11 +118,12 @@ $$
 repeat until convergence：
 
 $$
-\theta_0 := \theta_0 - \alpha \frac 1 m \sum_{i=1}^m[h_\theta(x_i)-y_i]
+\theta_0 := \theta_0 - \alpha \frac 1 m \sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]
 $$
 
+
 $$
-\theta_1 := \theta_1 - \alpha \frac 1 m \sum_{i=1}^m \lbrace[h_\theta(x_i)-y_i]x_i\rbrace
+\theta_1 := \theta_1 - \alpha \frac 1 m \sum_{i=1}^m \lbrace[h_\theta(x^{(i)})-y^{(i)}]x^{(i)}\rbrace
 $$
 
 > **梯度下降算法**的意义在于我们只需要猜测一个预测函数的起始点$h(\theta_0,\theta_1)$，然后重复应用上面两个方程，来接近$J(\theta_0,\theta_1)$的最小值，我们的预测函数就会越来越准确。
@@ -148,18 +149,19 @@ $$
 repeat until convergence：
 
 $$
-\theta_0 := \theta_0 - \alpha \frac 1 m \sum_{i=1}^m[h_\theta(x_i)-y_i]
+\theta_0 := \theta_0 - \alpha \frac 1 m \sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]
 $$
 
+
 $$
-\theta_1 := \theta_1 - \alpha \frac 1 m \sum_{i=1}^m \lbrace[h_\theta(x_i)-y_i]x_i\rbrace
+\theta_1 := \theta_1 - \alpha \frac 1 m \sum_{i=1}^m \lbrace[h_\theta(x^{(i)})-y^{(i)}]x^{(i)}\rbrace
 $$
 
 
 
 ## 6 参考资料 ##
-- [Deep Learning](http://deeplearning.net/);
-- [Microsoft Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/);
+- [《Deep Learning》](http://deeplearning.net/);
+- [《Microsoft Azure Machine Learning》](https://azure.microsoft.com/en-us/services/machine-learning/);
 - [《A Visual Introduction to Machine Learning》](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/);
 
 

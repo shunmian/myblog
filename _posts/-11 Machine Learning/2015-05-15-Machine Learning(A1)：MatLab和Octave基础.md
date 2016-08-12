@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Machine Learning(A1)：MatLab和Octave基础
+title: Machine Learning A1：MatLab和Octave基础
 categories: [Machine Learning]
 tags: [Machine Learning,Matlab,Octave]
-number: [-10.1]
+number: [-11.1]
 fullview: false
 shortinfo: 本文简单总结Matlab和Octave的基础用法，以供参考。
 

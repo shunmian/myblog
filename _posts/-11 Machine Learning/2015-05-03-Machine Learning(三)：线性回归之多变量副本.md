@@ -3,7 +3,7 @@ layout: post
 title: Machine Learning(二)：线性回归之多变量
 categories: [Machine Learning]
 tags: [Machine Learning]
-number: [-10.1]
+number: [-11.1]
 fullview: false
 shortinfo: MySQL是关系数据库管理系统的代表，在互联网上有广泛的应用。本文我们来简单介绍MySQL的基本知识，并且总结它95%的用途，以供日后使用参考。
 
