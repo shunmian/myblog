@@ -5,7 +5,7 @@ categories: [Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]
 fullview: false
-shortinfo: MySQL是关系数据库管理系统的代表，在互联网上有广泛的应用。本文我们来简单介绍MySQL的基本知识，并且总结它95%的用途，以供日后使用参考。
+shortinfo: 线性回归之多变量是对线性回归之单变量的范化，都属于监督式学习的回归问题。本文我们对线性回归之多变量做一个简单的介绍。
 
 ---
 目录

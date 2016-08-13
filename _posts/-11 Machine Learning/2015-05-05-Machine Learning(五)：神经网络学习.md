@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning(二)：线性回归之多变量
+title: Machine Learning(五)：神经网络学习
 categories: [Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]
