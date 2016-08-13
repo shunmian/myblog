@@ -1,69 +1,478 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang = "en">
+<head>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/posts/favico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/posts/favico/favico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/posts/favico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/posts/favico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/posts/favico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/posts/favico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/posts/favico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/posts/favico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/posts/favico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/posts/favico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/posts/favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/posts/favico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/posts/favico/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/posts/favico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/images/posts/favico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">   
+
     <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+    <link href="/assets/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
 
-      a {
-        color: rgb(3,155,229);
-      }
 
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+<!--     <script type="text/javascript" src="http://api.youziku.com/webfont/FastJS/yzk_976E121ED7CC0870"></script> -->
 
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
+    <title>SHUNMIAN</title>
+</head>
 
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-      }
 
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
+<body>
 
-      #message li a {
-        display: inline-block;
-        padding: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        background: rgb(3,155,229);
-        color: white;
-        border: 1px solid rgb(3,155,229);
-        border-radius: 3px;
-        font-size: 14px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h1>Welcome to Firebase Hosting</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 sidebar hidden-xs sidebar">
+                
+<!--sidebar.html-->
+        <header class="sidebar_header " role="banner">
+            <a href="http://www.shunmian.me/index.html">
+                <img src = "https://www.gravatar.com/avatar/02eefecba7f0b21939d12a37f94bf5df?s=150" class="img-circle img-responsive center-block sidebar_logo sidebar_img" />
+            </a>
+
+
+            <h3 class="title text-center">
+                <a href="http://www.shunmian.me/index.html">SHUNMIAN</a>
+            </h3>
+
+        </header>
+
+
+        <hr class="hr_short"/>
+        <div id = "bio" class="text-center sidebar_bio">
+            
+
+                <p>嗨，欢迎来到我的博客。<br/>
+                我是Shunmian，一名iOS开发者。<br/>
+                <hr class = "hr_short_low">
+                正在学习Algorithm，Functional Programming，Machine Learning，Data Mining 和 Cloud Computation。 
+
+                </p>
+
+            
+        </div>
+
+
+        <hr class="hr_middle"/>
+        <div id = "contact-list" class="text-center">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    
+                    <a class="btn btn_info_outline" href="mailto:shunmian@gmail.com"><i class="fa fa-envelope fa-lg"></i></a>
+                    
+                </li>
+
+                <li>
+                    
+                    <a class="btn btn_info_outline" href="https://github.com/shunmian"><i class="fa fa-github fa-lg"></i></a>
+                    
+                </li>
+
+                <li>
+                    
+                    <a class="btn btn_info_outline" href="https://github.com/shunmian"><i class="fa fa-twitter fa-lg"></i></a>
+                    
+                </li>
+
+                <li>
+                    <a class="btn btn_info_outline" href="http://www.shunmian.me/feed.xml"><i class="fa fa-rss fa-lg"></i></a>
+                </li>
+        </div>
+
+
+        <hr class="hr_short"/>
+        <div id = "contact-list" class="text-center">
+            <ul class="unstyled-list list-inline">
+                <li>
+                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/index.html"><i class="fa fa-home fa-md"></i> 主页</a>
+                </li>
+
+                <li>
+                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/tags.html"><i class="fa fa-tags fa-md"></i> 标签</a>
+                </li>
+
+                <li>
+                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/categories.html"><i class="fa fa-list fa-md"></i> 分类</a>
+                </li>
+            </ul>
+        </div>
+        <div class="padding_bottom_500"></div>
+
+
+
+
+<!--sidebar.html end-->
+
+            </div>
+
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="post_page_padding">
+
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/20/OC-Runtime(%E4%B8%83)_Test.html">OC Runtime(七)： Test3</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在Objective C中, Key Value Observing 是用来对Observing Pattern的Apple官方实现。 它的实现原理用的是isa Swizzling。但是apple对其细节没有多讲。本文用三种方式来实现Oberving Pattern：普通设计模式, isa Swizzling和Method Swizzling。希望通过本文能让您对Observing Pattern有一个全面的认识。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-20 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/20/OC-Runtime(%E4%B8%83)_Test.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/19/OC-Runtime(%E5%85%AD)_iVar-and-Property.html">OC Runtime(六)： iVar and Property</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在Objective C中, Key Value Observing 是用来对Observing Pattern的Apple官方实现。 它的实现原理用的是isa Swizzling。但是apple对其细节没有多讲。本文用三种方式来实现Oberving Pattern：普通设计模式, isa Swizzling和Method Swizzling。希望通过本文能让您对Observing Pattern有一个全面的认识。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-19 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/19/OC-Runtime(%E5%85%AD)_iVar-and-Property.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/18/OC-Runtime(%E4%BA%94)_Category.html">OC Runtime(五)： Category</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在Objective C中, Key Value Observing 是用来对Observing Pattern的Apple官方实现。 它的实现原理用的是isa Swizzling。但是apple对其细节没有多讲。本文用三种方式来实现Oberving Pattern：普通设计模式, isa Swizzling和Method Swizzling。希望通过本文能让您对Observing Pattern有一个全面的认识。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-18 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/18/OC-Runtime(%E4%BA%94)_Category.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/17/OC-Runtime(%E5%9B%9B)_isa-swizzling.html">OC Runtime(四)： isa Swizziling</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在Objective C中, Key Value Observing 是用来对Observing Pattern的Apple官方实现。 它的实现原理用的是isa Swizzling。但是apple对其细节没有多讲。本文用三种方式来实现Oberving Pattern：普通设计模式, isa Swizzling和Method Swizzling。希望通过本文能让您对Observing Pattern有一个全面的认识。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-17 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/17/OC-Runtime(%E5%9B%9B)_isa-swizzling.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/16/OC-Runtime(%E4%B8%89)_method-swizzling.html">OC Runtime(三)： Method Swizziling</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Objective-C 的runtime给这门语言添加了许多dynamic特性, 包括sending message, dynamic bundle loading, introspection等。其中以sending message的dynamic特性最为突出，通过isa查找类，再在 vtable查找相应selector的IMP来最终执行消息。这个过程提供了许多"黑魔法", 替换isa(isa Swizzling)和替换IMP(Method Swizzling)。本文就Method Swzzling做一个简单的介绍。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-16 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/16/OC-Runtime(%E4%B8%89)_method-swizzling.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/15/OC-Runtime(%E4%BA%8C)_Associated-Objects.html">OC Runtime(二)： Associated Objects</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在Objective C 中，一旦类被定义好了，想扩展它的iVar是被禁止的，除非重写改写类本身。我们知道Category可以被用来扩展方法而非iVar，而Associated Objects技术就是用来在遵循实例变量不能扩展的前提下，增加property的。这样在外部看来可以用dot notatoin access 所有的属性，就像达到了iVar可以被扩展的假象。本文就来详细介绍一下Objective C Runtime的Associated Objects。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-15 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/15/OC-Runtime(%E4%BA%8C)_Associated-Objects.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/03/14/OC-Runtime(%E4%B8%80)_Sending-Message.html">OC Runtime(一)： Sending Message</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Objective-C中的消息发送和C中的函数调用有着本质的区别。后者在编译阶段已经确定了函数的具体实现, 而前者在运行时还可以更改消息发送的具体实现，这给Objective-C注入了崭新的动态活力。而这都得益于Objective-C的Runtime系统。可以说Objective-C的Runtime是其语言区别与其他语言的基石。而Runtime里的sending message(消息发送)又是其最主要的特性。本文将带您感受下Runtime的sending message机制。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-14 •
+        </span>
+
+        <span class="post_category">
+            Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/objective-c/2016/03/14/OC-Runtime(%E4%B8%80)_Sending-Message.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/swift/2016/03/09/unsafeMutablePointer.html">UnsafeMutablePointer</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在swift中，对于指针的操作都被限制到最低，能不使用尽量不使用。但是还是有一些场合需要我们使用指针。Swift处理指针主要是UnsafePointer和其可变类UnsafeMutablePointer。本文主要介绍它们的用法。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-09 •
+        </span>
+
+        <span class="post_category">
+            Swift
+        </span>
+
+        <span class="padding_left_10"><a href="/swift/2016/03/09/unsafeMutablePointer.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/swift/2016/03/09/Let's-build-Array.html">Let's Build Swift.Array</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            这是一篇对于Swift中的Array的实现的讨论。通过实现我们自己的Array来达到Swift的Array的基本功能和不相上下的性能对于我们提高自己的编程能力大有帮助。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-09 •
+        </span>
+
+        <span class="post_category">
+            Swift
+        </span>
+
+        <span class="padding_left_10"><a href="/swift/2016/03/09/Let's-build-Array.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/swift/2016/03/08/SequenceType%E6%9D%A5%E5%AE%9E%E7%8E%B0for-in-%E8%AF%AD%E5%8F%A5.html">CollectionType = SequenceType(AnyGenerator：GeneratorType) + Indexable</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            在swift中，我们可以对Array用"for...in"快捷语句进行枚举，也可以用下标索引对其取值，这要归功于Array实现了CollectionType proptocol。那么，我们可以给我们自己的类也相同的功能吗。 答案是肯定的。这篇文章，我们将对CollectionType抽丝拨茧，借此来感受一下Swift的内建protocol的强大。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-08 •
+        </span>
+
+        <span class="post_category">
+            Swift
+        </span>
+
+        <span class="padding_left_10"><a href="/swift/2016/03/08/SequenceType%E6%9D%A5%E5%AE%9E%E7%8E%B0for-in-%E8%AF%AD%E5%8F%A5.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+</div>
+
+
+<ul class="pager">
+    
+    <li class="previous disabled">
+        <a>&larr; Newer</a>
+    </li>
+    
+
+    <li>
+        <span class="page_number">Page: 1 of 6</span>
+    </li>
+
+    
+    <li class="next">
+        <a href="http://www.shunmian.me/page2">Older &rarr;</a>
+    </li>
+    
+</ul>
+
+                <div class="footer">
+                    <footer>
+                        <hr />
+                        <p> &copy: 2015 Shunmian with jekyll. Theme: <a href="https://github.com/dbtek/dbyll"dbyll</a> by dbtek.
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+
+
+    <script src="/assets/js/jquery-2.2.0.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <script type="text/javascript">
+
+$youziku.load(".sidebar_bio", "bdcc72b8235345649b02c123dac5610b", "SiYuan-ExtraLight");
+
+
+   $youziku.draw();
+</script>
+
+</body>
+
 </html>
+

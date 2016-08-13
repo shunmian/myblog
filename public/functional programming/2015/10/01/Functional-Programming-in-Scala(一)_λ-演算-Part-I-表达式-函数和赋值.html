@@ -206,13 +206,17 @@
 因此命令式编程和函数式编程的计算能力是等价的。</p>
 </blockquote>
 
-<p>下面我们具体来看看<strong>λ-Calculus</strong>的定义：</p>
+<p>下面我们具体来看看<strong>λ-Calculus</strong>以及基于它的<strong>λ expression</strong>的定义：</p>
 
 <blockquote>
-  <p><strong>λ-Calculus</strong>的中心是<strong>&lt;expression&gt;</strong>，它被递归定义如下：<br />
+  <p><strong>λ演算(λ-Calculus)</strong>的中心是<strong>&lt;expression&gt;</strong>，它被递归定义如下：<br />
 <strong>&lt;expression&gt;</strong>   := <strong>&lt;const&gt;</strong> |<strong>&lt;variable&gt;</strong> | <strong>&lt;function&gt;</strong> |<strong>&lt;application&gt;</strong><br />
 <strong>&lt;function&gt;</strong>   := <strong>λ&lt;variable&gt;</strong>.<strong>&lt;expression&gt;</strong><br />
 <strong>&lt;application&gt;</strong>  := <strong>&lt;expression&gt;</strong><strong>&lt;expression&gt;</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>λ表达式(λ expression)</strong>：an anonymous function that you can use to create delegates or expression tree types. By using lambda expressions, you can write <strong>local functions</strong> that can be <strong>passed as arguments</strong> or <strong>returned as the value</strong> of <strong>function calls</strong>.</p>
 </blockquote>
 
 <h3 id="expression">2.1 表达式(Expression)</h3>
@@ -636,6 +640,18 @@
     <script src="/assets/js/jquery-2.2.0.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
     <script type="text/javascript">
 
 $youziku.load(".sidebar_bio", "bdcc72b8235345649b02c123dac5610b", "SiYuan-ExtraLight");
