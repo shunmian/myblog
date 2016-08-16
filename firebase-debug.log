@@ -18,3 +18,8 @@
 [info] ✔  database: rules ready to deploy.
 [info] i  hosting: preparing public directory for upload...
 [debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/ios-blogs/uploads/-KP2J6SFHXFU-Fs3VCDl?fileCount=339&message= 
+[debug] Error: write EPIPE
+    at exports._errnoException (util.js:870:11)
+    at WriteWrap.afterWrite (net.js:769:14)
+[error] 
+[error] Error: Server Error. write EPIPE

@@ -58,7 +58,7 @@ where $x_0^i = 1 \;for \; (i\in1,\cdots,m)$
 **线性回归之多变量**的成本函数和**线性回归之单变量**一样。
 
 $$
-J(\theta) = \frac 1 {2m} \sum_{i=1}^m (h_\theta(x_i)-y_i)^2
+J(\theta) = \frac 1 {2m} \sum_{i=1}^m (h_\theta(x^{(i)}-y^{(i)})^2
 $$
 
 ### 2.3 寻找最优值 ###
@@ -149,15 +149,19 @@ for every $j$, solve for $\theta_0,\theta_1,\cdots,\theta_j$
 
 ## 3 Matlab and Octave 入门 ##
 
-见[这里]({{ site.baseurl}}/machine%20learning/2015/05/15/Machine-Learning(A1)-MatLab和Octave基础.html)
+见[这里]({{ site.baseurl}}/machine%20learning/2015/05/15/Machine-Learning(A1)-MatLab和Octave基础.html)。
 
-## 4 总结 ##
+## 4 作业 ##
+
+见[Linear Regression](https://github.com/shunmian/-11-Machine-Learning)。
+
+## 5 总结 ##
 
 本文将**线性回归之单变量**泛化成**线性回归之多变量**的情况，并且对其预测函数，成本函数，以及如何获取最低成本值的方法(梯度下降，标准方程)进行讲解。在实际过程中，可以通过Feature Scaling来加速学习速率；并且通过$J_\theta$和No. of iteration的关系来debug程序是否正确(正确的程序每多一步，都会降低$J_\theta$)。其中单变量如果线性回归不准确，可以将其转换成多项式再通过**线性回归之多变量**和Feature Scaling来求解。
 
 
 
-## 5 参考资料 ##
+## 6 参考资料 ##
 - [《Deep Learning》](http://deeplearning.net/);
 - [《Microsoft Azure Machine Learning》](https://azure.microsoft.com/en-us/services/machine-learning/);
 - [《A Visual Introduction to Machine Learning》](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/);
