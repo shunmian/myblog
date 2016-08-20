@@ -5,7 +5,7 @@ categories: [Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]
 fullview: false
-shortinfo: M。
+shortinfo: 本文我们来了解下监督式学习的分类问题。
 
 ---
 目录
@@ -322,6 +322,11 @@ $$
 
 见[Classification](https://github.com/shunmian/-11-Machine-Learning)。
 
+附上一张跑分图。
+
+
+{: .img_middle_lg}
+![assignment2](/assets/images/posts/2015-05-03/assignment2.png)
 
 ## 5 总结 ##
 
@@ -331,9 +336,9 @@ $$
 
 ## 6 参考资料 ##
 
-- [《MySQL in One Tutorial》](https://www.youtube.com/watch?v=yPu6qV5byu4);
-- [《MySQL Cookbook》](https://www.amazon.com/MySQL-Cookbook-Paul-DuBois/dp/059652708X/ref=sr_1_2?ie=UTF8&qid=1469005314&sr=8-2&keywords=mysql+cookbook);
-- [《MySQL Tutorial》](http://www.tutorialspoint.com/mysql/);
+- [《Deep Learning》](http://deeplearning.net/);
+- [《Microsoft Azure Machine Learning》](https://azure.microsoft.com/en-us/services/machine-learning/);
+- [《A Visual Introduction to Machine Learning》](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/);
 
 
 

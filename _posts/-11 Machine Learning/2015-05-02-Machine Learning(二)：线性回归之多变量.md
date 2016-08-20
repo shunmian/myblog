@@ -155,6 +155,11 @@ for every $j$, solve for $\theta_0,\theta_1,\cdots,\theta_j$
 
 见[Linear Regression](https://github.com/shunmian/-11-Machine-Learning)。
 
+附上一张跑分图。
+
+{: .img_middle_lg}
+![assignment1](/assets/images/posts/2015-05-02/assignment1.png)
+
 ## 5 总结 ##
 
 本文将**线性回归之单变量**泛化成**线性回归之多变量**的情况，并且对其预测函数，成本函数，以及如何获取最低成本值的方法(梯度下降，标准方程)进行讲解。在实际过程中，可以通过Feature Scaling来加速学习速率；并且通过$J_\theta$和No. of iteration的关系来debug程序是否正确(正确的程序每多一步，都会降低$J_\theta$)。其中单变量如果线性回归不准确，可以将其转换成多项式再通过**线性回归之多变量**和Feature Scaling来求解。
