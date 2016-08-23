@@ -88,13 +88,13 @@ shortinfo: 本文介绍神经网络。
 
 $$
 \begin{align}
-A_1 &= X
+a_1 &= x
 \\
-A_1 &= [ones(size(A_1,1),1) \;A_1]; z_2 = A_1\Theta_1^T; A_2 = sigmoid(z_2); 
+a_1 &= [ones(size(a_1,1),1) \;a_1]; z_2 = a_1\Theta_1^T; a_2 = sigmoid(z_2); 
 \\
-A_2 &= [ones(size(A_2,1),1) \;A_2];
-z_3 = A_2\Theta_2^T;
-A_3 = sigmoid(z3);
+a_2 &= [ones(size(a_2,1),1) \;a_2];
+z_3 = a_2\Theta_2^T;
+a_3 =h_\theta(x)= sigmoid(z3);
 \end{align}
 $$
 

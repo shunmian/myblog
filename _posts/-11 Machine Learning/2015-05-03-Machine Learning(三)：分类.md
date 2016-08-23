@@ -149,7 +149,7 @@ $$
 即$y=0$和$y=1$和**复杂成本函数**一样。
 
 $$
-cost(h_\theta,y) =-ylog(h_\theta(x))+(1-y)log(h_\theta(x))
+cost(h_\theta,y) =-ylog(h_\theta(x))+(1-y)log(1-h_\theta(x))
 $$
 
 #### 2.1.3 梯度下降 ####
@@ -168,7 +168,7 @@ $$
 \\
 J(\theta)&=\frac 1 m  \sum_{i=1}^m cost(h_\theta(x^{(i)})-y^{(i)}) 
 \\
-& =\frac 1 m  \sum_{i=1}^m [-ylog(h_\theta(x))+(1-y)log(h_\theta(x))]
+& =\frac 1 m  \sum_{i=1}^m [-ylog(h_\theta(x))+(1-y)log(1-h_\theta(x))]
 \\
 \alpha \frac \partial {\partial \theta}J(\theta)&=\alpha \frac 1 m \sum_{i=1}^m \lbrace[h_\theta(x^{(i)})-y^{(i)}]x_j^{(i)}\rbrace
 \\
@@ -190,6 +190,13 @@ $$
 
 这三种方法比**梯度下降**的优势是可以更快接近$J_{min}(\theta)$且不需要人工选择$\alpha$的值；缺点是实现起来稍显复杂。我们如果要用，可以直接用octave或matlab里的库。
 
+下面是**matlab和Octave**的**fminunc**函数，用于计算局部最小值。
+
+> **fminunc函数**：第一个参数是需要计算局部最小值的函数$J$，第二个参数是初始的该函数值$θ$，第三个函数是$options$(梯度开启，最多循环次数)。其中函数$J$返回函数值和梯度。
+
+
+{: .img_middle_lg}
+![fminunc](/assets/images/posts/2015-05-03/fminunc.png)
 
 ### 2.2 多分类 ###
 
