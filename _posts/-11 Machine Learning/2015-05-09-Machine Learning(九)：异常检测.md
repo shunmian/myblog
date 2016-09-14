@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Machine Learning(九)：异常检测
+title: Machine Learning(九)：异常检测和推荐系统
 categories: [Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]
 fullview: false
-shortinfo: 。
+shortinfo: 本文介绍非监督式学习的另外两个重要问题：异常检测和推荐系统。
 
 ---
 目录
@@ -18,49 +18,45 @@ shortinfo: 。
 ---
 {:.hr-short-left}
 
-## 1 应用机器学习的建议 ##
+## 1 非监督式学习 ##
 
-### 1.1 评估学习算法 ###
+### 1.3 异常检测(Anomaly Detection) ###
 
-#### 1.1.1 下一步该做什么####
+{: .img_middle_hg}
+![异常检测](/assets/images/posts/2015-05-09/异常检测.png)
 
-#### 1.1.2 评估一个预测函数 ####
 
-#### 1.3 模型选择和Train/Validation/Test Sets ####
+### 1.4 推荐系统 ###
 
-### 1.2 Bias vs. Variance ### 
+{: .img_middle_hg}
+![推荐系统](/assets/images/posts/2015-05-09/推荐系统.png)
 
-#### 1.2.1 诊断 Bias vs. Varaince ####
 
-#### 1.2.2 正则化和Bias/Varaince ####
 
-#### 1.2.3 学习曲线和Bias/Varaince ####
 
-#### 1.2.4 小结 ####
 
-## 2 机器学习系统设计 ##
 
-### 2.1 垃圾邮件分类器 ###
+## 2 作业 ##
 
-### 2.2 处理错误数据 ###
 
-### 2.3 使用大规模数据 ###
 
+见[这里](https://github.com/shunmian/-11-Machine-Learning)。附上一张跑分图。
+
+{: .img_middle_mid}
+![assignment8](/assets/images/posts/2015-05-09/assignment8.png)
 
 ## 3 总结 ##
 
+本文介绍了非监督式学习的另外两个重要问题：**异常检测**和**推荐系统**。
 
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
+1. **异常检测**用于有大量正常数据和少量非正常数据，它不同于监督式学习的分类(通过学习**大量正常**和**大量不正常**数据)，通过高斯分布，排除非正常数据。
 
-{% highlight mysql linenos %}
+2. **推荐系统**通过协同过滤算法，可以同时学习用户的喜好$\Theta$和电影的特征$X$。即使刚开始只有少量数据，随着用户的增加和电影的评分增加，$\Theta$和$X$就会越来越准确。
 
-{% endhighlight %}
+
 
 ## 4 参考资料 ##
-- [《MySQL in One Tutorial》](https://www.youtube.com/watch?v=yPu6qV5byu4);
-- [《MySQL Cookbook》](https://www.amazon.com/MySQL-Cookbook-Paul-DuBois/dp/059652708X/ref=sr_1_2?ie=UTF8&qid=1469005314&sr=8-2&keywords=mysql+cookbook);
-- [《MySQL Tutorial》](http://www.tutorialspoint.com/mysql/);
+- [《Unsupervised Learning》](https://en.wikipedia.org/wiki/Unsupervised_learning);
 
 
 
