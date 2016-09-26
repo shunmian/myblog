@@ -5,7 +5,7 @@ categories: [Networks]
 tags: [Networks]
 number: [-8.1]
 fullview: false
-shortinfo:
+shortinfo: Computer Networks Overview。
 
 ---
 目录
