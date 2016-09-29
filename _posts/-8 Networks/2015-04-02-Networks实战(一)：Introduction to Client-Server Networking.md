@@ -2,7 +2,7 @@
 layout: post
 title: 网络实战(一)：Introduction to Client-Server Networking
 categories: [Networks]
-tags: [Networks]
+tags: [Networks, Client-Server]
 number: [-8.1]
 fullview: false
 shortinfo: Computer Networks。

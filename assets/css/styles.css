@@ -211,9 +211,9 @@
     margin-bottom: 20px;
     color:  rgba(51,51,51,0.7);
     font-size: 120%;
-    font-weight: 300;
+    font-weight: normal;
     /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
-    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
+    font-family: "Microsoft YaHei", 微软雅黑, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif, Lucida, Verdana, serif;
     line-height: 1.75
 }
 
@@ -290,6 +290,10 @@
 }
 .article_mainBody h4{
     font-size: 22px;
+}
+
+.article_mainBody strong {
+    font-weight: bold;
 }
 
 .share {
