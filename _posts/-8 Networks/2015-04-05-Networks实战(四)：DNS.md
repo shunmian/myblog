@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 网络实战(二)：UDP
+title: 网络实战(四)：DNS
 categories: [Networks]
-tags: [Networks, UDP]
+tags: [Networks, DNS]
 number: [-8.1]
 fullview: false
-shortinfo: 本文是《Foundations of Python Networking Programming》系列第2篇笔记《UDP》。
+shortinfo: Computer Networks。
 
 ---
 目录
@@ -18,7 +18,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第2
 ---
 {:.hr-short-left}
 
-## 1 UDP Introduction ##
+## 1 UDP introduction ##
 
 Network的**Transport Layer**需要提供两种服务：
 
@@ -32,7 +32,7 @@ Network的**Transport Layer**需要提供两种服务：
 
 > **TCP**:IP+Port+Reliability
 
-## 2 UDP Programming ##
+## 2 UDP programming ##
 
 UDP和TCP的编程我们都要用到Python的``socket``模块，那么什么socket呢？
 
@@ -163,9 +163,9 @@ if __name__ == '__main__':
 
 第二种防止**“杂乱客户端(Promiscuous Client)”**的方法是记录ID。只有当返回的Packet里的ID符合客户端发出去的ID客户端才接受。对于ID的选择需要在一个大范围内随机生成，防止攻击者轻易猜出或者发N个Packet穷举ID。但是如果攻击者可以看到客户端Packet里的ID，这种方法就不适用了，这个时候就要用到加密，这我们会在第6篇笔记中介绍。
 
-#### 2.2.3 其他 ###
+### 2.3 UDP其他 ###
 
-##### 2.2.3.1 IP Interface #####
+#### 2.3.1 IP Interface ####
 
 对于IP，一台电脑有两个：
 
@@ -178,7 +178,7 @@ if __name__ == '__main__':
 {: .img_middle_mid}
 ![Network Interface](/assets/images/posts/2015-04-03/Network Interface.png)
 
-##### 2.2.3.2 UDP Framentation #####
+#### 2.3.2 UDP Framentation ####
 
 当UDP的Packet的大小超过MTU时，会被分成几个小的Packet。如果小的Packet个数越多，整个文件就越有可能传输失败(因为任何一个Packet的丢失都会导致整个文件不完整)。下面是一段检测MTU的代码。
 
@@ -215,11 +215,11 @@ if __name__ == '__main__':
 
 {% endhighlight %}
 
-##### 2.2.3.3 Socket Options #####
+#### 2.3.3 Socket Options ####
 
 socket可以设置各种选项来定制。
 
-##### 2.2.3.4 Broadcast #####
+#### 2.3.4 Broadcast ####
 
 如果说UDP有一个特殊的能力的话，那就非**Broadcast(广播)**功能不可了。在局域网内不同主机上开启多个服务端，监听信息；让客户端往'<Broadcast>'这个IP发信息(端口号多个服务器一致)。则可以看到所有服务端都有响应。这就是**Broadcast(广播)**，客户端只发送一次消息，局域网里的服务端都能收到。
 
@@ -255,7 +255,7 @@ if __name__ == '__main__':
 
 {% endhighlight %}
 
-### 2.3 何时适用UDP###
+### 2.4 什么时候用UDP ###
 
 只有下面三种情形在你的职业生涯中会用到UDP：
 
@@ -275,7 +275,7 @@ if __name__ == '__main__':
 
 - [《Foundations of Python Network Programming》](https://www.amazon.com/Foundations-Python-Network-Programming-Brandon/dp/1430258543/ref=sr_1_1/159-7715257-2675343?s=books&ie=UTF8&qid=1474899055&sr=1-1&keywords=foundations+of+python+network+programming);
 
-
+- [《Web Scraping Part II：Advanced Scrapers (三)：表单和登录》]({{site.baseurl}}/web%20scraping/2015/12/09/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%89)-%E8%A1%A8%E5%8D%95%E5%92%8C%E7%99%BB%E5%BD%95.html);
 
 
 

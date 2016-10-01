@@ -5,7 +5,7 @@ categories: [Networks]
 tags: [Networks, Client-Server]
 number: [-8.1]
 fullview: false
-shortinfo: Computer Networks。
+shortinfo: 本文是《Foundations of Python Networking Programming》系列第1篇笔记《Client-Servre介绍》。
 
 ---
 目录
