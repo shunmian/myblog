@@ -5,7 +5,7 @@ categories: [Networks]
 tags: [Networks, DNS]
 number: [-8.1]
 fullview: false
-shortinfo: 本文是《Foundations of Python Networking Programming》系列第3篇笔记《Hostname和DNS》。
+shortinfo: 本文是《Foundations of Python Networking Programming》系列第4篇笔记《Hostname和DNS》。
 
 ---
 目录
