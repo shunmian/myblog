@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络基础：A Top-Down Approach
+title: 网络理论：A Top-Down Approach
 categories: [Networks]
 tags: [Networks]
 number: [-8.1]
