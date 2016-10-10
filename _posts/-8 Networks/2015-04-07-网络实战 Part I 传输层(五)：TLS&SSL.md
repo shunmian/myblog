@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part I 基础(六)：TLS/SSL
+title: 网络实战 Part I 传输层(五)：TLS&SSL
 categories: [Networks]
 tags: [Networks, TLS/SSL]
 number: [-8.1]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part II 应用(一)：HTTP 客户端
+title: 网络实战 Part II 应用层(六)：POP
 categories: [Networks]
 tags: [Networks, HTTP]
 number: [-8.1]
