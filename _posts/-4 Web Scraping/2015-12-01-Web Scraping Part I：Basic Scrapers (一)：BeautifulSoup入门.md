@@ -165,12 +165,13 @@ else:
 
 
 ## 5 参考资料 ##
-- [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);
-- [Martin Odersky: Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8);
-- [SF Scala: Martin Odersky, Scala -- the Simple Parts](https://www.youtube.com/watch?v=ecekSCX3B4Q);
-- [Programming Languages: Lambda Calculus](https://www.youtube.com/watch?v=v1IlyzxP6Sg);
-- [Functional Programming For The Rest of Us](http://www.defmacro.org/ramblings/fp.html);
-- [Scala Bility](http://www.socouldanyone.com/2014/12/scala-bility.html);
+
+- [《Web Scraping with Python》](https://www.amazon.com/Web-Scraping-Python-Collecting-Modern/dp/1491910291);
+
+- [《BeautifulSoup Documentation》](https://www.crummy.com/software/BeautifulSoup/bs4/doc/);
+
+- [《Python 3 Documentation》](https://docs.python.org/3/);
+
 
 
 

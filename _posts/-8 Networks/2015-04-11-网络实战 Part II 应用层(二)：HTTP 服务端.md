@@ -21,9 +21,31 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第8
 
 前4篇笔记我们介绍了如何设置和关闭TCP，UDP连接，如何通过DNS将hostname换成IP等。但是我们退后一步，思考一下：在网络传输数据之前，我们该如何准备，编码和格式化数据呢；并且对于网络错误我们程序要如何提前准备处理呢。
 
-## 1 Netowork Data ##
+## 1 HTTP Server ##
 
-## 3 总结 ##
+### 1.1 WSGI ###
+
+### 1.2 Asynchronous Server-Frameworks ###
+
+### 1.3 Forward and Reverse Proxies ###
+
+### 1.4 Four Architectures ###
+
+#### 1.4.1 Running python under Apache ####
+
+#### 1.4.2 The Rise of Pure-Python HTTP Servers ####
+
+#### 1.4.3 The Benefits of Reverse Proxies ####
+
+### 1.5 Platforms as a Service ###
+
+### 1.6 GET and POST Patterns and the Question of REST ###
+
+### 1.7 WSGI Without a Framework ###
+
+
+
+## 2 总结 ##
 
 {% highlight python linenos %}
 {% endhighlight %}
