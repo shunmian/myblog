@@ -19,7 +19,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第8
 {:.hr-short-left}
 
 
-前4篇笔记我们介绍了如何设置和关闭TCP，UDP连接，如何通过DNS将hostname换成IP等。但是我们退后一步，思考一下：在网络传输数据之前，我们该如何准备，编码和格式化数据呢；并且对于网络错误我们程序要如何提前准备处理呢。
+待续
 
 ## 1 Netowork Data ##
 

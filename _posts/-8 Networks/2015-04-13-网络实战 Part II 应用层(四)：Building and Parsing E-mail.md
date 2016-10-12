@@ -18,12 +18,27 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第8
 ---
 {:.hr-short-left}
 
+待续
 
-前4篇笔记我们介绍了如何设置和关闭TCP，UDP连接，如何通过DNS将hostname换成IP等。但是我们退后一步，思考一下：在网络传输数据之前，我们该如何准备，编码和格式化数据呢；并且对于网络错误我们程序要如何提前准备处理呢。
+## 1 E-Mail Protocol Introduction ##
 
-## 1 Netowork Data ##
+### 1.1 E-Mail Message Format ###
 
-## 3 总结 ##
+### 1.2 Building an E-Mail Message ###
+
+### 1.3 Adding HTML and Multimedia ###
+
+### 1.4 Adding Content ###
+
+### 1.5 Parsing E-Mail Message ###
+
+### 1.6 Walking MIME Parts ###
+
+### 1.7 Header Encodings ###
+
+### 1.8 Parsing Dates ###
+
+## 2 总结 ##
 
 {% highlight python linenos %}
 {% endhighlight %}
