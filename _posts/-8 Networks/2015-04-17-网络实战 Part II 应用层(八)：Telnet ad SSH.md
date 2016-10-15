@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 网络实战 Part II 应用层(八)：Telnet ad SSH
+title: 网络实战 Part II 应用层(八)：Telnet and SSH
 categories: [Networks]
-tags: [Networks, HTTP]
+tags: [Networks, Telent, SSH]
 number: [-8.1]
 fullview: false
-shortinfo: 本文是《Foundations of Python Networking Programming》系列第8篇笔记《缓存和消息队列》。
+shortinfo: 本文是《Foundations of Python Networking Programming》系列第16篇笔记《Telnet and SSH》。
 
 ---
 目录
