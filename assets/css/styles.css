@@ -334,3 +334,11 @@
 .tags_subtitle a:hover{
     color: rgba(71,113,125,0.9);
 }
+
+.categories_padding{
+    padding-left: 10px
+}
+
+.categories_padding li{
+    width:110%;
+}

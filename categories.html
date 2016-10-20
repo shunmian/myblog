@@ -11,7 +11,8 @@ group: navigation
     <ul class="nav nav-tabs-vertical categories_subtitle">
       {% assign categories_list = site.categories %}
       {% if categories_list.first[0] == null %}
-        {% for category in categories_list %}
+        {% assign sorted_categories_list = categories_list | sort %}
+        {% for category in sorted_categories_list %}
             <li>
                 <a href="{{ site.baseurl}}/{{ site.categories_path }}#{{ category | replace:' ','-' }}-ref" data-toggle="tab">
                   {{ category }} <span class="badge pull-right">{{ site.categories[category].size }}</span>
@@ -19,7 +20,8 @@ group: navigation
             </li>
         {% endfor %}
       {% else %}
-        {% for category in categories_list %}
+        {% assign sorted_categories_list = categories_list | sort %}
+        {% for category in sorted_categories_list %}
             <li>
                 <a href="{{ site.baseurl}}/{{ site.categories_path }}#{{ category[0] | replace:' ','-' }}-ref" data-toggle="tab">
                     {{ category[0]}} <span class="badge pull-right">{{ category[1].size }}</span>
