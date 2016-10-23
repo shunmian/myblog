@@ -5,7 +5,7 @@ categories: [-02 Networks]
 tags: [Networks, HTTP]
 number: [-8.1]
 fullview: false
-shortinfo: 本文是《Foundations of Python Networking Programming》系列第8篇笔记《缓存和消息队列》。
+shortinfo: 本文是《Foundations of Python Networking Programming》系列第13篇笔记《SMTP》。
 
 ---
 目录
@@ -20,6 +20,8 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第8
 
 
 ## 1 SMTP Introduction ##
+
+> **SMTP（Simple Mail Transfer Protocol，简单邮件传输协议)：**,它是一组用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式。
 
 SMTP在邮件发送的两个阶段都会使用到：
 
@@ -175,11 +177,8 @@ if __name__ == '__main__':
 
 ## 3 总结 ##
 
-{% highlight python linenos %}
-{% endhighlight %}
-
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-13-网络实战(十三)：SMTP/SMTP Summary.png)
+![Network Data & Error Summary](/assets/images/posts/2015-04-14-网络实战(十三)：SMTP/SMTP Summary.png)
 
 ## 4 参考资料 ##
 
