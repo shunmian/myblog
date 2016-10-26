@@ -147,8 +147,8 @@ python自带的SQLite库是[sqlite3](https://docs.python.org/3/library/sqlite3.h
 ## 4 总结 ##
 
 
-{: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-12-网络实战(十一)：The World Wide Web/www summary.png)
+{: .img_middle_hg}
+![Network Data & Error Summary](/assets/images/posts/2015-04-12-网络实战(十一)：The World Wide Web/HTTP&WWW Summary.png)
 
 
 ## 5 参考资料 ##

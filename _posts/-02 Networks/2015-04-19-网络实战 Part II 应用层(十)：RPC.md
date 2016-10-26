@@ -355,12 +355,15 @@ Python中的xmlrpc模块实际上对于想要使用RPC的开发者来说很少�
 
 ## 3 总结 ##
 
+{: .img_middle_hg}
+![Network Data & Error Summary](/assets/images/posts/2015-04-19-网络实战(十八)：RPC/Telnet_SSH_FTP_RPC Summary.png)
 
-{: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-19-网络实战(十八)：RPC/RPC Summary.png)
+## 4 全书总结 ##
 
+{: .img_middle_hg}
+![fopnp](/assets/images/posts/2015-04-19-网络实战(十八)：RPC/fopnp.png)
 
-## 4 参考资料 ##
+## 5 参考资料 ##
 
 - [《Foundations of Python Network Programming》](https://www.amazon.com/Foundations-Python-Network-Programming-Brandon/dp/1430258543/ref=sr_1_1/159-7715257-2675343?s=books&ie=UTF8&qid=1474899055&sr=1-1&keywords=foundations+of+python+network+programming);
 

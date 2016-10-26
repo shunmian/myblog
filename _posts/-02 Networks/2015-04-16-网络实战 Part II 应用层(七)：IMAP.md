@@ -267,7 +267,7 @@ if __name__=='__main__':
 
 #### 1.2.2 Flagging Messages ####
 
-前面对每一个Message都有会mark 1个attribute称为flag，它们在``\``之后显示，通常有下面几种：
+前面对每一个Message都有会mark 1个attribute称为flag，它们在\之后显示，通常有下面几种：
 
 1. **\Answered**: The user has replied to the message.
 
@@ -291,7 +291,7 @@ c.add_flags(2703, ['\\Answered'])
 
 删除message有两个步骤：
 
-1. mark message as **\delete**;
+1. mark message as **"\delete"**;
 
 2. call ``expunge()``。
 
