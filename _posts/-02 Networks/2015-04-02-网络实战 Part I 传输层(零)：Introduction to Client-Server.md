@@ -50,7 +50,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 
 
 
-## 6 参考资料 ##
+## 2 参考资料 ##
 
 - [《Foundations of Python Network Programming》](https://www.amazon.com/Foundations-Python-Network-Programming-Brandon/dp/1430258543/ref=sr_1_1/159-7715257-2675343?s=books&ie=UTF8&qid=1474899055&sr=1-1&keywords=foundations+of+python+network+programming);
 
