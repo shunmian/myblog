@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FP in Scala(三)：Reactive Programming Part I：函数式编程回顾
-categories: [-04 Functional Program]
+categories: [06 Functional Program]
 tags: [OOP&&FP]
 number: [-2.2]
 fullview: false

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FP in Scala(二)：OOP和λ-演算的结合 Part I：万物皆类 && 函数式的体现
-categories: [-04 Functional Program]
+categories: [06 Functional Program]
 tags: [OOP&&FP]
 number: [-2.2]
 fullview: false

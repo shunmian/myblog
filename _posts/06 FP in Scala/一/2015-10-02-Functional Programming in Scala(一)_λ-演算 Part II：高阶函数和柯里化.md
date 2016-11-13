@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FP in Scala(一)：λ-演算 Part II：高阶函数和柯里化
-categories: [-04 Functional Program]
+categories: [06 Functional Program]
 tags: [High Order Function, Currying]
 number: [-2.1]
 fullview: false
