@@ -34,16 +34,16 @@ int main()
 
 {% endhighlight %} 
 
-### 1.1 Program ###
+### Part I Program ###
 
-#### 1.1.1 hello.c: Data(bits + encoding)####
+#### 1 Data(bits + encoding)  ####
 
 hello.c文件通过bit的格式以ASCII编码(Text File)存储在disk上，如下图所示。
 
 {: .img_middle_lg}
 ![Data](/assets/images/posts/2014-07-01-Computer System：Overview/Data.png)
 
-#### 1.1.2 hello: Compilation to binray executable ###
+#### 2 Compilation to Machine Code ####
 
 hello.c通过人类可以阅读的文本存储c代码(高级语言)，为了让机器阅读，必须将其转化成机器码(低级语言)。这个转换的过程称之为编译，见下图。
 
@@ -54,13 +54,13 @@ hello.c通过人类可以阅读的文本存储c代码(高级语言)，为了让�
 
 1. **优化系统性能**。我们不需要写机器码，但是读懂机器码可以帮助我们判断是switch还是if，while还是for, 局部变量还是引用传递，指针解引用还是数组下标，等哪个更有效。
 
-2.**理解link-time error**。"cannot resolve a reference"意味着什么，static和global variable有哪些不同，如果定义两个相同名字的全局变量在不同的c文件里会出现什么后果，为什么有些link-time error直到运行时才出现？
+2. **理解link-time error**。"cannot resolve a reference"意味着什么，static和global variable有哪些不同，如果定义两个相同名字的全局变量在不同的c文件里会出现什么后果，为什么有些link-time error直到运行时才出现？
 
-3.**避免security holes**。深刻理解stack overflow发生的机制。
+3. **避免security holes**。深刻理解stack overflow发生的机制。
 
-### 1.2 运行Program ###
+#### 3 Running Machine Code ####
 
-#### 1.2.1 Processor ####
+##### 3.1 Processor #####
 
 当在terminal输入下面命令后，屏幕会输出"Hello World"。
 
@@ -73,14 +73,16 @@ unix> ./hello
 {: .img_middle_hg}
 ![Run hello](/assets/images/posts/2014-07-01-Computer System：Overview/Run hello.png)
 
-#### 1.2.2 Caches & Storage Hierarchy ####
+##### 3.2 Caches & Storage Hierarchy #####
 
 上面运行hello文件的过程中，大部分时间是花在将Data从一个地方运送到另一个地方。离processor越近，则被processor读写的速度越快。因此根据速度从快到慢，存储类型从多级Cache memeory，到main memeory，到disk排列。具体见下图。
 
 {: .img_middle_lg}
 ![Memory Hierarchy](/assets/images/posts/2014-07-01-Computer System：Overview/Memory Hierarchy.png)
 
-### 1.3 Operationg System ###
+### Part II: Program on Operating System ###
+
+#### 1 Operating System ####
 
 操作系统抽象了硬件，作为application和hardware之间的界面，主要有以下2个作用：
 
@@ -93,16 +95,16 @@ unix> ./hello
 {: .img_middle_hg}
 ![Operating System](/assets/images/posts/2014-07-01-Computer System：Overview/Operating System.png)
 
-### 1.4 Networks ###
+#### 2 Networks ###
 
 Network is another I/O(File) between different systems.
 
 {: .img_middle_lg}
 ![Network](/assets/images/posts/2014-07-01-Computer System：Overview/Network.png)
 
-### 1.5 Important Themes ###
+### Part III: Important Themes ###
 
-#### 1.5.1 Concurrency and Parallelism ####
+#### 1 Concurrency and Parallelism ####
 
 Concurrency指system能同时执行多个任务。Parallelism指应用Concurrency让system运行更快。
 Parllelism包括3个level，从高到低分别是：
@@ -113,7 +115,7 @@ Parllelism包括3个level，从高到低分别是：
 
 3. **Single-Instruction, Multiple-Data(SIMD) Concurrency**. 运用vector。
 
-#### 1.5.2 Virtual Machine: abstraction of computer ####
+#### 2 Virtual Machine: abstraction of computer ####
 
 最后我们增加一层对整个computer的抽象-虚拟机。
 
