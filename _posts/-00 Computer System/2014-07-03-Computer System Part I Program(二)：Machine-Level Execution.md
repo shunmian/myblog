@@ -18,27 +18,39 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ---
 {:.hr-short-left}
 
-## 1 Basic Features of C ##
+## 1 Machine-Level Execution ##
 
-### 1.1 Information is Bits + Context ###
+### 1.1 Program Encodings ###
 
-### 1.2 Programs Are Translated by Other Programs into Different Forms ###
+我们首先来看下如何将.c文件经过preprocessor和compiler转成.s汇编文件。
 
-### 1.3 It Pays to Understand How Compilation Systems Work ##
 
-### 1.4 Processors Read and Interpret Instructions Stored in Memory ###
+接着我们来看下如何将.s汇编文件经assembler转成.o机器码，并且进一步通过linker将多个.o转成.o机器码。
 
-### 1.5 Caches Matter ###
+### 1.2 Data Formats ###
 
-### 1.6 Storage Devices Form a Hierachy ###
+### 1.3 Accessing Information ###
 
-### 1.7 The Operationg System Manages the Hardware ###
+### 1.4 Arithmetic and Logical Operations ###
 
-### 1.8 Systems Communicate with Other Systems Using Networks ###
+### 1.5 Control ###
 
-### 1.9 Important Themes ###
+### 1.6 Procedures ###
 
-### 1.10 Summary ###
+### 1.7 Array Allocation and Access ###
+
+### 1.8 Heterogenous Data Structures ###
+
+### 1.9 Putting It Together: Understanding Pointers ###
+
+### 1.10 Life in the Real World: Using the GDB Debugger ###
+
+### 1.11 Out-of-Bounds Memory References and Buffer Overflow ###
+
+### 1.12 Out-of Bounds Memory References and Buffer Overflow ###
+
+### 1.13 Machine-Level Representations of Floating-Point Programs ###
+
 
 ## 2 总结 ##
 
