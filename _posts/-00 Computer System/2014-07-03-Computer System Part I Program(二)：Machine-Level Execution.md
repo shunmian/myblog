@@ -20,42 +20,24 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 
 ## 1 Machine-Level Execution ##
 
-### 1.1 Program Encodings ###
+> **为什么要学汇编？** 理解编译器的优化，分析代码低效的来源，暴露高级语言(如C)隐藏的信息(比如Chapter 12不同并发程序中的变量在内存中的地址)，写出更安全的代码(防止stack
+ overflow attack)等。当前对一个专业的程序员的要求已经从**会写**汇编转移到**会读**汇编。因此我们要学会汇编。
 
-我们首先来看下如何将.c文件经过preprocessor和compiler转成.s汇编文件。
+> **本章重点**：熟悉IA32指令，会用gcc将.c生成.o生成可执行文件(并反汇编成.o)，会用gdb调试；熟悉C Code Pattern(if else, loop, switch, array, structure, union)；深刻理解pointer，stack overflow attack。
 
+> **Program Encodings**：".c->.s->.o->link后可执行"见[这里]({{site.baseurl}}/00%20c/2014/06/30/A1-Linux-C-%E5%B7%A5%E5%85%B7.html)。
 
-接着我们来看下如何将.s汇编文件经assembler转成.o机器码，并且进一步通过linker将多个.o转成.o机器码。
+> **C Data Formats in IA32**。所有指针都是4Byte(32Bit)；没加unsigned就是默认是sign，如int a是sign int(4Byte)，unsigned int b是无符号整数(4Byte)。
 
-### 1.2 Data Formats ###
+> **Accessing Information**。寄存器里的值用``%eax``，内存里的值可以间接寻址为``B(%eax,%ecx,A)``，即(x+Ay+B)，表示x+Ay+B地址里的值，其中``%eax``是x，``%ecx``是y；数据转移指令有mov，push，pop等，suffix b w l分布对应byte(1Byte) word(2Byte) double word(4Byte)。
 
-### 1.3 Accessing Information ###
-
-### 1.4 Arithmetic and Logical Operations ###
-
-### 1.5 Control ###
-
-### 1.6 Procedures ###
-
-### 1.7 Array Allocation and Access ###
-
-### 1.8 Heterogenous Data Structures ###
-
-### 1.9 Putting It Together: Understanding Pointers ###
-
-### 1.10 Life in the Real World: Using the GDB Debugger ###
-
-### 1.11 Out-of-Bounds Memory References and Buffer Overflow ###
-
-### 1.12 Out-of Bounds Memory References and Buffer Overflow ###
-
-### 1.13 Machine-Level Representations of Floating-Point Programs ###
+> **Arithmetic and Logical Operations**。``leafl 3(%eax,%ecx,2), %edx`` 是将x+2y+3放入``%edx``，其中``%eax``是x，``%ecx``是y；leafl和movel格式相同，意义不同，前者是放地址，后者是放地址里的值；通常leaf会用于快速的加法和乘法，如``leafl 3(%eax,%ecx,2), %edx``里``%eax``和``%ecx``放的x和y是要计算的变量而不是地址，则结果是x+2y+3就是要的值而不是地址。加减乘除的指令见书本。左移指令sal(算术左移)和shl(逻辑左移)功能一样，右移指令sar(算术右移)和shr(逻辑右移)功能不一样(前者高位填符号位，后者填0)，也就是说只有右移才需要考虑符号位而左移不需要。
 
 
 ## 2 总结 ##
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+![Machine Level Representation of Programs](/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/Chapter 3_Machine Level Representation of Programs.png)
 
 
 ## 3 Reference ##
