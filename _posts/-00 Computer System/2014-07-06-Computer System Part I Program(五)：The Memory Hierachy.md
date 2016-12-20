@@ -50,6 +50,9 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 
 - [《Computer Systems - A Programmer's Perspective》](https://www.amazon.com/Computer-Systems-Programmers-Perspective-2nd/dp/0136108040);
 
+- [《Direct mapped cache memory》](https://www.youtube.com/watch?v=bTj0vFs8ndI);
+
+
 
 
 
