@@ -40,7 +40,11 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ![Machine Level Representation of Programs](/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/Chapter 3_Machine Level Representation of Programs.png)
 
 
-## 3 Reference ##
+## 3 lab ##
+
+见[这里](https://github.com/shunmian/00-CSAPP-Labs)。
+
+## 4 Reference ##
 
 - [《Computer Systems - A Programmer's Perspective》](https://www.amazon.com/Computer-Systems-Programmers-Perspective-2nd/dp/0136108040);
 

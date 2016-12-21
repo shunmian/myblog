@@ -18,6 +18,8 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ---
 {:.hr-short-left}
 
+## 1 Data ##
+
 对于Computer System的探索我们开始于Program的生命周期，包括：
 
 1. 如何表示data types(例如integer和real arithmetic)，
@@ -32,17 +34,17 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 
 本文介绍第1点：如何表示data types。
 
-## 1 Data ##
+## 2 总结 ##
 
 {: .img_middle_hg}
 ![Chapter 2 Information 总结](/assets/images/posts/2014-07-02-Computer System Part I Program(一)：Data/Chapter 2 Information 总结.png)
 
 
-## 2 lab ##
+## 3 lab ##
 
 见[这里](https://github.com/shunmian/00-CSAPP-Labs)。
 
-## 3 Reference ##
+## 4 Reference ##
 
 - [《Computer Systems - A Programmer's Perspective》](https://www.amazon.com/Computer-Systems-Programmers-Perspective-2nd/dp/0136108040);
 
