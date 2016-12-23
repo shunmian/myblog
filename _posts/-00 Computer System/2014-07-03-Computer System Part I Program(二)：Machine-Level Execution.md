@@ -42,7 +42,16 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 
 ## 3 lab ##
 
-见[这里](https://github.com/shunmian/00-CSAPP-Labs)。
+本章有两个作业**bomb**(通过反汇编，找到相关信息，需要熟练应用control(swtich)，函数调用，递归等的assembly code pattern)和**bufbomb**(通过buf overflow方法进行攻击，需要熟练掌握函数调用中，call和ret指令，stack变化，及%eax,%ebp,%esp,%eip寄存器的关系)。具体code见[这里](https://github.com/shunmian/00-CSAPP-Labs)。
+
+下面主要对**bufbomb**的5道题(level 0-4)做一个总结。
+
+{: .img_middle_hg}
+![bufbomb总结](/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/bufbomb总结.png)
+
+
+
+
 
 ## 4 Reference ##
 
