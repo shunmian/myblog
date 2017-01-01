@@ -5,7 +5,7 @@ categories: [-00 Computer System]
 tags: [Computer System]
 number: [-0.2]
 fullview: false
-shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读书总结，作为计算机科学其他课程的基础。本文是第2篇笔记-《Linking》。
+shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读书总结，作为计算机科学其他课程的基础。本文是第7篇笔记-《Linking》。
 
 ---
 目录
@@ -21,8 +21,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-07-07-Computer System Part I Program(六)：Linking/Chapter 7 Linking.png)
-
+![Network overview](/assets/images/posts/2014-07-07-Computer System Part II Program On System(一)：Linking/Chapter 7 Linking.png)
 
 ## 2 Reference ##
 
