@@ -18,35 +18,18 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ---
 {:.hr-short-left}
 
-## 1 Basic Features of C ##
 
-### 1.1 Information is Bits + Context ###
 
-### 1.2 Programs Are Translated by Other Programs into Different Forms ###
-
-### 1.3 It Pays to Understand How Compilation Systems Work ##
-
-### 1.4 Processors Read and Interpret Instructions Stored in Memory ###
-
-### 1.5 Caches Matter ###
-
-### 1.6 Storage Devices Form a Hierachy ###
-
-### 1.7 The Operationg System Manages the Hardware ###
-
-### 1.8 Systems Communicate with Other Systems Using Networks ###
-
-### 1.9 Important Themes ###
-
-### 1.10 Summary ###
-
-## 2 总结 ##
+## 1 总结 ##
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+![Chapter 09 Virtual Memory summary (一) .png](/assets/images/posts/2014-07-09-Computer System Part II Program On System(三)：Virtual Memory/Chapter 09 Virtual Memory summary (一).png)
+
+{: .img_middle_hg}
+![Chapter 09 Virtual Memory summary (二) .png](/assets/images/posts/2014-07-09-Computer System Part II Program On System(三)：Virtual Memory/Chapter 09 Virtual Memory summary (二).png)
 
 
-## 3 Reference ##
+## 2 Reference ##
 
 - [《Computer Systems - A Programmer's Perspective》](https://www.amazon.com/Computer-Systems-Programmers-Perspective-2nd/dp/0136108040);
 
