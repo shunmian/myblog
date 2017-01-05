@@ -3,7 +3,7 @@ layout: post
 title: Computer System Part II Program On System(一)：Linking
 categories: [-00 Computer System]
 tags: [Computer System]
-number: [-0.2]
+number: [-0.6]
 fullview: false
 shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读书总结，作为计算机科学其他课程的基础。本文是第7篇笔记-《Linking》。
 
