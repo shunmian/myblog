@@ -20,11 +20,14 @@ shortinfo: 本系列是对《Structure and Interpretation of Computer Programs�
 
 ## 1 总结 ##
 
-
 {: .img_middle_hg}
 ![Chapter1 Procedure Summary](/assets/images/posts/SICP/2014-06-01-SICP(一)：Procedures/Chapter1 Procedure Summary.png)
 
-## 2 Reference ##
+## 2 作业 ##
+
+见[这里](https://github.com/shunmian/00-SICP)
+
+## 3 Reference ##
 
 - [《Structure and Interpretation of Computer Programs》](https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871);
 
