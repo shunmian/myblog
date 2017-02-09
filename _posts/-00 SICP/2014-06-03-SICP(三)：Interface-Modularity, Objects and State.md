@@ -5,7 +5,7 @@ categories: [-00 SICP]
 tags: [SICP]
 number: [-0.0]
 fullview: false
-shortinfo: 本系列是对《Structure and Interpretation of Computer Programs》读书总结，作为对Program本质的学习。本文是第1篇笔记-《Procedure》。
+shortinfo: 本系列是对《Structure and Interpretation of Computer Programs》读书总结，作为对Program本质的学习。本文是第3篇笔记-《Pnterface-Modularity, Objects and State》。
 
 ---
 目录
@@ -18,21 +18,15 @@ shortinfo: 本系列是对《Structure and Interpretation of Computer Programs�
 ---
 {:.hr-short-left}
 
-## 1 Overview ##
+## 1 总结 ##
 
+{: .img_middle_hg}
+![Chapter 3 OOP Summary](/assets/images/posts/SICP/2014-06-03-SICP(三)：OOP(interface,state)/Chapter 3 OOP Summary.png)
 
-我们从最简单的Hello world开始。
+## 2 作业 ##
 
-{% highlight c linenos %}
+见[这里](https://github.com/shunmian/00-SICP)
 
-{% endhighlight %} 
-
-
-
-## 2 总结 ##
-
-{: .img_middle_lg}
-![Virtual Machine.png](/assets/images/posts/2014-07-01-Computer System：Overview/Chapter 1 Overview Summary.png)
 
 ## 3 Reference ##
 
