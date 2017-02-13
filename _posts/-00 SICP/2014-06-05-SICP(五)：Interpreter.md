@@ -21,18 +21,8 @@ shortinfo: 本系列是对《Structure and Interpretation of Computer Programs�
 ## 1 Overview ##
 
 
-我们从最简单的Hello world开始。
-
-{% highlight c linenos %}
-
-{% endhighlight %} 
-
-
-
 ## 2 总结 ##
 
-{: .img_middle_lg}
-![Virtual Machine.png](/assets/images/posts/2014-07-01-Computer System：Overview/Chapter 1 Overview Summary.png)
 
 ## 3 Reference ##
 
