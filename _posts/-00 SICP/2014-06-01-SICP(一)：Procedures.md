@@ -21,7 +21,7 @@ shortinfo: 本系列是对《Structure and Interpretation of Computer Programs�
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Chapter1 Procedure Summary](/assets/images/posts/SICP/2014-06-01-SICP(一)：Procedures/Chapter1 Procedure Summary.png)
+![Chapter1 Procedure Summary](/assets/images/posts/00_SICP/2014-06-01-SICP(一)：Procedures/Chapter1 Procedure Summary.png)
 
 ## 2 作业 ##
 
