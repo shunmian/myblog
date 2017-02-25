@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm(Part I)： 基础(一)：Union-Find 并查集
+title: Algorithm Part I 基础(一)：Union-Find 并查集
 categories: [-01 Algorithm]
 tags: [Union-Find]
 number: [-1.1]
@@ -438,7 +438,8 @@ public class Percolation {
 
 1. 我们将int[N][N]2维数组映射到一个一维int[N<sup>2</sup>+2]数组(WQUUF(N<sup>2</sup>+2)里的数组表示)。一维多出来的两个分别是virtual top和 virtual bottom。
 2. open函数里，如果该网格在第一排，则union(0,xyTo1D(i,j))；第N排，则union(N<sup>2</sup>+1,xyTo1D(i,j))；其他情况若neighbour开启，则union。
-3. 这里有一个倒流的情况，因此得额外加一个WQUUF(N<sup>2</sup>+1)，少了virtual bottom，来实现isFull。还得用一个二维布尔数组boolean[][]来存储开启关闭情况。具体code见[这里](https://github.com/shunmian/Algorithm)。
+3. 这里有一个倒流的情况，因此得额外加一个WQUUF(N<sup>2</sup>+1)，少了virtual bottom，来实现isFull。还得用一个二维布尔数组boolean[][]来存储开启关闭情况。具体code见[这里](https://github.com/shunmian/-01-Algorithm-Princeton)。
+
 
 
 最后上一张跑分图。

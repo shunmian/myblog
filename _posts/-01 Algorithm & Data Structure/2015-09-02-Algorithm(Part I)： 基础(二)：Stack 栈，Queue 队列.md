@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列 
+title: Algorithm Part I 基础(二)：Stack 栈，Queue 队列 
 categories: [-01 Algorithm]
 tags: [Queue, Bag, Stack, LinkedList, Array, Generics, Iterable]
 number: [-1.2]
@@ -224,7 +224,7 @@ RandomizedQueue的实现用数组很容易想到，用stdRandom.uniform(N)来取
 2. Step 2, 但是仔细一想dequeue的实现，随机出队一个a[i]，则在resize条件未满足前(Step 1)，数组a的中间有空的元素，那么下次dequeue，在同样的数组a下，如何剔除掉这个空的元素？方法是一直取随机数i，直到取到下一个不为null的a[i]；
 3. Step 3, enqueue策略如何选择？可以用一个iVar int tail来保存数组最后一个有效item的index，每次enqueue先判断Step1，再加到tail++。那么enqueue的是时候如何判断step1呢？是用N(item 个数)还是tail呢？答案是用tail，当tail<a.length/4的时候，resize(a.length/2)。
 
-主要思路如上，其中有一些细节需要读者仔细斟酌。下面贴一张跑分图。
+主要思路如上，其中有一些细节需要读者仔细斟酌。具体code见[这里](https://github.com/shunmian/-01-Algorithm-Princeton)。下面贴一张跑分图。
 
 {: .img_middle_lg}
 ![Assessment](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/assessment.png)

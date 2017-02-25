@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm(Part II)： Sorting(二)：进阶排序 
+title: Algorithm Part II Sorting(二)：进阶排序 
 categories: [-01 Algorithm]
 tags: [Sorting]
 number: [-1.3]
@@ -168,7 +168,7 @@ h ≥ lg(N!) ∼ NlgN
 
 
 {: .img_middle_lg}
-![2-way Quick Sort](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort.png)
+![2-way Quick Sort](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort2.png)
 
 为了上述的步骤，首先需要确定pivot的选取方法，一种常用的方法是直接选取待排数组的第一个元素，即`pivot = a[lo]`。如上图所示，第一次迭代选取8作为pivot，然后不停交换元素使得8落到对应的正确的位置上，同时把数组划分为两半，分别递归地对两个子问题进行求解，得到最终结果。
 
@@ -251,12 +251,7 @@ C<sub>N</sub> = 2(N + 1)(1/3 + 1/4 + ... + 1/N+1) ~ 2(N + 1)lnN ≈ 2NlnN
 
 ##### 2.2.2.2 3-way 快排 ####
 
-上面介绍的是2-way的方法，也就是分成两部分，如下图所示
-
-{: .img_middle_lg}
-![2-way Quick Sort2](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort2.png)
-
-但是，当数组存在大量的**重复键值(Duplicate Keys)**的时候，这些重复的键值会不管的出现在子问题中，使得数组长度的减少类似worst-case一样缓慢，这个时候的复杂度为O(N<sup>2</sup>)。这里八卦一些野史，就是说自从c语言的`qsort()`出来蛮长的一段时间后，来自AT&T Bell Lab(1991)的**Allan Wilks**和**Rick Recker**发现本来一个瞬间排序结束的`qsort()`却需要好几分钟，后来人们才意识到了qsort()对于重复键值处理得非常糟糕，后来就诞生了额下面将要介绍的3-way方法，如下图所示。
+上面介绍的是2-way的方法，当数组存在大量的**重复键值(Duplicate Keys)**的时候，这些重复的键值会不管的出现在子问题中，使得数组长度的减少类似worst-case一样缓慢，这个时候的复杂度为O(N<sup>2</sup>)。这里八卦一些野史，就是说自从c语言的`qsort()`出来蛮长的一段时间后，来自AT&T Bell Lab(1991)的**Allan Wilks**和**Rick Recker**发现本来一个瞬间排序结束的`qsort()`却需要好几分钟，后来人们才意识到了qsort()对于重复键值处理得非常糟糕，后来就诞生了额下面将要介绍的3-way方法，如下图所示。
 
 {: .img_middle_lg}
 ![3-way Quick Sort](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/3-way Quick Sort.png)
@@ -327,7 +322,7 @@ public static Comparable select(Comparable[] a, int k){
 
 这么做的逻辑是若用户传入的是Object，说明用户对于内存空间并不在乎(神逻辑？！)，因此可以放心的申请O(N)的额外空间进行Stable且O(NlogN)guarantee的归并排序；如果用户使用了原始类型，说明用户非常谨慎地考虑了内存使用问题，故Java退而求其次使用快速排序。但无论如何，快速排序和归并排序已经成为工业界的中流砥柱，分别在不同的情况下为计算机事业奉献自己的所有青春和力量，在此表示衷心的敬意！
 
-### 2.6 Heap Sort ###
+#### 2.2.3 Heap Sort ####
 
 由前面的介绍知道，不同的数据结构实际上是有着不同的特性，这节首先以**Priority Queue**为起点，引出实现这一数据结构的的等效方法**Binary Heap**，接着思考如何利用这个数据结构实现排序的功能。下面先总结回顾一下目前已经介绍的数据结构的特性：
 
@@ -346,7 +341,7 @@ public static Comparable select(Comparable[] a, int k){
 {: .img_middle_mid}
 ![Priority Queue](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Priority Queue.png)
 
-#### 2.6.1 Elementary Implementation ####
+##### 2.2.3.1 Elementary Implementation ######
 
 前两种属于基本的实现方案，底层使用的是数组，不同的是一个保持数组有序(ordered)，另一个不需要保持数组有序(Unordered)。下面介绍无序的Java实现代码：
 
@@ -382,9 +377,9 @@ public class UnorderedMaxPQ<Key extends Comparable<Key>>{
 
 哪么，我们思考，有没有更加高效的方法，使得三种操作的复杂度都是lgN呢？
 
-#### 2.6.2 Binary Heap Implementation ####
+##### 2.2.3.2 Binary Heap Implementation ######
 
-##### 2.6.2.1 Binary Tree #####
+###### 2.3.2.2.1 Binary Tree #######
 在目前的介绍中我们发现，对于一个给定的数组，我们所有算法的扫描方式都是固定的，要么以**下标递增**的方式诸葛扫描，要么以**下标递减**的方式逐个扫描。我们不禁思考，有没有其他的方式组织和扫描一个数组呢？
 
 请仔细观察下面的图片：
@@ -442,7 +437,7 @@ C<sub>1</sub> = mk - m + 2
 有了上面的观察和证明，我们就可以大胆的以树的形式把原来干巴巴的数组串起来，并且可以通过计算公式方便的**在父节点和子节点穿梭自如**。好了，下面进入正题，上面是Binary Heap？
 
 
-##### 2.6.2.2 Binary Heap #####
+###### 2.3.2.2.2 Binary Heap #######
 
 所谓**二叉堆(Binary Heap)**就是满足一下invariants的数据结构：
 
@@ -528,12 +523,14 @@ private void delMax(){
 ![binary heap summary](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary heap summary.png)
 
 
-##### 2.6.2.3 Sorting #####
+###### 2.3.2.2.3 Sorting #######
 
 有了二叉堆作为底层的数据结构，堆排序就变得非常的方便，主要分为**建堆**和**排序**两个方面。
 
+{: .img_middle_mid}
+![binary heap summary](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary heap sorting.png)
 
-##### 2.6.2.3.1 Build Heap #####
+###### 2.3.2.2.4 Build Heap #######
 
 建堆的过程非常直观，从倒数第二层开始，往上延伸，每次迭代调用sink函数妥当安置每一个节点，当前层以上的节点都是不可预见未知的节点，直到迭代了根节点为止，Java代码如下所示：
 
@@ -550,7 +547,7 @@ for(int k = N/2; k >=1;k--){
 
 这是一种**自底向上(Bottom up)**的方法，非常的快速，只需要O(2N)的复杂度即可。
 
-##### 2.6.2.3.2 Sortdown #####
+###### 2.3.2.2.5 Sortdown #####
 
 这一步非常简单，就是反复删除对顶的元素，然后提升最后一个元素，调用sink(1)即可，完整的Java代码如下所示：
 
@@ -567,7 +564,7 @@ public static void sort(Comparable[] pq){
 }
 {% endhighlight %}
 
-##### 2.6.2.3.2 Mathmatics Analysis #####
+###### 2.3.2.2.6 Mathmatics Analysis #####
 
 由上述的过程不难看出，堆排序在最坏情况的也能保证O(2NlgN)的复杂度，并且是inplace的！这是一个里程碑式的发现，回忆一下归并排序和快速排序，前者需要额外的O(N)存储空间，后者在最坏情况下退化到了Quadratic的复杂度。
 
@@ -586,33 +583,103 @@ public static void sort(Comparable[] pq){
 此外，若是从信息论的角度分析堆排序，在删除节点的步骤中，与之交换的末尾节点的值必然不可能是新生成堆的最大值，也就是说，必然会往下sink。换句话说，新的对顶元素交换或者不交货的概率是不相等的，也就不是最优。
 
 
+## 3. orting programming example: 8 Puzzle ##
+
+>8Puzzle: 在3×3的格子中填满1-8的整数，有一个格子是空的。交换空格子和其相邻的格子，以达到最终有序的状态。请给出使得任意N*N（2<N<128）的格子用最少的步数达到有序状态的解。
+
+{: .img_middle_mid}
+![8puzzle](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/8Puzzle.jpg)
+
+有两个类用来解决这个问题。
+
+{% highlight java linenos %}
+public class Board {
+    public Board(int[][] blocks)           // construct a board from an N-by-N array of blocks
+                                           // (where blocks[i][j] = block in row i, column j)
+    public int dimension()                 // board dimension N
+    public int hamming()                   // number of blocks out of place
+    public int manhattan()                 // sum of Manhattan distances between blocks and goal
+    public boolean isGoal()                // is this board the goal board?
+    public Board twin()                    // a board that is obtained by exchanging any pair of blocks
+    public boolean equals(Object y)        // does this board equal y?
+    public Iterable<Board> neighbors()     // all neighboring boards
+    public String toString()               // string representation of this board (in the output format specified below)
+
+    public static void main(String[] args) // unit tests (not graded)
+}
+
+public class Solver {
+    public Solver(Board initial)           // find a solution to the initial board (using the A* algorithm)
+    public boolean isSolvable()            // is the initial board solvable?
+    public int moves()                     // min number of moves to solve initial board; -1 if unsolvable
+    public Iterable<Board> solution()      // sequence of boards in a shortest solution; null if unsolvable
+    public static void main(String[] args) // solve a slider puzzle (given below)
+}
+
+{% endhighlight %}
+
+我们用一个MinPQ存储每一个搜索节点SearchNode,每一个搜索节点包括一个Board，一个moves，一个priority，一个manhattan。我们把初始的SearchNode放入MinPQ，然后删除其最小的priority，放入其neighour。重复此步骤直到manhanttan == 0。这里有几点需要注意：
+
+1. MinPQ<SearchNode>的比较需要SearchNode实现Comparable，比较priority,若相同则比较manhattan;
+2. 不是每一个Board都可解，但是每一个Board和他的twin(交换任意两个相邻的格子)有且仅有一个可解。
+3. 如何获得最终solution？获取最后一个SearchNode(Manhattan == 0),然后previous取其上一个SearchNode直到previous == null;
+4. mahattan函数，计算每一个格子需要几步走到(直接移动)最终的格子的步数，然后求1-8的格子的和。
 
 
+{% highlight java linenos %}
+private class SearchNode implements Comparable{
 
+        private Board board;
+        private int moves;
+        private SearchNode previous;
+        private int priority;
+        
+        public SearchNode(Board board, int moves, SearchNode previous){
+            this.board = board;
+            this.moves = moves;
+            this.previous = previous;
+            this.priority = this.moves + this.board.manhattan();
+        }
+        
+        @Override
+        public int compareTo(Object x) {
+            SearchNode searchNodeX = (SearchNode)x;
+            if(this.priority >searchNodeX.priority) return 1;
+            else if(this.priority < searchNodeX.priority) return -1;
+            else{
+                if(this.board.manhattan() > searchNodeX.board.manhattan()) return 1;
+                else if(this.board.manhattan() < searchNodeX.board.manhattan()) return -1;
+                else return 0;
+            }
+        }
+        
+        public String toString(){
+            StringBuilder s = new StringBuilder(this.board.toString());
+            s.append("move:" + this.moves + "\n");
+            s.append("priority:" + this.priority + "\n");
+            return s.toString();
+        }
+    }
+{% endhighlight %}
 
-
-
-
-
-## 3 总结 ##
-
-再次贴上全文一开始的一张图：
 
 {: .img_middle_lg}
-![Sorting algorithm](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/sorting algorithm.png)
+![8puzzle](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/8puzzle game tree.png)
 
-现在再看这张图，是不是有全新的感受了，我们看到比较接近**holy sorting grail**的算法就是归并排序，快速排序和堆排序。这也就是为什么他们三个常常用来相提并论的原因，各有所长，适用于不同的场合。
+具体code见[这里](https://github.com/shunmian/-01-Algorithm-Princeton)。
 
-本文介绍了6种经典的排序方法: 
 
-1. 基础排序: 选择排序和插入排序；
-2. 希尔排序(插入排序基础上);
-3. 合并排序和快速排序(分而治之);
-4. 二叉堆排序(二叉树结构)。
 
-最后用MinPQ来实现8Puzzle自动求解的问题。
+## 4 总结 ##
 
-## 4 参考资料 ##
+{: .img_middle_hg}
+![Sorting algorithm](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Chapter 2_Sorting Summary.png)
+
+我们看到比较接近**holy sorting grail**的算法就是归并排序，快速排序和堆排序。这也就是为什么他们三个常常用来相提并论的原因，各有所长，适用于不同的场合。
+
+
+
+## 5 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
 
 - [Visualize Algorithm](http://visualgo.net/);

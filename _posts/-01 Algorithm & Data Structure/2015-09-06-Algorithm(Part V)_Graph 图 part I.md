@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm(Part V)： Graph 图 Part I
+title: Algorithm Part V： Graph 图 
 categories: [-01 Algorithm]
 tags: [Graph]
 number: [-2.2.4]
