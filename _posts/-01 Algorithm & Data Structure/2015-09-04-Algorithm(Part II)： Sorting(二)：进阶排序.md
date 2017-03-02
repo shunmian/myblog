@@ -583,7 +583,7 @@ public static void sort(Comparable[] pq){
 此外，若是从信息论的角度分析堆排序，在删除节点的步骤中，与之交换的末尾节点的值必然不可能是新生成堆的最大值，也就是说，必然会往下sink。换句话说，新的对顶元素交换或者不交货的概率是不相等的，也就不是最优。
 
 
-## 3. orting programming example: 8 Puzzle ##
+## 3. Sorting programming example: 8 Puzzle ##
 
 >8Puzzle: 在3×3的格子中填满1-8的整数，有一个格子是空的。交换空格子和其相邻的格子，以达到最终有序的状态。请给出使得任意N*N（2<N<128）的格子用最少的步数达到有序状态的解。
 
