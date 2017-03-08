@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part IV：大数据机器学习(一)：随机梯度下降和MapReduce
+title: Machine Learning(四)：大数据机器学习 Part I：随机梯度下降和MapReduce
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

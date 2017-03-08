@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part I：监督式学习(一)：线性回归之单变量
+title: Machine Learning(一)：监督式学习 Part I：线性回归之单变量
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

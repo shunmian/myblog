@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm Part III Searching(二)：进阶搜索
+title: Algorithm(三)：Searching Part II：进阶搜索
 categories: [-01 Algorithm]
 tags: [Searching]
 number: [-2.2.4]

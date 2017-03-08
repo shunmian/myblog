@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm Part II Sorting(二)：进阶排序 
+title: Algorithm(二)：Sorting Part II：进阶排序 
 categories: [-01 Algorithm]
 tags: [Sorting]
 number: [-1.3]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computer System Part I Program(五)：The Memory Hierachy
+title: Computer System(一)：Program Part V：The Memory Hierachy
 categories: [-00 Computer System]
 tags: [Computer System]
 number: [-0.5]

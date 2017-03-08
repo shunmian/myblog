@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part I 传输层(三)：Hostname和DNS
+title: 网络实战(一)：传输层 Part IV：Hostname和DNS
 categories: [-02 Networks]
 tags: [Networks, DNS]
 number: [-8.1]

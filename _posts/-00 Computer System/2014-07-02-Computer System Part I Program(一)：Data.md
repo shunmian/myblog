@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computer System Part I Program(一)：Data
+title: Computer System(一)：Program Part I：Data
 categories: [-00 Computer System]
 tags: [Computer System]
 number: [-0.1]

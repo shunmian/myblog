@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part I 传输层(零)：Introduction to Client-Server
+title: 网络实战(一)：传输层 Part I：Introduction to Client-Server
 categories: [-02 Networks]
 tags: [Networks, Client-Server]
 number: [-8.1]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part II：非监督式学习(一)：聚类，降维，异常检测
+title: Machine Learning(二)：非监督式学习 Part I：聚类，降维，异常检测
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part I：监督式学习(四)：神经网络展示
+title: Machine Learning(一)：监督式学习 Part IV：神经网络展示
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

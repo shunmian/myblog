@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm Part I 基础(一)：Union-Find 并查集
+title: Algorithm(一)：基础 Part I：Union-Find 并查集
 categories: [-01 Algorithm]
 tags: [Union-Find]
 number: [-1.1]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part III：应用举例(一)：推荐系统
+title: Machine Learning(三)：应用举例 Part I：推荐系统
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

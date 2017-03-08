@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithm Part I 基础(二)：Stack 栈，Queue 队列 
+title: Algorithm(一)：基础 Part II：Stack 栈，Queue 队列 
 categories: [-01 Algorithm]
 tags: [Queue, Bag, Stack, LinkedList, Array, Generics, Iterable]
 number: [-1.2]
@@ -36,12 +36,12 @@ shortinfo: 包，队列，栈是基本的数据结构，在计算机科学里有
 队列是LIFO(后进先出)。需要1个操作位，指向栈的尾部。
 {% highlight java linenos %}
 class StackOfStrings{
-	StackOfStrings()            //create an empty stack
-	void push(String item)      //insert a new string onto stack
-	String pop()                //remove and return the string
-	most recently added
-	boolean isEmpty()           //is the stack empty?
-	int size()                  //number of strings on the stack
+    StackOfStrings()            //create an empty stack
+    void push(String item)      //insert a new string onto stack
+    String pop()                //remove and return the string
+    most recently added
+    boolean isEmpty()           //is the stack empty?
+    int size()                  //number of strings on the stack
 }
 {% endhighlight %}
 
@@ -99,11 +99,11 @@ class StackOfStrings{
 
 {% highlight java linenos %}
 class QueueOfStrings{
-	QueueOfStrings{}            //create an empty queue
-	void enqueue(String item)   //insert a new string onto queue
-	String dequeue()            //remove and return the string least recently added
-	boolean isEmpty()           //is the queue empty?
-	int size()                  //number of strings on the queue
+    QueueOfStrings{}            //create an empty queue
+    void enqueue(String item)   //insert a new string onto queue
+    String dequeue()            //remove and return the string least recently added
+    boolean isEmpty()           //is the queue empty?
+    int size()                  //number of strings on the queue
 }
 {% endhighlight %}
 
@@ -119,32 +119,32 @@ Deque(Double-ended Queue)是双端队列，即允许在队列的两端进行插�
 deque的API如下：
 {% highlight java linenos %}
 class Deque{
-	boolean isEmpty();
-	int size();
-	void addFirst(Item item);
-	void addLast(Item item);
-	Item removeFirst()
-	Item removeLast()
+    boolean isEmpty();
+    int size();
+    void addFirst(Item item);
+    void addLast(Item item);
+    Item removeFirst()
+    Item removeLast()
 }
 {% endhighlight %}
 
 和Stack一样，可以用List和Array两种方式实现Deque,相对而言List的实现简单，可以利用双向链表，即每个节点包含`pre`和`next`指针，这样维护起来非常的方便高效。这其实是week2的programming assignemnt，具体代码见[这里](https://github.com/shunmian/Algorithm)。
 
 #### 3.2.2 Randomized Queue ####
-**随机化队列**也就是一个**包(Bag)**，类似Bag of words一样，本质上就是一堆无序的元素，如下所示：
+**随机化队列**也就是一个增加了删除元素操作的**包(Bag)**(包：只增加元素不能删除元素的无序集合)本质上就是一堆无序的元素，如下所示：
 
 {: .img_middle_mid}
 ![Bag](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/bag.png)
 
-包是无序的，需要的API如下：
+随机化队列是无序的，需要的API如下：
 {% highlight java linenos %}
 class BagOfStrings{
-	BagOfStrings()              //create an empty bag
-	boolean isEmpty()			//empty or not
-	void enqueue(String x)      //insert a new String item onto bag
-	int size()                  //number of items in bag
-	String sample()				//随机返回一个String item
-	String dequeue()			//随机返回一个String item 并删除
+    BagOfStrings()              //create an empty bag
+    boolean isEmpty()           //empty or not
+    void enqueue(String x)      //insert a new String item onto bag
+    int size()                  //number of items in bag
+    String sample()             //随机返回一个String item
+    String dequeue()            //随机返回一个String item 并删除
 }
 {% endhighlight %}
 

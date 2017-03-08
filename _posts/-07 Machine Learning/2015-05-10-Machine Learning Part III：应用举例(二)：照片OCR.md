@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part III：应用举例(二)：照片OCR
+title: Machine Learning(三)：应用举例 Part II：照片OCR
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

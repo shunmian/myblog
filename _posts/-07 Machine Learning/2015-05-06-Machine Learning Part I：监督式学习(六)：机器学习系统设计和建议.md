@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part I：监督式学习(六)：机器学习系统设计和建议
+title: Machine Learning(一)：监督式学习 Part VI：监督式学习(六)：机器学习系统设计和建议
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

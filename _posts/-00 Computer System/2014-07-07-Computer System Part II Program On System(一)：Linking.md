@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computer System Part II Program On System(一)：Linking
+title: Computer System(二)：Program On System Part I：Linking
 categories: [-00 Computer System]
 tags: [Computer System]
 number: [-0.6]

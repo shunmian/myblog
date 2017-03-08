@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computer System Part I Program(二)：Machine-Level Execution
+title: Computer System(一)：Program Part II：Machine-Level Execution
 categories: [-00 Computer System]
 tags: [Computer System]
 number: [-0.2]

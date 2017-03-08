@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Part I：监督式学习(二)：线性回归之多变量
+title: Machine Learning(一)：监督式学习 Part II：线性回归之多变量
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

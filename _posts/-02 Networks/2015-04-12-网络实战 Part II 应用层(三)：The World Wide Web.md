@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part II 应用层(三)：The World Wide Web
+title: 网络实战(二)：应用层 Part III：The World Wide Web
 categories: [-02 Networks]
 tags: [Networks, HTTP, Flash, Django]
 number: [-8.1]

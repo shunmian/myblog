@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part II 应用层(八)：Telnet and SSH
+title: 网络实战(二)：应用层 Part VIII：Telnet and SSH
 categories: [-02 Networks]
 tags: [Networks, Telent, SSH]
 number: [-8.1]

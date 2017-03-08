@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part II 应用层(九)：FTP
+title: 网络实战(二)：应用层 Part IX：FTP
 categories: [-02 Networks]
 tags: [Networks, FTP]
 number: [-8.1]

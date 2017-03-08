@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Computer System Part I Program(三)：Processor Architecture
+title: Computer System(一)：Program Part III：Processor Architecture
 categories: [-00 Computer System]
 tags: [Computer System]
 number: [-0.3]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 网络实战 Part II 应用层(四)：Building and Parsing E-mail
+title: 网络实战(二)：应用层 Part IV：Building and Parsing E-mail
 categories: [-02 Networks]
 tags: [Networks, HTTP]
 number: [-8.1]
