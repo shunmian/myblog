@@ -677,14 +677,10 @@ private class SearchNode implements Comparable{
 
 我们看到比较接近**holy sorting grail**的算法就是归并排序，快速排序和堆排序。这也就是为什么他们三个常常用来相提并论的原因，各有所长，适用于不同的场合。
 
-
-
 ## 5 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
 
 - [Visualize Algorithm](http://visualgo.net/);
 
 - [数学之美番外篇：快排为什么样快](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/);
-
-
 
