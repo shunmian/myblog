@@ -237,8 +237,6 @@ RandomizedQueue的实现用数组很容易想到，用stdRandom.uniform(N)来取
 {: .img_middle_hg}
 ![Assessment](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/Chapter 1 Foundamental Summary.png)
 
-
-
 ## 8 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
 - [Visualize Algorithm](http://visualgo.net/);

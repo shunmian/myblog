@@ -338,36 +338,6 @@ public class SeparateChainingHashST<Key,Value>  {
 
 - [Python数据结构时间复杂度](https://wiki.python.org/moin/TimeComplexity)
 
-## 7 LeetCode ##
-
-### 1 Two Sum ###
-
-**Two Sum**: Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice. 
-
-<blockquote>For example Given nums = [2, 7, 11, 15], target = 9,<br>
-Because nums[0] + nums[1] = 2 + 7 = 9, <br>
-return [0, 1].
-</blockquote>
-
-分析：其实本题的本质是搜索。因此读取array时，将array存储为key(大小),value(位置)的HashTable。从数组左边scan到右边，当发现有与当前整数相加等于target的key(HashTable查找key平均是O(1)复杂度)时，返回相应位置；否则加入HashTable。
-
-{% highlight java linenos %}
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        entries,i = dict(), 0
-        for x in nums:
-            compl = target - x
-            if compl in entries:
-                return [i, entries[compl]]
-            else:
-                entries[x],i = i,i+1
-        return [0,0]
-{% endhighlight %}
 
 
 
