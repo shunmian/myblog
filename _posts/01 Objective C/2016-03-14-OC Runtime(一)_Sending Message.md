@@ -225,4 +225,3 @@ Associated Objects用于扩展类的属性，使得外部在用dot notation存�
 1. 类的定义结束后(无论是Objective-C还是runtime API动态创建类)`objc_ivar_list`是不能变得。
 2. 关联类和被关联类在内存中是分开存储的。被关联类的`objc_ivar_list`只存储其本身的iVar和Property。
 3. 这同样体现在用runtime动态创建类中，`class_addIvar(...)`在`objc_registerClassPair`前和后调用时的情况。当`class_addIvar(...)`在`objc_registerClassPair`前调用时，加入的iVar是在类本身的定义中，存储在其`objc_ivar_list`；在`objc_registerClassPair`后调用，`class_addIvar(...)`，增加的iVar和本身的类分开存储。
-

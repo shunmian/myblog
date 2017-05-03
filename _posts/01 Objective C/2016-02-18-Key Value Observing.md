@@ -229,6 +229,16 @@ ViewController.m
 {% endhighlight %}
 这样任何一个`accountDomestic`或者`accountForeign`的改变，都会发送`totalAmount`改变的通知。
 
+### 2.4. KeyPath注意事项  ###
+
+结合ReactiveCocoa
+{% highlight objc linenos %}
+RACObserve(targe,keyPath);
+{% endhighlight %}
+self->percolates->N
+若想观察self.percolates是否指向新的percolates对象，则``RACObserve(self,percolates)``;若想观察self.percolates.N是否指向新的N对象，则``RACObserve(self.percolates, N)``;
+
+该情况在Algo Project中的[PercolateImplementationViewController.m](https://github.com/shunmian/iOS_Algo/blob/master/PercolateImplementationViewController.m)遇到过。
 
 ## 3. 坑及应对 ##
 KVO有一些坑需要注意, 否则有时候会产生莫名其妙的bug;
