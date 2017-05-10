@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OC Runtime(零)： runtime概述
+title: OC Runtime(零)： Runtime概述
 categories: [01 Objective-C]
 tags: [Sending Message]
 number: [0.14.1.2]
