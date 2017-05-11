@@ -1,11 +1,11 @@
 ---
 layout: post
-title: OC Runtime(一)： Sending Message
+title: OC Runtime(三)：Category Part II：Associated Objects
 categories: [01 Objective-C]
-tags: [Sending Message]
+tags: [Associated Objects]
 number: [0.14.1.2]
 fullview: false
-shortinfo: Objective-C中的消息发送和C中的函数调用有着本质的区别。后者在编译阶段已经确定了函数的具体实现, 而前者在运行时还可以更改消息发送的具体实现，这给Objective-C注入了崭新的动态活力。而这都得益于Objective-C的Runtime系统。可以说Objective-C的Runtime是其语言区别与其他语言的基石。而Runtime里的sending message(消息发送)又是其最主要的特性。本文将带您感受下Runtime的sending message机制。
+shortinfo: 在Objective C 中，一旦类被定义好了，想扩展它的iVar是被禁止的，除非重写改写类本身。我们知道Category可以被用来扩展方法而非iVar，而Associated Objects技术就是用来在遵循实例变量不能扩展的前提下，增加property的。这样在外部看来可以用dot notatoin access 所有的属性，就像达到了iVar可以被扩展的假象。本文就来详细介绍一下Objective C Runtime的Associated Objects。
 ---
 目录
 {:.article_content_title}
@@ -225,3 +225,4 @@ Associated Objects用于扩展类的属性，使得外部在用dot notation存�
 1. 类的定义结束后(无论是Objective-C还是runtime API动态创建类)`objc_ivar_list`是不能变得。
 2. 关联类和被关联类在内存中是分开存储的。被关联类的`objc_ivar_list`只存储其本身的iVar和Property。
 3. 这同样体现在用runtime动态创建类中，`class_addIvar(...)`在`objc_registerClassPair`前和后调用时的情况。当`class_addIvar(...)`在`objc_registerClassPair`前调用时，加入的iVar是在类本身的定义中，存储在其`objc_ivar_list`；在`objc_registerClassPair`后调用，`class_addIvar(...)`，增加的iVar和本身的类分开存储。
+
