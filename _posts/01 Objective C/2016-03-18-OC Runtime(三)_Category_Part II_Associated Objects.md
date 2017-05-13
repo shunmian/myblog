@@ -219,10 +219,50 @@ for(int i = 0; i < ivarNumber; i++){
 由于第3种方式最为优雅和简洁，在上面的例子中我们用的就是selector。
 
 
-## 3 总结 ##
+## 3 Non-Fragile iVars ##
+
+> **Fragile Base Class Problem**：在某些编程语言中，父类必须得通过重新编译所有子类才可以改变ivar Layout。例如，C++在父类里增加data members或virtual member functions会打破子类的**二进制兼容**，即使增加的members是私有的和对子类不可见的。
+
+### 3.1 为什么Non Fragile ivars很关键 ###
+
+
+Runtime有两个版本，**Legacy**和**Modern**。当编译类的时候，ivar layout已经确定下来，比如object的ivar的offset和size等。所以你的ivar layout很可能看起来是下图中的**base class**。当我们子类化``NSView``为``PetShopView``的时候，增加了``kittens``和``puppies``两个ivar，我们期待的ivar layout是下图中的**expected class**。
+
+在**Legacy**版本，当Mac OS X Def Leopard出来后，AppKit开发者在NSView里增加了`touchedPaws` iVar。这个时候，原来的`PetShopView`里的`kittens`就会被新加的`touchedPaws`所覆盖。这种Non Fragile ivars的特性必须通过重新编译`PetShopView`才能运行。如果更不幸一点，`PetShowView`类是来自第三方提供的静待库，我们就只能干等库作者跟新版本了。
+
+在**Modern**版本。程序启动后，runtime加载MyObject列的收，通过计算基类的大小，runtime动态调整了`PetShowView` ivar的layout，即向后移动了8个字节。于是我们的程序无序编译，就能运行。
+
+{: .img_middle_lg}
+![SendingMessage](/assets/images/posts/01 Objectiev C/2016-03-18-OC Runtime(三)_Category_Part II_Associated Objects/Non-Fragile iVars.png)
+
+### 3.2 如何寻址类成员变量 ###
+
+主要通过`class_ro_t`里的`instanceStart`和`instanceSize`来判断，
+当子类的instanceStart小于父类的instanceSize时，需要调整。
+
+{% highlight objc linenos %}
+
+struct class_ro_t {
+    ...
+    uint32_t instanceStart;
+    uint32_t instanceSize;
+    ...
+}
+
+{% endhighlight %}
+
+### 3.3 为什么Objective-C类不能动态添加成员变量而可以添加方法属性和协议 ###
+
+> 为什么可以通过分类动态添加方法，属性，协议而不能添加添加成员变量呢。简单的回答是方法，属性，协议属于`Procedure`，存储在类和元类(都是单例)里，内存中只有一份；而实例变量属于`Data`，存储在同样属于`Data`的对象(可以有多个)内存里。若给类增加``ivar_t``，来动态修改类成员变量布局，那么已经创建出的对象就不符合类定义了，变成了无效对象。
+
+这也解释了为什么[2.2 在Runtime API中动态增加属性](#runtime-api)，在通过`objc_registerClassPair`注册了类后，后面用`class_addIvar`方法增加的实例变量是无效的。
+
+## 4 总结 ##
 Associated Objects用于扩展类的属性，使得外部在用dot notation存取属性时分不出两者的区别，这解决了Objective C属性扩展的问题。但是在内部实现中，Associated Objects和类本身的iVar和Property还是有区别的：
 
 1. 类的定义结束后(无论是Objective-C还是runtime API动态创建类)`objc_ivar_list`是不能变得。
 2. 关联类和被关联类在内存中是分开存储的。被关联类的`objc_ivar_list`只存储其本身的iVar和Property。
-3. 这同样体现在用runtime动态创建类中，`class_addIvar(...)`在`objc_registerClassPair`前和后调用时的情况。当`class_addIvar(...)`在`objc_registerClassPair`前调用时，加入的iVar是在类本身的定义中，存储在其`objc_ivar_list`；在`objc_registerClassPair`后调用，`class_addIvar(...)`，增加的iVar和本身的类分开存储。
+3. 这同样体现在用runtime动态创建类中，`class_addIvar(...)`在`objc_registerClassPair`前和后调用时的情况。当`class_addIvar(...)`在`objc_registerClassPair`前调用时，加入的iVar是在类本身的定义中，存储在其`objc_ivar_list`；在`objc_registerClassPair`后调用，`class_addIvar(...)`不可以再动态增加类属性(因为如果可以动态增加，之前创建的类就无效了，data可以有多份，但是procedure只能有一份，ivar的定义在类的单例里，可以看做是procedure，这也解释了为什么不能在分类里添加ivar而只能添加方法或属性(方法的一种)。
+
+全文总结参考[该图]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
 
