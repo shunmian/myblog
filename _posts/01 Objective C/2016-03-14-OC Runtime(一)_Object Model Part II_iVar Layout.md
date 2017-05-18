@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OC Runtime(一)：Object Model
+title: OC Runtime(一)：Object Model part II：iVar Layout
 categories: [01 Objective-C]
 tags: [Sending Message]
 number: [0.14.1.2]

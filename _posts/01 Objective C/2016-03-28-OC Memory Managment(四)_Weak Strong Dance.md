@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Weak Strong Dance
+title: OC Memory Managment(四)：Weak Strong Dance
 categories: [01 Objective-C]
 tags: [MemoManamement]
 number: [5.5.1]
@@ -20,8 +20,7 @@ shortinfo: Swift 和 Objective-C 内存管理的一个重要问题是防止循�
 ## 1. Retain Cycle 介绍 ##
 在面向对象编程中, 引用类型分配在堆中(如类的实例，匿名函数), 值类型分配在栈中(如整数，浮点数)。Swift中的类型分为class，struct，enum：其中只有class是引用类型，其实例分配在堆中；struct(Array, Dictionary, String, Set)和enum都是值类型，其实例分配在栈中。对于分配在堆中的类的实例，我们要对其进行内存管理，Swift 和Objective-C都是用ARC(而不是垃圾回收机制)来对内存进行管理，包括对于内存泄露的处理。本文对Swift和Objective-C中的循环引用进行讨论。
 
-
-{: .img_middle}
+{: .img_middle_mid}
 ![面向对象编程](/assets/images/posts/2016-03-07/面向对象编程.png)
 
 ## 2. Retain Cycle 问题及解决 ##
@@ -171,7 +170,7 @@ typedef void (^AnimationBlock)();
 }
 ...
 {% endhighlight %}
-在例5中，当`self.animationBlock` 作为`[UIView animationWithDuration: animations:]`的最后一个参数运行时，传给strongSelf要么是nil，要么是短暂强引用self，因为strongSelf是block的变量(有生命周期)。因此在打破循环引用的同时，又解决了第二种情况，要么全执行，要么全不执行。这对于我们的程序非常有利。这就是人们所谓的Weak Strong Dance。
+在例5中，当`self.animationBlock` 作为`[UIView animationWithDuration: animations:]`的最后一个参数运行时，传给strongSelf要么是nil，要么是短暂强引用self，因为strongSelf是block的变量(有生命周期，当block执行完毕，`strongSelf`自动设置为`nil`，viewController的retainCount减1，返回原来的值)。因此在打破循环引用的同时，又解决了第二种情况，要么全执行，要么全不执行。这对于我们的程序非常有利。这就是人们所谓的Weak Strong Dance。
 
 在这里，可以用@weakify(self) 和@strongigy(self)代替上面栗5中的`__weak ViewController *weakSelf = self;` 和 `ViewController *strongSelf = weakSelf;`。weakify 创建了一个新的weak self 来替代原来的self，strongify 则相反。也就是说weakify和strongify使得变量`self`的引用属性在`weak`和`strong`里自由转换。
 
