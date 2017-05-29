@@ -61,7 +61,7 @@
             
 
                 <p>嗨，欢迎来到我的博客。<br/>
-                我是Shunmian，一名iOS开发者。<br/>
+                我是Doggya，一名iOS开发者。<br/>
                 <hr class = "hr_short_low">
                 正在学习Algorithm，Functional Programming，Machine Learning，Data Mining 和 Cloud Computation。 
 
@@ -129,7 +129,65 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/swift/2016/03/07/weak-strong-dance.html">Weak Strong Dance</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/04/03/OC-Concurrency(%E4%BA%8C)_GCD-part-I_%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3.html">OC Concurrency(二)：GCD Part I：用法详解</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Objective-C在NSThread的基础上进一步抽象出tasks之间执行的关系(串行和并行)为队列，以及tasks被执行时和Caller的关系(sync和async)为sync和async函数。这种更高一级的抽象使得开发者从NSThread的复杂的life cycle的管理中抽离出来，专注于业务逻辑(tasks)。而NSThread的复杂的life cycle的管理则交由底层系统来完成。使得多线程在Objective-C抽象程度更高，应用也更简单。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-04-03 •
+        </span>
+
+        <span class="post_category">
+            01 Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/04/03/OC-Concurrency(%E4%BA%8C)_GCD-part-I_%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/04/01/OC-Concurrency(%E4%B8%80)_NSThread-part-I_%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3.html">OC Concurrency(一)：NSThread Part I：用法详解</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Objective-C的。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-04-01 •
+        </span>
+
+        <span class="post_category">
+            01 Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/04/01/OC-Concurrency(%E4%B8%80)_NSThread-part-I_%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/28/OC-Memory-Managment(%E5%9B%9B)_Weak-Strong-Dance.html">OC Memory Managment(四)：Weak Strong Dance</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -142,14 +200,14 @@
 
     <br />
         <span class="post_date">
-            2016-03-07 •
+            2016-03-28 •
         </span>
 
         <span class="post_category">
-            Swift
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/swift/2016/03/07/weak-strong-dance.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/28/OC-Memory-Managment(%E5%9B%9B)_Weak-Strong-Dance.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -158,27 +216,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/swift/2016/03/07/Guard%E5%85%B3%E9%94%AE%E8%AF%8D.html">guard 关键字</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/27/OC-Memory-Managment(%E4%B8%89)_Weak%E5%B1%9E%E6%80%A7.html">OC Memory Managment(三)：Weak属性</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            Swift对条件判断的可读性用guard关键字进行了优化。Guard就像其字面意思，是一个卫士，当条件不通过时，先对其进行处理；当通过条件测试时，才对其进行正常的业务操作。
+            Swift 和 Objective-C 内存管理的一个重要问题是防止循环引用引起的内存泄露，其中对于匿名函数和self的循环引用问题最为常见。解决方式之一就是"Weak Strong Dance"。本文探讨循环引用的的问题，以及Weak Strong Dance的原理，
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2016-03-07 •
+            2016-03-27 •
         </span>
 
         <span class="post_category">
-            Swift
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/swift/2016/03/07/Guard%E5%85%B3%E9%94%AE%E8%AF%8D.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/27/OC-Memory-Managment(%E4%B8%89)_Weak%E5%B1%9E%E6%80%A7.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -187,27 +245,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/02/20/SpriteKit.html">iOS 2D Game - SpriteKit入门(一)</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/26/OC-Memory-Managment(%E4%BA%8C)_Autoreleasing.html">OC Memory Managment(二)：Autoreleasing</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            SpriteKit是Apple官方的2D游戏框架， 让开发者在iOS 和OS 平台上更高效的开发2D游戏。 学习SpriteKit， 最权威的资料应该是苹果官方文档-SpriteKit Programming Guide。该文档很全面但是不适合初学者。 对于初学者， 理解SpriteKit背后的设计rationale才能更好的应用它。 什么是2D游戏设计的几个基本问题， 什么是sprite， SpriteKit 里面有哪些重要的类及其他们之间的关系等等，本文带着您一起梳理一遍...
+            ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。本文是对OC ARC的概述，意在使得开发者在写OC代码的时候，了解编译器在背后做了哪些内存管理的事情。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2016-02-20 •
+            2016-03-26 •
         </span>
 
         <span class="post_category">
-            Objective-C
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/objective-c/2016/02/20/SpriteKit.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/26/OC-Memory-Managment(%E4%BA%8C)_Autoreleasing.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -216,27 +274,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/objective-c/2016/02/18/Key-Value-Observing.html">Key Value Observing</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/25/OC-Memory-Managment(%E4%B8%80)_ARC.html">OC Memory Managment(一)：ARC</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            Key Value Observing 是Objective-C对Observer Pattern的内置实现。它的功能非常强大, 同时API设计糟糕,相应的坑也不少。本文对Key Value Observing进行介绍。
+            ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。本文是对OC ARC的概述，意在使得开发者在写OC代码的时候，了解编译器在背后做了哪些内存管理的事情。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2016-02-18 •
+            2016-03-25 •
         </span>
 
         <span class="post_category">
-            Objective-C
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/objective-c/2016/02/18/Key-Value-Observing.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/25/OC-Memory-Managment(%E4%B8%80)_ARC.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -245,27 +303,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/web%20scraping/2015/12/15/Web-Scraping-A1-Selenium.html">Web Scraping A1：Selenium</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/21/OC-Runtime_A1_%E8%BF%90%E8%A1%8CRuntime%E6%BA%90%E7%A0%81.html">OC Runtime(A1)：配置Runtime源码环境</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            本文是对Selenium的Python库做一个入门介绍。
+            runtime在通常的Xcode工程中是用汇编码存储的，因此调试runtime想查看其源码对于汇编不熟悉的同学比较不适应。好消息是苹果开源了objc runtime源码。本文介绍如何自己添加objc runtime源码到Xcode工程中。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2015-12-15 •
+            2016-03-21 •
         </span>
 
         <span class="post_category">
-            Web Scraping
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/web%20scraping/2015/12/15/Web-Scraping-A1-Selenium.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/21/OC-Runtime_A1_%E8%BF%90%E8%A1%8CRuntime%E6%BA%90%E7%A0%81.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -274,27 +332,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/web%20scraping/2015/12/14/Web-Scraping-Part-II-Advanced-Scrapers-(%E5%85%AB)-%E8%BF%9C%E7%A8%8B%E6%8A%93%E5%8F%96.html">Web Scraping Part II：Advanced Scrapers (八)：远程抓取</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/18/OC-Runtime(%E4%B8%89)_Category_Part-II_Associated-Objects.html">OC Runtime(三)：Category Part II：Associated Objects</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            本文是《Web Scraping With Python》的最后一篇笔记，我们将会介绍如何从不同的机器甚至不同的IP地址来运行我们的Web Scraper。
+            在Objective C 中，一旦类被定义好了，想扩展它的iVar是被禁止的，除非重写改写类本身。我们知道Category可以被用来扩展方法而非iVar，而Associated Objects技术就是用来在遵循实例变量不能扩展的前提下，增加property的。这样在外部看来可以用dot notatoin access 所有的属性，就像达到了iVar可以被扩展的假象。本文就来详细介绍一下Objective C Runtime的Associated Objects。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2015-12-14 •
+            2016-03-18 •
         </span>
 
         <span class="post_category">
-            Web Scraping
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/web%20scraping/2015/12/14/Web-Scraping-Part-II-Advanced-Scrapers-(%E5%85%AB)-%E8%BF%9C%E7%A8%8B%E6%8A%93%E5%8F%96.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/18/OC-Runtime(%E4%B8%89)_Category_Part-II_Associated-Objects.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -303,27 +361,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/web%20scraping/2015/12/13/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%83)-%E6%B5%8B%E8%AF%95%E7%BD%91%E7%AB%99.html">Web Scraping Part II：Advanced Scrapers (七)：测试网站</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/17/OC-Runtime(%E4%B8%89)_Category_Part-I_%E6%9C%BA%E5%88%B6.html">OC Runtime(三)：Category Part I：机制</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第1篇笔记，。
+            在Objective C中, Key Value Observing 是用来对Observing Pattern的Apple官方实现。 它的实现原理用的是isa Swizzling。但是apple对其细节没有多讲。本文用三种方式来实现Oberving Pattern：普通设计模式, isa Swizzling和Method Swizzling。希望通过本文能让您对Observing Pattern有一个全面的认识。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2015-12-13 •
+            2016-03-17 •
         </span>
 
         <span class="post_category">
-            Web Scraping
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/web%20scraping/2015/12/13/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%83)-%E6%B5%8B%E8%AF%95%E7%BD%91%E7%AB%99.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/17/OC-Runtime(%E4%B8%89)_Category_Part-I_%E6%9C%BA%E5%88%B6.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -332,85 +390,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/web%20scraping/2015/12/12/Web-Scraping-Part-II-Advanced-Scrapers-(%E5%85%AD)-%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E9%99%B7%E9%98%B1.html">Web Scraping Part II：Advanced Scrapers (六)：网络爬虫陷阱</a>
+            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/16/OC-Runtime(%E4%BA%8C)_Messaging_Part-II_%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0objc_sendMsg.html">OC Runtime(二)：Messaging Part II：手动实现objc_sendMsg</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第12篇笔记。重点介绍如何规避反抓取陷阱。
+            Objective-C中的消息发送和C中的函数调用有着本质的区别。后者在编译阶段已经确定了函数的具体实现, 而前者在运行时还可以更改消息发送的具体实现，这给Objective-C注入了崭新的动态活力。而这都得益于Objective-C的Runtime系统。本文在介绍Runtime Messaging机制后，实现两个黑魔法，isa swizziling和method swizzling。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2015-12-12 •
+            2016-03-16 •
         </span>
 
         <span class="post_category">
-            Web Scraping
+            01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/web%20scraping/2015/12/12/Web-Scraping-Part-II-Advanced-Scrapers-(%E5%85%AD)-%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E9%99%B7%E9%98%B1.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
-
-        <hr />
-        <br />
-    </artical>
-    
-
-    <artical class="home">
-        <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/web%20scraping/2015/12/11/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%BA%94)-%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86%E5%92%8C%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB.html">Web Scraping Part II：Advanced Scrapers (五)：图形处理和文本识别</a>
-            <div class="padding_bottom_10"></div>
-        </span>
-        <div class="post_mainShortinfo">
-            
-            
-            本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第5篇笔记。重点介绍图片的OCR和APTACHA的识别与提交。
-            
-            
-        </div>
-
-    <br />
-        <span class="post_date">
-            2015-12-11 •
-        </span>
-
-        <span class="post_category">
-            Web Scraping
-        </span>
-
-        <span class="padding_left_10"><a href="/web%20scraping/2015/12/11/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%BA%94)-%E5%9B%BE%E5%BD%A2%E5%A4%84%E7%90%86%E5%92%8C%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
-
-        <hr />
-        <br />
-    </artical>
-    
-
-    <artical class="home">
-        <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/web%20scraping/2015/12/10/Web-Scraping-Part-II-Advanced-Scrapers-(%E5%9B%9B)-JavaScript.html">Web Scraping Part II：Advanced Scrapers (四)：JavaScript</a>
-            <div class="padding_bottom_10"></div>
-        </span>
-        <div class="post_mainShortinfo">
-            
-            
-            本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本的第二部分Advanced Scraper的第4篇笔记。JavaScript是动态页面技术的基石(包括Ajax,DHTML)，将HTML的数据展示层和数据更新层进行了解耦，使得HTML文件不变却能更改数据展示。JavaScript使得我们之前用静态网页抓取的技术统统失效。解决的办法在于如何写出用Web Scraper解析JavaScript的程序。幸运的是，第三方库Selenium使得我们可以抓取一个真实运行在浏览器上的网页，让一切变的如此简单。本文我们主要来看看动态网页如何利用Selenium进行抓取。
-            
-            
-        </div>
-
-    <br />
-        <span class="post_date">
-            2015-12-10 •
-        </span>
-
-        <span class="post_category">
-            Web Scraping
-        </span>
-
-        <span class="padding_left_10"><a href="/web%20scraping/2015/12/10/Web-Scraping-Part-II-Advanced-Scrapers-(%E5%9B%9B)-JavaScript.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/16/OC-Runtime(%E4%BA%8C)_Messaging_Part-II_%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0objc_sendMsg.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -429,7 +429,7 @@
     
 
     <li>
-        <span class="page_number">Page: 2 of 6</span>
+        <span class="page_number">Page: 2 of 15</span>
     </li>
 
     

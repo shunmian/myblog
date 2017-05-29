@@ -211,9 +211,9 @@
     margin-bottom: 20px;
     color:  rgba(51,51,51,0.7);
     font-size: 120%;
-    font-weight: 300;
+    font-weight: normal;
     /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
-    font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
+    font-family: "Microsoft YaHei", 微软雅黑, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif, Lucida, Verdana, serif;
     line-height: 1.75
 }
 
@@ -265,6 +265,8 @@
     font-weight: 300;
         /*font-family: "PingFang SC"，"Microsoft YaHei", Arial, Helvetica,sans-serif, "宋体"；*/
     font-family: 'Open Sans', 'Microsoft Yahei', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif!important;
+
+
     padding: 0 0;
     margin-top: -5px;
     margin-bottom: -5px;
@@ -282,14 +284,23 @@
 }
 
 
-.article_mainBody h2, h3, h4, h5 {
+.article_mainBody h2, h3, h4, h5, h6 {
     color:  rgba(51,51,51,0.9);
     font-weight: normal;
     padding-top: 15px;
 
 }
+
+.article_mainBody h6{
+    font-size: 22px:
+}
+
 .article_mainBody h4{
     font-size: 22px;
+}
+
+.article_mainBody strong {
+    font-weight: bold;
 }
 
 .share {
@@ -327,4 +338,12 @@
 
 .tags_subtitle a:hover{
     color: rgba(71,113,125,0.9);
+}
+
+.categories_padding{
+    padding-left: 5px
+}
+
+.categories_padding li{
+    width:110%;
 }
