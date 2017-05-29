@@ -1,11 +1,11 @@
 ---
 layout: post
-title: EOC(二)：Objects Messaging and Runtime
+title: EOC(二)：OC Runtime (Object Hierarchy & Messaging)
 categories: [01 Objective-C]
 tags: [Effective]
 number: [01.25.1]
 fullview: false
-shortinfo: iOS里的UIViewController和UIView的Life Cycle是理解Objective-C event-driven的基础。本文重点介绍autolayout(自动布局)在UIViewController和UIView的Life Cycle里的相关方法细节以及最佳实践。
+shortinfo: 本文是《Effective Objective-C》的系列笔记的第二篇《OC Runtime (Object Hierarchy & Messaging)》，对应书本的第二章。
 ---
 目录
 {:.article_content_title}
@@ -17,7 +17,7 @@ shortinfo: iOS里的UIViewController和UIView的Life Cycle是理解Objective-C e
 ---
 {:.hr-short-left}
 
-## 1 Objects Messaging and Runtime ##
+## 1 Object Hierarchy & Messaging ##
 
 ### Item 6：Understand Properties
 
@@ -229,30 +229,23 @@ typedef NS_ENUM(NSUInteger,EOCEmployeeType){
 
 ### Item 11：Understand the Role of objc_msgSend
 
+见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.baseurl}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
+
 ### Item 12：Understand Message Forwarding
 
-
+见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.baseurl}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
 
 ### Item 13：Consider Method Swizzling to Debug Opaque Methods
 
+见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.baseurl}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
+
 ### Item 14：Understand What a Class Object Is
 
+见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(一)：Object Model Part I：Object Hierarchy]({{site.baseurl}}/01%20objective-c/2016/03/13/OC-Runtime(%E4%B8%80)_Object-Model-Part-I_Object-Hierarchy.html)。
 
 
-{% highlight objc linenos %}
-
-{% endhighlight %}
+## 2 Reference ##
 
 
-
-## 3 总结 ##
-
-{: .img_middle_hg}
-![NSOperation & NSOperationQueue总结](/assets/images/posts/01 Objectiev C/2016-04-07-OC Concurrency(三)_NSOperation part I_用法详解/NSOperation & NSOperationQueue总结.png)
-
-## 4 Reference ##
-
-- [《iOS 并发编程之 Operation Queues》](http://blog.leichunfeng.com/blog/2015/07/29/ios-concurrency-programming-operation-queues/);
-
-- [《How To Use NSOperations and NSOperationQueues》](http://web.archive.org/web/20150417045614/http://www.raywenderlich.com/19788/how-to-use-nsoperations-and-nsoperationqueues);
+- [《Effective Objective-C 2.0: 52 Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)》](https://www.amazon.com/Effective-Objective-C-2-0-Specific-Development/dp/0321917014);
 
