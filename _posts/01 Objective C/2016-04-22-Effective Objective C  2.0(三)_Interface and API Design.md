@@ -83,6 +83,22 @@ A better choice is to use double underscore `__someMethod` instead of `p_someMet
 
 2. For nonfatal errors, either provide a delegate method to handle errors or offer an out-parameter `NSError` object.
 
+{% highlight objc linenos %}
+//out-parameter NSError object
+-(BOOL)doSomething:(NSError **)error{
+    //some implementation
+}
+
+NSError *error = nil;
+
+BOOL ret = [object doSomething:&error];
+if(error){
+    // There was an error
+}
+
+
+{% endhighlight %}
+
 ### Item 22：Understand the NSCopying Protocol ###
 
 
