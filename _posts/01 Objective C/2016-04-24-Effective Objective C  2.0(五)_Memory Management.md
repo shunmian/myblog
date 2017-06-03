@@ -5,7 +5,7 @@ categories: [01 Objective-C]
 tags: [Effective]
 number: [01.25.1]
 fullview: false
-shortinfo: iOS里的UIViewController和UIView的Life Cycle是理解Objective-C event-driven的基础。本文重点介绍autolayout(自动布局)在UIViewController和UIView的Life Cycle里的相关方法细节以及最佳实践。
+shortinfo: 本文是《Effective Objective-C》的系列笔记的第五篇《Memory Management》，对应书本的第五章。
 ---
 目录
 {:.article_content_title}
@@ -17,106 +17,137 @@ shortinfo: iOS里的UIViewController和UIView的Life Cycle是理解Objective-C e
 ---
 {:.hr-short-left}
 
-## 1 constraints & layout ##
+## 1 Memory Management ##
 
-iOS autolayout对于视图的布局比autoresizing要灵活很多。但是autolayout的代码里的实现并不是那么用户友好：literal语法之复杂被戏称为“象形文字”；而autolayout API非常冗长。[Masonry](https://github.com/SnapKit/Masonry)框架是对autolayout相关类的封装，使得在code里执行autolayout变得紧凑和更加简洁。在使用过几次Masonry后，笔者碰到一些诸如在哪里写Masonry constraints，以及何时UIView和subviews的frame确定下来等问题。本文通过1个小例子对上述问题进行澄清。
+### Item 29：Understand Reference Counting ###
 
-### 1.1 constraints ###
+1. Reference-counting memory management is based on a counter that is incremented and decremented. An object is created with a count of at least 1. An object with a positive retain count is alive. When the retain count drops to 0, the object is destroyed.
 
-``NSConstraint``是autolayout的基石和前提。开发者写好``NSConstraint``，OC Runtime根据``NSConstraint``来layout视图。这是autolayout名字的由来，即通过更高一级的抽象，在``NSConstraint``层面写好约束关系，由运行时进行**布局**。
+2. As it goes through its life cycle, an object is retained and released by other objects holding references to it. Retaining and releasing increments and decrements the retain count respectively.
 
-那么constraints在哪里写比较好呢。我们可以将UIView分为3个等级:
+### Item 30：User ARC to Make Reference Counting Easier ###
 
-1. view controller's view，下面称为``L0View``;
-2. view controller's view's children subviews，下面称为``L1View``;
-3. view controller's view's grandson subviews，下面称为``L2View``;
+<ol>
 
-> **Constraints Hierachy**：一个普遍的原则是，某view自身在其superView里的constraints必须由其superView来实现；而某view的children subviews在该view里的constraints必须由该view来实现。换句话说，你的位置由你的上级决定，但是你可以决定你的直接下级的位置。这样做的好处是constraints的解耦，利于代码复用。如果某view自身在其superView里的constraints必须由该view自身实现，那么换了superView之后，又得重新更新constraints。
-
-在上面的3个等级中，对于``L1View``，其constraint由``L0View``决定；而``L2View``的constraint由``L1View``决定。通常情况下，``L0View``作为view controller的``view``属性，我们一般很少customize；如果需要customize，也可以从``L1View``开始，将``L0View``作为``L1View``的容器。因此对于``L1View``的constraint，我们可以在直接和``L0View``紧密相连的view controller里实现。
+<li> Method-Naming Rules Applied by ARC. <code>alloc</code>,<code>new</code>,<code>copy</code>,<code>mutableCopy</code> methods return an object owned by the caller method. 
 
 {% highlight objc linenos %}
-@implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.lcView = [[LCView alloc] initWithFrame:CGRectMake(10, 10, 300, 100)];
-    self.lcView.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:self.lcView];
++ (EOCPerson*)newPerson {
+    EOCPerson *person = [[EOCPerson alloc] init]; return person;
+    /**
+    * The method name begins with 'new', and since 'person' * already has an unbalanced +1 retain count from the
+    * 'alloc', no retains, releases, or autoreleases are
+    * required when returning.
+    */
+}
++ (EOCPerson*)somePerson {
+    EOCPerson *person = [[EOCPerson alloc] init]; return person;
+    /**
+    * The method name does not begin with one of the "owning"
+    * prefixes, therefore ARC will add an autorelease when
+    * returning 'person'.
+    * The equivalent manual reference counting statement is:
+    *
+    */
 }
 
--(void)updateViewConstraints{
-    [super updateViewConstraints];
-    [self.lcView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.lcView.superview.mas_centerY).with.multipliedBy(1.0);
-        make.left.equalTo(self.lcView.superview.mas_left).with.offset(5.0);
-        make.right.equalTo(self.lcView.superview.mas_right).with.offset(-5.0);
-        make.height.equalTo(self.lcView.mas_width).with.multipliedBy(0.3);
-    }];
+- (void)doSomething {
+    EOCPerson *personOne = [EOCPerson newPerson]; 
+    // ...
+
+    EOCPerson *personTwo = [EOCPerson somePerson]; 
+    // ...
+
+    /*
+    * At this point, 'personOne' and 'personTwo' go out of scope, therefore ARC needs to clean them up as required. 
+    * - 'personOne' was returned as owned by this block of code, so it needs to be released.
+    * - 'personTwo' was returned not owned by this block of code, so it does not need to be released. 
+    * The equivalent manual reference counting cleanup code is:
+    * [personOne release];
+    */
 }
-@end
+
 {% endhighlight %}
+</li>
 
-``updateViewConstraints``的方法其实更好的命名(当然不够规范)应该是``updateL1ViewsConstraints``，因为根据**Constraints Hierachy**，view controller自身的view的constraints应该由其上一级决定，这里可以是push时的presenting view controller来决定presented view controller的view的constraints。
 
-在添加``L1View``的constraint后，对于``L2View``的constraint是在``L2View``的``updateConstraints``里添加的。
+<li> Memory-Management Semantics of Variables. <code>_strong</code>,<code>_unsafe_unretained</code>,<code>__weak</code>,<code>_autoreleasing</code>.
+</li>
 
+<li> ARC Handling of Instance Variables. ARC also handles the memory management of instance variables. Doing so requires ARC to automatically generate the required cleanup code during deallocation. 
 
 {% highlight objc linenos %}
-@implementation L1View
--(void)updateConstraints{
-     NSLog(@"%@,%@",self,NSStringFromSelector(_cmd));
-    [super updateConstraints];
-    
-    /* You can update Constraints for self, but it is better to only update constraints for subcell and move the logic to update constraints for self to its superview (controller)
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.superview.mas_centerY).with.multipliedBy(1.0);
-        make.left.equalTo(self.superview.mas_left).with.offset(5.0);
-        make.right.equalTo(self.superview.mas_right).with.offset(-5.0);
-        make.height.equalTo(self.mas_width).with.multipliedBy(0.3);
-    }];
-     */
-    
-    [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.iconView.superview.mas_centerY).with.multipliedBy(1.0);
-        make.left.equalTo(self.iconView.superview.mas_left).with.offset(5.0);
-        make.height.equalTo(self.iconView.superview.mas_height).with.multipliedBy(0.7);
-        make.width.equalTo(self.iconView.mas_height).with.multipliedBy(1.5);
-    }];
-    
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.iconView.mas_top).with.offset(0);
-        make.left.equalTo(self.iconView.mas_right).with.offset(10);
-        make.right.equalTo(self.titleLabel.superview.mas_right).with.offset(-10);
-        make.height.equalTo(self.iconView.superview.mas_height).with.multipliedBy(0.15);
-    }];
-    
-    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).with.offset(5);
-        make.bottom.equalTo(self.iconView.mas_bottom).with.offset(0);
-        make.left.equalTo(self.iconView.mas_right).with.offset(10);
-        make.right.equalTo(self.detailLabel.superview.mas_right).with.offset(-10);
-    }];
+-(void) dealloc{
+    [_foo release];
+    [_bar release];
+    [super dealloc];
 }
-@end
+
 {% endhighlight %}
 
+</li>
 
+<li> Overriding the Memory-Management Methods  </li>
 
+</ol>
 
-### 1.2 layout ##
+### Item 31：Release References and Clean Up Observation State Only in dealloc ###
 
+1. The ``dealloc`` method should be used only to release references to other objects and to unregister anything that needs to be, such as **Key-Value Observing(KVO)** or ``NSNotificationCenter`` notifications.
 
+2. If an object holds onto system resources, such as file descriptors, there should be a method for releasing these resources. It should be the contract with the consumer of such a class to call this `close` method when finished using the resources.
 
+3. Method calls should be avoided in ``dealloc`` methods in case those methods try to perform asynchronous work or end up assuming that the object is in a normal state, which it won't be.
 
-## 3 总结 ##
+### Item 32：Beware of Memory Management with Exception-Safe Code ###
 
-{: .img_middle_hg}
-![NSOperation & NSOperationQueue总结](/assets/images/posts/01 Objectiev C/2016-04-07-OC Concurrency(三)_NSOperation part I_用法详解/NSOperation & NSOperationQueue总结.png)
+1. When exceptions are caught, care should be taken to ensure that any required cleanup is done for objects created within the try block.
 
-## 4 Reference ##
+2. By default, ARC does not emit code that handles cleanup when exceptions are thrown. This can be enabled with a compiler flag but produces code that is larger and comes with a runtime cost.
 
-- [《iOS 并发编程之 Operation Queues》](http://blog.leichunfeng.com/blog/2015/07/29/ios-concurrency-programming-operation-queues/);
+### Item 33：Use Weak References to Avoid Retain Cycles ###
 
-- [《How To Use NSOperations and NSOperationQueues》](http://web.archive.org/web/20150417045614/http://www.raywenderlich.com/19788/how-to-use-nsoperations-and-nsoperationqueues);
+1. Retain cycles can be avoided by making certain references weak.
+
+2. Weak references may or may not be autonilling. Autonilling is a new feature introduced with ARC and is implemented in the runtime. Autonilling weak references are always safe to read, as they will never contain a reference to a deallocated object.
+
+### Item 34：Use Autorelease Pool Blocks to Reduce High-Memory Waterline ###
+
+<ol>
+
+<li> Autoreleas pools are arranged in a stack, with an object being added to the topmost pool when it is sent the autorelease message. </li>
+
+<li> Correct application of autorelease pools can help reduce the high-memory waterline of an application.
+{% highlight objc linenos %}
+NSArray *databaseRecords = /* ... */; 
+NSMutableArray *people = [NSMutableArray new]; 
+for (NSDictionary *record in databaseRecords) {
+    @autoreleasepool { 
+        EOCPerson *person =[[EOCPerson alloc] initWithRecord:record]; 
+        [people addObject:person];
+    } 
+}
+{% endhighlight %}
+</li>
+
+<li> Modern autorelease pools using the new <code>@autoreleasepool {} </code> syntax are cheap. </li>
+
+</ol>
+
+### Item 35：Use Zombies to Help Debug Memory-Management Problems ###
+
+1. When an object is deallocated, it can optionally be turned into a zombie instead of being deallocated. This feature is turned on by using the envrionment flag NSZombieEnabled.
+
+2. An object is turend into a zombie by manipulating its isa pointer to change the object's class to a special zombie class. A zombie class responds to all selectors by aborting the application after printing a message to indicate what message was sent to what object.
+
+### Item 36：Avoid Using retainCount ###
+
+1. The retain count of an object might seem useful but usually is not, because the absolute retain count at any given time does not give a complete picture of an object's lifetime.
+
+2. When ARC came along, the ``retainCount`` method was deprecated, and using it causes a compiler error to be emitted.
+
+## 2 Reference ##
+
+- [《Effective Objective-C 2.0: 52 Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)》](https://www.amazon.com/Effective-Objective-C-2-0-Specific-Development/dp/0321917014);
 

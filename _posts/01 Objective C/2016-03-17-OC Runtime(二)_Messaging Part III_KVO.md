@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Key Value Observing
+title: OC Runtime(二)：Messaging Part III：KVO
 categories: [01 Objective-C]
 tags: [KVO]
 number: [0.14.9.1]

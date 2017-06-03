@@ -5,7 +5,7 @@ categories: [01 Objective-C]
 tags: [Effective]
 number: [01.25.1]
 fullview: false
-shortinfo: 本文是《Effective Objective-C》的系列笔记的第四篇《IProtocols and Categories》，对应书本的第四章。
+shortinfo: 本文是《Effective Objective-C》的系列笔记的第四篇《Protocols and Categories》，对应书本的第四章。
 ---
 目录
 {:.article_content_title}
