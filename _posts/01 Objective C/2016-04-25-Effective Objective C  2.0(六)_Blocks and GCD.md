@@ -5,7 +5,7 @@ categories: [01 Objective-C]
 tags: [Effective]
 number: [01.25.1]
 fullview: false
-shortinfo: i本文是《Effective Objective-C》的系列笔记的第六篇《Blocks and GCD》，对应书本的第六章。
+shortinfo: 本文是《Effective Objective-C》的系列笔记的第六篇《Blocks and GCD》，对应书本的第六章。
 ---
 目录
 {:.article_content_title}
@@ -124,12 +124,6 @@ dispatch_after(time, dispatch_get_main_queue(), ^(void){
 1. The ``dispatch_get_current_queue`` function does not in general perform how you would expect. It has been deprecated and should now be used only for debugging.
 
 2. Queue-specific data can be used to solve the usual reason for using ``dispatch_get_current_queueu``, which is to avoid dealocks owing to nonreentrant code.
-
-
-{% highlight objc linenos %}
-
-{% endhighlight %}
-
 
 
 
