@@ -32,7 +32,7 @@ shortinfo: 本文介绍神经网络。
 也就是说不是Scalable的。
 
 {: .img_middle_lg}
-![non-linear hypothesis](/assets/images/posts/2015-05-04/non-linear hypothesis.png)
+![non-linear hypothesis](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-04/non-linear hypothesis.png)
 
 
 ### 2.2 神经元与大脑 ###
@@ -48,20 +48,20 @@ shortinfo: 本文介绍神经网络。
 科学家发现对于大脑中的某个区域，如果改变相应的输入信号，该区域可以学习处理任何信号，比如从听觉改成视觉。这改变了人们思考如何通过计算机来模仿人类的大脑，即通过单一算法而不是成百上千种算法。运行算法的单元就是神经元。
 
 {: .img_middle_lg}
-![brain one learning algorithm](/assets/images/posts/2015-05-04/brain one learning algorithm.png)
+![brain one learning algorithm](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-04/brain one learning algorithm.png)
 
 ### 2.3 模型展示 ###
 
 
 {: .img_middle_hg}
-![what is netural network](/assets/images/posts/2015-05-04/what is netural network.png)
+![what is netural network](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-04/what is netural network.png)
 
 ### 2.4 例子和直觉 ###
 
 下面我们来看看**Netural Network**如何构建3个基本的逻辑电路，即**AND**，**OR**，**Negation** gate;以及在此基础上搭建出来的**XNOR** gate。
 
 {: .img_middle_hg}
-![XNOR Gate](/assets/images/posts/2015-05-04/XNOR Gate.png)
+![XNOR Gate](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-04/XNOR Gate.png)
 
 
 [Handwritten Digit Classification - Yann Lecun](https://www.youtube.com/watch?v=yxuRnBEczUU)是利用**Netural Network**识别手写数字的一个视频，是**Yann Lecun(机器学习的著名科学家)**发明的一个OCR程序。
@@ -70,7 +70,7 @@ shortinfo: 本文介绍神经网络。
 ### 2.5 多类的分类 ###
 
 {: .img_middle_lg}
-![what is netural network](/assets/images/posts/2015-05-04/Neutral Network Multiclass Classification.png)
+![what is netural network](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-04/Neutral Network Multiclass Classification.png)
 
 ## 3 作业 ##
 
@@ -78,7 +78,7 @@ shortinfo: 本文介绍神经网络。
 
 
 {: .img_middle_lg}
-![assignment3](/assets/images/posts/2015-05-04/assignment3.png)
+![assignment3](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-04/assignment3.png)
 
 ## 4 总结 ##
 

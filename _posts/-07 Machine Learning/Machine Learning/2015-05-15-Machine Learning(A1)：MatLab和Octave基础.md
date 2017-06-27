@@ -21,12 +21,12 @@ shortinfo: 本文简单总结Matlab和Octave的基础用法，以供参考。
 ## 1 Matlab Part I ##
 
 {: .img_middle_hg}
-![matlab partI](/assets/images/posts/2015-05-15/matlab partI.jpg)
+![matlab partI](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-15/matlab partI.jpg)
 
 ## 2 Matlab Part II ##
 
 {: .img_middle_hg}
-![matlab partII](/assets/images/posts/2015-05-15/matlab partII.jpg)
+![matlab partII](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-15/matlab partII.jpg)
 
 
 ## 3 参考资料 ##

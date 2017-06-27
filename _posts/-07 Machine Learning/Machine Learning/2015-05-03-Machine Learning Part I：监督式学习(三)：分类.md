@@ -33,7 +33,7 @@ shortinfo: 本文我们来了解下监督式学习的分类问题。
 有人会说这好办，我们只要给原来的线性回归的输出map到一个$\lbrace 0,1, \cdots, n \rbrace$值即可，需要做的是找一个map的边界。但是这会过度简化模型导致输出不准确，请看下图例子。
 
 {: .img_middle_lg}
-![线性回归map到二分类](/assets/images/posts/2015-05-03/线性回归map到二分类.png)
+![线性回归map到二分类](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/线性回归map到二分类.png)
 
 新加一对**Training Data**就会使得原来的预测函数不准确。
 
@@ -48,7 +48,7 @@ $$
 其中$g(z)$的图形如下所示，其将任何实数转换成$\lbrace 0,1\rbrace$之间的值。g(z)被称之为双弯曲函数(Sigmoid Function)或者逻辑函数(Logistic Function)。
 
 {: .img_middle_lg}
-![logistic function](/assets/images/posts/2015-05-03/logistic function.png)
+![logistic function](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/logistic function.png)
 
 我们将线性回归的预测函数$h_\theta(x)$代入到$z$：
 
@@ -112,7 +112,7 @@ $$
 Convex vs Non-convex Function
 
 {: .img_middle_lg}
-![Convex vs Non-convex Function](/assets/images/posts/2015-05-03/Convex vs Non-convex Function.png)
+![Convex vs Non-convex Function](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/Convex vs Non-convex Function.png)
 
 
 ##### 2.1.2.1 复杂成本函数 ##### 
@@ -141,7 +141,7 @@ $$
 
 
 {: .img_middle_lg}
-![Classification Cost Function.png](/assets/images/posts/2015-05-03/Classification Cost Function.png)
+![Classification Cost Function.png](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/Classification Cost Function.png)
 
 ##### 2.1.2.2 简单成本函数 ##### 
 
@@ -196,7 +196,7 @@ $$
 
 
 {: .img_middle_lg}
-![fminunc](/assets/images/posts/2015-05-03/fminunc.png)
+![fminunc](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/fminunc.png)
 
 ### 2.2 多分类 ###
 
@@ -205,7 +205,7 @@ $$
 >**多分类**：可以简化成二分类。
 
 {: .img_middle_lg}
-![多分类vs二分类](/assets/images/posts/2015-05-03/多分类vs二分类.png)
+![多分类vs二分类](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/多分类vs二分类.png)
 
 **多分类**的问题可以简化成多个**二分类**问题，如上图所示。用$y=0$(该类)和$y=1$(非该类)应用到每一个class上，分别求出他们的预测函数。
 
@@ -219,7 +219,7 @@ $$
 
 
 {: .img_middle_lg}
-![拟合问题](/assets/images/posts/2015-05-03/拟合问题.png)
+![拟合问题](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/拟合问题.png)
 
 > **过度拟合(Over Fitting)**：使用了过多的参数，虽然完美地拟合到已有数据，但是对于未来的预测不准确。
 
@@ -245,7 +245,7 @@ J(\theta) = \frac 1 {2m} \sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2 + 1000x^3+10
 $$
 
 {: .img_middle_hg}
-![regularization](/assets/images/posts/2015-05-03/regularization.png)
+![regularization](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/regularization.png)
 
 有时候我们为了让预测函数更平滑，给所有的Feature都加上这么一项，即：
 
@@ -318,7 +318,7 @@ $$
 #### 3.3.2 正则化逻辑回归 ####
 
 {: .img_middle_lg}
-![regluarization classification cost function](/assets/images/posts/2015-05-03/regluarization classification cost function.png)
+![regluarization classification cost function](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/regluarization classification cost function.png)
 
 ##### 3.3.2.1 梯度下降 #####
 
@@ -333,13 +333,13 @@ $$
 
 
 {: .img_middle_lg}
-![assignment2](/assets/images/posts/2015-05-03/assignment2.png)
+![assignment2](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/assignment2.png)
 
 ## 5 总结 ##
 
 
 {: .img_middle_hg}
-![supervised learning summary.jpg](/assets/images/posts/2015-05-03/supervised learning summary.jpg)
+![supervised learning summary.jpg](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/supervised learning summary.jpg)
 
 ## 6 参考资料 ##
 

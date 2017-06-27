@@ -23,19 +23,19 @@ shortinfo: 本文介绍大数据机器学习。拥有大量数据(而不是好�
 ### 1.1 为什么需要大数据 ###
 
 {: .img_middle_hg}
-![why large scale data](/assets/images/posts/2015-05-10/why large scale data.png)
+![why large scale data](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-11/why large scale data.png)
 
 ### 1.2 两种方法 ###
 
 #### 1.2.1 随机梯度下降 ####
 
 {: .img_middle_hg}
-![随机梯度下降](/assets/images/posts/2015-05-10/随机梯度下降.png)
+![随机梯度下降](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-11/随机梯度下降.png)
 
 #### 1.2.2 Map-reduce ####
 
 {: .img_middle_hg}
-![Map-reduce](/assets/images/posts/2015-05-10/Map-reduce.png)
+![Map-reduce](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-11/Map-reduce.png)
 
 ## 2 作业 ##
 
@@ -50,7 +50,7 @@ shortinfo: 本文介绍大数据机器学习。拥有大量数据(而不是好�
 本系列课程最后总结成下图以供参考。
 
 {: .img_middle_hg}
-![machine learning summary](/assets/images/posts/2015-05-10/machine learning summary.png)
+![machine learning summary](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-11/machine learning summary.png)
 
 
 
