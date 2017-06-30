@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CNN for VR Part I：入门(一)：图片分类
+title: CNN for VR Part I：线性分类(一)：图片分类问题及KNN
 categories: [-07 Machine Learning]
 tags: [Neural Networks]
 number: [-11.1]

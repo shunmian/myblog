@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CNN for VR Part I：入门(四)：反向传播
+title: CNN for VR Part I：线性分类(四)：反向传播
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]

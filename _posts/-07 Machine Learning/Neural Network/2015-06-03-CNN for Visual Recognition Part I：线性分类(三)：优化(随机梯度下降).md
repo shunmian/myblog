@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CNN for VR Part I：入门(三)：优化之随机梯度下降
+title: CNN for VR Part I：线性分类(三)：优化(随机梯度下降)
 categories: [-07 Machine Learning]
 tags: [Machine Learning]
 number: [-11.1]
