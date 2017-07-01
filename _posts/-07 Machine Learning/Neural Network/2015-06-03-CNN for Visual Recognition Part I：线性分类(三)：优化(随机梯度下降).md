@@ -18,44 +18,44 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 ---
 {:.hr-short-left}
 
-## 1 Image Classification Introduction ##
+## 1 Optimization ##
 
-> **Image Classification**：给出1幅图片，在固定的标签(Label)中给出图片中对应物体的概率分布。这个任务定义看起来简单，实现起来却不容易。而且很多Computer Vision task最后都可化约为**Image Classification**问题。
+[上一篇文章]({{site.baseurl}}/-07%20machine%20learning/2015/06/02/CNN-for-Visual-Recognition-Part-I-线性分类(二)-分数函数和损失函数(SVM,Softmax))介绍了图片分类问题中的两个key components：
 
-**Image Classification**有如下几个主要难点：
+1. **评分函数(Score Function)**：将原始数据映射到预测label；
 
-1. **视角变化(Viewpoint variation)**
+2. **损失函数(Loss Function)**：测量评分函数和真实值的差距。
 
-2. **大小变化(Scale variation)**
+更具体的说，SVM损失函数具有如下格式：
 
-3. **变形(Deformation)**
+$$
+L = \frac{1}{N} \sum_i \sum_{j\neq y_i} \left[ \max(0, f(x_i; W)_j - f(x_i; W)_{y_i} + 1) \right] + \alpha R(W)
+$$
 
-4. **遮盖(Occlusion)**
-
-5. **光照变化(Illumination Conditions)**
-
-6. **背景杂波(Background Clutter)**
-
-7. **类内变化(Intra-class Variation)**
-
-{: .img_middle_lg}
-![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
+我们将要介绍第3种也是最后1种component，即**Optimization**，用来最小化上述损失函数来获得最优评分函数。一旦我们理解了这3个component如何协同工作，我们会重新回顾第1个component来扩展比线性分类其更复杂的形式：即首先整个Neural Networks，其次是Convolutional Neural Networks。在这过程中，损失函数和optimization过程相对保持不变。
 
 
+### 1.1 Visualizing the Loss Function ###
 
-### 1.1 Nearest Neighbor Classifier ###
+### 1.2 Optimization Strategies ###
 
-#### 1.1.1 k-Nearest Neighbor ####
+#### 1.2.1 Random Search ####
 
-### 1.2 Train/Val/Test Split ###
+#### 1.2.2 Random Local Search ####
 
-### 1.3 Pros/Cons of Nearest Neighbor ###
+#### 1.2.3 Following the Gradient ####
+
+### 1.3 Computing the Gradient ###
+
+#### 1.3.1 Numerically with Finite Differences ####
+
+#### 1.3.2 Analytically with Calculus ####
+
+### 1.4 Gradient descent ###
+
 
 ## 2 Summary ##
 
-### 2.1 ###
-
-### 2.2 Applying kNN in practice ###
 
 {: .img_middle_lg}
 ![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
