@@ -15,7 +15,7 @@ before_script:
 script:
  - rm -rf public
  - jekyll build -d public
- - firebase deploy --token "${FIREBASE_TOKEN}"
+ - firebase deploy --token $FIREBASE_TOKEN --non-interactive
 
 
 # branch whitelist, only for GitHub Pages
