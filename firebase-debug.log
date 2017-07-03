@@ -29,3 +29,13 @@
 [info] i  hosting: preparing public directory for upload...
 [debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/ios-blogs/uploads/-Knwqow9g3f0lnJcRf6F?fileCount=728&message=  
  Sat Jul 01 2017 14:35:41 GMT+0800 (HKT)
+[debug] Error: socket hang up
+    at createHangUpError (_http_client.js:253:15)
+    at TLSSocket.socketOnEnd (_http_client.js:345:23)
+    at emitNone (events.js:91:20)
+    at TLSSocket.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[error] 
+[error] Error: Server Error. socket hang up

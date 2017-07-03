@@ -44,13 +44,13 @@
                 
 <!--sidebar.html-->
         <header class="sidebar_header " role="banner">
-            <a href="http://www.shunmian.me/index.html">
+            <a href="/index.html">
                 <img src = "https://www.gravatar.com/avatar/02eefecba7f0b21939d12a37f94bf5df?s=150" class="img-circle img-responsive center-block sidebar_logo sidebar_img" />
             </a>
 
 
             <h3 class="title text-center">
-                <a href="http://www.shunmian.me/index.html">SHUNMIAN</a>
+                <a href="/index.html">SHUNMIAN</a>
             </h3>
 
         </header>
@@ -61,9 +61,9 @@
             
 
                 <p>嗨，欢迎来到我的博客。<br/>
-                我是Doggya，一名iOS开发者。<br/>
+                我是Shunmian，一名iOS开发者。<br/>
                 <hr class = "hr_short_low">
-                正在学习Algorithm，Functional Programming，Machine Learning，Data Mining 和 Cloud Computation。 
+                正在学习Algorithm，Functional Programming和Machine Learning，在学习和模仿中寻找自己。 
 
                 </p>
 
@@ -93,7 +93,7 @@
                 </li>
 
                 <li>
-                    <a class="btn btn_info_outline" href="http://www.shunmian.me/feed.xml"><i class="fa fa-rss fa-lg"></i></a>
+                    <a class="btn btn_info_outline" href="/feed.xml"><i class="fa fa-rss fa-lg"></i></a>
                 </li>
         </div>
 
@@ -102,15 +102,15 @@
         <div id = "contact-list" class="text-center">
             <ul class="unstyled-list list-inline">
                 <li>
-                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/index.html"><i class="fa fa-home fa-md"></i> 主页</a>
+                    <a class="btn btn_info_outline btn-sm" href="/index.html"><i class="fa fa-home fa-md"></i> 主页</a>
                 </li>
 
                 <li>
-                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/tags.html"><i class="fa fa-tags fa-md"></i> 标签</a>
+                    <a class="btn btn_info_outline btn-sm" href="/tags.html"><i class="fa fa-tags fa-md"></i> 标签</a>
                 </li>
 
                 <li>
-                    <a class="btn btn_info_outline btn-sm" href="http://www.shunmian.me/categories.html"><i class="fa fa-list fa-md"></i> 分类</a>
+                    <a class="btn btn_info_outline btn-sm" href="/categories.html"><i class="fa fa-list fa-md"></i> 分类</a>
                 </li>
             </ul>
         </div>
@@ -129,7 +129,94 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/15/OC-Runtime(%E4%BA%8C)_Messaging_Part-I_%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6%E5%92%8Cswizzling.html">OC Runtime(二)：Messaging Part I：消息机制和swizzling</a>
+            <a class="post_mainTitle" href="/01%20objective-c/2016/03/18/OC-Runtime(%E4%BA%8C)_Messaging-Part-IV_KVC.html">OC Runtime(二)：Messaging Part IV：KVC</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Key Value Observing 是Objective-C对Observer Pattern的内置实现。它的功能非常强大, 同时API设计糟糕,相应的坑也不少。本文对Key Value Observing进行介绍。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-18 •
+        </span>
+
+        <span class="post_category">
+            01 Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/18/OC-Runtime(%E4%BA%8C)_Messaging-Part-IV_KVC.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="/01%20objective-c/2016/03/17/OC-Runtime(%E4%BA%8C)_Messaging-Part-III_KVO.html">OC Runtime(二)：Messaging Part III：KVO</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Key Value Observing 是Objective-C对Observer Pattern的内置实现。它的功能非常强大, 同时API设计糟糕,相应的坑也不少。本文对Key Value Observing进行介绍。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-17 •
+        </span>
+
+        <span class="post_category">
+            01 Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/17/OC-Runtime(%E4%BA%8C)_Messaging-Part-III_KVO.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="/01%20objective-c/2016/03/16/OC-Runtime(%E4%BA%8C)_Messaging_Part-II_%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0objc_sendMsg.html">OC Runtime(二)：Messaging Part II：手动实现objc_sendMsg</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Objective-C中的消息发送和C中的函数调用有着本质的区别。后者在编译阶段已经确定了函数的具体实现, 而前者在运行时还可以更改消息发送的具体实现，这给Objective-C注入了崭新的动态活力。而这都得益于Objective-C的Runtime系统。本文在介绍Runtime Messaging机制后，实现两个黑魔法，isa swizziling和method swizzling。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-16 •
+        </span>
+
+        <span class="post_category">
+            01 Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/16/OC-Runtime(%E4%BA%8C)_Messaging_Part-II_%E6%89%8B%E5%8A%A8%E5%AE%9E%E7%8E%B0objc_sendMsg.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="/01%20objective-c/2016/03/15/OC-Runtime(%E4%BA%8C)_Messaging_Part-I_%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6%E5%92%8Cswizzling.html">OC Runtime(二)：Messaging Part I：消息机制和swizzling</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -158,123 +245,7 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/14/OC-Runtime(%E4%B8%80)_Object-Model-Part-II_iVar-Layout.html">OC Runtime(一)：Object Model part II：iVar Layout</a>
-            <div class="padding_bottom_10"></div>
-        </span>
-        <div class="post_mainShortinfo">
-            
-            
-            Object Model描述了OC中描述了实例变量，实力方法，类变量，类方法以及继承关系。本文将详细介绍以上各方面在内存中的分布。
-            
-            
-        </div>
-
-    <br />
-        <span class="post_date">
-            2016-03-14 •
-        </span>
-
-        <span class="post_category">
-            01 Objective-C
-        </span>
-
-        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/14/OC-Runtime(%E4%B8%80)_Object-Model-Part-II_iVar-Layout.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
-
-        <hr />
-        <br />
-    </artical>
-    
-
-    <artical class="home">
-        <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/14/OC-Runtime(%E4%B8%80)_Object-Model-Part-III_Weak%E5%B1%9E%E6%80%A7.html">OC Runtime(一)：Object Model part III：weak 属性</a>
-            <div class="padding_bottom_10"></div>
-        </span>
-        <div class="post_mainShortinfo">
-            
-            
-            Object Model描述了OC中描述了实例变量，实力方法，类变量，类方法以及继承关系。本文将详细介绍以上各方面在内存中的分布。
-            
-            
-        </div>
-
-    <br />
-        <span class="post_date">
-            2016-03-14 •
-        </span>
-
-        <span class="post_category">
-            01 Objective-C
-        </span>
-
-        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/14/OC-Runtime(%E4%B8%80)_Object-Model-Part-III_Weak%E5%B1%9E%E6%80%A7.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
-
-        <hr />
-        <br />
-    </artical>
-    
-
-    <artical class="home">
-        <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/13/OC-Runtime(%E4%B8%80)_Object-Model-Part-I_Object-Hierarchy.html">OC Runtime(一)：Object Model Part I：Object Hierarchy</a>
-            <div class="padding_bottom_10"></div>
-        </span>
-        <div class="post_mainShortinfo">
-            
-            
-            Object Model描述了OC中描述了实例变量，实力方法，类变量，类方法以及继承关系。本文将详细介绍以上各方面在内存中的分布。
-            
-            
-        </div>
-
-    <br />
-        <span class="post_date">
-            2016-03-13 •
-        </span>
-
-        <span class="post_category">
-            01 Objective-C
-        </span>
-
-        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/13/OC-Runtime(%E4%B8%80)_Object-Model-Part-I_Object-Hierarchy.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
-
-        <hr />
-        <br />
-    </artical>
-    
-
-    <artical class="home">
-        <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/03/12/OC-Runtime(%E9%9B%B6)_Runtime%E6%A6%82%E8%BF%B0.html">OC Runtime(零)：Runtime概述</a>
-            <div class="padding_bottom_10"></div>
-        </span>
-        <div class="post_mainShortinfo">
-            
-            
-            runtime是objective-c的operating system，是如何在c的基础上搭建OOP语言的基石。本文是《OC Runtime》系列的概述，对runtime做一个全局的介绍。
-            
-            
-        </div>
-
-    <br />
-        <span class="post_date">
-            2016-03-12 •
-        </span>
-
-        <span class="post_category">
-            01 Objective-C
-        </span>
-
-        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/12/OC-Runtime(%E9%9B%B6)_Runtime%E6%A6%82%E8%BF%B0.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
-
-        <hr />
-        <br />
-    </artical>
-    
-
-    <artical class="home">
-        <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/02%20swift/2016/03/09/unsafeMutablePointer.html">UnsafeMutablePointer</a>
+            <a class="post_mainTitle" href="/02%20swift/2016/03/09/unsafeMutablePointer.html">UnsafeMutablePointer</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -303,7 +274,7 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/02%20swift/2016/03/09/Let's-build-Array.html">Let's Build Swift.Array</a>
+            <a class="post_mainTitle" href="/02%20swift/2016/03/09/Let's-build-Array.html">Let's Build Swift.Array</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -332,7 +303,7 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/02%20swift/2016/03/08/SequenceType%E6%9D%A5%E5%AE%9E%E7%8E%B0for-in-%E8%AF%AD%E5%8F%A5.html">CollectionType = SequenceType(AnyGenerator：GeneratorType) + Indexable</a>
+            <a class="post_mainTitle" href="/02%20swift/2016/03/08/SequenceType%E6%9D%A5%E5%AE%9E%E7%8E%B0for-in-%E8%AF%AD%E5%8F%A5.html">CollectionType = SequenceType(AnyGenerator：GeneratorType) + Indexable</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -361,7 +332,36 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/02%20swift/2016/03/07/Guard%E5%85%B3%E9%94%AE%E8%AF%8D.html">guard 关键字</a>
+            <a class="post_mainTitle" href="/01%20objective-c/2016/03/08/OC-Runtime(%E4%B8%80)_Object-Model-Part-IV_Block-Layout.html">OC Runtime(一)：Object Model part IV：Block Layout</a>
+            <div class="padding_bottom_10"></div>
+        </span>
+        <div class="post_mainShortinfo">
+            
+            
+            Object Model描述了OC中描述了实例变量，实力方法，类变量，类方法以及继承关系。本文将详细介绍以上各方面在内存中的分布。
+            
+            
+        </div>
+
+    <br />
+        <span class="post_date">
+            2016-03-08 •
+        </span>
+
+        <span class="post_category">
+            01 Objective-C
+        </span>
+
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/08/OC-Runtime(%E4%B8%80)_Object-Model-Part-IV_Block-Layout.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+
+        <hr />
+        <br />
+    </artical>
+    
+
+    <artical class="home">
+        <span>
+            <a class="post_mainTitle" href="/02%20swift/2016/03/07/Guard%E5%85%B3%E9%94%AE%E8%AF%8D.html">guard 关键字</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -390,27 +390,27 @@
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="http://www.shunmian.me/01%20objective-c/2016/02/20/SpriteKit.html">iOS 2D Game - SpriteKit入门(一)</a>
+            <a class="post_mainTitle" href="/01%20objective-c/2016/03/07/OC-Runtime(%E4%B8%80)_Object-Model-Part-III_Weak%E5%B1%9E%E6%80%A7.html">OC Runtime(一)：Object Model part III：weak 属性</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
             
             
-            SpriteKit是Apple官方的2D游戏框架， 让开发者在iOS 和OS 平台上更高效的开发2D游戏。 学习SpriteKit， 最权威的资料应该是苹果官方文档-SpriteKit Programming Guide。该文档很全面但是不适合初学者。 对于初学者， 理解SpriteKit背后的设计rationale才能更好的应用它。 什么是2D游戏设计的几个基本问题， 什么是sprite， SpriteKit 里面有哪些重要的类及其他们之间的关系等等，本文带着您一起梳理一遍...
+            Object Model描述了OC中描述了实例变量，实力方法，类变量，类方法以及继承关系。本文将详细介绍以上各方面在内存中的分布。
             
             
         </div>
 
     <br />
         <span class="post_date">
-            2016-02-20 •
+            2016-03-07 •
         </span>
 
         <span class="post_category">
             01 Objective-C
         </span>
 
-        <span class="padding_left_10"><a href="/01%20objective-c/2016/02/20/SpriteKit.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="/01%20objective-c/2016/03/07/OC-Runtime(%E4%B8%80)_Object-Model-Part-III_Weak%E5%B1%9E%E6%80%A7.html"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -423,18 +423,18 @@
     
     <li class="previous">
         
-        <a href= "http://www.shunmian.me/page2">&larr; Newer</a>
+        <a href= "/page2">&larr; Newer</a>
         
     </li>
     
 
     <li>
-        <span class="page_number">Page: 3 of 15</span>
+        <span class="page_number">Page: 3 of 16</span>
     </li>
 
     
     <li class="next">
-        <a href="http://www.shunmian.me/page4">Older &rarr;</a>
+        <a href="/page4">Older &rarr;</a>
     </li>
     
 </ul>

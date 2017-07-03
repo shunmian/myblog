@@ -26,6 +26,7 @@ kramdown:
     coderay_css:               style
 
 
+destination: public
 highlighter: rouge
 safe: false
 
