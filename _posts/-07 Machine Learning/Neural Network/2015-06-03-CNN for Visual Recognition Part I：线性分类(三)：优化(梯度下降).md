@@ -149,11 +149,14 @@ stepsize的选择需要小心对待，调小了update不够有效，太大了可
 对于SVM的损失函数，解析梯度是如下形式：
 
 
-$$L_i = \sum_{j\neq y_i} \left[ \max(0, w_j^Tx_i - w_{y_i}^Tx_i + \Delta) \right]$$
+$$ \begin{align} 
+L_i & = \sum_{j\neq y_i} \left[ \max(0, w_j^Tx_i - w_{y_i}^Tx_i + \Delta) \right] \\
 
-$$\nabla_{w_{y_i}} L_i = - \left( \sum_{j\neq y_i} \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta > 0) \right) x_i$$
+\nabla_{w_{y_i}} L_i & = - \left( \sum_{j\neq y_i} \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta > 0) \right) x_i \\
 
-$$\nabla_{w_j} L_i = \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta > 0) x_i$$
+\nabla_{w_j} L_i & = \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta > 0) x_i 
+
+\end{align} $$
 
 ### 1.4 Gradient Descent ###
 
