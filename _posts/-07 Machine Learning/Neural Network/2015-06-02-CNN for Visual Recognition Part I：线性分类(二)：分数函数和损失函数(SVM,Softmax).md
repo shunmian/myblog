@@ -195,6 +195,13 @@ $$
 
 其中$f_j$对应j-th score。
 
+实际应用中$e^{f_{y_i}}$和$\sum_j e^{f_j}$可能会很大，它们之间的除法会不稳定，因此我们可以同时缩小分子和分母，使得最终商不变。
+
+$$\frac{e^{f_{y_i}}}{\sum_j e^{f_j}}
+= \frac{Ce^{f_{y_i}}}{C\sum_j e^{f_j}}
+= \frac{e^{f_{y_i} + \log C}}{\sum_j e^{f_j + \log C}}$$
+
+1个通常的做法是取$\log C = -\max_j f_j$，即$C = e^{-\max_j f_j}$。This simply states that we should shift the values inside the vector ff so that the highest value is zero。
 
 #### 1.3.3 SVM vs. Softmax ####
 

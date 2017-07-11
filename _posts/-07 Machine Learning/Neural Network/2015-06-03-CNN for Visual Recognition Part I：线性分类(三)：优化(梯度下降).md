@@ -158,6 +158,17 @@ L_i & = \sum_{j\neq y_i} \left[ \max(0, w_j^Tx_i - w_{y_i}^Tx_i + \Delta) \right
 
 \end{align} $$
 
+最终的形式如下：
+
+$$\triangledown L = \frac{1}{N} \sum_i 
+
+\begin{cases}
+- \left( \sum_{j\neq y_i} \mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta > 0) \right) x_i,  & \text{if $j= y_i$ } \\
+\mathbb{1}(w_j^Tx_i - w_{y_i}^Tx_i + \Delta > 0) x_i , & \text{if $j\neq y_i$}  \\
+\end{cases} +
+
+ \lambda \sum_k\sum_l W_{k,l}^2$$
+
 ### 1.4 Gradient Descent ###
 
 上节我们介绍如何计算损失函数的**梯度**，而通过反复计算梯度并且优化$$W$$的过程称之为**Gradient Descent**，一段典型的代码如下：
