@@ -18,58 +18,17 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 ---
 {:.hr-short-left}
 
-## 1 Image Classification Introduction ##
+## 1 Setting up the Data and the Model ##
 
-> **Image Classification**：给出1幅图片，在固定的标签(Label)中给出图片中对应物体的概率分布。这个任务定义看起来简单，实现起来却不容易。而且很多Computer Vision task最后都可化约为**Image Classification**问题。
+### 1.1 Data Preprocessing ###
 
-**Image Classification**有如下几个主要难点：
+### 1.2 Weight Initialization ###
 
-1. **视角变化(Viewpoint variation)**
+### 1.3 Batch Normalization ###
 
-2. **大小变化(Scale variation)**
+### 1.4 Regularization (L2/L1/Maxnorm/Dropout)
 
-3. **变形(Deformation)**
-
-4. **遮盖(Occlusion)**
-
-5. **光照变化(Illumination Conditions)**
-
-6. **背景杂波(Background Clutter)**
-
-7. **类内变化(Intra-class Variation)**
-
-{: .img_middle_lg}
-![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
-
-
-
-### 1.1 Nearest Neighbor Classifier ###
-
-#### 1.1.1 k-Nearest Neighbor ####
-
-### 1.2 Train/Val/Test Split ###
-
-### 1.3 Pros/Cons of Nearest Neighbor ###
-
-## 2 Summary ##
-
-### 2.1 ###
-
-### 2.2 Applying kNN in practice ###
-
-{: .img_middle_lg}
-![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
-
-repeat until convergence：
-
-$$
-\theta_0 := \theta_0 - \alpha \frac 1 m \sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]
-$$
-
-
-$$
-\theta_1 := \theta_1 - \alpha \frac 1 m \sum_{i=1}^m \lbrace[h_\theta(x^{(i)})-y^{(i)}]x^{(i)}\rbrace
-$$
+## 2 Loss Functions ##
 
 
 
