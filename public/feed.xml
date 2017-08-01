@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-07-24T16:10:21+08:00</updated><id>/</id><title>SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title>iOS 2D Game - SpriteKit入门(一)</title><link href="/01%20objective-c/2016/12/30/SpriteKit.html" rel="alternate" type="text/html" title="iOS 2D Game - SpriteKit入门(一)" /><published>2016-12-30T00:00:00+08:00</published><updated>2016-12-30T00:00:00+08:00</updated><id>/01%20objective-c/2016/12/30/SpriteKit</id><content type="html" xml:base="/01%20objective-c/2016/12/30/SpriteKit.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-08-01T22:41:29+08:00</updated><id>/</id><title>SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title>iOS 2D Game - SpriteKit入门(一)</title><link href="/01%20objective-c/2016/12/30/SpriteKit.html" rel="alternate" type="text/html" title="iOS 2D Game - SpriteKit入门(一)" /><published>2016-12-30T00:00:00+08:00</published><updated>2016-12-30T00:00:00+08:00</updated><id>/01%20objective-c/2016/12/30/SpriteKit</id><content type="html" xml:base="/01%20objective-c/2016/12/30/SpriteKit.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#spritekit-&quot; id=&quot;markdown-toc-spritekit-&quot;&gt;1. SpriteKit 概览&lt;/a&gt;&lt;/li&gt;
@@ -419,7 +419,7 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;4 总结&lt;/h2&gt;
-&lt;p&gt;以上对于SKSpriteKit里的大部分常用类及其用法做了介绍，相信读者能够自己画出SKSpriteKit的类图关系，再回过头来跟着online的SKSpriteKit的tutorial做一遍的时候，自然就了然于心。后面还有一篇从各个小topic来看SKSpriteKit。&lt;/p&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="SpriteKit" /><summary>目录</summary></entry><entry><title>Redux</title><link href="/04%20web%20development/2016/10/04/Redux.html" rel="alternate" type="text/html" title="Redux" /><published>2016-10-04T00:00:00+08:00</published><updated>2016-10-04T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/04/Redux</id><content type="html" xml:base="/04%20web%20development/2016/10/04/Redux.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+&lt;p&gt;以上对于SKSpriteKit里的大部分常用类及其用法做了介绍，相信读者能够自己画出SKSpriteKit的类图关系，再回过头来跟着online的SKSpriteKit的tutorial做一遍的时候，自然就了然于心。后面还有一篇从各个小topic来看SKSpriteKit。&lt;/p&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="SpriteKit" /><summary>目录</summary></entry><entry><title>Redux</title><link href="/04%20web%20development/2016/10/05/Redux.html" rel="alternate" type="text/html" title="Redux" /><published>2016-10-05T00:00:00+08:00</published><updated>2016-10-05T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/05/Redux</id><content type="html" xml:base="/04%20web%20development/2016/10/05/Redux.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
@@ -436,7 +436,27 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="Redux" /><summary>目录</summary></entry><entry><title>React入门</title><link href="/04%20web%20development/2016/10/03/React%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="React入门" /><published>2016-10-03T00:00:00+08:00</published><updated>2016-10-03T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/03/React入门</id><content type="html" xml:base="/04%20web%20development/2016/10/03/React%E5%85%A5%E9%97%A8.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="Redux" /><summary>目录</summary></entry><entry><title>npm</title><link href="/04%20web%20development/2016/10/04/npm.html" rel="alternate" type="text/html" title="npm" /><published>2016-10-04T00:00:00+08:00</published><updated>2016-10-04T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/04/npm</id><content type="html" xml:base="/04%20web%20development/2016/10/04/npm.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;1 Summary&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;npm是NodeJS Package Management的缩写。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-04-npm/npm summary.png&quot; alt=&quot;npm summary&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="npm" /><summary>目录</summary></entry><entry><title>React入门</title><link href="/04%20web%20development/2016/10/03/React%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="React入门" /><published>2016-10-03T00:00:00+08:00</published><updated>2016-10-03T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/03/React入门</id><content type="html" xml:base="/04%20web%20development/2016/10/03/React%E5%85%A5%E9%97%A8.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
@@ -1107,119 +1127,6 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;When ARC came along, the &lt;code class=&quot;highlighter-rouge&quot;&gt;retainCount&lt;/code&gt; method was deprecated, and using it causes a compiler error to be emitted.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;2 Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Effective-Objective-C-2-0-Specific-Development/dp/0321917014&quot;&gt;《Effective Objective-C 2.0: 52 Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)》&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="Effective" /><summary>目录</summary></entry><entry><title>EOC(四)：Protocols and Categories</title><link href="/01%20objective-c/2016/04/23/Effective-Objective-C-2.0(%E5%9B%9B)_Protocols-and-Caegories.html" rel="alternate" type="text/html" title="EOC(四)：Protocols and Categories" /><published>2016-04-23T00:00:00+08:00</published><updated>2016-04-23T00:00:00+08:00</updated><id>/01%20objective-c/2016/04/23/Effective Objective C  2.0(四)_Protocols and Caegories</id><content type="html" xml:base="/01%20objective-c/2016/04/23/Effective-Objective-C-2.0(%E5%9B%9B)_Protocols-and-Caegories.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#protocols-and-categories&quot; id=&quot;markdown-toc-protocols-and-categories&quot;&gt;1 Protocols and Categories&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-23use-delegate-and-data-source-protocols-for-interobject-communication&quot; id=&quot;markdown-toc-item-23use-delegate-and-data-source-protocols-for-interobject-communication&quot;&gt;Item 23：Use Delegate and Data Source Protocols for Interobject Communication&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-24-use-categories-to-break-class-implementations-into-manageable-segments&quot; id=&quot;markdown-toc-item-24-use-categories-to-break-class-implementations-into-manageable-segments&quot;&gt;Item 24: Use Categories to Break Class Implementations into Manageable Segments&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-25-always-prefix-category-names-on-third-party-classes&quot; id=&quot;markdown-toc-item-25-always-prefix-category-names-on-third-party-classes&quot;&gt;Item 25: Always Prefix Category Names on Third-Party Classes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-26-avoid-properties-in-categories&quot; id=&quot;markdown-toc-item-26-avoid-properties-in-categories&quot;&gt;Item 26: Avoid Properties in Categories&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-27-user-the-class-continuation-category-to-hide-implementation-detail&quot; id=&quot;markdown-toc-item-27-user-the-class-continuation-category-to-hide-implementation-detail&quot;&gt;Item 27: User the Class-Continuation Category to Hide Implementation Detail&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-28-use-a-protocol-to-provide-anonymous-objects&quot; id=&quot;markdown-toc-item-28-use-a-protocol-to-provide-anonymous-objects&quot;&gt;Item 28: Use a Protocol to Provide Anonymous Objects&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;2 Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;protocols-and-categories&quot;&gt;1 Protocols and Categories&lt;/h2&gt;
-
-&lt;h3 id=&quot;item-23use-delegate-and-data-source-protocols-for-interobject-communication&quot;&gt;Item 23：Use Delegate and Data Source Protocols for Interobject Communication&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;Data Source&lt;/code&gt; to provide data to &lt;code class=&quot;highlighter-rouge&quot;&gt;client object&lt;/code&gt;;&lt;/li&gt;
-  &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;Delegate&lt;/code&gt; to respond to &lt;code class=&quot;highlighter-rouge&quot;&gt;client object&lt;/code&gt;’s event;&lt;/li&gt;
-  &lt;li&gt;Including &lt;code class=&quot;highlighter-rouge&quot;&gt;client object&lt;/code&gt; parameter in protocol methods so that one &lt;code class=&quot;highlighter-rouge&quot;&gt;Data Source&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Delegate&lt;/code&gt; can responds to multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;client object&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;networkFecher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCNetworkFecther&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fecher&lt;/span&gt;
-      &lt;span class=&quot;nf&quot;&gt;didReceiveData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fetcher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myFetcherA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//Handle data
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//Handle data
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-24-use-categories-to-break-class-implementations-into-manageable-segments&quot;&gt;Item 24: Use Categories to Break Class Implementations into Manageable Segments&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use categories to split a class implementation into more manageable fragments.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create a category called &lt;code class=&quot;highlighter-rouge&quot;&gt;Private&lt;/code&gt; to hide implementation detail of methods that should be considered as private.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-25-always-prefix-category-names-on-third-party-classes&quot;&gt;Item 25: Always Prefix Category Names on Third-Party Classes&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Always prepend your naming prefix to the names of categories you add to classes that are not your own.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Always prepend your naming prefix to the method names within categories you add to classes that are not your own. However prepend makes code autocompletion difficult since what in your mind is the method name after prefix. The suggestied solution was to use suffix &lt;code class=&quot;highlighter-rouge&quot;&gt;method_ABC&lt;/code&gt; insted of prefix &lt;code class=&quot;highlighter-rouge&quot;&gt;ABC_method&lt;/code&gt; Nowadays the Xcode autocompletion is more advanced to return matching even the keyword you typed in the middle of the method. As a result, stick to prepend your naming prefix to the method names within categories.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;ABC_HTTP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ABC_urlEncodedString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-26-avoid-properties-in-categories&quot;&gt;Item 26: Avoid Properties in Categories&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Keep all property declarations for encapsulated data in the main interface definition.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Prefer accessor methods to property declarations in categories, unless it is a class-continuation category.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-27-user-the-class-continuation-category-to-hide-implementation-detail&quot;&gt;Item 27: User the Class-Continuation Category to Hide Implementation Detail&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use the class-continuation category to add private properties, private methods, private protocols;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Redeclare properties in the class-continuation category as read-write if they are read-only in the main inteface, if the setter accessor is requred internally within the class.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-28-use-a-protocol-to-provide-anonymous-objects&quot;&gt;Item 28: Use a Protocol to Provide Anonymous Objects&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Protocols can be used to provide some level of anonymity to types. The type can be reduced to an &lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; type that implements a protocol’s methods.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use anonymous objects when the type (class name) should be hidden.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use anonymous objects when the type is irrelevant, and the fact that the object responds to certain methods (the ones defined in the protocol) is more important.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
