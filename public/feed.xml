@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-07-19T16:08:28+08:00</updated><id>/</id><title>SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title>iOS 2D Game - SpriteKit入门(一)</title><link href="/01%20objective-c/2016/12/30/SpriteKit.html" rel="alternate" type="text/html" title="iOS 2D Game - SpriteKit入门(一)" /><published>2016-12-30T00:00:00+08:00</published><updated>2016-12-30T00:00:00+08:00</updated><id>/01%20objective-c/2016/12/30/SpriteKit</id><content type="html" xml:base="/01%20objective-c/2016/12/30/SpriteKit.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-07-24T16:10:21+08:00</updated><id>/</id><title>SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title>iOS 2D Game - SpriteKit入门(一)</title><link href="/01%20objective-c/2016/12/30/SpriteKit.html" rel="alternate" type="text/html" title="iOS 2D Game - SpriteKit入门(一)" /><published>2016-12-30T00:00:00+08:00</published><updated>2016-12-30T00:00:00+08:00</updated><id>/01%20objective-c/2016/12/30/SpriteKit</id><content type="html" xml:base="/01%20objective-c/2016/12/30/SpriteKit.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#spritekit-&quot; id=&quot;markdown-toc-spritekit-&quot;&gt;1. SpriteKit 概览&lt;/a&gt;&lt;/li&gt;
@@ -419,7 +419,7 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;4 总结&lt;/h2&gt;
-&lt;p&gt;以上对于SKSpriteKit里的大部分常用类及其用法做了介绍，相信读者能够自己画出SKSpriteKit的类图关系，再回过头来跟着online的SKSpriteKit的tutorial做一遍的时候，自然就了然于心。后面还有一篇从各个小topic来看SKSpriteKit。&lt;/p&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="SpriteKit" /><summary>目录</summary></entry><entry><title>React入门</title><link href="/04%20web%20development/2016/10/02/React%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="React入门" /><published>2016-10-02T00:00:00+08:00</published><updated>2016-10-02T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/02/React入门</id><content type="html" xml:base="/04%20web%20development/2016/10/02/React%E5%85%A5%E9%97%A8.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+&lt;p&gt;以上对于SKSpriteKit里的大部分常用类及其用法做了介绍，相信读者能够自己画出SKSpriteKit的类图关系，再回过头来跟着online的SKSpriteKit的tutorial做一遍的时候，自然就了然于心。后面还有一篇从各个小topic来看SKSpriteKit。&lt;/p&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="SpriteKit" /><summary>目录</summary></entry><entry><title>Redux</title><link href="/04%20web%20development/2016/10/04/Redux.html" rel="alternate" type="text/html" title="Redux" /><published>2016-10-04T00:00:00+08:00</published><updated>2016-10-04T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/04/Redux</id><content type="html" xml:base="/04%20web%20development/2016/10/04/Redux.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
@@ -430,13 +430,108 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;1 Summary&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-02-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="React" /><summary>目录</summary></entry><entry><title>JavaScript入门</title><link href="/04%20web%20development/2016/10/01/JavaScript%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="JavaScript入门" /><published>2016-10-01T00:00:00+08:00</published><updated>2016-10-01T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/01/JavaScript入门</id><content type="html" xml:base="/04%20web%20development/2016/10/01/JavaScript%E5%85%A5%E9%97%A8.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="Redux" /><summary>目录</summary></entry><entry><title>React入门</title><link href="/04%20web%20development/2016/10/03/React%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="React入门" /><published>2016-10-03T00:00:00+08:00</published><updated>2016-10-03T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/03/React入门</id><content type="html" xml:base="/04%20web%20development/2016/10/03/React%E5%85%A5%E9%97%A8.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;1 Summary&lt;/h2&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="React" /><summary>目录</summary></entry><entry><title>JavaScript进阶</title><link href="/04%20web%20development/2016/10/02/JavaScript%E8%BF%9B%E9%98%B6.html" rel="alternate" type="text/html" title="JavaScript进阶" /><published>2016-10-02T00:00:00+08:00</published><updated>2016-10-02T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/02/JavaScript进阶</id><content type="html" xml:base="/04%20web%20development/2016/10/02/JavaScript%E8%BF%9B%E9%98%B6.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#part-i-&quot; id=&quot;markdown-toc-part-i-&quot;&gt;Part I: 语法&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#primitive-data-type&quot; id=&quot;markdown-toc-primitive-data-type&quot;&gt;1.0 Primitive Data Type&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#object&quot; id=&quot;markdown-toc-object&quot;&gt;1.1 Object&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#oop&quot; id=&quot;markdown-toc-oop&quot;&gt;1.2 OOP&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#prototype-chaining&quot; id=&quot;markdown-toc-prototype-chaining&quot;&gt;1.2.1 Prototype Chaining&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#function&quot; id=&quot;markdown-toc-function&quot;&gt;1.3 Function&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#part-ii-bom--dom&quot; id=&quot;markdown-toc-part-ii-bom--dom&quot;&gt;Part II: BOM &amp;amp; DOM&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#bom&quot; id=&quot;markdown-toc-bom&quot;&gt;2.1 BOM&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dom&quot; id=&quot;markdown-toc-dom&quot;&gt;2.2 DOM&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#event&quot; id=&quot;markdown-toc-event&quot;&gt;2.2.1 Event&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#graphics&quot; id=&quot;markdown-toc-graphics&quot;&gt;2.2.2 Graphics&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#part-iii-other&quot; id=&quot;markdown-toc-part-iii-other&quot;&gt;Part III: Other&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#xml&quot; id=&quot;markdown-toc-xml&quot;&gt;3.1 XML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#json&quot; id=&quot;markdown-toc-json&quot;&gt;3.2 JSON&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#ajax&quot; id=&quot;markdown-toc-ajax&quot;&gt;3.3 AJAX&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#error-handling&quot; id=&quot;markdown-toc-error-handling&quot;&gt;3.4 Error Handling&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#debugging&quot; id=&quot;markdown-toc-debugging&quot;&gt;3.5 Debugging&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;part-i-&quot;&gt;Part I: 语法&lt;/h2&gt;
+
+&lt;h3 id=&quot;primitive-data-type&quot;&gt;1.0 Primitive Data Type&lt;/h3&gt;
+
+&lt;h3 id=&quot;object&quot;&gt;1.1 Object&lt;/h3&gt;
+
+&lt;h3 id=&quot;oop&quot;&gt;1.2 OOP&lt;/h3&gt;
+
+&lt;h4 id=&quot;prototype-chaining&quot;&gt;1.2.1 Prototype Chaining&lt;/h4&gt;
+
+&lt;h3 id=&quot;function&quot;&gt;1.3 Function&lt;/h3&gt;
+
+&lt;h2 id=&quot;part-ii-bom--dom&quot;&gt;Part II: BOM &amp;amp; DOM&lt;/h2&gt;
+
+&lt;h3 id=&quot;bom&quot;&gt;2.1 BOM&lt;/h3&gt;
+
+&lt;h3 id=&quot;dom&quot;&gt;2.2 DOM&lt;/h3&gt;
+
+&lt;h4 id=&quot;event&quot;&gt;2.2.1 Event&lt;/h4&gt;
+
+&lt;h4 id=&quot;graphics&quot;&gt;2.2.2 Graphics&lt;/h4&gt;
+
+&lt;h2 id=&quot;part-iii-other&quot;&gt;Part III: Other&lt;/h2&gt;
+
+&lt;h3 id=&quot;xml&quot;&gt;3.1 XML&lt;/h3&gt;
+
+&lt;h3 id=&quot;json&quot;&gt;3.2 JSON&lt;/h3&gt;
+
+&lt;h3 id=&quot;ajax&quot;&gt;3.3 AJAX&lt;/h3&gt;
+
+&lt;h3 id=&quot;error-handling&quot;&gt;3.4 Error Handling&lt;/h3&gt;
+
+&lt;h3 id=&quot;debugging&quot;&gt;3.5 Debugging&lt;/h3&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;1 Summary&lt;/h2&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-01-JavaScript入门/JS DOM 入门 summary.png&quot; alt=&quot;JS DOM 入门 summary&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.apress.com/us/book/9781430233893&quot;&gt;DOM Scripting: Web Design with JavaScript and the Document Object Model&lt;/a&gt;;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.w3schools.com/js/js_htmldom.asp&quot;&gt;JavaScript HTML DOM&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="javaScript" /><summary>目录</summary></entry><entry><title>JavaScript入门</title><link href="/04%20web%20development/2016/10/01/JavaScript%E5%85%A5%E9%97%A8.html" rel="alternate" type="text/html" title="JavaScript入门" /><published>2016-10-01T00:00:00+08:00</published><updated>2016-10-01T00:00:00+08:00</updated><id>/04%20web%20development/2016/10/01/JavaScript入门</id><content type="html" xml:base="/04%20web%20development/2016/10/01/JavaScript%E5%85%A5%E9%97%A8.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
@@ -1127,585 +1222,6 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
     &lt;p&gt;Use anonymous objects when the type is irrelevant, and the fact that the object responds to certain methods (the ones defined in the protocol) is more important.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;2 Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Effective-Objective-C-2-0-Specific-Development/dp/0321917014&quot;&gt;《Effective Objective-C 2.0: 52 Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)》&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="Effective" /><summary>目录</summary></entry><entry><title>EOC(三)：Interface and API Design</title><link href="/01%20objective-c/2016/04/22/Effective-Objective-C-2.0(%E4%B8%89)_Interface-and-API-Design.html" rel="alternate" type="text/html" title="EOC(三)：Interface and API Design" /><published>2016-04-22T00:00:00+08:00</published><updated>2016-04-22T00:00:00+08:00</updated><id>/01%20objective-c/2016/04/22/Effective Objective C  2.0(三)_Interface and API Design</id><content type="html" xml:base="/01%20objective-c/2016/04/22/Effective-Objective-C-2.0(%E4%B8%89)_Interface-and-API-Design.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#interface-and-api-design&quot; id=&quot;markdown-toc-interface-and-api-design&quot;&gt;1 Interface and API Design&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-15use-prefix-names-to-avoid-namespace-clashes&quot; id=&quot;markdown-toc-item-15use-prefix-names-to-avoid-namespace-clashes&quot;&gt;Item 15：Use Prefix Names to Avoid Namespace Clashes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-16have-a-designated-initializer&quot; id=&quot;markdown-toc-item-16have-a-designated-initializer&quot;&gt;Item 16：Have a Designated Initializer&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-17implement-the-description-method&quot; id=&quot;markdown-toc-item-17implement-the-description-method&quot;&gt;Item 17：Implement the description Method&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-18prefer-immutable-objects&quot; id=&quot;markdown-toc-item-18prefer-immutable-objects&quot;&gt;Item 18：Prefer Immutable Objects&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-19use-clear-and-consistent-naming&quot; id=&quot;markdown-toc-item-19use-clear-and-consistent-naming&quot;&gt;Item 19：Use Clear and Consistent Naming&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-20prefix-private-method-names&quot; id=&quot;markdown-toc-item-20prefix-private-method-names&quot;&gt;Item 20：Prefix Private Method Names&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-21understand-the-objective-c-error-model&quot; id=&quot;markdown-toc-item-21understand-the-objective-c-error-model&quot;&gt;Item 21：Understand the Objective-C Error Model&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-22understand-the-nscopying-protocol&quot; id=&quot;markdown-toc-item-22understand-the-nscopying-protocol&quot;&gt;Item 22：Understand the NSCopying Protocol&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;2 Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;interface-and-api-design&quot;&gt;1 Interface and API Design&lt;/h2&gt;
-
-&lt;h3 id=&quot;item-15use-prefix-names-to-avoid-namespace-clashes&quot;&gt;Item 15：Use Prefix Names to Avoid Namespace Clashes&lt;/h3&gt;
-
-&lt;p&gt;Since &lt;code class=&quot;highlighter-rouge&quot;&gt;Objective-C&lt;/code&gt; dosen’t have namespace like other language such as &lt;code class=&quot;highlighter-rouge&quot;&gt;Java&#39;s Package&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Python&#39;s Module&lt;/code&gt;，Prefix is the solution that minimize name clash possibility.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Choose 3 letter prefix(from your company &amp;amp; application) for your class. Apple reserve the 2 letter prefix for its future use.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If your own library use a thrid-party library, be sure to prefix the thrid-party library as well. For example, your library has &lt;code class=&quot;highlighter-rouge&quot;&gt;LALClient&lt;/code&gt;, if the thrid-party library has prefixed class as &lt;code class=&quot;highlighter-rouge&quot;&gt;XYZData&lt;/code&gt;, you’d better to &lt;strong&gt;reprefix&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;XYZData&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;LALXYZData&lt;/code&gt;. By doing so, if other people install your library and also &lt;code class=&quot;highlighter-rouge&quot;&gt;XYZData&lt;/code&gt;, there would be no clash; it also allow other people to install a different version of &lt;code class=&quot;highlighter-rouge&quot;&gt;XYZData&lt;/code&gt;。This convention is common such as in &lt;a href=&quot;https://github.com/RestKit/RestKit&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RestKit&lt;/code&gt;&lt;/a&gt;, which use &lt;code class=&quot;highlighter-rouge&quot;&gt;AFNetworking&lt;/code&gt;，it &lt;strong&gt;reprefix&lt;/strong&gt; it as &lt;code class=&quot;highlighter-rouge&quot;&gt;AFRK...&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-16have-a-designated-initializer&quot;&gt;Item 16：Have a Designated Initializer&lt;/h3&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/01 Objectiev C/2016-04-22-EOC(三)：Interface and API Design/Designated Initializer.png&quot; alt=&quot;Designated Initializer&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;item-17implement-the-description-method&quot;&gt;Item 17：Implement the description Method&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Implement description method to provide a meaningful string description of instances&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If the object description could do with more detail for use during debugging (&lt;code class=&quot;highlighter-rouge&quot;&gt;po&lt;/code&gt; command for &lt;code class=&quot;highlighter-rouge&quot;&gt;LLDB&lt;/code&gt;), implement &lt;code class=&quot;highlighter-rouge&quot;&gt;debugDescription&lt;/code&gt;(default to &lt;code class=&quot;highlighter-rouge&quot;&gt;description&lt;/code&gt;).&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//use dictionary format for description provides compact visualization of object information.
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;&amp;lt;%@:%p,%@&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;@{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s&quot;&gt;@&quot;labitude&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_labitude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s&quot;&gt;@&quot;longitude&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_longitude&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-18prefer-immutable-objects&quot;&gt;Item 18：Prefer Immutable Objects&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;When possible, create objects that are immutable (readonly property in &lt;code class=&quot;highlighter-rouge&quot;&gt;.h&lt;/code&gt;);&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Extend read-only properties in a class-extention to read-write if the property will be set internally.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Provide methods to mutate collections held by objects rather than exposing a mutable collection as a property.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-19use-clear-and-consistent-naming&quot;&gt;Item 19：Use Clear and Consistent Naming&lt;/h3&gt;
-
-&lt;p&gt;The conciseness comes at the cost of ambiguity. While Objective-C reach unambiguity via verbosity. The Objective-C code reads like sentences with minimal ambiguity. This is what called &lt;strong&gt;self-documenting(自文档)&lt;/strong&gt;, code itself is enough to convery its functionality at most time.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Ensure method names are concise but precise to make them read from left to right as a sentence.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Avoid using abbreviations of types in method names.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Most important, make sure that method names are consistent with your own code or that with which it is being integrated.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-20prefix-private-method-names&quot;&gt;Item 20：Prefix Private Method Names&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Prefix priavate method names so that they are easily distinguished from public methods.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Avoid using a single underscroe as the method prefix, since this is reserved by Apple.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;A better choice is to use double underscore &lt;code class=&quot;highlighter-rouge&quot;&gt;__someMethod&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;p_someMethod&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;item-21understand-the-objective-c-error-model&quot;&gt;Item 21：Understand the Objective-C Error Model&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Use exceptions only for tatal errors that should bring down the entire application, such as sending message to abstract class.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;For nonfatal errors, either provide a delegate method to handle errors or offer an out-parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;NSError&lt;/code&gt; object.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//out-parameter NSError object
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//some implementation
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;NSError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// There was an error
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-22understand-the-nscopying-protocol&quot;&gt;Item 22：Understand the NSCopying Protocol&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;To Be Continued&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;2 Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Effective-Objective-C-2-0-Specific-Development/dp/0321917014&quot;&gt;《Effective Objective-C 2.0: 52 Specific Ways to Improve Your iOS and OS X Programs (Effective Software Development Series)》&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><category term="Effective" /><summary>目录</summary></entry><entry><title>EOC(二)：OC Runtime (Object Hierarchy &amp;amp; Messaging)</title><link href="/01%20objective-c/2016/04/21/Effective-Objective-C-2.0(%E4%BA%8C)_Objects-Messaging-and-Runtime.html" rel="alternate" type="text/html" title="EOC(二)：OC Runtime (Object Hierarchy &amp; Messaging)" /><published>2016-04-21T00:00:00+08:00</published><updated>2016-04-21T00:00:00+08:00</updated><id>/01%20objective-c/2016/04/21/Effective Objective C  2.0(二)_Objects Messaging and Runtime</id><content type="html" xml:base="/01%20objective-c/2016/04/21/Effective-Objective-C-2.0(%E4%BA%8C)_Objects-Messaging-and-Runtime.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#object-hierarchy--messaging&quot; id=&quot;markdown-toc-object-hierarchy--messaging&quot;&gt;1 Object Hierarchy &amp;amp; Messaging&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-6understand-properties&quot; id=&quot;markdown-toc-item-6understand-properties&quot;&gt;Item 6：Understand Properties&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-7access-instance-variables-primarily-directly-when-accessing-them-internally&quot; id=&quot;markdown-toc-item-7access-instance-variables-primarily-directly-when-accessing-them-internally&quot;&gt;Item 7：Access Instance Variables Primarily Directly When Accessing Them Internally&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-8understand-object-equality&quot; id=&quot;markdown-toc-item-8understand-object-equality&quot;&gt;Item 8：Understand Object Equality&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-9use-the-class-cluster-pattern-to-hide-implementation-detail&quot; id=&quot;markdown-toc-item-9use-the-class-cluster-pattern-to-hide-implementation-detail&quot;&gt;Item 9：Use the Class Cluster Pattern to Hide Implementation Detail&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-10use-associated-objects-to-attach-custom-data-to-existing-classes&quot; id=&quot;markdown-toc-item-10use-associated-objects-to-attach-custom-data-to-existing-classes&quot;&gt;Item 10：Use Associated Objects to Attach Custom Data to Existing Classes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-11understand-the-role-of-objcmsgsend&quot; id=&quot;markdown-toc-item-11understand-the-role-of-objcmsgsend&quot;&gt;Item 11：Understand the Role of objc_msgSend&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-12understand-message-forwarding&quot; id=&quot;markdown-toc-item-12understand-message-forwarding&quot;&gt;Item 12：Understand Message Forwarding&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-13consider-method-swizzling-to-debug-opaque-methods&quot; id=&quot;markdown-toc-item-13consider-method-swizzling-to-debug-opaque-methods&quot;&gt;Item 13：Consider Method Swizzling to Debug Opaque Methods&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#item-14understand-what-a-class-object-is&quot; id=&quot;markdown-toc-item-14understand-what-a-class-object-is&quot;&gt;Item 14：Understand What a Class Object Is&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;2 Reference&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;object-hierarchy--messaging&quot;&gt;1 Object Hierarchy &amp;amp; Messaging&lt;/h2&gt;
-
-&lt;h3 id=&quot;item-6understand-properties&quot;&gt;Item 6：Understand Properties&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;@property = _iVar + setter + getter。To prevent @property automatically create _iVar + setter + getter，use @dynamic；To customize your own iVar’s name (not _iVar)，use @synthesis。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;@property attribues：atomicity(nonatomic，atomic)，read/write(readwrite，readonly)，memeory-management(assing，strong，weak，copy)，method name(getter，setter)。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//  EOCCat.h
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCCat&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameReadOnly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isMale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;male&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initWithNameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;changeNameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-
-&lt;span class=&quot;c1&quot;&gt;//  EOCCat.m
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;EOCCat.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCCat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readwrite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameReadOnly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCCat&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@synthesize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_myName1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@dynamic&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initWithNameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;_name0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;name0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;_myName1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;myName1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//_name2 error, since dynamic forbidden its _iVar+setter+getter auto create
-&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//in init, one cannot use setter, thus [nameCopy copy] is used to conform to _nameCopy&#39;s copy attributes
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;_nameCopy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameCopy&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;_nameReadOnly&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;readOnly1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;changeNameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;nameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//nameCopy will be copied to self.nameCopy
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameCopy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nameCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//self.nameReadOnly can only be changed once it redeclared as readwrite in .m
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameReadOnly&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;readOnyly2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-7access-instance-variables-primarily-directly-when-accessing-them-internally&quot;&gt;Item 7：Access Instance Variables Primarily Directly When Accessing Them Internally&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;For external access，property usage is without doubt。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;For internal access，use property except in init，setter，getter，dealloc。 Since property encapsulate setter(customization)，getter(lazy instantiate)， memory-managment(_iVar = someValue not retain new value and release old value while self.iVar do) and copy (_iVar = someValue don’t copy it while self.iVar = someValue do if @property with copy)。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;item-8understand-object-equality&quot;&gt;Item 8：Understand Object Equality&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Object euqality必须实现下面两个方法：用 &lt;code class=&quot;highlighter-rouge&quot;&gt;isEuqal&lt;/code&gt;(用于两者比较)；&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;用于collection内object的比较，例如set。前者相同的后者必须相同，后者相同的前者不用相同。两者都属于&lt;code class=&quot;highlighter-rouge&quot;&gt;NSObject&lt;/code&gt;协议。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;对于创建的Class，可以写&lt;code class=&quot;highlighter-rouge&quot;&gt;isEqualToClass&lt;/code&gt;方法，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;有&lt;code class=&quot;highlighter-rouge&quot;&gt;isEqualToString&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;NSArray&lt;/code&gt;有&lt;code class=&quot;highlighter-rouge&quot;&gt;isEuqalToArray&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;NSDictionary&lt;/code&gt;有&lt;code class=&quot;highlighter-rouge&quot;&gt;isEuqalToDictionary&lt;/code&gt;。可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;isEqualToClass&lt;/code&gt;(不需要check类是否相同)来实现&lt;code class=&quot;highlighter-rouge&quot;&gt;isEqual&lt;/code&gt;方法(需要check类是否相同，不同返回false)。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isEqualToPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCPerson&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//if points to the same instance, return YES
-&lt;/span&gt;    
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isEqualToString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isEqualToString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isKindOfClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isEqualToPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSUInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lastName&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-9use-the-class-cluster-pattern-to-hide-implementation-detail&quot;&gt;Item 9：Use the Class Cluster Pattern to Hide Implementation Detail&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;类簇可以减少类的种类，子类信息被类簇隐藏，调用者不需要知道子类。比如NSSnumber是一个类簇，如果不使用类簇的话，需要为每一种基本类型都提供一种封装，这样会使类的数量极其庞大，程序员需要记住大量的类，但是如果使用类簇的话，只需要记住NSNumber这一个类就行了，具体使用这个类返回的是什么类型的对象，会在NSNumber类内部做处理和判断，而不需要调用者来关心，调用者只需要知道NSNumber的接口拿来用即可。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Subclass abstract class在类簇里和Subclass normal class是完全不一样的。后者可以是一个空的实现，因为super class已经提供了完整实现；而前者需要实现super class接口的函数，因为这部分在super class里只是一个空壳。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//EOCMployee.h
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NS_ENUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSUInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeDeveloper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeDesigner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeFinance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployee&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NSObject&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;employeeWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doWork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-
-
-&lt;span class=&quot;c1&quot;&gt;//EOCEmployee.m
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;EOCEmployee.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployeeDeveloper&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployee&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployeeDeveloper&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doWork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;%@,%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSStringFromSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployeeDesigner&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployee&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployeeDesigner&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doWork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;%@,%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSStringFromSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployeeFinance&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployee&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployeeFinance&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doWork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;%@,%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSStringFromSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeType&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCEmployee&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;employeeWithType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;EOCEmployee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;employee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeDeveloper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;employee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeDeveloper&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeDesigner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;employee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeDesigner&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-            
-        &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeFinance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;employee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EOCEmployeeFinance&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;employee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doWork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//Subclass implement this.
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//Without class cluster, you need to implement with lots of cumbersome if/else
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeDeveloper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//do developer work
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeDesigner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//do designer work
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EOCEmployeeTypeFinance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//do finance work
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-10use-associated-objects-to-attach-custom-data-to-existing-classes&quot;&gt;Item 10：Use Associated Objects to Attach Custom Data to Existing Classes&lt;/h3&gt;
-
-&lt;p&gt;1.对已有的类进行实例变量扩展可以通过category结合runtime实现，具体有3个方法：&lt;code class=&quot;highlighter-rouge&quot;&gt;objc_setAssociatedObject(id object, void *key, id value, objc_AssociationPolicy policy)&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;objc_getAssociatedObject(id object, void *key)&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;void objc_removeAssociatedObjects(id object)&lt;/code&gt;。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//EOCPerson+ID.h
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;EOCPerson.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCPerson&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//EOCPerson+ID.m
-&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;#import &quot;EOCPerson+ID.h&quot;
-#import &amp;lt;objc/runtime.h&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EOCPerson&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;objc_setAssociatedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;OBJC_ASSOCIATION_RETAIN_NONATOMIC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;objc_getAssociatedObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;item-11understand-the-role-of-objcmsgsend&quot;&gt;Item 11：Understand the Role of objc_msgSend&lt;/h3&gt;
-
-&lt;p&gt;见&lt;a href=&quot;/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1&quot;&gt;OC Runtime(零)：Runtime概述&lt;/a&gt;和&lt;a href=&quot;/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html&quot;&gt;OC Runtime(二)：Messaging Part I：消息机制和swizzling&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;item-12understand-message-forwarding&quot;&gt;Item 12：Understand Message Forwarding&lt;/h3&gt;
-
-&lt;p&gt;见&lt;a href=&quot;/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1&quot;&gt;OC Runtime(零)：Runtime概述&lt;/a&gt;和&lt;a href=&quot;/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html&quot;&gt;OC Runtime(二)：Messaging Part I：消息机制和swizzling&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;item-13consider-method-swizzling-to-debug-opaque-methods&quot;&gt;Item 13：Consider Method Swizzling to Debug Opaque Methods&lt;/h3&gt;
-
-&lt;p&gt;见&lt;a href=&quot;/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1&quot;&gt;OC Runtime(零)：Runtime概述&lt;/a&gt;和&lt;a href=&quot;/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html&quot;&gt;OC Runtime(二)：Messaging Part I：消息机制和swizzling&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;item-14understand-what-a-class-object-is&quot;&gt;Item 14：Understand What a Class Object Is&lt;/h3&gt;
-
-&lt;p&gt;见&lt;a href=&quot;/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1&quot;&gt;OC Runtime(零)：Runtime概述&lt;/a&gt;和&lt;a href=&quot;/01%20objective-c/2016/03/13/OC-Runtime(%E4%B8%80)_Object-Model-Part-I_Object-Hierarchy.html&quot;&gt;OC Runtime(一)：Object Model Part I：Object Hierarchy&lt;/a&gt;。&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;2 Reference&lt;/h2&gt;
 
