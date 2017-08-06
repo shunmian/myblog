@@ -24,11 +24,11 @@ shortinfo: Object Model描述了OC中描述了实例变量，实力方法，类�
 
 objc runtime有3种对象。
 
-1. **instance**：类型为``id``，即指向``objc_object``的指针；``objc_object``只有1个值，即类型为``Class``的变量``isa``。
+1. **instance**：类型为`id`，即指向`objc_object`的指针；`objc_object`只有1个值，即类型为`Class`的变量`isa`。
 
-2. **class**：类型为``Class``，即指向``objc_class``的指针；``objc_class``继承自``objc_object``，因此也有类型为``Class``的变量``isa``，指向**metaClass**；``objc_class``还会存储类的实例变量表，实例方法表，协议表，实例大小等；另外``objc_class``还有1个``Class``类型的变量``superClass``，指向父类。root class(即``NSObject``)的``superClass``指向nil。
+2. **class**：类型为`Class`，即指向`objc_class`的指针；`objc_class`继承自`objc_object`，因此也有类型为`Class`的变量`isa`，指向**metaClass**；`objc_class`还会存储类的实例变量表，实例方法表，协议表，实例大小等；另外`objc_class`还有1个`Class`类型的变量`superClass`，指向父类。root class(即`NSObject`)的`superClass`指向nil。
 
-3. **metaClass**：类型也为``Class``，存储了类变量，类方法；并且有1个``Class``类型的变量``superClass``，指向父类**metaClass**。root meta class的``superClass``指回root class(即``NSObject``)。其中**class**和**metaClass**都以单例存储在内存中。
+3. **metaClass**：类型也为`Class`，存储了类变量，类方法；并且有1个`Class`类型的变量`superClass`，指向父类**metaClass**。root meta class的`superClass`指回root class(即`NSObject`)。其中**class**和**metaClass**都以单例存储在内存中。
 
 ### 1.2 instance的创建 ###
 
@@ -38,7 +38,7 @@ id objc = (id) calloc(1,size);
 obj.isa = (uintptr_t)cls;
 {% endhighlight %}
 
-分析：``instanceSize``是编译时决定。存储在class里；``calloc``分配1块连续的内存，内存中前4Byte存储了cls地址。
+分析：`instanceSize`是编译时决定。存储在class里；`calloc`分配1块连续的内存，内存中前4Byte存储了cls地址。
 
 ### 1.3 instance，class，metaClass对应例子 ###
 
@@ -66,7 +66,7 @@ BOOL res9 = [NSObject class] == class_getSuperclass(object_getClass([NSObject cl
 
 {% endhighlight %}
 
-分析：``[NSObject class]``指向``NSObject``类,因此后面无论加多少个class还是指向``NSObject``类；但是``object_getClass(id obj)``返回的是isa变量，因此``object_getClass([NSObject class])``返回的是``NSObject``元类。结合**Object Model**很容易得出1，1，0，1，1的结论。
+分析：`[NSObject class]`指向`NSObject`类,因此后面无论加多少个class还是指向`NSObject`类；但是`object_getClass(id obj)`返回的是isa变量，因此`object_getClass([NSObject class])`返回的是`NSObject`元类。结合**Object Model**很容易得出1，1，0，1，1的结论。
 
 ### 2.1 NSObject类方法输出 ###
 
@@ -95,7 +95,7 @@ BOOL res9 = [NSObject class] == class_getSuperclass(object_getClass([NSObject cl
 [[NSObject new] say]; //编译通不过，因为-say没有在头文件申明
 {% endhighlight %}
 
-分析:类别扩展了NSObject的类方法``+(void)say``，但没有提供实现；在.m文件里提供了实例方法``-(void)say``的实现。当调用``[NSObject say]``的时候，NSObject的metaClass找不到vTable里对应的IMP，就通过继承链在父类里找，而我们上面介绍过NSObject的元类的父类指向了自己。因此就到NSObject类里找IMP，也就是实例方法``-(void)say``，找到IMP后调用就输出了``NSObject Sark instance method:say``。
+分析:类别扩展了NSObject的类方法`+(void)say`，但没有提供实现；在.m文件里提供了实例方法`-(void)say`的实现。当调用`[NSObject say]`的时候，NSObject的metaClass找不到vTable里对应的IMP，就通过继承链在父类里找，而我们上面介绍过NSObject的元类的父类指向了自己。因此就到NSObject类里找IMP，也就是实例方法`-(void)say`，找到IMP后调用就输出了`NSObject Sark instance method:say`。
 
 ### 2.2 NSObject自省方法 ###
 
@@ -139,9 +139,9 @@ BOOL res3_2 = [(id)father isMemberOfClass:[Father class]];              //1
         
 {% endhighlight %}
 
-分析：``isKindOfClass``的实例方法和类方法的实现是一样的，因为实例方法``[self class]``和``object_getClass((id)self)``一样。``isKindOfClass``先返回``isa``，如果和``cls
-``一致则返回``YES``，否则从``superClass``的``isa``继续比较判断。因此res1_1中，``NSObject``元类不是``NSObject``类，然后从``NSObject``元类的``superClass``找，根据object model，又指回了``NSObject
-``类，因此返回1。res2_1，res2_3，res3_1同理可得。而``isMemberOfClass``的实例方法和类方法的实现也是一样，与``isKindOfClass``不同的地方在于只比较一级``isa``，而不会不相等时沿着继承链继续比较。res1_2，res2_2，res2_4，res3_2的结果也就一目了然了。
+分析：`isKindOfClass`的实例方法和类方法的实现是一样的，因为实例方法`[self class]`和`object_getClass((id)self)`一样。`isKindOfClass`先返回`isa`，如果和`cls
+`一致则返回`YES`，否则从`superClass`的`isa`继续比较判断。因此res1_1中，`NSObject`元类不是`NSObject`类，然后从`NSObject`元类的`superClass`找，根据object model，又指回了`NSObject
+`类，因此返回1。res2_1，res2_3，res3_1同理可得。而`isMemberOfClass`的实例方法和类方法的实现也是一样，与`isKindOfClass`不同的地方在于只比较一级`isa`，而不会不相等时沿着继承链继续比较。res1_2，res2_2，res2_4，res3_2的结果也就一目了然了。
 
 ### 2.3 self & super关键字 ###
 
@@ -171,7 +171,7 @@ struct objc_super {
 @end
 {% endhighlight %}
 
-分析：``super``不是1个参数，而是编译器的关键字，转换成``msg_sendSuper2(struct objc_super *super, SEL op, ...)``，该方法跳过本类方法在父类中找对应``IMP``，其中``struct objc_super { id receiver；Class current_class}``的``receiver``作为``IMP``的输入参数。就是说``[super class]``在``Father``类里开始沿着继承链找``class``实例方法，找到后将``self``作为参数输入，因此两个输出都是Son。
+分析：`super`不是1个参数，而是编译器的关键字，转换成`msg_sendSuper2(struct objc_super *super, SEL op, ...)`，该方法跳过本类方法在父类中找对应`IMP`，其中`struct objc_super { id receiver；Class current_class}`的`receiver`作为`IMP`的输入参数。就是说`[super class]`在`Father`类里开始沿着继承链找`class`实例方法，找到后将`self`作为参数输入，因此两个输出都是Son。
 
 ### 2.4 What is an Object and its iVar in Memory ###
 
@@ -203,9 +203,9 @@ struct objc_super {
 }
 {% endhighlight %}
 
-分析：这里是将instance分配在stack上，id结构体的地址和isa地址是同一块，因为isa是id结构体的第一个(也是唯一一个变量)。当调用``[ptr speak]``的时候，``objc_sendMsg(id self, SEL sel)``穿进去的``self``是分配在stack上的``ptr``，通过``isa``找到``speak``IMP后，调用了``self.firstName``，即ptr偏移4Byte。由于stack的地址是上面高，下面低，因此+4Byte就找到了``name``。
+分析：这里是将instance分配在stack上，id结构体的地址和isa地址是同一块，因为isa是id结构体的第一个(也是唯一一个变量)。当调用`[ptr speak]`的时候，`objc_sendMsg(id self, SEL sel)`穿进去的`self`是分配在stack上的`ptr`，通过`isa`找到`speak`IMP后，调用了`self.firstName`，即ptr偏移4Byte。由于stack的地址是上面高，下面低，因此+4Byte就找到了`name`。
 
-如果``name``不在,则是``viewController``，一种说的通的解释如下。
+如果`name`不在,则是`viewController`，一种说的通的解释如下。
 
 {% highlight objc linenos %}
 //ViewController.m
