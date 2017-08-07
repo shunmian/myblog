@@ -24,7 +24,8 @@ shortinfo: Object Model描述了OC中描述了实例变量，实力方法，类�
 
 objc runtime有3种对象。
 
-1. **instance**：类型为`id`，即指向`objc_object`的指针；`objc_object`只有1个值，即类型为`Class`的变量`isa`。
+1. **instance**：类型为`id`，即指向`objc_object`的指针；`objc_object`只有1个值，即类型为`Class`的变量`isa`。 
+
 
 2. **class**：类型为`Class`，即指向`objc_class`的指针；`objc_class`继承自`objc_object`，因此也有类型为`Class`的变量`isa`，指向**metaClass**；`objc_class`还会存储类的实例变量表，实例方法表，协议表，实例大小等；另外`objc_class`还有1个`Class`类型的变量`superClass`，指向父类。root class(即`NSObject`)的`superClass`指向nil。
 
