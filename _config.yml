@@ -1,12 +1,12 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
-gems: 
+plugins_dir: 
 - jekyll-paginate
 - jekyll-feed
+- jekyll-paginate
 
 
 exclude: ["README.md"] # files to exclude
-highlighter: pygments
 
 
 markdown: kramdown
@@ -17,13 +17,13 @@ kramdown:
   toc_levels:     1..6
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
+  # coderay:
+  #   coderay_wrap:              div
+  #   coderay_line_numbers:      inline
+  #   coderay_line_number_start: 1
+  #   coderay_tab_width:         4
+  #   coderay_bold_every:        10
+  #   coderay_css:               style
 
 
 destination: public
