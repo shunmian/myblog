@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redux
+title: Redux Part II：Advanced TodoApp
 categories: [04 Web Development]
 tags: [Redux]
 number: [3.7.7]

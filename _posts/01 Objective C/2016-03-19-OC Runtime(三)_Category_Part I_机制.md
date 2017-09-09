@@ -61,7 +61,7 @@ $ clang -rewrite-objc sark.m
 打开生成的文件，发现茫茫多，排除include进来的header，自己的代码都在文件尾部了，看看上面的category被编译器搞成什么样子了。
 
 {% highlight objc linenos %}
-static struct /*_method_list_t*/ {
+static struct _method_list_t {
     unsigned int entsize;  // sizeof(struct _objc_method)
     unsigned int method_count;
     struct _objc_method method_list[1];
@@ -71,7 +71,7 @@ static struct /*_method_list_t*/ {
     {{(struct objc_selector *)"printName", "v16@0:8", (void *)_I_MyClass_MyAddition_printName}}
 };
 
-static struct /*_prop_list_t*/ {
+static struct _prop_list_t {
     unsigned int entsize;  // sizeof(struct _prop_t)
     unsigned int count_of_properties;
     struct _prop_t prop_list[1];
