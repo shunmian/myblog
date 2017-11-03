@@ -1348,7 +1348,14 @@ Authentication is essentail to any real application. When going about authentica
 + [1.10.2 Why is my component re-renderint too often?](#why-is-my-component-re-renderint-too-often)
 
 
+## 5 参考资料 ##
+- [Redux](https://github.com/reactjs/redux);
 
+- [Get Started with Redux](https://egghead.io/courses/getting-started-with-redux);
+
+- [Note: Get Started with Redux](https://github.com/tayiorbeii/egghead.io_redux_course_notes);
+
+- [React Code](https://github.com/shunmian/4.1.1_redux-part-one)
 
 
 
