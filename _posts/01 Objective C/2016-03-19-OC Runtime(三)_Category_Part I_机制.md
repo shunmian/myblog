@@ -60,7 +60,7 @@ $ clang -rewrite-objc sark.m
 同级目录下会生成sark.cpp，这就是objc代码重写成c++(基本就是c)的实现。
 打开生成的文件，发现茫茫多，排除include进来的header，自己的代码都在文件尾部了，看看上面的category被编译器搞成什么样子了。
 
-{% highlight objc linenos %}
+{% highlight cpp linenos %}
 static struct _method_list_t {
     unsigned int entsize;  // sizeof(struct _objc_method)
     unsigned int method_count;

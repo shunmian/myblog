@@ -3,7 +3,7 @@ layout: post
 title: Redux Part I：TodoList App
 categories: [04 Web Development]
 tags: [Redux]
-number: [3.7.7]
+number: [4.1.1]
 fullview: false
 shortinfo: 本文是对Rudex框架的介绍。通过一个TodoList App从零开始的构建，读者可以对Redux的主要结构有一个全面的了解。
 ---
