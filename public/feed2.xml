@@ -7,6 +7,92 @@
 		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title></title>
+				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#overview&quot; id=&quot;markdown-toc-overview&quot;&gt;1 Overview&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;1.1 Introduction&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#everything-we-will-say-about-parsing&quot; id=&quot;markdown-toc-everything-we-will-say-about-parsing&quot;&gt;1.2 Everything (We Will Say) About Parsing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#a-first-look-at-interpretation&quot; id=&quot;markdown-toc-a-first-look-at-interpretation&quot;&gt;1.3 A First Look at Interpretation&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#a-first-tast-of-desugaring&quot; id=&quot;markdown-toc-a-first-tast-of-desugaring&quot;&gt;1.4 A First Tast of Desugaring&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#adding-functions-to-the-language&quot; id=&quot;markdown-toc-adding-functions-to-the-language&quot;&gt;1.5 Adding Functions to the Language&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#from-substitution-to-environments&quot; id=&quot;markdown-toc-from-substitution-to-environments&quot;&gt;1.6 From Substitution to Environments&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-anywhere&quot; id=&quot;markdown-toc-functions-anywhere&quot;&gt;1.7 Functions Anywhere&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#mutation-structures-and-variables&quot; id=&quot;markdown-toc-mutation-structures-and-variables&quot;&gt;1.8 Mutation: Structures and Variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#recursion-and-cycles-procedures-and-data&quot; id=&quot;markdown-toc-recursion-and-cycles-procedures-and-data&quot;&gt;1.9 Recursion and Cycles: Procedures and Data&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#objects&quot; id=&quot;markdown-toc-objects&quot;&gt;1.10 Objects&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#memory-management&quot; id=&quot;markdown-toc-memory-management&quot;&gt;1.11 Memory Management&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#representation-decisions&quot; id=&quot;markdown-toc-representation-decisions&quot;&gt;1.12 Representation Decisions&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#desugaring-as-a-language-feature&quot; id=&quot;markdown-toc-desugaring-as-a-language-feature&quot;&gt;1.13 Desugaring as a Language Feature&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#control-operations&quot; id=&quot;markdown-toc-control-operations&quot;&gt;1.14 Control Operations&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#checking-program-invariants-statically-types&quot; id=&quot;markdown-toc-checking-program-invariants-statically-types&quot;&gt;1.15 Checking Program Invariants Statically: Types&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#checking-program-invariants-dynamically-contracts&quot; id=&quot;markdown-toc-checking-program-invariants-dynamically-contracts&quot;&gt;1.16 Checking Program Invariants Dynamically: Contracts&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#alternate-application-semantics&quot; id=&quot;markdown-toc-alternate-application-semantics&quot;&gt;1.17 Alternate Application Semantics&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 总结&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;3 Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;1 Overview&lt;/h2&gt;
+
+&lt;h3 id=&quot;introduction&quot;&gt;1.1 Introduction&lt;/h3&gt;
+
+&lt;h3 id=&quot;everything-we-will-say-about-parsing&quot;&gt;1.2 Everything (We Will Say) About Parsing&lt;/h3&gt;
+
+&lt;h3 id=&quot;a-first-look-at-interpretation&quot;&gt;1.3 A First Look at Interpretation&lt;/h3&gt;
+
+&lt;h3 id=&quot;a-first-tast-of-desugaring&quot;&gt;1.4 A First Tast of Desugaring&lt;/h3&gt;
+
+&lt;h3 id=&quot;adding-functions-to-the-language&quot;&gt;1.5 Adding Functions to the Language&lt;/h3&gt;
+
+&lt;h3 id=&quot;from-substitution-to-environments&quot;&gt;1.6 From Substitution to Environments&lt;/h3&gt;
+
+&lt;h3 id=&quot;functions-anywhere&quot;&gt;1.7 Functions Anywhere&lt;/h3&gt;
+
+&lt;h3 id=&quot;mutation-structures-and-variables&quot;&gt;1.8 Mutation: Structures and Variables&lt;/h3&gt;
+
+&lt;h3 id=&quot;recursion-and-cycles-procedures-and-data&quot;&gt;1.9 Recursion and Cycles: Procedures and Data&lt;/h3&gt;
+
+&lt;h3 id=&quot;objects&quot;&gt;1.10 Objects&lt;/h3&gt;
+
+&lt;h3 id=&quot;memory-management&quot;&gt;1.11 Memory Management&lt;/h3&gt;
+
+&lt;h3 id=&quot;representation-decisions&quot;&gt;1.12 Representation Decisions&lt;/h3&gt;
+
+&lt;h3 id=&quot;desugaring-as-a-language-feature&quot;&gt;1.13 Desugaring as a Language Feature&lt;/h3&gt;
+
+&lt;h3 id=&quot;control-operations&quot;&gt;1.14 Control Operations&lt;/h3&gt;
+
+&lt;h3 id=&quot;checking-program-invariants-statically-types&quot;&gt;1.15 Checking Program Invariants Statically: Types&lt;/h3&gt;
+
+&lt;h3 id=&quot;checking-program-invariants-dynamically-contracts&quot;&gt;1.16 Checking Program Invariants Dynamically: Contracts&lt;/h3&gt;
+
+&lt;h3 id=&quot;alternate-application-semantics&quot;&gt;1.17 Alternate Application Semantics&lt;/h3&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2 总结&lt;/h2&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;3 Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://cs.brown.edu/courses/cs173/2012/book/&quot;&gt;《Programming Languages: Application and Interpretation》&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://cs.brown.edu/courses/cs173/2012/Videos/&quot;&gt;《Course Video for PLAI》&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Sun, 10 Dec 2017 12:49:03 +0800</pubDate>
+				<link>/2017/12/10/2014-07-01-PLAI.html</link>
+				<guid isPermaLink="true">/2017/12/10/2014-07-01-PLAI.html</guid>
+			</item>
+		
+			<item>
 				<title>iOS 2D Game - SpriteKit入门(一)</title>
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
@@ -979,32 +1065,6 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 				<pubDate>Sat, 15 Oct 2016 00:00:00 +0800</pubDate>
 				<link>/04%20web%20development/2016/10/15/RN(%E4%B8%89)-Architecture(1).html</link>
 				<guid isPermaLink="true">/04%20web%20development/2016/10/15/RN(%E4%B8%89)-Architecture(1).html</guid>
-			</item>
-		
-			<item>
-				<title>RN(二) Style(1)</title>
-				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;1 Summary&lt;/h2&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Thu, 13 Oct 2016 00:00:00 +0800</pubDate>
-				<link>/04%20web%20development/2016/10/13/RN(%E4%BA%8C)-Style(1).html</link>
-				<guid isPermaLink="true">/04%20web%20development/2016/10/13/RN(%E4%BA%8C)-Style(1).html</guid>
 			</item>
 		
 	</channel>

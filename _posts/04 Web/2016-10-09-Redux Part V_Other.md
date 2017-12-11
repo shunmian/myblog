@@ -166,7 +166,7 @@ This section documents the complete Redux API. Keep in mind that Redux is only c
 
 
 
-#### 1.2.1 CreateStore(reducer, [preloadedState],[enhancer]) ####
+#### 1.2.1 `CreateStore(reducer, [preloadedState],[enhancer])` ####
 
 Create a Redux [store](http://redux.js.org/docs/api/Store.html) that holds the complete state tree of your app. These should only be a single store in your app.
 
@@ -327,7 +327,7 @@ Replaces the reducer currently used by the store to calculate the state. It is a
 **Arguments**
 1. `nextReducer` (Function) The next reducer for the store to use.
 
-#### 1.2.3 combineReducers(reducers) ####
+#### 1.2.3 `combineReducers(reducers)` ####
 
 As yuor app grows more complex, you'll want to split your [reducing function](http://redux.js.org/docs/Glossary.html#reducer) into separate functions, each managing independent parts of the `state`.
 
@@ -436,7 +436,7 @@ console.log(store.getState())
 + You may call `combineReducers` at any level of the reducer hierarchy. It doesn't have to happen at the top. In fact you may use it again to split the child reducers that get too complicated into independent grandchildren, and so on.
 
 
-#### 1.2.4 applyMiddleware(...middlewares) ####
+#### 1.2.4 `applyMiddleware(...middlewares)` ####
 
 Middleware is the suggested way to extend Redux with custom functionality. Middleware lets you wrap the store's `dispatch` method for fun and profit. The key feature of middleware is that it is composable. Multiple middlewre can be combined together, where each middleware requires no knowledge of what comes before or after in the chain. The most common use case for middleware is to support asynchronous actions without much boilerplate code of a dependency on a library like [Rx](https://github.com/Reactive-Extensions/RxJS). It does so be letting you dispatch [async actions](http://redux.js.org/docs/Glossary.html#async-action) in addition to normal actions.
 
@@ -457,7 +457,7 @@ TBC
 {% highlight js linenos %}
 {% endhighlight %}
 
-#### 1.2.5 bindActionCreators(actionCreators, dispatch) ####
+#### 1.2.5 `bindActionCreators(actionCreators, dispatch)` ####
 
 Turns an object whose values are [action creators](http://redux.js.org/docs/Glossary.html#action-creator) into an object with the same keys, but with every action creator wrapped into a `dispatch` call so they may be invoked directly.
 
@@ -472,7 +472,7 @@ TBC
 {% highlight js linenos %}
 {% endhighlight %}
 
-#### 1.2.6 compose(...functions) ####
+#### 1.2.6 `compose(...functions)` ####
 
 Compose function from right to left.
 
