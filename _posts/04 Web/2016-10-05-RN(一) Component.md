@@ -24,6 +24,48 @@ shortinfo: 本文是对Facebook的React框架的introduction。
 
 ## 2 Advance
 
+### 2.0 Placeholder Component
+
+CardSection is the placeholder component, which define the common theme for the inner children, such as padding, background color.
+
+{% highlight js linenos %}
+
+const AlbumDetail = ({ album, onPress }) => {
+  const { title, artist, url, image, thumbnail_image } = album;
+  const {
+    thunmbnailContainerStyle,
+    headerImageStyle,
+    headerContentContainerStyle,
+    headerContentTitleStyle,
+    headerContentArtistStyle,
+    contentImageContainerStyle,
+    contentImageStyle,
+  } = styles; 
+  return (
+    <Card>
+      <CardSection>
+        <View style={thunmbnailContainerStyle}>
+          <Image style={headerImageStyle} source={{ uri: thumbnail_image }} />
+        </View>
+        <View style={headerContentContainerStyle}>
+          <Text style={headerContentTitleStyle}>{title}</Text>
+          <Text style={headerContentArtistStyle}>{artist}</Text>
+        </View>
+      </CardSection>
+
+      <CardSection>
+          <Image style={contentImageStyle} source={{ uri: image }} />
+      </CardSection>
+
+      <CardSection>
+        <Button onPress={()=> onPress(title)}>press me</Button>
+      </CardSection>
+    </Card>
+  );
+};
+{% endhighlight %}
+
+
 ### 2.1 `this.props.children`
 
 {% highlight js linenos %}
