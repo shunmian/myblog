@@ -20,6 +20,17 @@ shortinfo: 本文是对Math for CS的第一部分Proof的总结。
 
 ## 1 Proof ##
 
+### 1.1 What is a Proof
+
+> Proposition(命题):  a statement that is either true or false. 
+
+> Axioms(公理): A true proposition.
+
+### 1.2 Induction
+
+
+
+### 1.2
 ## 2 GDB ##
 
 ## 3 总结 ##

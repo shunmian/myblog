@@ -684,9 +684,119 @@ getData2: after resolve
 
 ##### 1.3.3.4 ThirdParty `Promise`: `bluebird`####
 
-#### 1.3.4 `Generator`
+#### 1.3.4 `Generator` + `Promise`
+
+##### 1.3.4.1 `Generator`
+
+阅读`Generator`的代码时，`yield`关键字有时候并不是那么直观，一方面是由于写generator太少，另一方面是yield并不像`return`那么直接。解决的方法一是多写generator；二是可认为`yield`是`short return`(短返回，即可以resume的返回)，这样一来就很直观，yield的值是后面的值，和return一样，但是可以resume。
+
+**Generator函数**: 格式是`function* () { yield ...}`，返回`Generator`
+
+**Generator**: 一种特殊的`Iterator`
+
+**Iterator**: 一种协议，有`next`方法，该方法返回`{value,done}`。
+
+**Iterable**: 一种协议，即有方法返回1个`Iterator`。
+
+
+所以以上4个概念的核心是`Iterator`，其拥有2种特性：
+
+1. 产生无限序列
+
+2. 便于遍历
+
+而Generator是特殊的`Iterator`，除了拥有以上两个特性之外，还有1个特性：
+
+3. 可以暂停(`yield`)/恢复(`next`)函数执行，因此也被称为协程(`coroutine`)。
+
+下面用一张图表示上面4个概念以及相关概念的关系。
+
+{: .img_middle_lg}
+![Generator vs Iterator](/assets/images/posts/04 Web/JS/2016-10-02-JavaScript进阶/Generator vs Iterator.png)
+
+##### 1.3.4.1 `Generator yield Promise` 
+
+`Callback`有hell, `Promise` at least one level nest, can we write async function like sync style? Yes, use `Generator` + `Promise`。
+
+{% highlight js linenos %}
+function foo(){
+  return fetch('https://jsonplaceholder.typicode.com/posts')
+          .then(res=>res.json())
+}
+
+function *main(){
+  try{
+    res = yield foo()
+    console.log(res)
+  }catch(err){ 
+    console.log(err)
+  }
+}
+
+//utility to make *main work
+const it = main()
+p = it.next().value
+p
+.then(res=>it.next(res))
+.catch(err=>it.throw(err))
+{% endhighlight %}
+
+对于上述utility，可以写一个函数(`coroutine`)来封装它
+
+{% highlight js linenos %}
+function run(gen){
+  var args = [].slice.call(arguments, 1), it;
+  
+  //initialize the generator in the current context
+  it = gen.apply(this, args);
+  
+  //return a promise for the generator completing
+  return Promise.resolve()
+  .then(function handleNext(value){
+    // run to the next yielded value
+    var next = it.next(value)
+    return (function handleResult(next){
+      //generator has completed running?
+      if(next.done){
+        return next.value
+      }
+      // otherwise keep going
+      else{
+        return Promise.resolve(next.value)
+        .then(
+          // resume the async loop on success, sending the resolved value back into the generator
+          handleNext,
+          // if 'value' is a rejected promise, propagate error back into the generator for its own error handling
+          function handleErr(err){
+          return Promise.resolve(it.throw(err))
+            .then(handleResult)
+        })
+      }
+    })(next)
+  })
+}
+
+run(main)
+{% endhighlight %}
 
 #### 1.3.5 `async`,`await` ####
+
+ES7 将 `Generator` + `Promise` 封装成了关键字`aysnc`和`await`。因此上述main函数只要写成如下即可，无需utility函数`run`。
+
+{% highlight js linenos %}
+async function main(){
+  try{
+    res = await foo()
+    console.log(res)
+  }catch(err){ 
+    console.log(err)
+  }
+}
+
+main()
+{% endhighlight %}
+
+因此可以认为`aysnc`和`await`比`Generator`+`Promise`+`coroutine`更为正式，是JS ES7 内置的关键字。但是上述两种方法都可以以sync方式code async函数。 
 
 ### 1.4 ES6
 

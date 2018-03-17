@@ -3202,11 +3202,17 @@ Inside `mapDispatchToProps` in our `VisibleTodoList` component we specify that w
 **`VisibleTodoList` `mapDispatchToProps` Before**
 
 {% highlight js linenos %}
+// mapDispatchToProps can either be a function, which takes dispatch and return an object using the dispatch in each of its values
 const mapDispatchToProps = (dispatch) => ({
   onTodoClick(id) {
     dispatch(toggleTodo(id));
   },
 });
+
+// or be a object of action creator
+const mapDispatchToProps = {
+  onTodoClick: toggleTodo
+}
 
 const VisibleTodoList = withRouter(connect(
   mapStateToProps,
@@ -3218,14 +3224,6 @@ When the arguments for the callback prop match the arguments to the action creat
 
 This is a rather common case, so often you don't need to write `mapDispatchToProps`, and you can pass this map in object instead.
 
-**`VisibleTodoList` After:**
-
-{% highlight js linenos %}
-const VisibleTodoList = withRouter(connect(
-  mapStateToProps,
-  { onTodoClick: toggleTodo }
-)(TodoList));
-{% endhighlight %}
 
 #### 3.3.2 Colocating Selectors with Reducers
 
@@ -3501,6 +3499,8 @@ export const getVisibleTodos = (state, filter) => {
 {% endhighlight %}
 
 ### 3.4 Middleware `applyMiddleware()` from `'react-redux'`####
+
+> **Middleware**: 提供位于action被发起之后，到达reducer之前的扩展点。 你可以利用 Redux middleware 来进行日志记录、创建崩溃报告、调用异步接口或者路由等等。
 
 #### 3.4.1 Wrapping `dispatch()` to Log Actions
 
@@ -4178,6 +4178,53 @@ const configureStore = () => {
 
 export default configureStore;
 {% endhighlight %}
+
+#### 3.4.8 Middleware summary
+
+##### 3.4.8.1 write your own middleware
+
+{% highlight js linenos %}
+// loggerMiddleware.js
+/**
+ * middleware is a 3rd order function
+ * @param {store: Object} - the redux store.
+ * @param {next: function} - the next middleware.
+ * @param {action: object} - the redux action.
+ * @return {function}
+ * /
+
+const loggerMiddleware1 = store => next => action => {
+  console.log('before1: ', store.getState());
+  console.log('action1: ', action);
+  console.log('after1: ', store.getState());
+  next(action);
+};
+
+export {
+  loggerMiddleware1
+};
+
+// redux/index.js
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { loggerMiddleware1 } from 'src/redux/loggerMiddleware1';
+import { loggerMiddleware2 } from 'src/redux/loggerMiddleware2';
+import * as AlbumRedux from './AlbmuRedux';
+
+const rootReducer = combineReducers({
+  [AlbumRedux.KEY]: AlbumRedux.reducer,
+});
+
+const store = createStore(
+  rootReducer,
+  {},
+  applyMiddleware(loggerMiddleware1, loggerMiddleware2)
+);
+
+export default store;
+{% endhighlight %}
+
+##### 3.4.8.2 understand `applyMiddleware`
+
 
 ### 3.5 Thunk via `'redux-thunk'`###
 
