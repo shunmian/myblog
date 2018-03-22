@@ -7,6 +7,32 @@
 		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Vim</title>
+				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#vim-&quot; id=&quot;markdown-toc-vim-&quot;&gt;1. Vim 总结&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;vim-&quot;&gt;1. Vim 总结&lt;/h2&gt;
+
+&lt;p class=&quot;img_middle_lg&quot;&gt;&lt;img src=&quot;/assets/images/posts/20_TextEditor/2017-10-01-Vim/vim-cheat-sheet-advanced.png&quot; alt=&quot;Vim summary&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.udemy.com/vim-commands-cheat-sheet/&quot;&gt;《Vim Masterclass》&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Sun, 01 Oct 2017 00:00:00 +0800</pubDate>
+				<link>/-20%20text%20editor/2017/10/01/Vim.html</link>
+				<guid isPermaLink="true">/-20%20text%20editor/2017/10/01/Vim.html</guid>
+			</item>
+		
+			<item>
 				<title>iOS 2D Game - SpriteKit入门(一)</title>
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
@@ -17735,32 +17761,6 @@ react-native init ProjectName –version 0.44.2&lt;/p&gt;
 				<pubDate>Fri, 14 Oct 2016 00:00:00 +0800</pubDate>
 				<link>/04%20web%20development/2016/10/14/RN(%E5%85%AB)-Debug.html</link>
 				<guid isPermaLink="true">/04%20web%20development/2016/10/14/RN(%E5%85%AB)-Debug.html</guid>
-			</item>
-		
-			<item>
-				<title>RN(七) Performance(1)</title>
-				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;1 Summary&lt;/h2&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;2 参考资料&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Thu, 13 Oct 2016 00:00:00 +0800</pubDate>
-				<link>/04%20web%20development/2016/10/13/RN(%E4%B8%83)-Performance(1).html</link>
-				<guid isPermaLink="true">/04%20web%20development/2016/10/13/RN(%E4%B8%83)-Performance(1).html</guid>
 			</item>
 		
 	</channel>
