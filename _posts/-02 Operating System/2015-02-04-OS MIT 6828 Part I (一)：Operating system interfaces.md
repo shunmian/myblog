@@ -20,9 +20,6 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 
 ## 1 总结 ##
 
-{: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-02-01-Unix Commad Line/mac terminal command summary.png)
-
 
 ## 2 Homework: Shell ##
 
@@ -30,6 +27,320 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 
 
 ## 3 Lab 1:  C, Assembly, Tools, and Bootstrapping##
+
+### 3.0 安裝环境 ###
+
+1. [安装ubuntu 16.04LTS](https://www.jianshu.com/p/e838cd947eff);
+
+2. 安装JOS: `git clone https://pdos.csail.mit.edu/6.828/2017/jos.git`;
+
+3. [安装qemu](https://pdos.csail.mit.edu/6.828/2017/tools.html):
+
+{% highlight shell linenos %}
+git clone http://web.mit.edu/ccutler/www/qemu.git -b 6.828-2.3.0 // 之前需要安装依赖libsdl1.2-dev, libtool-bin, libglib2.0-dev, libz-dev, libpixman-1-dev，gcc-multilib
+cd qemu
+sudo make && sudo make install  // 安装结束
+cd ../JOS && make qemu // 若安装成功，将会看见如下输出
+
+=========================================================
+shumian@shumian-VirtualBox:~/Desktop/6828/jos$ make qemu
+qemu-system-i386 -drive file=obj/kern/kernel.img,index=0,media=disk,format=raw -serial mon:stdio -gdb tcp::26000 -D qemu.log 
+6828 decimal is XXX octal!
+entering test_backtrace 5
+entering test_backtrace 4
+entering test_backtrace 3
+entering test_backtrace 2
+entering test_backtrace 1
+entering test_backtrace 0
+leaving test_backtrace 0
+leaving test_backtrace 1
+leaving test_backtrace 2
+leaving test_backtrace 3
+leaving test_backtrace 4
+leaving test_backtrace 5
+Welcome to the JOS kernel monitor!
+Type 'help' for a list of commands.
+K> 
+============================================================
+{% endhighlight %}
+
+接下来我们要讨论的主题是:
+
+> 计算机启动后，**BIOS(mini OS)**如何通过**Boot Loader(进入保护模式，载入xv6)**最终跳转到**JOS(xv6 OS)**。
+
+### 3.1 Part 1: PC Bootstrap
+
+#### 3.1.1 Exercise 1: Getting Started with x86 assembly
+
+> Exercise 1. Familiarize yourself with the assembly language materials available on the [6.828 reference page](https://pdos.csail.mit.edu/6.828/2017/reference.html). You don't have to read them now, but you'll almost certainly want to refer to some of this material when reading and writing x86 assembly.We do recommend reading the section "The Syntax" in [Brennan's Guide to Inline Assembly](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html). It gives a good (and quite brief) description of the AT&T assembly syntax we'll be using with the GNU assembler in JOS.
+
+
+#### 3.1.2 Exercise 2: Using qemu and gdb to debug
+
+> Exercise 2. Use GDB's si (Step Instruction) command to trace into the ROM BIOS for a few more instructions, and try to guess what it might be doing. You might want to look at [Phil Storrs I/O Ports Description](http://web.archive.org/web/20040404164813/members.iweb.net.au/~pstorr/pcbook/book2/book2.htm), as well as other materials on the [6.828 reference materials page](https://pdos.csail.mit.edu/6.828/2017/reference.html). No need to figure out all the details - just the general idea of what the BIOS is doing first.
+
+打开两个terminal, `cd JOS`。第一个运行`make qemu-gdb`；第二个运行`make gdb`，会看到如下输出:
+
+{% highlight shell linenos %}
+GNU gdb (GDB) 6.8-debian
+Copyright (C) 2008 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i486-linux-gnu".
++ target remote localhost:26000
+The target architecture is assumed to be i8086
+[f000:fff0] 0xffff0:	ljmp   $0xf000,$0xe05b
+0x0000fff0 in ?? ()
++ symbol-file obj/kern/kernel
+(gdb) 
+{% endhighlight %}
+
+`[f000:fff0] 0xffff0:	ljmp   $0xf000,$0xe05b` 这行告诉我们: 当PC启动时，会载入BIOS, 执行BIOS。BIOS的入口地址是[f000:fff0]，即0xf000*16+0xfff0=0xffff0。由于该地址属于BIOS程序的末尾，因此没有太多空间存放代码，因此要长跳转到[f000: e05b]处。
+
+{% highlight shell linenos %}
++------------------+  <- 0xFFFFFFFF (4GB)
+|      32-bit      |
+|  memory mapped   |
+|     devices      |
+|                  |
+/\/\/\/\/\/\/\/\/\/\
+
+/\/\/\/\/\/\/\/\/\/\
+|                  |
+|      Unused      |
+|                  |
++------------------+  <- depends on amount of RAM
+|                  |
+|                  |
+| Extended Memory  |
+|                  |
+|                  |
++------------------+  <- 0x00100000 (1MB)
+|     BIOS ROM     |
++------------------+  <- 0x000F0000 (960KB)
+|  16-bit devices, |
+|  expansion ROMs  |
++------------------+  <- 0x000C0000 (768KB)
+|   VGA Display    |
++------------------+  <- 0x000A0000 (640KB)
+|                  |
+|    Low Memory    |
+|                  |
++------------------+  <- 0x00000000
+
+{% endhighlight %}
+
+当BIOS启动，它设置了一个中断描述符表并初始化多个设备比如VGA显示器。在初始化PCI总线和所有重要的设备之后，它寻找可引导的设备，之后读取 boot loader 并转移控制。
+
+### 3.2 Part 2: The Boot Loader
+
+#### 3.2.1 Exercise 3
+
+> Exercise 3. Take a look at the [lab tools guide](https://pdos.csail.mit.edu/6.828/2017/labguide.html), especially the section on GDB commands. Even if you're familiar with GDB, this includes some esoteric GDB commands that are useful for OS work. Set a breakpoint at address 0x7c00, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in boot/boot.S, using the source code and the disassembly file obj/boot/boot.asm to keep track of where you are. Also use the x/i command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in obj/boot/boot.asm and GDB. Trace into bootmain() in boot/main.c, and then into readsect(). Identify the exact assembly instructions that correspond to each of the statements in readsect(). Trace through the rest of readsect() and back out into bootmain(), and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.
+
+boot loader的入口地址是[0000: 7c00]，因此在此处设置断点后，输入`c`，运行到此处。boot loader的主要工作是
+
+1. 做好16位(实模式)到32位(保护模式)转变的准备，主要设置GDT(Global Descriptor Table, 用于32位模式下的逻辑地址到物理地址的转变，见[Writing a Simple Operating System from Scratch](http://www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf))
+
+2. 进入32位实模式。
+
+3. 载入内核。
+
+我们来过一遍boot.S文件
+首先关中断，清零方向标志位DF(`cld`)。
+{% highlight asm linenos %}
+start:
+  .code16                     # 16位汇编模式
+  cli                         # 关中断
+  cld                         # String operations increment
+{% endhighlight %}
+
+接着清零DS，ES，SS寄存器
+{% highlight asm linenos %}
+ # Set up the important data segment registers (DS, ES, SS).
+  xorw    %ax,%ax             # Segment number zero
+  movw    %ax,%ds             # -> Data Segment
+  movw    %ax,%es             # -> Extra Segment
+  movw    %ax,%ss             # -> Stack Segment
+{% endhighlight %}
+
+开启A20
+{% highlight asm linenos %}
+  # Enable A20:
+  #   For backwards compatibility with the earliest PCs, physical
+  #   address line 20 is tied low, so that addresses higher than
+  #   1MB wrap around to zero by default.  This code undoes this.
+seta20.1:
+  inb     $0x64,%al               # Wait for not busy
+  testb   $0x2,%al
+  jnz     seta20.1
+
+  movb    $0xd1,%al               # 0xd1 -> port 0x64
+  outb    %al,$0x64
+
+seta20.2:
+  inb     $0x64,%al               # Wait for not busy
+  testb   $0x2,%al
+  jnz     seta20.2
+
+  movb    $0xdf,%al               # 0xdf -> port 0x60
+  outb    %al,$0x60
+{% endhighlight %}
+
+
+切换到32位保护模式：设置全局描述符表，修改cr0的值($CR0_PE_ON值为0x1，代表启动保护模式的flag标志)
+{% highlight asm linenos %}
+  # Switch from real to protected mode, using a bootstrap GDT
+  # and segment translation that makes virtual addresses 
+  # identical to their physical addresses, so that the 
+  # effective memory map does not change during the switch.
+  lgdt    gdtdesc
+  movl    %cr0, %eax
+  orl     $CR0_PE_ON, %eax
+  movl    %eax, %cr0
+{% endhighlight %}
+
+`0x7c2d: ljmp $0x8,$0x7c32`跳转到32位代码。
+{% highlight asm linenos %}
+  # Jump to next instruction, but in 32-bit code segment.
+  # Switches processor into 32-bit mode.
+  ljmp    $PROT_MODE_CSEG, $protcseg
+{% endhighlight %}
+
+修改了寄存器的值
+{% highlight asm linenos %}
+protcseg:
+  # Set up the protected-mode data segment registers
+  movw    $PROT_MODE_DSEG, %ax    # Our data segment selector
+  movw    %ax, %ds                # -> DS: Data Segment
+  movw    %ax, %es                # -> ES: Extra Segment
+  movw    %ax, %fs                # -> FS
+  movw    %ax, %gs                # -> GS
+  movw    %ax, %ss                # -> SS: Stack Segment
+{% endhighlight %}
+
+设置栈寄存器，调用bootmain函数。
+{% highlight asm linenos %}
+  # Set up the stack pointer and call into C.
+  movl    $start, %esp
+  call bootmain
+{% endhighlight %}
+
+bootmain逻辑:
+1. readseg读取第一遍，判断是否是valid ELF
+2. 若是，则从ELF header(ELFHDR)重新读取ELF program header里的各个entry(ELFHDR->e_phnum)
+3. 最后执行kernel的入口(ELFHDR->e_entry).
+
+For purposes of 6.828, you can consider an ELF executable to be a header with loading information, followed by several program sections, each of which is a contiguous chunk of code or data intended to be loaded into memory at a specified address. The boot loader does not modify the code or data; it loads it into memory and starts executing it. You can inspect the program headers by typing: `objdump -x obj/kern/kernel`
+
+Questions:
+
+1. At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode? `(line 55) ljmp    $PROT_MODE_CSEG, $protcseg`这行代码执行后，正式进入32位模式。
+
+2. What is the last instruction of the boot loader executed? `7d6b: call   *0x10018 ( ((void (*)(void)) (ELFHDR->e_entry))())`这条代码将会执行kernel的入口，自此，boot loader将控制权转交给kernal. What is the first instruction of the kernel it just loaded? `b 0x7d6b` and `c`, you will go to the first instruction of kernel, and you will see the first instruction is `0x10000c:	movw   $0x1234,0x472`.
+
+3. Where is the first instruction of the kernel? It is in 0x10000c.
+
+4. How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information? It reads twice from the hard drive. The first time, it reads ELFHDR, which contains the meta data of how many sectors to fetch the entire kernel. The second time, according to the information in ELFHDR, it reads all the program segment.
+
+#### 3.2.2 Exercise 4
+
+> Exercise 4. Read about programming with pointers in C. The best reference for the C language is The C Programming Language by Brian Kernighan and Dennis Ritchie (known as 'K&R'). We recommend that students purchase this book (here is an [Amazon Link](http://www.amazon.com/C-Programming-Language-2nd/dp/0131103628/sr=8-1/qid=1157812738/ref=pd_bbs_1/104-1502762-1803102?ie=UTF8&s=books)) or find one of [MIT's 7 copies](http://library.mit.edu/F/AI9Y4SJ2L5ELEE2TAQUAAR44XV5RTTQHE47P9MKP5GQDLR9A8X-10422?func=item-global&doc_library=MIT01&doc_number=000355242&year=&volume=&sub_library=). Read 5.1 (Pointers and Addresses) through 5.5 (Character Pointers and Functions) in K&R. Then download the code for [pointers.c](https://pdos.csail.mit.edu/6.828/2017/labs/lab1/pointers.c), run it, and make sure you understand where all of the printed values come from. In particular, make sure you understand where the pointer addresses in printed lines 1 and 6 come from, how all the values in printed lines 2 through 4 get there, and why the values printed in line 5 are seemingly corrupted. There are other references on pointers in C (e.g., [A tutorial by Ted Jensen](https://pdos.csail.mit.edu/6.828/2017/readings/pointers.pdf) that cites K&R heavily), though not as strongly recommended. Warning: Unless you are already thoroughly versed in C, do not skip or even skim this reading exercise. If you do not really understand pointers in C, you will suffer untold pain and misery in subsequent labs, and then eventually come to understand them the hard way. Trust us; you don't want to find out what "the hard way"
+
+{% highlight asm linenos %}
+void f(void)
+{
+    int a[4];
+    int *b = malloc(16);
+    int *c;
+    int i;
+
+    /*
+     * %p will print the pointer address
+     * a : address of a[0], from stack
+     * b : address of what b points, from heap
+     * c : undefined behavior! pointer to a random place in the memory
+     */
+    printf("1: a = %p, b = %p, c = %p\n", a, b, c);
+
+    /*
+     * c points to a[0]
+     */
+    c = a;
+    for (i = 0; i < 4; i++)
+      a[i] = 100 + i;//a[4] = {100, 101, 102, 103}
+    c[0] = 200;//a[4] = {200, 101, 102, 103}
+    printf("2: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n",
+       a[0], a[1], a[2], a[3]);
+
+     /*
+      * c[1] is equivalent to a[1]
+      * *(c + 2) is equivalent to c[2] and a[2]
+      * 3[c] is equivalent to *(3 + c), also c[3] and a[3]
+      */
+    c[1] = 300;//a[4] = {200, 300, 102, 103}
+    *(c + 2) = 301;//a[4] = {200, 300, 301, 103}
+    3[c] = 302;//a[4] = {200, 300, 301, 302}
+    printf("3: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n",
+       a[0], a[1], a[2], a[3]);
+
+
+    c = c + 1;//now c points to a[1]
+    *c = 400;//a[4] = {200, 400, 301, 302}
+    printf("4: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n",
+       a[0], a[1], a[2], a[3]);
+
+     /*
+      * (char *)c converts c to char*, then plus 1
+      * it will make c to move one byte further from a[0]
+      * Since an int is 4 bytes size, and it is stored as little-endian.
+      * a[1] = 0x190, and is stored as {0x90, 0x01, 0x00, 0x00}
+      * a[2] = 0x12D, and is stored as {0x2D, 0x01, 0x00, 0x00}
+      * c = (int *) ((char *) c + 1)
+      * and c points to {0x01, 0x00, 0x00, 0x2D}
+      * after executing *c = 500, which is 0x1F4 in hex
+      * *c is stored as {0xF4, 0x01, 0x00, 0x00}
+      * a[1] = 128144 and is stored as {0x90, 0xF4, 0x01, 0x00}
+      * a[2] = 128 and is stored as {0x00, 0x01, 0x00, 0x00}
+      */
+    c = (int *) ((char *) c + 1);
+    *c = 500;
+    printf("5: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n",
+       a[0], a[1], a[2], a[3]);
+
+    b = (int *) a + 1;//b = a[1] = (int)&a + 0x4
+    c = (int *) ((char *) a + 1);//c = (int)a + 0x1
+    printf("6: a = %p, b = %p, c = %p\n", a, b, c);
+}
+{% endhighlight %}
+
+#### 3.2.3 Exercise 5
+
+> Exercise 5. Trace through the first few instructions of the boot loader again and identify the first instruction that would "break" or otherwise do the wrong thing if you were to get the boot loader's link address wrong. Then change the link address in boot/Makefrag to something wrong, run make clean, recompile the lab with make, and trace into the boot loader again to see what happens. Don't forget to change the link address back and make clean again afterward!
+
+
+
+#### 3.2.4 Exercise 6
+
+{% highlight asm linenos %}
+{% endhighlight %}
+
+### 3.3 Part 3: The Kernel
+
+#### 3.3.1 Exercise 7
+
+#### 3.3.2 Exercise 8
+
+#### 3.3.2 Exercise 9
+
+#### 3.3.3 Exercise 10
+
+#### 3.3.3 Exercise 11
+
+
+
 
 ## 3 参考资料 ##
 
