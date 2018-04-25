@@ -136,7 +136,7 @@ The target architecture is assumed to be i8086
 
 ### 3.2 Part 2: The Boot Loader
 
-#### 3.2.1 Exercise 3
+#### 3.2.1 Exercise 3: BIOS->Boot Loader->Kernel
 
 > Exercise 3. Take a look at the [lab tools guide](https://pdos.csail.mit.edu/6.828/2017/labguide.html), especially the section on GDB commands. Even if you're familiar with GDB, this includes some esoteric GDB commands that are useful for OS work. Set a breakpoint at address 0x7c00, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in boot/boot.S, using the source code and the disassembly file obj/boot/boot.asm to keep track of where you are. Also use the x/i command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in obj/boot/boot.asm and GDB. Trace into bootmain() in boot/main.c, and then into readsect(). Identify the exact assembly instructions that correspond to each of the statements in readsect(). Trace through the rest of readsect() and back out into bootmain(), and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.
 
@@ -245,7 +245,7 @@ Questions:
 
 4. How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information? It reads twice from the hard drive. The first time, it reads ELFHDR, which contains the meta data of how many sectors to fetch the entire kernel. The second time, according to the information in ELFHDR, it reads all the program segment.
 
-#### 3.2.2 Exercise 4
+#### 3.2.2 Exercise 4: C Pointer
 
 > Exercise 4. Read about programming with pointers in C. The best reference for the C language is The C Programming Language by Brian Kernighan and Dennis Ritchie (known as 'K&R'). We recommend that students purchase this book (here is an [Amazon Link](http://www.amazon.com/C-Programming-Language-2nd/dp/0131103628/sr=8-1/qid=1157812738/ref=pd_bbs_1/104-1502762-1803102?ie=UTF8&s=books)) or find one of [MIT's 7 copies](http://library.mit.edu/F/AI9Y4SJ2L5ELEE2TAQUAAR44XV5RTTQHE47P9MKP5GQDLR9A8X-10422?func=item-global&doc_library=MIT01&doc_number=000355242&year=&volume=&sub_library=). Read 5.1 (Pointers and Addresses) through 5.5 (Character Pointers and Functions) in K&R. Then download the code for [pointers.c](https://pdos.csail.mit.edu/6.828/2017/labs/lab1/pointers.c), run it, and make sure you understand where all of the printed values come from. In particular, make sure you understand where the pointer addresses in printed lines 1 and 6 come from, how all the values in printed lines 2 through 4 get there, and why the values printed in line 5 are seemingly corrupted. There are other references on pointers in C (e.g., [A tutorial by Ted Jensen](https://pdos.csail.mit.edu/6.828/2017/readings/pointers.pdf) that cites K&R heavily), though not as strongly recommended. Warning: Unless you are already thoroughly versed in C, do not skip or even skim this reading exercise. If you do not really understand pointers in C, you will suffer untold pain and misery in subsequent labs, and then eventually come to understand them the hard way. Trust us; you don't want to find out what "the hard way"
 
@@ -316,15 +316,101 @@ void f(void)
 }
 {% endhighlight %}
 
-#### 3.2.3 Exercise 5
+#### 3.2.3 Exercise 5: VML vs LMA for Boot Loader
+
+> VML(Virtual/Link Memeory Address) vs LMA (Link Memory Address)
 
 > Exercise 5. Trace through the first few instructions of the boot loader again and identify the first instruction that would "break" or otherwise do the wrong thing if you were to get the boot loader's link address wrong. Then change the link address in boot/Makefrag to something wrong, run make clean, recompile the lab with make, and trace into the boot loader again to see what happens. Don't forget to change the link address back and make clean again afterward!
 
-
-
-#### 3.2.4 Exercise 6
+In boot/Makefrag, you can see
 
 {% highlight asm linenos %}
+$(OBJDIR)/boot/boot: $(BOOT_OBJS)
+    @echo + ld boot/boot
+    $(V)$(LD) $(LDFLAGS) -N -e start -Ttext 0x7C00 -o $@.out $^
+    $(V)$(OBJDUMP) -S $@.out >$@.asm
+    $(V)$(OBJCOPY) -S -O binary -j .text $@.out $@
+    $(V)perl boot/sign.pl $(OBJDIR)/boot/boot
+{% endhighlight %}
+
+Change 0x7C00 to 0x7A00, `make clean` and `make`
+
+
+{% highlight asm linenos %}
+[   0:7c00] => 0x7c00:  cli    
+[   0:7c01] => 0x7c01:  cld    
+[   0:7c02] => 0x7c02:  xor    ax,ax
+[   0:7c04] => 0x7c04:  mov    ds,ax
+[   0:7c06] => 0x7c06:  mov    es,ax
+[   0:7c08] => 0x7c08:  mov    ss,ax
+[   0:7c0a] => 0x7c0a:  in     al,0x64
+[   0:7c0c] => 0x7c0c:  test   al,0x2
+[   0:7c0e] => 0x7c0e:  jne    0x7c0a
+[   0:7c10] => 0x7c10:  mov    al,0xd1
+[   0:7c12] => 0x7c12:  out    0x64,al
+[   0:7c14] => 0x7c14:  in     al,0x64
+[   0:7c16] => 0x7c16:  test   al,0x2
+[   0:7c18] => 0x7c18:  jne    0x7c14
+[   0:7c1a] => 0x7c1a:  mov    al,0xdf
+[   0:7c1c] => 0x7c1c:  out    0x60,al
+[   0:7c1e] => 0x7c1e:  lgdtw  ds:0x7e64
+[   0:7c23] => 0x7c23:  mov    eax,cr0
+[   0:7c26] => 0x7c26:  or     eax,0x1
+[   0:7c2a] => 0x7c2a:  mov    cr0,eax
+[   0:7c2d] => 0x7c2d:  jmp    0x8:0x7e32 ; this should lead the program to the protected mode
+[f000:e05b]    0xfe05b: cmp    DWORD PTR cs:0x6574,0x0
+[f000:e062]    0xfe062: jne    0xfd2b6
+{% endhighlight %}
+
+The first instruction that goes wrong is `lgdtw  ds:0x7e64`.
+
+When VMA = 0x7C00
+{% highlight asm linenos %}
+[   0:7c1e] => 0x7c1e:  lgdtw  ds:0x7c64
+0x00007c1e in ?? ()
+(gdb) x/8b 0x07c64
+0x7c64: 0x17    0x00    0x4c    0x7c    0x00    0x00    0x55    0xba
+{% endhighlight %}
+
+when VMA = 0x7E00
+{% highlight asm linenos %}
+[   0:7c1e] => 0x7c1e:  lgdtw  ds:0x7e64
+0x00007c1e in ?? ()
+(gdb) x/8b 0x7e64
+0x7e64: 0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+{% endhighlight %}
+
+#### 3.2.4 Exercise 6: VML vs LMA for Kernel
+
+> Exercise 6. We can examine memory using GDB's x command. The [GDB manual](https://sourceware.org/gdb/current/onlinedocs/gdb/Memory.html) has full details, but for now, it is enough to know that the command x/Nx ADDR prints N words of memory at ADDR. (Note that both 'x's in the command are lowercase.) Warning: The size of a word is not a universal standard. In GNU assembly, a word is two bytes (the 'w' in xorw, which stands for word, means 2 bytes). Reset the machine (exit QEMU/GDB and start them again). Examine the 8 words of memory at 0x00100000 at the point the BIOS enters the boot loader, and then again at the point the boot loader enters the kernel. Why are they different? What is there at the second breakpoint? (You do not really need to use QEMU to answer this question. Just think.)
+
+When BIOS enters the boot loader, `b 0x7c00`, `c`
+{% highlight asm linenos %}
+(gdb) x/8x 0x100000
+0x100000:	0x00000000	0x00000000	0x00000000	0x00000000
+0x100010:	0x00000000	0x00000000	0x00000000	0x00000000
+{% endhighlight %}
+
+When boot loader loads kernel, `b 0x100000`, `c`
+{% highlight asm linenos %}
+(gdb) x/8x 0x100000
+0x100000:	0x1badb002	0x00000000	0xe4524ffe	0x7205c766
+0x100010:	0x34000004	0x0000b812	0x220f0011	0xc0200fd8
+{% endhighlight %}
+At the point the boot loader enters the kernel, the content at the address 0x00100000 is the .text section in the kernel. The bootloader reads it using readseg after having read the header of the kernel.
+
+{% highlight c linenos %}
+// load each program segment (ignores ph flags)
+ph = (struct Proghdr *) ((uint8_t *) ELFHDR + ELFHDR->e_phoff);
+eph = ph + ELFHDR->e_phnum;
+for (; ph < eph; ph++)
+  // p_pa is the load address of this segment (as well
+  // as the physical address)
+  /*
+   * p_pa = 0x100000 p_memsz = 0x72ca p_offset = 0x1000
+   * which means to read 0x72ca bytes(Size in bytes of the segment in memory) to 0x100000 from No.((offset / SECTSIZE) + 1) sector.
+   */
+  readseg(ph->p_pa, ph->p_memsz, ph->p_offset);
 {% endhighlight %}
 
 ### 3.3 Part 3: The Kernel
