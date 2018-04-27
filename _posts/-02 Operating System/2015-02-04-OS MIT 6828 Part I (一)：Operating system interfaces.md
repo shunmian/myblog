@@ -318,7 +318,25 @@ void f(void)
 
 #### 3.2.3 Exercise 5: VML vs LMA for Boot Loader
 
-> VML(Virtual/Link Memeory Address) vs LMA (Link Memory Address)
+> VML(Virtual/Link Memeory Address) vs LMA (Load Memory Address)
+
+For Boot Loader, the VMA and LMA are the same: 0x7C00.
+`objdump -h obj/boot/boot.out`
+{% highlight c linenos %}
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000186  00007c00  00007c00  00000074  2**2
+                  CONTENTS, ALLOC, LOAD, CODE
+  1 .eh_frame     000000a8  00007d88  00007d88  000001fc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .stab         00000720  00000000  00000000  000002a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      0000088f  00000000  00000000  000009c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      00000034  00000000  00000000  00001253  2**0
+                  CONTENTS, READONLY
+
+{% endhighlight %}
 
 > Exercise 5. Trace through the first few instructions of the boot loader again and identify the first instruction that would "break" or otherwise do the wrong thing if you were to get the boot loader's link address wrong. Then change the link address in boot/Makefrag to something wrong, run make clean, recompile the lab with make, and trace into the boot loader again to see what happens. Don't forget to change the link address back and make clean again afterward!
 
@@ -382,6 +400,30 @@ when VMA = 0x7E00
 
 #### 3.2.4 Exercise 6: VML vs LMA for Kernel
 
+For Kernel, VMA is 0xf0100000 and LMA is 0x00100000.
+
+`objdump -x obj/kern/kernel`
+
+{% highlight c linenos %}
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001871  f0100000  00100000  00001000  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .rodata       00000714  f0101880  00101880  00002880  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .stab         000038d1  f0101f94  00101f94  00002f94  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .stabstr      000018bb  f0105865  00105865  00006865  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .data         0000a300  f0108000  00108000  00009000  2**12
+                  CONTENTS, ALLOC, LOAD, DATA
+  5 .bss          00000644  f0112300  00112300  00013300  2**5
+                  ALLOC
+  6 .comment      00000034  00000000  00000000  00013300  2**0
+                  CONTENTS, READONLY
+
+{% endhighlight %}
+
 > Exercise 6. We can examine memory using GDB's x command. The [GDB manual](https://sourceware.org/gdb/current/onlinedocs/gdb/Memory.html) has full details, but for now, it is enough to know that the command x/Nx ADDR prints N words of memory at ADDR. (Note that both 'x's in the command are lowercase.) Warning: The size of a word is not a universal standard. In GNU assembly, a word is two bytes (the 'w' in xorw, which stands for word, means 2 bytes). Reset the machine (exit QEMU/GDB and start them again). Examine the 8 words of memory at 0x00100000 at the point the BIOS enters the boot loader, and then again at the point the boot loader enters the kernel. Why are they different? What is there at the second breakpoint? (You do not really need to use QEMU to answer this question. Just think.)
 
 When BIOS enters the boot loader, `b 0x7c00`, `c`
@@ -415,18 +457,413 @@ for (; ph < eph; ph++)
 
 ### 3.3 Part 3: The Kernel
 
-#### 3.3.1 Exercise 7
+{% highlight c linenos %}
 
-#### 3.3.2 Exercise 8
+{% endhighlight %}
 
-#### 3.3.2 Exercise 9
+#### 3.3.1 Exercise 7: virtual memory
 
-#### 3.3.3 Exercise 10
+>Exercise 7. Use QEMU and GDB to trace into the JOS kernel and stop at the movl %eax, %cr0. Examine memory at 0x00100000 and at 0xf0100000. Now, single step over that instruction using the stepi GDB command. Again, examine memory at 0x00100000 and at 0xf0100000. Make sure you understand what just happened. What is the first instruction after the new mapping is established that would fail to work properly if the mapping weren't in place? Comment out the movl %eax, %cr0 in kern/entry.S, trace into it, and see if you were right.
 
-#### 3.3.3 Exercise 11
+Before `0x100025 movl %eax, %cr0`
+
+{% highlight shell linenos %}
+(gdb) x/128b 0x100000
+0x100000:	0x02	0xb0	0xad	0x1b	0x00	0x00	0x00	0x00
+0x100008:	0xfe	0x4f	0x52	0xe4	0x66	0xc7	0x05	0x72
+0x100010:	0x04	0x00	0x00	0x34	0x12	0xb8	0x00	0x00
+0x100018:	0x11	0x00	0x0f	0x22	0xd8	0x0f	0x20	0xc0
+0x100020:	0x0d	0x01	0x00	0x01	0x80	0x0f	0x22	0xc0
+0x100028:	0xb8	0x2f	0x00	0x10	0xf0	0xff	0xe0	0xbd
+0x100030:	0x00	0x00	0x00	0x00	0xbc	0x00	0x00	0x11
+0x100038:	0xf0	0xe8	0x56	0x00	0x00	0x00	0xeb	0xfe
+0x100040:	0x55	0x89	0xe5	0x53	0x83	0xec	0x0c	0x8b
+0x100048:	0x5d	0x08	0x53	0x68	0x80	0x18	0x10	0xf0
+0x100050:	0xe8	0xa3	0x08	0x00	0x00	0x83	0xc4	0x10
+0x100058:	0x85	0xdb	0x7e	0x11	0x83	0xec	0x0c	0x8d
+0x100060:	0x43	0xff	0x50	0xe8	0xd8	0xff	0xff	0xff
+0x100068:	0x83	0xc4	0x10	0xeb	0x11	0x83	0xec	0x04
+0x100070:	0x6a	0x00	0x6a	0x00	0x6a	0x00	0xe8	0xf3
+0x100078:	0x06	0x00	0x00	0x83	0xc4	0x10	0x83	0xec
+(gdb) x/128b 0xf0100000
+0xf0100000 <_start+4026531828>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100008 <_start+4026531836>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100010 <entry+4>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100018 <entry+12>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100020 <entry+20>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100028 <entry+28>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100030 <relocated+1>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100038 <relocated+9>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100040 <test_backtrace>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100048 <test_backtrace+8>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100050 <test_backtrace+16>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100058 <test_backtrace+24>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100060 <test_backtrace+32>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100068 <test_backtrace+40>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100070 <test_backtrace+48>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+0xf0100078 <test_backtrace+56>:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00
+{% endhighlight %}
+
+After `0x100025 movl %eax, %cr0`
+{% highlight c linenos %}
+(gdb) x/128b 0xf0100000
+0xf0100000 <_start+4026531828>:	0x02	0xb0	0xad	0x1b	0x00	0x00	0x00	0x00
+0xf0100008 <_start+4026531836>:	0xfe	0x4f	0x52	0xe4	0x66	0xc7	0x05	0x72
+0xf0100010 <entry+4>:	0x04	0x00	0x00	0x34	0x12	0xb8	0x00	0x00
+0xf0100018 <entry+12>:	0x11	0x00	0x0f	0x22	0xd8	0x0f	0x20	0xc0
+0xf0100020 <entry+20>:	0x0d	0x01	0x00	0x01	0x80	0x0f	0x22	0xc0
+0xf0100028 <entry+28>:	0xb8	0x2f	0x00	0x10	0xf0	0xff	0xe0	0xbd
+0xf0100030 <relocated+1>:	0x00	0x00	0x00	0x00	0xbc	0x00	0x00	0x11
+0xf0100038 <relocated+9>:	0xf0	0xe8	0x56	0x00	0x00	0x00	0xeb	0xfe
+0xf0100040 <test_backtrace>:	0x55	0x89	0xe5	0x53	0x83	0xec	0x0c	0x8b
+0xf0100048 <test_backtrace+8>:	0x5d	0x08	0x53	0x68	0x80	0x18	0x10	0xf0
+0xf0100050 <test_backtrace+16>:	0xe8	0xa3	0x08	0x00	0x00	0x83	0xc4	0x10
+0xf0100058 <test_backtrace+24>:	0x85	0xdb	0x7e	0x11	0x83	0xec	0x0c	0x8d
+0xf0100060 <test_backtrace+32>:	0x43	0xff	0x50	0xe8	0xd8	0xff	0xff	0xff
+0xf0100068 <test_backtrace+40>:	0x83	0xc4	0x10	0xeb	0x11	0x83	0xec	0x04
+0xf0100070 <test_backtrace+48>:	0x6a	0x00	0x6a	0x00	0x6a	0x00	0xe8	0xf3
+0xf0100078 <test_backtrace+56>:	0x06	0x00	0x00	0x83	0xc4	0x10	0x83	0xec
+(gdb) x/128b 0xf0100000
+0xf0100000 <_start+4026531828>:	0x02	0xb0	0xad	0x1b	0x00	0x00	0x00	0x00
+0xf0100008 <_start+4026531836>:	0xfe	0x4f	0x52	0xe4	0x66	0xc7	0x05	0x72
+0xf0100010 <entry+4>:	0x04	0x00	0x00	0x34	0x12	0xb8	0x00	0x00
+0xf0100018 <entry+12>:	0x11	0x00	0x0f	0x22	0xd8	0x0f	0x20	0xc0
+0xf0100020 <entry+20>:	0x0d	0x01	0x00	0x01	0x80	0x0f	0x22	0xc0
+0xf0100028 <entry+28>:	0xb8	0x2f	0x00	0x10	0xf0	0xff	0xe0	0xbd
+0xf0100030 <relocated+1>:	0x00	0x00	0x00	0x00	0xbc	0x00	0x00	0x11
+0xf0100038 <relocated+9>:	0xf0	0xe8	0x56	0x00	0x00	0x00	0xeb	0xfe
+0xf0100040 <test_backtrace>:	0x55	0x89	0xe5	0x53	0x83	0xec	0x0c	0x8b
+0xf0100048 <test_backtrace+8>:	0x5d	0x08	0x53	0x68	0x80	0x18	0x10	0xf0
+0xf0100050 <test_backtrace+16>:	0xe8	0xa3	0x08	0x00	0x00	0x83	0xc4	0x10
+0xf0100058 <test_backtrace+24>:	0x85	0xdb	0x7e	0x11	0x83	0xec	0x0c	0x8d
+0xf0100060 <test_backtrace+32>:	0x43	0xff	0x50	0xe8	0xd8	0xff	0xff	0xff
+0xf0100068 <test_backtrace+40>:	0x83	0xc4	0x10	0xeb	0x11	0x83	0xec	0x04
+0xf0100070 <test_backtrace+48>:	0x6a	0x00	0x6a	0x00	0x6a	0x00	0xe8	0xf3
+0xf0100078 <test_backtrace+56>:	0x06	0x00	0x00	0x83	0xc4	0x10	0x83	0xec
+{% endhighlight %}
+
+So what `0x100025 movl %eax, %cr0` did is just copy memory start from 0x100000 to 0xf0100000.
+
+If the mapping weren't in place, then `jmp *%eax` will crash the kernel, because when this instruction is executed, the eip has changed to 0xf010002C. And that address's instruction is empty, so it crash the kernel.
+
+#### 3.3.2 Exercise 8: understand printf
+
+> We have omitted a small fragment of code - the code necessary to print octal numbers using patterns of the form "%o". Find and fill in this code fragment.
+
+1. Explain the interface between printf.c and console.c. Specifically, what function does console.c export? How is this function used by printf.c?
+
+console.c exports three **'High'-levvel console I/O** function: `void cputchar(int c)`, `int getchar(void)`, `intiscons(int fdnum)`.
+
+In print.c, `static void putch(int ch, int *cnt)` uses `cputchar` to output characters to the console.
+
+
+2. Explain the following from console.c:
+
+First, let's find the definition of CRT stuff in console.h
+{% highlight c linenos %}
+#define CRT_ROWS    25
+#define CRT_COLS    80
+#define CRT_SIZE    (CRT_ROWS * CRT_COLS)
+{% endhighlight %}
+
+We should be aware that the CRT refers to the console, so the macro above means that the console has 25 rows and 80 columns, and can display 2000 characters in total.
+
+So now we can see what `if(crt_pos>=CRT_SIZE)` means, it means if the current position of console is greater than the size of console. In old console, it doesn't have scrollbar like nowadays, so the content of console must move upward so that a new line can be created. 
+
+{% highlight c linenos %}
+if (crt_pos >= CRT_SIZE) {
+    int i;
+    memmove(crt_buf, crt_buf + CRT_COLS, (CRT_SIZE - CRT_COLS) * siz  (uint16_t)); // move the whole content one line above, so that a new line is created on the console
+    for (i = CRT_SIZE - CRT_COLS; i < CRT_SIZE; i++)  // fill the new line with whitespace
+        crt_buf[i] = 0x0700 | ' ';
+    crt_pos -= CRT_COLS;  // relocate the position
+}
+{% endhighlight %}
+
+3. For the following questions you might wish to consult the notes for Lecture 2. These notes cover GCC's calling convention on the x86. Trace the execution of the following code step-by-step:
+{% highlight c linenos %}
+int x = 1, y = 3, z = 4;
+cprintf("x %d, y %x, z %d\n", x, y, z);
+{% endhighlight %}
+
+In the call to cprintf(), to what does fmt point? To what does ap point? See [How are variable arguments implemented in gcc](http://stackoverflow.com/questions/12371450/how-are-variable-arguments-implemented-in-gcc); `fmt` points to address of `"x %d, y %d, z %d\n"`; `ap`(arguments pointer) points to address of x.
+
+List (in order of execution) each call to cons_putc, va_arg, and vcprintf. For cons_putc, list its argument as well. For va_arg, list what ap points to before and after the call. For vcprintf list the values of its two arguments.
+
+{% highlight c linenos %}
+I will list most function which will be called during the execution of the code above in sequence, and replace the parameter with the actual value
+--> means the sequence of execution
+=> means equivalent
+int cprintf("x %d, y %x, z %d", x, y, z)
+int vcprintf("x %d, y %x, z %d", {x, y, z})
+void vprintfmt(putch(), 0, "x %d, y %x, z %d", {x, y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == 'x'
+static void putch('x', 0)
+void cputchar('x')
+static void cons_putc('x')
+serial_putc('x')
+lpt_putc('x')
+cga_putc('x')
+void vprintfmt(putch(), 1, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ' '
+static void putch(' ', 1)
+...
+void vprintfmt(putch(), 2, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == '%'
+case 'd'
+static long long getint({x, y, z}, 0) --> return va_arg(*ap, int) => return x => return 1
+goto number --> printnum(putch(), 2, 1, 10, -1, ' ') --> putch('1', 2)
+void vprintfmt(putch(), 3, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ','
+static void putch(',', 3)
+...
+void vprintfmt(putch(), 4, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ' '
+static void putch(' ', 4)
+...
+void vprintfmt(putch(), 5, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == 'y'
+static void putch('y', 5)
+...
+void vprintfmt(putch(), 6, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ' '
+static void putch(' ', 6)
+...
+void vprintfmt(putch(), 7, "x %d, y %x, z %d", {y, z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == '%'
+case 'x'
+static unsigned long long getuint({y, z}, 0) --> return va_arg(*ap, int) => return y => return 3
+goto number --> printnum(putch(), 7, 3, 16, -1, ' '); --> putch('3', 7)
+void vprintfmt(putch(), 8, "x %d, y %x, z %d", {z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ','
+static void putch(',', 8)
+...
+void vprintfmt(putch(), 9, "x %d, y %x, z %d", {z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ' '
+static void putch(' ', 9)
+...
+void vprintfmt(putch(), 10, "x %d, y %x, z %d", {z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == 'z'
+static void putch('z', 10)
+...
+void vprintfmt(putch(), 11, "x %d, y %x, z %d", {z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == ' '
+static void putch(' ', 11)
+...
+void vprintfmt(putch(), 12, "x %d, y %x, z %d", {z}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == '%'
+case 'd'
+static long long getint({z}, 0) --> return va_arg(*ap, int) => return z => return 4
+goto number --> printnum(putch(), 12, 4, 10, -1, ' ') --> putch('4', 12)
+void vprintfmt(putch(), 13, "x %d, y %x, z %d", {}) --> while ((ch = *(unsigned char *) fmt++) != '%') --> ch == '\n'
+static void putch('\n', 13)
+void cputchar('\n')
+void cons_putc('\n')
+static void cga_putc('\n') -- > case '\\n': crt_pos += CRT_COLS;
+Finally, "x %d, y %x, z %d\\n", x, y, z is printed as x 1, y 3, z 4, cprintf return 14 because there are 14 byte printed to the console(including '\n').
+{% endhighlight %}
+
+4. Run the following code.
+    unsigned int i = 0x00646c72;
+    cprintf("H%x Wo%s", 57616, &i);
+
+What is the output? Explain how this output is arrived at in the step-by-step manner of the previous exercise. Here's an [ASCII table](https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg) that maps bytes to characters.
+The output depends on that fact that the x86 is little-endian. If the x86 were instead big-endian what would you set i to in order to yield the same output? Would you need to change 57616 to a different value?
+
+Here's a [description of little- and big-endian](http://www.webopedia.com/TERM/b/big_endian.html) and [a more whimsical description](http://www.networksorcery.com/enp/ien/ien137.txt).
+
+First, we can add these code above to kern/monitor.c
+
+{% highlight c linenos %}
+void
+monitor(struct Trapframe *tf)
+{
+   char *buf;
+
+   cprintf("Welcome to the JOS kernel monitor!\n");
+   cprintf("Type 'help' for a list of commands.\n");
+
+   unsigned int i = 0x00646c72;
+   cprintf("H%x Wo%s", 57616, &i);
+   cprintf("\n");  
+
+   while (1) {
+      buf = readline("K> ");
+      if (buf != NULL)
+          if (runcmd(buf, tf) < 0)
+              break;
+   }
+}
+
+{% endhighlight %}
+
+and we can see the result of execution:
+
+{: .img_middle_lg}
+![cprintf](/assets/images/posts/-02_Operating System/6828/2015-02-04-OS MIT 6828 Part I：Operating system interfaces/cprintf.png)
+
+`He110 World` is easy to expalin: `57616` decimal is `e110` hex and for little-endian machine `0x00646c72` is `r`,`l`,`d`,'\0' in ASCII. 
+
+5. In the following code, what is going to be printed after 'y='? (note: the answer is not a specific value.) Why does this happen? `cprintf("x=%d y=%d", 3);`
+
+It will output a "random" value next to the address of value 3, which is `ap + 4`, `ap` is the address of value 3.
+
+6. Let's say that GCC changed its calling convention so that it pushed arguments on the stack in declaration order, so that the last argument is pushed last. How would you have to change cprintf or its interface so that it would still be possible to pass it a variable number of arguments?
+
+we need to make `ap` move upside down, so change `cprintf("%d%x%d",a,b,c)` to `cprintf('c,b,a,"%d%x%d"')`
+
+### Part 4: The Stack
+
+最后这部分，要研究C语言是如何在x86框架上使用堆栈的。需要查看指令寄存器(IP)的值的变化。
+
+#### 3.4.1 Exercise 9
+
+> Exercise 9. Determine where the kernel initializes its stack, and exactly where in memory its stack is located. How does the kernel reserve space for its stack? And at which "end" of this reserved area is the stack pointer initialized to point to?
+
+在`kern/entry.S`中，初始化`esp`
+{% highlight c linenos %}
+# Clear the frame pointer register (EBP)
+# so that once we get into debugging C code,
+# stack backtraces will be terminated properly.
+movl    $0x0,%ebp            # nuke frame pointer
+
+# Set the stack pointer
+movl    $(bootstacktop),%esp
+...
+bootstack:
+  .space  KSTKSIZE
+  .global bootstacktop
+bootstacktop:
+
+{% endhighlight %}
+
+`b *0x10000C`, `c`. si 一步一步下面地址：
+
+{% highlight c linenos %}
+0x10002d: jmp *%eax // eip 变为0xF010002F
+0xF010002F <relocated>:   move   $0x0, %ebp
+0xf0100034 <relocated+5>:	mov    $0xf0110000,%esp // esp变为0xf0110000
+{% endhighlight %}
+
+`KSTKSIZE`定义在`inc/memlayout.h`
+{% highlight c linenos %}
+// Kernel stack.
+#define KSTACKTOP    KERNBASE
+#define KSTKSIZE    (8*PGSIZE)           // size of a kernel stack
+#define KSTKGAP        (8*PGSIZE)           // size of a kernel stack guard
+{% endhighlight %}
+`PGSIZE`定义在`inc/mmu.h`，大小为4096，所以KSTKSIZE为32KB.
+
+#### 3.4.2 Exercise 10: Undertand Backtrace
+
+> To become familiar with the C calling conventions on the x86, find the address of the test_backtrace function in obj/kern/kernel.asm, set a breakpoint there, and examine what happens each time it gets called after the kernel starts. How many 32-bit words does each recursive nesting level of test_backtrace push on the stack, and what are those words? Note that, for this exercise to work properly, you should be using the patched version of QEMU available on the [tools page](https://pdos.csail.mit.edu/6.828/2017/tools.html) or on Athena. Otherwise, you'll have to manually translate all breakpoint and memory addresses to linear addresses.
+
+
+test_backtrace是个递归调用，关键要了解**栈段其实是栈帧的链表,栈帧可以看做1个结构体，ebp是当前栈帧结构体的指针，通过栈帧结构体的第一个地址可以获得父栈帧结构体的引用。
+{% highlight c linenos %}
+
+{% endhighlight %}
 
 
 
+#### 3.4.3 Exercise 11
+
+> Exercise 11. Implement the backtrace function as specified above. Use the same format as in the example, since otherwise the grading script will be confused. When you think you have it working right, run make grade to see if its output conforms to what our grading script expects, and fix it if it doesn't. After you have handed in your Lab 1 code, you are welcome to change the output format of the backtrace function any way you like. If you use read_ebp(), note that GCC may generate "optimized" code that calls read_ebp() before mon_backtrace()'s function prologue, which results in an incomplete stack trace (the stack frame of the most recent function call is missing). While we have tried to disable optimizations that cause this reordering, you may want to examine the assembly of mon_backtrace() and make sure the call to read_ebp() is happening after the function prologue.
+在`kern/monitor.c`里
+{% highlight c linenos %}
+int
+mon_backtrace(int argc, char **argv, struct Trapframe *tf)
+{
+    // Your code here.
+    int j;
+    uint32_t ebp = read_ebp();
+    uint32_t eip = *((uint32_t *)ebp+1);
+    cprintf("Stack backtrace:\n");
+    while ((int)ebp != 0)
+    {
+        cprintf("  ebp:0x%08x eip:0x%08x args:", ebp, eip);
+        uint32_t *args = (uint32_t *)ebp + 2;
+        for (j = 0; j < 5; j ++) {
+            cprintf("%08x ", args[j]);
+        }
+        cprintf("\n");
+        eip = ((uint32_t *)ebp)[1];
+        ebp = ((uint32_t *)ebp)[0];
+    }
+    return 0;
+}
+{% endhighlight %}
+
+#### 3.4.3 Exercise 11
+
+
+{% highlight c linenos %}
+Exercise 12. Modify your stack backtrace function to display, for each eip, the function name, source file name, and line number corresponding to that eip.
+
+In debuginfo_eip, where do __STAB_* come from? This question has a long answer; to help you to discover the answer, here are some things you might want to do:
+
+look in the file kern/kernel.ld for __STAB_*
+run objdump -h obj/kern/kernel
+run objdump -G obj/kern/kernel
+run gcc -pipe -nostdinc -O2 -fno-builtin -I. -MD -Wall -Wno-format -DJOS_KERNEL -gstabs -c -S kern/init.c, and look at init.s.
+see if the bootloader loads the symbol table in memory as part of loading the kernel binary
+Complete the implementation of debuginfo_eip by inserting the call to stab_binsearch to find the line number for an address.
+
+Add a backtrace command to the kernel monitor, and extend your implementation of mon_backtrace to call debuginfo_eip and print a line for each stack frame of the form:
+
+K> backtrace
+Stack backtrace:
+  ebp f010ff78  eip f01008ae  args 00000001 f010ff8c 00000000 f0110580 00000000
+         kern/monitor.c:143: monitor+106
+  ebp f010ffd8  eip f0100193  args 00000000 00001aac 00000660 00000000 00000000
+         kern/init.c:49: i386_init+59
+  ebp f010fff8  eip f010003d  args 00000000 00000000 0000ffff 10cf9a00 0000ffff
+         kern/entry.S:70: <unknown>+0
+K> 
+Each line gives the file name and line within that file of the stack frame's eip, followed by the name of the function and the offset of the eip from the first instruction of the function (e.g., monitor+106 means the return eip is 106 bytes past the beginning of monitor).
+
+Be sure to print the file and function names on a separate line, to avoid confusing the grading script.
+
+Tip: printf format strings provide an easy, albeit obscure, way to print non-null-terminated strings like those in STABS tables.	printf("%.*s", length, string) prints at most length characters of string. Take a look at the printf man page to find out why this works.
+
+You may find that some functions are missing from the backtrace. For example, you will probably see a call to monitor() but not to runcmd(). This is because the compiler in-lines some function calls. Other optimizations may cause you to see unexpected line numbers. If you get rid of the -O2 from GNUMakefile, the backtraces may make more sense (but your kernel will run more slowly).
+{% endhighlight %}
+
+在`kern/kdebug.c`里
+{% highlight c linenos %}
+// Search within [lline, rline] for the line number stab.
+    // If found, set info->eip_line to the right line number.
+    // If not found, return -1.
+    //
+    // Hint:
+    //    There's a particular stabs type used for line numbers.
+    //    Look at the STABS documentation and <inc/stab.h> to find
+    //    which one.
+    // Your code here.
+    stab_binsearch(stabs, &lline, &rline, N_SLINE, addr);
+    if(lline <= rline){
+        info->eip_line = stabs[rline].n_desc;
+    }
+    else
+        info->eip_line = -1;
+{% endhighlight %}
+
+修改`kern/monitor.c`
+{% highlight c linenos %}
+int
+mon_backtrace(int argc, char **argv, struct Trapframe *tf)
+{
+        // Your code here.
+        int j;
+        uint32_t ebp = read_ebp();
+        uint32_t eip = *(uint32_t *)ebp+1;
+        cprintf("Stack backtrace:\n");
+        while((int)ebp != 0)
+        {
+                cprintf("  ebp 0x%08x  eip 0x%08x  args ", ebp, eip);
+                uint32_t *args = (uint32_t *)ebp+2;
+                for(j=0;j<5;j++){
+                        cprintf("%08x ",args[j]);
+                }
+                struct Eipdebuginfo info; 
+                //= malloc(sizeof(struct Eipdebuginfo));
+                debuginfo_eip(eip, &info);
+                cprintf("\n    ");
+                cprintf("%s:%d: %s",info.eip_file,info.eip_line,info.eip_fn_name);
+                cprintf("\n");
+                eip = ((uint32_t *)ebp)[1];
+                ebp = ((uint32_t *)ebp)[0];
+        }
+        return 0;
+}
+{% endhighlight %}
 
 ## 3 参考资料 ##
 
