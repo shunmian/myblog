@@ -1,11 +1,11 @@
 ---
 layout: post
-title: MIT 6828 Part I (一)：Operating system interfaces
+title: MIT 6828 Lab 1：C, Assembly, Tools, and Bootstrapping
 categories: [-02 Operating System]
 tags: [Operating System, Unix]
-number: [-10.1]
+number: [-02.1]
 fullview: false
-shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
+shortinfo: 本文是MIT 6828操作系统课程lab1的笔记。
 
 ---
 目录
@@ -891,16 +891,142 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 
 ### 3.2 Shell 
 
+题目要求见[Shell](https://pdos.csail.mit.edu/6.828/2014/homework/xv6-shell.html)。
+完成1个shell(主要框架已经提供)，满足下面三个要求:
 
+1. 执行command;
+2. redirect with `>` and `<`;
+3. pipe with `|`;
+
+关键代码如下。
 {% highlight c linenos %}
+// Execute cmd.  Never returns.
+void
+runcmd(struct cmd *cmd)
+{
+  int p[2], r;
+  struct execcmd *ecmd;
+  struct pipecmd *pcmd;
+  struct redircmd *rcmd;
+
+
+  int ret;
+
+  if(cmd == 0)
+    _exit(0);
+  
+  switch(cmd->type){
+  default:
+    fprintf(stderr, "unknown runcmd\n");
+    _exit(-1);
+
+  case ' ':
+    ecmd = (struct execcmd*)cmd;
+    if(ecmd->argv[0] == 0)
+      _exit(0);
+    char *path = (char*)malloc(150*sizeof(char));
+    char *root = "/bin/";
+    strcpy(path, root);
+    strcat(path, ecmd->argv[0]);
+    //fprintf(stderr, "exec not implemented\n");
+    // Your code here ...
+    if((ret = execv(path,ecmd->argv)) == -1) fprintf(stderr, "execute command error");
+    break;
+
+  case '>':
+  case '<':
+    rcmd = (struct redircmd*)cmd;
+    // fprintf(stderr, "redir not implemented\n");
+    // Your code here ...
+    if((ret = open(rcmd->file, rcmd->flags, 0777)) == -1) fprintf(stderr, "redir open file error");
+    close(rcmd->fd);
+    dup(ret);
+    close(ret);
+    runcmd(rcmd->cmd);
+    break;
+
+  case '|':
+    pcmd = (struct pipecmd*)cmd;
+    // fprintf(stderr, "pipe not implemented\n");
+    // Your code here ...
+    if((ret = pipe(p)) == -1) fprintf(stderr, "create pipe error");
+    int l_p = fork1();
+    if(l_p == 0){ // in left child
+      close(1);
+      dup(p[1]);
+      close(p[0]);
+      close(p[1]);
+      runcmd(pcmd->left);
+    }else{  // in parent
+      int r_p = fork1();
+      if(r_p == 0){ // in right child
+        close(0);
+        dup(p[0]);
+        close(p[1]);
+        close(p[0]);
+        runcmd(pcmd->right);
+      }else{
+        close(p[0]);
+        close(p[1]);
+        wait(NULL);
+        wait(NULL);
+      }
+    }
+    break;
+  }   
+  _exit(0);
+}
 {% endhighlight %}
 
 
-题目要求见[Shell](https://pdos.csail.mit.edu/6.828/2014/homework/xv6-shell.html)
+
+## 4 总结 ##
+
+6828第一个lab主要介绍了BIOS(mini OS)->Boot Loader->Kernel(xv 6)的过程。Boot Loader主要负责设置保护模式，设置栈段地址，载入Kernel，跳转到Kernel第一条代码。其中载入Kernel需要读取两次Kernel：第一次读取ELF Header，通过它来知道Kernel ELF的各个段的起始；第二次根据此信息载入各个段代码。对于栈段有了新的理解：内存中的栈本质不是数据结构里的LIFO的栈，而是1个**链表**，链表的每一项是LIFO的栈帧(暂且称为`struct SF`(Stack Frame))。更具体的说，`struct SF *ebp`指向当前函数的SF，`*((int *)ebp)`指向父`struct SF`的地址，`*((int *)ebp)-1` 是当前函数返回地址，`*((int *)ebp)-2`是当前函数最后1个参数。
+{% highlight c linenos %}
+                 ______________
+                |_&grandparent_| = struct SF parent
+                |______________| 
+                |______________|
+                |______________|
+                |______________| 
+                |__saved %edx__|
+                |__saved %ecx__| 
+                |__saved %eax__| %eax contains return value   
+                |____parma1____|
+                |____parma2____|
+                |____parma3____|
+                |      ret     |
+                 ==============
+         ebp -> |___&parent____| = struct SF child
+                |__saved %ebx__|
+                |__saved %esi__|
+                |__saved %edi__|
+                |______________|
+                |______________|
+                |______________|
+
+{% endhighlight %}
+
+hw2让我们熟悉了system programming的主要命令，`close`,`open`,`fork`,`execv`,`pipe`,`dup`。关键要理解file descriptor是对**已经打开**的文件的引用。当用`open`,`dup`,`creat`等命令创建新的fd时，新的fd的值按照**最低位空闲**来分配，即当打开的fd为`0, 1, 2`时，执行`close(1)`后变为`0，2`，这个时候`open("filename", O_RDONLY, 0777)`返回1。另外，`fork()`函数调用1次返回两次，分别在父进程和子进程，需要根据`fork()`返回值来安排父子进程的逻辑(父进程返回子进程pid,子进程返回0)。
+
+本课程的JOS的学习建立在以下的多层抽象上，从机器一直到JOS。
 
 
+{% highlight c linenos %}
+    ____________
+   |_____JOS____| = JOS
+   |____QEMU____|
+   |___Linux____|
+   |_VirtualBox_|
+   |___MacOS____|
+   |__Computer__|
+{% endhighlight %}
 
-## 4 参考资料 ##
+至此，lab1相关的作业结束。
+
+
+## 5 参考资料 ##
 
 - [《xv6 book - chapter 0: Operating System Interfaces》](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2012/lecture-notes-and-readings/);
 
