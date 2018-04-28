@@ -20,24 +20,18 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 
 ## 1 总结 ##
 
+## 2 Lab 1:  C, Assembly, Tools, and Bootstrapping##
 
-## 2 Homework: Shell ##
-
-题目要求见[这里](https://pdos.csail.mit.edu/6.828/2014/homework/xv6-shell.html)
-
-
-## 3 Lab 1:  C, Assembly, Tools, and Bootstrapping##
-
-### 3.0 安裝环境 ###
+### 2.0 安裝环境 ###
 
 1. [安装ubuntu 16.04LTS](https://www.jianshu.com/p/e838cd947eff);
 
 2. 安装JOS: `git clone https://pdos.csail.mit.edu/6.828/2017/jos.git`;
 
-3. [安装qemu](https://pdos.csail.mit.edu/6.828/2017/tools.html):
+2. [安装qemu](https://pdos.csail.mit.edu/6.828/2017/tools.html):
 
 {% highlight shell linenos %}
-git clone http://web.mit.edu/ccutler/www/qemu.git -b 6.828-2.3.0 // 之前需要安装依赖libsdl1.2-dev, libtool-bin, libglib2.0-dev, libz-dev, libpixman-1-dev，gcc-multilib
+git clone http://web.mit.edu/ccutler/www/qemu.git -b 6.828-2.2.0 // 之前需要安装依赖libsdl1.2-dev, libtool-bin, libglib2.0-dev, libz-dev, libpixman-1-dev，gcc-multilib
 cd qemu
 sudo make && sudo make install  // 安装结束
 cd ../JOS && make qemu // 若安装成功，将会看见如下输出
@@ -68,14 +62,14 @@ K>
 
 > 计算机启动后，**BIOS(mini OS)**如何通过**Boot Loader(进入保护模式，载入xv6)**最终跳转到**JOS(xv6 OS)**。
 
-### 3.1 Part 1: PC Bootstrap
+### 2.1 Part 1: PC Bootstrap
 
-#### 3.1.1 Exercise 1: Getting Started with x86 assembly
+#### 2.1.1 Exercise 1: Getting Started with x86 assembly
 
 > Exercise 1. Familiarize yourself with the assembly language materials available on the [6.828 reference page](https://pdos.csail.mit.edu/6.828/2017/reference.html). You don't have to read them now, but you'll almost certainly want to refer to some of this material when reading and writing x86 assembly.We do recommend reading the section "The Syntax" in [Brennan's Guide to Inline Assembly](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html). It gives a good (and quite brief) description of the AT&T assembly syntax we'll be using with the GNU assembler in JOS.
 
 
-#### 3.1.2 Exercise 2: Using qemu and gdb to debug
+#### 2.1.2 Exercise 2: Using qemu and gdb to debug
 
 > Exercise 2. Use GDB's si (Step Instruction) command to trace into the ROM BIOS for a few more instructions, and try to guess what it might be doing. You might want to look at [Phil Storrs I/O Ports Description](http://web.archive.org/web/20040404164813/members.iweb.net.au/~pstorr/pcbook/book2/book2.htm), as well as other materials on the [6.828 reference materials page](https://pdos.csail.mit.edu/6.828/2017/reference.html). No need to figure out all the details - just the general idea of what the BIOS is doing first.
 
@@ -134,11 +128,11 @@ The target architecture is assumed to be i8086
 
 当BIOS启动，它设置了一个中断描述符表并初始化多个设备比如VGA显示器。在初始化PCI总线和所有重要的设备之后，它寻找可引导的设备，之后读取 boot loader 并转移控制。
 
-### 3.2 Part 2: The Boot Loader
+### 2.2 Part 2: The Boot Loader
 
-#### 3.2.1 Exercise 3: BIOS->Boot Loader->Kernel
+#### 2.2.1 Exercise 3: BIOS->Boot Loader->Kernel
 
-> Exercise 3. Take a look at the [lab tools guide](https://pdos.csail.mit.edu/6.828/2017/labguide.html), especially the section on GDB commands. Even if you're familiar with GDB, this includes some esoteric GDB commands that are useful for OS work. Set a breakpoint at address 0x7c00, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in boot/boot.S, using the source code and the disassembly file obj/boot/boot.asm to keep track of where you are. Also use the x/i command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in obj/boot/boot.asm and GDB. Trace into bootmain() in boot/main.c, and then into readsect(). Identify the exact assembly instructions that correspond to each of the statements in readsect(). Trace through the rest of readsect() and back out into bootmain(), and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.
+> Exercise 2. Take a look at the [lab tools guide](https://pdos.csail.mit.edu/6.828/2017/labguide.html), especially the section on GDB commands. Even if you're familiar with GDB, this includes some esoteric GDB commands that are useful for OS work. Set a breakpoint at address 0x7c00, which is where the boot sector will be loaded. Continue execution until that breakpoint. Trace through the code in boot/boot.S, using the source code and the disassembly file obj/boot/boot.asm to keep track of where you are. Also use the x/i command in GDB to disassemble sequences of instructions in the boot loader, and compare the original boot loader source code with both the disassembly in obj/boot/boot.asm and GDB. Trace into bootmain() in boot/main.c, and then into readsect(). Identify the exact assembly instructions that correspond to each of the statements in readsect(). Trace through the rest of readsect() and back out into bootmain(), and identify the begin and end of the for loop that reads the remaining sectors of the kernel from the disk. Find out what code will run when the loop is finished, set a breakpoint there, and continue to that breakpoint. Then step through the remainder of the boot loader.
 
 boot loader的入口地址是[0000: 7c00]，因此在此处设置断点后，输入`c`，运行到此处。boot loader的主要工作是
 
@@ -146,7 +140,7 @@ boot loader的入口地址是[0000: 7c00]，因此在此处设置断点后，输
 
 2. 进入32位实模式。
 
-3. 载入内核。
+2. 载入内核。
 
 我们来过一遍boot.S文件
 首先关中断，清零方向标志位DF(`cld`)。
@@ -231,7 +225,7 @@ protcseg:
 bootmain逻辑:
 1. readseg读取第一遍，判断是否是valid ELF
 2. 若是，则从ELF header(ELFHDR)重新读取ELF program header里的各个entry(ELFHDR->e_phnum)
-3. 最后执行kernel的入口(ELFHDR->e_entry).
+2. 最后执行kernel的入口(ELFHDR->e_entry).
 
 For purposes of 6.828, you can consider an ELF executable to be a header with loading information, followed by several program sections, each of which is a contiguous chunk of code or data intended to be loaded into memory at a specified address. The boot loader does not modify the code or data; it loads it into memory and starts executing it. You can inspect the program headers by typing: `objdump -x obj/kern/kernel`
 
@@ -241,11 +235,11 @@ Questions:
 
 2. What is the last instruction of the boot loader executed? `7d6b: call   *0x10018 ( ((void (*)(void)) (ELFHDR->e_entry))())`这条代码将会执行kernel的入口，自此，boot loader将控制权转交给kernal. What is the first instruction of the kernel it just loaded? `b 0x7d6b` and `c`, you will go to the first instruction of kernel, and you will see the first instruction is `0x10000c:	movw   $0x1234,0x472`.
 
-3. Where is the first instruction of the kernel? It is in 0x10000c.
+2. Where is the first instruction of the kernel? It is in 0x10000c.
 
 4. How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information? It reads twice from the hard drive. The first time, it reads ELFHDR, which contains the meta data of how many sectors to fetch the entire kernel. The second time, according to the information in ELFHDR, it reads all the program segment.
 
-#### 3.2.2 Exercise 4: C Pointer
+#### 2.2.2 Exercise 4: C Pointer
 
 > Exercise 4. Read about programming with pointers in C. The best reference for the C language is The C Programming Language by Brian Kernighan and Dennis Ritchie (known as 'K&R'). We recommend that students purchase this book (here is an [Amazon Link](http://www.amazon.com/C-Programming-Language-2nd/dp/0131103628/sr=8-1/qid=1157812738/ref=pd_bbs_1/104-1502762-1803102?ie=UTF8&s=books)) or find one of [MIT's 7 copies](http://library.mit.edu/F/AI9Y4SJ2L5ELEE2TAQUAAR44XV5RTTQHE47P9MKP5GQDLR9A8X-10422?func=item-global&doc_library=MIT01&doc_number=000355242&year=&volume=&sub_library=). Read 5.1 (Pointers and Addresses) through 5.5 (Character Pointers and Functions) in K&R. Then download the code for [pointers.c](https://pdos.csail.mit.edu/6.828/2017/labs/lab1/pointers.c), run it, and make sure you understand where all of the printed values come from. In particular, make sure you understand where the pointer addresses in printed lines 1 and 6 come from, how all the values in printed lines 2 through 4 get there, and why the values printed in line 5 are seemingly corrupted. There are other references on pointers in C (e.g., [A tutorial by Ted Jensen](https://pdos.csail.mit.edu/6.828/2017/readings/pointers.pdf) that cites K&R heavily), though not as strongly recommended. Warning: Unless you are already thoroughly versed in C, do not skip or even skim this reading exercise. If you do not really understand pointers in C, you will suffer untold pain and misery in subsequent labs, and then eventually come to understand them the hard way. Trust us; you don't want to find out what "the hard way"
 
@@ -316,7 +310,7 @@ void f(void)
 }
 {% endhighlight %}
 
-#### 3.2.3 Exercise 5: VML vs LMA for Boot Loader
+#### 2.2.3 Exercise 5: VML vs LMA for Boot Loader
 
 > VML(Virtual/Link Memeory Address) vs LMA (Load Memory Address)
 
@@ -398,7 +392,7 @@ when VMA = 0x7E00
 0x7e64: 0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
 {% endhighlight %}
 
-#### 3.2.4 Exercise 6: VML vs LMA for Kernel
+#### 2.2.4 Exercise 6: VML vs LMA for Kernel
 
 For Kernel, VMA is 0xf0100000 and LMA is 0x00100000.
 
@@ -455,13 +449,13 @@ for (; ph < eph; ph++)
   readseg(ph->p_pa, ph->p_memsz, ph->p_offset);
 {% endhighlight %}
 
-### 3.3 Part 3: The Kernel
+### 2.3 Part 3: The Kernel
 
 {% highlight c linenos %}
 
 {% endhighlight %}
 
-#### 3.3.1 Exercise 7: virtual memory
+#### 2.2.1 Exercise 7: virtual memory
 
 >Exercise 7. Use QEMU and GDB to trace into the JOS kernel and stop at the movl %eax, %cr0. Examine memory at 0x00100000 and at 0xf0100000. Now, single step over that instruction using the stepi GDB command. Again, examine memory at 0x00100000 and at 0xf0100000. Make sure you understand what just happened. What is the first instruction after the new mapping is established that would fail to work properly if the mapping weren't in place? Comment out the movl %eax, %cr0 in kern/entry.S, trace into it, and see if you were right.
 
@@ -546,7 +540,7 @@ So what `0x100025 movl %eax, %cr0` did is just copy memory start from 0x100000 t
 
 If the mapping weren't in place, then `jmp *%eax` will crash the kernel, because when this instruction is executed, the eip has changed to 0xf010002C. And that address's instruction is empty, so it crash the kernel.
 
-#### 3.3.2 Exercise 8: understand printf
+#### 2.2.2 Exercise 8: understand printf
 
 > We have omitted a small fragment of code - the code necessary to print octal numbers using patterns of the form "%o". Find and fill in this code fragment.
 
@@ -580,7 +574,7 @@ if (crt_pos >= CRT_SIZE) {
 }
 {% endhighlight %}
 
-3. For the following questions you might wish to consult the notes for Lecture 2. These notes cover GCC's calling convention on the x86. Trace the execution of the following code step-by-step:
+2. For the following questions you might wish to consult the notes for Lecture 2. These notes cover GCC's calling convention on the x86. Trace the execution of the following code step-by-step:
 {% highlight c linenos %}
 int x = 1, y = 3, z = 4;
 cprintf("x %d, y %x, z %d\n", x, y, z);
@@ -693,7 +687,7 @@ and we can see the result of execution:
 
 5. In the following code, what is going to be printed after 'y='? (note: the answer is not a specific value.) Why does this happen? `cprintf("x=%d y=%d", 3);`
 
-It will output a "random" value next to the address of value 3, which is `ap + 4`, `ap` is the address of value 3.
+It will output a "random" value next to the address of value 3, which is `ap + 4`, `ap` is the address of value 2.
 
 6. Let's say that GCC changed its calling convention so that it pushed arguments on the stack in declaration order, so that the last argument is pushed last. How would you have to change cprintf or its interface so that it would still be possible to pass it a variable number of arguments?
 
@@ -703,7 +697,7 @@ we need to make `ap` move upside down, so change `cprintf("%d%x%d",a,b,c)` to `c
 
 最后这部分，要研究C语言是如何在x86框架上使用堆栈的。需要查看指令寄存器(IP)的值的变化。
 
-#### 3.4.1 Exercise 9
+#### 2.4.1 Exercise 9: Understand Kernel Stack
 
 > Exercise 9. Determine where the kernel initializes its stack, and exactly where in memory its stack is located. How does the kernel reserve space for its stack? And at which "end" of this reserved area is the stack pointer initialized to point to?
 
@@ -741,7 +735,7 @@ bootstacktop:
 {% endhighlight %}
 `PGSIZE`定义在`inc/mmu.h`，大小为4096，所以KSTKSIZE为32KB.
 
-#### 3.4.2 Exercise 10: Undertand Backtrace
+#### 2.4.2 Exercise 10: Undertand Backtrace
 
 > To become familiar with the C calling conventions on the x86, find the address of the test_backtrace function in obj/kern/kernel.asm, set a breakpoint there, and examine what happens each time it gets called after the kernel starts. How many 32-bit words does each recursive nesting level of test_backtrace push on the stack, and what are those words? Note that, for this exercise to work properly, you should be using the patched version of QEMU available on the [tools page](https://pdos.csail.mit.edu/6.828/2017/tools.html) or on Athena. Otherwise, you'll have to manually translate all breakpoint and memory addresses to linear addresses.
 
@@ -753,7 +747,7 @@ test_backtrace是个递归调用，关键要了解**栈段其实是栈帧的链�
 
 
 
-#### 3.4.3 Exercise 11
+#### 2.4.3 Exercise 11: Implement Backtrace
 
 > Exercise 11. Implement the backtrace function as specified above. Use the same format as in the example, since otherwise the grading script will be confused. When you think you have it working right, run make grade to see if its output conforms to what our grading script expects, and fix it if it doesn't. After you have handed in your Lab 1 code, you are welcome to change the output format of the backtrace function any way you like. If you use read_ebp(), note that GCC may generate "optimized" code that calls read_ebp() before mon_backtrace()'s function prologue, which results in an incomplete stack trace (the stack frame of the most recent function call is missing). While we have tried to disable optimizations that cause this reordering, you may want to examine the assembly of mon_backtrace() and make sure the call to read_ebp() is happening after the function prologue.
 在`kern/monitor.c`里
@@ -781,7 +775,7 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 }
 {% endhighlight %}
 
-#### 3.4.3 Exercise 11
+#### 2.4.3 Exercise 12: Add More Info to Backtrace
 
 
 {% highlight c linenos %}
@@ -865,7 +859,47 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 }
 {% endhighlight %}
 
-## 3 参考资料 ##
+
+## 3 Homework: Shell ##
+
+### 3.1 Boot xv6
+
+题目要求见[Boot xv6](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-boot.html):
+
+1. xv6第一条指令的执行地址？`nm kernel | grep _start`可得第一条指令的执行地址是0x0010000c。
+2. 哪一条汇编指令后eip变成上述地址？`7dae: call *0x10018`。
+3. 在xv6第一条指令处打断点，执行到此处，查看`x/24x %esp`，解释stack的有效范围，以及有效范围内的非零值。
+
+{% highlight c linenos %}
+(gdb) b *0x7dae
+7dae: call *0x10018 // execute this line would change eip to 0x10000C (value stored in address 0x10018)
+(gdb) c
+(gdb) x/24x $esp
+0x7bdc:	0x00007db4	0x00000000	0x00000000	0x00000000
+0x7bec:	0x00000000	0x00000000	0x00000000	0x00000000
+0x7bfc:	0x00007c4d	0x8ec031fa	0x8ec08ed8	0xa864e4d0
+0x7c0c:	0xb0fa7502	0xe464e6d1	0x7502a864	0xe6dfb0fa
+0x7c1c:	0x16010f60	0x200f7c78	0xc88366c0	0xc0220f01
+0x7c2c:	0x087c31ea	0x10b86600	0x8ed88e00	0x66d08ec0
+
+// the valid stack ranges from 0x7c00 to 0x7bdc after you exectue "7dae: call *0x10018", 0x00007db4 is eip value when entry() return in bootmain.c, 0x00007c4d is the eip value when bootmain.c return in bootasm.s
+{% endhighlight %}
+
+
+
+
+### 3.2 Shell 
+
+
+{% highlight c linenos %}
+{% endhighlight %}
+
+
+题目要求见[Shell](https://pdos.csail.mit.edu/6.828/2014/homework/xv6-shell.html)
+
+
+
+## 4 参考资料 ##
 
 - [《xv6 book - chapter 0: Operating System Interfaces》](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2012/lecture-notes-and-readings/);
 
