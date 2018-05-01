@@ -341,12 +341,165 @@ boot_map_region(kern_pgdir, KERNBASE, (0xffffffff-KERNBASE), 0, PTE_W);
 
 ### 3.1 System Calls
 
+
 题目要求见[xv6 system calls](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-syscall.html)。
+
+#### 3.1.1 System Call Tracing
+
+<blockquote>
+> 要求system call输出
+fork -> 2
+exec -> 0
+open -> 3
+close -> 0
+$write -> 1
+ write -> 1
+</blockquote>
+
+在`syscall.c`中修改`syscall`函数。
+{% highlight c linenos %}
+void
+syscall(void)
+{
+  int num;
+
+  num = proc->tf->eax;
+  if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
+    proc->tf->eax = syscalls[num]();
+    switch (num) {
+      case SYS_fork:
+        cprintf("fork -> ");
+        break;
+      case SYS_exit:
+        cprintf("exit -> ");
+        break;
+      case SYS_wait:
+        cprintf("wait -> ");
+        break;
+      case SYS_pipe:
+        cprintf("pipe -> ");
+        break;
+      case SYS_read:
+        cprintf("read -> ");
+        break;
+      case SYS_kill:
+        cprintf("kill -> ");
+        break;
+      case SYS_exec:
+        cprintf("exec -> ");
+        break;
+      case SYS_fstat:
+        cprintf("fstat -> ");
+        break;
+      case SYS_chdir:
+        cprintf("chdir -> ");
+        break;
+      case SYS_dup:
+        cprintf("dup -> ");
+        break;
+      case SYS_getpid:
+        cprintf("getpid -> ");
+        break;
+      case SYS_sbrk:
+        cprintf("sbrk -> ");
+        break;
+      case SYS_sleep:
+        cprintf("sleep -> ");
+        break;
+      case SYS_uptime:
+        cprintf("uptime -> ");
+        break;
+      case SYS_open:
+        cprintf("open -> ");
+        break;
+      case SYS_write:
+        cprintf("write -> ");
+        break;
+      case SYS_mknod:
+        cprintf("mknod -> ");
+        break;
+      case SYS_unlink:
+        cprintf("unlink -> ");
+        break;
+      case SYS_link:
+        cprintf("link -> ");
+        break;
+      case SYS_mkdir:
+        cprintf("mkdir -> ");
+        break;
+      case SYS_close:
+        cprintf("close -> ");
+        break;
+      default:
+        panic("should never get here\n");
+    }
+    cprintf("%d\n", proc->tf->eax);
+  } else {
+    cprintf("%d %s: unknown sys call %d\n",
+            proc->pid, proc->name, num);
+    proc->tf->eax = -1;
+  }
+}
+{% endhighlight %}
+
+#### 3.1.2 Date System call
+
+实现date系统调用，关键要理解调用的逻辑，可以输入`grep -n uptime *.[chS]`查看系统调用`uptime`在哪些文件实现。
+
+{% highlight c linenos %}
+syscall.c:105:extern int sys_uptime(void);
+syscall.c:122:[SYS_uptime]  sys_uptime,
+syscall.c:183:      case SYS_uptime:
+syscall.c:184:        cprintf("uptime -> ");
+syscall.h:15:#define SYS_uptime 14
+sysproc.c:83:sys_uptime(void)
+user.h:25:int uptime(void);
+usys.S:31:SYSCALL(uptime)
+{% endhighlight %}
+
+我们来理一遍调用顺序，
+
+当在shell输入`date`后，会fork1个子进程，然后子进程exec执行`date()`(the main code in date.c)。date.c的`main`函数会执行`int date(struct rtcdate *r)`，这是系统调用的接口，会调用usys.S里的`SYSCALL(date)`，这是1个宏，将date定义在syscall.h里的index输入%eax，然后调用`T_SYSCALL`，它会获取`syscalls`(syscall.c)里的函数指针，然后调用`sys_date`。因此需要修改的代码如下。
+
+{% highlight c linenos %}
+//in date.c
+printf(1,"%d/%d/%d %d:%d:%d\n", r.year,r.month,r.day,r.hour,r.minute,r.second); //line 14
+
+// in user.h
+int date(struct rtcdate *); // line 26
+
+// in usys.S
+SYSCALL(date) // line 32
+
+// in syscall.h
+#define SYS_date 22 // line 23
+
+// in syscall.c
+extern int sys_date(void) // line 106
+
+// in sysproc.c
+int                 // line 93
+sys_date(void)
+{
+  struct rtcdate *r;
+  if (argptr(0, (char **) &r, sizeof(struct rtcdate)) < 0)
+    return -1;
+  cmostime(r);
+  return 0;
+}
+
+// in Makefile
+_date\ line 177
+{% endhighlight %}
+
+
+
+
+
 
 ### 3.2 Lazy Page Allocation
 
 题目要求见[xv6 lazy page allocation](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-zero-fill.html)。
-
 {% highlight c linenos %}
 
 {% endhighlight %}
