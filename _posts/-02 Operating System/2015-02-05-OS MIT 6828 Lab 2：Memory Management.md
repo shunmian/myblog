@@ -494,15 +494,48 @@ _date\ line 177
 
 
 
-
-
-
 ### 3.2 Lazy Page Allocation
 
 题目要求见[xv6 lazy page allocation](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-zero-fill.html)。
-{% highlight c linenos %}
 
+这个作业让我们惰性分配堆里的内存来节省程序对内存的使用。有些程序要求分配某一部分内存，并且系统也分配给该程序了，但是该程序在其生命周期里并没有用它，例如疏矩阵(sparse matrix)里的0值。
+
+#### 3.2.1 Eliminate Allocation from `sbrk()`
+
+{% highlight c linenos %}
+int
+sys_sbrk(void)
+{
+  int addr;
+  int n;
+
+  if(argint(0, &n) < 0)
+    return -1;
+  addr = myproc()->sz;
+  myproc()->sz += n;
+  //if(growproc(n) < 0)
+  //  return -1;
+  return addr;
+}
 {% endhighlight %}
+
+#### 3.2.2 Lazy Allocation
+
+{% highlight c linenos %}
+// in trap.c line 92
+if (tf->trapno == T_PGFLT) {
+    char *mem = kalloc();
+    if (!mem)
+        panic("we've run out of memory\n");
+    memset(mem, 0, PGSIZE);
+    mappages(myproc()->pgdir, (char *) PGROUNDDOWN(rcr2()), PGSIZE, V2P(mem),PTE_W|PTE_U);
+    return;
+}
+{% endhighlight %}
+
+## 4 总结
+
+这个lab主要研究了Physical Page Allocator和Virtual Memory。虚拟地址是程序看到的地址，通过物理页映射到物理地址。物理页的操作和虚拟内存的隐射机制是重点。
 
 ## 5 参考资料 ##
 
