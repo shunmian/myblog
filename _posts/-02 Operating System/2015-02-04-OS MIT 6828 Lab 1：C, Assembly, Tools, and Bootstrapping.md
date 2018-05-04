@@ -863,7 +863,7 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 
 ## 3 Homework: Shell ##
 
-### 3.1 Boot xv6
+### 3.1 HW1: Boot xv6
 
 题目要求见[Boot xv6](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-boot.html):
 
@@ -889,7 +889,7 @@ mon_backtrace(int argc, char **argv, struct Trapframe *tf)
 
 
 
-### 3.2 Shell 
+### 3.2 HW2: Shell 
 
 题目要求见[Shell](https://pdos.csail.mit.edu/6.828/2014/homework/xv6-shell.html)。
 完成1个shell(主要框架已经提供)，满足下面三个要求:

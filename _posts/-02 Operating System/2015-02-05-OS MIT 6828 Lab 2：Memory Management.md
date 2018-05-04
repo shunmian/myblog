@@ -339,7 +339,7 @@ boot_map_region(kern_pgdir, KERNBASE, (0xffffffff-KERNBASE), 0, PTE_W);
 
 ## 3 Homework
 
-### 3.1 System Calls
+### 3.1 HW3: System Calls
 
 
 题目要求见[xv6 system calls](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-syscall.html)。
@@ -494,7 +494,7 @@ _date\ line 177
 
 
 
-### 3.2 Lazy Page Allocation
+### 3.2 HW4: Lazy Page Allocation
 
 题目要求见[xv6 lazy page allocation](https://pdos.csail.mit.edu/6.828/2017/homework/xv6-zero-fill.html)。
 
