@@ -110,6 +110,174 @@ boot_map_region(kern_pgdir, UENVS, PTSIZE, PADDR(envs), PTE_U);
 
 #### 2.1.1 Exercise 2: Creating and Running Environments
 
+<blockquote>
+**Exercise 2.** In the file env.c, finish coding the following functions:
+
+env_init()
+Initialize all of the Env structures in the envs array and add them to the env_free_list. Also calls env_init_percpu, which configures the segmentation hardware with separate segments for privilege level 0 (kernel) and privilege level 3 (user).
+env_setup_vm()
+Allocate a page directory for a new environment and initialize the kernel portion of the new environment's address space.
+region_alloc()
+Allocates and maps physical memory for an environment
+load_icode()
+You will need to parse an ELF binary image, much like the boot loader already does, and load its contents into the user address space of a new environment.
+env_create()
+Allocate an environment with env_alloc and call load_icode to load an ELF binary into it.
+env_run()
+Start a given environment running in user mode.
+As you write these functions, you might find the new cprintf verb %e useful -- it prints a description corresponding to an error code. For example,
+
+	r = -E_NO_MEM;
+	panic("env_alloc: %e", r);
+will panic with the message "env_alloc: out of memory".
+</blockquote>
+
+env_init里, 初始化env数组，因为envs中的env_link指向的是下一个env,所以这里有个技巧是从envs的最后一个元素向前遍历。
+
+{% highlight c linenos %}
+void
+env_init(void)
+{
+    // Set up envs array
+    // LAB 3: Your code here.
+    int i;
+    env_free_list = NULL;
+    for (i = NENV - 1; i >= 0; i--) {
+        envs[i].env_id = 0;
+        envs[i].env_status = ENV_FREE;
+        envs[i].env_link = env_free_list;
+        env_free_list = &envs[i];
+    }
+    // Per-CPU part of the initialization
+    env_init_percpu();
+}
+{% endhighlight %}
+
+env_setup_vm: 设置`e->env_pgdir`并初始化页目录，可以使用kern_pgdir作为模板。填上这个，计数器加一，将p转化为内核虚拟地址，然后以`kern_pgdir`为模板复制。
+
+{% highlight c linenos %}
+p->pp_ref++;
+e->env_pgdir = page2kva(p);
+memcpy(e->env_pgdir, kern_pgdir, PGSIZE);
+{% endhighlight %}
+
+region_alloc
+分配len字节的物理内存给env环境，之后映射到环境中的虚拟地址va。要注意的是，va和len都要进行对齐。
+{% highlight c linenos %}
+static void
+region_alloc(struct Env *e, void *va, size_t len)
+{
+    // LAB 3: Your code here.
+    // (But only if you need it for load_icode.)
+    //
+    // Hint: It is easier to use region_alloc if the caller can pass
+    //   'va' and 'len' values that are not page-aligned.
+    //   You should round va down, and round (va + len) up.
+    //   (Watch out for corner-cases!)
+    struct PageInfo *p = NULL;
+    va = ROUNDDOWN(va, PGSIZE);
+    void * end = (void *)ROUNDUP(va + len, PGSIZE);
+    for (; va <= end; va+=PGSIZE) {
+        if (!(p = page_alloc(ALLOC_ZERO)))
+            panic("allocation failed.");
+
+        // pte_t *pte = pgdir_walk(e->env_pgdir, va, true);
+        // if (!pte)
+        //     panic("Unable to alloc page.");
+
+        int r = page_insert(e->env_pgdir, p, va, PTE_U | PTE_W);
+        if (r != 0)
+            panic("Page mapping failed.");
+    }}
+{% endhighlight %}
+
+load_icode: 加载可读的ELF二进制镜像到用户环境内存，起始虚拟地址在ELF程序头部应该有，同时将这些段清零，和boot loader类似，之后映射给程序初始栈的一个页。只加载ph->p_type == ELF_PGROP_LOAD的段，每个段的虚拟地址应该在`ph->p_va`，它的大小应该是`ph->p_memsz`。`binary + ph->p_offset`之后的`ph->p_files`字节要拷贝到虚拟地址`ph->p_va`，其他剩余内存应该清零。
+
+{% highlight c linenos %}
+static void
+load_icode(struct Env *e, uint8_t *binary)
+{
+    // LAB 3: Your code here.
+    struct Proghdr *ph, *eph;
+    struct Elf *elf_head = (struct Elf *)binary;
+    if (elf_head->e_magic != ELF_MAGIC) 
+        panic("ELF binary image error.");
+
+    lcr3(PADDR(e->env_pgdir));
+    ph = (struct Proghdr*)((uint8_t*)(elf_head) + elf_head->e_phoff);
+    eph = ph + elf_head->e_phnum;
+    for(; ph < eph; ph++)
+    {
+        if (ph->p_type == ELF_PROG_LOAD) {
+            region_alloc(e, (void *)ph->p_va, ph->p_memsz);
+            memmove((void*)ph->p_va,binary+ph->p_offset,ph->p_filesz);
+            memset((void*)(ph->p_va + ph->p_filesz),0,ph->p_memsz-ph->p_filesz);
+        }
+    }
+    e->env_tf.tf_eip = elf_head->e_entry;
+    lcr3(PADDR(kern_pgdir));
+    // Now map one page for the program's initial stack
+    // at virtual address USTACKTOP - PGSIZE.
+
+    // LAB 3: Your code here.
+    region_alloc(e, (void *)(USTACKTOP - PGSIZE), PGSIZE);
+}
+{% endhighlight %}
+
+env_create使用env_alloc创建一个env，调用load_icode来加载elf二进制镜像，设置env_type。这个env的父id应该设为0
+
+{% highlight c linenos %}
+void
+env_create(uint8_t *binary, enum EnvType type)
+{
+    // LAB 3: Your code here.
+    struct Env *e;
+    int r = env_alloc(&e, 0);
+    if (r)
+        panic("env_alloc failed");
+    load_icode(e, binary);
+    e->env_type = type;
+}
+{% endhighlight %}
+
+env_run: 切换上下文，首先判断当前环境是否为空，环境状态是不是ENV_RUNNING,之后将curenv指向新的环境，状态设为`ENV_RUNNING`，更新env_runs计数器，用lcr3切换到它的地址空间，使用env_poptf()存储环境计算器。
+
+{% highlight c linenos %}
+void
+env_run(struct Env *e)
+{
+    // LAB 3: Your code here.
+    if (curenv != NULL && curenv->env_status == ENV_RUNNING)
+        curenv->env_status = ENV_RUNNABLE;
+    curenv = e;
+    curenv->env_status = ENV_RUNNING;
+    curenv->env_runs++;
+    lcr3(PADDR(curenv->env_pgdir));
+    env_pop_tf(&(curenv->env_tf));
+
+    panic("env_run not yet implemented");
+}
+{% endhighlight %}
+
+这时候`make qemu-nox`运行时会出现内存相关错误，暂时不需要担心。
+来看一下程序启动的调用顺序图
+
+{% highlight c linenos %}
+start (kern/entry.S)
+    i386_init (kern/init.c)
+    cons_init
+    mem_init
+    env_init
+    trap_init (still incomplete at this point)
+    env_create
+    env_run
+        env_pop_tf
+{% endhighlight %}
+
+编译完内核并且运行在QEMU中，正常情况应该是系统进入用户空间，执行hello二进制程序知道系统int指令。然而因为JOS还没有设置硬件使用户过度到内核，所以会出现问题。当CPU发现系统不能处理系统调用中断，会生成一个通用保护异常，进而又产生一个双重错误异常，同样因为解决不了，最终会导致三重错误(triple fault)。通常需要重启使CPU复位，这很麻烦，还好是在QEMU中，就会出现寄存器dump。
+
+使用debugger去检查是否进入用户模式。使用`make qemu-gdb`然后在env_pop_tf处打断点。使用si单步调试，处理器执行iret指令之后的命令。
+
 ### 2.2 Part B: Page Faults, Breakpoints Exceptions, and System Calls
 
 #### 2.2.1 Exercise 5: Handling Page Faults

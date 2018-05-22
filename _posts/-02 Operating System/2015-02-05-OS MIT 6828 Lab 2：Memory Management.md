@@ -537,7 +537,54 @@ if (tf->trapno == T_PGFLT) {
 
 这个lab主要研究了Physical Page Allocator和Virtual Memory。虚拟地址是程序看到的地址，通过物理页映射到物理地址。物理页的操作和虚拟内存的隐射机制是重点。
 
-## 5 参考资料 ##
+## 5 Info
+
+>任何程序里答打印的都是虚拟地址
+
+>如何获得某进程的code,stack,heap(虚拟)地址
+
+{% highlight c linenos %}
+int main(int argc, char *argv[]){
+  printf("code  address: %p\n", (void *)main);
+  printf("heap  address: %p\n", (void *)malloc(1));
+  int x = 1;
+  printf("stack address: %p\n", (void *)&x);
+}
+/*output:
+location of code  : 0x1095afe50
+location of heap  : 0x1096008c0
+location of stack : 0x7fff691aea64
+*/
+{% endhighlight %}
+
+> Delcare memory on stack in C is eay. If you want some information to live byond the call invocation, you shouldn't leave that inforatmion on stack since return of the invocation will clear the stack automatically and implicitly (set up by compiler during compilation).
+
+{% highlight c linenos %}
+void func(){
+  int x; // delcare an integer on the stack
+}
+{% endhighlight %}
+
+> long-lived inforatmion should be put on heap, whose allocation and deallocation of memory is controlled explicitly by programmer.
+
+{% highlight c linenos %}
+void func(){
+  int *x = (int *)malloc(sizeof(int));
+  /*two memory allocation happens for the above line
+  int *x will be alloct on stack as local variable;
+  malloc(sizeof(int *)) allocate an integer space in malloc and pass that address to x.
+  */
+}
+{% endhighlight %}
+
+You might notice that `void *malloc(size_t size)` returns a pointer to type void. Doing so is just the way in C to pass back an address and let the programmer decide what to do with it. The programmer further helps out by using what is called a cast. Cast enables programmer to give some reassurance; it is not needed for the correctness.
+
+> forget to `free()` heap memory will cause what is called **Memory Leakage**, which will slowlly but eventually make process out of memory.
+
+> **Dangling Pointer(野指针)**: call `free()` too early so heap will free that space the pointer points to. It is harmful since next time when you call this pointer, it pointer to the previous address which probably occupies other information instead of the original one.
+
+
+## 6 参考资料 ##
 
 - [《xv6 book - chapter 0: Operating System Interfaces》](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2012/lecture-notes-and-readings/);
 
