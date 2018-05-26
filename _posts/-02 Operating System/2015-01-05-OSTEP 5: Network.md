@@ -5,7 +5,7 @@ categories: [-02 Operating System]
 tags: [Operating System, Unix]
 number: [-02.1]
 fullview: false
-shortinfo: Linux0.12源码分析。
+shortinfo: OSTEP Netowrk。
 
 ---
 目录
@@ -36,6 +36,6 @@ shortinfo: Linux0.12源码分析。
 - [《xv6 book - chapter 0: Operating System Interfaces》](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2012/lecture-notes-and-readings/);
 
 
-
+- [《Operating Systems: Three Easy Pieces》](http://pages.cs.wisc.edu/~remzi/OSTEP/)
 
 

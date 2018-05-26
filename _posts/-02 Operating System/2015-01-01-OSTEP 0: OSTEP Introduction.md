@@ -5,7 +5,7 @@ categories: [-02 Operating System]
 tags: [Operating System, Unix]
 number: [-02.1]
 fullview: false
-shortinfo: Linux0.12源码分析。
+shortinfo: OSTEP 介绍。
 
 ---
 目录
