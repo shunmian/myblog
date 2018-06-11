@@ -18,129 +18,58 @@ shortinfo: DBSM实现。
 ---
 {:.hr-short-left}
 
-## 1 ##
+## 1 Transaction Management ##
 
-### 1.1 Relational Databases
+### 1.1 Concurrency
 
-### 1.1.1  Relational Data Model ###
+Process Models (Worker, the DBMS component that is responsible for executing tasks on behalf of the client and returning the results). 3 approaches: process per dbms worker, process pool, thread per dbms worker
 
-### 1.1.2 Relational Algebra ###
+Execution Parallelism
 
-### 1.1.3 Advanced SQL ###
-
-window function `ROW_NUMBER`, `RANK`, `OVER`, `PARTITION BY`
-
-you should always strive to compute your answer as a single SQL statement
-
-### 1.1.4 Functional Dependencies ###
-
-How do we design a "good" database schema(logic level)? integrity, reduce redundancy are two key matrics.
-
-What is `Super Key`? Why we need care about `Super Key`? They help us determine whether it is okay to decom[ose a table into multiple sub-tables. They ensure that we are able to recreate the original relation through joins.
-
-`Candidate Key`
-
-`Primary Key`
+I/O Parallelism
 
 
-### 1.1.5 Normal Forms ###
-
-1NF: all types must be atomic and no repreating groups.
-
-2NF: 1NF and non-key attributes fully depend on the candidate key
-
-3NF
-
-BCNF
-
-4&5NF
-
-6NF
-
-### 1.2 Storage
-
-Query Planning
-Operator Execution
-Access Methods
-Buffer Pool Manager
-Disk Manager
-
-### 1.2.1 Database Storage ###
-
-Allow the DBMS to manage databases that exceed the amount of memory available. Reading/Writing to disk is expensive, so it must be managed carefully.
-
-DBMS always wants to control things itself instead of relying on OS: specialized prefetching, buffer replacement policy, thread/process scheduling, flushing data to disk.
-
-How DBMS represents the database in files on disk? (Persistency, or spatial: File storage, page layout, Tuple layout, Storage Models.
+Embeded bdatabase logic?
 
 
-### 1.2.2 Buffer Pools ###
+========
 
-N-ary storage advantage(fast insert, update and delete, good for queries that need the entire tuple) vs disadvantages(not good for scanning large portions of the table and/or a subset of the attributes).
+we both change the same record in a table at the same time. How to avoid race condition.
 
-Deomposition storage model
+a transaction is the execution of a sequence of one or more operations (e.g., SQL queries) on a shared database to perform some higher-level function.
+
+strawman system: 1). Execute each txn one-by-one(serial order); 2) before a txn starts, copy the entire database to a new file and make all changes to that file, if txn completes succeeded, overwrite the original file with the new one; else, just remove the dirty copy.
+
+better approach is to allow concurrent execution of independent transactions.
+
+#### 1.1.1 locking
+
+0. tool(lock vs latch(Mutex, as low level primitive));
+
+1. Lock Types (share lock for read; exclusive lock for write)
+
+2. pessimistic: Two-Phase Locking(Growing, Shrinking);
+
+3. Deadlock Detection + Prevention
+
+4. Hierarchical Locking
+
+#### 1.1.2 timestamp
+
+pessimistic: Two-Phase Locking(Growing, Shrinking); optimistic: Timestamp ordering(use timestamps to determine the serializability order of txns, using system clock, logical counter, or hybrid).
+
+#### 1.1.3 multi-version concurrency
+
+### 1.2 logging + Recovery
 
 
 
-How DBMS manages its memory and move data back-and-forth from disk? (VM, or temporal,  buffer pools)
+### 1.3 Distributed
 
-tools to coordinate with OS on this problem
+OLTP(On-line Transaction Processing)
+OLAP(On-line Analytical Processing)
 
-1. madvise， tell OS how you expect to read certain pages
-
-2. mlock, tell the os that memory ranges cannot be paged out
-
-3. msync, tell the OS to flush memory ranges out to disk
-
-Locks vs Latches
-
-### 1.2.3 Hash Tables ###
-
-Access Methods
-
-### 1.2.4 Order Preserving Trees ###
-
-Access Methods
-
-### 1.2.5 Query Processing ###
-
-### 1.11 Sorting & Joins ###
-
-### 1.12 Hash Joins & Aggregation ###
-
-### 1.13 Query Optimization ###
-
-### 1.14 Parallel Execution ###
-
-### 1.15 Embedded Database Logic ###
-
-### 1.16 Concurrency Control Theory ###
-
-### 1.17 Two-Phase Locking ###
-
-### 1.18 Index Concurrency Control ###
-
-### 1.19 Timestamp Ordering Concurrency Controll ###
-
-### 1.20 Multi-Version Concurrency Control ###
-
-### 1.21 Logging Schemes ###
-
-### 1.22 Database Recovery ###
-
-### 1.23 Distributed OLTP Systems ###
-
-### 1.24 Barry Morris ###
-
-### 1.3 Execution
-
-### 1.4 Concurrency Control
-
-### 1.5 Recovery
-
-### 1.6 Distributed Databases
-
-
+nuodb
 
 {: .img_middle_lg}
 ![regular expression](/assets/images/posts/2015-06-01/MySQL overview.png)
