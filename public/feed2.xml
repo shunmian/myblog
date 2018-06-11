@@ -7,6 +7,100 @@
 		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>CircleCI</title>
+				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-circle-ci&quot; id=&quot;markdown-toc-1-circle-ci&quot;&gt;1. Circle CI&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-what-is-circle-ci&quot; id=&quot;markdown-toc-11-what-is-circle-ci&quot;&gt;1.1 What is Circle CI&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-how-to-integrate-circle-ci-to-your-repository&quot; id=&quot;markdown-toc-12-how-to-integrate-circle-ci-to-your-repository&quot;&gt;1.2 How to integrate Circle CI to your repository&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;1-circle-ci&quot;&gt;1. Circle CI&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-what-is-circle-ci&quot;&gt;1.1 What is Circle CI&lt;/h3&gt;
+
+&lt;p class=&quot;img_middle_lg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-24 Continous Integartion/2018-05-16-CircleCI/What is CircleCI.png&quot; alt=&quot;Vim summary&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;12-how-to-integrate-circle-ci-to-your-repository&quot;&gt;1.2 How to integrate Circle CI to your repository&lt;/h3&gt;
+
+&lt;p&gt;TBC.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://circleci.com/docs/2.0/&quot;&gt;《CircleCI Documentation》&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Wed, 16 May 2018 00:00:00 +0800</pubDate>
+				<link>/-24%20continous%20integration/2018/05/16/CircleCI.html</link>
+				<guid isPermaLink="true">/-24%20continous%20integration/2018/05/16/CircleCI.html</guid>
+			</item>
+		
+			<item>
+				<title>Jest</title>
+				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-test-框架原型&quot; id=&quot;markdown-toc-1-test-框架原型&quot;&gt;1. Test 框架原型&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-基本数据结构测试&quot; id=&quot;markdown-toc-11-基本数据结构测试&quot;&gt;1.1 基本数据结构测试&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-异步测试&quot; id=&quot;markdown-toc-12-异步测试&quot;&gt;1.2 异步测试&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-group测试&quot; id=&quot;markdown-toc-13-group测试&quot;&gt;1.3 Group测试&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#14-mock测试&quot; id=&quot;markdown-toc-14-mock测试&quot;&gt;1.4 Mock测试&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#15-test-coveraage-report-intepration&quot; id=&quot;markdown-toc-15-test-coveraage-report-intepration&quot;&gt;1.5 Test Coveraage Report Intepration&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;1-test-框架原型&quot;&gt;1. Test 框架原型&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-基本数据结构测试&quot;&gt;1.1 基本数据结构测试&lt;/h3&gt;
+
+&lt;h3 id=&quot;12-异步测试&quot;&gt;1.2 异步测试&lt;/h3&gt;
+
+&lt;h3 id=&quot;13-group测试&quot;&gt;1.3 Group测试&lt;/h3&gt;
+
+&lt;h3 id=&quot;14-mock测试&quot;&gt;1.4 Mock测试&lt;/h3&gt;
+
+&lt;p&gt;TBC.&lt;/p&gt;
+
+&lt;h3 id=&quot;15-test-coveraage-report-intepration&quot;&gt;1.5 Test Coveraage Report Intepration&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Statements:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Branches:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Functions:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lines:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/jest/docs/en/getting-started.html&quot;&gt;《Jest Documentation》&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Mon, 16 Apr 2018 00:00:00 +0800</pubDate>
+				<link>/-23%20test/2018/04/16/Jest.html</link>
+				<guid isPermaLink="true">/-23%20test/2018/04/16/Jest.html</guid>
+			</item>
+		
+			<item>
 				<title>Vim</title>
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
@@ -17680,87 +17774,6 @@ We now have two functions: A function &lt;code class=&quot;highlighter-rouge&quo
 				<pubDate>Thu, 20 Oct 2016 00:00:00 +0800</pubDate>
 				<link>/04%20web%20development/2016/10/20/Redux-Part-I_TodoApp.html</link>
 				<guid isPermaLink="true">/04%20web%20development/2016/10/20/Redux-Part-I_TodoApp.html</guid>
-			</item>
-		
-			<item>
-				<title>RN(九) Unit Test</title>
-				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-summary&quot; id=&quot;markdown-toc-1-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Sat, 15 Oct 2016 00:00:00 +0800</pubDate>
-				<link>/04%20web%20development/2016/10/15/RN(%E4%B9%9D)-Unit-Test.html</link>
-				<guid isPermaLink="true">/04%20web%20development/2016/10/15/RN(%E4%B9%9D)-Unit-Test.html</guid>
-			</item>
-		
-			<item>
-				<title>RN(八) Debug</title>
-				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-basic&quot; id=&quot;markdown-toc-1-basic&quot;&gt;1 Basic&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-print-entry-cfbundleidentifier-does-not-exist&quot; id=&quot;markdown-toc-11-print-entry-cfbundleidentifier-does-not-exist&quot;&gt;1.1 Print: Entry, “:CFBundleIdentifier”, Does Not Exist&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#solution-1&quot; id=&quot;markdown-toc-solution-1&quot;&gt;Solution 1:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#solution-2&quot; id=&quot;markdown-toc-solution-2&quot;&gt;Solution 2:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#solution-3&quot; id=&quot;markdown-toc-solution-3&quot;&gt;Solution 3:&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#solution-4&quot; id=&quot;markdown-toc-solution-4&quot;&gt;Solution 4:&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;1-basic&quot;&gt;1 Basic&lt;/h2&gt;
-
-&lt;h3 id=&quot;11-print-entry-cfbundleidentifier-does-not-exist&quot;&gt;1.1 Print: Entry, “:CFBundleIdentifier”, Does Not Exist&lt;/h3&gt;
-
-&lt;h4 id=&quot;solution-1&quot;&gt;Solution 1:&lt;/h4&gt;
-&lt;p&gt;Remove spaces from file or directory names.
-Use/path/to/ReactNative/app1 instead of /path/to/React Native/app1.&lt;/p&gt;
-
-&lt;h4 id=&quot;solution-2&quot;&gt;Solution 2:&lt;/h4&gt;
-&lt;p&gt;Make sure port 8081 is not already in use. On a Mac, run the following command to see if any processes are running on port 8081:
-lsof -i :8081
-If a process is running, terminate it using this command:
-kill -9 &lt;PID&gt;
-On Windows, follow these instructions.&lt;/PID&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;solution-3&quot;&gt;Solution 3:&lt;/h4&gt;
-&lt;p&gt;In the project directory, run the terminal command react-native upgrade. You can also use react-native-git-upgrade to do this.&lt;/p&gt;
-
-&lt;h4 id=&quot;solution-4&quot;&gt;Solution 4:&lt;/h4&gt;
-&lt;p&gt;Specify a version of React Native when initializing a project: 
-react-native init ProjectName –version 0.44.2&lt;/p&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png&quot; alt=&quot;JS React Summary&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Learning-React-Kirupa-Chinnathambi/dp/0134546318&quot;&gt;Learning React&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Fri, 14 Oct 2016 00:00:00 +0800</pubDate>
-				<link>/04%20web%20development/2016/10/14/RN(%E5%85%AB)-Debug.html</link>
-				<guid isPermaLink="true">/04%20web%20development/2016/10/14/RN(%E5%85%AB)-Debug.html</guid>
 			</item>
 		
 	</channel>
