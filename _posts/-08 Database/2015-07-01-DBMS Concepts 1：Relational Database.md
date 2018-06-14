@@ -22,11 +22,19 @@ shortinfo: DBSM实现。
 
 ### 1.1 Relational Databases
 
-### 1.1.1  Relational Data Model ###
+### 1.1.1: Relational Data Model ###
 
-### 1.1.2 Relational Algebra ###
+### 1.1.2: Relational Algebra ###
 
-### 1.1.3 Advanced SQL ###
+### 1.1.3 SQL ###
+
+#### 1.1.3.1 Basic
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 SQL_Summary.png)
+
+
+#### 1.1.3.2 Advanced
 
 window function `ROW_NUMBER`, `RANK`, `OVER`, `PARTITION BY`
 
