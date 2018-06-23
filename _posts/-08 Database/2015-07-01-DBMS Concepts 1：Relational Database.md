@@ -18,46 +18,89 @@ shortinfo: DBSM实现。
 ---
 {:.hr-short-left}
 
-## 1 ##
+## 1 Relational Databases ##
 
-### 1.1 Relational Databases
 
-### 1.1.1  Relational Data Model ###
+### 1.1: Relational Data Model ###
 
-### 1.1.2 Relational Algebra ###
+### 1.2: Relational Algebra ###
 
-### 1.1.3 Advanced SQL ###
+### 1.3 SQL ###
+
+#### 1.3.1 Basic
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 SQL_Summary.png)
+
+#### 1.3.2 Advanced
 
 window function `ROW_NUMBER`, `RANK`, `OVER`, `PARTITION BY`
 
 you should always strive to compute your answer as a single SQL statement
 
-### 1.1.4 Functional Dependencies ###
+##### 1.3.2.1 Recursion
 
-How do we design a "good" database schema(logic level)? integrity, reduce redundancy are two key matrics.
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6_2 SQL.png)
 
-What is `Super Key`? Why we need care about `Super Key`? They help us determine whether it is okay to decom[ose a table into multiple sub-tables. They ensure that we are able to recreate the original relation through joins.
+### 1.1.4 DBMS Design Theory: Functional Dependencies and Norm forms ###
 
-`Candidate Key`
+How do we design a "good" database schema(logic level)? Integrity, reduce redundancy are two key matrics.
 
-`Primary Key`
+What is `Super Key`,`Primary Key`,`Candidate Key`?
 
 
-### 1.1.5 Normal Forms ###
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH3 Database Design.png)
 
-1NF: all types must be atomic and no repreating groups.
+### 1.1.5 UML ###
 
-2NF: 1NF and non-key attributes fully depend on the candidate key
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH3 UML.png)
 
-3NF
+### 1.1.6 Index
 
-BCNF
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 Index.png)
 
-4&5NF
 
-6NF
+### 1.1.7 Contraints and Triggers
 
-### 1.2 Storage
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH7 Contraints and Triggers.png)
+
+### 1.1.8 Transactions 
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8 Transactions.png)
+
+### 1.1.8 Views
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8_2 Views.png)
+
+
+### 1.1.10 Authorization
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH10 Authorization.png)
+
+
+### 1.1.20 On-Line Analytical Processing (OLAP)
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH20 OLAP.png)
+
+
+### A1 Programming Language for XML
+
+### A2 NoSQL Systems
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_A2 NoSQL.png)
+
+
+## 1.2 Storage
 
 Query Planning
 Operator Execution
