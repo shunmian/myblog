@@ -91,9 +91,9 @@ Database,Table,Column,Row的操作逃不出增删改查4种，只不过命令名
 
 
 ## 4 参考资料 ##
-- [《MySQL in One Tutorial》](https://www.youtube.com/watch?v=yPu6qV5byu4);
-- [《MySQL Cookbook》](https://www.amazon.com/MySQL-Cookbook-Paul-DuBois/dp/059652708X/ref=sr_1_2?ie=UTF8&qid=1469005314&sr=8-2&keywords=mysql+cookbook);
-- [《MySQL Tutorial》](http://www.tutorialspoint.com/mysql/);
+- [《Database System Concepts》](https://www.amazon.com/Database-Concepts-Abraham-Silberschatz-Professor/dp/0073523321);
+- [《Database Systems: The Complete Book》](https://www.amazon.com/Database-Systems-Complete-Book-2nd/dp/0131873253);
+- [《Database Management System》](https://www.amazon.com/Database-Management-Systems-Raghu-Ramakrishnan/dp/0072465638);
 
 
 
