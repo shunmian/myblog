@@ -20,13 +20,15 @@ shortinfo: DBSM实现。
 
 ## 1 Database Design ##
 
-Datanbase Design mainly involves the design of the database schema.
+Database Design mainly involves the design of the database schema.
 
 ### 1.1 Entity-Relationship (E-R) Model
 
 **Entities** are described in a database by a set of attribtues, which is regarded as primitive physical data.
 
 **Relationship** is an association among severl entities.
+
+E-R model are similar to UML model so below is an introduction of UML model. Please spend sometime understand the multiplicity of associations.
 
 #### 1.1.1 UML
 
