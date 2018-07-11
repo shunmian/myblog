@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DBMS Concepts 3：Storage, Query, Execution
+title: DBMS Concepts 3：Storage, Indexing, Query (Compiler, Optimizer, Executer)
 categories: [-08 Database]
 tags: [Database,MySQL]
 number: [-6.1.1]
@@ -20,56 +20,25 @@ shortinfo: DBSM实现。
 
 ## 1 ##
 
-### 1.1 Storage ###
+### 1.1 Storage and File Structure ###
 
-#### 1.1.1 Query Parser, Planner, Optimizer ####
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH10 Organization and Records in Files.png)
 
-SQL is declarative: user tells the DBMS what answer they want, not how to get the answer. There can be a big difference in performance based on plan is used (1.3hour vs 0.45s from last lecture)
+### 1.2 Indexing ###
 
-#### 1.1.2 Executer (Processing Model)####
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH11 Indexing.png)
 
-A DBMS's processing model defiens how the system executes a query plan
+### 1.3 Query Compiler (Parser, Logical Query Generator, Physical Query Generator) 
 
-3 approaches:
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH13 Query Compiler.png)
 
-1. Iterator Model
+### 1.4 Query Executer ###
 
-2. Materialization Model
-
-3. Vectorized / Batch Model
-
-Case study:
-
-1. sorting execution, `SELECT ... ORDER BY`, `SELECT ... GROUP BY`
-
-2. join execution
-
-
-#### 1.1.3 Access Methods ####
-
-Internal Meta-data, Core Data Storage, Temprory Data Structures(Hash table, buckets); Table Indexes(tree).
-
-##### 1.1.3.1 Hash Table
-
-##### 1.1.3.2 Tree
-
-a table index is a replica of a subset of a table's columns that are organized for efficient access using a subset of those columns. The DBMS ensures that the contents of the table and the index are always in syncs.
-
-B+tree(a self balance tree allow 增删改查 O(log n), B-tree, B-link-tree, B*tree
-Skip List, 
-Radix Tree, 
-Extra Index Stuff
-
-
-
-
-#### 1.1.4 Buffer Pool Manager ####
-
-#### 1.1.5 Disk Manager ####
-
-### 1.2 Execution ###
-
-
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH12 Query Execution.png)
 
 
 

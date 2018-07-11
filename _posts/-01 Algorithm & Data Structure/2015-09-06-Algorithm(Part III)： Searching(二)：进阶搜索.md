@@ -129,13 +129,26 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 {: .img_middle_hg}
 ![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST Insertion.png)
 
-##### 2.2.1.3 B-tree #####
+##### 2.2.1.3 B-tree Family #####
 
+###### 2.2.1.3.1 B-tree
 > **B-tree:**是2-3 tree的泛化，每个node可以包括M/2个Key到M-1个Key。
 
 {: .img_middle_hg}
 ![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/B tree.png)
 
+###### 2.2.1.3.2 B+-tree
+
+
+1. Each leaf node has the same length from root (the same as B tree);
+
+2. data are in the leaf node; internal node and root node has key and pointer to other node;
+
+3. leaf node has pointer to adjacent leafs so that B+ tree is very good for range query since one leaf can reference next leaf.
+
+###### 2.2.1.3.3 B*-tree
+
+###### 2.2.1.3.4 B#-tree
 
 ##### 2.2.1.4 Geometric Appliction of BST #####
 
