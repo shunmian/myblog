@@ -18,68 +18,22 @@ shortinfo: DBSM实现。
 ---
 {:.hr-short-left}
 
-## 1 Transaction Management ##
+## 1 Transaction Management##
 
-### 1.1 Concurrency
+### 1.1 Transaction
 
-Process Models (Worker, the DBMS component that is responsible for executing tasks on behalf of the client and returning the results). 3 approaches: process per dbms worker, process pool, thread per dbms worker
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-04-DBMS Concepts 4：Transaction Management/Part 4_CH14 Transactions.png)
 
-Execution Parallelism
+### 1.2 Concurrency ###
 
-I/O Parallelism
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-04-DBMS Concepts 4：Transaction Management/Part 4_CH15 Concurrency.png)
 
+### 1.3 Recovery ###
 
-Embeded bdatabase logic?
-
-
-========
-
-we both change the same record in a table at the same time. How to avoid race condition.
-
-a transaction is the execution of a sequence of one or more operations (e.g., SQL queries) on a shared database to perform some higher-level function.
-
-strawman system: 1). Execute each txn one-by-one(serial order); 2) before a txn starts, copy the entire database to a new file and make all changes to that file, if txn completes succeeded, overwrite the original file with the new one; else, just remove the dirty copy.
-
-better approach is to allow concurrent execution of independent transactions.
-
-#### 1.1.1 locking
-
-0. tool(lock vs latch(Mutex, as low level primitive));
-
-1. Lock Types (share lock for read; exclusive lock for write)
-
-2. pessimistic: Two-Phase Locking(Growing, Shrinking);
-
-3. Deadlock Detection + Prevention
-
-4. Hierarchical Locking
-
-#### 1.1.2 timestamp
-
-pessimistic: Two-Phase Locking(Growing, Shrinking); optimistic: Timestamp ordering(use timestamps to determine the serializability order of txns, using system clock, logical counter, or hybrid).
-
-#### 1.1.3 multi-version concurrency
-
-### 1.2 logging + Recovery
-
-
-
-### 1.3 Distributed
-
-OLTP(On-line Transaction Processing)
-OLAP(On-line Analytical Processing)
-
-nuodb
-
-{: .img_middle_lg}
-![regular expression](/assets/images/posts/2015-06-01/MySQL overview.png)
-
-
-## 2 MySQL实战 ## 
-
-{% highlight mysql linenos %}
-{% endhighlight %}
-
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-04-DBMS Concepts 4：Transaction Management/Part 4_CH16 Recovery.png)
 
 ## 3 总结 ##
 
