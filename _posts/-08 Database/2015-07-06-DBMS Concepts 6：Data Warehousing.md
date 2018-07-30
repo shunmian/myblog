@@ -25,8 +25,6 @@ shortinfo: DBSM实现。
 ### 1.2 Information Retrieval
 
 
-
-
 ## 2 MySQL实战 ## 
 
 {% highlight mysql linenos %}

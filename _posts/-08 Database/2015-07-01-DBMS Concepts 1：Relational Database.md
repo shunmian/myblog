@@ -119,6 +119,10 @@ WHERE dept_count(dept_name) > 12
 {: .img_middle_hg}
 ![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_A2 NoSQL.png)
 
+#### A0 course Notes
+
+1. Cloud Programmer, Data scientist, Data engineer, Machine Learning Architect
+
 ## 4 参考资料 ##
 - [《Database System Concepts》](https://www.amazon.com/Database-Concepts-Abraham-Silberschatz-Professor/dp/0073523321);
 - [《Database Systems: The Complete Book》](https://www.amazon.com/Database-Systems-Complete-Book-2nd/dp/0131873253);
