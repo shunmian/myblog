@@ -54,6 +54,79 @@ In project root directory, run `javac MyClass.java` to compile `Myclass.java` to
 
 1. javadoc
 
+### 5 Inheritance
+
+#### 5.7 Reflection
+
+More like `Objc` **Meta Class**, see [here]({{site.baseurl}}/01%20objective-c/2016/03/05/OC-Runtime(一)_Object-Model-Part-I_Object-Hierarchy.html).
+
+### 6 Interface, Lambda, Inner Class, Proxy
+
+#### 6.1 Interface vs Abstract Class
+
+One class cannot inheritant from multiple **Abstract Class**, but can implement multiple **Interface**.
+
+Interface can have **static** and **default** method.
+
+#### 6.2 Lambda
+
+> **Function Interface**: an interface with just one function declaration. One can create an instance by `Runnable r = () -> { task code }`.
+
+### 7 Exceptions, Assertions, Logging
+
+#### 7.3 Logging
+
+7 Logging Levels: 
+
+- SEVERE
+- WARNING
+- INFO
+- CONFIG
+- FINE
+- FINER
+- FINEST
+
+
+### 8 Generic Programming
+
+
+### 9 Collections
+
+List, Set, Queue, Map
+
+### 10 Graphics Programming
+
+### 11 Event Handling
+
+### 12 User Interface Component with Swing
+
+### 13 Deploying Java Application
+
+### 14 Concurrency
+
+`Thread` class, `Runnable` interface.
+
+{% highlight java linenos %}
+
+Runnable r = () -> {
+  try {
+    for (int i = 1; i <= STEPS; i++) {
+      ball.move(comp.getBounds());
+      comp.repaint();
+      Thread.sleep(DELAY);
+    }
+  } catch (InterruptedException e) {
+
+  }
+};
+
+Thread t = new Thread(r);
+t.start();
+
+{% endhighlight %}
+
+
+
 ## 2 others
 
 1. Java native method ? 
