@@ -20,76 +20,96 @@ shortinfo: DBSM实现。
 
 ## 1 Relational Databases ##
 
+**What is relationship in relational database**: a row in a table represents a relationship among a set of values.
 
-### 1.1: Relational Data Model ###
+**Analogy between database and programming language**: database schema(class definition), database instance(class variable).
 
-### 1.2: Relational Algebra ###
+**Super Key vs Primary Key vs Candidate Key**.
 
-### 1.3 SQL ###
+**Relational Operation**: The input and output of relational operation are both a single relation, this is the foundation for composition of relational operation. 
 
-#### 1.3.1 Basic
+{% highlight mysql linenos %}
+SELECT *
+FROM (SELECT *
+      FROM Student
+      WHERE age < 10
+      )
+WHERE gender = 'FEMALE'
+{% endhighlight %}
+
+
+
+### 1.1 SQL ###
+
+#### 1.1.1 Basic
+
+**What does `From R1, R2` actually mean**:  The `From R1, R2` forms a cartesian product with r1 * r2's combination. It's like two for loop that generates all possible combination. The next question is that how to do it efficiently with nested for loops.
 
 {: .img_middle_hg}
 ![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 SQL_Summary.png)
 
-#### 1.3.2 Advanced
+#### 1.1.2 Intermediate
 
-window function `ROW_NUMBER`, `RANK`, `OVER`, `PARTITION BY`
-
-you should always strive to compute your answer as a single SQL statement
-
-##### 1.3.2.1 Recursion
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6_2 SQL.png)
-
-### 1.1.4 DBMS Design Theory: Functional Dependencies and Norm forms ###
-
-How do we design a "good" database schema(logic level)? Integrity, reduce redundancy are two key matrics.
-
-What is `Super Key`,`Primary Key`,`Candidate Key`?
-
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH3 Database Design.png)
-
-### 1.1.5 UML ###
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH3 UML.png)
-
-### 1.1.6 Index
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 Index.png)
-
-
-### 1.1.7 Contraints and Triggers
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH7 Contraints and Triggers.png)
-
-### 1.1.8 Transactions 
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8 Transactions.png)
-
-### 1.1.8 Views
+##### 1.1.2.1 Views
 
 {: .img_middle_hg}
 ![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8_2 Views.png)
 
+##### 1.1.2.2 Transactions 
 
-### 1.1.10 Authorization
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8 Transactions.png)
+
+##### 1.1.2.3 Authorization
 
 {: .img_middle_hg}
 ![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH10 Authorization.png)
 
+#### 1.1.3 Advanced
 
-### 1.1.20 On-Line Analytical Processing (OLAP)
+##### 1.1.3.1 Contraints and Triggers
+
+**What is a Trigger**: A trigger is a statement that the system executes automaticlaly as a side effect of a modification to the database when a event occurs. In a word, a trigger is an event listener in database.
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH7 Contraints and Triggers.png)
+
+##### 1.1.3.2 Recursion
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6_2 SQL.png)
+
+##### 1.1.3.3 Functions
+
+
+{% highlight mysql linenos %}
+CREATE FUNCTION dept_count(dept_name VARCHAR(20))
+  RETURN INTEGER
+  BEGIN
+  DECLARE d_count INTEGER:
+    SELECT COUNT(*) INTO d_count
+    FROM instructor
+    WHERE instructor.dept_name = dept_name
+  RETURN d_count
+  END
+
+SELECT dept_name, budge
+FROM instructor
+WHERE dept_count(dept_name) > 12
+{% endhighlight %}
+
+##### 1.1.3.4 On-Line Analytical Processing (OLAP)
+
+**What is OLAP**: provide the function to view different summaries of multidimensional data.
 
 {: .img_middle_hg}
 ![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH20 OLAP.png)
+
+##### 1.1.3.5 Index
+
+{: .img_middle_hg}
+![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 Index.png)
+
 
 
 ### A1 Programming Language for XML
@@ -99,115 +119,14 @@ What is `Super Key`,`Primary Key`,`Candidate Key`?
 {: .img_middle_hg}
 ![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_A2 NoSQL.png)
 
+#### A0 course Notes
 
-## 1.2 Storage
-
-Query Planning
-Operator Execution
-Access Methods
-Buffer Pool Manager
-Disk Manager
-
-### 1.2.1 Database Storage ###
-
-Allow the DBMS to manage databases that exceed the amount of memory available. Reading/Writing to disk is expensive, so it must be managed carefully.
-
-DBMS always wants to control things itself instead of relying on OS: specialized prefetching, buffer replacement policy, thread/process scheduling, flushing data to disk.
-
-How DBMS represents the database in files on disk? (Persistency, or spatial: File storage, page layout, Tuple layout, Storage Models.
-
-
-### 1.2.2 Buffer Pools ###
-
-N-ary storage advantage(fast insert, update and delete, good for queries that need the entire tuple) vs disadvantages(not good for scanning large portions of the table and/or a subset of the attributes).
-
-Deomposition storage model
-
-
-
-How DBMS manages its memory and move data back-and-forth from disk? (VM, or temporal,  buffer pools)
-
-tools to coordinate with OS on this problem
-
-1. madvise， tell OS how you expect to read certain pages
-
-2. mlock, tell the os that memory ranges cannot be paged out
-
-3. msync, tell the OS to flush memory ranges out to disk
-
-Locks vs Latches
-
-### 1.2.3 Hash Tables ###
-
-Access Methods
-
-### 1.2.4 Order Preserving Trees ###
-
-Access Methods
-
-### 1.2.5 Query Processing ###
-
-### 1.11 Sorting & Joins ###
-
-### 1.12 Hash Joins & Aggregation ###
-
-### 1.13 Query Optimization ###
-
-### 1.14 Parallel Execution ###
-
-### 1.15 Embedded Database Logic ###
-
-### 1.16 Concurrency Control Theory ###
-
-### 1.17 Two-Phase Locking ###
-
-### 1.18 Index Concurrency Control ###
-
-### 1.19 Timestamp Ordering Concurrency Controll ###
-
-### 1.20 Multi-Version Concurrency Control ###
-
-### 1.21 Logging Schemes ###
-
-### 1.22 Database Recovery ###
-
-### 1.23 Distributed OLTP Systems ###
-
-### 1.24 Barry Morris ###
-
-### 1.3 Execution
-
-### 1.4 Concurrency Control
-
-### 1.5 Recovery
-
-### 1.6 Distributed Databases
-
-
-
-{: .img_middle_lg}
-![regular expression](/assets/images/posts/2015-06-01/MySQL overview.png)
-
-
-## 2 MySQL实战 ## 
-
-{% highlight mysql linenos %}
-{% endhighlight %}
-
-
-## 3 总结 ##
-
-Database,Table,Column,Row的操作逃不出增删改查4种，只不过命令名字和规则略有不同。按照这个原则，我们
-对**MySQL的客户端mysql**总结成下表，以供参考。
-
-{: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
-
+1. Cloud Programmer, Data scientist, Data engineer, Machine Learning Architect
 
 ## 4 参考资料 ##
-- [《MySQL in One Tutorial》](https://www.youtube.com/watch?v=yPu6qV5byu4);
-- [《MySQL Cookbook》](https://www.amazon.com/MySQL-Cookbook-Paul-DuBois/dp/059652708X/ref=sr_1_2?ie=UTF8&qid=1469005314&sr=8-2&keywords=mysql+cookbook);
-- [《MySQL Tutorial》](http://www.tutorialspoint.com/mysql/);
+- [《Database System Concepts》](https://www.amazon.com/Database-Concepts-Abraham-Silberschatz-Professor/dp/0073523321);
+- [《Database Systems: The Complete Book》](https://www.amazon.com/Database-Systems-Complete-Book-2nd/dp/0131873253);
+- [《Database Management System》](https://www.amazon.com/Database-Management-Systems-Raghu-Ramakrishnan/dp/0072465638);
 
 
 
