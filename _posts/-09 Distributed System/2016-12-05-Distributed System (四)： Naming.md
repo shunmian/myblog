@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Distributed System (四)： Communication 
+title: Distributed System (四)： Naming 
 categories: [-09 Distributed System]
 tags: [Distributed System]
 number: [-9.11]

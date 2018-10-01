@@ -20,7 +20,7 @@ shortinfo: 本文是对Distributed System的总结。
 ## 1 Summary ##
 
 {: .img_middle_hg}
-![Spring Summary.png](/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png)
+![Process Summary.png](/assets/images/posts/-09 Distributed System/2016-12-03-Distributed System_02_Process/Process Summary.png)
 
 
 
