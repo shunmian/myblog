@@ -20,8 +20,7 @@ shortinfo: 本文是对Distributed System的总结。
 ## 1 Summary ##
 
 {: .img_middle_hg}
-![Spring Summary.png](/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png)
-
+![Coordination Summary](/assets/images/posts/2016-12-07-Distributed System_06_Consistency and Replication/Consistency and Replication Summary.png)
 
 
 ## 2 参考资料 ##
