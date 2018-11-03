@@ -560,6 +560,69 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 			</item>
 		
 			<item>
+				<title>MIT_6824 (一)： Introduction (MapReduce)</title>
+				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-introduction&quot; id=&quot;markdown-toc-1-introduction&quot;&gt;1 Introduction&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-outline&quot; id=&quot;markdown-toc-11-outline&quot;&gt;1.1 Outline&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;markdown-toc-&quot;&gt;#&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;1-introduction&quot;&gt;1 Introduction&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-outline&quot;&gt;1.1 Outline&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Reading: &lt;a href=&quot;http://nil.csail.mit.edu/6.824/2016/papers/mapreduce.pdf&quot;&gt;MapReduce(2004)&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lab 1: &lt;a href=&quot;http://nil.csail.mit.edu/6.824/2016/labs/lab-1.html&quot;&gt;MapReduce&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lecture:  &lt;a href=&quot;https://www.youtube.com/watch?v=hBWfjkGKRas&amp;amp;index=1&amp;amp;list=PLkcQbKbegkMqiWf7nF8apfMRL4P4sw8UL&quot;&gt;Video&lt;/a&gt;, &lt;a href=&quot;http://nil.csail.mit.edu/6.824/2016/notes/l01.txt&quot;&gt;Notes&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Other Materials: &lt;a href=&quot;https://www.douban.com/note/364922549/&quot;&gt;MapReduce related papers&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;#&lt;/h2&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.distributed-systems.net/index.php/books/distributed-systems-3rd-edition-2017/&quot;&gt;《Distributed System》&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://pdos.csail.mit.edu/6.824/schedule.html&quot;&gt;MIT 6.824&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/chaozh/MIT-6.824&quot;&gt;MIT 6.824 作业&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://ts25504.github.io/2016/08/16/MIT-6-824%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/&quot;&gt;MIT-6.824学习之路&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Google三剑客: &lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf&quot;&gt;MapReduce&lt;/a&gt;, &lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf&quot;&gt;BigTable&lt;/a&gt;, &lt;a href=&quot;https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf&quot;&gt;GFS&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Sun, 11 Dec 2016 00:00:00 +0800</pubDate>
+				<link>/-09%20distributed%20system/2016/12/11/MIT_6824-(%E4%B8%80)-Introduction.html</link>
+				<guid isPermaLink="true">/-09%20distributed%20system/2016/12/11/MIT_6824-(%E4%B8%80)-Introduction.html</guid>
+			</item>
+		
+			<item>
 				<title>Distributed System (八)： Security</title>
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
@@ -572,7 +635,7 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 
 &lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-12-09-Distributed System_08_Security/Security Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 
@@ -609,7 +672,7 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 
 &lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-12-08-Distributed System_07_Fault Tolerance/Fault Tolerance.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 
@@ -646,7 +709,7 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 
 &lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/2016-12-07-Distributed System_06_Consistency and Replication/Consistency and Replication Summary.png&quot; alt=&quot;Coordination Summary&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 
@@ -742,43 +805,6 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 				<pubDate>Mon, 05 Dec 2016 00:00:00 +0800</pubDate>
 				<link>/-09%20distributed%20system/2016/12/05/Distributed-System-(%E5%9B%9B)-Naming.html</link>
 				<guid isPermaLink="true">/-09%20distributed%20system/2016/12/05/Distributed-System-(%E5%9B%9B)-Naming.html</guid>
-			</item>
-		
-			<item>
-				<title>Distributed System (三)： Communication</title>
-				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-summary&quot; id=&quot;markdown-toc-1-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-09 Distributed System/2016-12-04-Distributed System_03_Communication/Communication Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.distributed-systems.net/index.php/books/distributed-systems-3rd-edition-2017/&quot;&gt;《Distributed System》&lt;/a&gt;;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://pdos.csail.mit.edu/6.824/schedule.html&quot;&gt;MIT 6.824&lt;/a&gt;;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/chaozh/MIT-6.824&quot;&gt;MIT 6.824 作业&lt;/a&gt;;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://ts25504.github.io/2016/08/16/MIT-6-824%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/&quot;&gt;MIT-6.824学习之路&lt;/a&gt;;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Sun, 04 Dec 2016 00:00:00 +0800</pubDate>
-				<link>/-09%20distributed%20system/2016/12/04/Distributed-System-(%E4%B8%89)-Communication.html</link>
-				<guid isPermaLink="true">/-09%20distributed%20system/2016/12/04/Distributed-System-(%E4%B8%89)-Communication.html</guid>
 			</item>
 		
 	</channel>

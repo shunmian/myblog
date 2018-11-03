@@ -32,6 +32,16 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 
 3. `strace`(linux) or `dtruss`(Mac): a tool to trace the system calls made by a program. `echo hello > foo`, `cat foo`, `strace cat foo`. 
 
+4. Command line换行: ```./configure --prefix=/usr/local/softname --enable-xxx -enable-yyy --enable-zzz --enable-aaa -enable-bbb --enable-ccc --enable-mmm -enable-nnn --enable-ppp --enable-qqq```太长可换成多行
+```
+./configure --prefix=/usr/local/softname \
+--enable-xxx -enable-yyy --enable-zzz --enable-aaa \
+-enable-bbb --enable-ccc --enable-mmm -enable-nnn \
+--enable-ppp --enable-qqq
+```
+
+5. Find the last cmd return value: `echo $?`.
+
 {% highlight c linenos %}
 #include <stdio.h>
 
