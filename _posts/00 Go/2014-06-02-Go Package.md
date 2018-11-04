@@ -28,6 +28,7 @@ shortinfo: 本文是对Go Package的总结。
 
 ReadFile reads the file named by filename and returns the contents. A successful call returns err == nil, not err == EOF. Because ReadFile reads the whole file, it does not treat an EOF from Read as an error to be reported.
 
+
 {% highlight go linenos %}
 
 {% endhighlight %} 
