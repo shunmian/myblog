@@ -42,6 +42,8 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 
 5. Find the last cmd return value: `echo $?`.
 
+6. Run the command in background: `ls &`. If a command is terminated by the control operator &, the shell executes the command in the background in a subshell. The shell does not wait for the command to finish, and the return status is 0.
+
 {% highlight c linenos %}
 #include <stdio.h>
 
@@ -68,3 +70,4 @@ promt>
 
 
 
+ 
