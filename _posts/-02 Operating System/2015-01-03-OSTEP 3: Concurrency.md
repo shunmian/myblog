@@ -20,6 +20,8 @@ shortinfo: OSTEP Concurrency。
 
 ## 1 Concurrency Summary ##
 
+> Concurrency (in a normal (non-OS) program): multiple threads run at the same time within a process; not multiple process run at the same time within the OS;
+
 {: .img_middle_hg}
 ![VM_Summary](/assets/images/posts/-02_Operating System/OSTEP/2015-01-03-OSTEP 3_Concurrency/Concurrency_Summary.png)
 
