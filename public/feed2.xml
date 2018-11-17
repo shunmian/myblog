@@ -639,9 +639,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 &lt;span class=&quot;n&quot;&gt;fireParticles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGPointMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 用NSBundle读取.sks 文件，然后可以进一步修改其属性。这样就完成了SpriteKit Particles Files 的子类化和应用。
+&lt;pre&gt;&lt;code&gt; 用NSBundle读取.sks 文件，然后可以进一步修改其属性。这样就完成了SpriteKit Particles Files 的子类化和应用。
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
 
 &lt;h3 id=&quot;22-skphysicsworld--skphysicsbody&quot;&gt;2.2 SKPhysicsWorld &amp;amp; SKPhysicsBody&lt;/h3&gt;
 &lt;p&gt;SpriteKit 里表示物理模型的有两个类，SKPhysicsWorld &amp;amp; SKPhysicsBody，前者属于SKScene，后者属于SKNode其他子类。SKPhysicsWorld 和 SKPhysicsBody 都继承与NSObject。我们先来看看SKPhysicsWorld。&lt;/p&gt;
