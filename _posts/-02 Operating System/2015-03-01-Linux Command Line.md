@@ -143,7 +143,7 @@ shortinfo: 本文《The Linux Command Line》的笔记。
 
 - `ping`: send an ICMP ECHO_REQUEST to network hosts, `ping www.google.com`
 - `traceroute`: trace the path of a network packet, `traceroute www.google.com`
-- `netstat`: Print network connections, routing tables, interface statistics, masquerade connections and multicast memberships.
+- `netstat`: Print network connections, routing tables, interface statistics, masquerade connections and multicast memberships. `netstat -l | grep echo`输出和echo相关的网络信息。
 - `ftp`: internet file transfer program.
 - `lftp`: An improved internet file transfer program.
 - `wget`: Non-interactive network downloader, `wget http://www.linuxcommand.org/`
@@ -154,6 +154,7 @@ shortinfo: 本文《The Linux Command Line》的笔记。
   - set public/private key is safer than password, `ssh-keygen` generate `~/.ssh/id_rsa`(private key) and `~/.ssh/id_rsa.pub`(public key, which should go to server `authorized_keys` file)
 - `scp`: Secure copy (remote file copy program)
 - `sftp`: Secure file transfer program
+- `arp`: 查看arp(ip to mac)信息，`arp -a` display all arp cache entry.
 
 ### C17: Searching for Files
 
