@@ -142,7 +142,7 @@ shortinfo: 本文《The Linux Command Line》的笔记。
 ### C16: Networking
 
 - `ping`: send an ICMP ECHO_REQUEST to network hosts, `ping www.google.com`
-- `traceroute`: trace the path of a network packet, `traceroute www.google.com`
+- `traceroute`: trace the path of a network packet, `traceroute www.google.com`.
 - `netstat`: Print network connections, routing tables, interface statistics, masquerade connections and multicast memberships. `netstat -l | grep echo`输出和echo相关的网络信息。
 - `ftp`: internet file transfer program.
 - `lftp`: An improved internet file transfer program.
