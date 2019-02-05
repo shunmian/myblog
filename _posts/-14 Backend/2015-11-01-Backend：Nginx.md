@@ -58,6 +58,38 @@ main
 {: .img_middle_hg}
 ![Ngin_requst_handle_procedure](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_requst_handle_procedure.png)
 
+### 2.2 Nginx进程模型
+
+为什么nginx使用多进程模型而不是多线程模型？这个问题的本质是多线程和多进程的区别。数据沟通方面，虽然多线程共享数据比多进程的IPC更方便快捷；但是多线程如果一个线程有内存越界访问，整个进程都会挂掉，而多进程模型中，某个进程内存访问错误，并不会影响其他进程。
+
+Nginx的work数通常和cpu数一致，并且会一个work绑定一个cpu，这样可以更好的利用CPU缓存，减少缓存失效的命中率。
+
+{: .img_middle_hg}
+![Nginx_process_model](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_process_model.png)
+
+
+1. 一个父进程(10232)两个子进程(11880, 11902);
+2. `nginx -s reload`,父进程会新重载conf，kill旧的两个子进程，新建2个子进程(11936, 11938); `nginx -s reload`等同于发送`SIGHUP`个父进程，可以看到同样新建2个子进程(11957, 11959);
+3. 当其中一个子进程挂掉后,父进程会收到`SIGCHLD`信号，进而再新建1个子进程(11975)。
+
+{: .img_middle_hg}
+![Nginx_process_demon](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_process_demon.png)
+
+
+
+### 2.3 阻塞 vs 非阻塞 + 同步 vs 异步
+
+> **阻塞 vs 非阻塞**: 关键是某进程在时间片用完之前会不会被操作系统置为`sleep`状态,进而CPU切换执行其他进程。某个进程在调用系统方法时(如IO)，若该方法没完成时，操作系统将该进程状态切换为`sleep`状态，然后去执行其他进程，则为阻塞；若在时间片用完之前，即使该方法没完成，依旧返回，不会将该进程置为`sleep`状态，则为非阻塞。
+
+> **同步 vs 异步**：
+
+
+### 2.4 总结
+
+
+{: .img_middle_hg}
+![Nginx_process_demon](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Part2_nginx_架构基础.png)
+
 
 ## 3 详解HTTP模块
 
