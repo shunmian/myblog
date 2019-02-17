@@ -51,7 +51,11 @@ shortinfo: 本文是《HTTP：The Definitive Guide》的总结。
 
 ### CH13: Digest Authentication
 
+A digest is a "condensation of a body of information".
+
 ### CH14: Secure HTTP
+
+In addition to encrypting and decrypting messages, cryptosystems can be used to sign messages, proving who wrote teh message and proving the message hasn't been tampered with. This technique, called ginital signing, is important for internet security certificates.
 
 ## Part 4 Entities, Encodings, and Internationalization
 

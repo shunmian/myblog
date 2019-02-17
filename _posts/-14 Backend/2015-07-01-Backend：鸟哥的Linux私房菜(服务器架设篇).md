@@ -1,0 +1,85 @@
+---
+layout: post
+title: 鸟哥的Linux私房菜(服务器架设篇)
+categories: [-14 Backend]
+tags: [Web Server]
+number: [-2.1]
+fullview: false
+shortinfo: 本书是对《鸟哥的Linux私房菜(服务器架设篇)》的笔记。
+---
+目录
+{:.article_content_title}
+
+
+* TOC
+{:toc}
+
+---
+{:.hr-short-left}
+
+{: .img_middle_hg}
+![Nginx_architecture](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_architecture.png)
+
+## Part 1: 服务器搭建前的进修专区
+
+### CH1: 搭建服务器前的准备工作
+
+### CH2: 网络的基本概念
+
+### CH3: 局域网架构简介
+
+### CH4: 连接Internet
+
+### CH5: Linux中常用的网络命令
+
+### CH6: Linux网络排错
+
+## Part 2: 主机的简易安全防护措施
+
+### CH7: 网络安全与主机的基本防护: 限制端口，网络升级与SELinux
+
+### CH8: 路由的概念与路由器设置
+
+### CH9: 防火墙与NAT服务器
+
+TBC
+
+### CH10: 申请合法的主机名
+
+## Part 3: 局域网内常见服务的搭建
+
+### CH11: 远程连接服务器: SSH/XDMCP/VNC/XRDP
+
+TBC
+
+### CH12: 网络参数管理者: DHCP服务器
+
+### CH13: 文件服务器之一: NFS服务器
+
+### CH14: 账号管理: NIS服务器
+
+### CH15: 时间服务器: NTP服务器
+
+### CH16: 文件服务器之二: SAMBA服务器
+
+### CH17: 局域网控制者: Proxy服务器
+
+### CH18: 网络驱动器设备: iSCSI服务器
+
+## Part 4: 常见因特网服务器的搭建
+
+### CH19: 主机名控制者: DNS服务器
+
+### CH20: WWW服务器
+
+TBC
+
+### CH21: FTP服务器
+
+### CH22: 邮件服务器: Postfix
+
+## 2 参考资料 ##
+
+- [The Architecture of Open Source Applications: Nginx](http://www.aosabook.org/en/nginx.html);
+
+

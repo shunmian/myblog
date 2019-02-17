@@ -96,7 +96,11 @@
 
 &lt;h3 id=&quot;ch13-digest-authentication&quot;&gt;CH13: Digest Authentication&lt;/h3&gt;
 
+&lt;p&gt;A digest is a “condensation of a body of information”.&lt;/p&gt;
+
 &lt;h3 id=&quot;ch14-secure-http&quot;&gt;CH14: Secure HTTP&lt;/h3&gt;
+
+&lt;p&gt;In addition to encrypting and decrypting messages, cryptosystems can be used to sign messages, proving who wrote teh message and proving the message hasn’t been tampered with. This technique, called ginital signing, is important for internet security certificates.&lt;/p&gt;
 
 &lt;h2 id=&quot;part-4-entities-encodings-and-internationalization&quot;&gt;Part 4 Entities, Encodings, and Internationalization&lt;/h2&gt;
 
@@ -145,9 +149,9 @@
 &lt;/ul&gt;
 
 </description>
-				<pubDate>Sat, 16 Feb 2019 08:26:08 +0800</pubDate>
-				<link>/2019/02/16/2015-08-01-HTTP-The-Definitive-Guide.html</link>
-				<guid isPermaLink="true">/2019/02/16/2015-08-01-HTTP-The-Definitive-Guide.html</guid>
+				<pubDate>Sun, 17 Feb 2019 22:26:03 +0800</pubDate>
+				<link>/2019/02/17/2015-08-01-HTTP-The-Definitive-Guide.html</link>
+				<guid isPermaLink="true">/2019/02/17/2015-08-01-HTTP-The-Definitive-Guide.html</guid>
 			</item>
 		
 			<item>
