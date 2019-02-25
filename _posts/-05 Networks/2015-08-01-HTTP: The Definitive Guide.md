@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTTP: The Definitive Guide
+title: HTTP：The Definitive Guide
 categories: [-05 Networks]
 tags: [Networks, HTTP]
 number: [-8.2]

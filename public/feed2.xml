@@ -7,154 +7,6 @@
 		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title></title>
-				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#part-1-http-the-webs-foundation&quot; id=&quot;markdown-toc-part-1-http-the-webs-foundation&quot;&gt;Part 1 HTTP: The Web’s Foundation&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch1-overview-of-http&quot; id=&quot;markdown-toc-ch1-overview-of-http&quot;&gt;CH1: Overview of HTTP&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch2-urls-and-resources&quot; id=&quot;markdown-toc-ch2-urls-and-resources&quot;&gt;CH2: URLs and Resources&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch3-http-messages&quot; id=&quot;markdown-toc-ch3-http-messages&quot;&gt;CH3: HTTP Messages&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch4-connection-management&quot; id=&quot;markdown-toc-ch4-connection-management&quot;&gt;CH4: Connection Management&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#part-2-http-architecture&quot; id=&quot;markdown-toc-part-2-http-architecture&quot;&gt;Part 2 HTTP Architecture&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch5-web-servers&quot; id=&quot;markdown-toc-ch5-web-servers&quot;&gt;CH5: Web Servers&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch6-proxies&quot; id=&quot;markdown-toc-ch6-proxies&quot;&gt;CH6: Proxies&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch7-caching&quot; id=&quot;markdown-toc-ch7-caching&quot;&gt;CH7: Caching&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch8-integration-points-gateways-tunnels-and-relays&quot; id=&quot;markdown-toc-ch8-integration-points-gateways-tunnels-and-relays&quot;&gt;CH8: Integration Points: Gateways, Tunnels, and Relays&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch9-web-robots&quot; id=&quot;markdown-toc-ch9-web-robots&quot;&gt;CH9: Web Robots&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch10-http-ng&quot; id=&quot;markdown-toc-ch10-http-ng&quot;&gt;CH10: HTTP-NG&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#part-3-identification-authorization-and-security&quot; id=&quot;markdown-toc-part-3-identification-authorization-and-security&quot;&gt;Part 3 Identification, Authorization and Security&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch11-client-identification-and-cookies&quot; id=&quot;markdown-toc-ch11-client-identification-and-cookies&quot;&gt;CH11: Client Identification and Cookies&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch12-basic-authentication&quot; id=&quot;markdown-toc-ch12-basic-authentication&quot;&gt;CH12: Basic Authentication&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch13-digest-authentication&quot; id=&quot;markdown-toc-ch13-digest-authentication&quot;&gt;CH13: Digest Authentication&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch14-secure-http&quot; id=&quot;markdown-toc-ch14-secure-http&quot;&gt;CH14: Secure HTTP&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#part-4-entities-encodings-and-internationalization&quot; id=&quot;markdown-toc-part-4-entities-encodings-and-internationalization&quot;&gt;Part 4 Entities, Encodings, and Internationalization&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch15-entities-and-encodings&quot; id=&quot;markdown-toc-ch15-entities-and-encodings&quot;&gt;CH15: Entities and Encodings&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch16-internationalization&quot; id=&quot;markdown-toc-ch16-internationalization&quot;&gt;CH16: Internationalization&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch17-content-negotiation-and-transcoding&quot; id=&quot;markdown-toc-ch17-content-negotiation-and-transcoding&quot;&gt;CH17: Content Negotiation and Transcoding&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#part-5-content-publishing-and-distribution&quot; id=&quot;markdown-toc-part-5-content-publishing-and-distribution&quot;&gt;Part 5 Content Publishing and Distribution&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch18-web-hosting&quot; id=&quot;markdown-toc-ch18-web-hosting&quot;&gt;CH18: Web Hosting&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch19-publishing-systems&quot; id=&quot;markdown-toc-ch19-publishing-systems&quot;&gt;CH19: Publishing Systems&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch20-redirection-and-load-balancing&quot; id=&quot;markdown-toc-ch20-redirection-and-load-balancing&quot;&gt;CH20: Redirection and Load Balancing&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ch21-logging-and-usage-tracking&quot; id=&quot;markdown-toc-ch21-logging-and-usage-tracking&quot;&gt;CH21: Logging and Usage Tracking&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#part-6-appendixes&quot; id=&quot;markdown-toc-part-6-appendixes&quot;&gt;Part 6: Appendixes&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#a-uri-schemes&quot; id=&quot;markdown-toc-a-uri-schemes&quot;&gt;A URI Schemes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#b-http-status-codes&quot; id=&quot;markdown-toc-b-http-status-codes&quot;&gt;B HTTP Status Codes&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#c-http-header-reference&quot; id=&quot;markdown-toc-c-http-header-reference&quot;&gt;C HTTP Header Reference&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#d-mime-types&quot; id=&quot;markdown-toc-d-mime-types&quot;&gt;D MIME Types&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#e-base-64-encoding&quot; id=&quot;markdown-toc-e-base-64-encoding&quot;&gt;E Base-64 Encoding&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#f-digest-authentication&quot; id=&quot;markdown-toc-f-digest-authentication&quot;&gt;F Digest Authentication&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#g-language-tags&quot; id=&quot;markdown-toc-g-language-tags&quot;&gt;G Language Tags&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#h-mime-charset-registry&quot; id=&quot;markdown-toc-h-mime-charset-registry&quot;&gt;H MIME Charset Registry&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#总结&quot; id=&quot;markdown-toc-总结&quot;&gt;总结&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4-参考资料&quot; id=&quot;markdown-toc-4-参考资料&quot;&gt;4 参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr class=&quot;hr-short-left&quot; /&gt;
-
-&lt;h2 id=&quot;part-1-http-the-webs-foundation&quot;&gt;Part 1 HTTP: The Web’s Foundation&lt;/h2&gt;
-
-&lt;h3 id=&quot;ch1-overview-of-http&quot;&gt;CH1: Overview of HTTP&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch2-urls-and-resources&quot;&gt;CH2: URLs and Resources&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch3-http-messages&quot;&gt;CH3: HTTP Messages&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch4-connection-management&quot;&gt;CH4: Connection Management&lt;/h3&gt;
-
-&lt;h2 id=&quot;part-2-http-architecture&quot;&gt;Part 2 HTTP Architecture&lt;/h2&gt;
-
-&lt;h3 id=&quot;ch5-web-servers&quot;&gt;CH5: Web Servers&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch6-proxies&quot;&gt;CH6: Proxies&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch7-caching&quot;&gt;CH7: Caching&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch8-integration-points-gateways-tunnels-and-relays&quot;&gt;CH8: Integration Points: Gateways, Tunnels, and Relays&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch9-web-robots&quot;&gt;CH9: Web Robots&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch10-http-ng&quot;&gt;CH10: HTTP-NG&lt;/h3&gt;
-
-&lt;h2 id=&quot;part-3-identification-authorization-and-security&quot;&gt;Part 3 Identification, Authorization and Security&lt;/h2&gt;
-
-&lt;h3 id=&quot;ch11-client-identification-and-cookies&quot;&gt;CH11: Client Identification and Cookies&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch12-basic-authentication&quot;&gt;CH12: Basic Authentication&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch13-digest-authentication&quot;&gt;CH13: Digest Authentication&lt;/h3&gt;
-
-&lt;p&gt;A digest is a “condensation of a body of information”.&lt;/p&gt;
-
-&lt;h3 id=&quot;ch14-secure-http&quot;&gt;CH14: Secure HTTP&lt;/h3&gt;
-
-&lt;p&gt;In addition to encrypting and decrypting messages, cryptosystems can be used to sign messages, proving who wrote teh message and proving the message hasn’t been tampered with. This technique, called ginital signing, is important for internet security certificates.&lt;/p&gt;
-
-&lt;h2 id=&quot;part-4-entities-encodings-and-internationalization&quot;&gt;Part 4 Entities, Encodings, and Internationalization&lt;/h2&gt;
-
-&lt;h3 id=&quot;ch15-entities-and-encodings&quot;&gt;CH15: Entities and Encodings&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch16-internationalization&quot;&gt;CH16: Internationalization&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch17-content-negotiation-and-transcoding&quot;&gt;CH17: Content Negotiation and Transcoding&lt;/h3&gt;
-
-&lt;h2 id=&quot;part-5-content-publishing-and-distribution&quot;&gt;Part 5 Content Publishing and Distribution&lt;/h2&gt;
-
-&lt;h3 id=&quot;ch18-web-hosting&quot;&gt;CH18: Web Hosting&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch19-publishing-systems&quot;&gt;CH19: Publishing Systems&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch20-redirection-and-load-balancing&quot;&gt;CH20: Redirection and Load Balancing&lt;/h3&gt;
-
-&lt;h3 id=&quot;ch21-logging-and-usage-tracking&quot;&gt;CH21: Logging and Usage Tracking&lt;/h3&gt;
-
-&lt;h2 id=&quot;part-6-appendixes&quot;&gt;Part 6: Appendixes&lt;/h2&gt;
-
-&lt;h3 id=&quot;a-uri-schemes&quot;&gt;A URI Schemes&lt;/h3&gt;
-
-&lt;h3 id=&quot;b-http-status-codes&quot;&gt;B HTTP Status Codes&lt;/h3&gt;
-
-&lt;h3 id=&quot;c-http-header-reference&quot;&gt;C HTTP Header Reference&lt;/h3&gt;
-
-&lt;h3 id=&quot;d-mime-types&quot;&gt;D MIME Types&lt;/h3&gt;
-
-&lt;h3 id=&quot;e-base-64-encoding&quot;&gt;E Base-64 Encoding&lt;/h3&gt;
-
-&lt;h3 id=&quot;f-digest-authentication&quot;&gt;F Digest Authentication&lt;/h3&gt;
-
-&lt;h3 id=&quot;g-language-tags&quot;&gt;G Language Tags&lt;/h3&gt;
-
-&lt;h3 id=&quot;h-mime-charset-registry&quot;&gt;H MIME Charset Registry&lt;/h3&gt;
-
-&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-05 Network/2015-05-01-趣谈网络协议/summary.jpg&quot; alt=&quot;broadcast domain&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-参考资料&quot;&gt;4 参考资料&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Practical-Packet-Analysis-Wireshark-Real-World/dp/1593272669/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1477547038&amp;amp;sr=1-1&amp;amp;keywords=practical+packet+analysis&quot;&gt;《Practical Packet Analysis: Using Wireshark to Solve Real-World Network Problems》&lt;/a&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-				<pubDate>Tue, 19 Feb 2019 10:12:19 +0800</pubDate>
-				<link>/2019/02/19/2015-08-01-HTTP-The-Definitive-Guide.html</link>
-				<guid isPermaLink="true">/2019/02/19/2015-08-01-HTTP-The-Definitive-Guide.html</guid>
-			</item>
-		
-			<item>
 				<title>CircleCI</title>
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
@@ -1339,6 +1191,43 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 				<pubDate>Fri, 09 Dec 2016 00:00:00 +0800</pubDate>
 				<link>/-09%20distributed%20system/2016/12/09/Distributed-System-(%E5%85%AB)-Security.html</link>
 				<guid isPermaLink="true">/-09%20distributed%20system/2016/12/09/Distributed-System-(%E5%85%AB)-Security.html</guid>
+			</item>
+		
+			<item>
+				<title>Distributed System (七)： Fault Tolerance</title>
+				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-summary&quot; id=&quot;markdown-toc-1-summary&quot;&gt;1 Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr class=&quot;hr-short-left&quot; /&gt;
+
+&lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-12-08-Distributed System_07_Fault Tolerance/Fault Tolerance.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.distributed-systems.net/index.php/books/distributed-systems-3rd-edition-2017/&quot;&gt;《Distributed System》&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://pdos.csail.mit.edu/6.824/schedule.html&quot;&gt;MIT 6.824&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/chaozh/MIT-6.824&quot;&gt;MIT 6.824 作业&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://ts25504.github.io/2016/08/16/MIT-6-824%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/&quot;&gt;MIT-6.824学习之路&lt;/a&gt;;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Thu, 08 Dec 2016 00:00:00 +0800</pubDate>
+				<link>/-09%20distributed%20system/2016/12/08/Distributed-System-(%E4%B8%83)-Fault-Tolerance.html</link>
+				<guid isPermaLink="true">/-09%20distributed%20system/2016/12/08/Distributed-System-(%E4%B8%83)-Fault-Tolerance.html</guid>
 			</item>
 		
 	</channel>
