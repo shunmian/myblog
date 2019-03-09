@@ -161,7 +161,8 @@ shortinfo: 本文是对《Effective C++》的书的总结。
 ## 3. Reference ##
 
 - [《C++Primer》](https://book.douban.com/subject/24089577/);
-- [《Effective C++》](https://book.douban.com/subject/1842426//);
+- [《Effective C++》](https://book.douban.com/subject/1842426/);
+
 
 
 
