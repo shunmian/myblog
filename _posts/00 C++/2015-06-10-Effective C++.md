@@ -24,13 +24,73 @@ shortinfo: 本文是对《Effective C++》的书的总结。
 
 #### Item 01: 视C++为一个语言联邦
 
+C++ 有4个主要的sub langauge:
+
+- C: 即原始的C语言
+- Object-Oriented C++: C++最初被设计的初衷,即C with Classes
+- Template C++: generic programming, 又称之为template metaprogramming
+- STL: 以template为基础的程序库。
+
+我们要有这种观念，在不同sub langauge之间切换时，其最佳实践也会不同。
+
+因此C++并不是一个带有一组守则的一体语言；它是由4个次语言组成的联邦政府，每个次语言都有自己的规约。记住这4个次语言你就会发现C++容易了解的多。
+
 #### Item 02: 尽量以`const`, `enum`, `inline`替换`#define`
 
 #### Item 03: 尽可能使用`const`
 
-#### Item 04: 确定对象呗使用前已先被初始化
+> 对于指针, *左边的const表示指向物不可变，*右边的const表示指针不可变。
+
+{% highlight cpp linenos %}
+string s1 = "Hello";
+string *p = s1              //non-const pointer, non-const data
+const string *p = s1        //non-const pointer, const data
+string *const p = s1        //const pointer, non-const data
+const string *const p = s1  //const pointer, const data
+{% endhighlight %}
+
+> 对于STL的迭代器, const表示指向物不可变，const_iterator表示迭代器本身不可变
+
+{% highlight cpp linenos %}
+const std::vector<int>::iterator iter = vec.begin();
+*iter = 10; //错误，指向物不可变
+++iter;     //正确，迭代器本身可变
+
+std::vector<int>::const_iterator iter = vec.begin();
+*iter = 10; //正确，指向物可变
+++iter;     //错误，迭代器本身不可变
+
+{% endhighlight %}
+
+> 当`const`和`non-const`成员函数有着实质等价的实现时，令`non-const`版本调用`const`版本可避免代码重复。
+
+{% highlight cpp linenos %}
+class TextBlock {
+    public:
+        const char& operator[](std::size_t position) const
+        {
+
+        }
+        char & operator[](std::size_t position)
+        {
+            return const_cast<char&>(
+                static_cast<const TextBlock&>(*this)[position];
+            )
+        }
+}
+
+{% endhighlight %}
+
+
+#### Item 04: 确定对象被使用前已先被初始化
+
+- 构造函数最好使用成员初值列(member initialization list),而不要在构造函数本体内使用赋值操作(assignment)。初值列列出的成员变量，其排列次序应该和它们在class中的声明次序相同。
+
+- 为避免"跨编译单元之初始化次序"问题，请以`local static`对象替换`non-local static`对象。
 
 ### 1.2 构造/析构/赋值运算
+
+- 编译器可以暗自为class创建default构造函数，copy构造函数， copy assignment操作符，以及析构函数。
 
 #### Item 05: 了解C++默默编写并调用哪些函数
 
