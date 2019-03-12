@@ -90,11 +90,66 @@ class TextBlock {
 
 ### 1.2 构造/析构/赋值运算
 
-- 编译器可以暗自为class创建default构造函数，copy构造函数， copy assignment操作符，以及析构函数。
-
 #### Item 05: 了解C++默默编写并调用哪些函数
 
+- 编译器可以暗自为class创建default构造函数，copy构造函数， copy assignment操作符，以及析构函数。
+
 #### Item 06: 若不想使用编译器自动生成的函数，就该明确拒绝
+
+- 为驳回编译器自动(暗自)提供的技能，可将相应的成员函数声明为`private`并且不予实现。使用像`Uncopyable`这样的`base class`(或者`boost`的`noncopyable`)也是一种做法。
+
+{% highlight cpp linenos %}
+#include <iostream>
+using namespace std;
+
+class Uncopyable {
+    protected:
+        Uncopyable() {}
+        ~Uncopyable() {}
+    private:
+        Uncopyable(const Uncopyable&);
+        Uncopyable& operator=(const Uncopyable&);
+};
+
+class HomeForSale2: private Uncopyable {
+
+};
+
+class HomeForSale {
+    public:
+    HomeForSale() {
+        cout << "Empty default constructor" << endl;
+    }
+
+    ~HomeForSale(){
+        cout << "Empty destructor" << endl;
+    }
+
+    private: 
+
+    HomeForSale(const HomeForSale & rhs);
+    
+    HomeForSale& operator=(const HomeForSale &rhs);
+
+   
+};
+
+int main(){
+
+    HomeForSale2 h2;
+    HomeForSale h3;
+    HomeForSale h4(h2);  // forbidden by compiler
+    h4 = h3;             // forbidden by compiler
+    
+    HomeForSale e2;
+    HomeForSale e3;
+    HomeForSale e4(e2);  // forbidden by compiler
+    e4 = e3;             // forbidden by compiler
+        
+    return 0;
+}
+
+{% endhighlight %}
 
 #### Item 07: 为多态基类声明`virtual`析构函数
 
