@@ -662,6 +662,16 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;h4 id=&quot;121-cross-region-replication&quot;&gt;1.2.1 Cross region replication&lt;/h4&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;versioning must be enabled on both the source and estination buckets.&lt;/li&gt;
+  &lt;li&gt;Regions must be unique.&lt;/li&gt;
+  &lt;li&gt;Files in an existing bucket are not replicated automatically. All subsequent updated files will be replicated automatically.&lt;/li&gt;
+  &lt;li&gt;You cannot replicate to multiple buckets or use daisy chaining(??).&lt;/li&gt;
+  &lt;li&gt;Delete markers are NOT replicated.&lt;/li&gt;
+  &lt;li&gt;Deleting individual versions or delete markers will not be replicated.&lt;/li&gt;
+  &lt;li&gt;Understand what Crosss Region Replication is at a high level.&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2&gt;#&lt;/h2&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
