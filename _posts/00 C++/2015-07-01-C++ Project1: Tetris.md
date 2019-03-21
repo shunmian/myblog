@@ -39,16 +39,9 @@ $ sudo make install
 {% endhighlight %}
 
 
-
-
-
 ## 2. 总结 ##
 
-{% highlight cpp linenos %}
-{% endhighlight %}
-
-{: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+1. 用`select`来读取timeout之内的fd的I/O;若比如0.5s之内用户没有按旋转俄罗斯，则下移。
 
 
 ## 3. Reference ##

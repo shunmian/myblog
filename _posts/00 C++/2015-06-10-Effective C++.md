@@ -130,8 +130,6 @@ class HomeForSale {
     HomeForSale(const HomeForSale & rhs);
     
     HomeForSale& operator=(const HomeForSale &rhs);
-
-   
 };
 
 int main(){
@@ -159,9 +157,21 @@ int main(){
 
 #### Item 10: 令`operator=`返回一个`reference to *this`
 
+- 令赋值(assignment)操作符返回一个`reference to *this`是为了便于链式赋值`x=y=z`(等价于`x=(y=z)`)
+
 #### Item 11: 令`operator=`处理"自我赋值"
 
 #### Item 12: 复制对象时勿忘其每一个成分
+
+- `Copying`函数应该确保复制"对象内的所有成员变量"及"所有`base class成分`"。
+- 不要尝试以某个`copying`函数实现另一个`copying`函数。应该将共同机能放进第三个函数中，并由两个`copying`函数共同调用。
+
+{% highlight cpp linenos %}
+PriorityCustomer::PriorityCustomer (const PriorityCustomer &rhs) : Customer(rhs), priority(rhs.priority) {
+}
+
+{% endhighlight %}
+
 
 ### 1.3 资源管理
 
@@ -169,11 +179,18 @@ int main(){
 
 #### Item 14: 在资源管理类中小心`copying`行为
 
+- 复制RAII对象必须一并复制它所管理的资源，所以资源的copying行为决定RAII对象的copying行为。
+- 普遍而常见的RAII class copying行为是: 抑制copying或施行应用计数法。不过其他行为也都可能被实现。
+
 #### Item 15: 在资源管理类中提供对原始资源的访问
 
 #### Item 16: 成对使用`new`和`delete`时要采取相同形式
 
+- If you use `[]` in a `new` expression, you must use `[]` in the corresponding `delete` expression. If you don't use `[]` in a `new` expression, you must not use `[]` in the corresponding `delete` expression.
+
 #### Item 17: 以独立语句将`new`ed对象置入智能指针
+
+- Store newed objects in smart pointers in standalone statements. Failure to do this can lead to subtle resource leaks when execeptions are thrown.
 
 ### 1.4 设计与声明
 
@@ -183,9 +200,19 @@ int main(){
 
 #### Item 20: 宁以`pass-by-reference-to-const`替换`pass-by-value`
 
+- Prefer pass-by-reference-to-const over pass-by-value. It's typically more efficient and it aovids the slicing problem.
+
+- The rule doesn't apply to built-in types and STL iterator and function object types. For them, pass-by-value is usually appropriate. 
+
 #### Item 21: 必须返回对象时，别妄想返回其reference
 
+- never return a pointer or reference to a local stack object.
+
 #### Item 22: 将成员变量声明为`private`
+
+- Declare data memebers `private`.
+
+- `protected` is no more encapsulated than `public`.
 
 #### Item 23: 宁以`non-member`、`non-friend`替换`member`函数
 
@@ -198,13 +225,40 @@ int main(){
 
 #### Item 26: 尽可能延后变量定义式的出现时间
 
+- Postpone variable definitions as long as possible. It increases program clarity and improves program efficiency.
+
 #### Item 27: 尽量少做转型动作
 
 #### Item 28: 避免返回`handles`指向对象内部成分
 
+- Avoid returning handles (references, pointers, or iterators) to object internals. Not returning handles increases encapsulation, hepls `const` member act `const`, and minimizes the creation of dangling handles.
+
 #### Item 29: 为"异常安全"而努力是值得的
 
 #### Item 30: 透彻了解`inline`的里里外外
+
+The idea behind an inline function is to replace **each call** of that function with its code body.
+Bear in mind that `inline` is a request to compilers, not a command, which means compiler can ignore. `inline` can be requested either implicit or explicit.
+
+{% highlight cpp linenos %}
+// implicit inline
+class Person {
+    public:
+        int age() const {return theAge};    // an implicit inline request
+}
+    private:
+        int theAge;
+
+// explicit inline
+template<typename T>
+inline const T& std::max(const T &a, const T &b) {  // an explicit inline, requires `inline` key word and put in header file.
+    return a < b ? b : a;
+}
+{% endhighlight %}
+
+- `virtual function` inline will be rejected. `virtual function` means "wait until runtime to figure out which function to call", and `inline` means "before execution, replace the call site with the called function".
+
+
 
 #### Item 31: 将文件间的编译依存关系降至最低
 
@@ -212,7 +266,12 @@ int main(){
 
 #### Item 32: 确定你的`public`继承塑模出`is-a`关系
 
+- `public inheritance` means `is-a` relationship, anywhere that base class applies (`void f(BaseClass *b)`), also applies to derived class (`void f (DerivedClass *d)`). 记住以上论点只对`public`继承成立，对`private`和`protected`继承并不成立。
+
 #### Item 33: 避免遮掩继承而来的名称
+
+- `derived classes` 内的名称会遮掩 `base classes`内的名称。在public继承下从来没有人希望如此。
+- 为了让遮掩的名称再见天日，可使用`using`声明式或转交函数`forwarding functions`。
 
 #### Item 34: 区分接口继承和实现继承
 
