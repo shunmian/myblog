@@ -669,7 +669,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#16-elastic-block-storgage-ebs&quot; id=&quot;markdown-toc-16-elastic-block-storgage-ebs&quot;&gt;1.6 Elastic Block Storgage (EBS)&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#161-ebs-volume-types&quot; id=&quot;markdown-toc-161-ebs-volume-types&quot;&gt;1.6.1 EBS Volume Types&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#161-ebs-volume&quot; id=&quot;markdown-toc-161-ebs-volume&quot;&gt;1.6.1 EBS Volume&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#17-summary&quot; id=&quot;markdown-toc-17-summary&quot;&gt;1.7 Summary&lt;/a&gt;&lt;/li&gt;
@@ -680,11 +680,14 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
           &lt;li&gt;&lt;a href=&quot;#211-what&quot; id=&quot;markdown-toc-211-what&quot;&gt;2.1.1 What&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#212-launch-ec2-instance--ssh-to-it&quot; id=&quot;markdown-toc-212-launch-ec2-instance--ssh-to-it&quot;&gt;2.1.2 Launch EC2 instance &amp;amp; SSH to it&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#213-security-group-basics&quot; id=&quot;markdown-toc-213-security-group-basics&quot;&gt;2.1.3 Security Group Basics&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#214-ebs-volumes&quot; id=&quot;markdown-toc-214-ebs-volumes&quot;&gt;2.1.4 EBS Volumes&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#215-elastic-load-balancer&quot; id=&quot;markdown-toc-215-elastic-load-balancer&quot;&gt;2.1.5 Elastic Load Balancer&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#216-using-bash-script-to-pre-launch-the-ec2-instance&quot; id=&quot;markdown-toc-216-using-bash-script-to-pre-launch-the-ec2-instance&quot;&gt;2.1.6 Using bash script to pre-launch the ec2 instance&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#217-autoscaling&quot; id=&quot;markdown-toc-217-autoscaling&quot;&gt;2.1.7 Autoscaling&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#217-ec2-placment-groups&quot; id=&quot;markdown-toc-217-ec2-placment-groups&quot;&gt;2.1.7 EC2 Placment Groups&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#218-efs&quot; id=&quot;markdown-toc-218-efs&quot;&gt;2.1.8 EFS&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-lambda&quot; id=&quot;markdown-toc-22-lambda&quot;&gt;2.2 Lambda&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3-monitoring&quot; id=&quot;markdown-toc-3-monitoring&quot;&gt;3 Monitoring&lt;/a&gt;    &lt;ul&gt;
@@ -937,43 +940,93 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;li&gt;Amazon EBS allows you to create storage volumes and attach them to amazon EC2 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use a block device. Amazon EBS volums are placed in a specific Availability Zone, where they are automatically replicated to protect you from the failure of a single component.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;161-ebs-volume-types&quot;&gt;1.6.1 EBS Volume Types&lt;/h4&gt;
+&lt;h4 id=&quot;161-ebs-volume&quot;&gt;1.6.1 EBS Volume&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;SSB
+  &lt;li&gt;types
     &lt;ul&gt;
-      &lt;li&gt;General Purpose SSD (GP2)
+      &lt;li&gt;SSB
         &lt;ul&gt;
-          &lt;li&gt;General purpose, balances both price and performance.&lt;/li&gt;
-          &lt;li&gt;Ratio of 3 IOPS per GB with up to 10,000 IOPS and the ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 Gib and above.&lt;/li&gt;
+          &lt;li&gt;General Purpose SSD (GP2)
+            &lt;ul&gt;
+              &lt;li&gt;General purpose, balances both price and performance.&lt;/li&gt;
+              &lt;li&gt;Ratio of 3 IOPS per GB with up to 10,000 IOPS and the ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 Gib and above.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Provisioned IOPS SSD (IO1)
+            &lt;ul&gt;
+              &lt;li&gt;Designed for I/O intensive applications such as large relational or NoSQL databases.&lt;/li&gt;
+              &lt;li&gt;Use if you need more than 10,000 IOPS&lt;/li&gt;
+              &lt;li&gt;can provision up to 20,000 IOPS per volume.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Provisioned IOPS SSD (IO1)
+      &lt;li&gt;Magnetic
         &lt;ul&gt;
-          &lt;li&gt;Designed for I/O intensive applications such as large relational or NoSQL databases.&lt;/li&gt;
-          &lt;li&gt;Use if you need more than 10,000 IOPS&lt;/li&gt;
-          &lt;li&gt;can provision up to 20,000 IOPS per volume.&lt;/li&gt;
+          &lt;li&gt;Throughput Optimized HDD (ST1)
+            &lt;ul&gt;
+              &lt;li&gt;Big data&lt;/li&gt;
+              &lt;li&gt;Data warehouses&lt;/li&gt;
+              &lt;li&gt;Log processing&lt;/li&gt;
+              &lt;li&gt;Cannot be a boot volume&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Cold HDD (SC1)
+            &lt;ul&gt;
+              &lt;li&gt;Lowest Cost Storage for infrequently accessed workloads&lt;/li&gt;
+              &lt;li&gt;File server&lt;/li&gt;
+              &lt;li&gt;Cannot be a boot volume&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Magnetic
+  &lt;li&gt;Notes
+    &lt;p&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png&quot; alt=&quot;EBS AMI&quot; /&gt;&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;Throughput Optimized HDD (ST1)
+      &lt;li&gt;Volumes exist on EBS
         &lt;ul&gt;
-          &lt;li&gt;Big data&lt;/li&gt;
-          &lt;li&gt;Data warehouses&lt;/li&gt;
-          &lt;li&gt;Log processing&lt;/li&gt;
-          &lt;li&gt;Cannot be a boot volume&lt;/li&gt;
+          &lt;li&gt;volumes is just virtual hard disk&lt;/li&gt;
+          &lt;li&gt;you can change volume size on the fly, including changing the size and storage type.&lt;/li&gt;
+          &lt;li&gt;volumes always be in the same Availability Zone as the EC2 instance&lt;/li&gt;
+          &lt;li&gt;to move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Cold HDD (SC1)
+      &lt;li&gt;Snapshot exist on S3
         &lt;ul&gt;
-          &lt;li&gt;Lowest Cost Storage for infrequently accessed workloads&lt;/li&gt;
-          &lt;li&gt;File server&lt;/li&gt;
-          &lt;li&gt;Cannot be a boot volume&lt;/li&gt;
+          &lt;li&gt;snapshot are just time copies of volumes&lt;/li&gt;
+          &lt;li&gt;snapshot record the incremental diffierence&lt;/li&gt;
+          &lt;li&gt;the first snaphost takes more time to create since the first difference is almost the whole volume.&lt;/li&gt;
+          &lt;li&gt;to create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.&lt;/li&gt;
+          &lt;li&gt;However, you can take a snap while the instance is running&lt;/li&gt;
+          &lt;li&gt;Snapshot of encrypted volumes are encrypted automatically&lt;/li&gt;
+          &lt;li&gt;Volumes restored from encrypted snapshots are enecyrpted automatically&lt;/li&gt;
+          &lt;li&gt;You can share snapshots, but only if they are unencrypted
+            &lt;ul&gt;
+              &lt;li&gt;These snapshots can be shared with other AwWS accounts or made public&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;duplicate EBS to other AZ/region
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;to different AZ
+  volum -&amp;gt; snapshot -&amp;gt; create new volume from the snapshot in different AZ -&amp;gt; attach to a new instance&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;to different region
+  volume -&amp;gt; snapshot -&amp;gt; copy snapshot to a new region -&amp;gt; create image from the copied snapshot&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;EBS vs instance Store&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;EBS default delted when EC2 terminate. One can change behavior that EC2 termiantion doesn’t affect EBS.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1012,14 +1065,15 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
         &lt;p&gt;Reserved - provides you with a capacity reservation, and offer a significant discount on the hourly charge for an instacnce. 1 year or 3 year terms. Applications with steady state or predictable usage. Applications that require reserved capacity. Users can make up-front payments to reduce their total computing costs even further (standard RIs (Reserved Instances), up to 75% off on-demand; Convertible RIs, up to 54% off on demand; scheduled RIs are available to launch within the time window you reserve.)&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;p&gt;Spot - enables you to bid whatever price you want for instance capacity, providing for even greater savings if your application shave flexible start and end times. Applications that have flexible start and end times. Applications that are only feasible at very low compute prices. Can be purchased on-Demand (hourly). Can be purchased as a Reservation for up to 70% off the on-demand price. If a spot instance is terminated by Amazon EC2, you will not be charged for a partial hour of usage; However, if you  terminate the instance your self, you will be charged for the complete hour in which the instance ran.&lt;/p&gt;
+        &lt;p&gt;Spot - enables you to bid whatever price you want for instance capacity, providing for even greater savings if your application shave flexible start and end times. Applications that have flexible start and end times. Applications that are only feasible at very low compute prices. Can be purchased on-Demand (hourly). Can be purchased as a Reservation for up to 70% off the on-demand price. If a spot instance is terminated by Amazon EC2, you will not be charged for a partial hour of usage; However, if you terminate the instance your self, you will be charged for the complete hour in which the instance ran.&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Dedicated Hosts - Physical EC2 server dedicated for your use. Dedicated hosts can help you reduce costs by allowing you to use your existing server-bound software licenses&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;HARDWARE&lt;/strong&gt; - EC2 Instance Types:
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;HARDWARE&lt;/strong&gt; - EC2 Instance Types:&lt;/p&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;strong&gt;F&lt;/strong&gt; for FPGA&lt;/li&gt;
       &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt; for IOPS&lt;/li&gt;
@@ -1034,6 +1088,11 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;strong&gt;X&lt;/strong&gt; for extrame Memory&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EC2 instance type.png&quot; alt=&quot;EC2 instance type&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;SOFTWARE&lt;/strong&gt; - AMI
     &lt;ul&gt;
       &lt;li&gt;linux&lt;/li&gt;
@@ -1099,50 +1158,6 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;li&gt;You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;214-ebs-volumes&quot;&gt;2.1.4 EBS Volumes&lt;/h4&gt;
-
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png&quot; alt=&quot;EBS AMI&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Volumes exist on EBS
-    &lt;ul&gt;
-      &lt;li&gt;volumes is just virtual hard disk&lt;/li&gt;
-      &lt;li&gt;you can change volume size on the fly, including changing the size and storage type.&lt;/li&gt;
-      &lt;li&gt;volumes always be in the same Availability Zone as the EC2 instance&lt;/li&gt;
-      &lt;li&gt;to move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Snapshot exist on S3
-    &lt;ul&gt;
-      &lt;li&gt;snapshot are just time copies of volumes&lt;/li&gt;
-      &lt;li&gt;snapshot record the incremental diffierence&lt;/li&gt;
-      &lt;li&gt;the first snaphost takes more time to create since the first difference is almost the whole volume.&lt;/li&gt;
-      &lt;li&gt;to create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.&lt;/li&gt;
-      &lt;li&gt;However, you can take a snap while the instance is running&lt;/li&gt;
-      &lt;li&gt;Snapshot of encrypted volumes are encrypted automatically&lt;/li&gt;
-      &lt;li&gt;Volumes restored from encrypted snapshots are enecyrpted automatically&lt;/li&gt;
-      &lt;li&gt;You can share snapshots, but only if they are unencrypted
-        &lt;ul&gt;
-          &lt;li&gt;These snapshots can be shared with other AwWS accounts or made public&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;duplicate EBS to other AZ/region
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;to different AZ
-  volum -&amp;gt; snapshot -&amp;gt; create new volume from the snapshot in different AZ -&amp;gt; attach to a new instance&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;to different region
-  volume -&amp;gt; snapshot -&amp;gt; copy snapshot to a new region -&amp;gt; create image from the copied snapshot&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;EBS vs instance Store&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h4 id=&quot;215-elastic-load-balancer&quot;&gt;2.1.5 Elastic Load Balancer&lt;/h4&gt;
 
 &lt;ul&gt;
@@ -1177,6 +1192,117 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 &lt;h4 id=&quot;216-using-bash-script-to-pre-launch-the-ec2-instance&quot;&gt;2.1.6 Using bash script to pre-launch the ec2 instance&lt;/h4&gt;
 
 &lt;p&gt;in launch instance -&amp;gt; Configure Instance Details -&amp;gt; Advanced Details, one can add bash scripts&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;#!bin/bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;su
+yum update &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;
+yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;httpd &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /var/www/html
+aws s3 &lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;s3://udemy-ec2-httpd-server-html &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;--recursive&lt;/span&gt;
+service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;217-autoscaling&quot;&gt;2.1.7 Autoscaling&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Autoscaling Launch Configuration (define each instance)&lt;/li&gt;
+  &lt;li&gt;AutoScaling Groups (define how to scale(repeat) across AZ using Autoscaling Launch Configuration as primitive instance data)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;217-ec2-placment-groups&quot;&gt;2.1.7 EC2 Placment Groups&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2 Types
+    &lt;ul&gt;
+      &lt;li&gt;Clustered Placement Group
+        &lt;ul&gt;
+          &lt;li&gt;it is a group of instances within a &lt;strong&gt;single&lt;/strong&gt; AZ. Placement groups are recommended for applications that need low network latency, high network throughput, or both. 通常用于big data，你不希望数据有高延时(被放在不同AZ)，你希望数据低延时(同一个AZ)&lt;/li&gt;
+          &lt;li&gt;Only certain instances can be launched in to a Clustered Placement Group.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Spread Placement Group
+        &lt;ul&gt;
+          &lt;li&gt;distribute critical data among multiple AZ/region&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Examp tips
+    &lt;ul&gt;
+      &lt;li&gt;A clustered placement group can’t span multiple AZ while a spread placement group can.&lt;/li&gt;
+      &lt;li&gt;The name you specify for a placement group must be unique within your aws account.&lt;/li&gt;
+      &lt;li&gt;Only certain types of instances can be launched in a placement group (Compute Optimized, GPU, Memory Optimized, Storage Optimized)&lt;/li&gt;
+      &lt;li&gt;AWS recommend homogenous instances within placement groups&lt;/li&gt;
+      &lt;li&gt;You can’t merget placement groups&lt;/li&gt;
+      &lt;li&gt;You can’t move an existing instance into a placement group. You can create an AMI from your existing instance, and then launch a new instance from the AMI into a placement group.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;218-efs&quot;&gt;2.1.8 EFS&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What:
+    &lt;ul&gt;
+      &lt;li&gt;Previous, when you need block storage for EC2, normally you need pre-provisioning EC2 with EBS and no single EBS can be used by multiple EC2. EFS comes to solve this problen. It’s block storage like EBS, but not pre-provisioning is needed and it can be accessed by multiple EC2 instances.&lt;/li&gt;
+      &lt;li&gt;Suports Network File System verion 4 (NFSv4) protocal&lt;/li&gt;
+      &lt;li&gt;can scale up to petabytes&lt;/li&gt;
+      &lt;li&gt;can support thousands of concurrent NFS connections&lt;/li&gt;
+      &lt;li&gt;data is stored across multiple AZ’s within a region&lt;/li&gt;
+      &lt;li&gt;Read After Write Consistency&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-lambda&quot;&gt;2.2 Lambda&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What:
+  AWS Lambda is a compute service where you can upload your code and create a lambda function. AWS Lambda takes care of provisioning and managing the servers that you use to run the code. You don’t have to worry about operating systems, patching, scaling, etc. You ca use Lambda in the following ways:
+    &lt;ul&gt;
+      &lt;li&gt;As an event-drivent copute service where aws lambda runs your code in response to events. These events could be changes to data in an Amazon S3 bucekt or an Amazon DynamoDB table.&lt;/li&gt;
+      &lt;li&gt;As a compute service to run your code in response to HTTP requests using Amazion API Gateway or API calls made using AWS SDKs.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;scale out
+    &lt;ul&gt;
+      &lt;li&gt;Lambda does scale out automatically. Note, scale out(more EC2) vs scale up(each EC2 upgrade resouces such as RAM)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Price
+    &lt;ul&gt;
+      &lt;li&gt;number of requests
+        &lt;ul&gt;
+          &lt;li&gt;first 1 million requests are free, $0.2 per 1 million requests thereafter.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;duration
+        &lt;ul&gt;
+          &lt;li&gt;RAM + time&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Exam tips
+    &lt;ul&gt;
+      &lt;li&gt;Lambda scales out (not up) automatically&lt;/li&gt;
+      &lt;li&gt;Lambda functions are independent, 1 event = 1 function&lt;/li&gt;
+      &lt;li&gt;Lambda is serverless&lt;/li&gt;
+      &lt;li&gt;Know what services are serverless&lt;/li&gt;
+      &lt;li&gt;Lambda functions can trigger other lambda functions, 1 event can = x functions if functions trigger other fucntiosn&lt;/li&gt;
+      &lt;li&gt;Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening&lt;/li&gt;
+      &lt;li&gt;Lambda can do things globally, you can use it to back up S3 buckets to other S3 butckets.&lt;/li&gt;
+      &lt;li&gt;Know your triggers: api gateway, alexa kits.&lt;/li&gt;
+      &lt;li&gt;Lambda maximum executing time is 5 min.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;3-monitoring&quot;&gt;3 Monitoring&lt;/h2&gt;
 

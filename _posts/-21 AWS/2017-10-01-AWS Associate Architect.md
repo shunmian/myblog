@@ -175,30 +175,62 @@ shortinfo: AWS介绍。
 
 - Amazon EBS allows you to create storage volumes and attach them to amazon EC2 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use a block device. Amazon EBS volums are placed in a specific Availability Zone, where they are automatically replicated to protect you from the failure of a single component.
 
-#### 1.6.1 EBS Volume Types
+#### 1.6.1 EBS Volume 
 
-- SSB
-    - General Purpose SSD (GP2)
-        - General purpose, balances both price and performance.
-        - Ratio of 3 IOPS per GB with up to 10,000 IOPS and the ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 Gib and above.
+- types
+    - SSB
+        - General Purpose SSD (GP2)
+            - General purpose, balances both price and performance.
+            - Ratio of 3 IOPS per GB with up to 10,000 IOPS and the ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 Gib and above.
 
-    - Provisioned IOPS SSD (IO1)
-        - Designed for I/O intensive applications such as large relational or NoSQL databases.
-        - Use if you need more than 10,000 IOPS
-        - can provision up to 20,000 IOPS per volume.
+        - Provisioned IOPS SSD (IO1)
+            - Designed for I/O intensive applications such as large relational or NoSQL databases.
+            - Use if you need more than 10,000 IOPS
+            - can provision up to 20,000 IOPS per volume.
 
-- Magnetic
-    - Throughput Optimized HDD (ST1)
-        - Big data
-        - Data warehouses
-        - Log processing
-        - Cannot be a boot volume
+    - Magnetic
+        - Throughput Optimized HDD (ST1)
+            - Big data
+            - Data warehouses
+            - Log processing
+            - Cannot be a boot volume
 
-    - Cold HDD (SC1)
-        - Lowest Cost Storage for infrequently accessed workloads
-        - File server
-        - Cannot be a boot volume
+        - Cold HDD (SC1)
+            - Lowest Cost Storage for infrequently accessed workloads
+            - File server
+            - Cannot be a boot volume
 
+- Notes
+    {: .img_middle_hg}
+    ![EBS AMI](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png)
+
+    - Volumes exist on EBS
+        - volumes is just virtual hard disk
+        - you can change volume size on the fly, including changing the size and storage type.
+        - volumes always be in the same Availability Zone as the EC2 instance
+        - to move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region
+        
+    - Snapshot exist on S3
+        - snapshot are just time copies of volumes
+        - snapshot record the incremental diffierence
+        - the first snaphost takes more time to create since the first difference is almost the whole volume.
+        - to create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
+        - However, you can take a snap while the instance is running
+        - Snapshot of encrypted volumes are encrypted automatically
+        - Volumes restored from encrypted snapshots are enecyrpted automatically
+        - You can share snapshots, but only if they are unencrypted
+            - These snapshots can be shared with other AwWS accounts or made public
+
+    - duplicate EBS to other AZ/region
+        - to different AZ
+            volum -> snapshot -> create new volume from the snapshot in different AZ -> attach to a new instance
+
+        - to different region
+            volume -> snapshot -> copy snapshot to a new region -> create image from the copied snapshot
+
+    - EBS vs instance Store
+
+    - EBS default delted when EC2 terminate. One can change behavior that EC2 termiantion doesn't affect EBS.
 
 ### 1.7 Summary
 
@@ -223,7 +255,7 @@ shortinfo: AWS介绍。
 
     - Reserved - provides you with a capacity reservation, and offer a significant discount on the hourly charge for an instacnce. 1 year or 3 year terms. Applications with steady state or predictable usage. Applications that require reserved capacity. Users can make up-front payments to reduce their total computing costs even further (standard RIs (Reserved Instances), up to 75% off on-demand; Convertible RIs, up to 54% off on demand; scheduled RIs are available to launch within the time window you reserve.)
 
-    - Spot - enables you to bid whatever price you want for instance capacity, providing for even greater savings if your application shave flexible start and end times. Applications that have flexible start and end times. Applications that are only feasible at very low compute prices. Can be purchased on-Demand (hourly). Can be purchased as a Reservation for up to 70% off the on-demand price. If a spot instance is terminated by Amazon EC2, you will not be charged for a partial hour of usage; However, if you  terminate the instance your self, you will be charged for the complete hour in which the instance ran.
+    - Spot - enables you to bid whatever price you want for instance capacity, providing for even greater savings if your application shave flexible start and end times. Applications that have flexible start and end times. Applications that are only feasible at very low compute prices. Can be purchased on-Demand (hourly). Can be purchased as a Reservation for up to 70% off the on-demand price. If a spot instance is terminated by Amazon EC2, you will not be charged for a partial hour of usage; However, if you terminate the instance your self, you will be charged for the complete hour in which the instance ran.
 
     - Dedicated Hosts - Physical EC2 server dedicated for your use. Dedicated hosts can help you reduce costs by allowing you to use your existing server-bound software licenses
 
@@ -239,6 +271,10 @@ shortinfo: AWS介绍。
     - **C** for Compute
     - **P** for Graphics (think Pics)
     - **X** for extrame Memory
+
+{: .img_middle_hg}
+![EC2 instance type](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EC2 instance type.png)
+    
 
 - **SOFTWARE** - AMI
     - linux
@@ -283,41 +319,6 @@ shortinfo: AWS介绍。
 - Security Groups are stateful, which means inbound rule http would enable outbound rule http implicitly, though outbound rule doesn't show there is rule http.
 - You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.
 
-#### 2.1.4 EBS Volumes
-
-
-{: .img_middle_hg}
-![EBS AMI](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png)
-
-
-
-- Volumes exist on EBS
-    - volumes is just virtual hard disk
-    - you can change volume size on the fly, including changing the size and storage type.
-    - volumes always be in the same Availability Zone as the EC2 instance
-    - to move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region
-    
-
-- Snapshot exist on S3
-    - snapshot are just time copies of volumes
-    - snapshot record the incremental diffierence
-    - the first snaphost takes more time to create since the first difference is almost the whole volume.
-    - to create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
-    - However, you can take a snap while the instance is running
-    - Snapshot of encrypted volumes are encrypted automatically
-    - Volumes restored from encrypted snapshots are enecyrpted automatically
-    - You can share snapshots, but only if they are unencrypted
-        - These snapshots can be shared with other AwWS accounts or made public
-
-- duplicate EBS to other AZ/region
-    - to different AZ
-        volum -> snapshot -> create new volume from the snapshot in different AZ -> attach to a new instance
-
-    - to different region
-        volume -> snapshot -> copy snapshot to a new region -> create image from the copied snapshot
-
-- EBS vs instance Store
-
 
 #### 2.1.5 Elastic Load Balancer
 
@@ -339,6 +340,79 @@ shortinfo: AWS介绍。
 #### 2.1.6 Using bash script to pre-launch the ec2 instance
 
 in launch instance -> Configure Instance Details -> Advanced Details, one can add bash scripts
+
+{% highlight bash linenos %}
+#!bin/bash
+sudo su
+yum update -y
+yum install httpd -y
+cd /var/www/html
+aws s3 cp s3://udemy-ec2-httpd-server-html .  --recursive
+service httpd start
+{% endhighlight %}
+
+#### 2.1.7 Autoscaling
+
+- Autoscaling Launch Configuration (define each instance)
+- AutoScaling Groups (define how to scale(repeat) across AZ using Autoscaling Launch Configuration as primitive instance data)
+
+#### 2.1.7 EC2 Placment Groups
+
+- 2 Types
+    - Clustered Placement Group
+        - it is a group of instances within a **single** AZ. Placement groups are recommended for applications that need low network latency, high network throughput, or both. 通常用于big data，你不希望数据有高延时(被放在不同AZ)，你希望数据低延时(同一个AZ)
+        - Only certain instances can be launched in to a Clustered Placement Group.
+    - Spread Placement Group
+        - distribute critical data among multiple AZ/region
+
+
+-  Examp tips
+    - A clustered placement group can't span multiple AZ while a spread placement group can.
+    - The name you specify for a placement group must be unique within your aws account.
+    - Only certain types of instances can be launched in a placement group (Compute Optimized, GPU, Memory Optimized, Storage Optimized)
+    - AWS recommend homogenous instances within placement groups
+    - You can't merget placement groups 
+    - You can't move an existing instance into a placement group. You can create an AMI from your existing instance, and then launch a new instance from the AMI into a placement group.
+
+#### 2.1.8 EFS
+
+- What:
+    - Previous, when you need block storage for EC2, normally you need pre-provisioning EC2 with EBS and no single EBS can be used by multiple EC2. EFS comes to solve this problen. It's block storage like EBS, but not pre-provisioning is needed and it can be accessed by multiple EC2 instances.
+    - Suports Network File System verion 4 (NFSv4) protocal
+    - can scale up to petabytes
+    - can support thousands of concurrent NFS connections
+    - data is stored across multiple AZ's within a region
+    - Read After Write Consistency
+
+### 2.2 Lambda
+
+- What:
+    AWS Lambda is a compute service where you can upload your code and create a lambda function. AWS Lambda takes care of provisioning and managing the servers that you use to run the code. You don't have to worry about operating systems, patching, scaling, etc. You ca use Lambda in the following ways:
+    - As an event-drivent copute service where aws lambda runs your code in response to events. These events could be changes to data in an Amazon S3 bucekt or an Amazon DynamoDB table.
+    - As a compute service to run your code in response to HTTP requests using Amazion API Gateway or API calls made using AWS SDKs.
+
+- scale out
+    - Lambda does scale out automatically. Note, scale out(more EC2) vs scale up(each EC2 upgrade resouces such as RAM) 
+
+- Price
+    - number of requests
+        - first 1 million requests are free, $0.2 per 1 million requests thereafter.
+    - duration
+        - RAM + time
+
+- Exam tips
+    - Lambda scales out (not up) automatically
+    - Lambda functions are independent, 1 event = 1 function
+    - Lambda is serverless
+    - Know what services are serverless
+    - Lambda functions can trigger other lambda functions, 1 event can = x functions if functions trigger other fucntiosn
+    - Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
+    - Lambda can do things globally, you can use it to back up S3 buckets to other S3 butckets.
+    - Know your triggers: api gateway, alexa kits.
+    - Lambda maximum executing time is 5 min.
+
+
+
 
 ## 3 Monitoring
 
