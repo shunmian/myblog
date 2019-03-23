@@ -695,6 +695,12 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#4-network&quot; id=&quot;markdown-toc-4-network&quot;&gt;4 Network&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#41-route53&quot; id=&quot;markdown-toc-41-route53&quot;&gt;4.1 Route53&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#411-theory&quot; id=&quot;markdown-toc-411-theory&quot;&gt;4.1.1 Theory&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#412-different-routing&quot; id=&quot;markdown-toc-412-different-routing&quot;&gt;4.1.2 Different Routing&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#413-exam-tips&quot; id=&quot;markdown-toc-413-exam-tips&quot;&gt;4.1.3 Exam tips&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#42-subnet&quot; id=&quot;markdown-toc-42-subnet&quot;&gt;4.2 Subnet&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -1331,6 +1337,56 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;4-network&quot;&gt;4 Network&lt;/h2&gt;
+
+&lt;h3 id=&quot;41-route53&quot;&gt;4.1 Route53&lt;/h3&gt;
+
+&lt;h4 id=&quot;411-theory&quot;&gt;4.1.1 Theory&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SOA Records&lt;/li&gt;
+  &lt;li&gt;NS Records&lt;/li&gt;
+  &lt;li&gt;A name&lt;/li&gt;
+  &lt;li&gt;C name&lt;/li&gt;
+  &lt;li&gt;alias name&lt;/li&gt;
+  &lt;li&gt;mx records&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;412-different-routing&quot;&gt;4.1.2 Different Routing&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Simple Routing
+    &lt;ul&gt;
+      &lt;li&gt;you can only have &lt;strong&gt;one record&lt;/strong&gt; with multiple IP addresses. Route53 will return ip address in a random order&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Weighted Routing
+    &lt;ul&gt;
+      &lt;li&gt;the same as simple routing except return ip address in a weighted probability (implemented with &lt;strong&gt;multiple records&lt;/strong&gt;, each recortd www.example -&amp;gt; 25%, 30.0.0.1, the ec2 public ip) instead of random.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Latency-based Routing:
+    &lt;ul&gt;
+      &lt;li&gt;the same as weighted routing, except return ip address that has the lowest latency&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Failover Routing:
+    &lt;ul&gt;
+      &lt;li&gt;a active (primary) record for major routing; a passive (backup) record when the primary record’s ip address is not available (detected by Route53’s health check).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Geolocation Routing:
+    &lt;ul&gt;
+      &lt;li&gt;route to ip address based on the origin of client’s request. For example, you want ip address from china to be all routed to EC2 in singpore.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Multivalue Answer Routing
+    &lt;ul&gt;
+      &lt;li&gt;the same as simple routing execept has multiple records. The difference is Multivalue Answer Routing enable health check while simple routing not.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;413-exam-tips&quot;&gt;4.1.3 Exam tips&lt;/h4&gt;
 
 &lt;h3 id=&quot;42-subnet&quot;&gt;4.2 Subnet&lt;/h3&gt;
 

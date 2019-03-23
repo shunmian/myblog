@@ -434,6 +434,36 @@ service httpd start
 
 ## 4 Network
 
+### 4.1 Route53
+
+#### 4.1.1 Theory
+
+- SOA Records
+- NS Records
+- A name
+- C name
+- alias name
+- mx records
+
+#### 4.1.2 Different Routing
+
+- Simple Routing
+    - you can only have **one record** with multiple IP addresses. Route53 will return ip address in a random order
+- Weighted Routing
+    - the same as simple routing except return ip address in a weighted probability (implemented with **multiple records**, each recortd www.example -> 25%, 30.0.0.1, the ec2 public ip) instead of random.
+- Latency-based Routing:
+    - the same as weighted routing, except return ip address that has the lowest latency
+- Failover Routing:
+    - a active (primary) record for major routing; a passive (backup) record when the primary record's ip address is not available (detected by Route53's health check).
+- Geolocation Routing:
+    - route to ip address based on the origin of client's request. For example, you want ip address from china to be all routed to EC2 in singpore.
+- Multivalue Answer Routing
+    - the same as simple routing execept has multiple records. The difference is Multivalue Answer Routing enable health check while simple routing not.
+
+#### 4.1.3 Exam tips
+
+
+
 ### 4.2 Subnet
 
 - One subnet equals one availability zone
