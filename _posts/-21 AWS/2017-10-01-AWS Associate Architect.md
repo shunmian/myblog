@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Vim
+title: AWS Associate Architect
 categories: [-21 AWS]
 tags: [Vim]
 number: [-21.1]
@@ -239,10 +239,17 @@ shortinfo: AWS介绍。
 
 - Additional volumes can be encrypted.
 
-
-
-
-
+- Root volume type
+    - EBS
+        - The root device for an instance launched from the AMI is an Amazon EBS volume created from an Amazon EBS snapshot
+        - EBS backed instances can be stopped. You will not lose the data on this instance if it is stopped.
+    - instance store (Ephemeral storage)
+        - For root device for an instance launched for from the AMI is an isntance store volume created from a template stored in Amazon S3
+        - Ephemeral storage, the instance cannot be stopped, if the underlying host fails, you will lose your data.
+    - in common:
+        - you can reboot both without losing your data.
+        - by default, both ROOT volumes will be deleted on termination, however with EBS volumes, you can tell AWS to keep the device volume.
+      
 
 #### 2.1.2 Launch EC2 instance & SSH to it
 
@@ -253,6 +260,48 @@ shortinfo: AWS介绍。
 
 #### 2.1.3 Security Group Basics
 
+- All Inbound Traffic is Blocked By Default
+- All Outbound Traffic is Allowed
+- Changes to Security Groups take effective immediately. If your instance attached to Security Group A. Change to A take effective imeediately to this instance.
+- An instance can have multiple security groups
+- A secruity group can be attached to multiple instances
+- Security Groups are stateful, which means inbound rule http would enable outbound rule http implicitly, though outbound rule doesn't show there is rule http.
+- You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.
+
+#### 2.1.4 EBS Volumes
+
+
+{: .img_middle_hg}
+![EBS AMI](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png)
+
+
+
+- Volumes exist on EBS
+    - volumes is just virtual hard disk
+    - you can change volume size on the fly, including changing the size and storage type.
+    - volumes always be in the same Availability Zone as the EC2 instance
+    - to move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region
+    
+
+- Snapshot exist on S3
+    - snapshot are just time copies of volumes
+    - snapshot record the incremental diffierence
+    - the first snaphost takes more time to create since the first difference is almost the whole volume.
+    - to create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.
+    - However, you can take a snap while the instance is running
+    - Snapshot of encrypted volumes are encrypted automatically
+    - Volumes restored from encrypted snapshots are enecyrpted automatically
+    - You can share snapshots, but only if they are unencrypted
+        - These snapshots can be shared with other AwWS accounts or made public
+
+- duplicate EBS to other AZ/region
+    - to different AZ
+        volum -> snapshot -> create new volume from the snapshot in different AZ -> attach to a new instance
+
+    - to different region
+        volume -> snapshot -> copy snapshot to a new region -> create image from the copied snapshot
+
+- EBS vs instance Store
 
 
 ## 4 Network

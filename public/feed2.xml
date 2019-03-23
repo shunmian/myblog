@@ -535,7 +535,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;h3 id=&quot;61-build-pattern&quot;&gt;6.1 Build Pattern&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -561,7 +561,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 24
 25
 26
-27&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;// old way of prepare settings as test data&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+27
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;// old way of prepare settings as test data&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldReceiveNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shouldDisplayTransactionAmount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
@@ -587,8 +588,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
 
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// use default value&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withShouldReceiveNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// just customized this field, all the rest are using default values.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withShouldReceiveNotification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// just customized this field, all the rest are using default values.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;62-统一测试数据平台&quot;&gt;6.2 统一测试数据平台&lt;/h3&gt;
 
@@ -636,31 +636,108 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 			</item>
 		
 			<item>
-				<title>Vim</title>
+				<title>AWS Associate Architect</title>
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-vim-总结&quot; id=&quot;markdown-toc-1-vim-总结&quot;&gt;1. Vim 总结&lt;/a&gt;    &lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-storage&quot; id=&quot;markdown-toc-1-storage&quot;&gt;1. Storage&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#11-iam&quot; id=&quot;markdown-toc-11-iam&quot;&gt;1.1 IAM&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#12-s3&quot; id=&quot;markdown-toc-12-s3&quot;&gt;1.2 S3&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#121-cross-region-replication&quot; id=&quot;markdown-toc-121-cross-region-replication&quot;&gt;1.2.1 Cross region replication&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#120-what&quot; id=&quot;markdown-toc-120-what&quot;&gt;1.2.0 What&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#121-versioning&quot; id=&quot;markdown-toc-121-versioning&quot;&gt;1.2.1 Versioning&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#122-cross-region-replication&quot; id=&quot;markdown-toc-122-cross-region-replication&quot;&gt;1.2.2 Cross region replication&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#123-lifecyle-management-s3-ia--glacier-lab&quot; id=&quot;markdown-toc-123-lifecyle-management-s3-ia--glacier-lab&quot;&gt;1.2.3 Lifecyle Management, S3-IA &amp;amp; Glacier lab&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#124-securing-buckets&quot; id=&quot;markdown-toc-124-securing-buckets&quot;&gt;1.2.4 Securing buckets&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#125-s3-transfer-acceleration&quot; id=&quot;markdown-toc-125-s3-transfer-acceleration&quot;&gt;1.2.5 S3 Transfer Acceleration&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#126-host-static-website-in-s3&quot; id=&quot;markdown-toc-126-host-static-website-in-s3&quot;&gt;1.2.6 Host Static Website in S3&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-cloudfront&quot; id=&quot;markdown-toc-13-cloudfront&quot;&gt;1.3 CloudFront&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#131-what-is-cdn&quot; id=&quot;markdown-toc-131-what-is-cdn&quot;&gt;1.3.1 What is CDN&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#14-storage-gateway&quot; id=&quot;markdown-toc-14-storage-gateway&quot;&gt;1.4 Storage Gateway&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#141-what&quot; id=&quot;markdown-toc-141-what&quot;&gt;1.4.1 What&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#15-snowball&quot; id=&quot;markdown-toc-15-snowball&quot;&gt;1.5 Snowball&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#151-what&quot; id=&quot;markdown-toc-151-what&quot;&gt;1.5.1 What&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#16-elastic-block-storgage-ebs&quot; id=&quot;markdown-toc-16-elastic-block-storgage-ebs&quot;&gt;1.6 Elastic Block Storgage (EBS)&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#161-ebs-volume-types&quot; id=&quot;markdown-toc-161-ebs-volume-types&quot;&gt;1.6.1 EBS Volume Types&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#17-summary&quot; id=&quot;markdown-toc-17-summary&quot;&gt;1.7 Summary&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-computing&quot; id=&quot;markdown-toc-2-computing&quot;&gt;2 Computing&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-ec2&quot; id=&quot;markdown-toc-21-ec2&quot;&gt;2.1 EC2&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#211-what&quot; id=&quot;markdown-toc-211-what&quot;&gt;2.1.1 What&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#212-launch-ec2-instance--ssh-to-it&quot; id=&quot;markdown-toc-212-launch-ec2-instance--ssh-to-it&quot;&gt;2.1.2 Launch EC2 instance &amp;amp; SSH to it&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#213-security-group-basics&quot; id=&quot;markdown-toc-213-security-group-basics&quot;&gt;2.1.3 Security Group Basics&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#214-ebs-volumes&quot; id=&quot;markdown-toc-214-ebs-volumes&quot;&gt;2.1.4 EBS Volumes&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;markdown-toc-&quot;&gt;#&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-network&quot; id=&quot;markdown-toc-4-network&quot;&gt;4 Network&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-subnet&quot; id=&quot;markdown-toc-42-subnet&quot;&gt;4.2 Subnet&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr class=&quot;hr-short-left&quot; /&gt;
 
-&lt;h2 id=&quot;1-vim-总结&quot;&gt;1. Vim 总结&lt;/h2&gt;
+&lt;h2 id=&quot;1-storage&quot;&gt;1. Storage&lt;/h2&gt;
 
 &lt;h3 id=&quot;11-iam&quot;&gt;1.1 IAM&lt;/h3&gt;
 
 &lt;h3 id=&quot;12-s3&quot;&gt;1.2 S3&lt;/h3&gt;
 
-&lt;h4 id=&quot;121-cross-region-replication&quot;&gt;1.2.1 Cross region replication&lt;/h4&gt;
+&lt;h4 id=&quot;120-what&quot;&gt;1.2.0 What&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;object based, not for install an operation system (which should uses block storage).&lt;/li&gt;
+  &lt;li&gt;from 0 Bytest to 5TB.&lt;/li&gt;
+  &lt;li&gt;unlimited storage.&lt;/li&gt;
+  &lt;li&gt;stored in Buckets.&lt;/li&gt;
+  &lt;li&gt;S3 is a universal namespace, that is, names must be unique globally.&lt;/li&gt;
+  &lt;li&gt;bucket url formats: &lt;code&gt;https://s3-eu-west-1.amazongaws.com/acloudguru&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;read after Write consistency for PUTS of new objects.&lt;/li&gt;
+  &lt;li&gt;eventual consistency for overwrite PUTS and DELETES (can take some time to propagate).&lt;/li&gt;
+  &lt;li&gt;S3 storgae tiers
+    &lt;ul&gt;
+      &lt;li&gt;S3 standard: 99.99% availability, 99.999999999% durability&lt;/li&gt;
+      &lt;li&gt;S3 RRS (Reduced Redundancy Storage) for noncritical  reproducible data that can be stored with less redundancy that the S3 standard.&lt;/li&gt;
+      &lt;li&gt;S3-IA: (Infrequently Accessed), lower fee than S3, but you are charged a retrieval fee.&lt;/li&gt;
+      &lt;li&gt;S3 One Zone - IA: the same as S3-IA except exist only in one availabbility zone.&lt;/li&gt;
+      &lt;li&gt;Glacier: very cheap, but used for archival only. Expedidited, Standard or Build. A standard retrival time takes 3 - 5 hours.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;key value store
+    &lt;ul&gt;
+      &lt;li&gt;Key&lt;/li&gt;
+      &lt;li&gt;Value&lt;/li&gt;
+      &lt;li&gt;Version ID&lt;/li&gt;
+      &lt;li&gt;Metadata&lt;/li&gt;
+      &lt;li&gt;Access Control List&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;121-versioning&quot;&gt;1.2.1 Versioning&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;stores all versions of an object (including all writes and even if you delete an object)&lt;/li&gt;
+  &lt;li&gt;great backup tool.&lt;/li&gt;
+  &lt;li&gt;once enabled, version cannot be disabled, only suspended.&lt;/li&gt;
+  &lt;li&gt;Integrates with Lifecycle rules&lt;/li&gt;
+  &lt;li&gt;Versioning’s MFA Delete capability, which use multi-factor authentication, can be used to provide an additional layer of secrurity.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;122-cross-region-replication&quot;&gt;1.2.2 Cross region replication&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;versioning must be enabled on both the source and estination buckets.&lt;/li&gt;
@@ -672,7 +749,373 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;li&gt;Understand what Crosss Region Replication is at a high level.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;#&lt;/h2&gt;
+&lt;h4 id=&quot;123-lifecyle-management-s3-ia--glacier-lab&quot;&gt;1.2.3 Lifecyle Management, S3-IA &amp;amp; Glacier lab&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;can be used in conjunction with versioning&lt;/li&gt;
+  &lt;li&gt;can be applied to current versions and previous versions&lt;/li&gt;
+  &lt;li&gt;Following actions can now be done:
+    &lt;ul&gt;
+      &lt;li&gt;transaction to the Standard-Infrequent Access Storage Class (30 days after the creation date)&lt;/li&gt;
+      &lt;li&gt;archive to the Glacier Storage Class(30 days after IA, if relevant)&lt;/li&gt;
+      &lt;li&gt;permanent delete&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;124-securing-buckets&quot;&gt;1.2.4 Securing buckets&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;By default, all newly created buckets are PRIVATE;&lt;/li&gt;
+  &lt;li&gt;You can setup access control to your buckets using;
+    &lt;ul&gt;
+      &lt;li&gt;Bucket Polocies (apply to whole Bucket);&lt;/li&gt;
+      &lt;li&gt;Access Control List (apply to specific file within the bucket)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;S3 Buckets can be configured to create access logs which log all requests made to the S3 bucket. This can be done to another bucket.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Encryption
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;In Transit: SSL/TLS&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;At Rest&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Server Side Encryption
+            &lt;ul&gt;
+              &lt;li&gt;S3 Managed Keys - SSE-S3&lt;/li&gt;
+              &lt;li&gt;AWS Key Management Service, Managed Keys - SSE-KMS&lt;/li&gt;
+              &lt;li&gt;Server Side Encryption With Customer Provided Keys - SSE-C&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Client Side Encryption&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;125-s3-transfer-acceleration&quot;&gt;1.2.5 S3 Transfer Acceleration&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;S3 Transfer Acceleration utilises the CloudFront Edge Network to accelerate your uploads to S3. Instead of uploading directly to your S3 buckets, you can use a distinct URL to upload directly to an edge location which will then transfer that file to S3.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;126-host-static-website-in-s3&quot;&gt;1.2.6 Host Static Website in S3&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You can host static website in S3. Websites that require database connections such as Wordpress etc cannot be hosted on S3.&lt;/li&gt;
+  &lt;li&gt;S3 Scales automatically to meet your demand. Many enterprises will put static websites on S3 when they think there is going to be a large number of requests.&lt;/li&gt;
+  &lt;li&gt;You should use bucket policies to make entire S3 buckets public for static website access.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;13-cloudfront&quot;&gt;1.3 CloudFront&lt;/h3&gt;
+
+&lt;h4 id=&quot;131-what-is-cdn&quot;&gt;1.3.1 What is CDN&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A content delivery network (CDN) is a system of distributed servers (network) that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage and a content delivery server.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edge Location - This is the location where content will be cached. This is separate to an AWS Region/AZ.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Origin - This is the origin of the files that the CDN will distribute to Edge Location. This can be either an S3 Bucket, an EC2 instance, an Elastic Load Balancer or Route53.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Distribution, consists of a collection of Edge Location.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CloudFront can be used to deliver your entire website using a global network of edge locations. Requests for your content will be routed to the nearest edge location.CloudFront is optimized with S3, EC2, Route53, and Elastic Load Balancer.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Web Distribution - Typlically used for websites&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RTMP - Used for Media Streaming&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edge locations are not just READ only, you can write to them too (ie put an object on to them).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Objects are cacehd for the life of the TTL (Time To Live).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can clear cached objects, but you will be charged.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;14-storage-gateway&quot;&gt;1.4 Storage Gateway&lt;/h3&gt;
+
+&lt;h4 id=&quot;141-what&quot;&gt;1.4.1 What&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization’s on-premises IT environment and AWS’s storage infrastructure. The service enables you to securely store data to the AWS cloud for scalable and cost-effective storage.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS Storage Gateway’s software appliance is available for download as a virtual machine (VM) image that you install on a host in your datacenter. Storage Gateway supports either VMware ESXi or Microsoft Hyper-V. Once you’ve installed your gateway and associated it with your AWS account through the activation process, you can use the AWS Management Console to create the storage gateway option that is right for you.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Four Types of Storage Gateways&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;File Gateway (NFS): such as pdf, word, picture, video. Files are stored as objects is &lt;strong&gt;S3&lt;/strong&gt; buckets, accessed through a Network File System (NFS) mount point.&lt;/li&gt;
+      &lt;li&gt;Volumes Gateway (iSCSI): block storage, virtual hard disk from on-premies to Volume Gateway via iSCSI block protocol.
+        &lt;ul&gt;
+          &lt;li&gt;Stored Volumes: store your primary data locally, while asynchronously backing up that data to AWS.&lt;/li&gt;
+          &lt;li&gt;Cached Volumes: only the most recently used file.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Tape Gateway (VTL): for archive in the AWS Cloud via popular backup applications like NetBackup, Backup Exec, Veeam etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;15-snowball&quot;&gt;1.5 Snowball&lt;/h3&gt;
+
+&lt;h4 id=&quot;151-what&quot;&gt;1.5.1 What&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS Import/Export Disk accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport, can import to or export from S3.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Types&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Snowball: 80TB.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Snowball Edge: 100TB with compute capability.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Snowmobile.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;16-elastic-block-storgage-ebs&quot;&gt;1.6 Elastic Block Storgage (EBS)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Amazon EBS allows you to create storage volumes and attach them to amazon EC2 instances. Once attached, you can create a file system on top of these volumes, run a database, or use them in any other way you would use a block device. Amazon EBS volums are placed in a specific Availability Zone, where they are automatically replicated to protect you from the failure of a single component.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;161-ebs-volume-types&quot;&gt;1.6.1 EBS Volume Types&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SSB
+    &lt;ul&gt;
+      &lt;li&gt;General Purpose SSD (GP2)
+        &lt;ul&gt;
+          &lt;li&gt;General purpose, balances both price and performance.&lt;/li&gt;
+          &lt;li&gt;Ratio of 3 IOPS per GB with up to 10,000 IOPS and the ability to burst up to 3000 IOPS for extended periods of time for volumes at 3334 Gib and above.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Provisioned IOPS SSD (IO1)
+        &lt;ul&gt;
+          &lt;li&gt;Designed for I/O intensive applications such as large relational or NoSQL databases.&lt;/li&gt;
+          &lt;li&gt;Use if you need more than 10,000 IOPS&lt;/li&gt;
+          &lt;li&gt;can provision up to 20,000 IOPS per volume.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Magnetic
+    &lt;ul&gt;
+      &lt;li&gt;Throughput Optimized HDD (ST1)
+        &lt;ul&gt;
+          &lt;li&gt;Big data&lt;/li&gt;
+          &lt;li&gt;Data warehouses&lt;/li&gt;
+          &lt;li&gt;Log processing&lt;/li&gt;
+          &lt;li&gt;Cannot be a boot volume&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Cold HDD (SC1)
+        &lt;ul&gt;
+          &lt;li&gt;Lowest Cost Storage for infrequently accessed workloads&lt;/li&gt;
+          &lt;li&gt;File server&lt;/li&gt;
+          &lt;li&gt;Cannot be a boot volume&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;17-summary&quot;&gt;1.7 Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Read the above notes&lt;/li&gt;
+  &lt;li&gt;In addition
+    &lt;ul&gt;
+      &lt;li&gt;Write to S3 - HTTP 200 code for a successiveful write&lt;/li&gt;
+      &lt;li&gt;You can load files to S3 much faster by enabling multipart upload&lt;/li&gt;
+      &lt;li&gt;Read the S3 FAQ obefore taking the exam. It comes up A LOT!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-computing&quot;&gt;2 Computing&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-ec2&quot;&gt;2.1 EC2&lt;/h3&gt;
+
+&lt;h4 id=&quot;211-what&quot;&gt;2.1.1 What&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly scale capacity, both up and down, as your computing requirements change.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Purchasing model&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;On Demand - allows you to pay a &lt;strong&gt;fixed&lt;/strong&gt; rate by the hour with no commitment. perfect for users that want the low cost and flexibility of Amazon EC2 without any up-front payment or long-term commitment. Applicatoins with short term, spiky or unpredictable workloads that cannot be interrupted. Applications being developed or tested on Amazon EC2 for the first time.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Reserved - provides you with a capacity reservation, and offer a significant discount on the hourly charge for an instacnce. 1 year or 3 year terms. Applications with steady state or predictable usage. Applications that require reserved capacity. Users can make up-front payments to reduce their total computing costs even further (standard RIs (Reserved Instances), up to 75% off on-demand; Convertible RIs, up to 54% off on demand; scheduled RIs are available to launch within the time window you reserve.)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Spot - enables you to bid whatever price you want for instance capacity, providing for even greater savings if your application shave flexible start and end times. Applications that have flexible start and end times. Applications that are only feasible at very low compute prices. Can be purchased on-Demand (hourly). Can be purchased as a Reservation for up to 70% off the on-demand price. If a spot instance is terminated by Amazon EC2, you will not be charged for a partial hour of usage; However, if you  terminate the instance your self, you will be charged for the complete hour in which the instance ran.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Dedicated Hosts - Physical EC2 server dedicated for your use. Dedicated hosts can help you reduce costs by allowing you to use your existing server-bound software licenses&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HARDWARE&lt;/strong&gt; - EC2 Instance Types:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;F&lt;/strong&gt; for FPGA&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt; for IOPS&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;G&lt;/strong&gt; for Graphics&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;H&lt;/strong&gt; for High Disk Throughput&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;T&lt;/strong&gt; for cheap general purpose (think T2 Micro)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;D&lt;/strong&gt; for density&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt; for RAM&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;M&lt;/strong&gt; for main choice for general purpose apps&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;C&lt;/strong&gt; for Compute&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;P&lt;/strong&gt; for Graphics (think Pics)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;X&lt;/strong&gt; for extrame Memory&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SOFTWARE&lt;/strong&gt; - AMI
+    &lt;ul&gt;
+      &lt;li&gt;linux&lt;/li&gt;
+      &lt;li&gt;red-hat&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Termination Protection is turned off by default, you must turn it on&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;EBS Root Volumes of your DEFAULT AMI’s cannot be encrypted. You can also use a thrid party tool (such as bit locker etc) to encrypt the root volume, or this can be done when creating AMI’s in the AWS console or uusing the API.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Additional volumes can be encrypted.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Root volume type
+    &lt;ul&gt;
+      &lt;li&gt;EBS
+        &lt;ul&gt;
+          &lt;li&gt;The root device for an instance launched from the AMI is an Amazon EBS volume created from an Amazon EBS snapshot&lt;/li&gt;
+          &lt;li&gt;EBS backed instances can be stopped. You will not lose the data on this instance if it is stopped.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;instance store (Ephemeral storage)
+        &lt;ul&gt;
+          &lt;li&gt;For root device for an instance launched for from the AMI is an isntance store volume created from a template stored in Amazon S3&lt;/li&gt;
+          &lt;li&gt;Ephemeral storage, the instance cannot be stopped, if the underlying host fails, you will lose your data.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;in common:
+        &lt;ul&gt;
+          &lt;li&gt;you can reboot both without losing your data.&lt;/li&gt;
+          &lt;li&gt;by default, both ROOT volumes will be deleted on termination, however with EBS volumes, you can tell AWS to keep the device volume.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;212-launch-ec2-instance--ssh-to-it&quot;&gt;2.1.2 Launch EC2 instance &amp;amp; SSH to it&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;download new key pair &lt;code&gt;myKeyPair.pem&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;CHMOD 400 myKeyPair.pem&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ssh ec2-user@3.0.99.6 -i myKeyPair.pem&lt;/code&gt; where &lt;code&gt;3.0.99.6&lt;/code&gt; is the ec2 instance public ip.&lt;/li&gt;
+  &lt;li&gt;try to install apache and start the service then type &lt;code&gt;3.0.99.6&lt;/code&gt; in browser. (&lt;code&gt;yum install httpd&lt;/code&gt;, &lt;code&gt;cd /var/www/&lt;/code&gt;, &lt;code&gt;vim index.html&lt;/code&gt;, write html to &lt;code&gt;index.html&lt;/code&gt;, save and &lt;code&gt;service httpd start&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;213-security-group-basics&quot;&gt;2.1.3 Security Group Basics&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All Inbound Traffic is Blocked By Default&lt;/li&gt;
+  &lt;li&gt;All Outbound Traffic is Allowed&lt;/li&gt;
+  &lt;li&gt;Changes to Security Groups take effective immediately. If your instance attached to Security Group A. Change to A take effective imeediately to this instance.&lt;/li&gt;
+  &lt;li&gt;An instance can have multiple security groups&lt;/li&gt;
+  &lt;li&gt;A secruity group can be attached to multiple instances&lt;/li&gt;
+  &lt;li&gt;Security Groups are stateful, which means inbound rule http would enable outbound rule http implicitly, though outbound rule doesn’t show there is rule http.&lt;/li&gt;
+  &lt;li&gt;You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;214-ebs-volumes&quot;&gt;2.1.4 EBS Volumes&lt;/h4&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png&quot; alt=&quot;EBS AMI&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Volumes exist on EBS
+    &lt;ul&gt;
+      &lt;li&gt;volumes is just virtual hard disk&lt;/li&gt;
+      &lt;li&gt;you can change volume size on the fly, including changing the size and storage type.&lt;/li&gt;
+      &lt;li&gt;volumes always be in the same Availability Zone as the EC2 instance&lt;/li&gt;
+      &lt;li&gt;to move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Snapshot exist on S3
+    &lt;ul&gt;
+      &lt;li&gt;snapshot are just time copies of volumes&lt;/li&gt;
+      &lt;li&gt;snapshot record the incremental diffierence&lt;/li&gt;
+      &lt;li&gt;the first snaphost takes more time to create since the first difference is almost the whole volume.&lt;/li&gt;
+      &lt;li&gt;to create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.&lt;/li&gt;
+      &lt;li&gt;However, you can take a snap while the instance is running&lt;/li&gt;
+      &lt;li&gt;Snapshot of encrypted volumes are encrypted automatically&lt;/li&gt;
+      &lt;li&gt;Volumes restored from encrypted snapshots are enecyrpted automatically&lt;/li&gt;
+      &lt;li&gt;You can share snapshots, but only if they are unencrypted
+        &lt;ul&gt;
+          &lt;li&gt;These snapshots can be shared with other AwWS accounts or made public&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;duplicate EBS to other AZ/region
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;to different AZ
+  volum -&amp;gt; snapshot -&amp;gt; create new volume from the snapshot in different AZ -&amp;gt; attach to a new instance&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;to different region
+  volume -&amp;gt; snapshot -&amp;gt; copy snapshot to a new region -&amp;gt; create image from the copied snapshot&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;EBS vs instance Store&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-network&quot;&gt;4 Network&lt;/h2&gt;
+
+&lt;h3 id=&quot;42-subnet&quot;&gt;4.2 Subnet&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;One subnet equals one availability zone&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 &lt;ul&gt;
@@ -681,8 +1124,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 </description>
 				<pubDate>Sun, 01 Oct 2017 00:00:00 +0800</pubDate>
-				<link>/-21%20aws/2017/10/01/Vim.html</link>
-				<guid isPermaLink="true">/-21%20aws/2017/10/01/Vim.html</guid>
+				<link>/-21%20aws/2017/10/01/AWS-Associate-Architect.html</link>
+				<guid isPermaLink="true">/-21%20aws/2017/10/01/AWS-Associate-Architect.html</guid>
 			</item>
 		
 			<item>
@@ -717,11 +1160,11 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#1-spritekit-概览&quot; id=&quot;markdown-toc-1-spritekit-概览&quot;&gt;1. SpriteKit 概览&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-sknodeskphysicsworld--skphysicsbodyskaction理解&quot; id=&quot;markdown-toc-2-sknodeskphysicsworld--skphysicsbodyskaction理解&quot;&gt;2. SKNode，SKPhysicsWorld &amp;amp; SKPhysicsBody，SKAction理解&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-sknode&quot; id=&quot;markdown-toc-21-sknode&quot;&gt;2.1 SKNode&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#211-skscene&quot; id=&quot;markdown-toc-211-skscene&quot;&gt;2.1.1 SKScene&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#212-skspritenode&quot; id=&quot;markdown-toc-212-skspritenode&quot;&gt;2.1.2 SKSpriteNode&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#213-sklabelnode&quot; id=&quot;markdown-toc-213-sklabelnode&quot;&gt;2.1.3 SKLabelNode&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-sknodeskphysicsworld--skphysicsbodyskaction理解&quot; id=&quot;markdown-toc-2-sknodeskphysicsworld--skphysicsbodyskaction理解&quot;&gt;2. SKNode，SKPhysicsWorld &amp;amp; SKPhysicsBody，SKAction理解##&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-sknode&quot; id=&quot;markdown-toc-21-sknode&quot;&gt;2.1 SKNode###&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#211-skscene&quot; id=&quot;markdown-toc-211-skscene&quot;&gt;2.1.1 SKScene####&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#212-skspritenode&quot; id=&quot;markdown-toc-212-skspritenode&quot;&gt;2.1.2 SKSpriteNode####&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#213-sklabelnode&quot; id=&quot;markdown-toc-213-sklabelnode&quot;&gt;2.1.3 SKLabelNode####&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#214-skemitternode&quot; id=&quot;markdown-toc-214-skemitternode&quot;&gt;2.1.4 SKEmitterNode&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -756,12 +1199,12 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;p&gt;这三个方面分别对应SpriteKit里面的SKNode，SKPhysicsWorld &amp;amp; SKPhysicsBody，SKAction。&lt;/p&gt;
 
-&lt;h2 id=&quot;2-sknodeskphysicsworld--skphysicsbodyskaction理解&quot;&gt;2. SKNode，SKPhysicsWorld &amp;amp; SKPhysicsBody，SKAction理解&lt;/h2&gt;
-&lt;h3 id=&quot;21-sknode&quot;&gt;2.1 SKNode&lt;/h3&gt;
+&lt;h2 id=&quot;2-sknodeskphysicsworld--skphysicsbodyskaction理解&quot;&gt;2. SKNode，SKPhysicsWorld &amp;amp; SKPhysicsBody，SKAction理解##&lt;/h2&gt;
+&lt;h3 id=&quot;21-sknode&quot;&gt;2.1 SKNode###&lt;/h3&gt;
 
 &lt;p&gt;SKNode 是 SpriteKit 显示视图的Building Block。它能提供一个游戏视图的基本属性和方法:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -773,7 +1216,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 10
 11
 12
-13&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKNode Class
+13
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKNode Class
 
 属性:
 .zPosition              // 视图的z方向的距离，用于标定重叠视图的显示顺序;
@@ -785,8 +1229,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 方法:
 -addChild:              // 增加子SKNode，与UIView 的 -addSubView: 类似;
 -removeFromParent:      // 从父SKNode移除，与 UIView的removeFromSuperview 类似;
--runAction:             // 运行一个SKAction;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+-runAction:             // 运行一个SKAction;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;我们一般不直接用它，它下面有几个子类，其中最常见的是以下4个:&lt;/p&gt;
 
@@ -799,10 +1242,10 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;p&gt;下面我们就这四个类做一个简单的介绍。&lt;/p&gt;
 
-&lt;h4 id=&quot;211-skscene&quot;&gt;2.1.1 SKScene&lt;/h4&gt;
+&lt;h4 id=&quot;211-skscene&quot;&gt;2.1.1 SKScene####&lt;/h4&gt;
 &lt;p&gt;SKScene 是游戏关口(level)，游戏中的一个场景，例如马里奥的第一关和第二关分别是两个SKCene实例。在这个场景中，包含了所有其他SKNode(或者其子类)，比如马里奥(SKSpriteNode)，游戏时间(SKLabelNode)，喷射火焰的岩浆(SKEmitterNode)。它的主要属性和方法有:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -812,7 +1255,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 8
 9
 10
-11&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKScene Class
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKScene Class
 
 属性:
 .view                   // 关口的父视图，是一个SKView，用来展示各个SKScene关口;
@@ -822,10 +1266,9 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 -initWithSize:          // 初始化方法;
 +SceneWithSize:         // 初始化类工厂方法;
 -didMoveToView:         // 当SKScene实例被SKView展示时调用，类似UIView的-didMoveToSuperview;
--addChild:              // 增加子SKNode，如马里奥(SKSpriteNode);&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+-addChild:              // 增加子SKNode，如马里奥(SKSpriteNode);&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h4 id=&quot;212-skspritenode&quot;&gt;2.1.2 SKSpriteNode&lt;/h4&gt;
+&lt;h4 id=&quot;212-skspritenode&quot;&gt;2.1.2 SKSpriteNode####&lt;/h4&gt;
 &lt;p&gt;SKSpriteNode是用来展示sprite，那么何为sprite呢，sprite有什么作用呢? Wiki中是这样定义的。&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -834,27 +1277,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;p&gt;sprite是从整个display独立出来渲染的2D图片。如何理解这句话呢，在sprite出现之前，2D游戏要渲染一帧图片(比如马里奥在一个蓝天白云的背景前)，需要把整个图片(马里奥+背景)计算完后再渲染，其中背景的渲染在每一帧中都重复。sprite的出现正是为了避免这一重复。马里奥是一个sprite，他在一个固定的背景前跳跃，只需要将马里奥的每一帧渲染出来叠在背景(背景不需要重复计算渲染)即可，这就是为什么sprite被称为从整个display独立出来渲染的2D图片。sprite的思想在几十年前就已经有了，SpriteKit只是沿袭了2D游戏设计中运用sprite这一思想，用SKSpriteNode来表示sprite类。我们来看下SKSpriteNode的属性和方法&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKSpriteNode Class
-
-属性:
-.size                       // 大小;
-.physicsBody                // 物体的物理模型，是一个SKPhysicsBody实例，这个后面会介绍;
-
-方法:
-+spriteNodeWithImageNamed:  // 类工厂方法，用图片创建sprite;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;213-sklabelnode&quot;&gt;2.1.3 SKLabelNode&lt;/h4&gt;
-&lt;p&gt;SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一点需要注意的是它只能显示单行文本。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -862,7 +1285,28 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 6
 7
 8
-9&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKLabelNode Class
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKSpriteNode Class
+
+属性:
+.size                       // 大小;
+.physicsBody                // 物体的物理模型，是一个SKPhysicsBody实例，这个后面会介绍;
+
+方法:
++spriteNodeWithImageNamed:  // 类工厂方法，用图片创建sprite;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;213-sklabelnode&quot;&gt;2.1.3 SKLabelNode####&lt;/h4&gt;
+&lt;p&gt;SKLabelNode是SpriteKit用来展示text，它的方法和属性如下。有一点需要注意的是它只能显示单行文本。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKLabelNode Class
 
 属性:
 .fontSize               // 字体大小;
@@ -870,8 +1314,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 .fontName               // 字体名字;
 
 方法:
--initWithFontNamed:     // 通过字体名字初始化方法;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+-initWithFontNamed:     // 通过字体名字初始化方法;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;214-skemitternode&quot;&gt;2.1.4 SKEmitterNode&lt;/h4&gt;
 &lt;p&gt;SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常见使用方法。&lt;/p&gt;
@@ -889,14 +1332,14 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;li&gt;调整完成后如何在code中调用.sks文件呢:&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
-4&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;SKEmitterParticle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fireParticles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSKeyedUnarchiver&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unarchiveObjectWithFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSBundle&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mainBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pathForResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;FireParticle&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ofType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;sks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;SKEmitterParticle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fireParticles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSKeyedUnarchiver&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unarchiveObjectWithFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSBundle&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mainBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pathForResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;FireParticle&quot;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ofType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;sks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;fireParticles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;particleBirthRate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;fireParticles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGPointMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;n&quot;&gt;fireParticles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CGPointMake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;pre&gt;&lt;code&gt; 用NSBundle读取.sks 文件，然后可以进一步修改其属性。这样就完成了SpriteKit Particles Files 的子类化和应用。
 &lt;/code&gt;&lt;/pre&gt;
@@ -907,120 +1350,36 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 &lt;h4 id=&quot;221-skphysicsworld&quot;&gt;2.2.1 SKPhysicsWorld&lt;/h4&gt;
 &lt;p&gt;对于一个物理世界来说，例如我们的地球，有一些属性决定了我们日常生活的基础，如重力加速度。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKPhysicsWorld Class
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKPhysicsWorld Class
 
 属性:
 .gravity:                   // 重力加速度了， 通过CGVectorMaker(0，-9.8)获得现实生活一个重力加速度。第一个参数是x轴，向右为正，第二个参数是y轴，向上为正;
-.contactDelegate            // SKPhyicsContactDelegate 实例;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+.contactDelegate            // SKPhyicsContactDelegate 实例;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;又比如物体碰撞后的处理者，可以理解为物体碰撞后有一个裁判需要对此进行处理，在SpriteKit中是SKPhyicsContactDelegate。而SKPhysicsWorld 的contactDelegate属性就指向这样一个delegate，也就是说由物理世界充当裁判的角色。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKPhysicsContactDelegate Class
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKPhysicsContactDelegate Class
 
 方法:
 -didBeginContact:       // 碰撞开始;
--didEndContact:         // 碰撞结束;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+-didEndContact:         // 碰撞结束;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;对于SKPhysicsContactDelegate两个方法的使用我们后面介绍。&lt;/p&gt;
 
 &lt;h4 id=&quot;222-skphysicsbody&quot;&gt;2.2.2 SKPhysicsBody&lt;/h4&gt;
 &lt;p&gt;SKPhysicsBody代表物理模型里的物体，它有质量，体积(2D 游戏里是面积)，密度，线速度，角速度，自旋速度等。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKPhysicsBody Class
-
-属性:
-.mass                       // 质量，单位kg;
-.area                       // 面积，单位m*m;
-.density                    // 密度，单位kg/m*m;
-.friction                   // 表面粗糙度，0.0-1.0;
-.restitution                // 碰撞时，反射速度/入射速度，0.0-1.0;
-.linearDamping              // 物体线速度受液体或者气体(空气)摩擦的影响， 0.0-1.0;
-.dynamic                    // YES，动态; NO，静态，与SKPhysicsWorld相连，不受碰撞影响;
-.categoryBitMask            // 自身的contact &amp;amp; collision ID;
-.contactTestBitMask         // 外界contact测试的ID集合;
-.collisionBitMask           // 外界collision的ID集合;
-
-方法:
-+bodyWithRectangleOfSize:   // 创建Volume-physicsBody的一种类工厂方法;
-+bodyWithEdgeLoopFromRect:  // 创建Edge-physicsBody的一种类工厂方法;
--applyImpulse:              // 被施加外部瞬时力;
--applyForce:                // 被施加外部永恒力;
--runAction:                 // 运行一个SKAction实例;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;.dynamics 是一个BOOL，设置为NO时，静止(可以理解为与SKPhyisicsWorld相连)，位置不受碰撞前后影响， 例如马里奥里的乌龟壳，碰到水管后反弹，水管静止，这里水管的dynamic就是NO， 乌龟壳的dynmaics就是YES。&lt;/p&gt;
-
-&lt;p&gt;要创建一个在框里永远碰撞而不停下的ball，应设置如下friction，restituition， linearDamping:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;friction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;restitution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linearDamping&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;SKPhysicsBody的创建分为两种，一种是Volume-physicsBody，就是有体积(2D里是面积)的物体，有体积意味着有质量，受牛顿定律影响;另一种是只有边缘没有体积的Edge-physicsBody，如上面那个装永动球的箱子，我们只关心箱子的边框，用 +bodyWithEdgeLoopFromRect: 创建它并设置其dynamics = NO 即可。&lt;/p&gt;
-
-&lt;p&gt;下面重点要介绍的是接触和碰撞。
-SpriteKit为每个物体在接触和碰撞时设定了一个身份证——categoryBitMask，该属性唯一标定了接触和碰撞时每个物体的身份，是一个32 bit的数，我们下面先看code再解释:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MariaCategory&lt;/span&gt;              &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt;             &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;我们设置了3种uint32_t的静态常量，分别代表马里奥，子弹，乌龟。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objec&quot; data-lang=&quot;objec&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;maria.categoryBitMask = MariaCategory;
-tortoise.categoryBitMask = TortoiseCategory;
-bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;然后分别给maria，tortoise以及bullte的categoryBitMask设置为相应值。同时我们需要在以下情形中判断contact发生并作出相应，如马里奥碰到乌龟，马里奥die;子弹碰到乌龟，乌龟die:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;maria&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactTestBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactTestBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MariaCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;bullet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactTestBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;上面将maria感兴趣的contact ID集设置为乌龟，乌龟设置为子弹和马里奥，子弹设置为乌龟。用32位非常便于取或操作，同时也限定了一个游戏场景里的碰撞接触的身份证只能有32个。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -1040,42 +1399,71 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 18
 19
 20
-21&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GameScene&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SKScene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKPhysicsContactDelegate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKPhysicsBody Class
 
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToParent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;physicsWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactDelegate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+属性:
+.mass                       // 质量，单位kg;
+.area                       // 面积，单位m*m;
+.density                    // 密度，单位kg/m*m;
+.friction                   // 表面粗糙度，0.0-1.0;
+.restitution                // 碰撞时，反射速度/入射速度，0.0-1.0;
+.linearDamping              // 物体线速度受液体或者气体(空气)摩擦的影响， 0.0-1.0;
+.dynamic                    // YES，动态; NO，静态，与SKPhysicsWorld相连，不受碰撞影响;
+.categoryBitMask            // 自身的contact &amp;amp; collision ID;
+.contactTestBitMask         // 外界contact测试的ID集合;
+.collisionBitMask           // 外界collision的ID集合;
 
-&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;didBeginContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKPhysicsContact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//我们来简单举一个子弹打到乌龟，乌龟die的contact测试。
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;SKPhysicsBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+方法:
++bodyWithRectangleOfSize:   // 创建Volume-physicsBody的一种类工厂方法;
++bodyWithEdgeLoopFromRect:  // 创建Edge-physicsBody的一种类工厂方法;
+-applyImpulse:              // 被施加外部瞬时力;
+-applyForce:                // 被施加外部永恒力;
+-runAction:                 // 运行一个SKAction实例;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;tortoise die: %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;.dynamics 是一个BOOL，设置为NO时，静止(可以理解为与SKPhyisicsWorld相连)，位置不受碰撞前后影响， 例如马里奥里的乌龟壳，碰到水管后反弹，水管静止，这里水管的dynamic就是NO， 乌龟壳的dynmaics就是YES。&lt;/p&gt;
 
-&lt;p&gt;这样当子弹打到乌龟，GameScene 作为SKPhysicsContactDelegate就会响应-didBeginContact: 方法，然后判断情形，如果是，则打印出来”tortoise die:tortoise的object信息”。&lt;/p&gt;
+&lt;p&gt;要创建一个在框里永远碰撞而不停下的ball，应设置如下friction，restituition， linearDamping:&lt;/p&gt;
 
-&lt;p&gt;了解了categoryBitMask 和contactTestBitMask， 我们再来看collisionBitMask就简单了，它表示物体之间会不会intersect，也是32位数。默认是32个1，表示与任何物体碰撞都不会穿过那个物体。如果你需要将某个物体穿过另一个物体，比如子弹打到马里奥，直接穿过(当然游戏中不可能发生):&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;friction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;restitution&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ball&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linearDamping&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objec&quot; data-lang=&quot;objec&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;maria.collisionBitMask = ~BulletCategory;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;SKPhysicsBody的创建分为两种，一种是Volume-physicsBody，就是有体积(2D里是面积)的物体，有体积意味着有质量，受牛顿定律影响;另一种是只有边缘没有体积的Edge-physicsBody，如上面那个装永动球的箱子，我们只关心箱子的边框，用 +bodyWithEdgeLoopFromRect: 创建它并设置其dynamics = NO 即可。&lt;/p&gt;
 
-&lt;p&gt;最后力的施加我们在SKAction里介绍。&lt;/p&gt;
+&lt;p&gt;下面重点要介绍的是接触和碰撞。
+SpriteKit为每个物体在接触和碰撞时设定了一个身份证——categoryBitMask，该属性唯一标定了接触和碰撞时每个物体的身份，是一个32 bit的数，我们下面先看code再解释:&lt;/p&gt;
 
-&lt;h3 id=&quot;23-skaction&quot;&gt;2.3. SKAction&lt;/h3&gt;
-&lt;p&gt;SKAction表示一个动作，由SKNode得 -runAction: 方法执行，它有几十个方法。下面列出几个比较典型的， 它的实例化大部分都是类工厂方法:&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MariaCategory&lt;/span&gt;              &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;uint32_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt;             &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;p&gt;我们设置了3种uint32_t的静态常量，分别代表马里奥，子弹，乌龟。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objec&quot; data-lang=&quot;objec&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;maria.categoryBitMask = MariaCategory;
+tortoise.categoryBitMask = TortoiseCategory;
+bullet.categoryBitMask = BulletCategory;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;然后分别给maria，tortoise以及bullte的categoryBitMask设置为相应值。同时我们需要在以下情形中判断contact发生并作出相应，如马里奥碰到乌龟，马里奥die;子弹碰到乌龟，乌龟die:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;maria&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactTestBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactTestBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MariaCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bullet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactTestBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面将maria感兴趣的contact ID集设置为乌龟，乌龟设置为子弹和马里奥，子弹设置为乌龟。用32位非常便于取或操作，同时也限定了一个游戏场景里的碰撞接触的身份证只能有32个。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -1092,7 +1480,63 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 15
 16
 17
-18&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKAction Class
+18
+19
+20
+21
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GameScene&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SKScene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKPhysicsContactDelegate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToParent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;physicsWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contactDelegate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;didBeginContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKPhysicsContact&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//我们来简单举一个子弹打到乌龟，乌龟die的contact测试。&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;SKPhysicsBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BulletCategory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;categoryBitMask&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TortoiseCategory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contact&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bodyA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;tortoise die: %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tortoise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;这样当子弹打到乌龟，GameScene 作为SKPhysicsContactDelegate就会响应-didBeginContact: 方法，然后判断情形，如果是，则打印出来”tortoise die:tortoise的object信息”。&lt;/p&gt;
+
+&lt;p&gt;了解了categoryBitMask 和contactTestBitMask， 我们再来看collisionBitMask就简单了，它表示物体之间会不会intersect，也是32位数。默认是32个1，表示与任何物体碰撞都不会穿过那个物体。如果你需要将某个物体穿过另一个物体，比如子弹打到马里奥，直接穿过(当然游戏中不可能发生):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objec&quot; data-lang=&quot;objec&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;maria.collisionBitMask = ~BulletCategory;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;最后力的施加我们在SKAction里介绍。&lt;/p&gt;
+
+&lt;h3 id=&quot;23-skaction&quot;&gt;2.3. SKAction&lt;/h3&gt;
+&lt;p&gt;SKAction表示一个动作，由SKNode得 -runAction: 方法执行，它有几十个方法。下面列出几个比较典型的， 它的实例化大部分都是类工厂方法:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;SKAction Class
 
 初始化方法:
 +moveByX:y:duration:                    // 移动一个SKNode;
@@ -1109,31 +1553,30 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
 -reversedAction:                        // 逆向一个SKAction，如原来从左到右2秒，现在从右到左两秒;
 
 +runBlock:queque:                       // 在队列里执行SKAction;
-+customActionWithDuration:actionBlock:  // 定制SKAction;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
++customActionWithDuration:actionBlock:  // 定制SKAction;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;例如马里奥中需要一个空中台阶，“”从左到右2秒，等待0.5秒，从右到左2秒，等待0.5秒 ”的sequence永远运行下去，code如下:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
 5
-6&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moveToRight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;moveByX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moveToRight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;moveByX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bounds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moveToLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToRight&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reversedAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;waitForDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moveToRightAndLeft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:@[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToRight&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToLeft&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;moveToRightAndLeftForever&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKAction&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;repeatActionForever&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToRightAndLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;platform&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;runAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToRightAndLeftForever&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;platform&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;runAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moveToRightAndLeftForever&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;3其它类&quot;&gt;3.其它类&lt;/h2&gt;
 &lt;p&gt;在SKView中，场景的不同切换要用到SKTransition，self指一个scene:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;SKTransition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doorOpenTransition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKTransition&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doorsOpenHorizontalWithDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;presentScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;winScene&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doorOpenTransition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;SKTransition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;doorOpenTransition&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SKTransition&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doorsOpenHorizontalWithDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;presentScene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;winScene&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doorOpenTransition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;4-总结&quot;&gt;4 总结&lt;/h2&gt;
 &lt;p&gt;以上对于SKSpriteKit里的大部分常用类及其用法做了介绍，相信读者能够自己画出SKSpriteKit的类图关系，再回过头来跟着online的SKSpriteKit的tutorial做一遍的时候，自然就了然于心。后面还有一篇从各个小topic来看SKSpriteKit。&lt;/p&gt;
@@ -1152,7 +1595,6 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
       &lt;li&gt;&lt;a href=&quot;#11-outline&quot; id=&quot;markdown-toc-11-outline&quot;&gt;1.1 Outline&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;markdown-toc-&quot;&gt;#&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1177,7 +1619,7 @@ bullet.categoryBitMask = BulletCategory;&lt;span class=&quot;w&quot;&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;#&lt;/h2&gt;
+&lt;p&gt;###&lt;/p&gt;
 
 &lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
 
