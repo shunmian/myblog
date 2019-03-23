@@ -402,6 +402,11 @@ Number of arguments: $#
 
 
 
+## A1: extra command TBC
+
+- `service`
+- `chkconfig`
+
 
 
 

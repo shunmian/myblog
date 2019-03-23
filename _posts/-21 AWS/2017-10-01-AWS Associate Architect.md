@@ -17,9 +17,22 @@ shortinfo: AWS介绍。
 ---
 {:.hr-short-left}
 
+## 0 AWS CLI
+
+- `aws configure`
+- `aws s3 help`
+- `aws s3 ls`
+
 ## 1. Storage ##
 
 ### 1.1 IAM
+
+#### 1.1.3 Role
+
+- Role is used to avoid using user credential in resources such as EC2, which is not secure if it is shared across multiple EC2 and one EC2 leakage will needs you to invalidate that user and create a new user credential. By assign role to EC2, you can use `aws s3 ls` without `aws config` to enter the user credentials.
+
+- Role is global: you cannot create a role for a specific region.
+    - One can attach a role to a RUNNING EC2 instance
 
 ### 1.2 S3
 
@@ -250,6 +263,8 @@ shortinfo: AWS介绍。
         - you can reboot both without losing your data.
         - by default, both ROOT volumes will be deleted on termination, however with EBS volumes, you can tell AWS to keep the device volume.
       
+- GET EC2 instance meta data inside EC2
+    `curl http://169.254.169.254/latest/meta-data/`
 
 #### 2.1.2 Launch EC2 instance & SSH to it
 
@@ -303,6 +318,45 @@ shortinfo: AWS介绍。
 
 - EBS vs instance Store
 
+
+#### 2.1.5 Elastic Load Balancer
+
+- 3 types
+    - Application Load Balancer
+        - for HTTP and HTTPs traffic (OSI 7, the application layer): can create advanced request routing, sending specified requests to specific web servers.
+    - Network Load Balancer
+        - for TCP traffic (OSI 4, the transport layer): capable of handling millions of requests per second while maintaining ultra-low latencies, for extreame performance.
+    - Classic Load Balancer
+        - the legacy Elastic Load Balancers(for both OSI 7 and 4).
+        - Error: 504, means server has error, either in server itself or db.
+        - X-Forwared-For header: client(src 124.12.3.231) -> classic load balancer (src 10.0.0.23) -> EC2(src 10.0.0.23 (X-Forwared-For 123.12.3.231))
+- instaces monitored by ELB are reported as: InService or OutofService
+- Health Checks do the instance check by talking to it
+- ELB have their own DNS name. You are never given an IP address.
+- Read the ELB FAQ for Classic Load Balancers. 
+- aCloudGuru has deep dive course on application load balancers.
+
+#### 2.1.6 Using bash script to pre-launch the ec2 instance
+
+in launch instance -> Configure Instance Details -> Advanced Details, one can add bash scripts
+
+## 3 Monitoring
+
+### 3.1 CloudWatch
+
+- 2 types
+    - Standard Monitoring = 5 minutes
+    - Detailed Monitoring = 1 minute
+
+- Dashboards: creates awesome dashboards to see what is happening with your AWS environment.
+
+- Alarms: allows you to set alarms that notify you, such as via email when particular thresholds are hit.
+
+- Events: helps you to respond to state changes in your AWS resources.
+
+- Logs: helps you to aggregate, monitor, and store logs.
+
+- CloudWatch vs CloudTrial: CloudWatch for performance monitoring aws existing resources (EC2 cpu utilization), CloudTrial for auditing what you do to aws (such as create new user, new role, S3 bucket)
 
 ## 4 Network
 
