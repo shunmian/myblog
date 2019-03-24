@@ -701,7 +701,14 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
           &lt;li&gt;&lt;a href=&quot;#413-exam-tips&quot; id=&quot;markdown-toc-413-exam-tips&quot;&gt;4.1.3 Exam tips&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-vpc&quot; id=&quot;markdown-toc-42-vpc&quot;&gt;4.2 VPC&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#42-subnet&quot; id=&quot;markdown-toc-42-subnet&quot;&gt;4.2 Subnet&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#43-nat-instance--nat-gateway&quot; id=&quot;markdown-toc-43-nat-instance--nat-gateway&quot;&gt;4.3 NAT instance &amp;amp; NAT Gateway&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#44-network-access-control-list&quot; id=&quot;markdown-toc-44-network-access-control-list&quot;&gt;4.4 Network Access Control List&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#45-security-group&quot; id=&quot;markdown-toc-45-security-group&quot;&gt;4.5 Security Group&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#48-vpc-flow-logs&quot; id=&quot;markdown-toc-48-vpc-flow-logs&quot;&gt;4.8 VPC Flow Logs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#48-vpc-endpoint&quot; id=&quot;markdown-toc-48-vpc-endpoint&quot;&gt;4.8 VPC Endpoint&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#49-summary&quot; id=&quot;markdown-toc-49-summary&quot;&gt;4.9 Summary&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#5-database&quot; id=&quot;markdown-toc-5-database&quot;&gt;5 Database&lt;/a&gt;    &lt;ul&gt;
@@ -1410,10 +1417,161 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
 
 &lt;h4 id=&quot;413-exam-tips&quot;&gt;4.1.3 Exam tips&lt;/h4&gt;
 
+&lt;h3 id=&quot;42-vpc&quot;&gt;4.2 VPC&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what
+    &lt;ul&gt;
+      &lt;li&gt;AWS VPC lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resource in a virtual network you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways&lt;/li&gt;
+      &lt;li&gt;Elements
+        &lt;ul&gt;
+          &lt;li&gt;Internet gateway (Virtual private gatway): each IGW can attach to one VPC&lt;/li&gt;
+          &lt;li&gt;Route Table&lt;/li&gt;
+          &lt;li&gt;Network Access Control List (Stateless)&lt;/li&gt;
+          &lt;li&gt;Subnet (1 subnet = 1 AZ), each Subnet can associate one Network Access Control List&lt;/li&gt;
+          &lt;li&gt;Security Group (stateful, inbound rule apply to outbound automatically, for example, you add inbound rule  port 80, outbound 80 is enabled automatically, for Network Access Control List, you need to add outbound rule port 80 as well). Security Group can only be reused within the same VPC&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;No Transitive Peering: VPC A talk to Both VPC B and VPC C; VPC cannot talk to VPC B since no transitive peering for VPC. In order to let VPC C talk to VPC B, you need to enable the rule between VPC B and VPC directly.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;internet gateway
+    &lt;ul&gt;
+      &lt;li&gt;per internet gateway per VPC&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;route table
+    &lt;ul&gt;
+      &lt;li&gt;map to subnets&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;subnet
+    &lt;ul&gt;
+      &lt;li&gt;access control list&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;security group&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;each EC2 has a public and private ip address&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;VPC Peering
+    &lt;ul&gt;
+      &lt;li&gt;Allows you to connect one VPC with another via a direct network route using private IP address&lt;/li&gt;
+      &lt;li&gt;one vpc can connect to another vpc&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;42-subnet&quot;&gt;4.2 Subnet&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;One subnet equals one availability zone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;43-nat-instance--nat-gateway&quot;&gt;4.3 NAT instance &amp;amp; NAT Gateway&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NAT instance
+    &lt;ul&gt;
+      &lt;li&gt;When creating a NAT instance, Disable Source/Destination Check on the instance.&lt;/li&gt;
+      &lt;li&gt;NAT instances must be in a public subnet&lt;/li&gt;
+      &lt;li&gt;There must be a route out of the private subnet to the NAT instance, in order for this to work&lt;/li&gt;
+      &lt;li&gt;The amount of traffic that NAT instances can support depends on the instance size. If you are bottlenecking, increase the instance size.&lt;/li&gt;
+      &lt;li&gt;You can create high availability using Autoscaling Groups, multiple subnets in different AZs, and a script to automate failover.&lt;/li&gt;
+      &lt;li&gt;Behind a secrity group&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;NAT Gateway
+    &lt;ul&gt;
+      &lt;li&gt;Preferred by the enterprise&lt;/li&gt;
+      &lt;li&gt;Scale automatically up to 10 Gbps&lt;/li&gt;
+      &lt;li&gt;No need to patch&lt;/li&gt;
+      &lt;li&gt;Not associated with security groups&lt;/li&gt;
+      &lt;li&gt;Automatically assigned a public ip address&lt;/li&gt;
+      &lt;li&gt;Remember to update your route tables&lt;/li&gt;
+      &lt;li&gt;No need to disable source/destination checks.&lt;/li&gt;
+      &lt;li&gt;More secure than a NAT instance&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;NAT vs Bastion
+    &lt;ul&gt;
+      &lt;li&gt;A NAT is used to provide internet traffic to EC2 instance in private subnets&lt;/li&gt;
+      &lt;li&gt;A bastion is used to securely administer EC2 instance (using SSH or RDP) in private subnets. In Australia we call them jump box.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;44-network-access-control-list&quot;&gt;4.4 Network Access Control List&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your VPC automatically comes a default network ALC, and by default it allows all outbound and inbound traffic.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When creating new Network ACL, the inbound and outbound default to all deny.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Each subnet in your VPC must be associated with a network ACL. If you don’t explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can associate a network ACL with multiple subnets; however, a subnet can be associated with only one network ACL at a time. When you associate a network ACL with a subnet, the previous association is removed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Network ACLs contain a numbered list of rules that is evaluated in order, starting with the lowest numbered rule.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Block IP addresses using network ACLs not Security Groups&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;45-security-group&quot;&gt;4.5 Security Group&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Security groups act like a firewall at the instance level whereas Network Access Control List are an additional layer of security that act at the subnet level&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;48-vpc-flow-logs&quot;&gt;4.8 VPC Flow Logs&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC. Flow log data is stored using Amazon CloudWatch Logs. After youo’ve created a flow log, you can view and retrieve its data in Amazon CloudWatch Logs.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;3 levels&lt;/li&gt;
+      &lt;li&gt;VPC&lt;/li&gt;
+      &lt;li&gt;Subnet&lt;/li&gt;
+      &lt;li&gt;Network Interface Level&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Exam tips
+    &lt;ul&gt;
+      &lt;li&gt;You cannot enable flow logs for VPCs that are peered with your VPC unless the peer VPC is in your account&lt;/li&gt;
+      &lt;li&gt;You cannot tag a flow log&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;After you’ve created a flow log, you cannot change its configuration; for exampke, you can’t associate a different IAM role with the flow log.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Not all ip traffic is monitored:
+        &lt;ul&gt;
+          &lt;li&gt;Traffic generated by instances when they contact the Amazon DNS server. If you use your own DNS server, then all traffic to that DNS server is logged.&lt;/li&gt;
+          &lt;li&gt;Traffic generated by a Windows instance for Amazon Windows license activation&lt;/li&gt;
+          &lt;li&gt;Traffic to and from 169.254.169.254 for instance metadata&lt;/li&gt;
+          &lt;li&gt;DHCP traffic&lt;/li&gt;
+          &lt;li&gt;Traffic to the reserved IP address for the default VPC router.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;48-vpc-endpoint&quot;&gt;4.8 VPC Endpoint&lt;/h3&gt;
+
+&lt;h3 id=&quot;49-summary&quot;&gt;4.9 Summary&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How many VPC’s am I allowed in each AWS Region by default ? 5.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-database&quot;&gt;5 Database&lt;/h2&gt;
