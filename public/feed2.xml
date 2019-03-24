@@ -704,6 +704,28 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#42-subnet&quot; id=&quot;markdown-toc-42-subnet&quot;&gt;4.2 Subnet&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-database&quot; id=&quot;markdown-toc-5-database&quot;&gt;5 Database&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#51-disk&quot; id=&quot;markdown-toc-51-disk&quot;&gt;5.1 Disk&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#511-sql---oltp&quot; id=&quot;markdown-toc-511-sql---oltp&quot;&gt;5.1.1 Sql - OLTP&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#5115-aurora&quot; id=&quot;markdown-toc-5115-aurora&quot;&gt;5.1.1.5 Aurora&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#512-nosql&quot; id=&quot;markdown-toc-512-nosql&quot;&gt;5.1.2 NoSql&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#5121-dynamodb&quot; id=&quot;markdown-toc-5121-dynamodb&quot;&gt;5.1.2.1 DynamoDB&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#52-redshift---olap&quot; id=&quot;markdown-toc-52-redshift---olap&quot;&gt;5.2 RedShift - OLAP&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#53-in-memory-elasticache&quot; id=&quot;markdown-toc-53-in-memory-elasticache&quot;&gt;5.3 In memory Elasticache&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#531-memcached&quot; id=&quot;markdown-toc-531-memcached&quot;&gt;5.3.1 Memcached&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#532-redis&quot; id=&quot;markdown-toc-532-redis&quot;&gt;5.3.2 Redis&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#54-launch-rds-instance-and-connect-to-it-via-ec2-server&quot; id=&quot;markdown-toc-54-launch-rds-instance-and-connect-to-it-via-ec2-server&quot;&gt;5.4 Launch RDS instance and connect to it via EC2 server&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#55-back-ups-multi-az--read-replicas&quot; id=&quot;markdown-toc-55-back-ups-multi-az--read-replicas&quot;&gt;5.5 Back Ups, Multi-AZ &amp;amp; Read Replicas&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1392,6 +1414,216 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
 
 &lt;ul&gt;
   &lt;li&gt;One subnet equals one availability zone&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-database&quot;&gt;5 Database&lt;/h2&gt;
+
+&lt;h3 id=&quot;51-disk&quot;&gt;5.1 Disk&lt;/h3&gt;
+
+&lt;h4 id=&quot;511-sql---oltp&quot;&gt;5.1.1 Sql - OLTP&lt;/h4&gt;
+
+&lt;p&gt;SQL
+MySQL
+PostgreSQL
+Oracle
+Aurora
+MariaDB&lt;/p&gt;
+
+&lt;h5 id=&quot;5115-aurora&quot;&gt;5.1.1.5 Aurora&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;MYSQL-compatible, RDS engine that combines the speed and availability of heigh-end commerical databases. Aurora provides up to 5 times better formance than MysSQL at a price point one tenth that of a commercial database while delivering similar performance and availability.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Scaling
+    &lt;ul&gt;
+      &lt;li&gt;start with 10 GB, salces in 10GB increments to 64 TB&lt;/li&gt;
+      &lt;li&gt;Compute resources can scale up to 32vCPUs and 224GB of Memory.&lt;/li&gt;
+      &lt;li&gt;2 copies of your data is contained in each AZ, with minimum of 3 AZ. In total 6 copies of your data.&lt;/li&gt;
+      &lt;li&gt;Self-healing. Data blocks and disks are continuously scanned for errors and repaired automatically.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Replicas
+    &lt;ul&gt;
+      &lt;li&gt;2 types
+        &lt;ul&gt;
+          &lt;li&gt;Aurora Replicas (current 15)&lt;/li&gt;
+          &lt;li&gt;MySQL Read Replicas (current 15)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;512-nosql&quot;&gt;5.1.2 NoSql&lt;/h4&gt;
+
+&lt;h5 id=&quot;5121-dynamodb&quot;&gt;5.1.2.1 DynamoDB&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;Stored on SSD storage&lt;/li&gt;
+      &lt;li&gt;Spread Across 3 geographically distinct data center (AZ)&lt;/li&gt;
+      &lt;li&gt;Eventual Consistent Reads (default): from space pespective, multiple copies reach eventual consistent&lt;/li&gt;
+      &lt;li&gt;Strongly Consistent Reads: from time pespective, all writes that is successful will be reflected for read after thoes writes.&lt;/li&gt;
+      &lt;li&gt;pricce
+        &lt;ul&gt;
+          &lt;li&gt;Write throughtput $0.0065 per hour for every 10 units&lt;/li&gt;
+          &lt;li&gt;Read throught $0.0065 per hour for every 50 units.&lt;/li&gt;
+          &lt;li&gt;storage charge $0.25/(Gb * month)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;scaling
+    &lt;ul&gt;
+      &lt;li&gt;push button scaling, meaning you can scale your database in fly, without any down time.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;52-redshift---olap&quot;&gt;5.2 RedShift - OLAP&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what
+    &lt;ul&gt;
+      &lt;li&gt;data warehousing service&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Configration
+    &lt;ul&gt;
+      &lt;li&gt;Single Node (160GB)&lt;/li&gt;
+      &lt;li&gt;Multi - Node
+        &lt;ul&gt;
+          &lt;li&gt;Leader Node (manages client connections and receives queries)&lt;/li&gt;
+          &lt;li&gt;Compute Node (store data and perform queries and computations). Up to 128 compute nodes.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Storage type
+    &lt;ul&gt;
+      &lt;li&gt;Column storage, which is unlike normal row storage since OLAP often needs column aggregation computation and Column storage is more efficient for that.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;price
+    &lt;ul&gt;
+      &lt;li&gt;commpute node hours&lt;/li&gt;
+      &lt;li&gt;backup&lt;/li&gt;
+      &lt;li&gt;data transfer (only within a VPC, not outside it)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Security
+    &lt;ul&gt;
+      &lt;li&gt;Encrypted in transit using SSL&lt;/li&gt;
+      &lt;li&gt;Enctryped at rest using AES-256 encryption&lt;/li&gt;
+      &lt;li&gt;By default, RedShift takes care of key management
+        &lt;ul&gt;
+          &lt;li&gt;manage your own keys through HSM&lt;/li&gt;
+          &lt;li&gt;AWS Key Management Service&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Availability
+    &lt;ul&gt;
+      &lt;li&gt;Currently only available in 1 AZ&lt;/li&gt;
+      &lt;li&gt;Can restore snapshots to new AZ’s in the event of an outage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;53-in-memory-elasticache&quot;&gt;5.3 In memory Elasticache&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Exam tip:
+    &lt;ul&gt;
+      &lt;li&gt;Q: a scenario where a particular database is under a lof of stress/load, how to alleviate this
+        &lt;ul&gt;
+          &lt;li&gt;A: Elasticache if read heavy, not prone to frequent change&lt;/li&gt;
+          &lt;li&gt;A: Redshitf if OLAP transactions is running on database.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;531-memcached&quot;&gt;5.3.1 Memcached&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;No Multi AZ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;532-redis&quot;&gt;5.3.2 Redis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Multi AZ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;54-launch-rds-instance-and-connect-to-it-via-ec2-server&quot;&gt;5.4 Launch RDS instance and connect to it via EC2 server&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RDS instance has a separate security group from EC2 Serverinstance. If you want to let your EC2 server instance talk to RDS instance, make sure RDS instance’s security group has inbound rule for mysql from the security group of EC2 server instance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;55-back-ups-multi-az--read-replicas&quot;&gt;5.5 Back Ups, Multi-AZ &amp;amp; Read Replicas&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2 types for RDS back up
+    &lt;ul&gt;
+      &lt;li&gt;Automatic Backup, enabled by default&lt;/li&gt;
+      &lt;li&gt;Snaphot, done manually. They are stored even after you delete the original RDS instance, unlike automatic backup.&lt;/li&gt;
+      &lt;li&gt;Whenver you retore either automatic backup or snapshot backup database, the restored version of the database will be a new RDS instance with a new DNS endpoint.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Encryption
+    &lt;ul&gt;
+      &lt;li&gt;Encryption is done via AWS Key Management&lt;/li&gt;
+      &lt;li&gt;Once your RDS instance is encrypted, the data stored at rest in the underlying storage is encrypted, as are its automated backups, read replicas, and snapshot&lt;/li&gt;
+      &lt;li&gt;At the present time, encrypting an existing DB instance is not supoorted. To use Amazon RDS encryption for an existing database, you must first create a snapshot, make a copy of the snapshot and encrypt the copy.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Multi AZ
+    &lt;ul&gt;
+      &lt;li&gt;allow you to have an exact copy of your production database in another AZ.&lt;/li&gt;
+      &lt;li&gt;AWS handles the replication for you, any write to primary database will be automatically synchronized to the replicate one.&lt;/li&gt;
+      &lt;li&gt;If primary database fail (such as, db maintenance, az failure), the database instance endpoint url will be resolved to the ip address of the replicate database for you by aws. That’s the reason you only know the endpoint url for database and shouldn’t be exposed to the ip of the database.&lt;/li&gt;
+      &lt;li&gt;RDS multi AZ is for disaster recovery only, not for performance improvement. For performance improvement, you need read replicas.&lt;/li&gt;
+      &lt;li&gt;available for
+        &lt;ul&gt;
+          &lt;li&gt;MySQL&lt;/li&gt;
+          &lt;li&gt;PostgreSQL&lt;/li&gt;
+          &lt;li&gt;Aurora&lt;/li&gt;
+          &lt;li&gt;MariaDB&lt;/li&gt;
+          &lt;li&gt;Oracle&lt;/li&gt;
+          &lt;li&gt;SQL&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Read replica
+    &lt;ul&gt;
+      &lt;li&gt;scaling out&lt;/li&gt;
+      &lt;li&gt;allow you to have read-only copy of your production database. This is achieved by using asynchronous replication from the primary RDS instance to the read replica. You use read replicas primary for very read-heavy database workloads&lt;/li&gt;
+      &lt;li&gt;Must have automatic backups turned on in order to deploy a read replica.&lt;/li&gt;
+      &lt;li&gt;You can have up to 5 read replica copies of any database.&lt;/li&gt;
+      &lt;li&gt;You can have read replicas of read replicas&lt;/li&gt;
+      &lt;li&gt;Reach read replica will have its own DNS end point&lt;/li&gt;
+      &lt;li&gt;You can have read replicas that have multi AZ.&lt;/li&gt;
+      &lt;li&gt;Read replicas can be promoted to be their own databases. This breaks the replication and is very useful for one to refactor the production database.&lt;/li&gt;
+      &lt;li&gt;you can have read replica in a second region.&lt;/li&gt;
+      &lt;li&gt;available for
+        &lt;ul&gt;
+          &lt;li&gt;MySQL&lt;/li&gt;
+          &lt;li&gt;PostgreSQL&lt;/li&gt;
+          &lt;li&gt;Aurora&lt;/li&gt;
+          &lt;li&gt;MariaDB&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;

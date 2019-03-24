@@ -464,9 +464,152 @@ service httpd start
 
 
 
+
 ### 4.2 Subnet
 
 - One subnet equals one availability zone
+
+
+## 5 Database
+
+### 5.1 Disk 
+
+#### 5.1.1 Sql - OLTP
+
+SQL
+MySQL
+PostgreSQL
+Oracle
+Aurora
+MariaDB
+
+##### 5.1.1.5 Aurora
+
+- What
+    - MYSQL-compatible, RDS engine that combines the speed and availability of heigh-end commerical databases. Aurora provides up to 5 times better formance than MysSQL at a price point one tenth that of a commercial database while delivering similar performance and availability.
+
+- Scaling
+    - start with 10 GB, salces in 10GB increments to 64 TB
+    - Compute resources can scale up to 32vCPUs and 224GB of Memory.
+    - 2 copies of your data is contained in each AZ, with minimum of 3 AZ. In total 6 copies of your data.
+    - Self-healing. Data blocks and disks are continuously scanned for errors and repaired automatically.
+
+- Replicas
+    - 2 types
+        - Aurora Replicas (current 15)
+        - MySQL Read Replicas (current 15)
+
+
+
+#### 5.1.2 NoSql
+
+##### 5.1.2.1 DynamoDB
+
+- What
+    - Stored on SSD storage
+    - Spread Across 3 geographically distinct data center (AZ)
+    - Eventual Consistent Reads (default): from space pespective, multiple copies reach eventual consistent
+    - Strongly Consistent Reads: from time pespective, all writes that is successful will be reflected for read after thoes writes.
+    - pricce
+        - Write throughtput $0.0065 per hour for every 10 units
+        - Read throught $0.0065 per hour for every 50 units.
+        - storage charge $0.25/(Gb * month)
+
+- scaling
+    - push button scaling, meaning you can scale your database in fly, without any down time.
+
+### 5.2 RedShift - OLAP
+
+- what
+    - data warehousing service
+
+- Configration
+    - Single Node (160GB)
+    - Multi - Node
+        - Leader Node (manages client connections and receives queries)
+        - Compute Node (store data and perform queries and computations). Up to 128 compute nodes.
+
+- Storage type
+    - Column storage, which is unlike normal row storage since OLAP often needs column aggregation computation and Column storage is more efficient for that.
+
+- price
+    - commpute node hours
+    - backup
+    - data transfer (only within a VPC, not outside it)
+
+- Security
+    - Encrypted in transit using SSL
+    - Enctryped at rest using AES-256 encryption
+    - By default, RedShift takes care of key management
+        - manage your own keys through HSM
+        - AWS Key Management Service
+
+- Availability
+    - Currently only available in 1 AZ
+    - Can restore snapshots to new AZ's in the event of an outage
+
+
+
+### 5.3 In memory Elasticache
+
+- Exam tip:
+    - Q: a scenario where a particular database is under a lof of stress/load, how to alleviate this
+        - A: Elasticache if read heavy, not prone to frequent change
+        - A: Redshitf if OLAP transactions is running on database.
+
+#### 5.3.1 Memcached
+
+- No Multi AZ
+
+#### 5.3.2 Redis
+
+- Multi AZ
+
+
+### 5.4 Launch RDS instance and connect to it via EC2 server
+
+- RDS instance has a separate security group from EC2 Serverinstance. If you want to let your EC2 server instance talk to RDS instance, make sure RDS instance's security group has inbound rule for mysql from the security group of EC2 server instance.
+
+### 5.5 Back Ups, Multi-AZ & Read Replicas
+
+- 2 types for RDS back up
+    - Automatic Backup, enabled by default
+    - Snaphot, done manually. They are stored even after you delete the original RDS instance, unlike automatic backup.
+    - Whenver you retore either automatic backup or snapshot backup database, the restored version of the database will be a new RDS instance with a new DNS endpoint.
+
+- Encryption
+    - Encryption is done via AWS Key Management
+    - Once your RDS instance is encrypted, the data stored at rest in the underlying storage is encrypted, as are its automated backups, read replicas, and snapshot
+    - At the present time, encrypting an existing DB instance is not supoorted. To use Amazon RDS encryption for an existing database, you must first create a snapshot, make a copy of the snapshot and encrypt the copy.
+
+- Multi AZ
+    - allow you to have an exact copy of your production database in another AZ. 
+    - AWS handles the replication for you, any write to primary database will be automatically synchronized to the replicate one.
+    - If primary database fail (such as, db maintenance, az failure), the database instance endpoint url will be resolved to the ip address of the replicate database for you by aws. That's the reason you only know the endpoint url for database and shouldn't be exposed to the ip of the database.
+    - RDS multi AZ is for disaster recovery only, not for performance improvement. For performance improvement, you need read replicas.
+    - available for
+       - MySQL
+       - PostgreSQL
+       - Aurora
+       - MariaDB
+       - Oracle
+       - SQL
+
+- Read replica
+    - scaling out
+    - allow you to have read-only copy of your production database. This is achieved by using asynchronous replication from the primary RDS instance to the read replica. You use read replicas primary for very read-heavy database workloads 
+    - Must have automatic backups turned on in order to deploy a read replica.
+    - You can have up to 5 read replica copies of any database.
+    - You can have read replicas of read replicas
+    - Reach read replica will have its own DNS end point
+    - You can have read replicas that have multi AZ.
+    - Read replicas can be promoted to be their own databases. This breaks the replication and is very useful for one to refactor the production database.
+    - you can have read replica in a second region.
+    - available for 
+       - MySQL
+       - PostgreSQL
+       - Aurora
+       - MariaDB 
 
 
 ## 2 参考资料 ##
