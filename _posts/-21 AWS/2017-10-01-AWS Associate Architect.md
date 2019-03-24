@@ -17,15 +17,13 @@ shortinfo: AWS介绍。
 ---
 {:.hr-short-left}
 
-## 0 AWS CLI
+## -1 AWS CLI
 
 - `aws configure`
 - `aws s3 help`
 - `aws s3 ls`
 
-## 1. Storage ##
-
-### 1.1 IAM
+## 0 IAM
 
 #### 1.1.3 Role
 
@@ -33,6 +31,8 @@ shortinfo: AWS介绍。
 
 - Role is global: you cannot create a role for a specific region.
     - One can attach a role to a RUNNING EC2 instance
+
+## 1. Storage ##
 
 ### 1.2 S3
 
@@ -710,6 +710,96 @@ MariaDB
        - PostgreSQL
        - Aurora
        - MariaDB 
+
+## 6 Application Service
+
+### 6.1 SQS
+
+- What
+    - Simple Queue Service
+    - Consumer constantly pull the message
+    - Message
+        - size: 256 KB in any format
+        - keeping time: 1 minute to 14 days, default to 4 days
+        - visibility timeout (30s(default) to 12 hours): a consumer pull the message, the visibility timeout start counting, if the consumer finish proccessing the message before timeout, consumer will delete the message in the queue to avoid others see the message; if the consumer cannot finish processing the message before timeout, other consumer is supposed to see the message and pull it. Visibility timeout's aim is to avoid the same message being consumed more than once.
+
+        - long polling vs short polling: for shor polling, the consumer poll from the queue, if no message, return immediately,; for long polling, the consumer will be blocked until there is an available message, which can save your money.
+
+
+    - 2 types
+        - Standard queue (default): message delivered at least once; however, more than one queue may be delivered out of order
+        - FIFA queue: messages are guaranteed to be delivered once and in order, limited to 300 transactions per second.
+        
+
+
+### 6.2 SWF
+
+- What:
+    - Simpel Workflow service
+    - Actors
+        - Starter:
+            the program that can initiate a workflow.
+        - Workes:
+            the program that interact with Amazon SWF to get tasks, process received taksks, and return the results
+        - Decider:
+            the program that controls the coordination of taks, i.e. their ordering, concurrency, and scheduling according to the application logic.
+    - SWF vs SQS:
+       - SWF ensures a task is assigned only once and is never duplicated. For SQS, after visibility timeout, if the consumer didn't delete it, the message is visible to other consumers.
+       - SWF is task oriented while SQS is message oriented
+       - SWF up to 1 year retention while SQS up to 14 days
+
+### 6.3 SNS
+
+- What
+    - Simple Notification Service
+    - Consumer being pushed the message
+    - can trigger subscriber via
+        - HTTP
+        - HTTPS
+        - Email
+        - Email-JSON
+        - SQS
+        - Applicatoin
+        - Lambda
+    - allow you to group multiple recipients using topics.
+    - SNS vs SQS:
+        both messaging service in AWS
+        - SQS Polls
+        - SNS Push
+
+### 6.4 Elastic Transcoder
+
+- What
+    - Media Transcorder: convert media files from their original source format in to different formats that will play on smartphones, tablets, PC's etc.
+    - Pay based on minutes that you transcode and the resolution at which you transcode.
+
+### 6.5 API Gateway
+
+- What
+    - The Network front door for client to access server, such as EC2, Lambda.
+    - Enable response cache
+    - Enable throttling requests to prevent requests
+    - Connected to cloudWatch to log all requests
+    - Low cost & Efficient & scales automatically.
+    - Cross-Origin Resource Sharing (CORS)
+        - CORS is a mechanism that allows restricted resources (e.g. fonts) on  a web page to be requested from another domain outside the domain from which the first resource was served
+        - Error: "Origin policy cannot be read at the remote resource?". You need to enable CORS on API Gateway
+
+### 6.6 Kinesis
+
+- What
+    - What is streaming data: the data that is generated continously by thousands of data sources, which typically send in the data records simultaneously, and in small sizes (order of kb), such as stock prices, game data, social network data, geospatial data
+    - kinesis makes it easy to load and analyze streaming data, also providing the ability for you to build your own custom applications for you business needs.
+    - 3 types:
+        - Kinesis Streams: producers -> kinesis stream -> consumer (EC2). consists of shards.
+        - Kinesis Firehose: can handle data directly using lambda and then upload results to S3 or ElasticSearch. No concern about shard.
+        - Kinesis Analytics: using sql language to analysis data in Kinesis streams or Firhose
+
+
+{: .img_middle_hg}
+![kinesis](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png)
+    
+
 
 
 ## 2 参考资料 ##

@@ -640,12 +640,12 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 				<description>&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#0-aws-cli&quot; id=&quot;markdown-toc-0-aws-cli&quot;&gt;0 AWS CLI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#-1-aws-cli&quot; id=&quot;markdown-toc--1-aws-cli&quot;&gt;-1 AWS CLI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#0-iam&quot; id=&quot;markdown-toc-0-iam&quot;&gt;0 IAM&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#113-role&quot; id=&quot;markdown-toc-113-role&quot;&gt;1.1.3 Role&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#1-storage&quot; id=&quot;markdown-toc-1-storage&quot;&gt;1. Storage&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#11-iam&quot; id=&quot;markdown-toc-11-iam&quot;&gt;1.1 IAM&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#113-role&quot; id=&quot;markdown-toc-113-role&quot;&gt;1.1.3 Role&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#12-s3&quot; id=&quot;markdown-toc-12-s3&quot;&gt;1.2 S3&lt;/a&gt;        &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#120-what&quot; id=&quot;markdown-toc-120-what&quot;&gt;1.2.0 What&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#121-versioning&quot; id=&quot;markdown-toc-121-versioning&quot;&gt;1.2.1 Versioning&lt;/a&gt;&lt;/li&gt;
@@ -733,12 +733,21 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#55-back-ups-multi-az--read-replicas&quot; id=&quot;markdown-toc-55-back-ups-multi-az--read-replicas&quot;&gt;5.5 Back Ups, Multi-AZ &amp;amp; Read Replicas&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-application-service&quot; id=&quot;markdown-toc-6-application-service&quot;&gt;6 Application Service&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#61-sqs&quot; id=&quot;markdown-toc-61-sqs&quot;&gt;6.1 SQS&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#62-swf&quot; id=&quot;markdown-toc-62-swf&quot;&gt;6.2 SWF&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#63-sns&quot; id=&quot;markdown-toc-63-sns&quot;&gt;6.3 SNS&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#64-elastic-transcoder&quot; id=&quot;markdown-toc-64-elastic-transcoder&quot;&gt;6.4 Elastic Transcoder&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#65-api-gateway&quot; id=&quot;markdown-toc-65-api-gateway&quot;&gt;6.5 API Gateway&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#66-kinesis&quot; id=&quot;markdown-toc-66-kinesis&quot;&gt;6.6 Kinesis&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr class=&quot;hr-short-left&quot; /&gt;
 
-&lt;h2 id=&quot;0-aws-cli&quot;&gt;0 AWS CLI&lt;/h2&gt;
+&lt;h2 id=&quot;-1-aws-cli&quot;&gt;-1 AWS CLI&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code&gt;aws configure&lt;/code&gt;&lt;/li&gt;
@@ -746,9 +755,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;li&gt;&lt;code&gt;aws s3 ls&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;1-storage&quot;&gt;1. Storage&lt;/h2&gt;
-
-&lt;h3 id=&quot;11-iam&quot;&gt;1.1 IAM&lt;/h3&gt;
+&lt;h2 id=&quot;0-iam&quot;&gt;0 IAM&lt;/h2&gt;
 
 &lt;h4 id=&quot;113-role&quot;&gt;1.1.3 Role&lt;/h4&gt;
 
@@ -763,6 +770,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;1-storage&quot;&gt;1. Storage&lt;/h2&gt;
 
 &lt;h3 id=&quot;12-s3&quot;&gt;1.2 S3&lt;/h3&gt;
 
@@ -1783,6 +1792,143 @@ MariaDB&lt;/p&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&quot;6-application-service&quot;&gt;6 Application Service&lt;/h2&gt;
+
+&lt;h3 id=&quot;61-sqs&quot;&gt;6.1 SQS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;Simple Queue Service&lt;/li&gt;
+      &lt;li&gt;Consumer constantly pull the message&lt;/li&gt;
+      &lt;li&gt;Message
+        &lt;ul&gt;
+          &lt;li&gt;size: 256 KB in any format&lt;/li&gt;
+          &lt;li&gt;keeping time: 1 minute to 14 days, default to 4 days&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;visibility timeout (30s(default) to 12 hours): a consumer pull the message, the visibility timeout start counting, if the consumer finish proccessing the message before timeout, consumer will delete the message in the queue to avoid others see the message; if the consumer cannot finish processing the message before timeout, other consumer is supposed to see the message and pull it. Visibility timeout’s aim is to avoid the same message being consumed more than once.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;long polling vs short polling: for shor polling, the consumer poll from the queue, if no message, return immediately,; for long polling, the consumer will be blocked until there is an available message, which can save your money.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;2 types
+        &lt;ul&gt;
+          &lt;li&gt;Standard queue (default): message delivered at least once; however, more than one queue may be delivered out of order&lt;/li&gt;
+          &lt;li&gt;FIFA queue: messages are guaranteed to be delivered once and in order, limited to 300 transactions per second.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;62-swf&quot;&gt;6.2 SWF&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What:
+    &lt;ul&gt;
+      &lt;li&gt;Simpel Workflow service&lt;/li&gt;
+      &lt;li&gt;Actors
+        &lt;ul&gt;
+          &lt;li&gt;Starter:
+  the program that can initiate a workflow.&lt;/li&gt;
+          &lt;li&gt;Workes:
+  the program that interact with Amazon SWF to get tasks, process received taksks, and return the results&lt;/li&gt;
+          &lt;li&gt;Decider:
+  the program that controls the coordination of taks, i.e. their ordering, concurrency, and scheduling according to the application logic.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;SWF vs SQS:
+        &lt;ul&gt;
+          &lt;li&gt;SWF ensures a task is assigned only once and is never duplicated. For SQS, after visibility timeout, if the consumer didn’t delete it, the message is visible to other consumers.&lt;/li&gt;
+          &lt;li&gt;SWF is task oriented while SQS is message oriented&lt;/li&gt;
+          &lt;li&gt;SWF up to 1 year retention while SQS up to 14 days&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;63-sns&quot;&gt;6.3 SNS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;Simple Notification Service&lt;/li&gt;
+      &lt;li&gt;Consumer being pushed the message&lt;/li&gt;
+      &lt;li&gt;can trigger subscriber via
+        &lt;ul&gt;
+          &lt;li&gt;HTTP&lt;/li&gt;
+          &lt;li&gt;HTTPS&lt;/li&gt;
+          &lt;li&gt;Email&lt;/li&gt;
+          &lt;li&gt;Email-JSON&lt;/li&gt;
+          &lt;li&gt;SQS&lt;/li&gt;
+          &lt;li&gt;Applicatoin&lt;/li&gt;
+          &lt;li&gt;Lambda&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;allow you to group multiple recipients using topics.&lt;/li&gt;
+      &lt;li&gt;SNS vs SQS:
+  both messaging service in AWS
+        &lt;ul&gt;
+          &lt;li&gt;SQS Polls&lt;/li&gt;
+          &lt;li&gt;SNS Push&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;64-elastic-transcoder&quot;&gt;6.4 Elastic Transcoder&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;Media Transcorder: convert media files from their original source format in to different formats that will play on smartphones, tablets, PC’s etc.&lt;/li&gt;
+      &lt;li&gt;Pay based on minutes that you transcode and the resolution at which you transcode.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;65-api-gateway&quot;&gt;6.5 API Gateway&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;The Network front door for client to access server, such as EC2, Lambda.&lt;/li&gt;
+      &lt;li&gt;Enable response cache&lt;/li&gt;
+      &lt;li&gt;Enable throttling requests to prevent requests&lt;/li&gt;
+      &lt;li&gt;Connected to cloudWatch to log all requests&lt;/li&gt;
+      &lt;li&gt;Low cost &amp;amp; Efficient &amp;amp; scales automatically.&lt;/li&gt;
+      &lt;li&gt;Cross-Origin Resource Sharing (CORS)
+        &lt;ul&gt;
+          &lt;li&gt;CORS is a mechanism that allows restricted resources (e.g. fonts) on  a web page to be requested from another domain outside the domain from which the first resource was served&lt;/li&gt;
+          &lt;li&gt;Error: “Origin policy cannot be read at the remote resource?”. You need to enable CORS on API Gateway&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;66-kinesis&quot;&gt;6.6 Kinesis&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What
+    &lt;ul&gt;
+      &lt;li&gt;What is streaming data: the data that is generated continously by thousands of data sources, which typically send in the data records simultaneously, and in small sizes (order of kb), such as stock prices, game data, social network data, geospatial data&lt;/li&gt;
+      &lt;li&gt;kinesis makes it easy to load and analyze streaming data, also providing the ability for you to build your own custom applications for you business needs.&lt;/li&gt;
+      &lt;li&gt;3 types:
+        &lt;ul&gt;
+          &lt;li&gt;Kinesis Streams: producers -&amp;gt; kinesis stream -&amp;gt; consumer (EC2). consists of shards.&lt;/li&gt;
+          &lt;li&gt;Kinesis Firehose: can handle data directly using lambda and then upload results to S3 or ElasticSearch. No concern about shard.&lt;/li&gt;
+          &lt;li&gt;Kinesis Analytics: using sql language to analysis data in Kinesis streams or Firhose&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png&quot; alt=&quot;kinesis&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 &lt;ul&gt;
