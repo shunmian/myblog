@@ -796,6 +796,148 @@ MariaDB
         - Kinesis Analytics: using sql language to analysis data in Kinesis streams or Firhose
 
 
+## 7 The Well Architected Framework
+
+### 7.1 Resources
+
+videos and white papers:
+- [AWS An Introduction to the Well Architected Framework](https://www.youtube.com/watch?v=CeceqWuZ0Cg);
+- [Architecting for the Cloud: AWS Best Practice](https://d1.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf);
+- [AWS Well-Architected web page](https://aws.amazon.com/architecture/well-architected/)
+
+### 7.2 5 Pillars
+
+### 7.2.0 General
+
+- Design Principles
+    - Stop guessing your capacity needs;
+    - Test systems at production scale;
+    - Automate to make architectural experimentation easier;
+    - Allow for evolutionary architectures;
+    - Data-Driven architectures
+    - Improve through game days (such as 11.11 or black Friday)
+- Definition
+- Best Practices
+- Key AWS Services
+- Resource
+
+### 7.2.1 Security
+
+- Design Principles
+    - Apply security at all layers
+    - Enable traceability
+    - Automate response to security events
+    - Focus on securing your system
+    - Automate security best practices
+    - Shared responsibility
+
+- Data protection: 
+    - Definition: before you begin to architect security practices across your environment, basic data classification should be in place. You should organise and classify your data into segments such as publicly avaiable, available to only members of your organisation, available to only certain members of your organisation, available only to the board. You should also implement a least privilege access system so that people are only able to access what they need. However, most importantly, you should encrypt everything where possible, whether it be at rest or in transit. Best practice:
+        - key encryption
+        - versioning
+        - AWS never initiates the movement of data between regions unless client explicitly apply that.
+            - Questions:
+                - How are you encrypting and protecting your data at rest?
+                - How are you encrypting and protecting your data in transit? (SSL)
+    - Key AWS Services: You can encrypt your data both in transit and at rest using; ELB, EBS, S3 & RDS
+- Privilege management: 
+    - Definition: Privilege Management ensures that only authorized and authenticated users are able to access your resources, and only in a manner that is intended. It can include
+        - Access Control Lists (ACLs)
+        - Role Based Access Controls
+        - Password Management (pw rotation policies)
+        - Questions:
+            - How are you protecting access to and use of the AWS root account credentials
+            - How are you defining roles and responsibilities of system users to control human access tthe AWS Management Console and APIs? (Using groups)
+            - How are you limiting automated access (such as from applications, scripts, or third-party tools or services) to AWS resources? (Using Roles)
+            - How are you managing keys and credentials?
+    - Key AWS Services: IAM, MFA
+- Infrastructure protection: 
+    - Definition: Definition: Outside of Cloud, this is how you protect your data center. RFID controls, security, lockable cabinets, CCTV etc. Within AWS they handle this, so really infrastructure protection exists at a VPC level.
+        - Questions:
+            - How are you enforcing network and host-level boundary protection?
+            - How are you enforcing AWS service level protection?
+            - How are you protecting the integrity of the operating systems on your EC2 instances.
+    - Key AWS Services: VPC
+
+- Detective controls: 
+    - Definition: You can use detective controls to detect or identify a security breach. AWS Services to achieve this include;
+        - AWS CloudTrail
+        - Amazon CloudWatch
+        - AWS Config
+        - Amazon S3
+        - Amazon Glacier
+        - Questions:
+            - How are you capturing and analyzing AWS logs?
+    - Key AWS Services: AWS CloudTrail, Amazon CloudWatch, AWS Config, Amazon S3, Amazon Glacier.
+
+- Resource
+
+### 7.2.2 Reliability
+
+- Definition: covers the ability of a system to recover from service or infrastructure outages/disruptions as well as the ability to dynamically acquire computing resources to meet demand.
+
+- Design Principles:
+    - Test recovery procedures. [Netflix SimianArmy (chaos monkey)](https://github.com/Netflix/SimianArmy)
+    - Automatically recover from failure
+    - Scale horizontally to increase aggregate system availability
+    - stop guessing capacity
+
+3 Areas
+- Foundations
+    - Best practice:
+        - AWS will handles most of the foundations for you. The cloud is desinged to be essentially limitless meaning that AWS handle the networking and compute requirements themselves. However they do set service limits to stop customers from accidentally over-provisioning resources.
+        - Questions:
+            - How are you managing AWS service limits for your account?
+            - How are you planning your network topology on AWS?
+            - Do you have an escalation path to deal with technical issue?
+    - Key AWS Services: IAM, VPC
+- Change management
+    - Best practices:
+        - Questions:
+            - How does your system adapt to changes in demand?
+            - How are you monitoring AWS resources?
+            - How are you executing change management?
+    - Key AWS Services: AWS CloudTrail
+- Failure management
+    - Best practices:
+        - With Cloud, you should always architect your systems with the assumptions that failure will occur. YOu should become aware of these failures, how they occured, how to repond to them and then plan on how to prevent these from happening again.
+        - Questions:
+            - How are you backing up your data?
+            - How does your system withstand component failures?
+            - How are you planning for recovery?
+    - Key AWS Services: AWS CloudFormation
+
+
+- Best Practices
+- Key AWS Services
+- Resource
+
+### 7.2.3 Performance Efficiency
+
+- Design Principles
+- Definition
+- Best Practices
+- Key AWS Services
+- Resource
+
+### 7.2.4 Cost Optimization
+
+- Design Principles
+- Definition
+- Best Practices
+- Key AWS Services
+- Resource
+
+### 7.2.5 Operational Excellence
+
+- Design Principles
+- Definition
+- Best Practices
+- Key AWS Services
+- Resource
+
+
+
 {: .img_middle_hg}
 ![kinesis](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png)
     
