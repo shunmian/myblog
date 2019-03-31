@@ -915,22 +915,123 @@ videos and white papers:
 ### 7.2.3 Performance Efficiency
 
 - Design Principles
-- Definition
-- Best Practices
-- Key AWS Services
-- Resource
+    - Democratize advanced technologies: you don't need to become an export on no-sql in order to use dynamo db. AWS handles the complexity for you and you at the begnning just need to learn how to use it.
+    - Go global in minutes.
+    - Use server-less architecture
+    - Expriment more often
+
+- Compute
+    - Definition
+    - Best Practices:
+        - serverless
+        - Questions
+            - How do you select the appropriate instance type for your system?
+            - How do you ensure that you continue to have the most appropriate instance type as new instance types and features are introduced?
+            - How do you monitor your instances post launch to ensure they are performing as expected?
+    - Key AWS Services: Autoscaling
+
+- Storage
+    - Best practices, consider your storage solution based on the following factors
+        - Access Method - Block, File or Object
+        - Patterns of Access - Random or Sequential
+        - Throughput Required
+        - Frequency of Access - Online, Offline or Archival
+        - Frequency of Update - Worm, Dynamic
+        - Availability Constants
+        - Durability Constraints
+        - At AWS, storage is virtualized. With S3 you can have 11*9's durability, cross Region Replication etc. With EBS you can choose between different storage mediums (such as SSD, Magnetic, PIOPS etc). You can also easily move volumes between the different types of storage mediums.
+        - Questions
+            - How do you select the appropriate storage solution for your system?
+            - How do you ensure that you continue to have the most appropriate storage solution as new storage solutions and features are launched?
+            - How do you monitor your storage solution to ensure it is performing as expected?
+    - Key AWS Services: EBS, S3, Glacier
+- Database
+    - Best practice: do you need database consistency, do you need high availability, do you need No-SQL, do you need DR etc?
+        - questions
+            - How do you select the appropriate database solution for your system?
+            - How do you ensure that you continue to have the most appropriate database solution and features as new database solution and features are launched?
+            - How do you monitor your databases to ensure peformance is as expected?
+            - How do you ensure the capacity and throughput of your datbases matches demand?
+    - Key AWS Services: RDS DynamoDB, Redshift
+- Space-time trade-off
+    - Best practices: you can use services such as RDS to add read replicas, reduing the load on your database and creating multiple copies of the database. This helps to lower latency. You can use Direct Connect to provide predictable latency between your HQ and AWS. You can use the global infrastructure to have multiple copies of your environment, in regions that is closest to your customer base. You can also use caching services such as ElasticCache or CloudFront to reduce latency.
+        - Questions
+            - How do you select the appropriate proximity and caching solutions for your system?
+            - How do you ensure that you continue to have the most appropriate proximity and caching solutions as new solutions are launched?
+            - How do you monitor your proximity and caching solutions to ensure performance is as expected?
+            - How do you ensure that the proximity and caching solutions you have matches demand?
+    - Key AWS Services: CloudFront, ElasticCache, Direct Connect, RDS Read Replicas etc.
 
 ### 7.2.4 Cost Optimization
 
 - Design Principles
-- Definition
-- Best Practices
-- Key AWS Services
-- Resource
+
+- Matched supply and demand
+    - Best practices: Don't over provision or udner provision, instead as demand grows, so shoud your supply of compute resources. Think of things like Autoscaling which scale with demand. Similarly in a server-less context, use services such as Lambda that only execute (or respond) when a request (demand) comes in. Services such as CloudWatch can also help you keep track as to what your demand is. 
+    - Questions:
+        - How do you make sure your capacity matches but does not substantially exceed what you need?
+        - How are you optimizing your usage of AWS services?
+    - Key AWS Services: Autoscaling.
+
+- Cost-effective resources
+    - Best practices: Using the correct instance type can be key to cost savings. For example you might have a reporting process that is running on a t2-Micro and it takes 7 hours to complete. That same process could be run on an m4.2xlarge in a manner of minutes. The result remains the same but the t2.micro is more expensive because it ran for longer. A well architected system will use the most cost efficient resources to reach the end business goal.
+        - Questions:
+            - Have you selected the appropriate resource types to meet your cost targets?
+            - Have you selected the appropriate pricing model to meet your cost targets?
+            - Are there managed services (higher-level services than Amazon EC2, Amazon EBS, and Amazon S3) that you can use to improve your ROI?
+    - Key AWS Services: ECS (reserved instances), AWS Trusted Advisor
+
+- Expenditure awareness
+    - Best practices: With cloud you no loger have to go out and get quotes on physical servers, choose a supplier, have those resources delivered, installed, made available etc. You can provision things within seconds, however this comes with its own issues. Many organisatoins have different teams, each with their own AWS accounts. Being awware of what each team is spending and where is crucial to any well architected system. You can use cost allocation tags to track this, billing alerts as well as consolidated billing.
+        - Questions
+            - What access controls and procedures do you have in place to govern AWS costs
+            - How are you monitoring usage and spending
+            - How do you decommission resources that you no longer need, or stop resources that are temporarily not needed.
+            - How do you  consider data-transfer charges when designing your architecture.
+    - Key AWS Services: cloudWatch Alarms, SNS
+    
+- Optimizing over time
+    - Best practices: AWS moves FAST. There are hundreds of new services (and potentially 1000 new sercies this year). A service that you chose yesterday may not be the best service to be using today. For exmaple consider MYSQL RDS, Aurora was launched at re:invent 2014 and is now out of preview. Aurora may be a better option now for your business because of its performance and redundancy. YOu should keep track of the changes made to AWS and constantly re-evalutate your existing architecture. You can do this by subscribing to the AWS blog and using services such as Trustred Advisor.
+        - Questions
+            - How do you manage and/or reconsider the adoption of new services?
+    - Key AWS Services: AWS Blog, AWS Trusted Advisor.
 
 ### 7.2.5 Operational Excellence
 
 - Design Principles
+    - Peform operatoins with code
+    - Align operations processes to business objectives
+    - Make regular, small, incremental changes
+    - Test for responses to unexpected events
+    - Learn from operational events and failures
+    - Keep operations procedures current
+
+- Preparation
+    - Best practices: Effective preparation is required to drive operational execellence. Operatons checklists will ensure that workloads are ready for production operation, and prevent unintentional production promotion without effective preparation. Workdloads should have:
+        - Runbooks - operatoins guidance that operations teams can refer to so they  can perform normal daily tasks
+        - Playbooks - guidance for responding to unexpected operational events. Playbooks should include response plans, as well as escalation paths and stakholder notifications.
+        - Several methods can be used
+            - CloudFormation, is used to ensure that environments contain all required resources when deployed in production, and that the configuration of the environment is based on tested best practices, which reduces the opportunity for human error.
+            - Auto Sclaing, will allow workloads to automatically respond when business-related events affect operational needs
+            - AWS config, have the mechanism to automatically track and respond to changes in your AWS worklads and environments
+            - Tagging, to make sure all resources in a workload can be easily identified when needed during operations and response.
+        - Questions:
+            - What best practices for cloud operations are you using
+            - How are you doing configuration management for your workload.
+    - Key AWS Services: AWS Config, AWS Service Catalog, Auto Scaling, SQS.
+- Operation
+    - Best practices: Operations should be standardized and manageable on a routine basis. The focus should be on automation, small frequent changes, regular quality assuarance testing, and defined mechanisms to track, autdit, roll back, and review changes. Changes should not be large and infrequent, they should not require scheduled downtime, and they shoould not require manual execution. A wide range of logs and metrics that are based on key operational indicators for a workload should be collected and reviewed to ensure continuoues operations. In AWS you can setup a continuous integration / continuous deployment (CI/CD) pipeline (e.g., source code repository, build systems, deployment and testing automation). Release management processes, whether manual or automated, should be tested and be based on small incremental changes, and tracked versions. You should be able to revert changes that introduce operational issues without causing operational impact.
+        - Questions:
+            - How are you evolving your workload while minimizing the impact of change?
+            - How do you monitor your workload to ensure it is operating as expected?
+    - Key AWS Services: CodeCommit, CodeDeploy, CodePipeline, AWS SDK, AWS CloudTrail.
+- Response
+    - Responses to unexpected operational events should be automated. This is not just for alerting, but also for mitigation, remediation, rollback, and recovery. Alerts should timely, and should invoke escalations when responses are not adequate to mitiage the impage of opeational events. Quality assurance mechanisms should be in place to automatically roll back failed deployments. Responses should follow a apre-defined playbook that includes stakeholders, the escalation process, and procedures. Escalation paths should be defined and include both functional and hierarchical escalation capabilities. Hierarchical escalation should be automated, and escalated priority should result in stakeholder notifications. In AWS, there are several mechanisms to ensure both appropriate alerting and notification in response to unplanned operational events, as well as automated responses.
+        - Questions:
+            - How do you respond to unplanned operational events
+            - How is escalation managed when responding to unplanned operational events
+    - Key AWS Services: 
+
 - Definition
 - Best Practices
 - Key AWS Services
