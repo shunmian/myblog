@@ -942,6 +942,9 @@ videos and white papers:
 ![kinesis](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png)
     
 
+## 7 Cloud Formation
+
+There is cloud Formation guru course 10-12 hour
 
 
 ## 2 参考资料 ##
