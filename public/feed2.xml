@@ -742,7 +742,33 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#66-kinesis&quot; id=&quot;markdown-toc-66-kinesis&quot;&gt;6.6 Kinesis&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-the-well-architected-framework&quot; id=&quot;markdown-toc-7-the-well-architected-framework&quot;&gt;7 The Well Architected Framework&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#71-resources&quot; id=&quot;markdown-toc-71-resources&quot;&gt;7.1 Resources&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#72-5-pillars&quot; id=&quot;markdown-toc-72-5-pillars&quot;&gt;7.2 5 Pillars&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#720-general&quot; id=&quot;markdown-toc-720-general&quot;&gt;7.2.0 General&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#721-security&quot; id=&quot;markdown-toc-721-security&quot;&gt;7.2.1 Security&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#722-reliability&quot; id=&quot;markdown-toc-722-reliability&quot;&gt;7.2.2 Reliability&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#723-performance-efficiency&quot; id=&quot;markdown-toc-723-performance-efficiency&quot;&gt;7.2.3 Performance Efficiency&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#724-cost-optimization&quot; id=&quot;markdown-toc-724-cost-optimization&quot;&gt;7.2.4 Cost Optimization&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#725-operational-excellence&quot; id=&quot;markdown-toc-725-operational-excellence&quot;&gt;7.2.5 Operational Excellence&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#7-cloud-formation&quot; id=&quot;markdown-toc-7-cloud-formation&quot;&gt;7 Cloud Formation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8-additional-exam-tips-2018&quot; id=&quot;markdown-toc-8-additional-exam-tips-2018&quot;&gt;8 Additional Exam Tips 2018&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#81-consolidate-billing&quot; id=&quot;markdown-toc-81-consolidate-billing&quot;&gt;8.1 Consolidate Billing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#82-aws-organizations&quot; id=&quot;markdown-toc-82-aws-organizations&quot;&gt;8.2 AWS Organizations&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#83-cross-account-access&quot; id=&quot;markdown-toc-83-cross-account-access&quot;&gt;8.3 Cross Account Access&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#84-resource-groups--tagging&quot; id=&quot;markdown-toc-84-resource-groups--tagging&quot;&gt;8.4 Resource Groups &amp;amp; Tagging&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#85-vpc-peering&quot; id=&quot;markdown-toc-85-vpc-peering&quot;&gt;8.5 VPC Peering&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#86-direct-connect&quot; id=&quot;markdown-toc-86-direct-connect&quot;&gt;8.6 Direct Connect&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#87-security-token-service-sts&quot; id=&quot;markdown-toc-87-security-token-service-sts&quot;&gt;8.7 Security Token Service (STS)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#88-active-directory-integration&quot; id=&quot;markdown-toc-88-active-directory-integration&quot;&gt;8.8 Active Directory Integration&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#89-aws-workspaces&quot; id=&quot;markdown-toc-89-aws-workspaces&quot;&gt;8.9 AWS Workspaces&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#810-elastic-container-service-ecs&quot; id=&quot;markdown-toc-810-elastic-container-service-ecs&quot;&gt;8.10 Elastic Container Service (ECS)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1929,11 +1955,595 @@ MariaDB&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;7-the-well-architected-framework&quot;&gt;7 The Well Architected Framework&lt;/h2&gt;
+
+&lt;h3 id=&quot;71-resources&quot;&gt;7.1 Resources&lt;/h3&gt;
+
+&lt;p&gt;videos and white papers:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CeceqWuZ0Cg&quot;&gt;AWS An Introduction to the Well Architected Framework&lt;/a&gt;;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://d1.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf&quot;&gt;Architecting for the Cloud: AWS Best Practice&lt;/a&gt;;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/architecture/well-architected/&quot;&gt;AWS Well-Architected web page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;72-5-pillars&quot;&gt;7.2 5 Pillars&lt;/h3&gt;
+
+&lt;h4 id=&quot;720-general&quot;&gt;7.2.0 General&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design Principles
+    &lt;ul&gt;
+      &lt;li&gt;Stop guessing your capacity needs;&lt;/li&gt;
+      &lt;li&gt;Test systems at production scale;&lt;/li&gt;
+      &lt;li&gt;Automate to make architectural experimentation easier;&lt;/li&gt;
+      &lt;li&gt;Allow for evolutionary architectures;&lt;/li&gt;
+      &lt;li&gt;Data-Driven architectures&lt;/li&gt;
+      &lt;li&gt;Improve through game days (such as 11.11 or black Friday)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Definition&lt;/li&gt;
+  &lt;li&gt;Best Practices&lt;/li&gt;
+  &lt;li&gt;Key AWS Services&lt;/li&gt;
+  &lt;li&gt;Resource&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;721-security&quot;&gt;7.2.1 Security&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design Principles
+    &lt;ul&gt;
+      &lt;li&gt;Apply security at all layers&lt;/li&gt;
+      &lt;li&gt;Enable traceability&lt;/li&gt;
+      &lt;li&gt;Automate response to security events&lt;/li&gt;
+      &lt;li&gt;Focus on securing your system&lt;/li&gt;
+      &lt;li&gt;Automate security best practices&lt;/li&gt;
+      &lt;li&gt;Shared responsibility&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data protection:
+    &lt;ul&gt;
+      &lt;li&gt;Definition: before you begin to architect security practices across your environment, basic data classification should be in place. You should organise and classify your data into segments such as publicly avaiable, available to only members of your organisation, available to only certain members of your organisation, available only to the board. You should also implement a least privilege access system so that people are only able to access what they need. However, most importantly, you should encrypt everything where possible, whether it be at rest or in transit. Best practice:
+        &lt;ul&gt;
+          &lt;li&gt;key encryption&lt;/li&gt;
+          &lt;li&gt;versioning&lt;/li&gt;
+          &lt;li&gt;AWS never initiates the movement of data between regions unless client explicitly apply that.
+            &lt;ul&gt;
+              &lt;li&gt;Questions:
+                &lt;ul&gt;
+                  &lt;li&gt;How are you encrypting and protecting your data at rest?&lt;/li&gt;
+                  &lt;li&gt;How are you encrypting and protecting your data in transit? (SSL)&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: You can encrypt your data both in transit and at rest using; ELB, EBS, S3 &amp;amp; RDS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Privilege management:
+    &lt;ul&gt;
+      &lt;li&gt;Definition: Privilege Management ensures that only authorized and authenticated users are able to access your resources, and only in a manner that is intended. It can include
+        &lt;ul&gt;
+          &lt;li&gt;Access Control Lists (ACLs)&lt;/li&gt;
+          &lt;li&gt;Role Based Access Controls&lt;/li&gt;
+          &lt;li&gt;Password Management (pw rotation policies)&lt;/li&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How are you protecting access to and use of the AWS root account credentials&lt;/li&gt;
+              &lt;li&gt;How are you defining roles and responsibilities of system users to control human access tthe AWS Management Console and APIs? (Using groups)&lt;/li&gt;
+              &lt;li&gt;How are you limiting automated access (such as from applications, scripts, or third-party tools or services) to AWS resources? (Using Roles)&lt;/li&gt;
+              &lt;li&gt;How are you managing keys and credentials?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: IAM, MFA&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Infrastructure protection:
+    &lt;ul&gt;
+      &lt;li&gt;Definition: Definition: Outside of Cloud, this is how you protect your data center. RFID controls, security, lockable cabinets, CCTV etc. Within AWS they handle this, so really infrastructure protection exists at a VPC level.
+        &lt;ul&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How are you enforcing network and host-level boundary protection?&lt;/li&gt;
+              &lt;li&gt;How are you enforcing AWS service level protection?&lt;/li&gt;
+              &lt;li&gt;How are you protecting the integrity of the operating systems on your EC2 instances.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: VPC&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Detective controls:
+    &lt;ul&gt;
+      &lt;li&gt;Definition: You can use detective controls to detect or identify a security breach. AWS Services to achieve this include;
+        &lt;ul&gt;
+          &lt;li&gt;AWS CloudTrail&lt;/li&gt;
+          &lt;li&gt;Amazon CloudWatch&lt;/li&gt;
+          &lt;li&gt;AWS Config&lt;/li&gt;
+          &lt;li&gt;Amazon S3&lt;/li&gt;
+          &lt;li&gt;Amazon Glacier&lt;/li&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How are you capturing and analyzing AWS logs?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: AWS CloudTrail, Amazon CloudWatch, AWS Config, Amazon S3, Amazon Glacier.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Resource&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;722-reliability&quot;&gt;7.2.2 Reliability&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Definition: covers the ability of a system to recover from service or infrastructure outages/disruptions as well as the ability to dynamically acquire computing resources to meet demand.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Design Principles:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Test recovery procedures. &lt;a href=&quot;https://github.com/Netflix/SimianArmy&quot;&gt;Netflix SimianArmy (chaos monkey)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Automatically recover from failure&lt;/li&gt;
+      &lt;li&gt;Scale horizontally to increase aggregate system availability&lt;/li&gt;
+      &lt;li&gt;stop guessing capacity&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3 Areas&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Foundations
+    &lt;ul&gt;
+      &lt;li&gt;Best practice:
+        &lt;ul&gt;
+          &lt;li&gt;AWS will handles most of the foundations for you. The cloud is desinged to be essentially limitless meaning that AWS handle the networking and compute requirements themselves. However they do set service limits to stop customers from accidentally over-provisioning resources.&lt;/li&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How are you managing AWS service limits for your account?&lt;/li&gt;
+              &lt;li&gt;How are you planning your network topology on AWS?&lt;/li&gt;
+              &lt;li&gt;Do you have an escalation path to deal with technical issue?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: IAM, VPC&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Change management
+    &lt;ul&gt;
+      &lt;li&gt;Best practices:
+        &lt;ul&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How does your system adapt to changes in demand?&lt;/li&gt;
+              &lt;li&gt;How are you monitoring AWS resources?&lt;/li&gt;
+              &lt;li&gt;How are you executing change management?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: AWS CloudTrail&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Failure management
+    &lt;ul&gt;
+      &lt;li&gt;Best practices:
+        &lt;ul&gt;
+          &lt;li&gt;With Cloud, you should always architect your systems with the assumptions that failure will occur. YOu should become aware of these failures, how they occured, how to repond to them and then plan on how to prevent these from happening again.&lt;/li&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How are you backing up your data?&lt;/li&gt;
+              &lt;li&gt;How does your system withstand component failures?&lt;/li&gt;
+              &lt;li&gt;How are you planning for recovery?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: AWS CloudFormation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Best Practices&lt;/li&gt;
+  &lt;li&gt;Key AWS Services&lt;/li&gt;
+  &lt;li&gt;Resource&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;723-performance-efficiency&quot;&gt;7.2.3 Performance Efficiency&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design Principles
+    &lt;ul&gt;
+      &lt;li&gt;Democratize advanced technologies: you don’t need to become an export on no-sql in order to use dynamo db. AWS handles the complexity for you and you at the begnning just need to learn how to use it.&lt;/li&gt;
+      &lt;li&gt;Go global in minutes.&lt;/li&gt;
+      &lt;li&gt;Use server-less architecture&lt;/li&gt;
+      &lt;li&gt;Expriment more often&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compute
+    &lt;ul&gt;
+      &lt;li&gt;Definition&lt;/li&gt;
+      &lt;li&gt;Best Practices:
+        &lt;ul&gt;
+          &lt;li&gt;serverless&lt;/li&gt;
+          &lt;li&gt;Questions
+            &lt;ul&gt;
+              &lt;li&gt;How do you select the appropriate instance type for your system?&lt;/li&gt;
+              &lt;li&gt;How do you ensure that you continue to have the most appropriate instance type as new instance types and features are introduced?&lt;/li&gt;
+              &lt;li&gt;How do you monitor your instances post launch to ensure they are performing as expected?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: Autoscaling&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Storage
+    &lt;ul&gt;
+      &lt;li&gt;Best practices, consider your storage solution based on the following factors
+        &lt;ul&gt;
+          &lt;li&gt;Access Method - Block, File or Object&lt;/li&gt;
+          &lt;li&gt;Patterns of Access - Random or Sequential&lt;/li&gt;
+          &lt;li&gt;Throughput Required&lt;/li&gt;
+          &lt;li&gt;Frequency of Access - Online, Offline or Archival&lt;/li&gt;
+          &lt;li&gt;Frequency of Update - Worm, Dynamic&lt;/li&gt;
+          &lt;li&gt;Availability Constants&lt;/li&gt;
+          &lt;li&gt;Durability Constraints&lt;/li&gt;
+          &lt;li&gt;At AWS, storage is virtualized. With S3 you can have 11*9’s durability, cross Region Replication etc. With EBS you can choose between different storage mediums (such as SSD, Magnetic, PIOPS etc). You can also easily move volumes between the different types of storage mediums.&lt;/li&gt;
+          &lt;li&gt;Questions
+            &lt;ul&gt;
+              &lt;li&gt;How do you select the appropriate storage solution for your system?&lt;/li&gt;
+              &lt;li&gt;How do you ensure that you continue to have the most appropriate storage solution as new storage solutions and features are launched?&lt;/li&gt;
+              &lt;li&gt;How do you monitor your storage solution to ensure it is performing as expected?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: EBS, S3, Glacier&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Database
+    &lt;ul&gt;
+      &lt;li&gt;Best practice: do you need database consistency, do you need high availability, do you need No-SQL, do you need DR etc?
+        &lt;ul&gt;
+          &lt;li&gt;questions
+            &lt;ul&gt;
+              &lt;li&gt;How do you select the appropriate database solution for your system?&lt;/li&gt;
+              &lt;li&gt;How do you ensure that you continue to have the most appropriate database solution and features as new database solution and features are launched?&lt;/li&gt;
+              &lt;li&gt;How do you monitor your databases to ensure peformance is as expected?&lt;/li&gt;
+              &lt;li&gt;How do you ensure the capacity and throughput of your datbases matches demand?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: RDS DynamoDB, Redshift&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Space-time trade-off
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: you can use services such as RDS to add read replicas, reduing the load on your database and creating multiple copies of the database. This helps to lower latency. You can use Direct Connect to provide predictable latency between your HQ and AWS. You can use the global infrastructure to have multiple copies of your environment, in regions that is closest to your customer base. You can also use caching services such as ElasticCache or CloudFront to reduce latency.
+        &lt;ul&gt;
+          &lt;li&gt;Questions
+            &lt;ul&gt;
+              &lt;li&gt;How do you select the appropriate proximity and caching solutions for your system?&lt;/li&gt;
+              &lt;li&gt;How do you ensure that you continue to have the most appropriate proximity and caching solutions as new solutions are launched?&lt;/li&gt;
+              &lt;li&gt;How do you monitor your proximity and caching solutions to ensure performance is as expected?&lt;/li&gt;
+              &lt;li&gt;How do you ensure that the proximity and caching solutions you have matches demand?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: CloudFront, ElasticCache, Direct Connect, RDS Read Replicas etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;724-cost-optimization&quot;&gt;7.2.4 Cost Optimization&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Design Principles&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Matched supply and demand
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: Don’t over provision or udner provision, instead as demand grows, so shoud your supply of compute resources. Think of things like Autoscaling which scale with demand. Similarly in a server-less context, use services such as Lambda that only execute (or respond) when a request (demand) comes in. Services such as CloudWatch can also help you keep track as to what your demand is.&lt;/li&gt;
+      &lt;li&gt;Questions:
+        &lt;ul&gt;
+          &lt;li&gt;How do you make sure your capacity matches but does not substantially exceed what you need?&lt;/li&gt;
+          &lt;li&gt;How are you optimizing your usage of AWS services?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: Autoscaling.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cost-effective resources
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: Using the correct instance type can be key to cost savings. For example you might have a reporting process that is running on a t2-Micro and it takes 7 hours to complete. That same process could be run on an m4.2xlarge in a manner of minutes. The result remains the same but the t2.micro is more expensive because it ran for longer. A well architected system will use the most cost efficient resources to reach the end business goal.
+        &lt;ul&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;Have you selected the appropriate resource types to meet your cost targets?&lt;/li&gt;
+              &lt;li&gt;Have you selected the appropriate pricing model to meet your cost targets?&lt;/li&gt;
+              &lt;li&gt;Are there managed services (higher-level services than Amazon EC2, Amazon EBS, and Amazon S3) that you can use to improve your ROI?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: ECS (reserved instances), AWS Trusted Advisor&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Expenditure awareness
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: With cloud you no loger have to go out and get quotes on physical servers, choose a supplier, have those resources delivered, installed, made available etc. You can provision things within seconds, however this comes with its own issues. Many organisatoins have different teams, each with their own AWS accounts. Being awware of what each team is spending and where is crucial to any well architected system. You can use cost allocation tags to track this, billing alerts as well as consolidated billing.
+        &lt;ul&gt;
+          &lt;li&gt;Questions
+            &lt;ul&gt;
+              &lt;li&gt;What access controls and procedures do you have in place to govern AWS costs&lt;/li&gt;
+              &lt;li&gt;How are you monitoring usage and spending&lt;/li&gt;
+              &lt;li&gt;How do you decommission resources that you no longer need, or stop resources that are temporarily not needed.&lt;/li&gt;
+              &lt;li&gt;How do you  consider data-transfer charges when designing your architecture.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: cloudWatch Alarms, SNS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Optimizing over time
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: AWS moves FAST. There are hundreds of new services (and potentially 1000 new sercies this year). A service that you chose yesterday may not be the best service to be using today. For exmaple consider MYSQL RDS, Aurora was launched at re:invent 2014 and is now out of preview. Aurora may be a better option now for your business because of its performance and redundancy. YOu should keep track of the changes made to AWS and constantly re-evalutate your existing architecture. You can do this by subscribing to the AWS blog and using services such as Trustred Advisor.
+        &lt;ul&gt;
+          &lt;li&gt;Questions
+            &lt;ul&gt;
+              &lt;li&gt;How do you manage and/or reconsider the adoption of new services?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: AWS Blog, AWS Trusted Advisor.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;725-operational-excellence&quot;&gt;7.2.5 Operational Excellence&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design Principles
+    &lt;ul&gt;
+      &lt;li&gt;Peform operatoins with code&lt;/li&gt;
+      &lt;li&gt;Align operations processes to business objectives&lt;/li&gt;
+      &lt;li&gt;Make regular, small, incremental changes&lt;/li&gt;
+      &lt;li&gt;Test for responses to unexpected events&lt;/li&gt;
+      &lt;li&gt;Learn from operational events and failures&lt;/li&gt;
+      &lt;li&gt;Keep operations procedures current&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Preparation
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: Effective preparation is required to drive operational execellence. Operatons checklists will ensure that workloads are ready for production operation, and prevent unintentional production promotion without effective preparation. Workdloads should have:
+        &lt;ul&gt;
+          &lt;li&gt;Runbooks - operatoins guidance that operations teams can refer to so they  can perform normal daily tasks&lt;/li&gt;
+          &lt;li&gt;Playbooks - guidance for responding to unexpected operational events. Playbooks should include response plans, as well as escalation paths and stakholder notifications.&lt;/li&gt;
+          &lt;li&gt;Several methods can be used
+            &lt;ul&gt;
+              &lt;li&gt;CloudFormation, is used to ensure that environments contain all required resources when deployed in production, and that the configuration of the environment is based on tested best practices, which reduces the opportunity for human error.&lt;/li&gt;
+              &lt;li&gt;Auto Sclaing, will allow workloads to automatically respond when business-related events affect operational needs&lt;/li&gt;
+              &lt;li&gt;AWS config, have the mechanism to automatically track and respond to changes in your AWS worklads and environments&lt;/li&gt;
+              &lt;li&gt;Tagging, to make sure all resources in a workload can be easily identified when needed during operations and response.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;What best practices for cloud operations are you using&lt;/li&gt;
+              &lt;li&gt;How are you doing configuration management for your workload.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: AWS Config, AWS Service Catalog, Auto Scaling, SQS.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Operation
+    &lt;ul&gt;
+      &lt;li&gt;Best practices: Operations should be standardized and manageable on a routine basis. The focus should be on automation, small frequent changes, regular quality assuarance testing, and defined mechanisms to track, autdit, roll back, and review changes. Changes should not be large and infrequent, they should not require scheduled downtime, and they shoould not require manual execution. A wide range of logs and metrics that are based on key operational indicators for a workload should be collected and reviewed to ensure continuoues operations. In AWS you can setup a continuous integration / continuous deployment (CI/CD) pipeline (e.g., source code repository, build systems, deployment and testing automation). Release management processes, whether manual or automated, should be tested and be based on small incremental changes, and tracked versions. You should be able to revert changes that introduce operational issues without causing operational impact.
+        &lt;ul&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How are you evolving your workload while minimizing the impact of change?&lt;/li&gt;
+              &lt;li&gt;How do you monitor your workload to ensure it is operating as expected?&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: CodeCommit, CodeDeploy, CodePipeline, AWS SDK, AWS CloudTrail.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Response
+    &lt;ul&gt;
+      &lt;li&gt;Responses to unexpected operational events should be automated. This is not just for alerting, but also for mitigation, remediation, rollback, and recovery. Alerts should timely, and should invoke escalations when responses are not adequate to mitiage the impage of opeational events. Quality assurance mechanisms should be in place to automatically roll back failed deployments. Responses should follow a apre-defined playbook that includes stakeholders, the escalation process, and procedures. Escalation paths should be defined and include both functional and hierarchical escalation capabilities. Hierarchical escalation should be automated, and escalated priority should result in stakeholder notifications. In AWS, there are several mechanisms to ensure both appropriate alerting and notification in response to unplanned operational events, as well as automated responses.
+        &lt;ul&gt;
+          &lt;li&gt;Questions:
+            &lt;ul&gt;
+              &lt;li&gt;How do you respond to unplanned operational events&lt;/li&gt;
+              &lt;li&gt;How is escalation managed when responding to unplanned operational events&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Key AWS Services: CloudWatch&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png&quot; alt=&quot;kinesis&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;7-cloud-formation&quot;&gt;7 Cloud Formation&lt;/h2&gt;
 
 &lt;p&gt;There is cloud Formation guru course 10-12 hour&lt;/p&gt;
+
+&lt;h2 id=&quot;8-additional-exam-tips-2018&quot;&gt;8 Additional Exam Tips 2018&lt;/h2&gt;
+
+&lt;p&gt;For big data: Elastic Map Reduce for Big Data processing, Redshift for business intelligence.&lt;/p&gt;
+
+&lt;p&gt;Orchestration service that uses chef, chef consists of recipes to maintain a consistent state. Look for the term “chef” or “recipes” or “cook books” and think OpsWorks.&lt;/p&gt;
+
+&lt;h3 id=&quot;81-consolidate-billing&quot;&gt;8.1 Consolidate Billing&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CloudTrail:
+    &lt;ul&gt;
+      &lt;li&gt;Per AWS Account and is enabled per region&lt;/li&gt;
+      &lt;li&gt;Can consolidate logs using an S3 bucket&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Exam tips
+    &lt;ul&gt;
+      &lt;li&gt;Consolidated billing allows you to get volume discounts on all your accounts&lt;/li&gt;
+      &lt;li&gt;Unused reserved instances for EC2 are applied across the group&lt;/li&gt;
+      &lt;li&gt;CloudTrail is on a per account and per region basis but can be aggregated in to a single bucket in the paying account.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;82-aws-organizations&quot;&gt;8.2 AWS Organizations&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What: is an account management service that enables you to consolidate multipe AWS accounts into an organization that you create and centrally manage. It is aviable in two feature sets: consolidated billing and All Features. It allosw you to
+    &lt;ul&gt;
+      &lt;li&gt;Centrally Manage Policies Across Multiple AWS Accounts, which means you can create groups for accounts and apply policies to them.&lt;/li&gt;
+      &lt;li&gt;Control Access to AWS Services&lt;/li&gt;
+      &lt;li&gt;Automate AWS Account Creation and Management&lt;/li&gt;
+      &lt;li&gt;Consolidate Billing Across Multiple AWS Accounts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;83-cross-account-access&quot;&gt;8.3 Cross Account Access&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What: Allow to separate AWS accounts for develop env and production env. Cross account access makes it easier for you to work productively within a multi-account (or multi-role) AWS environment by making it easy for you to switch roles within the AWS Management Console. You can now sign in the console using your IAM user name then switch the console to manage another manage another account without having to enter (or remember) another user name and password.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;84-resource-groups--tagging&quot;&gt;8.4 Resource Groups &amp;amp; Tagging&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What:
+    &lt;ul&gt;
+      &lt;li&gt;Tagging: key value pairs attached to AWS resources; metadata; tags can sometimes be inherited (such as Auoscaling, CloudFormation, and Elastic Beanstalk can creat other resources).&lt;/li&gt;
+      &lt;li&gt;Resource Group: group your resources using the tags that are assigned to them. You can group resources that share one or more tags. Resource group contain info such as Region, Name, Health Checks; specific info suchas EC2 public &amp;amp; private IP address, ELB Port configuration and RDS database engine.
+        &lt;ul&gt;
+          &lt;li&gt;Classic Resource Groups&lt;/li&gt;
+          &lt;li&gt;AWS Systems Manager&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;85-vpc-peering&quot;&gt;8.5 VPC Peering&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What: VPC Peering is simmple a connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering conneciton between your own VPCs, or with a VPC in another AWS account within a &lt;strong&gt;Single Region&lt;/strong&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;You cannot create a VPC peering connection between VPCs that have matching or overlapping CIDR blocks&lt;/li&gt;
+      &lt;li&gt;You cannot create a VPC peering conneciton between VPCs in different regions.&lt;/li&gt;
+      &lt;li&gt;NO Transitive Peering Supported.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;86-direct-connect&quot;&gt;8.6 Direct Connect&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What: network connection from your premises to AWS. It can estabilsh private connectivity between AWS and your datacenter, officer, or colocation environment, which in many cases can reduce your network costs, increase bandwitdth throughput, and provide a more consistent network experience than Internet-based connections.
+    &lt;ul&gt;
+      &lt;li&gt;Direct connect vs VPN: VPN connections can be configured in minutes and are a good solution if you have an immediate need, have low to modest bandiwdth requirements, and can tolerate the inherent variability in internet-based connectivity. While Direct Connect does not involve the internet; instead, it used dedicated, private network connections between your intranet and Amazon VPC.&lt;/li&gt;
+      &lt;li&gt;Availble in
+        &lt;ul&gt;
+          &lt;li&gt;10 Gbps&lt;/li&gt;
+          &lt;li&gt;1 Gbps&lt;/li&gt;
+          &lt;li&gt;Sub 1Gbps can be purchased throught AWS Direct Connect Partners&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;87-security-token-service-sts&quot;&gt;8.7 Security Token Service (STS)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what: grants users limited and temporary access to AWS resources. Users can come from three sources:
+    &lt;ul&gt;
+      &lt;li&gt;Federation (typically Active Directory): combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such as Active Directory, Facebook etc)&lt;/li&gt;
+      &lt;li&gt;Identity Broker: A service that allows you to take an identity from point A and join it (federate it) to point B&lt;/li&gt;
+      &lt;li&gt;Identity Store: services like Active Directory, Facebook, Google etc.&lt;/li&gt;
+      &lt;li&gt;Identities: A user of service like Facebook etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;88-active-directory-integration&quot;&gt;8.8 Active Directory Integration&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;what:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;89-aws-workspaces&quot;&gt;8.9 AWS Workspaces&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;what: a cloud-based replacement for a traditional desktop. A workspace is available as a bundle of compute resources, storage space, and software application access that allow a user to perform day-to-day tasks just like using a traditional desktop. A user can connect to a WorkSpace from any supported device (PC, Mac, Chromebook, iPad, Kindle Fire, or Android tablets) using a free Amazon WorkSpaces client application and credentials set up by an administrator, or their existing Active Directory credentials if Amazon WorkSpacees is intergrated with an existing Active Directory domain.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;810-elastic-container-service-ecs&quot;&gt;8.10 Elastic Container Service (ECS)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What: a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster of EC2 instances. ECS lets you launch and stop container-based applications with simple API calls, allow you to get the state of your cluster from a centralized service, and gives you access to many familar Amazon EC2 features.
+    &lt;ul&gt;
+      &lt;li&gt;ECS Task: a cloud formation template for docker&lt;/li&gt;
+      &lt;li&gt;ECS Service: an auto-sclaing groups for ECS&lt;/li&gt;
+      &lt;li&gt;ECS Clusters: a logical grouping of container instances that you can place tasks.
+        &lt;ul&gt;
+          &lt;li&gt;Clusters can contain multiple different container instance types&lt;/li&gt;
+          &lt;li&gt;Clusters are region-specific&lt;/li&gt;
+          &lt;li&gt;Container instances can only be part of one cluster at a time&lt;/li&gt;
+          &lt;li&gt;You can create IAM policies for your clusters to allow or restrct user’s access to specific clusters.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ECS Scheduling
+        &lt;ul&gt;
+          &lt;li&gt;Serice Scheduler: ensures a certain number of tasks are contantly running and reschedules tasks when a task failes.&lt;/li&gt;
+          &lt;li&gt;Custom Scheduler: create your own schedulers that meet your business needs.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ECS Container Agent: allow container instances to connect to your cluster.&lt;/li&gt;
+      &lt;li&gt;ECR: AWS version of Docker Registry&lt;/li&gt;
+      &lt;li&gt;ECS Limits:
+        &lt;ul&gt;
+          &lt;li&gt;Soft Limits:
+            &lt;ul&gt;
+              &lt;li&gt;Clusters per region (default = 1000)&lt;/li&gt;
+              &lt;li&gt;Instances per Cluster (default = 1000)&lt;/li&gt;
+              &lt;li&gt;Services per Cluster (default = 500)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Hard Limits:
+            &lt;ul&gt;
+              &lt;li&gt;One Load Balancer per Service&lt;/li&gt;
+              &lt;li&gt;1000 Tasks per Service (the “desired count”)&lt;/li&gt;
+              &lt;li&gt;Max. 10 Containers per Task Definition&lt;/li&gt;
+              &lt;li&gt;Max. 10 Tasks per instance (host)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Security groups operate at the instance level, not a task or container level.&lt;/li&gt;
+      &lt;li&gt;IAM with ECS to restrict access.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 &lt;ul&gt;

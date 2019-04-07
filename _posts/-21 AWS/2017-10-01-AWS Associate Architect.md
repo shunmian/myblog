@@ -807,7 +807,7 @@ videos and white papers:
 
 ### 7.2 5 Pillars
 
-### 7.2.0 General
+#### 7.2.0 General
 
 - Design Principles
     - Stop guessing your capacity needs;
@@ -821,7 +821,7 @@ videos and white papers:
 - Key AWS Services
 - Resource
 
-### 7.2.1 Security
+#### 7.2.1 Security
 
 - Design Principles
     - Apply security at all layers
@@ -872,7 +872,7 @@ videos and white papers:
 
 - Resource
 
-### 7.2.2 Reliability
+#### 7.2.2 Reliability
 
 - Definition: covers the ability of a system to recover from service or infrastructure outages/disruptions as well as the ability to dynamically acquire computing resources to meet demand.
 
@@ -912,7 +912,7 @@ videos and white papers:
 - Key AWS Services
 - Resource
 
-### 7.2.3 Performance Efficiency
+#### 7.2.3 Performance Efficiency
 
 - Design Principles
     - Democratize advanced technologies: you don't need to become an export on no-sql in order to use dynamo db. AWS handles the complexity for you and you at the begnning just need to learn how to use it.
@@ -962,7 +962,7 @@ videos and white papers:
             - How do you ensure that the proximity and caching solutions you have matches demand?
     - Key AWS Services: CloudFront, ElasticCache, Direct Connect, RDS Read Replicas etc.
 
-### 7.2.4 Cost Optimization
+#### 7.2.4 Cost Optimization
 
 - Design Principles
 
@@ -996,7 +996,7 @@ videos and white papers:
             - How do you manage and/or reconsider the adoption of new services?
     - Key AWS Services: AWS Blog, AWS Trusted Advisor.
 
-### 7.2.5 Operational Excellence
+#### 7.2.5 Operational Excellence
 
 - Design Principles
     - Peform operatoins with code
@@ -1030,13 +1030,7 @@ videos and white papers:
         - Questions:
             - How do you respond to unplanned operational events
             - How is escalation managed when responding to unplanned operational events
-    - Key AWS Services: 
-
-- Definition
-- Best Practices
-- Key AWS Services
-- Resource
-
+    - Key AWS Services: CloudWatch
 
 
 {: .img_middle_hg}
@@ -1047,6 +1041,103 @@ videos and white papers:
 
 There is cloud Formation guru course 10-12 hour
 
+## 8 Additional Exam Tips 2018
+
+For big data: Elastic Map Reduce for Big Data processing, Redshift for business intelligence.
+
+Orchestration service that uses chef, chef consists of recipes to maintain a consistent state. Look for the term "chef" or "recipes" or "cook books" and think OpsWorks.
+
+### 8.1 Consolidate Billing
+
+- CloudTrail:
+    - Per AWS Account and is enabled per region
+    - Can consolidate logs using an S3 bucket
+
+- Exam tips
+    - Consolidated billing allows you to get volume discounts on all your accounts
+    - Unused reserved instances for EC2 are applied across the group
+    - CloudTrail is on a per account and per region basis but can be aggregated in to a single bucket in the paying account.
+
+
+### 8.2 AWS Organizations
+
+- What: is an account management service that enables you to consolidate multipe AWS accounts into an organization that you create and centrally manage. It is aviable in two feature sets: consolidated billing and All Features. It allosw you to 
+    - Centrally Manage Policies Across Multiple AWS Accounts, which means you can create groups for accounts and apply policies to them.
+    - Control Access to AWS Services
+    - Automate AWS Account Creation and Management
+    - Consolidate Billing Across Multiple AWS Accounts
+
+### 8.3 Cross Account Access
+
+- What: Allow to separate AWS accounts for develop env and production env. Cross account access makes it easier for you to work productively within a multi-account (or multi-role) AWS environment by making it easy for you to switch roles within the AWS Management Console. You can now sign in the console using your IAM user name then switch the console to manage another manage another account without having to enter (or remember) another user name and password.
+
+### 8.4 Resource Groups & Tagging
+
+- What: 
+    - Tagging: key value pairs attached to AWS resources; metadata; tags can sometimes be inherited (such as Auoscaling, CloudFormation, and Elastic Beanstalk can creat other resources).
+    - Resource Group: group your resources using the tags that are assigned to them. You can group resources that share one or more tags. Resource group contain info such as Region, Name, Health Checks; specific info suchas EC2 public & private IP address, ELB Port configuration and RDS database engine.
+        - Classic Resource Groups
+        - AWS Systems Manager
+
+### 8.5 VPC Peering
+
+- What: VPC Peering is simmple a connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering conneciton between your own VPCs, or with a VPC in another AWS account within a **Single Region**.
+    - You cannot create a VPC peering connection between VPCs that have matching or overlapping CIDR blocks
+    - You cannot create a VPC peering conneciton between VPCs in different regions.
+    - NO Transitive Peering Supported. 
+
+### 8.6 Direct Connect
+
+- What: network connection from your premises to AWS. It can estabilsh private connectivity between AWS and your datacenter, officer, or colocation environment, which in many cases can reduce your network costs, increase bandwitdth throughput, and provide a more consistent network experience than Internet-based connections.
+    - Direct connect vs VPN: VPN connections can be configured in minutes and are a good solution if you have an immediate need, have low to modest bandiwdth requirements, and can tolerate the inherent variability in internet-based connectivity. While Direct Connect does not involve the internet; instead, it used dedicated, private network connections between your intranet and Amazon VPC.
+    - Availble in 
+        - 10 Gbps
+        - 1 Gbps
+        - Sub 1Gbps can be purchased throught AWS Direct Connect Partners
+
+### 8.7 Security Token Service (STS)
+
+- what: grants users limited and temporary access to AWS resources. Users can come from three sources:
+    - Federation (typically Active Directory): combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such as Active Directory, Facebook etc)
+    - Identity Broker: A service that allows you to take an identity from point A and join it (federate it) to point B
+    - Identity Store: services like Active Directory, Facebook, Google etc.
+    - Identities: A user of service like Facebook etc.
+
+### 8.8 Active Directory Integration
+
+- what: 
+
+### 8.9 AWS Workspaces
+- what: a cloud-based replacement for a traditional desktop. A workspace is available as a bundle of compute resources, storage space, and software application access that allow a user to perform day-to-day tasks just like using a traditional desktop. A user can connect to a WorkSpace from any supported device (PC, Mac, Chromebook, iPad, Kindle Fire, or Android tablets) using a free Amazon WorkSpaces client application and credentials set up by an administrator, or their existing Active Directory credentials if Amazon WorkSpacees is intergrated with an existing Active Directory domain.
+
+### 8.10 Elastic Container Service (ECS)
+
+- What: a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster of EC2 instances. ECS lets you launch and stop container-based applications with simple API calls, allow you to get the state of your cluster from a centralized service, and gives you access to many familar Amazon EC2 features.
+    - ECS Task: a cloud formation template for docker
+    - ECS Service: an auto-sclaing groups for ECS
+    - ECS Clusters: a logical grouping of container instances that you can place tasks.
+        - Clusters can contain multiple different container instance types
+        - Clusters are region-specific
+        - Container instances can only be part of one cluster at a time
+        - You can create IAM policies for your clusters to allow or restrct user's access to specific clusters.
+    - ECS Scheduling
+        - Serice Scheduler: ensures a certain number of tasks are contantly running and reschedules tasks when a task failes.
+        - Custom Scheduler: create your own schedulers that meet your business needs.
+    - ECS Container Agent: allow container instances to connect to your cluster.
+    - ECR: AWS version of Docker Registry
+    - ECS Limits:
+        - Soft Limits:
+            - Clusters per region (default = 1000)
+            - Instances per Cluster (default = 1000)
+            - Services per Cluster (default = 500)
+        - Hard Limits:
+            - One Load Balancer per Service
+            - 1000 Tasks per Service (the "desired count")
+            - Max. 10 Containers per Task Definition
+            - Max. 10 Tasks per instance (host)
+    - Security groups operate at the instance level, not a task or container level.
+    - IAM with ECS to restrict access.
+ 
 
 ## 2 参考资料 ##
 - [《Vim Masterclass》](https://www.udemy.com/vim-commands-cheat-sheet/);
