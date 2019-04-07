@@ -755,7 +755,16 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#7-cloud-formation&quot; id=&quot;markdown-toc-7-cloud-formation&quot;&gt;7 Cloud Formation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7-cloud-formation&quot; id=&quot;markdown-toc-7-cloud-formation&quot;&gt;7 Cloud Formation&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#71-intrinsic-functions&quot; id=&quot;markdown-toc-71-intrinsic-functions&quot;&gt;7.1 Intrinsic Functions&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#72-multiple-resources&quot; id=&quot;markdown-toc-72-multiple-resources&quot;&gt;7.2 Multiple Resources&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#73-pseudo-parameters&quot; id=&quot;markdown-toc-73-pseudo-parameters&quot;&gt;7.3 Pseudo Parameters&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#74-mappings&quot; id=&quot;markdown-toc-74-mappings&quot;&gt;7.4 Mappings&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#75-input-parameters&quot; id=&quot;markdown-toc-75-input-parameters&quot;&gt;7.5 Input Parameters&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#76-outputs&quot; id=&quot;markdown-toc-76-outputs&quot;&gt;7.6 Outputs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#77-change-sets&quot; id=&quot;markdown-toc-77-change-sets&quot;&gt;7.7 Change sets&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#8-additional-exam-tips-2018&quot; id=&quot;markdown-toc-8-additional-exam-tips-2018&quot;&gt;8 Additional Exam Tips 2018&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#81-consolidate-billing&quot; id=&quot;markdown-toc-81-consolidate-billing&quot;&gt;8.1 Consolidate Billing&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#82-aws-organizations&quot; id=&quot;markdown-toc-82-aws-organizations&quot;&gt;8.2 AWS Organizations&lt;/a&gt;&lt;/li&gt;
@@ -2384,6 +2393,20 @@ MariaDB&lt;/p&gt;
 &lt;h2 id=&quot;7-cloud-formation&quot;&gt;7 Cloud Formation&lt;/h2&gt;
 
 &lt;p&gt;There is cloud Formation guru course 10-12 hour&lt;/p&gt;
+
+&lt;h3 id=&quot;71-intrinsic-functions&quot;&gt;7.1 Intrinsic Functions&lt;/h3&gt;
+
+&lt;h3 id=&quot;72-multiple-resources&quot;&gt;7.2 Multiple Resources&lt;/h3&gt;
+
+&lt;h3 id=&quot;73-pseudo-parameters&quot;&gt;7.3 Pseudo Parameters&lt;/h3&gt;
+
+&lt;h3 id=&quot;74-mappings&quot;&gt;7.4 Mappings&lt;/h3&gt;
+
+&lt;h3 id=&quot;75-input-parameters&quot;&gt;7.5 Input Parameters&lt;/h3&gt;
+
+&lt;h3 id=&quot;76-outputs&quot;&gt;7.6 Outputs&lt;/h3&gt;
+
+&lt;h3 id=&quot;77-change-sets&quot;&gt;7.7 Change sets&lt;/h3&gt;
 
 &lt;h2 id=&quot;8-additional-exam-tips-2018&quot;&gt;8 Additional Exam Tips 2018&lt;/h2&gt;
 

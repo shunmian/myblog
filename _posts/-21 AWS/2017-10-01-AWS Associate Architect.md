@@ -1041,6 +1041,22 @@ videos and white papers:
 
 There is cloud Formation guru course 10-12 hour
 
+
+
+### 7.1 Intrinsic Functions
+
+### 7.2 Multiple Resources
+
+### 7.3 Pseudo Parameters
+
+### 7.4 Mappings
+
+### 7.5 Input Parameters
+
+### 7.6 Outputs
+
+### 7.7 Change sets
+
 ## 8 Additional Exam Tips 2018
 
 For big data: Elastic Map Reduce for Big Data processing, Redshift for business intelligence.
