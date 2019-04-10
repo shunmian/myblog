@@ -1041,21 +1041,223 @@ videos and white papers:
 
 There is cloud Formation guru course 10-12 hour
 
+### 7.0 Infrastructure as Code
 
+Infrastructure process
+
+1. Configuration
+
+2. Provisioning
+
+3. Deployments
+
+Infrastructure software tools
+
+1. Version Control
+
+2. Testing
+
+3. CI/CD
+
+> Cloud Formation: is an Infrastructure of Code tool for AWS, which can be used for the life cycle of resources, such as creating, updating and deleting.
+
+#### 7.0.1 Template
+
+Infrastructure code
+
+{% highlight yaml linenos %}
+
+AWSTemplateFormatVersion: "version date",     # 2010-09-09
+Description: String,
+Metadata:
+    ... template metadata ...,
+Parameters:
+    ... set of parameters ...,
+Mappings:   
+    ... set of mappings ...,
+Conditions:
+    ... set of conditions ...,
+Transform:
+    ... set of transforms ...,
+Resources:  // the only required part
+    Ec2Instance:
+        Type: 'AWS::EC2::Instance'
+        Properties:
+        InstanceType: t2.micro
+        ImageId: ami-0b419c3a4b01d1859
+        Tags:
+            - Key: Name
+              Value: A simple example     
+Outputs:
+    ... set of outputs ...
+
+{% endhighlight %}
+
+#### 7.0.2 Stack
+
+> Stack: an instance of template, a collection of AWS resources that you can mange as a single unit. Executing a template, it creates a stack, updating template, it update a stack.
+
+#### 7.03 Change Set
+
+> Change set, allows you to **Preview** the change the updated stack will perform to verify if the change is in line with their expectations and if yes then procceed with the update. For example, rename a RDS will have the change sets of `Create a new one` and `Delete the old one`, this gives the info of poential data loss.
 
 ### 7.1 Intrinsic Functions
 
+> Intrinsic Functions: built-in functions that help you manage your stacks.
+
+{% highlight yaml linenos %}
+Fn::Join [":", [a,b,c]]    # "a:b:c"
+!Join [":", [a,b,c]]    # !是简写
+{% endhighlight %}
+
+{% highlight yaml linenos %}
+Resources:
+    Ec2Instance:
+        Type: 'AWS::EC2::Instance'
+        Properties:
+        InstanceType: t2.micro
+        ImageId: ami-0b419c3a4b01d1859
+        Tags:
+            - Key: Name
+              Value: !Join [" ", [ EC2, Instance, with, Fn, Join ]] # EC2 Instance with Fn Join   
+{% endhighlight %}
+
 ### 7.2 Multiple Resources
+
+{% highlight yaml linenos %}
+Resources:
+    Ec2Instance:
+        Type: 'AWS::EC2::Instance'
+        Properties:
+        InstanceType: t2.micro
+        ImageId: ami-0b419c3a4b01d1859
+        Tags:
+            - Key: Name
+              Value: !Join [" ", [ EC2, Instance, with, Fn, Join ]] # EC2 Instance with Fn Join
+        SecurityGroups:
+            - !Ref MySecurityGroup
+    MySecurityGroups:
+        Type: 'AWS::EC2::SecurityGroup'
+        Properties:
+            GroupDescription: Enable SSH access via port 22
+            SecurityGroupIngress:
+                - IpProtocol: tcp
+                  FromPort: '22'
+                  ToPort: '22'
+                  CidrIp: 0.0.0.0/0
+{% endhighlight %}
 
 ### 7.3 Pseudo Parameters
 
+> Pesudo Paramters are predefined by CloudFormation, similar to Environment Variables. Reference the parameters with the `Ref` intrinsic Function.
+
+{% highlight yaml linenos %}
+AWS::AccountId          # Returns the AWS account ID of the account
+AWS::NotificationARNs   # Returns the list of notification ARNs for the current stack
+AWS::StackId            # Returns the ID of the stack
+AWS::StackName          # Returns the name of the stack
+AWS::Region             # returns a string representing the AWS Region in which the resource is being created
+{% endhighlight %}
+
+{% highlight yaml linenos %}
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0b419c3a4b01d1859
+      Tags:
+        - Key: Name
+          Value: !Join
+            - ""
+            - - "EC2 Instance for "
+              - !Ref AWS::Region # EC2 Instance with Fn Join
+      SecurityGroups:
+        - !Ref MySecurityGroup
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+{% endhighlight %}
+
 ### 7.4 Mappings
+
+> Mapping: enable you to use an input value to determine another value. Use intrinsic functions `FindInMap`
+
+{% highlight yaml linenos %}
+Mappings:
+    RegionMap:
+        us-east-1:
+            AMI: ami-76f0061f
+        us-west-1:
+            AMI: ami-655a0a20
+
+Resources:
+    Ec2Instance:
+        Type: AWS::EC2::Instance
+        Properties:
+            ImageId: !FindInMap
+                - RegionMap
+                - !Ref "AWS::Region"
+                - AMI
+
+{% endhighlight %}
 
 ### 7.5 Input Parameters
 
+> Input Parameters: enable us to input custom values to our template. They are defined within the top level Parameters section. Supported Parameter Types: String, Number, List<Number>, CommaDelimitedList, WS-specific types (AWS::EC2::Image::Id), Systems Manager Parameter types.
+
+{% highlight yaml linenos %}
+Parameters:
+    InstTypeParam:
+        Type: String
+        Default: t2.micro
+        AllowedValues:
+            - t2.micro
+            - m1.small
+            - m1.large
+        Description:
+            EC2 Instance Type
+Resources:
+    Ec2Instance:
+        Type: AWS::EC2::Instance
+    Properties:
+        InstanceType:
+            !Ref InstTypeParam
+            ImageId: ami-2f726546
+{% endhighlight %}
+
+
 ### 7.6 Outputs
 
+> Outputs enable us to get access to information about resources within a stack. For example create an EC2 instance, and output the Public IP or DNS.
+
+{% highlight yaml linenos %}
+Outputs:
+    InstanceDns:
+        Description: The Instance Dns
+        Value:
+            !GetAtt
+                - Ec2Instance # The logic name (also called logic ID) of the resource that contains the attribute that you want
+                - PublicDnsName # The name of the resource-specific attribute whose value you want.
+{% endhighlight %}
+
 ### 7.7 Change sets
+
+{% highlight yaml linenos %}
+{% endhighlight %}
+
+### 7.8 What's next
+
+- Nested Stacks;
+- Stack Sets;
+- Creation, Update, Deletion Policies
+- and more...
 
 ## 8 Additional Exam Tips 2018
 
