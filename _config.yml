@@ -1,13 +1,10 @@
-paginate: 10 # pagination based on number of posts
+paginate: 5 # pagination based on number of posts
 paginate_path: "page:num"
-plugins_dir: 
+plugins: 
 - jekyll-paginate
 - jekyll-feed
-- jekyll-paginate
-
 
 exclude: ["README.md"] # files to exclude
-
 
 markdown: kramdown
 kramdown:
@@ -31,7 +28,7 @@ author:
   email: shunmian@gmail.com
   github: shunmian
   twitter: Wanderl29817400
-  bio: The only programmers in a position to see all the differences in power between the various languages are those who understand the most powerful one.
+  bio: The only programmers in a position to see all the differences in power between the various languaPs are those who understand the most powerful one.
   email_md5: 02eefecba7f0b21939d12a37f94bf5df
 
 feed:
