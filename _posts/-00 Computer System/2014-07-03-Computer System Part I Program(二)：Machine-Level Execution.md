@@ -25,7 +25,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 
 > **本章重点**：熟悉IA32指令，会用gcc将.c生成.o生成可执行文件(并反汇编成.o)，会用gdb调试；熟悉C Code Pattern(if else, loop, switch, array, structure, union)；深刻理解pointer，stack overflow attack。
 
-> **Program Encodings**：".c->.s->.o->link后可执行"见[这里]({{site.baseurl}}/00%20c/2014/06/30/A1-Linux-C-%E5%B7%A5%E5%85%B7.html)。
+> **Program Encodings**：".c->.s->.o->link后可执行"见[这里]({{site.url}}/00%20c/2014/06/30/A1-Linux-C-%E5%B7%A5%E5%85%B7.html)。
 
 > **C Data Formats in IA32**。所有指针都是4Byte(32Bit)；没加unsigned就是默认是sign，如int a是sign int(4Byte)，unsigned int b是无符号整数(4Byte)。
 
@@ -37,7 +37,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 2 总结 ##
 
 {: .img_middle_hg}
-![Machine Level Representation of Programs](/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/Chapter 3_Machine Level Representation of Programs.png)
+![Machine Level Representation of Programs]({{site.url}}/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/Chapter 3_Machine Level Representation of Programs.png)
 
 
 ## 3 lab ##
@@ -47,7 +47,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 下面主要对**bufbomb**的5道题(level 0-4)做一个总结。
 
 {: .img_middle_hg}
-![bufbomb总结](/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/bufbomb总结.png)
+![bufbomb总结]({{site.url}}/assets/images/posts/2014-07-03-Computer System Part I Program(二)：Machine-Level Representation of Programs/bufbomb总结.png)
 
 
 

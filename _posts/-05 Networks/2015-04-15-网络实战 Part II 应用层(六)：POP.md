@@ -22,7 +22,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 
 > **POP(Post Office Protocol，邮局协议)**：用于电子邮件的接收。本协议主要用于支持使用客户端远程管理在服务器上的电子邮件。POP最大的优点是简单(执行邮件fetch，delete)，这同时也是它最大的缺点(无法辨别已下载的邮件，即客户端和服务器的同步；IMPA可以解决这个问题)。
 
-IMAP在POP基础上提供更多的功能，本文简单介绍POP。对于IMAP的介绍，请见[这里]({{site.baseurl}}/-02%20networks/2015/04/16/网络实战-Part-II-应用层(七)-IMAP.html)
+IMAP在POP基础上提供更多的功能，本文简单介绍POP。对于IMAP的介绍，请见[这里]({{site.url}}/-02%20networks/2015/04/16/网络实战-Part-II-应用层(七)-IMAP.html)
 
 如今最流行的POP版本是3，因此我们常默认POP就是POP3。
 
@@ -33,7 +33,7 @@ Python的[21.14 poplib](https://docs.python.org/3/library/poplib.html)的是对P
 POP服务端的实现在POP标准里并没有指明，因此对于如何同步非常模糊，有些POP服务端只有当你下载才认为是已读，有些即使下载也不认为是已读。因此在使用POP3的时候要格外小心。
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-15-网络实战(十四)：POP/POP conversation.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-15-网络实战(十四)：POP/POP conversation.png)
 
 ### 1.2 Connecting and Authenticating ###
 
@@ -155,7 +155,7 @@ if __name__ == '__main__':
 ## 2 总结 ##
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-15-网络实战(十四)：POP/POP Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-15-网络实战(十四)：POP/POP Summary.png)
 
 ## 4 参考资料 ##
 

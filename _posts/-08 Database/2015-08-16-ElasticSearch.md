@@ -55,7 +55,7 @@ shortinfo: ElasticSearch
 ## 2 总结
 
 {: .img_middle_lg}
-![regular expression](/assets/images/posts/2015-06-01/MySQL overview.png)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/MySQL overview.png)
 
 {% highlight mysql linenos %}
 

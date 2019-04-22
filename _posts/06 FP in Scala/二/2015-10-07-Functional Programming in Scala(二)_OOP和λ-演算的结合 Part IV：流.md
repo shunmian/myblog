@@ -63,7 +63,7 @@ shortinfo: List是函数式Data Structure的一个典型，结合函数式的pat
 
 >**lazy evaluation**的理论基础：**函数式编程的输出**只和输入有关，与时间没有关系，因此可以将函数的调用推迟到需要的时候。这是命令式编程所不具备的。
 
-这究竟是怎么实现的呢？细细回想，不知道同学们还记不记得本系列[第一篇文章]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#application)）中对于赋值有两种方式，一种是**call by value(CBV)**，另一种是**call by name(CBN)**。没错，聪明的你一定想到`Stream`的实现和**CBN**有关。
+这究竟是怎么实现的呢？细细回想，不知道同学们还记不记得本系列[第一篇文章]({{ site.url}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#application)）中对于赋值有两种方式，一种是**call by value(CBV)**，另一种是**call by name(CBN)**。没错，聪明的你一定想到`Stream`的实现和**CBN**有关。
 
 {% highlight scala linenos %}
   trait Stream[+A] extends Seq[A]{
@@ -259,7 +259,7 @@ object testPouring {
 4. 还有一点需要注意的是性能问题，对于之前探索过的`Set[State]`，`Path`extend后要过滤掉回到之前`State`的Path。
 
 {: .img_middle_mid}
-![water pouring](/assets/images/posts/2015-10-07/water pouring.png)
+![water pouring]({{site.url}}/assets/images/posts/2015-10-07/water pouring.png)
 
 
 
@@ -274,7 +274,7 @@ object testPouring {
 
 
 {: .img_middle_hg}
-![FP in Scala final summary](/assets/images/posts/2015-10-07/FP in Scala final summary.png)
+![FP in Scala final summary]({{site.url}}/assets/images/posts/2015-10-07/FP in Scala final summary.png)
 
 ## 5 参考资料 ##
 - [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);

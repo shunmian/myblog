@@ -21,17 +21,17 @@ shortinfo: 本文是《Practical Packet Analysis》系列第1篇笔记《Wiresha
 ## 1 Wireshark Background ##
 
 {: .img_middle_hg}
-![Packet Sniffering Background Summary](/assets/images/posts/2015-04-20-Wireshark(一)：介绍/1_Wireshark Background.png)
+![Packet Sniffering Background Summary]({{site.url}}/assets/images/posts/2015-04-20-Wireshark(一)：介绍/1_Wireshark Background.png)
 
 ## 2 Wireshark Tutorial ##
 
 {: .img_middle_hg}
-![Wireshark Tutorial](/assets/images/posts/2015-04-20-Wireshark(一)：介绍/2_Wireshark Tutorial.png)
+![Wireshark Tutorial]({{site.url}}/assets/images/posts/2015-04-20-Wireshark(一)：介绍/2_Wireshark Tutorial.png)
 
 ## 3 Wireshark Protocol ##
 
 {: .img_middle_hg}
-![Wireshark Tutorial](/assets/images/posts/2015-04-20-Wireshark(一)：介绍/3_Wireshark Protocol.png)
+![Wireshark Tutorial]({{site.url}}/assets/images/posts/2015-04-20-Wireshark(一)：介绍/3_Wireshark Protocol.png)
 
 ## 4 参考资料 ##
 

@@ -22,7 +22,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Exceptional Control Flow 总结](/assets/images/posts/2014-07-08-Computer System Part II Program On System(二)：Exceptional Control Flow/Chapter 8 Exceptional Control Flow 总结.png)
+![Exceptional Control Flow 总结]({{site.url}}/assets/images/posts/2014-07-08-Computer System Part II Program On System(二)：Exceptional Control Flow/Chapter 8 Exceptional Control Flow 总结.png)
 
 ## 2 lab ##
 

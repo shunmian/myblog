@@ -33,7 +33,7 @@ shortinfo: SVM(Support Vector Machine)是分类中的一个强大的算法。相
 > SVM：are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis.
 
 {: .img_middle_lg}
-![SVM](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM.png)
+![SVM]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM.png)
 
 
 #### 1.1.1 SVM成本函数 ####
@@ -49,7 +49,7 @@ $$
 我们用另一种cost function：
 
 {: .img_middle_mid}
-![Logistic Regression_Cost Function](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Logistic Regression_Cost Function.png)
+![Logistic Regression_Cost Function]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Logistic Regression_Cost Function.png)
 
 $$
 
@@ -72,7 +72,7 @@ $$
 > SVM直观理解：增大Margin。SVM别名是Large Margin Classifier。
 
 {: .img_middle_lg}
-![Large Margin Classifier](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Large Margin Classifier.png)
+![Large Margin Classifier]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Large Margin Classifier.png)
 
 #### 1.1.3 SVM 成本函数最小值和Margin关系 ####
 
@@ -95,23 +95,23 @@ _{min}J(\theta) &= _{min}(\frac C m \sum_{i=1}^m [-y^{(i)}cost_1(\theta^Tx^{(i)}
 $$
 
 {: .img_middle_lg}
-![SVM costfunction vs. margin](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM costfunction vs. margin.png)
+![SVM costfunction vs. margin]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM costfunction vs. margin.png)
 
 ### 1.2 Kernels ###
 
 > **Kenel(核函数)**：允许我们应用SVM做出复杂非线性的分割。
 
 {: .img_middle_lg}
-![Kernel](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Kernel.png)
+![Kernel]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Kernel.png)
 
 
 {: .img_middle_hg}
-![Kernel详解](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Kernel详解.png)
+![Kernel详解]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/Kernel详解.png)
 
 ### 1.3 SVM实用建议 ###
 
 {: .img_middle_hg}
-![SVM实用建议](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM实用建议.png)
+![SVM实用建议]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM实用建议.png)
 
 
 
@@ -122,13 +122,13 @@ $$
 见[这里](https://github.com/shunmian/-11-Machine-Learning)。附上一张跑分图。
 
 {: .img_middle_lg}
-![assignment6](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/assignment6.png)
+![assignment6]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/assignment6.png)
 
 
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![SVM总结](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM总结.png)
+![SVM总结]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-07/SVM总结.png)
 
 ## 4 参考资料 ##
 - [《支持向量机(SVM)是什么意思》](https://www.zhihu.com/question/21094489);

@@ -126,7 +126,7 @@ Scala的**for-expression**的实现是基于**filter**，**map**和**flatMao**�
 >**号码字母问题**：给定一个数字，返回所有可能的单词。数字和字母的对应关系如下图所示。即"2"->"ABC"，...,"9"->"wxyz"。如果我们输入是"7225247386"，其中一个输出是"scala is fun"。
 
 {: .img_middle_mid}
-![Nokia N70](/assets/images/posts/2015-10-06/Nokia N70.png)
+![Nokia N70]({{site.url}}/assets/images/posts/2015-10-06/Nokia N70.png)
 
 我们用**top-down**一步步思考该如何实现：
 
@@ -264,7 +264,7 @@ object lecture7 {
 
 
 {: .img_middle_lg}
-![for-expression && Option](/assets/images/posts/2015-10-06/for-expression && Option.png)
+![for-expression && Option]({{site.url}}/assets/images/posts/2015-10-06/for-expression && Option.png)
 
 ## 5 参考资料 ##
 - [《Structure and Interpretation of Computer Programs》](https://mitpress.mit.edu/sicp/full-text/book/book.html);

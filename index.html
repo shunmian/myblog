@@ -8,7 +8,7 @@ title: Blog
 
     <artical class="home">
         <span>
-            <a class="post_mainTitle" href="{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+            <a class="post_mainTitle" href="{{site.url}}{{post.url}}">{{post.title}}</a>
             <div class="padding_bottom_10"></div>
         </span>
         <div class="post_mainShortinfo">
@@ -34,7 +34,7 @@ title: Blog
             {{post.categories[0]}}
         </span>
 
-        <span class="padding_left_10"><a href="{{post.url}}"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
+        <span class="padding_left_10"><a href="{{site.url}}{{post.url}}"><button type="button" class="btn btn_danger_outline" >阅读更多...</button></a></span>
 
         <hr />
         <br />
@@ -47,9 +47,9 @@ title: Blog
     {% if paginator.previous_page %}
     <li class="previous">
         {% if paginator.previous_page == 1 %}
-        <a href="{{ site.baseurl }}/">&larr; Newer</a>
+        <a href="{{ site.url }}/">&larr; Newer</a>
         {% else%}
-        <a href= "{{site.baseurl}}/page{{paginator.previous_page}}">&larr; Newer</a>
+        <a href= "{{site.url}}/page{{paginator.previous_page}}">&larr; Newer</a>
         {% endif %}
     </li>
     {% else %}
@@ -64,7 +64,7 @@ title: Blog
 
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{site.baseurl}}/page{{paginator.next_page}}">Older &rarr;</a>
+        <a href="{{site.url}}/page{{paginator.next_page}}">Older &rarr;</a>
     </li>
     {% else %}
     <li class="next disabled">

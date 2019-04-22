@@ -103,7 +103,7 @@ shortinfo: 本文是《Unix Network Programming V1 Socket》的总结。
 ## 总结
 
 {: .img_middle_hg}
-![broadcast domain](/assets/images/posts/-05 Network/2015-05-01-趣谈网络协议/summary.jpg)
+![broadcast domain]({{site.url}}/assets/images/posts/-05 Network/2015-05-01-趣谈网络协议/summary.jpg)
 
 
 ## 4 参考资料 ##

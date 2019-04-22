@@ -32,7 +32,7 @@ shortinfo: 非监督式学习是没有label的数据，但是我们还是可以�
 
 
 {: .img_middle_hg}
-![K-Means Algorithm](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/K-Means Algorithm.png)
+![K-Means Algorithm]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/K-Means Algorithm.png)
 
 
 ### 1.2 降维(Dimensionality Reduction)：PCA算法 ###
@@ -43,19 +43,19 @@ shortinfo: 非监督式学习是没有label的数据，但是我们还是可以�
 降维的一个最为重要的算法是**主成分分析(Principal Component Analysis,PCA)**算法。
 
 {: .img_middle_hg}
-![PCA](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/PCA.png)
+![PCA]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/PCA.png)
 
 ### 1.3 异常检测 (Anormaly Detection)：高斯分布 ###
 
 {: .img_middle_hg}
-![异常检测](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/异常检测.png)
+![异常检测]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/异常检测.png)
 
 ## 2 作业 ##
 
 见[这里](https://github.com/shunmian/-11-Machine-Learning)。附上一张跑分图。
 
 {: .img_middle_mid}
-![assignment7](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/assignment7.png)
+![assignment7]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-08/assignment7.png)
 
 
 ## 3 总结 ##

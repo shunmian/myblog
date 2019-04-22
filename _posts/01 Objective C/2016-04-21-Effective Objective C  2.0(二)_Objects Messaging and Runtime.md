@@ -229,19 +229,19 @@ typedef NS_ENUM(NSUInteger,EOCEmployeeType){
 
 ### Item 11：Understand the Role of objc_msgSend
 
-见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.baseurl}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
+见[OC Runtime(零)：Runtime概述]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.url}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
 
 ### Item 12：Understand Message Forwarding
 
-见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.baseurl}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
+见[OC Runtime(零)：Runtime概述]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.url}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
 
 ### Item 13：Consider Method Swizzling to Debug Opaque Methods
 
-见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.baseurl}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
+见[OC Runtime(零)：Runtime概述]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(二)：Messaging Part I：消息机制和swizzling]({{site.url}}/01%20objective-c/2016/03/15/OC-Runtime(二)_Messaging_Part-I_消息机制和swizzling.html)。
 
 ### Item 14：Understand What a Class Object Is
 
-见[OC Runtime(零)：Runtime概述]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(一)：Object Model Part I：Object Hierarchy]({{site.baseurl}}/01%20objective-c/2016/03/13/OC-Runtime(%E4%B8%80)_Object-Model-Part-I_Object-Hierarchy.html)。
+见[OC Runtime(零)：Runtime概述]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)和[OC Runtime(一)：Object Model Part I：Object Hierarchy]({{site.url}}/01%20objective-c/2016/03/13/OC-Runtime(%E4%B8%80)_Object-Model-Part-I_Object-Hierarchy.html)。
 
 
 ## 2 Reference ##

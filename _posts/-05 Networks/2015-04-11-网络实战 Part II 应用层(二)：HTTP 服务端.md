@@ -44,7 +44,7 @@ HTTP Server的技术最早有以下三种：
 > **WSGI(Python Web Server Gateway Interface，Web服务器网关接口)**：是为Python语言定义的Web服务器和Web应用程序或框架之间的一种简单而通用的接口。WSGI 没有官方的实现, 因为WSGI更像一个协议. 只要遵照这些协议,WSGI应用(Application)都可以在任何服务器(Server)上运行, 反之亦然。WSGI在解耦了Web Server和Web App，称为它们中间的interface。因此任何Web App，从CGI到http.server到mod_python，只要实现了WSGI接口，就可以运行在任何Web Server上。
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-11-网络实战(十)：HTTP Server/WSGI.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-11-网络实战(十)：HTTP Server/WSGI.png)
 
 下面代码创建了1个``WSGIServer``。
 
@@ -96,7 +96,7 @@ WSGI协议在Web Server和Web App间提供了通用接口，但是它没有实�
 ### 1.4 Four Architectures ###
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-11-网络实战(十)：HTTP Server/4 Python Web Server Architectures.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-11-网络实战(十)：HTTP Server/4 Python Web Server Architectures.png)
 
 ### 1.5 Platforms as a Service ###
 
@@ -127,7 +127,7 @@ WSGI协议在Web Server和Web App间提供了通用接口，但是它没有实�
 ## 2 总结 ##
 
 {: .img_middle_mid}
-![Network Data & Error Summary](/assets/images/posts/2015-04-11-网络实战(十)：HTTP Server/HTTP Server Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-11-网络实战(十)：HTTP Server/HTTP Server Summary.png)
 
 
 ## 4 参考资料 ##

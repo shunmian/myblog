@@ -47,7 +47,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 JavaScript是一门弱类型语言(weakly typed language)
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-10/static vs dynamic and strong vs weak.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-10/static vs dynamic and strong vs weak.png)
 
 下面是一个JavaScript的对Fibonacci数列的实现，里面包括了函数声明，变量声明，匿名函数，函数调用等实例。
 
@@ -101,7 +101,7 @@ console.log(fibInstance()+" is in the Fibonacci sequence");
 
 2. 使用能**执行JavaScript**的Python module然后从网页中scrape就像你正常浏览一个网站一样。
 
-关于用Selenium 执行 JavaScript进行Web Scrape请见[这里]({{site.baseurl}}/web%20scraping/2015/12/15/Web-Scraping-A1-Selenium.html)。
+关于用Selenium 执行 JavaScript进行Web Scrape请见[这里]({{site.url}}/web%20scraping/2015/12/15/Web-Scraping-A1-Selenium.html)。
 
 ## 3 Handling Redirects ##
 
@@ -148,7 +148,7 @@ print(driver.page_source)
 
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-10/Scraping JavaScript Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-10/Scraping JavaScript Summary.png)
 
 {% highlight python linenos %}
 

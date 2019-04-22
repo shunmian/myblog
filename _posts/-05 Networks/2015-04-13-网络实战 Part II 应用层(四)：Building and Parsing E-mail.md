@@ -33,7 +33,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 ### 1.1 E-Mail Message Format ###
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-13-网络实战(十二)：Building and Parsing E-mail/E-mail Formating.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-13-网络实战(十二)：Building and Parsing E-mail/E-mail Formating.png)
 
  
 ### 1.2 Building an E-Mail Message ###
@@ -219,7 +219,7 @@ $ python3 display_email.py email.txt
 ## 2 总结 ##
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-13-网络实战(十二)：Building and Parsing E-mail/E-mail Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-13-网络实战(十二)：Building and Parsing E-mail/E-mail Summary.png)
 
 ## 3 参考资料 ##
 

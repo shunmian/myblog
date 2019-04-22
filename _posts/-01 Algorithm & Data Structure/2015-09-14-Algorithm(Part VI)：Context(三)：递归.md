@@ -51,7 +51,7 @@ shortinfo: 递归是算法中影响极其深远的一种思想，所以另开一
 
 
 {: .img_middle_hg}
-![1.2 Designing Algorithm.png](/assets/images/posts/01_Algorithm/2015-09-13_Algorithm(Part VI)：Context(二)：Reduction/1.2 Designing Algorithm.png)
+![1.2 Designing Algorithm.png]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-13_Algorithm(Part VI)：Context(二)：Reduction/1.2 Designing Algorithm.png)
 
 
 ### 1.3 Establishing Lower Bounds ###

@@ -22,7 +22,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 
 ### 1.1 Introduction ###
 
-前一篇文章[《线性分类(一)：图片分类问题及KNN》]({{site.baseurl}}/-07%20machine%20learning/2015/06/01/CNN-for-Visual-Recognition-Part-I-线性分类(一)-图片分类问题及KNN.html)我们介绍了**Image Classification**问题，即从固定的一组标签了给某幅图片选取对的标签。更进一步，我们用KNN(k最近邻)分类器尝试解决这一问题。但是KNN有着如下明显的弊端：
+前一篇文章[《线性分类(一)：图片分类问题及KNN》]({{site.url}}/-07%20machine%20learning/2015/06/01/CNN-for-Visual-Recognition-Part-I-线性分类(一)-图片分类问题及KNN.html)我们介绍了**Image Classification**问题，即从固定的一组标签了给某幅图片选取对的标签。更进一步，我们用KNN(k最近邻)分类器尝试解决这一问题。但是KNN有着如下明显的弊端：
 
 1. **空间昂贵**。分类器必须记住所有的training set。这在实际应用中依据具体traing set的大小会耗费几G甚至更多的存储空间。
 
@@ -103,14 +103,14 @@ f(x,\mathbf{W}_i,b) = \mathbf{W}_{i\times 2} x_{2 \times 1}+b_{i \times 1} - y_{
 
 
 {: .img_middle_lg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/pixelspace.jpeg)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/pixelspace.jpeg)
 
 ##### 1.2.1.2 Interpretation of Linear Classifiers as Template Matching #####
 
 另外一种对权重**W**的解读是其每一行都是1个类的模板(template)。而1幅图每个类的分数就是该类的模板和该图像素的内积。从这个角度来说，linear classifier就是在做**template matching**；而**template**就是从training set中学习得来的。或者换个角度来说，我们还是在做**Nearest Neighbor**，但是不同于对所有training set里的图片进行比较，我们只对学习得来的每个类的template进行比较，并且**距离**是**内积**而不是**L1**或**L2**。
 
 {: .img_middle_lg}
-![templates](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/templates.jpg)
+![templates]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/templates.jpg)
 
 上图是CIFAR-10数据获得的10个类各自的template。该如何解读这些模板呢。
 
@@ -143,7 +143,7 @@ $$
 对于第一项，正确的类的分数(13)远大于非正确的分数(-7)by a margin 10，因此该项loss为0；对于第二项，虽然正确的分数(13)大于非正确的分数(11)，但是大于的margin不够10，因此该项loss为8。**SVM loss**的本质是量化某classifier对training set的准确度，即正确项必须比其他项大于一定的余量，否则视为loss，用下图表示。
 
 {: .img_middle_lg}
-![SVM margin](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/SVM margin.jpg)
+![SVM margin]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/SVM margin.jpg)
 
 ##### 1.3.1.1 Regularization #####
 
@@ -216,7 +216,7 @@ $$\frac{e^{f_{y_i}}}{\sum_j e^{f_j}}
 
 
 {: .img_middle_hg}
-![svm vs softmax](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/svm vs softmax.png)
+![svm vs softmax]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/svm vs softmax.png)
 
 ##### 1.3.3.1 Softmax Classifier Provides “Probabilities” for Each Class #####
 
@@ -242,7 +242,7 @@ $$
 ## 2 Summary ###
 
 {: .img_middle_hg}
-![Score Function & Loss Function Summary](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/Score Function & Loss Function Summary.png)
+![Score Function & Loss Function Summary]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-02-CNN for Visual Recognition Part I：线性分类(二)：分数函数和损失函数(SVM,Softmax)/Score Function & Loss Function Summary.png)
 
 ## 3 参考资料 ##
 - ["CS231n: Convolutional Neural Networks for Visual Recognition"](http://cs231n.stanford.edu/);

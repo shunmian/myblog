@@ -188,7 +188,7 @@ WebPagetest
 api性能测试(LoadRunner JMeter).
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-23_Test/2018-04-01-Test Foundation/性能测试.png)
+![regular expression]({{site.url}}/assets/images/posts/-23_Test/2018-04-01-Test Foundation/性能测试.png)
 
 ## 6. 测试数据准备
 
@@ -238,7 +238,7 @@ GUI测试架构(Selenium Grid): 从本质上讲，Selenium Grid 是一种可以�
 ### 7.3 大型全球化电商的测试基础架构设计
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-23_Test/2018-04-01-Test Foundation/完整的测试架构.png)
+![regular expression]({{site.url}}/assets/images/posts/-23_Test/2018-04-01-Test Foundation/完整的测试架构.png)
 
 ## 8. 测试新技术
 

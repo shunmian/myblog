@@ -44,7 +44,7 @@ obj.isa = (uintptr_t)cls;
 ### 1.3 instance，class，metaClass对应例子 ###
 
 {: .img_middle_lg}
-![对应关系](/assets/images/posts/01 Objectiev C/2016-03-14-OC Runtime(一)_Object Model/对应关系.png)
+![对应关系]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-14-OC Runtime(一)_Object Model/对应关系.png)
 
 ## 2 题目 ##
 
@@ -239,7 +239,7 @@ void *ivar = &obj+offset(N)
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![Runtime_Object Model](/assets/images/posts/01 Objectiev C/2016-03-14-OC Runtime(一)_Object Model/Runtime_Object Model.png)
+![Runtime_Object Model]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-14-OC Runtime(一)_Object Model/Runtime_Object Model.png)
 
 ## 4 Reference ##
 

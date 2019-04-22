@@ -25,13 +25,13 @@ shortinfo: List是函数式Data Structure的一个典型，结合函数式的pat
 ### 2.1 List ###
 
 {: .img_middle_lg}
-![List summary](/assets/images/posts/2015-10-05/list summary.png)
+![List summary]({{site.url}}/assets/images/posts/2015-10-05/list summary.png)
 
 #### 2.1 基础 ####
 
 `List`在Scala里是**immutable**，它的实现是**recursive**的。
 
-`List`是一个抽象接口`Trait`，它的子类个数`Empty`和`NonEmpty`已经确定下来，因此根据我们上文[Pattern Matching]({{ site.baseurl}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合-Part-I-万物皆类-&&-函数式的体现.html#Pattern-Matching)和OOP decompostion的比较，接口方法的扩展在`Trait`里用**Pattern Matching**实现尤其方便。
+`List`是一个抽象接口`Trait`，它的子类个数`Empty`和`NonEmpty`已经确定下来，因此根据我们上文[Pattern Matching]({{ site.url}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合-Part-I-万物皆类-&&-函数式的体现.html#Pattern-Matching)和OOP decompostion的比较，接口方法的扩展在`Trait`里用**Pattern Matching**实现尤其方便。
 
 <ol>
 <li><b>构造器</b>，所有List从以下两种方法构造出来：</li>
@@ -350,7 +350,7 @@ msort(fruits)(Ordering.String)
 ### 2.2 Vector ###
 
 {: .img_middle_mid}
-![vector summary](/assets/images/posts/2015-10-05/vector summary.png)
+![vector summary]({{site.url}}/assets/images/posts/2015-10-05/vector summary.png)
 
 
 Vector的API大部分和List一样，主要区别是Vector适合操作大量数据而List适合那些操作(head::tail)模型的操作。对于32位为单位的Vector，它的深度M = log32(N)~O(lgN)，因此对于大量数据的读取，优于List的O(N)(List的元素不会保证在一个page上)。
@@ -368,7 +368,7 @@ Vector可以用`toList`转换成List，也可以用`x+:xs`或者`xs:+x`分别在
 `Range`表示一个有[lowerBound,UpperBound]和nonZero Step的整数序列。
 
 {: .img_middle_mid}
-![range summary](/assets/images/posts/2015-10-05/range summary.png)
+![range summary]({{site.url}}/assets/images/posts/2015-10-05/range summary.png)
 
 下面实现一个简单的栗子。给定两个整数N,M，给出所有的组合(i,j)，使得1<=i<= N且1<=j<= M；
 
@@ -461,7 +461,7 @@ Array和String在Scala里也是Sequence的子类，实现是Java的Array和Strin
 
 
 {: .img_middle_hg}
-![collection hierachy](/assets/images/posts/2015-10-05/collection hierachy.png)
+![collection hierachy]({{site.url}}/assets/images/posts/2015-10-05/collection hierachy.png)
 
 
 ## 6 参考资料 ##

@@ -30,7 +30,7 @@ shortinfo: String Sorting的下限是否可以比第二章的通过比较的Sort
 计数排序的代码如下。
 
 {: .img_middle_hg}
-![Counting Sorting](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.1 Counting Sorting.png)
+![Counting Sorting]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.1 Counting Sorting.png)
 
 什么情况下可以用counting sorting？
 
@@ -41,7 +41,7 @@ shortinfo: String Sorting的下限是否可以比第二章的通过比较的Sort
 > **LSD(Least Sigfinicant Digits) Radix Sorting**:从最小位(因为字母的ASCII码等同于数字),即右边开始向左边，依次进行计数排序。
 
 {: .img_middle_hg}
-![LSD](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.2 LSD.png)
+![LSD]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.2 LSD.png)
 
 计数排序需要所有String拥有相同的长度。
 
@@ -50,7 +50,7 @@ shortinfo: String Sorting的下限是否可以比第二章的通过比较的Sort
 > **MSD(Most Sigfinicant Digits) Radix Sorting** : 从最大位,即左边开始向右，依次进行计数排序。MSD不需要String拥有相同的长度。
 
 {: .img_middle_hg}
-![MSD](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.3 MSD.png)
+![MSD]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.3 MSD.png)
 
 MSD的缺点是当subarray很小的时候，创建``int[] count``很昂贵，这个时候可以用insertion sorting来cutoff。
 
@@ -62,22 +62,22 @@ MSD和快排很类似，最高位先作为pivot，来partition，然后pivot左�
 > **3-way String Quicksort**:Do 3-way partitioning on the $ d_th $ character. Less overhead than R-way partitioning in MSD string sort.
 
 {: .img_middle_hg}
-![MSD](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.4 3-way string quicksort.png)
+![MSD]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.4 3-way string quicksort.png)
 
 
 ### 1.5 Suffix Arrays  ###
 
 
 {: .img_middle_hg}
-![Longest Repeated String](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.5.0 Longest Repeated String.png)
+![Longest Repeated String]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.5.0 Longest Repeated String.png)
 
 {: .img_middle_hg}
-![Manber-Myers MSD algorithm](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.5 Manber-Myers MSD algorithm.png)
+![Manber-Myers MSD algorithm]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.5 Manber-Myers MSD algorithm.png)
 
 ### 1.6 Summary ###
 
 {: .img_middle_hg}
-![String Sorting Summary](/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.6 String Sorting Summary.png)
+![String Sorting Summary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-09_Algorithm(Part V)：String(一)：Sorting/1.6 String Sorting Summary.png)
 
 
 ## 2 总结 ##

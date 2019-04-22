@@ -25,7 +25,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 2 总结 ##
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+![Network overview]({{site.url}}/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
 
 
 ## 3 Reference ##

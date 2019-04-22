@@ -21,7 +21,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-07-07-Computer System Part II Program On System(一)：Linking/Chapter 7 Linking.png)
+![Network overview]({{site.url}}/assets/images/posts/2014-07-07-Computer System Part II Program On System(一)：Linking/Chapter 7 Linking.png)
 
 ## 2 Reference ##
 

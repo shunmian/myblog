@@ -340,7 +340,7 @@ if __name__ == '__main__':
 
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-13/Unit Test Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-13/Unit Test Summary.png)
 
 
 

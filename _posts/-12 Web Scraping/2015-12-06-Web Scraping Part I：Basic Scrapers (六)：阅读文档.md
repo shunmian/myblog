@@ -19,7 +19,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 {:.hr-short-left}
 
 
-上篇[文章]({{ site.baseurl}}/web%20scraping/2015/12/05/Web-Scraping-Part-I-Basic-Scrapers-(五)-存储数据.html)我们已经介绍过如何将数据存储到**Media File**，**CSV**，**MySQL**。本文我们来看看如何对**文档(Docuement)**进行阅读。
+上篇[文章]({{ site.url}}/web%20scraping/2015/12/05/Web-Scraping-Part-I-Basic-Scrapers-(五)-存储数据.html)我们已经介绍过如何将数据存储到**Media File**，**CSV**，**MySQL**。本文我们来看看如何对**文档(Docuement)**进行阅读。
 
 Internet不仅仅是由网页(HTML文件)构成，还包括其他在Internet上传输和存储的数据，比如text,PDF,images, video, email等。在1992年HTML发明之前，网页还不存在；在那之后，HTML文件本质上只是展示网页数据的一个外壳，真正传输网页数据的比如有XML，JSON等数据格式。
 
@@ -61,7 +61,7 @@ Output:
 **ASCII**，**Unicode**，**UTF-8**之间的关系见下图。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-06/character set.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-06/character set.png)
 
 > **UTF-8**： a character encoding with variable-length and 8-bit code units，capable of encoding all possible characters defined by Unicode. UTF-8 is the dominant character encoding for the World Wide Web, accounting for 87.2% of all Web pages in July 2016。
 
@@ -282,14 +282,14 @@ for textTag in textTags:
 reading document summary
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-06/reading document summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-06/reading document summary.png)
 
 ## 4 Web Scraping Part I：Basic Scrapers 总结 ##
 
 到此为止，我们的WebScraping系列的第一部分，**Basic Scrapers**就已经全部结束。通过这6篇笔记，相信您对Web scraping已经有了一个初步的了解，比如如何获取数据(Retrieve Data)，解析不同文件类型的数据(Parse Data, includes html,xml,txt,pdf,csv,doc&docx等)。我们将本部分总结成下图以供参考。
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-06/Web Scraping Part I Basic Scrapers summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-06/Web Scraping Part I Basic Scrapers summary.png)
 
 
 

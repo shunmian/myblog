@@ -42,7 +42,7 @@ This book explains topics such as
 
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/client mysql.jpg)
 
 
 ## 4 参考资料 ##

@@ -21,7 +21,7 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-02-01-Unix Commad Line/mac terminal command summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-02-01-Unix Commad Line/mac terminal command summary.png)
 
 
 ## 2 补充 

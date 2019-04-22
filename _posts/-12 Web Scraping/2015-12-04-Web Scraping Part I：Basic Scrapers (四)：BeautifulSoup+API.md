@@ -19,7 +19,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 {:.hr-short-left}
 
 
-上篇[文章]({{ site.baseurl}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(三)-BeautifulSoup实战.html)我们已经介绍过**BeautifulSoup**实战中对多**单域名**和**多域名**以及**随机抓取**和**完全抓取**等5个任务的实现。本文我们来看看**API**的单独应用以及如何结合API与BeautifulSoup进行Web Scraping。
+上篇[文章]({{ site.url}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(三)-BeautifulSoup实战.html)我们已经介绍过**BeautifulSoup**实战中对多**单域名**和**多域名**以及**随机抓取**和**完全抓取**等5个任务的实现。本文我们来看看**API**的单独应用以及如何结合API与BeautifulSoup进行Web Scraping。
 
 ## 1 API ##
 
@@ -44,7 +44,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 见下图。
 
 {: .img_middle_lg}
-![API VS Website](/assets/images/posts/2015-12-04/API VS Website.png)
+![API VS Website]({{site.url}}/assets/images/posts/2015-12-04/API VS Website.png)
 
 
 区别于**Web Scraping**，API通常有一套标准，包括**Common Convetion(Methods,Authentication)**和**Response**。因此只要网络上标准的API，主体上必然满足这样的标准。但是细节上可能有所不同，这个时候，阅读API documentation就必不可少了。
@@ -67,7 +67,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 虽然HTTP还有很多其他通讯方式，以上4种却是所有API涉及到的全部方式。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-04/HTTP4Way.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-04/HTTP4Way.png)
 
 ##### 1.1.1.2 Authentication #####
 
@@ -86,7 +86,7 @@ API除了以上4种HTTP协议的通讯方式，其**授权(Authentication)**也�
 一个典型的API Call的格式如下图。
 
 {: .img_middle_lg}
-![API Call Format](/assets/images/posts/2015-12-04/API Call Format.png)
+![API Call Format]({{site.url}}/assets/images/posts/2015-12-04/API Call Format.png)
 
 ### 1.2 API实例 ###
 
@@ -214,7 +214,7 @@ print(jsonObj.get("arrayOfFruits")[2].get("fruit"))
 json是Python Core Library中的一个库，不像其他语言将JSON文件转换成JSON object或者JSON node，Python用更灵活的方式将JSON objects转成dictionaries, JSON arrays转成lists, JSON strings转成strings等等。
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-04/JSON.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-04/JSON.png)
 
 ## 2 APIs + BeautifulSoup ##
 
@@ -325,7 +325,7 @@ start("/wiki/Kevin_Bacon")
 
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-04/API Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-04/API Summary.png)
 
 
 

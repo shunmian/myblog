@@ -51,7 +51,7 @@ shortinfo: 。
 
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/client mysql.jpg)
 
 {% highlight mysql linenos %}
 

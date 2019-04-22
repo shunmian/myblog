@@ -37,7 +37,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 2 总结 ##
 
 {: .img_middle_hg}
-![Chapter 2 Information 总结](/assets/images/posts/2014-07-02-Computer System Part I Program(一)：Data/Chapter 2 Information 总结.png)
+![Chapter 2 Information 总结]({{site.url}}/assets/images/posts/2014-07-02-Computer System Part I Program(一)：Data/Chapter 2 Information 总结.png)
 
 
 ## 3 lab ##

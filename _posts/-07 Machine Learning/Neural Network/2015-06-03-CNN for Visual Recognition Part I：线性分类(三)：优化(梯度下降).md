@@ -20,7 +20,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 
 ## 1 Optimization ##
 
-[上一篇文章]({{site.baseurl}}/-07%20machine%20learning/2015/06/02/CNN-for-Visual-Recognition-Part-I-线性分类(二)-分数函数和损失函数(SVM,Softmax))介绍了图片分类问题中的两个key components：
+[上一篇文章]({{site.url}}/-07%20machine%20learning/2015/06/02/CNN-for-Visual-Recognition-Part-I-线性分类(二)-分数函数和损失函数(SVM,Softmax))介绍了图片分类问题中的两个key components：
 
 1. **评分函数(Score Function)**：将原始数据映射到预测label；
 
@@ -43,7 +43,7 @@ $$
 2. **2维平面**。同理，我们随机选取某个$$W_r$$，然后取某个2维平面的正交单位向量$$W_1$$和$$W_2$$，那么该平面上所有的点可以表示成$$W_r+aW_1+bW_2$$，其对应的损失就是$$L(W_r+aW_1+bW_2)$$。画出$$L(W_r+aW_1+bW_2)$$ vs $$(W_r+aW_1+bW_2)$$的图像就如下图中图所示。如果取多个loss的平均值，即$$\frac{1}{N}\sum_i {L_i(W_r+aW_1+bW_2)}$$，则如下图右图所示。
 
 {: .img_middle_lg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-03-CNN for Visual Recognition Part I：线性分类(三)：优化(随机梯度下降)/loss visualization.png)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-03-CNN for Visual Recognition Part I：线性分类(三)：优化(随机梯度下降)/loss visualization.png)
 
 对于线性分类，损失函数是1个凹函数(convex function)，而最小点沿着梯度很容易找到。而对于NN或者CNN，损失函数就不再是凹函数了，而是复杂的起伏不定的形状，对其寻找最低点的过程，我们后面会细讲，这里暂时按下不表。
 
@@ -199,7 +199,7 @@ while True:
 ## 2 Summary ##
 
 {: .img_middle_hg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-03-CNN for Visual Recognition Part I：线性分类(三)：优化(随机梯度下降)/Optimization Summary.png)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-03-CNN for Visual Recognition Part I：线性分类(三)：优化(随机梯度下降)/Optimization Summary.png)
 
 
 

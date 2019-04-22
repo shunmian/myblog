@@ -20,7 +20,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 
 ## 1 Command-Line ##
 
-见[Unix command line]({{site.baseurl}}/unix/2015/02/01/Unix-Command-Line.html)。
+见[Unix command line]({{site.url}}/unix/2015/02/01/Unix-Command-Line.html)。
 
 ### 1.1 在Python中运行命令行：subprocess ###
 
@@ -69,7 +69,7 @@ Telnet有以下几个特点：
 为了测试网络客户端和服务端，本书作者建立了1个虚拟的服务端，称为playgraound。运行该playground需要安装[virtualBox](https://www.virtualbox.org/wiki/Downloads)和[vagrant](https://www.vagrantup.com/)。具体步骤见[playgraound](https://github.com/brandon-rhodes/fopnp/tree/m/playground)。下面是整个框架供参考。
 
 {: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-17-网络实战(十六)：Telnet & SSH/FOPNP playground.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-17-网络实战(十六)：Telnet & SSH/FOPNP playground.png)
 
 我们进入SSH进入到h1，用telnet连接ftp.example.com看看。
 
@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
  传统的网络服务程序，如rsh、FTP、POP和Telnet其本质上都是不安全的；因为它们在网络上用明文传送数据、用户帐号和用户口令，很容易受到中间人（man-in-the-middle）攻击方式的攻击。就是存在另一个人或者一台机器冒充真正的服务器接收用户传给服务器的数据，然后再冒充用户把数据传给真正的服务器。 而SSH是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用SSH协议可以有效防止远程管理过程中的信息泄露问题。通过SSH可以对所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗。 SSH之另一项优点为其传输的数据可以是经过压缩的，所以可以加快传输的速度。SSH有很多功能，它既可以代替Telnet，又可以为FTP、POP、甚至为PPP提供一个安全的“通道”。
 
- 对于SSH的加密方式需要特别注意。如果读者了解[SSL]({{site.baseurl}}/networks/2015/04/07/网络实战-Part-I-传输层(五)-TLS&SSL.html)的加密：
+ 对于SSH的加密方式需要特别注意。如果读者了解[SSL]({{site.url}}/networks/2015/04/07/网络实战-Part-I-传输层(五)-TLS&SSL.html)的加密：
 
  1. 对称公钥传输加密内容；
 
@@ -156,7 +156,7 @@ if __name__ == '__main__':
 
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-17-网络实战(十六)：Telnet & SSH/Telnet & SSH Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-17-网络实战(十六)：Telnet & SSH/Telnet & SSH Summary.png)
 
 
 ## 5 参考资料 ##

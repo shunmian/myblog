@@ -30,7 +30,7 @@ shortinfo: ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。�
 新开1个工程，在**Build Phases**的`AppDelegate.m`里添加`-fno-objc-arc`，可以开启MRC模式。
 
 {: .img_middle_mid}
-![MRC command](/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/MRC command.png)
+![MRC command]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/MRC command.png)
 
 输入如下代码。
 
@@ -92,7 +92,7 @@ shortinfo: ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。�
 **属性修饰符**对应的4种**所有权修饰符**如下所示：
 
 {: .img_middle_lg}
-![ARC4种对象所有权修饰符 vs 属性修饰符](/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/ARC4种对象所有权修饰符 vs 属性修饰符.png)
+![ARC4种对象所有权修饰符 vs 属性修饰符]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/ARC4种对象所有权修饰符 vs 属性修饰符.png)
 
 
 ### 2.1 __weak ###

@@ -46,24 +46,24 @@ WHERE gender = 'FEMALE'
 **What does `From R1, R2` actually mean**:  The `From R1, R2` forms a cartesian product with r1 * r2's combination. It's like two for loop that generates all possible combination. The next question is that how to do it efficiently with nested for loops.
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 SQL_Summary.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 SQL_Summary.png)
 
 #### 1.1.2 Intermediate
 
 ##### 1.1.2.1 Views
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8_2 Views.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8_2 Views.png)
 
 ##### 1.1.2.2 Transactions 
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8 Transactions.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH8 Transactions.png)
 
 ##### 1.1.2.3 Authorization
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH10 Authorization.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH10 Authorization.png)
 
 #### 1.1.3 Advanced
 
@@ -72,12 +72,12 @@ WHERE gender = 'FEMALE'
 **What is a Trigger**: A trigger is a statement that the system executes automaticlaly as a side effect of a modification to the database when a event occurs. In a word, a trigger is an event listener in database.
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH7 Contraints and Triggers.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH7 Contraints and Triggers.png)
 
 ##### 1.1.3.2 Recursion
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6_2 SQL.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6_2 SQL.png)
 
 ##### 1.1.3.3 Functions
 
@@ -103,12 +103,12 @@ WHERE dept_count(dept_name) > 12
 **What is OLAP**: provide the function to view different summaries of multidimensional data.
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH20 OLAP.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH20 OLAP.png)
 
 ##### 1.1.3.5 Index
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 Index.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_CH6 Index.png)
 
 
 
@@ -117,7 +117,7 @@ WHERE dept_count(dept_name) > 12
 ### A2 NoSQL Systems
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_A2 NoSQL.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-01-DBMS Concepts 1：Relational Database/DBCB_A2 NoSQL.png)
 
 #### A0 course Notes
 

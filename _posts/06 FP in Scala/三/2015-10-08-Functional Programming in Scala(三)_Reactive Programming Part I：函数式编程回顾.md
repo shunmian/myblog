@@ -24,7 +24,7 @@ shortinfo: 本文将对函数式编程做一个总结，回顾函数式数据类
 
 ### 2.1 函数式数据类型(Pattern Matching) ###
 
-函数式数据类型的实现来源于函数式函数的实现，而后者的实现就是基于**Pattern Matching**的。**Pattern Matching**其实是对函数**分流**本质的体现，特别是在输入Pattern对应不同的输出表达式的函数，比如递归在退出条件里和在一般条件里的输出表达式是不一样的。而**Pattern Mathing**简化了这一**分流**的实现。关于**Pattern Match vs Decomposition** 用来扩展类的方法的好处，我们在[这篇文章]({{ site.baseurl}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合-Part-I-万物皆类-&&-函数式的体现.html#pattern-matching)中讨论过。如果对于子类种类固定的父类来扩展方法，**Pattern Matching** 更方便；如果对于子类种类个数会增加的父类来扩展方法，则用Decompostion更灵活。下面是**Scala**用**Pattern Matching**对**JSON**的一种实现。
+函数式数据类型的实现来源于函数式函数的实现，而后者的实现就是基于**Pattern Matching**的。**Pattern Matching**其实是对函数**分流**本质的体现，特别是在输入Pattern对应不同的输出表达式的函数，比如递归在退出条件里和在一般条件里的输出表达式是不一样的。而**Pattern Mathing**简化了这一**分流**的实现。关于**Pattern Match vs Decomposition** 用来扩展类的方法的好处，我们在[这篇文章]({{ site.url}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合-Part-I-万物皆类-&&-函数式的体现.html#pattern-matching)中讨论过。如果对于子类种类固定的父类来扩展方法，**Pattern Matching** 更方便；如果对于子类种类个数会增加的父类来扩展方法，则用Decompostion更灵活。下面是**Scala**用**Pattern Matching**对**JSON**的一种实现。
 
 {% highlight scala linenos %}
 
@@ -139,7 +139,7 @@ trait Seq[Elem] extends Int => Elem ...
 在Scala里，Collection作为**Algebraic Data Type(ADT)**，它的Class Hierachy 如下图所示。
 
 {: .img_middle_hg}
-![collection hierachy](/assets/images/posts/2015-10-08/collection hierachy.png)
+![collection hierachy]({{site.url}}/assets/images/posts/2015-10-08/collection hierachy.png)
 
 这些Collection子类都有一些重要的高阶函数，如`map`，`flatMap`，`filter`和`foldLeft`，`foldRight`等。List对其中一些方法的实现如下。
 
@@ -228,7 +228,7 @@ for {
 4. 还有一点需要注意的是性能问题，对于之前探索过的`Set[State]`，`Path`extend后要过滤掉回到之前`State`的Path。
 
 {: .img_middle_mid}
-![water pouring](/assets/images/posts/2015-10-07/water pouring.png)
+![water pouring]({{site.url}}/assets/images/posts/2015-10-07/water pouring.png)
 
 
 

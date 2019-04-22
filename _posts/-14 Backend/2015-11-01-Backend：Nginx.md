@@ -27,7 +27,7 @@ The run-loop is the most complicated part of the nginx worker code. It includes 
 Because nginx spawns several workers to handle connections, it scales well across multiple cores. Generally, a separate worker per core allows full utilization of multicore architectures
 
 {: .img_middle_hg}
-![Nginx_architecture](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_architecture.png)
+![Nginx_architecture]({{site.url}}/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_architecture.png)
 
 
 config file structure
@@ -56,7 +56,7 @@ main
 ### 2.1 Nginx请求处理流程
 
 {: .img_middle_hg}
-![Ngin_requst_handle_procedure](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_requst_handle_procedure.png)
+![Ngin_requst_handle_procedure]({{site.url}}/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_requst_handle_procedure.png)
 
 ### 2.2 Nginx进程模型
 
@@ -65,7 +65,7 @@ main
 Nginx的work数通常和cpu数一致，并且会一个work绑定一个cpu，这样可以更好的利用CPU缓存，减少缓存失效的命中率。
 
 {: .img_middle_hg}
-![Nginx_process_model](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_process_model.png)
+![Nginx_process_model]({{site.url}}/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_process_model.png)
 
 
 1. 一个父进程(10232)两个子进程(11880, 11902);
@@ -73,7 +73,7 @@ Nginx的work数通常和cpu数一致，并且会一个work绑定一个cpu，这�
 3. 当其中一个子进程挂掉后,父进程会收到`SIGCHLD`信号，进而再新建1个子进程(11975)。
 
 {: .img_middle_hg}
-![Nginx_process_demon](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_process_demon.png)
+![Nginx_process_demon]({{site.url}}/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_process_demon.png)
 
 
 
@@ -88,7 +88,7 @@ Nginx的work数通常和cpu数一致，并且会一个work绑定一个cpu，这�
 
 
 {: .img_middle_hg}
-![Nginx_process_demon](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Part2_nginx_架构基础.png)
+![Nginx_process_demon]({{site.url}}/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Part2_nginx_架构基础.png)
 
 
 ## 3 详解HTTP模块
@@ -100,7 +100,7 @@ Nginx的work数通常和cpu数一致，并且会一个work绑定一个cpu，这�
 ## 6 从源码视角深入使用Nginx与OpenResty
 
 {: .img_middle_hg}
-![NodeJS](/assets/images/posts/-14_Backend/2015-10-09-Backend：Server Architecture/NodeJS.png)
+![NodeJS]({{site.url}}/assets/images/posts/-14_Backend/2015-10-09-Backend：Server Architecture/NodeJS.png)
 
 ## 2 参考资料 ##
 

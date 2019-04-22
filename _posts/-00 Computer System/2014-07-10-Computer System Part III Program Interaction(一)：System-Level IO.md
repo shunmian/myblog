@@ -21,7 +21,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Chapter 10 System Level IO 总结](/assets/images/posts/2014-07-10-Computer System Part III Program Interaction(一)：System-Level IO/Chapter 10 System Level IO 总结.png)
+![Chapter 10 System Level IO 总结]({{site.url}}/assets/images/posts/2014-07-10-Computer System Part III Program Interaction(一)：System-Level IO/Chapter 10 System Level IO 总结.png)
 
 
 ## 2 Reference ##

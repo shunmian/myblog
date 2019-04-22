@@ -30,7 +30,7 @@ In project root directory, run `javac MyClass.java` to compile `Myclass.java` to
 > **Encapsulation (Information Hiding)**: instance field is the **state** of an instance, which should be only accessed (read write) via instance method. If any instance field is changed from outside without calling the instance method, encapsulation is broken.
 
 {: .img_middle_hg}
-![JS React Summary](/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png)
+![JS React Summary]({{site.url}}/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png)
 
 #### 4.2 Relationship between classed
 
@@ -58,7 +58,7 @@ In project root directory, run `javac MyClass.java` to compile `Myclass.java` to
 
 #### 5.7 Reflection
 
-More like `Objc` **Meta Class**, see [here]({{site.baseurl}}/01%20objective-c/2016/03/05/OC-Runtime(一)_Object-Model-Part-I_Object-Hierarchy.html).
+More like `Objc` **Meta Class**, see [here]({{site.url}}/01%20objective-c/2016/03/05/OC-Runtime(一)_Object-Model-Part-I_Object-Hierarchy.html).
 
 ### 6 Interface, Lambda, Inner Class, Proxy
 

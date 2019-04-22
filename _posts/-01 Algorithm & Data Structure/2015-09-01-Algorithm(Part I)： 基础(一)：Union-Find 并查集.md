@@ -21,8 +21,8 @@ shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。�
 我们先来看下面一个问题:
 
 {: .img_middle_mid}
-![Percolation](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/percolation.png)
-![Percolation](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/thresh.png)
+![Percolation]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/percolation.png)
+![Percolation]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/thresh.png)
 
 上图是一个n*n的网格，起初每个网格都是关闭的（显示黑色）。我们开启一个个网格(白色)。求开启多少个网格后，上面才会和下面联通,即想象网格上面是水流，网格是一个管道，开启的格子可以流水，得平均开启多少个网格后水流才能通过网格流下来。求这个开启网格占总网格的比例。
 
@@ -31,7 +31,7 @@ shortinfo: Union-Find并查集用于检查元素是否属于同一个集合。�
 这类问题称为**Dynamic Connectivity(动态连接)**。解决这类问题我们得通过Union-Find(并查集)数据结构。可以将这类问题的共性提取出来，用下列API表示。因此解决**Dynamic Connectivity(动态连接)**问题也就退化成实现下列API。
 
 {: .img_middle_hg}
-![0_Union Find问题建模](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/0_Union Find问题建模.png)
+![0_Union Find问题建模]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/0_Union Find问题建模.png)
 
 
 
@@ -141,7 +141,7 @@ UF_QuickUnion的`find`时间复杂度是o(N),`union`也是o(N)。如果我们要
 9. Ancestor: A node reachable by repeated proceeding from child to parent.
 
 {: .img_middle_mid}
-![Percolation](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/tree.png)
+![Percolation]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/tree.png)
 
 然后我们来看下`UF_WieghtedQuickUnion`的实现:
 
@@ -209,7 +209,7 @@ public class UF_WieghtedQuickUnion extends UF{
 
 
 {: .img_middle_mid}
-![Percolation](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/Union_Find_complexity.png)
+![Percolation]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/Union_Find_complexity.png)
 
 ## 3 算法分析初步 ##
 
@@ -221,7 +221,7 @@ public class UF_WieghtedQuickUnion extends UF{
 
 
 {: .img_middle_mid}
-![Percolation](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/Analytical Engine.png)
+![Percolation]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/Analytical Engine.png)
 
 那么，问题来了：
 
@@ -255,7 +255,7 @@ T<sub>N</sub> = Cost<sub>1</sub> × Frequency<sub>1</sub> + ... + Cost<sub>N</su
 先看我们取到的数据。
 
 {: .img_middle_mid}
-![problem size](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/problem size.png)
+![problem size]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/problem size.png)
 
 首先假设T(N)的形式，不多解释(设为指数形式T(N) = ca<sup>N</sup>可以直接去撞墙)，默认为幂指数函数T(N) = aN<sup>b</sup>，然后通过常规的待定系数的方法，首先对T(N)两边取log，得到表达式：
 <p style="text-align: center;">
@@ -265,7 +265,7 @@ log(T<sub>N</sub>) = blogN + loga
 利用以上数据绘制log-log图，得到：
 
 {: .img_middle_mid}
-![log-log](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/log.png)
+![log-log]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/log.png)
 
 然后就可以用**linear regression**的方法待定求出a和b啦，最后结果是这个
 <p style="text-align: center;">
@@ -288,7 +288,7 @@ log(Ratio) = b
 也就是说，当N不停翻倍并且比较大的时候，log(Ratio)是趋向于b的，这样好办了，我们于是算算log(Ratio)的变化：
 
 {: .img_middle_mid}
-![log ratio](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/log ratio.png)
+![log ratio]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/log ratio.png)
 
 太棒了，一眼就看出了b = 3，然后接下来的只需要用任意一个点待定出剩下的a就OK了。但是程序员是不会局限于用做实验的low方法给出算法复杂度的，他们一般都追求数学上的完备，于是接下来介绍如何用数学的方法应对算法复杂度。
 
@@ -388,7 +388,7 @@ a[k] = -(a[i] + a[j])
 一个容易想到的答案是，必须得要Θ(N)才行，再给出结论之前，先看下面一张图：
 
 {: .img_middle_mid}
-![problem size](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/problem size.png)
+![problem size]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/problem size.png)
 
 分析一下上图，首先人类设计的通用计算机已经早在1970s就能解决所有复杂度为Θ(1)和Θ(logN)的算法，这是一个值得骄傲的事情。那么，对于稍微复杂的Θ(N)呢，到了2000s也能在1s内计算10亿次，键值吓尿了，虽说不上any，但是也是妥妥的搞定了。这样，必须得让算法复杂度降到Θ(N)的要求显得有点高，不妨放宽一点，Θ(NlogN)怎么样。
 
@@ -406,15 +406,15 @@ a[k] = -(a[i] + a[j])
 相比于时间复杂度的计算，空间复杂度相对容易一些，只需要把所有闸弄的内存加起来即可。下图给出了JVM中一些基本类型的占用内存情况。
 
 {: .img_middle_mid}
-![memory_0](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/memory_0.png)
+![memory_0]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/memory_0.png)
 
 注意在JVM的实现中，堆得占用情况是**按8bytes对齐**的，因此会看到boolean等类型向上取到了8bytes，不够的部分JVM会自动填补。
 
 要注意的是Object有16 bytes的overhead用于存储Object的信息; 指针大小为8 bytes; padding是确保每一个Object的大小都是8的倍数; 如果有内部类，则有额外的reference 8 byte指向所在的类。
 
 {: .img_middle_mid}
-![memory_1](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/memory_1.png)
-![memory_2](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/memory_2.png)
+![memory_1]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/memory_1.png)
+![memory_2]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/memory_2.png)
 
 在内存已经如此廉价的今天，已经没有太大必要深究内存的占用情况，一种性价比高的方法是开启`-XX:+UseCompressedOops`选项，这个选项会把Object Reference有16bytes降到8bytes，其他的就多使用原始类型吧，详细的优化原理请参见[这里](http://btoddb-java-sizing.blogspot.hk/)
 
@@ -445,7 +445,7 @@ public class Percolation {
 最后上一张跑分图。
 
 {: .img_middle_lg}
-![score](/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/score.png)
+![score]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-01_Algorithm(Part I)： 基础(一)：Union-Find 并查集/score.png)
 
 
 

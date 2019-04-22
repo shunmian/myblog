@@ -33,7 +33,7 @@ shortinfo: 本文对mac unix-like系统的常用命令做一个总结。
 ## 2 Summary ##
 
 {: .img_middle_hg}
-![Understanding UnixLinux Programming Summary](/assets/images/posts/-02_Operating System/2015-02-02-Understanding Unix&Linux Programming/Understanding UnixLinux Programming Summary.png)
+![Understanding UnixLinux Programming Summary]({{site.url}}/assets/images/posts/-02_Operating System/2015-02-02-Understanding Unix&Linux Programming/Understanding UnixLinux Programming Summary.png)
 
 
 ## 3 参考资料 ##

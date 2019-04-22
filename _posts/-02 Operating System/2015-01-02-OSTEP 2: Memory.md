@@ -23,7 +23,7 @@ shortinfo: OSTEP Virtual Memory。
 
 
 {: .img_middle_hg}
-![VM_Summary](/assets/images/posts/-02_Operating System/OSTEP/2015-01-02-OSTEP 2_VM/VM_Summary.png)
+![VM_Summary]({{site.url}}/assets/images/posts/-02_Operating System/OSTEP/2015-01-02-OSTEP 2_VM/VM_Summary.png)
 
 ## 2 参考资料 ##
 

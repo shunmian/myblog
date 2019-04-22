@@ -125,7 +125,7 @@ def isCommon(ngram):
 
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-08/Markov Models.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-08/Markov Models.png)
 
 那么如何利用**马尔可夫模型**和总统演讲稿的内容自动生成有原始文章气质的100个单词的句子呢。请看下面代码。
 
@@ -214,7 +214,7 @@ print(makeupSentence)
 
 ### 2.3 Six Degree Wikipedia Conclusion###
 
-之前我们在[第3篇笔记:BeautifulSoup实战]({{ site.baseurl}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(%E4%B8%89)-BeautifulSoup%E5%AE%9E%E6%88%98.html)中介绍过六度维基理论并且在[第5篇笔记:数据存储]({{ site.baseurl}}/web%20scraping/2015/12/05/Web-Scraping-Part-I-Basic-Scrapers-(五)-数据存储.html)中将数据存成两张Table，即pages(ID,URL)和links(ID,fromPageID,toPageID)。但是对于如何从**Kevin Bacon**找到目标，我们还没有去解决。本部分我们将用**有向图(Directed Graph)**的**宽度搜索(Breadth-First Search)**算法来完成这个六度维基理论这个project。
+之前我们在[第3篇笔记:BeautifulSoup实战]({{ site.url}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(%E4%B8%89)-BeautifulSoup%E5%AE%9E%E6%88%98.html)中介绍过六度维基理论并且在[第5篇笔记:数据存储]({{ site.url}}/web%20scraping/2015/12/05/Web-Scraping-Part-I-Basic-Scrapers-(五)-数据存储.html)中将数据存成两张Table，即pages(ID,URL)和links(ID,fromPageID,toPageID)。但是对于如何从**Kevin Bacon**找到目标，我们还没有去解决。本部分我们将用**有向图(Directed Graph)**的**宽度搜索(Breadth-First Search)**算法来完成这个六度维基理论这个project。
 
 
 {% highlight python linenos %}
@@ -463,7 +463,7 @@ for sentence in sentences:
 
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-08/NL Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-08/NL Summary.png)
 
 
 ## 6 参考资料 ##

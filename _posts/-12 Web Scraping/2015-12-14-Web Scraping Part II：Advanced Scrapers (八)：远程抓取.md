@@ -128,7 +128,7 @@ driver.close()
 本文总结成下图。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-14/Scraping Remotely Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-14/Scraping Remotely Summary.png)
 
 
 ## 6 本系列总结 ##
@@ -136,12 +136,12 @@ driver.close()
 ### 6.1 Web Scraping Final Summary ###
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-14/Web Scraping Final Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-14/Web Scraping Final Summary.png)
 
 ### 6.2 Web Scraping Final Summary with Details ###
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-14/Web Scraping Final Summary Detail.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-14/Web Scraping Final Summary Detail.png)
 
 ## 7 参考资料 ##
 

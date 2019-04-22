@@ -20,7 +20,7 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 ## 1. 什么是函数式编程 ##
 
 {: .img_middle_lg}
-![Programming Paradigm](/assets/images/posts/2015-10-01/Programming Paradigm.png)
+![Programming Paradigm]({{site.url}}/assets/images/posts/2015-10-01/Programming Paradigm.png)
 
 编程范式的发展有两个正交的方向，一个是从**数据和函数的封装**的角度(Non-OOP to OOP), 另一个是**数据和函数的关系**角度(命令式编程(函数围绕数据)和函数式编程(数据围绕函数))。
 
@@ -80,12 +80,12 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 下面举个栗子：
 
 {: .img_middle_lg}
-![λ Calculus vs Scala](/assets/images/posts/2015-10-01/λ Calculus vs Scala.png)
+![λ Calculus vs Scala]({{site.url}}/assets/images/posts/2015-10-01/λ Calculus vs Scala.png)
 
 
 ### 2.2 函数(Function) 和 Block(匿名函数) ###
 
-在**λ-Calculus**里，我们定义了**Primitive Data Type**(int，doulbe，boolean等)和**Primitive Procedure**(， +，-，*，/，和[conditionals]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#conditonals)）。如何运用Primitive Procedure来创造Compound Procedure从而可以更模块化，更抽象化地提高语言的表达能力呢？这个时候我们就要用到函数了。
+在**λ-Calculus**里，我们定义了**Primitive Data Type**(int，doulbe，boolean等)和**Primitive Procedure**(， +，-，*，/，和[conditionals]({{ site.url}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#conditonals)）。如何运用Primitive Procedure来创造Compound Procedure从而可以更模块化，更抽象化地提高语言的表达能力呢？这个时候我们就要用到函数了。
 
 >**Function**：the compound procedure based on primitive procedures to improve modularity，conceptual level and expressive ability of the language.
 
@@ -94,13 +94,13 @@ shortinfo: 函数式编程(Functional Programming)和命令式编程属于两种
 其实函数和变量在形式上是一回事，定义的时候有**关键词**，有**名字**，有**类型**，有**字面值(Literal)**。匿名函数(Block)是函数的**字面值**，只不过在写匿名函数的时候需要显式注明输入输出类型，如`(x：Int):Int =>x*x`而不是只写`x*x`;由于变量的字面值可以推断其类型，因此匿名值(应该没有这个叫法吧，这里指字面值)直接写字面值即可，如3表示整型。
 
 {: .img_middle_mid}
-![function and variable](/assets/images/posts/2015-10-01/function and variable.png)
+![function and variable]({{site.url}}/assets/images/posts/2015-10-01/function and variable.png)
 
 接下来我们来看看Block。
 
 > **Block**：借用《Pro Multithreading and Memory Management for iOS and OS X》书中，Kazuki Sakamoto 对block的定义“拥有自动变量（可以在block声明的语义环境里捕捉变量的状态）的匿名（使函数体(code)成为和数据(data)一样的一等公民，作为函数调用时输入的实参（argument））函数。”
 
-由于block可以看到上下文中的变量，因此[2.4Conditionals]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#conditonals)中的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
+由于block可以看到上下文中的变量，因此[2.4Conditionals]({{ site.url}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#conditonals)中的`sqrt`函数可以在内部定义的函数里取消`x`作为输入参数。
 
 {% highlight scala linenos %}
 def sqrt2(x: Double): Double = {
@@ -138,7 +138,7 @@ def sqrt2(x: Double): Double = {
 关于值替换模型，我们可以看下面这个例子，`sumOfSquare(3,4)`就是一步步将函数替换成函数的返回值**(不断赋值)**。
 
 {: .img_middle_hg}
-![evaluation](/assets/images/posts/2015-10-01/evaluation.png)
+![evaluation]({{site.url}}/assets/images/posts/2015-10-01/evaluation.png)
 
 + 赋值的策略有两种：**Call-By-Value(CBV)**，**Call-By-name**；
 + **CBV**先reduce argument，再evaluate Function；**CBN**use unreduced argument to evaluate Function；
@@ -206,12 +206,12 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 要理解尾递归得先理解递归，那么什么是递归呢？
 
 {: .img_middle_mid}
-![recursion0](/assets/images/posts/2015-10-01/recursion0.png)
+![recursion0]({{site.url}}/assets/images/posts/2015-10-01/recursion0.png)
 
 开个玩笑，递归应该是长这样子的。
 
 {: .img_middle_lg}
-![recursion](/assets/images/posts/2015-10-01/recursion.png)
+![recursion]({{site.url}}/assets/images/posts/2015-10-01/recursion.png)
 
 《大学》曰：古之欲明明德于天下者，先治其国；欲治其国者，先齐其家；欲齐其家者，先修其身；欲修其身者，先正其心；欲正其心者，先诚其意；欲诚其意者，先致其知，致知在格物。物格而后知至，知至而后意诚，意诚而后心正，心正而后身修，身修而后家齐，家齐而后国治，国治而后天下平。此乃递归也。
 
@@ -245,7 +245,7 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 第一个栗子是求最大公约数gcd(GGreatest common divisor。第二个是求阶乘。
 
 {: .img_middle_lg}
-![tail recursion](/assets/images/posts/2015-10-01/tail recursion.png)
+![tail recursion]({{site.url}}/assets/images/posts/2015-10-01/tail recursion.png)
 
 由于第n次阶乘的表达式的一部分(这里是 n *)都需要保留在**栈**中，每当进入一个函数调用，栈就会加一层**栈帧**，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致**栈溢出**。我们应在递归函数中**尽量使用尾递归避免栈溢出**。
 
@@ -267,7 +267,7 @@ Scala也用if-else来执行条件语句，我们看下面这个例子用牛顿�
 ## 3 Assignment ##
 
 {: .img_middle_lg}
-![Assignment](/assets/images/posts/2015-10-01/assignment.png)
+![Assignment]({{site.url}}/assets/images/posts/2015-10-01/assignment.png)
 
 + **Pascal triangle**：递归比较简单，退出条件也很明显，分别是`c==0`和`c==r`的时候；
 + **Parenthesis Balance**：用一个`acc：Int`来存储，每遇见一个`{`+1,`}`-1。退出条件是`chars.isEmpty`或者`acc < 0`；

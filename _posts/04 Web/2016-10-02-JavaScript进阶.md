@@ -712,7 +712,7 @@ getData2: after resolve
 下面用一张图表示上面4个概念以及相关概念的关系。
 
 {: .img_middle_lg}
-![Generator vs Iterator](/assets/images/posts/04 Web/JS/2016-10-02-JavaScript进阶/Generator vs Iterator.png)
+![Generator vs Iterator]({{site.url}}/assets/images/posts/04 Web/JS/2016-10-02-JavaScript进阶/Generator vs Iterator.png)
 
 ##### 1.3.4.1 `Generator yield Promise` 
 

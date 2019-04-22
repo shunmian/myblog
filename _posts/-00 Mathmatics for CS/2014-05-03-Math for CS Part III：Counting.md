@@ -25,7 +25,7 @@ shortinfo: 本文是对Math for CS的第一部分Proof的总结。
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![gcc & gdb](/assets/images/posts/2014-06-30-A1 C Tools for Linux/gdb.png)
+![gcc & gdb]({{site.url}}/assets/images/posts/2014-06-30-A1 C Tools for Linux/gdb.png)
 
 ## 4 Reference ##
 

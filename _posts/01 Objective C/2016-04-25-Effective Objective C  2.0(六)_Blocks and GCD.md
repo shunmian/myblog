@@ -59,7 +59,7 @@ shortinfo: 本文是《Effective Objective-C》的系列笔记的第六篇《Blo
 2. Mixing synchronous and asynchronous dispatches can provide the same syncrhonized behavior as with normal blocking but withou blocking the calling thread in the asynchronous dispatches.
 
 
-3. Conurrent queues and barrier blocks can be used to make synchronized behavior more efficient, such as **Reader vs Writer Problem** , [see more]({{site.baseurl}}/01%20objective-c/2016/04/03/OC-Concurrency(二)_GCD-part-I_用法详解.html#using-dispatch-barriers) 
+3. Conurrent queues and barrier blocks can be used to make synchronized behavior more efficient, such as **Reader vs Writer Problem** , [see more]({{site.url}}/01%20objective-c/2016/04/03/OC-Concurrency(二)_GCD-part-I_用法详解.html#using-dispatch-barriers) 
 
 
 
@@ -111,7 +111,7 @@ dispatch_after(time, dispatch_get_main_queue(), ^(void){
 
 1. Dispatch groups are used to group a set of tasks. You can optionally be notified when the group finishes executing.
 
-2. Dispatch groups can be used to execute multiple tasks concurrently through a concurrent dispatch queue. In this case, GCD handles the scheduling of multiple tasks at the same time, based on system resources. Writing this yourself would require a lot of code. [See more]({{site.baseurl}}/01%20objective-c/2016/04/03/OC-Concurrency(二)_GCD-part-I_用法详解.html#using-dispatch-barriers).
+2. Dispatch groups can be used to execute multiple tasks concurrently through a concurrent dispatch queue. In this case, GCD handles the scheduling of multiple tasks at the same time, based on system resources. Writing this yourself would require a lot of code. [See more]({{site.url}}/01%20objective-c/2016/04/03/OC-Concurrency(二)_GCD-part-I_用法详解.html#using-dispatch-barriers).
 
 ### Item 45：Use dispatch_once for Thread-Safe Single-Time Code Execution ###
 

@@ -5193,7 +5193,7 @@ const handleToggle = (state, action) => {
 ## 4 Summary 
 
 {: .img_middle_hg}
-![Redux summary](/assets/images/posts/04 Web/JS/2016-10-05-redux part I todo app/summary.png)
+![Redux summary]({{site.url}}/assets/images/posts/04 Web/JS/2016-10-05-redux part I todo app/summary.png)
 
 ## 5 参考资料 ##
 - [Redux](https://github.com/reactjs/redux);

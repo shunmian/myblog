@@ -30,7 +30,7 @@ shortinfo: ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。�
 新开1个工程，在**Build Phases**的`AppDelegate.m`里添加`-fno-objc-arc`，可以开启MRC模式。
 
 {: .img_middle_lg}
-![MRC command](/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/MRC command.png)
+![MRC command]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/MRC command.png)
 
 输入如下代码。
 
@@ -95,7 +95,7 @@ shortinfo: ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。�
 
 ### 2.1 __weak ###
 
-表示弱引用，对应属性修饰符`weak`。弱应用对对象的生命周期无影响。对象在被释放的同时，指向它的弱引用会被自动置为nil，这个技术称为[zeoring weak pointer]({{site.baseurl}}/01%20objective-c/2016/03/27/OC-Memory-Managment(%E4%B8%89)_Weak%E5%B1%9E%E6%80%A7.html)。这样有效地防止了野指针的产生。`__weak`用在防止循环引用的场景中(如**delegate**，block的[weak strong dance]({{site.baseurl}}/01%20objective-c/2016/03/28/OC-Memory-Managment(%E5%9B%9B)_Weak-Strong-Dance.html)和无效的强引用(如@IBOutlet，viewController->view->subView，没有必要再viewController->subview)。
+表示弱引用，对应属性修饰符`weak`。弱应用对对象的生命周期无影响。对象在被释放的同时，指向它的弱引用会被自动置为nil，这个技术称为[zeoring weak pointer]({{site.url}}/01%20objective-c/2016/03/27/OC-Memory-Managment(%E4%B8%89)_Weak%E5%B1%9E%E6%80%A7.html)。这样有效地防止了野指针的产生。`__weak`用在防止循环引用的场景中(如**delegate**，block的[weak strong dance]({{site.url}}/01%20objective-c/2016/03/28/OC-Memory-Managment(%E5%9B%9B)_Weak-Strong-Dance.html)和无效的强引用(如@IBOutlet，viewController->view->subView，没有必要再viewController->subview)。
 
 ### 2.2 __strong ###
 
@@ -103,7 +103,7 @@ shortinfo: ARC的引入，使得程序员摆脱了MRC那个"黑暗的时代"。�
 
 ### 2.3 __autoreleasing
 
-__autoreleasing在ARC中主要用在参数传递返回值（out-parameters）和引用传递参数（pass-by-reference）的情况下。具体见[Autoreleasing]({{site.baseurl}}/01%20objective-c/2016/03/26/OC-Memory-Managment(%E4%BA%8C)_Autoreleasing.html)。
+__autoreleasing在ARC中主要用在参数传递返回值（out-parameters）和引用传递参数（pass-by-reference）的情况下。具体见[Autoreleasing]({{site.url}}/01%20objective-c/2016/03/26/OC-Memory-Managment(%E4%BA%8C)_Autoreleasing.html)。
 
 ### 2.4 __unsafe_unretained
 
@@ -138,6 +138,6 @@ NSMutableArray *array2 = [NSMutableArray new];
 本文总结成下图。
 
 {: .img_middle_lg}
-![OC内存管理总结](/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/OC内存管理总结.png)
+![OC内存管理总结]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-25-OC Memory Managment(一)_ARC/OC内存管理总结.png)
 
 

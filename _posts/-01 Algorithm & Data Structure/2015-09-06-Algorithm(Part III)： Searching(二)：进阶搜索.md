@@ -21,7 +21,7 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。本文介�
 
 
 {: .img_middle_lg}
-![Sorting Algorithms](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/searching performance0.png)
+![Sorting Algorithms]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/searching performance0.png)
 
 ### 2.2 进阶搜索 ###
 
@@ -40,7 +40,7 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。本文介�
 </blockquote>
 
 {: .img_middle_mid}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/2-3 search tree2.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/2-3 search tree2.png)
 
 
 2-3 tree 有2个极好的特性是: 
@@ -52,7 +52,7 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。本文介�
 2-3 tree相应的search和insert操作如下图。
 
 {: .img_middle_hg}
-![Sorting Algorithms](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/2-3 Tree search & insert.png)
+![Sorting Algorithms]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/2-3 Tree search & insert.png)
 
 2-3 tree的代码实现比较复杂，有一个更简单的等价实现，即下面介绍的红黑树。
 
@@ -60,14 +60,14 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。本文介�
 
 
 {: .img_middle_lg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST introduction.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST introduction.png)
 
 > **Red-Black BSTs:** 红黑二叉搜索树的本质是2-3 tree(一个节点最多有2个key，而红黑树则使用染色的方式来标识这两个key)作为平衡的二叉搜索树的一个特例。而保持平衡是通过以下5点红黑树的性质来确保。1.每个结点要门是红的，要么是黑的；2.根结点是黑的；3.每个叶节点是黑的；4.如果1个结点是红的，那么它的两个子结点都是黑的；5.所有从root到叶结点的黑结点数一样(完美黑结点平衡)。
 
 我们先定义三种基本操作，
 
 {: .img_middle_lg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-black BST 3 basic operatoin.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-black BST 3 basic operatoin.png)
 
 下面是基于上述3种基本操作实现的API。
 需要注意的是新加的node的颜色为RED，代表parent连接本node的颜色。
@@ -122,12 +122,12 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 其中**Search**的实现和BST一样，忽略颜色的影响。因为Red-Black Tree有更好的平衡，所以其Search不会遇到BST的worst case。
 
 {: .img_middle_lg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST Search.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST Search.png)
 
 **Insertion**的实现稍显复杂，包括几种情况，见下图。
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST Insertion.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/red-balck BST Insertion.png)
 
 ##### 2.2.1.3 B-tree Family #####
 
@@ -135,7 +135,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 > **B-tree:**是2-3 tree的泛化，每个node可以包括M/2个Key到M-1个Key。
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/B tree.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/B tree.png)
 
 ###### 2.2.1.3.2 B+-tree
 
@@ -157,7 +157,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 > **1d Range Search:**所有key为1维直线上的点，求某段(lo,hi)之间有哪些key。
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/1d range search.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/1d range search.png)
 
 
 ###### 2.2.1.4.2 Line Segment Intersection #####
@@ -165,7 +165,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 > **line segment intersection:**求正交线段的所有交点。
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/line segment intersection.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/line segment intersection.png)
 
 ###### 2.2.1.4.3 KD Trees #####
 
@@ -173,7 +173,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 > **KD Tree:**多维(K Dimension)树是对BST **key的维度的泛化**(和B tree对同样维度**key的个数的泛化**不同)。最直观的例子是将1d range search扩展到2drange search。应用2D Tree对x和y坐标轮流插入和搜索，可以有效完成2维的如求某矩形包括的点和某点的最近点等问题。
 
 {: .img_middle_hg}
-![Kd Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/Kd Tree.png)
+![Kd Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/Kd Tree.png)
 
 ###### 2.2.1.4.4 Interval Search Trees #####
 
@@ -181,19 +181,19 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 
 
 {: .img_middle_hg}
-![Kd Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/1d interval search.png)
+![Kd Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/1d interval search.png)
 
 ###### 2.2.1.4.5 Rectangle Intersection #####
 
 > **2d orthogonal rectangle intersection:**2维平面求与给定矩形相交的矩形。
 
 {: .img_middle_hg}
-![Kd Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/2d orthogonal rectangle intersection.png)
+![Kd Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/2d orthogonal rectangle intersection.png)
 
 ###### 2.2.1.4.6 BSTs几何应用总结 #####
 
 {: .img_middle_hg}
-![Kd Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/BSTs Geometric Applicatoin Summary.png)
+![Kd Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/BSTs Geometric Applicatoin Summary.png)
 
 #### 2.2.2 Hash Table #####
 
@@ -208,7 +208,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 3. Java customized some typical class such as Integer, Double, String, URL, Date...
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hashCode implementation.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hashCode implementation.png)
 
 实现哈希表需要注意一下几点：
 
@@ -219,7 +219,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value>{
 ##### 2.2.2.2 单独链表法 #####
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hash separate chaining.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hash separate chaining.png)
 
 {% highlight java linenos %}
 
@@ -268,7 +268,7 @@ public class SeparateChainingHashST<Key,Value>  {
 > **线性探查法:**找到hash(Key)对应的数组下标i，如果已经被占，则继续i+1，i+2...顺序找到空位为止。数组长度要大于Key个数，通常是两倍，然后resizing。
 
 {: .img_middle_hg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hash linear probing.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hash linear probing.png)
 
 
 
@@ -306,7 +306,7 @@ public class SeparateChainingHashST<Key,Value>  {
 
 
 {: .img_middle_hg}
-![hash context](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hash context.png)
+![hash context]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/hash context.png)
 
 
 ## 3 Symbol Table Application ##
@@ -314,22 +314,22 @@ public class SeparateChainingHashST<Key,Value>  {
 ### 3.1 Set ###
 
 {: .img_middle_hg}
-![SET](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/SET.png)
+![SET]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/SET.png)
 
 ### 3.2 Dictionary Client ###
 
 {: .img_middle_hg}
-![dictionary](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/dictionary.png)
+![dictionary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/dictionary.png)
 
 ### 3.3 Indexing Client ###
 
 {: .img_middle_hg}
-![dictionary](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/file indexing.png)
+![dictionary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/file indexing.png)
 
 ### 3.4 Sparse Vectors ###
 
 {: .img_middle_hg}
-![dictionary](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/sparse vectors.png)
+![dictionary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/sparse vectors.png)
 
 ## 4 Searching programming example: kdtree ##
 
@@ -341,7 +341,7 @@ public class SeparateChainingHashST<Key,Value>  {
 ## 5 总结 ##
 
 {: .img_middle_hg}
-![Chapter 3 Searching Summary](/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/Chapter 3 Searching Summary.png)
+![Chapter 3 Searching Summary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-06_Algorithm(Part III)：Searching(二)：进阶搜索/Chapter 3 Searching Summary.png)
 
 
 ## 6 参考资料 ##

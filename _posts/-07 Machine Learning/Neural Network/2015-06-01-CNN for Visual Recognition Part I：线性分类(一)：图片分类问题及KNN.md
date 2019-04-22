@@ -39,7 +39,7 @@ shortinfo: 相比较机器学习要显性输入feature，卷积神经网络(Conv
 7. **类内变化(Intra-class Variation)**
 
 {: .img_middle_lg}
-![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
+![Image Classification Challenges]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
 
 ### 1.1 Data-driven Approach ###
 
@@ -50,7 +50,7 @@ shortinfo: 相比较机器学习要显性输入feature，卷积神经网络(Conv
 下图是这种带有label的数据的例子。
 
 {: .img_middle_lg}
-![Train Set](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/trainset.jpg)
+![Train Set]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/trainset.jpg)
 
 
 ### 1.2 Pipeline ###
@@ -71,14 +71,14 @@ shortinfo: 相比较机器学习要显性输入feature，卷积神经网络(Conv
 下图是CIFAR-10数据库最近邻的一个预测图，右边从左到右是与预测图片最近的前10张图片。
 
 {: .img_middle_lg}
-![nn](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/nn.jpg)
+![nn]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/nn.jpg)
 
 **某种形式的距离**有多种可能，比如**L1 distance**，
 $$d_1(I_1,I_2) = \sum_p |I_1^p-I_2^p| $$。
 
 
 {: .img_middle_lg}
-![L1 distance.jpeg](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/L1 distance.jpeg)
+![L1 distance.jpeg]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/L1 distance.jpeg)
 
 {% highlight py linenos %}
 import numpy as np
@@ -156,7 +156,7 @@ print("accuracy:{}".format(np.mean(Yte_prdict == Yte)))
 下图是**K-Nearest Neighbor**的boundary的示意图。其中左图代表training data，中图代表k=1的时候test image在图中位置的不同预测结果的边界，右图表示k=5的时候的预测结果的边界(白色边界表示最近邻里有两个label的数量达成了平手，都是2个)。可以看到k=5的时候，离群值的孤岛被平滑地处理掉了。
 
 {: .img_middle_lg}
-![knn](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/knn.jpeg)
+![knn]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/knn.jpeg)
 
 #### 1.3.2 Pros/Cons of Nearest Neighbor ####
 
@@ -173,7 +173,7 @@ Pros/Cons:
 下图展示的是后三幅图相比于第一幅图的L2 distance都一样的情况，视觉上来看，它们的差别巨大，但是L2算法却给出了相同的距离。可以进一步地说，Nearest Neighbor的本质是给出了像素分布的总差别，而不是图片中物体的high level的特征，因此虽然有38.59%的准确性，但是再往上提高就非常困难了。
 
 {: .img_middle_lg}
-![knn](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/samenorm.png)
+![knn]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/samenorm.png)
 
 ### 1.4 Hyperparameter and Train/Val/Test Split###
 
@@ -211,7 +211,7 @@ for k in [1, 3, 5, 10, 20, 50, 100]:
 > **Cross-Validation**：有时候在training set样本数比较少的时候，将样本分为n份，在某个K值下，轮流取1份作为validation set，将n次的validation的准确度取平均值作为比较依据。
 
 {: .img_middle_lg}
-![crossval](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/crossval.jpeg)
+![crossval]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/crossval.jpeg)
 
 ## 2 Summary ##
 
@@ -222,7 +222,7 @@ for k in [1, 3, 5, 10, 20, 50, 100]:
 3. 对于**Hyperparameter**可以用train/val/test的方法来优化，样本数少的时候可以用**Cross-Validation**。
 
 {: .img_middle_hg}
-![Image Classification Summary](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Summary.png)
+![Image Classification Summary]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Summary.png)
 
 ## 3 参考资料 ##
 

@@ -264,7 +264,7 @@ if __name__=='__main__':
 
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-18-网络实战(十七)：FTP/FTP Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-18-网络实战(十七)：FTP/FTP Summary.png)
 
 
 ## 4 参考资料 ##

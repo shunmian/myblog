@@ -21,7 +21,7 @@ shortinfo: Swift 和 Objective-C 内存管理的一个重要问题是防止循�
 在面向对象编程中, 引用类型分配在堆中(如类的实例，匿名函数), 值类型分配在栈中(如整数，浮点数)。Swift中的类型分为class，struct，enum：其中只有class是引用类型，其实例分配在堆中；struct(Array, Dictionary, String, Set)和enum都是值类型，其实例分配在栈中。对于分配在堆中的类的实例，我们要对其进行内存管理，Swift 和Objective-C都是用ARC(而不是垃圾回收机制)来对内存进行管理，包括对于内存泄露的处理。本文对Swift和Objective-C中的循环引用进行讨论。
 
 {: .img_middle_mid}
-![面向对象编程](/assets/images/posts/2016-03-07/面向对象编程.png)
+![面向对象编程]({{site.url}}/assets/images/posts/2016-03-07/面向对象编程.png)
 
 ## 2. Retain Cycle 问题及解决 ##
 Retain Cycle 的Apple的定义:

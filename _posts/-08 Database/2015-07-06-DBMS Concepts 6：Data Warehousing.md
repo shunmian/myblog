@@ -37,7 +37,7 @@ Database,Table,Column,Row的操作逃不出增删改查4种，只不过命令名
 对**MySQL的客户端mysql**总结成下表，以供参考。
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/client mysql.jpg)
 
 
 ## 4 参考资料 ##

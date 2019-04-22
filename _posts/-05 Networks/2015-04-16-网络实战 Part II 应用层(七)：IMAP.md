@@ -324,7 +324,7 @@ IMAPClient本身没提供Asynchrony，但是在其他包含IMAPClient的库里�
 ## 2 总结 ##
 
 {: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-15-网络实战(十五)：IMAP/Email Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-15-网络实战(十五)：IMAP/Email Summary.png)
 
 
 ## 3 参考资料 ##

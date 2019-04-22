@@ -36,4 +36,5 @@ feed:
 categories_path: categories.html
 tags_path: tags.html
 
-baseurl: http://www.shunmian.me
+url: "https://shunmian.github.io/myblog2"
+baseurl: ""

@@ -20,7 +20,7 @@ shortinfo: 本文是对Distributed System的总结。
 ## 1 Summary ##
 
 {: .img_middle_hg}
-![Spring Summary.png](/assets/images/posts/-09 Distributed System/2016-12-04-Distributed System_03_Communication/Communication Summary.png)
+![Spring Summary.png]({{site.url}}/assets/images/posts/-09 Distributed System/2016-12-04-Distributed System_03_Communication/Communication Summary.png)
 
 
 

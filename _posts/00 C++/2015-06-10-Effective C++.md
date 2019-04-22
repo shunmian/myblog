@@ -329,7 +329,7 @@ inline const T& std::max(const T &a, const T &b) {  // an explicit inline, requi
 {% endhighlight %}
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+![Network overview]({{site.url}}/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
 
 
 ## 3. Reference ##

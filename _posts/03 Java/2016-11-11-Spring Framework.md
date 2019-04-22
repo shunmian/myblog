@@ -20,7 +20,7 @@ shortinfo: 本文是对Spring Framework的总结。
 ## 1 Spring Framework Summary ##
 
 {: .img_middle_hg}
-![Spring Summary.png](/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png)
+![Spring Summary.png]({{site.url}}/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png)
 
 ## 2 Spring Boot
 

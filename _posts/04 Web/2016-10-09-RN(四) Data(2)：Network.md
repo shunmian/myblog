@@ -20,7 +20,7 @@ shortinfo: 本文是对Facebook的React框架的introduction。
 ## 1 Summary ##
 
 {: .img_middle_hg}
-![JS React Summary](/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png)
+![JS React Summary]({{site.url}}/assets/images/posts/04 Web/JS/2016-10-03-React入门/JS React Summary.png)
 
 
 ## 2 参考资料 ##

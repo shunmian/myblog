@@ -25,7 +25,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-01/Web Scraping.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-01/Web Scraping.png)
 
 **Network**是一个较为复杂的概念，上图是用**Four Layer Reference Model**来表示**Network**。首先是4层Layer，分别是**Application Layer**,**Transport Layer**, **Internet Layer**, **Link Layer**，每一层layer有自己的多种协议。
 
@@ -42,7 +42,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 在**Four Layer Reference Model**中，更为准确地说，**Transport Layer**, **Internet Layer**, **Link Layer**属于**Network**，而**Application Layer**是属于**App**。因此连接**Network**和**App**的界面的框架称之为**Socket**。**Socket**的客户端和服务端需要进行一系列顺序对话才能完成数据的传输，如下图所示。关于**Socket**的具体介绍，请参见网络系列的博文。
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-01/Socket.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-01/Socket.png)
 
 ### 1.3 What is Network Data Type ###
 
@@ -86,7 +86,7 @@ Why web scraping:
 It has 4 submodules and the urlopen method in urllib.request takes string or request object and return http.client.HTTPResponse object for HTTP and HTTPs URLs. 
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-01/urllib.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-01/urllib.png)
 
 
 {% highlight py linenos %}
@@ -158,7 +158,7 @@ else:
 
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-01/Network Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-01/Network Summary.png)
 
 关于**BeautifulSoup**的详细介绍，请看下篇[文章](https://www.shunmian.me/scraping/2015/12/01/Web-Scraping-Part-I-Building-Scrapers-(一)-BeautifulSoup入门.html)。
 

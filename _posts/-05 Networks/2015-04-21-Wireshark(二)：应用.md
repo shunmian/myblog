@@ -21,21 +21,21 @@ shortinfo: 本文是《Practical Packet Analysis》系列第1篇笔记《Packet 
 ## 1 Fighting a Slow Network ##
 
 {: .img_middle_hg}
-![broadcast domain](/assets/images/posts/2015-04-21-Wireshark(二)：应用/1_Fighting a Slow Network.png)
+![broadcast domain]({{site.url}}/assets/images/posts/2015-04-21-Wireshark(二)：应用/1_Fighting a Slow Network.png)
 
 ## 2 Packet Analysis for Security ##
 
 {: .img_middle_hg}
-![broadcast domain](/assets/images/posts/2015-04-21-Wireshark(二)：应用/2_Packet Analysis for Security.png)
+![broadcast domain]({{site.url}}/assets/images/posts/2015-04-21-Wireshark(二)：应用/2_Packet Analysis for Security.png)
 
 ## 3 Wireless Packet Analysis ##
 
 {: .img_middle_hg}
-![broadcast domain](/assets/images/posts/2015-04-21-Wireshark(二)：应用/3_Wireless Packet Analysis.png)
+![broadcast domain]({{site.url}}/assets/images/posts/2015-04-21-Wireshark(二)：应用/3_Wireless Packet Analysis.png)
 
 
 {: .img_middle_mid}
-![broadcast domain](/assets/images/posts/2015-04-20-Wireshark Part I (一)：Packet Analysis and Netork Basics/broadcast domain.png)
+![broadcast domain]({{site.url}}/assets/images/posts/2015-04-20-Wireshark Part I (一)：Packet Analysis and Netork Basics/broadcast domain.png)
 
 ## 4 参考资料 ##
 

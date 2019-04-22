@@ -31,7 +31,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 下面我们来从神经元的角度来解释神经网络，一个简单的粗糙的对神经元的近似如下图。
 
 {: .img_middle_lg}
-![Neuron](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/Neuron.png)
+![Neuron]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/Neuron.png)
 
 1个神经元的工作原理可以粗糙的概括成将输入->线性变化->激励函数(值足够大的时候，激发信号)->输出的过程，即$f(Wx+b)$。
 
@@ -50,7 +50,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 常用的激励函数总结成下图。
 
 {: .img_middle_hg}
-![Activation Function](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/Activation Function.png)
+![Activation Function]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/Activation Function.png)
 
 
 **TLDR**: “What neuron type should I use?” Use the ReLU non-linearity, be careful with your learning rates and possibly monitor the fraction of “dead” units in a network. If this concerns you, give Leaky ReLU or Maxout a try. Never use sigmoid. Try tanh, but expect it to work worse than ReLU/Maxout.
@@ -63,7 +63,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 **NN**是由neurons组成的layer的acyclic graph；同1个layer内的neurons不会有数据交流。
 
 {: .img_middle_lg}
-![NN size参数](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/NN size参数.png)
+![NN size参数]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/NN size参数.png)
 
 #### 1.2.2 Example Feed-forward Computation ####
 
@@ -93,14 +93,14 @@ out = np.dot(W3, h2) + b3 # output neuron (1x1)
 实际实现中，小的NN(少的hidden layer层数和neuron个数)，有一定概率你可以获得很小的loss或者很大；而在大的NN(多的hidden layer层数和neuron个数)，不同的local minima之间的loss差距很小，很大概率你可以获得效果几乎一样的最优解。
 
 {: .img_middle_lg}
-![x vs lambda](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/x vs lambda.png)
+![x vs lambda]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/x vs lambda.png)
 
 因此，对于如何设置layer层数很neuron个数，本文的建议是在你的计算机能力范围内，层数尽量大，neuron个数尽量多，然后用regulariztion(或者higher weight decay)防止overfitting。
 
 ## 2 Summary ##
 
 {: .img_middle_hg}
-![NN Architecture Summary](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/NN Architecture Summary.png)
+![NN Architecture Summary]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-05-CNN for Visual Recognition Part II：NN(一)：Setting up the Architecture/NN Architecture Summary.png)
 
 
 ## 3 参考资料 ##

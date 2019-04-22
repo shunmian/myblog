@@ -20,7 +20,7 @@ shortinfo: NodeJS, Express介绍，作为服务端的一个入门。
 ## 1. NodeJS ##
 
 {: .img_middle_hg}
-![NodeJS](/assets/images/posts/-14_Backend/2015-10-09-Backend：Server Architecture/NodeJS.png)
+![NodeJS]({{site.url}}/assets/images/posts/-14_Backend/2015-10-09-Backend：Server Architecture/NodeJS.png)
 
 ## 2 参考资料 ##
 

@@ -23,22 +23,22 @@ shortinfo: DBSM实现。
 ### 1.1 Storage and File Structure ###
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH10 Organization and Records in Files.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH10 Organization and Records in Files.png)
 
 ### 1.2 Indexing ###
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH11 Indexing.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH11 Indexing.png)
 
 ### 1.3 Query Compiler (Parser, Logical Query Generator, Physical Query Generator) 
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH13 Query Compiler.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH13 Query Compiler.png)
 
 ### 1.4 Query Executer ###
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH12 Query Execution.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-03-DBMS Concepts 3：Storage, Query and Exectution/Part 3_CH12 Query Execution.png)
 
 
 
@@ -48,7 +48,7 @@ shortinfo: DBSM实现。
 
 
 {: .img_middle_lg}
-![regular expression](/assets/images/posts/2015-06-01/MySQL overview.png)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/MySQL overview.png)
 
 
 ## 2 MySQL实战 ## 
@@ -63,7 +63,7 @@ Database,Table,Column,Row的操作逃不出增删改查4种，只不过命令名
 对**MySQL的客户端mysql**总结成下表，以供参考。
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/client mysql.jpg)
 
 
 ## 4 参考资料 ##

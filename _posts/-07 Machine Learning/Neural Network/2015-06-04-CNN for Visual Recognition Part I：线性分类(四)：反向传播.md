@@ -55,7 +55,7 @@ f(x,y) = （x + y） \times z \hspace{0.5in} & \rightarrow \hspace{0.5in} \frac{
 \end{align} $$
 
 {: .img_middle_lg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/Chain Rule.png)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/Chain Rule.png)
 
 ### 1.2 Intuition ###
 
@@ -68,7 +68,7 @@ f(x,y) = （x + y） \times z \hspace{0.5in} & \rightarrow \hspace{0.5in} \frac{
 我们可以将多个gate模块化成1个gate，这里用1个**Sigmoid函数**举例。
 
 {: .img_middle_lg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/Modular Gate.png)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/Modular Gate.png)
 
 #### 1.3.2 Staged Computation ####
 
@@ -119,7 +119,7 @@ dy += ((1 - sigy) * sigy) * dsigy                                 #(1)
 ### 1.4 Patterns in Backward Flow ###
 
 {: .img_middle_lg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/Gate Patterns.png)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/Gate Patterns.png)
 
 ### 1.5 Gradients for Vectorized Operations ###
 
@@ -142,7 +142,7 @@ dX = W.T.dot(dD)
 ## 2 Summary ##
 
 {: .img_middle_hg}
-![pixelspace](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/线性分类Summary.png)
+![pixelspace]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-04-CNN for Visual Recognition Part I：线性分类(四)：反向传播/线性分类Summary.png)
 
 
 ## 3 参考资料 ##

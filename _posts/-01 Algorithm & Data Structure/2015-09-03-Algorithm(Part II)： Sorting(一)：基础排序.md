@@ -37,7 +37,7 @@ shortinfo: 排序是computer science 一个基础而有富有挑战的课题。�
 接下来将要介绍若干种基本的排序算法，如下表所示。
 
 {: .img_middle_lg}
-![Sorting Algorithms](/assets/images/posts/01_Algorithm/2015-09-03_Algorithm(Part II)： Sorting(一)：基础排序/sorting algorithm.png)
+![Sorting Algorithms]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-03_Algorithm(Part II)： Sorting(一)：基础排序/sorting algorithm.png)
 
 
 
@@ -46,7 +46,7 @@ shortinfo: 排序是computer science 一个基础而有富有挑战的课题。�
 既然是排序，首先要明确**顺序**的确切含义。我们常说的**顺序**是一种**二元关系**，其中**全序关系(Total Order)**和**偏序关系(Partial Order)**是较为常见的两种。先盗一张wiki上的图。
 
 {: .img_middle_mid}
-![Order](/assets/images/posts/01_Algorithm/2015-09-03_Algorithm(Part II)： Sorting(一)：基础排序/order.png)
+![Order]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-03_Algorithm(Part II)： Sorting(一)：基础排序/order.png)
 
 
 如上所示就是一个按包含排序的偏序关系，我们发现虽然集合x,y和集合y,z都包含集合y，但是他们之间并不存在包含关系，也就是说，偏序其实并**不要求**所有的元素都**可互相比较**，其强调的只是一种继承关系，一般来说可以与**有向无环图(DAG)**一一对应起来。数学上形式化定义的**非严格偏序**如下所示：
@@ -191,7 +191,7 @@ public class SelectionSort {
 > 插入排序(Insertion Sort): 类比理牌，每次我们抓了一张新牌，都会寻找合适的位置把牌插入，使得新得到的牌组依旧满足递增的性质，直到所有牌都插入完毕，这个过程就是插入排序.
 
 {: .img_middle_mid}
-![Cards](/assets/images/posts/01_Algorithm/2015-09-03_Algorithm(Part II)： Sorting(一)：基础排序/cards.png)
+![Cards]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-03_Algorithm(Part II)： Sorting(一)：基础排序/cards.png)
 
 {% highlight java linenos %}
 public class InsertionSort {

@@ -38,7 +38,7 @@ shortinfo: 本文是对MIT 6824的总结。
 
 
 {: .img_middle_hg}
-![Spring Summary.png](/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png)
+![Spring Summary.png]({{site.url}}/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png)
 
 
 

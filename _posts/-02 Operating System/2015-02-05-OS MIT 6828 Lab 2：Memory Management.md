@@ -164,7 +164,7 @@ Exercise 2. Look at chapters 5 and 6 of the [Intel 80386 Reference Manual](https
 2. 分页地址转换，线性地址转为物理地址。
 
 {: .img_middle_lg}
-![Memory Management](/assets/images/posts/-02_Operating System/6828/2015-02-05-OS MIT 6828 Lab 2：Memory Managemen/Memory Management.gif)
+![Memory Management]({{site.url}}/assets/images/posts/-02_Operating System/6828/2015-02-05-OS MIT 6828 Lab 2：Memory Managemen/Memory Management.gif)
 
 虚拟地址(逻辑地址，程序员编程的接口地址)通过段机制，将选择子和偏移量转为线性地址；线性地址通过页机制转为物理地址。
 

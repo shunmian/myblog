@@ -18,7 +18,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 ---
 {:.hr-short-left}
 
-前面[《HTTP Client》]({{site.baseurl}}/networks/2015/04/11/网络实战-Part-II-应用层(二)-HTTP-服务端.html)和[《HTTP Server》]({{site.baseurl}}/networks/2015/04/11/网络实战-Part-II-应用层(二)-HTTP-服务端.html)两篇文章介绍了**Hypertext Transfer Protocol(HTTP)**用来让client request docuemnts以及让server response来提供documents。document包括：book，image，video，audio。更进一步说，HTTP的Hypertext指的是通过相互交叉引用来形成一个单个的信息源，即the World Wide Web。
+前面[《HTTP Client》]({{site.url}}/networks/2015/04/11/网络实战-Part-II-应用层(二)-HTTP-服务端.html)和[《HTTP Server》]({{site.url}}/networks/2015/04/11/网络实战-Part-II-应用层(二)-HTTP-服务端.html)两篇文章介绍了**Hypertext Transfer Protocol(HTTP)**用来让client request docuemnts以及让server response来提供documents。document包括：book，image，video，audio。更进一步说，HTTP的Hypertext指的是通过相互交叉引用来形成一个单个的信息源，即the World Wide Web。
 
 > HTTP: built to deliver the World Wide Web.
 
@@ -116,7 +116,7 @@ Python中URL对于相对路径转换成绝对路径的函数是``urllib.parse.ur
 
 ### 1.3 Reading and Writing to a Database ###
 
-python自带的SQLite库是[sqlite3](https://docs.python.org/3/library/sqlite3.html?highlight=sqlite3)；对于第三方库MySQL的使用，见[这里]({{site.baseurl}}/database/2015/06/01/MySQL入门.html)。
+python自带的SQLite库是[sqlite3](https://docs.python.org/3/library/sqlite3.html?highlight=sqlite3)；对于第三方库MySQL的使用，见[这里]({{site.url}}/database/2015/06/01/MySQL入门.html)。
 
 
 ## 2 WWW: Python Web Framework ##
@@ -148,7 +148,7 @@ python自带的SQLite库是[sqlite3](https://docs.python.org/3/library/sqlite3.h
 
 
 {: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-12-网络实战(十一)：The World Wide Web/HTTP&WWW Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-12-网络实战(十一)：The World Wide Web/HTTP&WWW Summary.png)
 
 
 ## 5 参考资料 ##

@@ -90,7 +90,7 @@ public class UndirectedGraph {
 
 
 {: .img_middle_hg}
-![representation](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/undirected graph data structure.png)
+![representation]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/undirected graph data structure.png)
 
 
 #### 2.1.2 无向图搜索 ####
@@ -103,7 +103,7 @@ public class UndirectedGraph {
 
 
 {: .img_middle_mid}
-![maze](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/maze.png)
+![maze]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/maze.png)
 
 <br/>
 
@@ -112,7 +112,7 @@ public class UndirectedGraph {
 不难看出，特修斯可以一股脑一条道走到黑，直到碰到了死胡同，然后顺着线团回头，直到到达最近的交点处，选择另外一条没做过的路继续走到黑。另外如果发现脚下有之前留下的线团，那么立即掉头。大致过程如下所示。**问题的关键不在于暂时走错路，而在于如何保证不走两次同样的路(走过就不会再走)。**
 
 {: .img_middle_lg}
-![maze2](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/maze2.png)
+![maze2]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/maze2.png)
 
 机智的特修斯真是深谙算法，不过我也纳闷那个时候能找到那么长的线团吗？
 
@@ -126,7 +126,7 @@ public class UndirectedGraph {
 在Graph类基础上，我们可以用Graph-Pcocessing来对Graph实例进行处理，这样把Graph和Graph-Processing的好处是可以将Graph(**数据结构**)和图处理(**算法**)解耦。这里我们首先介绍深度优先搜索遍历一个图来获取图中与vertex s连接的vertex v以及具体路径。
 
 {: .img_middle_lg}
-![Breadth-first Search](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/DFS Algorithm.png)
+![Breadth-first Search]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/DFS Algorithm.png)
 
 {% highlight java linenos %}
 public class DepthFirstPaths{                   // using depthFirstSearch to find path to s in graph G
@@ -175,7 +175,7 @@ public class DepthFirstPaths{                   // using depthFirstSearch to fin
 这种性质使得其使用非常广泛，像好莱坞娱乐圈的**Kevin Bacon Number**以及学术圈的**Erdos Number**，计算的都是以某一节点为中心的最少跳数。下面简要说说Java的实现，与DFS非常类似。
 
 {: .img_middle_lg}
-![Breadth-first Search](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/BFS Algorithm.png)
+![Breadth-first Search]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/BFS Algorithm.png)
 
 {% highlight java linenos %}
 public class BreadthFirstPaths{
@@ -275,7 +275,7 @@ public class CC{
 可见， CC类中扩展了DFS的方法，唯一不同的是遍历调用了`dfs`函数，和并查集比起来，最后生成的其实是一棵扁平化的并查集树，时间复杂度固然高效O(1)。
 
 {: .img_middle_lg}
-![Flood fill](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/
+![Flood fill]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/
 connected component.png)
 
 需要注意的是CC和DFS的不同之处在于DFS是计算某个起点``s``是否有路径到图``graph``里任意点``v``，如果有，则给出path；而CC和DFS一样，除了将某个起点``s``换成图``graph``里的每个点``v``作为起点``s``。
@@ -283,13 +283,13 @@ connected component.png)
 寻找连通分量在实际中的应用也是非常广泛，例如在星空背景下的一颗颗星星，就可以看出一个个的连通分量，另外熟悉Photoshop的同学应该知道有一种flood fill技巧，如下图泰姬陵的天空一样进行局部的颜色修改，却不影响边界的颜色。这里的原理就是把颜色相近的像素看成连通，而边缘的阶跃看成不连通，这样只要找出连通分量，就能把边缘勾勒出来，非常的巧妙。
 
 {: .img_middle_lg}
-![Flood fill](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/flood fill.png)
+![Flood fill]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/flood fill.png)
 
 #### 2.1.5 Challenges ####
 
 
 {: .img_middle_hg}
-![Flood fill](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/undirected graph challenge.png)
+![Flood fill]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/undirected graph challenge.png)
 
 ### 2.2 Directed Graph ###
 
@@ -301,7 +301,7 @@ connected component.png)
 在此之前，首先还是介绍一下有向图的存储和API。和无向图相似，有向图的存储也使用邻接链表的方式，不同的是这个时候的边有方向，因此原来无向图中同一条边需要存两次，在有向图中值需要存一次，其他的基本一致，java代码中类名由`Graph`变成`Digraph`即可。
 
 {: .img_middle_lg}
-![Flood fill](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.1 digraph API.png)
+![Flood fill]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.1 digraph API.png)
 
 {% highlight java linenos %}
 public class Digraph{
@@ -351,7 +351,7 @@ public class Digraph{
 可以用有向图的BFS来搜索根网页的等级。为什么不用DFS？由于有些网页第一次被访问时，会产生新网页，因此会trap我们的执行，越走越深。
 
 {: .img_middle_lg}
-![Topological sort](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.2 digraph search_web crawler.png)
+![Topological sort]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.2 digraph search_web crawler.png)
 
 
 #### 2.2.3 Topological Sort ####
@@ -361,7 +361,7 @@ public class Digraph{
 
 
 {: .img_middle_lg}
-![Topological sort](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/Topological sort2.png)
+![Topological sort]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/Topological sort2.png)
 
 那么问题来了，既然一个DAG必然存在拓扑序，那么怎么设计算法高效的找出整个拓扑序呢。令人吃惊的是，寻找拓扑序的算法异常的简单，只需要在DAG上跑若干遍DFS算法，然后把访问的节点后序压栈(Post)，最后所有跑完所有DFS后，依次弹栈的顺序就是拓扑序的顺序。
 
@@ -407,7 +407,7 @@ public class DepthFirstOrder{
 > 对DAG图上所有未标记的节点跑DFS算法，并且采用ReversePost方式压栈，最后一次出栈的顺序就是拓扑序。
 
 {: .img_middle_hg}
-![Connectivity](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.3 topological order.png)
+![Connectivity]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.3 topological order.png)
 
 
 
@@ -481,7 +481,7 @@ public int stronglyConnected(int v, int w){
 
 
 {: .img_middle_mid}
-![Connectivity](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.4 strong connected component.png)
+![Connectivity]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/4.2.4 strong connected component.png)
 
 
 {% highlight java linenos %}
@@ -529,7 +529,7 @@ public class KosarajuSharirSCC{
 >在WordNet上面构建一个有向图，要求计算出任意给定两个点的最短距离，如果没有直接可达的路径，则计算出距离最近的共同祖先节点的距离和，否则返回-1。
 
 {: .img_middle_lg}
-![wordnet](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/wordnet.png)
+![wordnet]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/wordnet.png)
 
 举个例子详细说明一下题目的要求，比如上述的一个**有向无环图(DAG)**，中间的**miracle**和最右边的**group_action**，有共同的祖先**event**，故他们的最短距离为2，同理可以计算出任意两个节点之间的最短距离。重写BFS，需要对BFS的算法有较深入的理解：
 
@@ -571,7 +571,7 @@ public class KosarajuSharirSCC{
 最后贴一个跑分表，竟然超过了100分，貌似时间比较快，有奖励...
 
 {: .img_middle_lg}
-![assessment](/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/assessment.png)
+![assessment]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-07_Algorithm(Part IV)：Graph(一)：无向有向图/assessment.png)
 
 
 

@@ -72,7 +72,7 @@ shortinfo: 本文是对《The Design and Evolution of C++》的书的总结。
 {% endhighlight %}
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+![Network overview]({{site.url}}/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
 
 
 ## 3. Reference ##

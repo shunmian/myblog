@@ -98,7 +98,7 @@ int x = doubler(5);
 {% endhighlight %}
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
+![Network overview]({{site.url}}/assets/images/posts/2014-06-01-C Review/Chapter 14 The Preprocessor.png)
 
 
 ## 5 Reference ##

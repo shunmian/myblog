@@ -20,7 +20,7 @@ shortinfo: 本文是对Distributed System的总结。
 ## 1 Summary ##
 
 {: .img_middle_hg}
-![Coordination Summary](/assets/images/posts/2016-12-07-Distributed System_06_Consistency and Replication/Consistency and Replication Summary.png)
+![Coordination Summary]({{site.url}}/assets/images/posts/2016-12-07-Distributed System_06_Consistency and Replication/Consistency and Replication Summary.png)
 
 
 ## 2 参考资料 ##

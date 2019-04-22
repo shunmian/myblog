@@ -356,12 +356,12 @@ Python中的xmlrpc模块实际上对于想要使用RPC的开发者来说很少�
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-19-网络实战(十八)：RPC/Telnet_SSH_FTP_RPC Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-19-网络实战(十八)：RPC/Telnet_SSH_FTP_RPC Summary.png)
 
 ## 4 全书总结 ##
 
 {: .img_middle_hg}
-![fopnp](/assets/images/posts/2015-04-19-网络实战(十八)：RPC/fopnp.png)
+![fopnp]({{site.url}}/assets/images/posts/2015-04-19-网络实战(十八)：RPC/fopnp.png)
 
 ## 5 参考资料 ##
 

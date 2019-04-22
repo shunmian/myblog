@@ -41,14 +41,14 @@ int main()
 hello.c文件通过bit的格式以ASCII编码(Text File)存储在disk上，如下图所示。
 
 {: .img_middle_lg}
-![Data](/assets/images/posts/2014-07-01-Computer System：Overview/Data.png)
+![Data]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Data.png)
 
 #### 2 Compilation to Machine Code ####
 
 hello.c通过人类可以阅读的文本存储c代码(高级语言)，为了让机器阅读，必须将其转化成机器码(低级语言)。这个转换的过程称之为编译，见下图。
 
 {: .img_middle_lg}
-![Compilation](/assets/images/posts/2014-07-01-Computer System：Overview/Compilation.png)
+![Compilation]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Compilation.png)
 
 正确理解Compliation各个阶段背后的原理是提高编程水平的必经阶段。它可以提供以下几个好处：
 
@@ -71,14 +71,14 @@ unix> ./hello
 这个过程看似简单和快速，后面涉及了非常复杂的硬件协作。我们将其简单总结成下图。
 
 {: .img_middle_hg}
-![Run hello](/assets/images/posts/2014-07-01-Computer System：Overview/Run hello.png)
+![Run hello]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Run hello.png)
 
 ##### 3.2 Caches & Storage Hierarchy #####
 
 上面运行hello文件的过程中，大部分时间是花在将Data从一个地方运送到另一个地方。离processor越近，则被processor读写的速度越快。因此根据速度从快到慢，存储类型从多级Cache memeory，到main memeory，到disk排列。具体见下图。
 
 {: .img_middle_lg}
-![Memory Hierarchy](/assets/images/posts/2014-07-01-Computer System：Overview/Memory Hierarchy.png)
+![Memory Hierarchy]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Memory Hierarchy.png)
 
 ### Part II: Program on Operating System ###
 
@@ -93,14 +93,14 @@ unix> ./hello
 操作系统主要抽象了I/O, main memory和Processor，见下图。
 
 {: .img_middle_hg}
-![Operating System](/assets/images/posts/2014-07-01-Computer System：Overview/Operating System.png)
+![Operating System]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Operating System.png)
 
 #### 2 Networks ###
 
 Network is another I/O(File) between different systems.
 
 {: .img_middle_lg}
-![Network](/assets/images/posts/2014-07-01-Computer System：Overview/Network.png)
+![Network]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Network.png)
 
 ### Part III: Important Themes ###
 
@@ -120,13 +120,13 @@ Parllelism包括3个level，从高到低分别是：
 最后我们增加一层对整个computer的抽象-虚拟机。
 
 {: .img_middle_lg}
-![Virtual Machine.png](/assets/images/posts/2014-07-01-Computer System：Overview/Virtual Machine.png)
+![Virtual Machine.png]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Virtual Machine.png)
 
 
 ## 2 总结 ##
 
 {: .img_middle_lg}
-![Virtual Machine.png](/assets/images/posts/2014-07-01-Computer System：Overview/Chapter 1 Overview Summary.png)
+![Virtual Machine.png]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Chapter 1 Overview Summary.png)
 
 ## 3 Reference ##
 

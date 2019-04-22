@@ -19,7 +19,7 @@ shortinfo: 本文是对Rudex框架的介绍。通过一个TodoList App从零开�
  
 ## 1 Recipies ##
 
-These are some use cases and code snippets to get you started with Redux in a real app. They assume you understand the topics in [Redux Part I：TodoList App]({ site.baseurl}}/04%20web%20development/2016/10/05/Redux-Part-I_TodoApp.html}})
+These are some use cases and code snippets to get you started with Redux in a real app. They assume you understand the topics in [Redux Part I：TodoList App]({ site.url}}/04%20web%20development/2016/10/05/Redux-Part-I_TodoApp.html}})
 
 TBC:
 
@@ -2226,7 +2226,7 @@ For clarity, these terms will be used to distinguish between different types of 
 
 The term "sub-reducer" has also been used in various discussions to mean any function that is not the root reducer, although the term is not very precise. Some people may also refer to some functions as "business logic" (functions that relate to application-specific behavior) or "utility functions" (generic functions that are not application-specific).
 
-Breaking down a complex process into smaller, more understandable parts is usually described with the term [functional decomposition](http://stackoverflow.com/questions/947874/what-is-functional-decomposition). This term and concept can be applied generically to any code. However, in Redux it is very common to structure reducer logic using approach #3, where update logic is delegated to other functions based on slice of state. Redux refers to tis concept as **reducer composition**, and it is by far the most widely-used approach to structuring reducer logic. In fact, it's so common that Redux includes a utility function called `combineReducers()`, which specifically abstracts the process of delegating work to other reducer functions based on slices of state. However, it's important to note that it is not the only pattern that can be used. In fact, it's entirely possible to use all three approaches for splitting up logic into functions, and usually a good idea as well. The [Refactoring Reducers]({{site.baseurl}}}/04%20web%20development/2016/10/06/Redux-Part-II_Recipies.html#refactoring-reducers-example) seciton shows some examples of this in action.
+Breaking down a complex process into smaller, more understandable parts is usually described with the term [functional decomposition](http://stackoverflow.com/questions/947874/what-is-functional-decomposition). This term and concept can be applied generically to any code. However, in Redux it is very common to structure reducer logic using approach #3, where update logic is delegated to other functions based on slice of state. Redux refers to tis concept as **reducer composition**, and it is by far the most widely-used approach to structuring reducer logic. In fact, it's so common that Redux includes a utility function called `combineReducers()`, which specifically abstracts the process of delegating work to other reducer functions based on slices of state. However, it's important to note that it is not the only pattern that can be used. In fact, it's entirely possible to use all three approaches for splitting up logic into functions, and usually a good idea as well. The [Refactoring Reducers]({{site.url}}}/04%20web%20development/2016/10/06/Redux-Part-II_Recipies.html#refactoring-reducers-example) seciton shows some examples of this in action.
 
 #### 1.9.4 Refactoring Reducers Example
 

@@ -23,7 +23,7 @@ shortinfo: Objective-C中的消息发送和C中的函数调用有着本质的区
 
 {: .img_middle_lg}
 
-![SendingMessage](/assets/images/posts/01 Objectiev C/2016-03-15-OC Runtime(二)_Messaging/sending message.png)
+![SendingMessage]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-15-OC Runtime(二)_Messaging/sending message.png)
 
 简单来看下这张图，当`[foo doSomething:@"param1" and @"param2"]`执行时，会转换成`objc_msgSend(id foo, SEL @selector(doSomething:and:),@"param1",@"param2")`, 而这个函数的执行过程就是这张图的流程:
 
@@ -65,7 +65,7 @@ struct objc_method {
 一个Method是一个指向objc_method结构体的指针，这个结构体包含三个变量，分别是SEL，signature和IMP。一个vtalbe的entry既是Method, 第一列是SEL,第二列是IMP。一个SEL对应一个IMP，如下图。
 
 {: .img_middle_lg}
-![SendingMessage](/assets/images/posts/01 Objectiev C/2016-03-15-OC Runtime(二)_Messaging/vtable.png)
+![SendingMessage]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-15-OC Runtime(二)_Messaging/vtable.png)
 
 因此，如果你可以更改SEL和IMP的动态对应关系，则可以做出一些奇妙的事情。
 
@@ -216,7 +216,7 @@ Method Swizzle在sending message的过程中寻找IMP这一步动态注入代码
 Obeserving Pattern 是Gang Of Four里面提到的24种面向对象设计模式之一。使得subject(被观察者)的iVar改变的时候，observer(观察者)能够得到提醒。这里有一个tricky的地方是beginner刚开始思考这个问题的时候，observer如果一直主动观察着subject iVar的变化，那observer就干不了其他事情了，或者另开一个线程。而问题的解决方法其实是observer被动接受subject发出的iVar的变化， 即subject拥有observer的引用，在iVar的setter里提醒observer。
 
 {: .img_middle_lg}
-![SendingMessage](/assets/images/posts/01 Objectiev C/2016-03-15-OC Runtime(二)_Messaging/Observer Pattern.png)
+![SendingMessage]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-15-OC Runtime(二)_Messaging/Observer Pattern.png)
 
 上图是Observing Pattern的UML。Subject是一个接口，声明了三个方法：
 
@@ -275,7 +275,7 @@ ConcreteSubjectA实现了Subject接口，在iVar的setter里加了notify(), 因�
 
 #### 3.2.2 KVO实现: isa Swizzling ###
 
-对于熟悉Key Value Observing API的同学来说，“订阅”-“响应”-“取消订阅” 也对应着上述`addObserver(Observer)`,`notify()`和`removeObserver(Observer)`这三个步骤，具体请参考[Key Value Observing]({{site.baseurl}}/objective-c/2016/02/18/Key-Value-Observing.html){:target="_blank"}。
+对于熟悉Key Value Observing API的同学来说，“订阅”-“响应”-“取消订阅” 也对应着上述`addObserver(Observer)`,`notify()`和`removeObserver(Observer)`这三个步骤，具体请参考[Key Value Observing]({{site.url}}/objective-c/2016/02/18/Key-Value-Observing.html){:target="_blank"}。
 
 
 1. 订阅：`- (void)addObserver:forKeyPath:options:context:`
@@ -397,7 +397,7 @@ void kvo_setter(id obj, SEL _cmd, id newValue){
 
 #### 3.2.3 KVO实现: Method Swizzling ###
 
-不知道同学们注意到没有，其实isa Swizzling实现KVO的本质是创建中间类，然后在中间类的setter里用Method Swizzling重写。Method Swizzling的介绍请见传送门[OC Runtime(三)： Method Swizziling]({{site.baseurl}}/objective-c/2016/03/16/OC-Runtime(三)_method-swizzling.html){:target="_blank"}。创建中间类的好处是使得原类的实现不被KVO改变。实际上我们完全可以不用isa Swizlling而只用Method Swizzling来实现KVO, 代码如下:
+不知道同学们注意到没有，其实isa Swizzling实现KVO的本质是创建中间类，然后在中间类的setter里用Method Swizzling重写。Method Swizzling的介绍请见传送门[OC Runtime(三)： Method Swizziling]({{site.url}}/objective-c/2016/03/16/OC-Runtime(三)_method-swizzling.html){:target="_blank"}。创建中间类的好处是使得原类的实现不被KVO改变。实际上我们完全可以不用isa Swizlling而只用Method Swizzling来实现KVO, 代码如下:
 
 
 {% highlight objc linenos %}
@@ -493,7 +493,7 @@ void kvo_setter(id obj, SEL _cmd, id newValue){
 
 本文介绍了OC Runtime的消息机制，实现了基于消息机制的两个黑魔法，**Method Swizzling**和**ISA Swizzling(KVO)**。
 
-全文总结参考[该图]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
+全文总结参考[该图]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
 
 ## 5 Reference ##
 

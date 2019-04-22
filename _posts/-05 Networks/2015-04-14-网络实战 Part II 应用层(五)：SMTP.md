@@ -178,7 +178,7 @@ if __name__ == '__main__':
 ## 3 总结 ##
 
 {: .img_middle_lg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-14-网络实战(十三)：SMTP/SMTP Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-14-网络实战(十三)：SMTP/SMTP Summary.png)
 
 ## 4 参考资料 ##
 

@@ -23,17 +23,17 @@ shortinfo: DBSM实现。
 ### 1.1  Database System Architecture
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-05-DBMS Concepts 5：Database System Architecture/Part 5_CH17 Database-System Architectures.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-05-DBMS Concepts 5：Database System Architecture/Part 5_CH17 Database-System Architectures.png)
 
 ### 1.2 Parallel System
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-05-DBMS Concepts 5：Database System Architecture/Part 5_CH18 Parallel Databases.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-05-DBMS Concepts 5：Database System Architecture/Part 5_CH18 Parallel Databases.png)
 
 ### 1.3 Distributed System
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-05-DBMS Concepts 5：Database System Architecture/Part 5_CH19 Distributed Databases.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-05-DBMS Concepts 5：Database System Architecture/Part 5_CH19 Distributed Databases.png)
 
 
 ## 2 MySQL实战 ## 
@@ -48,7 +48,7 @@ Database,Table,Column,Row的操作逃不出增删改查4种，只不过命令名
 对**MySQL的客户端mysql**总结成下表，以供参考。
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-06-01/client mysql.jpg)
+![regular expression]({{site.url}}/assets/images/posts/2015-06-01/client mysql.jpg)
 
 
 ## 4 参考资料 ##

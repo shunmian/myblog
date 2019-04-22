@@ -21,14 +21,14 @@ shortinfo: 本文介绍机器学习的一个重要应用，推荐系统。
 ## 1 推荐系统 ##
 
 {: .img_middle_hg}
-![推荐系统](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-09/推荐系统.png)
+![推荐系统]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-09/推荐系统.png)
 
 ## 2 作业 ##
 
 见[这里](https://github.com/shunmian/-11-Machine-Learning)。附上一张跑分图。
 
 {: .img_middle_mid}
-![assignment8](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-09/assignment8.png)
+![assignment8]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-09/assignment8.png)
 
 ## 3 总结 ##
 

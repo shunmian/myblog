@@ -30,7 +30,7 @@ Since ``Objective-C`` dosen't have namespace like other language such as ``Java'
 ### Item 16：Have a Designated Initializer ###
 
 {: .img_middle_hg}
-![Designated Initializer](/assets/images/posts/01 Objectiev C/2016-04-22-EOC(三)：Interface and API Design/Designated Initializer.png)
+![Designated Initializer]({{site.url}}/assets/images/posts/01 Objectiev C/2016-04-22-EOC(三)：Interface and API Design/Designated Initializer.png)
 
 ### Item 17：Implement the description Method ###
 

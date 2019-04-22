@@ -202,7 +202,7 @@ shortinfo: AWS介绍。
 
 - Notes
     {: .img_middle_hg}
-    ![EBS AMI](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png)
+    ![EBS AMI]({{site.url}}/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png)
 
     - Volumes exist on EBS
         - volumes is just virtual hard disk
@@ -273,7 +273,7 @@ shortinfo: AWS介绍。
     - **X** for extrame Memory
 
 {: .img_middle_hg}
-![EC2 instance type](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EC2 instance type.png)
+![EC2 instance type]({{site.url}}/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EC2 instance type.png)
     
 
 - **SOFTWARE** - AMI
@@ -1034,7 +1034,7 @@ videos and white papers:
 
 
 {: .img_middle_hg}
-![kinesis](/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png)
+![kinesis]({{site.url}}/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png)
     
 
 ## 7 Cloud Formation

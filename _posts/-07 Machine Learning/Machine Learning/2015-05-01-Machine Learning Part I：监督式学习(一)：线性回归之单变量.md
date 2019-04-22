@@ -56,7 +56,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 
 
 {: .img_middle_mid}
-![hypothesis and cost function](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-01/supervised learning regression.png)
+![hypothesis and cost function]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-01/supervised learning regression.png)
 
 
 ### 2.1 预测函数 ###
@@ -84,7 +84,7 @@ $$
 $\theta_0$和$\theta_1$时，需要用图b三维函数或者图c等高线来表示，可以看到这是一个**convex**函数，只有一个**全局最小值(global minimium)**。 
 
 {: .img_middle_hg}
-![hypothesis and cost function](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-01/hypothesis and cost function.png)
+![hypothesis and cost function]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-01/hypothesis and cost function.png)
 
 ## 3 梯度下降 ##
 
@@ -133,7 +133,7 @@ $$
 
 
 {: .img_middle_lg}
-![matrix review](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-01/matrix review.png)
+![matrix review]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-01/matrix review.png)
 
 ## 5 总结 ##
 

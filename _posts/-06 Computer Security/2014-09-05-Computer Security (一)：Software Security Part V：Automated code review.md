@@ -25,7 +25,7 @@ shortinfo: 本文是对计算机安全中的软件安全里的低等级内存攻
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![gcc & gdb](/assets/images/posts/2014-06-30-A1 C Tools for Linux/gdb.png)
+![gcc & gdb]({{site.url}}/assets/images/posts/2014-06-30-A1 C Tools for Linux/gdb.png)
 
 ## 4 Reference ##
 

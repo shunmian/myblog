@@ -130,7 +130,7 @@ $$
 
 
 {: .img_middle_hg}
-![Back Propagation Intuition](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/Back Propagation Intuition.png)
+![Back Propagation Intuition]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/Back Propagation Intuition.png)
 
 
 
@@ -141,28 +141,28 @@ $$
 由于**fminunc**和**costfunction**的**theta**是**vector**而不是**matrix**，因此当用**神经网络的Back Propagation算法**时，需要将**matrix**展开成**vector**，计算完再将**vector**转回成**matrix**.
 
 {: .img_middle_hg}
-![Back Propagation Intuition](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/parameter unrolling.png)
+![Back Propagation Intuition]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/parameter unrolling.png)
 
 #### 1.3.2 梯度检查 ####
 
 由于Back Propagation实现起来比较tricky，有时候看起来$J(θ)$在下降，但是结果却是不对的。为了避免这种情况，我们利用数值斜率来校准Back Propagation算法的实现(称为**Gradient Checking**)。当两者在多种情况下都相近的时候，我们就认定Back Propagation算法的实现没有问题。这个时候再关掉**Gradient Checking**用Back Propagation算法来算J的gradient就在正确性的基础上又有速率(因为Back Propagation远比数值斜率快)
 
 {: .img_middle_hg}
-![Back Propagation Intuition](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/Gradient Checking.png)
+![Back Propagation Intuition]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/Gradient Checking.png)
 
 #### 1.3.3 Theta随机初始化 ####
 
 由于fminunc需要一个initialTheta值，而Neutral Network若用0作为所有theta的初始值，则会导致每一个hidden layer里的unit都是一样，使得最终输出错误。因此为了打破这种对称，我们需要随机生成$[-ϵ，+ϵ]$范围的initialTheta。
 
 {: .img_middle_hg}
-![Back Propagation Intuition](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/random initialization.png)
+![Back Propagation Intuition]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/random initialization.png)
 
 
 #### 1.3.4 整合 ####
 
 
 {: .img_middle_hg}
-![Putting Together](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/Putting Together.png)
+![Putting Together]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/Putting Together.png)
 
 
 最后请观看一个利用Neural Network实现
@@ -175,7 +175,7 @@ $$
 
 
 {: .img_middle_lg}
-![assignment4](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/assignment4.png)
+![assignment4]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-05/assignment4.png)
 
 
 ## 3 总结 ##

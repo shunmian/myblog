@@ -363,7 +363,7 @@ static method_t *search_method_list(const method_list_t *mlist, SEL sel) {
 
 
 {: .img_middle_lg}
-![Category Compile Order](/assets/images/posts/01 Objectiev C/2016-03-17-OC Runtime(三)_Category_Part I_机制/Category Compile Order.png)
+![Category Compile Order]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-17-OC Runtime(三)_Category_Part I_机制/Category Compile Order.png)
 
 {% highlight c linenos %}
 
@@ -439,7 +439,7 @@ for (unsigned int i = 0; i < methodCount; i++){
 
 ## 3 总结 ##
 
-全文总结参考[该图]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
+全文总结参考[该图]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
 
 ## 4 参考资料 ##
 - [objc category的秘密](http://blog.sunnyxx.com/2014/03/05/objc_category_secret/);

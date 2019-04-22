@@ -22,7 +22,7 @@ shortinfo: 本文是对Javascript和DOM的introduction。
 ## 1.1 DOM ##
 
 {: .img_middle_hg}
-![JS DOM 入门 summary](/assets/images/posts/04 Web/JS/2016-10-01-JavaScript入门/JS DOM 入门 summary.png)
+![JS DOM 入门 summary]({{site.url}}/assets/images/posts/04 Web/JS/2016-10-01-JavaScript入门/JS DOM 入门 summary.png)
 
 ## 1.2 JS ##
 

@@ -125,12 +125,12 @@ class NonEmpty(elem:Int, left:Inset, right: Inset) extends Inset{
 这里比较tricky的地方是如何理解union操作，递归何时终止呢？
 
 {: .img_middle_lg}
-![union1](/assets/images/posts/2015-10-03/union1.png)
+![union1]({{site.url}}/assets/images/posts/2015-10-03/union1.png)
 
 每一次递归，都会减少一个`elem`到`incl(elem)`操作，因此递归最后会到`Empty`，也就是退出条件。显然，按照这样的思路，我们可以有好几种实现，`left`和`right`交换是一样的，但是`left`和`right`先`union`还是`left`或`right`先`union other`却有着本质的不同。我们来比较一下
 
 {: .img_middle_lg}
-![union comparision](/assets/images/posts/2015-10-03/union comparision.png)
+![union comparision]({{site.url}}/assets/images/posts/2015-10-03/union comparision.png)
 
 其中<b>S<sub>n</sub></b>是一个有**n**个元素的**Inset**，**u**表示`union`操作。表格里的数字是`union`调用的次数，我们可以看到它只和<b>S<sub>n</sub></b>中的**n**有关，因此我们用**T(N)**表示<b>S<sub>n</sub></b><b>u</b><b>S<sub>M</sub></b>所需要的时间，**T(0) = 1**，也就是`Empty`的`union`操作。
 
@@ -159,7 +159,7 @@ class NonEmpty(elem:Int, left:Inset, right: Inset) extends Inset{
 合上书本，有一个问题一直萦绕在脑中，目前为止，我们处在一个怎样的编程世界中呢？到底我们现在在哪里？下面这张二维图或许是一个参考答案：
 
 {: .img_middle_mid}
-![compound data](/assets/images/posts/2015-10-03/compound data.png)
+![compound data]({{site.url}}/assets/images/posts/2015-10-03/compound data.png)
 
 
 

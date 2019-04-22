@@ -180,7 +180,7 @@ iOS autolayout对于视图的布局比autoresizing要灵活很多。但是autola
 最后将Constraint总结成下图。
 
 {: .img_middle_hg}
-![Constraints LifeCycle总结](/assets/images/posts/01 Objectiev C/2016-04-10-OC LifeCycle(一)_Constraints Best Practice/Constraints LifeCycle总结.png)
+![Constraints LifeCycle总结]({{site.url}}/assets/images/posts/01 Objectiev C/2016-04-10-OC LifeCycle(一)_Constraints Best Practice/Constraints LifeCycle总结.png)
 
 ## 3 Reference ##
 

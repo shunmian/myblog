@@ -19,7 +19,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 {:.hr-short-left}
 
 
-上篇[文章]({{ site.baseurl}}/web%20scraping/2015/12/02/Web-Scraping-Part-I-Basic-Scrapers-(%E4%BA%8C)-BeautifulSoup%E8%BF%9B%E9%98%B6.html)我们已经介绍过**BeautifulSoup**Advanced HTML Parsing的用法。本文我们用几个对真实网站抓取的例子来应用一下**BeautifulSoup**。这些例子根据涉及的域名数可以分为**单域名**和**多域名**，根据抓取的数量又可以分为**随机抓取**和**完全抓取**。
+上篇[文章]({{ site.url}}/web%20scraping/2015/12/02/Web-Scraping-Part-I-Basic-Scrapers-(%E4%BA%8C)-BeautifulSoup%E8%BF%9B%E9%98%B6.html)我们已经介绍过**BeautifulSoup**Advanced HTML Parsing的用法。本文我们用几个对真实网站抓取的例子来应用一下**BeautifulSoup**。这些例子根据涉及的域名数可以分为**单域名**和**多域名**，根据抓取的数量又可以分为**随机抓取**和**完全抓取**。
 
 ## 1 Singe-Domain##
 
@@ -223,7 +223,7 @@ Regular Expression应该用什么pattern去匹配目标tag是这段代码的核�
 
 #### 1.2.3 External and Internal Link ####
 
-请先看[Multi-Domain Random Walk]({{ site.baseurl}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(三)-BeautifulSoup实战.html#random-walk-1)再回过头来看下面这段代码。
+请先看[Multi-Domain Random Walk]({{ site.url}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(三)-BeautifulSoup实战.html#random-walk-1)再回过头来看下面这段代码。
 
 上述代码可以重构用来收集Single Domain下的所有外部和内部url。如下
 
@@ -274,7 +274,7 @@ print("https://www.flinhong.com/, internal link number: ",len(allIntLinks))
 程序流程图如下。
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-03/Single Domain All External And Internal Links.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-03/Single Domain All External And Internal Links.png)
 
 ## 2 Multi-Domain ##
 
@@ -384,7 +384,7 @@ followExternalOnly("http://www.hku.hk")
 5. ``getInternalLinks(bsObj,includeUrl)``：输入bsObj和includeUrl，返回内部url的list。如何半段是内部呢，url以``\``开头或者以自己域名开头，``re.compile("^(/|.*" + includeUrl + ")"))``
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-03/Multi-domain Random Walk.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-03/Multi-domain Random Walk.png)
 
 
 
@@ -411,7 +411,7 @@ followExternalOnly("http://www.hku.hk")
 本文从**Single-Domain(Randm Walk && Total Walk(External Links+Internal Links, Site Map, Site Data))**及**Multi-Domain(Random Walk)**这5个基础的例子，从真实的网站中带我们领略了BeautifulSoup的功能，也给我们日后的Web Scraping设立了5个基本的任务范本。最后将本文内容总结成下图以供参考。
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-03/BeautifulSoup实战总结.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-03/BeautifulSoup实战总结.png)
 
 
 ## 5 参考资料 ##

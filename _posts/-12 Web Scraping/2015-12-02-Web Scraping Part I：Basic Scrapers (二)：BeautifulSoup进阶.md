@@ -221,7 +221,7 @@ print(image.attrs['src'])								//输出image这个Tag的src属性。
 
 ## 6 Lambda Expression ##
 
-关于**Lambda Expression**的介绍见[这里]({{ site.baseurl}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#calculus)。简单来说，λ表达式是接受一个变量的匿名函数，可以作为高阶函数的输入或者输出参数。
+关于**Lambda Expression**的介绍见[这里]({{ site.url}}/functional%20programming/2015/10/01/Functional-Programming-in-Scala(一)_λ-演算-Part-I-表达式-函数和赋值.html#calculus)。简单来说，λ表达式是接受一个变量的匿名函数，可以作为高阶函数的输入或者输出参数。
 
 BeautifulSoup的``find()``和``findAll()``函数也支持λ表达式，如下：
 
@@ -242,7 +242,7 @@ for tag in tagWith2Attrs:
 
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-02/BeautifulSoup进阶.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-02/BeautifulSoup进阶.png)
 
 
 

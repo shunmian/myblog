@@ -217,7 +217,7 @@ for k,v in ngrams.items():
 
 ## 3 Cleaining with App： OpenRefine ##
 
-以上部分[Cleaning in code]({{ site.baseurl}}/web%20scraping/2015/12/07/Web-Scraping-Part-II-Advanced-Scrapers-(一)-数据清理.html#cleaining-in-code)是几乎我们能用代码进行数据清理的最大程度了，即在code里对原始数据：
+以上部分[Cleaning in code]({{ site.url}}/web%20scraping/2015/12/07/Web-Scraping-Part-II-Advanced-Scrapers-(一)-数据清理.html#cleaining-in-code)是几乎我们能用代码进行数据清理的最大程度了，即在code里对原始数据：
 
 1. 清理不规范的数据，转成我们想要的类型；
 2. 规范化数据库，去除冗余信息。
@@ -240,7 +240,7 @@ openRefine有两个data cleanup的主要功能：
 本文展示了如何将原始数据转换成规范化数据库，通过**代码**和**OpenRefine**两种途径。最后总结成下图以供参考。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-07/Data Cleaning Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-07/Data Cleaning Summary.png)
 
 
 ## 5 参考资料 ##

@@ -21,28 +21,28 @@ shortinfo: Computer Networks基础。
 ## 1 Internet Overview ##
 
 {: .img_middle_hg}
-![Network overview](/assets/images/posts/2015-04-01/Network overview.png)
+![Network overview]({{site.url}}/assets/images/posts/2015-04-01/Network overview.png)
 
 ## 2 Application Layer ##
  
 {: .img_middle_hg}
-![Application Layer](/assets/images/posts/2015-04-01/Application Layer.png)
+![Application Layer]({{site.url}}/assets/images/posts/2015-04-01/Application Layer.png)
 
 ## 3 Transport Layer ##
 
 {: .img_middle_hg}
-![Transport Layer](/assets/images/posts/2015-04-01/Transport Layer.png)
+![Transport Layer]({{site.url}}/assets/images/posts/2015-04-01/Transport Layer.png)
 
 ## 4 Network Layer ##
 
 {: .img_middle_hg}
-![Transport Layer](/assets/images/posts/2015-04-01/Network Layer.png)
+![Transport Layer]({{site.url}}/assets/images/posts/2015-04-01/Network Layer.png)
 
 
 ## 5 Link Layer ##
 
 {: .img_middle_hg}
-![Transport Layer](/assets/images/posts/2015-04-01/Link Layer.png)
+![Transport Layer]({{site.url}}/assets/images/posts/2015-04-01/Link Layer.png)
 
 ## 6 参考资料 ##
 

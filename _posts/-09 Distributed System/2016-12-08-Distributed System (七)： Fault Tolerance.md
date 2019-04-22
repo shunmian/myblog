@@ -20,7 +20,7 @@ shortinfo: 本文是对Distributed System的总结。
 ## 1 Summary ##
 
 {: .img_middle_hg}
-![Spring Summary.png](/assets/images/posts/03 Java/2016-12-08-Distributed System_07_Fault Tolerance/Fault Tolerance.png)
+![Spring Summary.png]({{site.url}}/assets/images/posts/03 Java/2016-12-08-Distributed System_07_Fault Tolerance/Fault Tolerance.png)
 
 
 

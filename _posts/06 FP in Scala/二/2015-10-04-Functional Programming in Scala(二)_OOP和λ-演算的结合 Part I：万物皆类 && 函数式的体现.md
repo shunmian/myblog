@@ -23,7 +23,7 @@ shortinfo: 什么是λ-Calculus，函数式编程的理论基础是什么，什�
 
 
 {: .img_middle_mid}
-![compound data](/assets/images/posts/2015-10-03/compound data.png)
+![compound data]({{site.url}}/assets/images/posts/2015-10-03/compound data.png)
 
 
 
@@ -107,13 +107,13 @@ object Main{
 最后Boolean的实现用以下这张图表示。
 
 {: .img_middle_mid}
-![Boolean](/assets/images/posts/2015-10-04/Boolean.png)
+![Boolean]({{site.url}}/assets/images/posts/2015-10-04/Boolean.png)
 
 
 
 ### 2.2 Compound Data is Class ###
 
-这个同学们应该都很熟悉了，就是最常见的类的对data和function的封装(当function被封装在类里，我们称之为method，具体区别见[2.4]({{ site.baseurl}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合.html#compound-procedure-is-class)。我们重新改写[λ-演算 Part III：抽象数据]({{ site.baseurl}}/functional%20programming/2015/10/03/Functional-Programming-in-Scala(一)_λ-演算-Part-III-抽象数据.html)的有理数的例子，将**Compound Data**改写成**类**，只需将函数封装到数据里面即可。
+这个同学们应该都很熟悉了，就是最常见的类的对data和function的封装(当function被封装在类里，我们称之为method，具体区别见[2.4]({{ site.url}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合.html#compound-procedure-is-class)。我们重新改写[λ-演算 Part III：抽象数据]({{ site.url}}/functional%20programming/2015/10/03/Functional-Programming-in-Scala(一)_λ-演算-Part-III-抽象数据.html)的有理数的例子，将**Compound Data**改写成**类**，只需将函数封装到数据里面即可。
 
 {% highlight scala linenos %}
 object Main {
@@ -160,7 +160,7 @@ object Main {
 
 ### 2.3 Primitive Procedure is Class ###
 
-那么如何将诸如+,-,*,\的**Primitive Procedure**表示成类呢，其实我们在[2.1]({{ site.baseurl}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合.html#compound-procedure-is-class)已经看到了如何将。。------------------------------------------
+那么如何将诸如+,-,*,\的**Primitive Procedure**表示成类呢，其实我们在[2.1]({{ site.url}}/functional%20programming/2015/10/04/Functional-Programming-in-Scala(二)_OOP和λ-演算的结合.html#compound-procedure-is-class)已经看到了如何将。。------------------------------------------
 
 
 
@@ -351,7 +351,7 @@ trait Movable{
 ### 3.3 类等级 ###
 
 {: .img_middle_lg}
-![scala class hierarchy](/assets/images/posts/2015-10-04/scala class hierarchy.png)
+![scala class hierarchy]({{site.url}}/assets/images/posts/2015-10-04/scala class hierarchy.png)
 
 在Scala里，类等级(Class Hierachy)如上图所示：
 
@@ -364,7 +364,7 @@ trait Movable{
 
 ### 3.4 运行时和dynamic method dispatch ###
 
-这里暂且不表，具体请先参见[Objective-C的runtime系列]({{ site.baseurl}}/objective-c/2016/03/14/OC-Runtime(一)_Sending-Message.html)。
+这里暂且不表，具体请先参见[Objective-C的runtime系列]({{ site.url}}/objective-c/2016/03/14/OC-Runtime(一)_Sending-Message.html)。
 
 
 ## 4. 函数式特性的体现:Pattern Matching ##
@@ -496,7 +496,7 @@ object ExprTest extends App{
 #### 4.2 Pattern Match 语法 ####
 
 {: .img_middle_lg}
-![why pattern matching](/assets/images/posts/2015-10-04/why pattern matching.png)
+![why pattern matching]({{site.url}}/assets/images/posts/2015-10-04/why pattern matching.png)
 
 我们来对前面的问题做一个小结，我们的任务是想要同时在**扩展子类**和**扩展接口方法**(接口方法指的是适合所有子类，定义在接口里，而具体实现需要access subclass's own method implementation，即**子类方法**)上获取一个普适的方便的方法：
 
@@ -555,7 +555,7 @@ object ExprTest extends App{
 **Pattern Matching**的语法如下图
 
 {: .img_middle_lg}
-![pattern matching](/assets/images/posts/2015-10-04/pattern matching.png)
+![pattern matching]({{site.url}}/assets/images/posts/2015-10-04/pattern matching.png)
 
 #### 4.3 Pattern Match 例子 ####
 
@@ -601,7 +601,7 @@ object ExprTest extends App {
 ### 4.4 Pattern Matching vs OOP decomposition ###
 
 {: .img_middle_lg}
-![pattern matching vs oop decompostion](/assets/images/posts/2015-10-04/pattern matching vs oop decompostion.png)
+![pattern matching vs oop decompostion]({{site.url}}/assets/images/posts/2015-10-04/pattern matching vs oop decompostion.png)
 
 **Pattern Maching**和**OOP Decompostion**各有优劣，那么在我们实际编程中，该如何选择呢：
 
@@ -647,7 +647,7 @@ object ExprTest extends App {
 最后将本节内容总结成一张图。
 
 {: .img_middle_lg}
-![OOP with λ-Calculus summary](/assets/images/posts/2015-10-04/OOP with λ-Calculus summary.png)
+![OOP with λ-Calculus summary]({{site.url}}/assets/images/posts/2015-10-04/OOP with λ-Calculus summary.png)
 
 
 

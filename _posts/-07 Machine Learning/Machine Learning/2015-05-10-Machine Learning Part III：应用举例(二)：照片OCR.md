@@ -21,7 +21,7 @@ shortinfo: 本文通过Photo OCR这个具体例子，我们可以学到:机器�
 ## 1 Photo OCR ##
 
 {: .img_middle_hg}
-![照片OCR](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-10/照片OCR.png)
+![照片OCR]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-10/照片OCR.png)
 
 
 ## 2 作业 ##

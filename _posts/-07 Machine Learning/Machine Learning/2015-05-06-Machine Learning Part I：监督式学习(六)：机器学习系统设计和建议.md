@@ -44,7 +44,7 @@ shortinfo: 如何调试机器学习算法？在判断了是不足拟合和过度
 
 
 {: .img_middle_lg}
-![Feature个数 vs Generalized Error](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/调试算法.png)
+![Feature个数 vs Generalized Error]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/调试算法.png)
 
 
 
@@ -91,7 +91,7 @@ $$
 > 对于未来数据预测的评估，test data要独立出来，不能作为预测函数fit的一部分。
 
 {: .img_middle_hg}
-![哪个error_考虑Feature个数](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/哪个error_考虑Feature个数.png)
+![哪个error_考虑Feature个数]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/哪个error_考虑Feature个数.png)
 
 
 ### 1.2 Bias vs. Variance ### 
@@ -103,7 +103,7 @@ $$
 > 如何用**error vs. feature个数**诊断**Bias/Variance**?
 
 {: .img_middle_hg}
-![Feature个数和baisvariance](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/Feature个数和baisvariance.png)
+![Feature个数和baisvariance]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/Feature个数和baisvariance.png)
 
 #### 1.2.2 error vs. $λ$ ####
 
@@ -112,14 +112,14 @@ $$
 正则化是用来解决overfitting的问题，但是$λ$过大会导致underfitting问题，$λ$过小会有overfitting问题。如何选择$λ$的大小呢。
 
 {: .img_middle_hg}
-![lambda和baisvariance](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/lambda和baisvariance.png)
+![lambda和baisvariance]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/lambda和baisvariance.png)
 
 #### 1.2.3 error vs. training number (learning curve)####
 
 > 如何用**error vs. training number**诊断**Bias/Variance**?
 
 {: .img_middle_hg}
-![lambda和baisvariance](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/traning number和baisvariance.png)
+![lambda和baisvariance]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/traning number和baisvariance.png)
 
 >在什么情况下，收集更多的traning example可以降低$J_{CV}$？答案是：在**High Variance**的情况下而不是**High Bias**的情况下。
 
@@ -162,19 +162,19 @@ $$
 答案是：用**Error Metrics**。
 
 {: .img_middle_lg}
-![Error Metrics](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/Error Metrics.png)
+![Error Metrics]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/Error Metrics.png)
 
 > 将Precision和Recall合成一个指标：F1。
 
 {: .img_middle_lg}
-![F1](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/F1.png)
+![F1]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/F1.png)
 
 ### 2.4 算法比较 ###
 
 > 一个劣势的算法，如果给予充足的训练数据，其性能(error)可以强于一个优势算法(在少数据情况下的优势算法)。
 
 {: .img_middle_mid}
-![Algorithm Compare](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/Algorithm Compare.png)
+![Algorithm Compare]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/Algorithm Compare.png)
 
 ## 3 作业 ##
 
@@ -182,7 +182,7 @@ $$
 
 
 {: .img_middle_lg}
-![assignment5](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/assignment5.png)
+![assignment5]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/assignment5.png)
 
 ## 4 总结 ##
 
@@ -191,7 +191,7 @@ $$
 最后我们讨论了**机器学习算法系统设计**，对于其中错误的定义，用**Error Metrics**结合**F1**来更准确的界定机器学习的性能指标。
 
 {: .img_middle_hg}
-![调试总结](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/调试总结.png)
+![调试总结]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-06/调试总结.png)
 
 
 ## 5 参考资料 ##

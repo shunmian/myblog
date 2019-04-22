@@ -23,10 +23,10 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Chapter 09 Virtual Memory summary (一) .png](/assets/images/posts/2014-07-09-Computer System Part II Program On System(三)：Virtual Memory/Chapter 09 Virtual Memory summary (一).png)
+![Chapter 09 Virtual Memory summary (一) .png]({{site.url}}/assets/images/posts/2014-07-09-Computer System Part II Program On System(三)：Virtual Memory/Chapter 09 Virtual Memory summary (一).png)
 
 {: .img_middle_hg}
-![Chapter 09 Virtual Memory summary (二) .png](/assets/images/posts/2014-07-09-Computer System Part II Program On System(三)：Virtual Memory/Chapter 09 Virtual Memory summary (二).png)
+![Chapter 09 Virtual Memory summary (二) .png]({{site.url}}/assets/images/posts/2014-07-09-Computer System Part II Program On System(三)：Virtual Memory/Chapter 09 Virtual Memory summary (二).png)
 
 
 ## 2 Reference ##

@@ -21,7 +21,7 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。
 ## 1. 搜索算法API ##
 
 {: .img_middle_lg}
-![Sorting Algorithms](/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/Searching API.png)
+![Sorting Algorithms]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/Searching API.png)
 
 ## 2. 搜索算法 ##
 
@@ -29,7 +29,7 @@ shortinfo: Searching 搜索是现代计算机和互联网的基础。
 
 {% endhighlight %}
 {: .img_middle_lg}
-![Sorting Algorithms](/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/searching performance0.png)
+![Sorting Algorithms]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/searching performance0.png)
 
 ### 2.1 基础搜索 ###
 
@@ -136,7 +136,7 @@ binary search(by ordered array)Inserting a new key into an ordered array of size
 小结: 2.1顺序搜索(无序链表)实现和2.2二分法搜索(有序数组)实现的peformance总结如下表:
 
 {: .img_middle_lg}
-![Sorting Algorithms](/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/searching performance1.png)
+![Sorting Algorithms]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/searching performance1.png)
 
 
 我们能否可以实现某种算法使得insert和search都是O(logN)的时间复杂度？ 答案是YES！这要用到下面介绍的二叉树(binary search tree) by using array(O(logN)) search advantage and linked list quick insertion advantage.
@@ -148,7 +148,7 @@ binary search tree combines the flexibility of insertion in a linked list with t
 > <b>Binary Search Tree(BST)</b>: a binary tree where each node has a Comparabe key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree.
 
 {: .img_middle_lg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/binary tree vs binary search tree.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/binary tree vs binary search tree.png)
 
 {% highlight java linenos %}
 public class BST<Key extends Comparable<Key>,Value>  {
@@ -202,7 +202,7 @@ public class BST<Key extends Comparable<Key>,Value>  {
 Search hits in a BST built from N random keys require ~ 2lnN compares on the average, correspondence to QuickSort partitioning. But the worst case is that it is not balanced which requires N compares。
 
 {: .img_middle_lg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/binary search tree situation.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/binary search tree situation.png)
 
 
 
@@ -212,7 +212,7 @@ Search hits in a BST built from N random keys require ~ 2lnN compares on the ave
 三种基本搜索的performance总结如下图。
 
 {: .img_middle_lg}
-![Binary Tree](/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/searching performance2.png)
+![Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-05_Algorithm(Part III)：Searching(一)：基础搜索/searching performance2.png)
 
 1. 顺序搜索(无序链表)：搜索是O(N)；插入虽然是O(1)，但是插入前需先搜索，若搜索不到则插入，否则update，因此实际插入是O(N)。
 

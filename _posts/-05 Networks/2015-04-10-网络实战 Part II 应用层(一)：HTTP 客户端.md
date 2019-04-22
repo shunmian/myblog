@@ -139,7 +139,7 @@ http没有状态，Cookies用来设置http状态来确定用户身份，同时�
 
 
 {: .img_middle_hg}
-![Network Data & Error Summary](/assets/images/posts/2015-04-10-网络实战(九)：HTTP Client/HTTP Client Summary.png)
+![Network Data & Error Summary]({{site.url}}/assets/images/posts/2015-04-10-网络实战(九)：HTTP Client/HTTP Client Summary.png)
 
 ## 4 参考资料 ##
 

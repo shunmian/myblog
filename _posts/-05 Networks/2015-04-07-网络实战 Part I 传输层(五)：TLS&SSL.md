@@ -28,7 +28,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第6
 ### 1.1 TLS原理 ###
 
 {: .img_middle_hg}
-![TLS原理](/assets/images/posts/2015-04-07-网络实战(六)：TLS&SSL/TLS原理.png)
+![TLS原理]({{site.url}}/assets/images/posts/2015-04-07-网络实战(六)：TLS&SSL/TLS原理.png)
 
 ### 1.2 TLS职责 ###
 
@@ -145,7 +145,7 @@ $ sudo tcpdump -n port 1060 -i lo -X
 除了刚开始的几个packet里有public key等数据是没有加密的，后面的‘Beatiful is better than ugly’数据显示是乱码。需要注意的是client address(IP,port)和server address(IP,port)TLS是不能加密的。
 
 {: .img_middle_mid}
-![TLS原理](/assets/images/posts/2015-04-07-网络实战(六)：TLS&SSL/tcpdump response.png)
+![TLS原理]({{site.url}}/assets/images/posts/2015-04-07-网络实战(六)：TLS&SSL/tcpdump response.png)
 
 ### 2.2 进阶ssl ###
 
@@ -196,7 +196,7 @@ Python标准库里支持TLS协议的库包括：
 ## 3 总结 ##
 
 {: .img_middle_lg}
-![TLS原理](/assets/images/posts/2015-04-07-网络实战(六)：TLS&SSL/
+![TLS原理]({{site.url}}/assets/images/posts/2015-04-07-网络实战(六)：TLS&SSL/
 TSLSummary.png)
 
 ## 4 参考资料 ##

@@ -120,10 +120,10 @@ SKEmitterNode是SpriteKit用来展示粒子系统的，下面介绍下它的常�
 
 1. subclass一个SpriteKit Particles Files ( ctrl + N --> iOS，Resources，SpriteKit Particles Files --> choose 1 of the eight template --> save，你会得到一个.sks 和.png 文件，点击.sks文件:
 
-    ![SKEmitterNode_1](/assets/images/posts/2016-02-20/SKEmitterNode_1.png)
-    ![SKEmitterNode_2](/assets/images/posts/2016-02-20/SKEmitterNode_2.png)
-    ![SKEmitterNode_3](/assets/images/posts/2016-02-20/SKEmitterNode_3.png)
-    ![SKEmitterNode_4](/assets/images/posts/2016-02-20/SKEmitterNode_4.png)
+    ![SKEmitterNode_1]({{site.url}}/assets/images/posts/2016-02-20/SKEmitterNode_1.png)
+    ![SKEmitterNode_2]({{site.url}}/assets/images/posts/2016-02-20/SKEmitterNode_2.png)
+    ![SKEmitterNode_3]({{site.url}}/assets/images/posts/2016-02-20/SKEmitterNode_3.png)
+    ![SKEmitterNode_4]({{site.url}}/assets/images/posts/2016-02-20/SKEmitterNode_4.png)
 2. 在.sks文件右侧调整各参数，例如有粒子平均产生率(BirthRate) 单位是个/秒。右边的range是一个分布，在平均产生率上 ±  range/2 分布。particle texture 是粒子的纹路，你可以选择自己加入的图片文件。
 3. 调整完成后如何在code中调用.sks文件呢:
 

@@ -87,12 +87,12 @@ finally:
 5. **WebDriverWait**用来做显示等待Ajax页面载入。
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-15/Selenium Class relationship.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-15/Selenium Class relationship.png)
 
 ## 2 WebDriver API ##
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-15/Selenium WebDriver Summary.jpg)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-15/Selenium WebDriver Summary.jpg)
 
 
 ## 3 参考资料 ##

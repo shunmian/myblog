@@ -25,7 +25,7 @@ shortinfo: 本文是《Effective Objective-C》的系列笔记的第七篇《The
 ### Item 47：Familiarize Yourself with the System Frameworks ###
 
 {: .img_middle_hg}
-![iOS Framework Overview](/assets/images/posts/01 Objectiev C/2016-04-26-EOC(七)：The System Framework/iOS Framework Overview.png)
+![iOS Framework Overview]({{site.url}}/assets/images/posts/01 Objectiev C/2016-04-26-EOC(七)：The System Framework/iOS Framework Overview.png)
 
 ### Item 48：Prefer Block Enumeration to  for loops ###
 

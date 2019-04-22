@@ -104,7 +104,7 @@ shortinfo: 本文《The Linux Command Line》的笔记。
 > **Shell Variable vs Temp Env Variable**: `shellVar=shellVar; export envVar=envVar; printenv | grep 'shellVar\|envVar'`, output `envVar=envVar`. shellVar只存在当前shell process, **不会被子进程继承**；envVar会被子进程继承，但是用export只是temp(即再开一个shell，`printenv | grep envVar`会输出空), 如果要persist,就得`export envVar=envVar`到`~/.profile`或`~/.bash_profile`文件。
 
 {: .img_middle_lg}
-![cprintf](/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/env_config_file.png)
+![cprintf]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/env_config_file.png)
 
 - `printenv`: 只打印env variables
 - `set`: 打印shell variables and env variables
@@ -284,7 +284,7 @@ fi
 {% endhighlight %}
 
 {: .img_middle_lg}
-![test_expression_for_file_string_integer](/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/test_expression_for_file_string_integer.png)
+![test_expression_for_file_string_integer]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/test_expression_for_file_string_integer.png)
 
 
 ### C28: Reading Keyboard Input
@@ -412,7 +412,7 @@ Number of arguments: $#
 
 
 {: .img_middle_lg}
-![cprintf](/assets/images/posts/-02_Operating System/6828/2015-02-04-OS MIT 6828 Part I：Operating system interfaces/cprintf.png)
+![cprintf]({{site.url}}/assets/images/posts/-02_Operating System/6828/2015-02-04-OS MIT 6828 Part I：Operating system interfaces/cprintf.png)
 
 {% highlight c linenos %}
 

@@ -18,7 +18,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(服务器架设篇)》的笔�
 {:.hr-short-left}
 
 {: .img_middle_hg}
-![Nginx_architecture](/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_architecture.png)
+![Nginx_architecture]({{site.url}}/assets/images/posts/-14_Backend/2015-11-01-Backend_Nginx/Nginx_architecture.png)
 
 ## Part 1: 服务器搭建前的进修专区
 

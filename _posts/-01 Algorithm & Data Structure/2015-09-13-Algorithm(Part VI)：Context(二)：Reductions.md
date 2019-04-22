@@ -25,13 +25,13 @@ shortinfo: 图是重要的一种数据结构，能巧妙优雅地解决许多其
 
 
 {: .img_middle_hg}
-![1.1 Introduction](/assets/images/posts/01_Algorithm/2015-09-13_Algorithm(Part VI)：Context(二)：Reduction/1.1 Introduction.png)
+![1.1 Introduction]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-13_Algorithm(Part VI)：Context(二)：Reduction/1.1 Introduction.png)
 
 ### 1.2 Designing Algorithms ###
 
 
 {: .img_middle_hg}
-![1.2 Designing Algorithm.png](/assets/images/posts/01_Algorithm/2015-09-13_Algorithm(Part VI)：Context(二)：Reduction/1.2 Designing Algorithm.png)
+![1.2 Designing Algorithm.png]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-13_Algorithm(Part VI)：Context(二)：Reduction/1.2 Designing Algorithm.png)
 
 
 ### 1.3 Establishing Lower Bounds ###

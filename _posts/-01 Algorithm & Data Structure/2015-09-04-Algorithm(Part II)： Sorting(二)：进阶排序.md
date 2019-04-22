@@ -30,7 +30,7 @@ shortinfo: 排序是computer science 一个基础而有富有挑战的课题。�
 > 归并排序(Mergesort): 利用了**分而治之(Divide and Conquer)**方法, 将原始问题分成两个子问题，当两个子问题解决后，再将两个子问题的结果进行归并(Merge).这个正是其名称的由来。归并排序与后文介绍的**快速排序(Quick Sort)**一道，是工业界最为广泛使用的两种排序算法。
 
 {: .img_middle_lg}
-![Merge sort](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/merge sort1.png)
+![Merge sort]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/merge sort1.png)
 
 
 
@@ -94,7 +94,7 @@ java -da MyProgram //disable assertions(default)
 归并排序的递归实现实际上是DFS，实际上，还有另外一种类似于**BFS的非递归版本**，想法也非常简单，就是手动控制次数反复对2n各元素进行排序，这里的n随着循环的增加而不断加1。从二叉树的角度看，就是从树的底部逐渐往上移动，计算完一层后，向上移动计算上一层，元素个数翻倍，直到到达根节点对所有元素排序。这样只需要经过lgN次的大循环即可完成排序。
 
 {: .img_middle_lg}
-![Merge sort2](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/merge sort2.png)
+![Merge sort2]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/merge sort2.png)
 
 Java代码如下：
 {% highlight java linenos %}
@@ -123,7 +123,7 @@ public static void sort(Comparable[] a){
 一般来说，**Comparison sort**可以用**决策树(Decision Tree)**作为抽象模型，如下图所示：
 
 {: .img_middle_mid}
-![Decision tree](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/decision tree.png)
+![Decision tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/decision tree.png)
 
 每次的排序结果可以分为**大于**和**不大于**，分别进入决策树的两支，接着继续往下判断，直到最后一次判断能完全决定所有元素的顺序，这样算法终止。也就是说，**排序算法在叶节点终止**。有了这个重要的观察规律，我们可以进行复杂度推导。
 
@@ -168,7 +168,7 @@ h ≥ lg(N!) ∼ NlgN
 
 
 {: .img_middle_lg}
-![2-way Quick Sort](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort2.png)
+![2-way Quick Sort]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort2.png)
 
 为了上述的步骤，首先需要确定pivot的选取方法，一种常用的方法是直接选取待排数组的第一个元素，即`pivot = a[lo]`。如上图所示，第一次迭代选取8作为pivot，然后不停交换元素使得8落到对应的正确的位置上，同时把数组划分为两半，分别递归地对两个子问题进行求解，得到最终结果。
 
@@ -212,7 +212,7 @@ public class QuickSort {
 
 
 {: .img_middle_lg}
-![2-way Quick Sort cases](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort cases.png)
+![2-way Quick Sort cases]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/2-way Quick Sort cases.png)
 
 如上图所示，（a）为最好情况，(c)为最差情况，(b)为平均情况。在最差情况下，每次选取的pivot在划分后非常不幸都会出现一个**空的子问题**，数组长度缓慢缩短，因此这个情况下的时间复杂度为：
 
@@ -254,7 +254,7 @@ C<sub>N</sub> = 2(N + 1)(1/3 + 1/4 + ... + 1/N+1) ~ 2(N + 1)lnN ≈ 2NlnN
 上面介绍的是2-way的方法，当数组存在大量的**重复键值(Duplicate Keys)**的时候，这些重复的键值会不管的出现在子问题中，使得数组长度的减少类似worst-case一样缓慢，这个时候的复杂度为O(N<sup>2</sup>)。这里八卦一些野史，就是说自从c语言的`qsort()`出来蛮长的一段时间后，来自AT&T Bell Lab(1991)的**Allan Wilks**和**Rick Recker**发现本来一个瞬间排序结束的`qsort()`却需要好几分钟，后来人们才意识到了qsort()对于重复键值处理得非常糟糕，后来就诞生了额下面将要介绍的3-way方法，如下图所示。
 
 {: .img_middle_lg}
-![3-way Quick Sort](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/3-way Quick Sort.png)
+![3-way Quick Sort]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/3-way Quick Sort.png)
 
 Java 代码如下所示：
 
@@ -339,7 +339,7 @@ public static Comparable select(Comparable[] a, int k){
 首先上一张Roadmap：
 
 {: .img_middle_mid}
-![Priority Queue](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Priority Queue.png)
+![Priority Queue]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Priority Queue.png)
 
 ##### 2.2.3.1 Elementary Implementation ######
 
@@ -385,7 +385,7 @@ public class UnorderedMaxPQ<Key extends Comparable<Key>>{
 请仔细观察下面的图片：
 
 {: .img_middle_mid}
-![binary tree](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary tree.png)
+![binary tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary tree.png)
 
 观察一下每棵树的分支，发现没有，对于每一个根节点，都会生长出两个子节点出来，并且最高层的所有子节点都有叶节点。这就是计算机中大名鼎鼎的一种数据结构**二叉树 Binary Tree**的特例，**满二叉树(Full Binary Tree)**。
 
@@ -393,7 +393,7 @@ public class UnorderedMaxPQ<Key extends Comparable<Key>>{
 
 
 {: .img_middle_mid}
-![Complete Binary Tree](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Complete Binary Tree.png)
+![Complete Binary Tree]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Complete Binary Tree.png)
 
 有人可能会问，这有什么用呀？别着急，如果我们以根节点从1开始逐层对完全二叉树进行编号，观察一下父节点(Parent)和子节点(Child)序号间的关系。发现没有：
 
@@ -451,7 +451,7 @@ C<sub>1</sub> = mk - m + 2
 + S1：子节点的值大于父节点的值；
 
 {: .img_middle_mid}
-![Bottom up reheapify](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S1.png)
+![Bottom up reheapify]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S1.png)
 
 如上图所示，子节点T比父节点P的值大，那么只需要将子节点与父节点交换即可，如果交换后依旧比新的父节点大，那么循环操作直到二叉堆的性质满足为止，Java代码非常简单，如下所示。
 
@@ -469,7 +469,7 @@ private void swim(int k){
 + S2:需要插入新的元素有了S1做铺垫，插入新元素的操作就比较简单了，如下图所示，可以首先将新元素添加到末尾，然后调用swim()操作即可，并且能保证做多只需要lgN+1次比较，如下图所示。
 
 {: .img_middle_mid}
-![BH insert](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S2.png)
+![BH insert]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S2.png)
 
 Java代码如下所示：
 {% highlight java linenos %}
@@ -482,7 +482,7 @@ public void insert(Key x){
 + S3：父节点的值比子节点的值要小：
 
 {: .img_middle_mid}
-![Top down reheapify](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S3.png)
+![Top down reheapify]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S3.png)
 
 如上图所示，这种情况下首先需要找出大的子节点，然后不停地与较大的子节点交换，知道满足大根堆的性质，注意这里有2lgN次的比较，Java代码如下：
 {% highlight java linenos %}
@@ -500,7 +500,7 @@ private void sink(int k){
 + S4：删除最大(最小)的元素，如下图所示，此时需要把T删除，首先交换T和最后一个元素H，然后对H调用sink函数即可，这里最多2lgN次的比较。
 
 {: .img_middle_mid}
-![remove maximum](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S4.png)
+![remove maximum]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/S4.png)
 
 Java代码如下所示：
 
@@ -520,7 +520,7 @@ private void delMax(){
 
 
 {: .img_middle_mid}
-![binary heap summary](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary heap summary.png)
+![binary heap summary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary heap summary.png)
 
 
 ###### 2.3.2.2.3 Sorting #######
@@ -528,7 +528,7 @@ private void delMax(){
 有了二叉堆作为底层的数据结构，堆排序就变得非常的方便，主要分为**建堆**和**排序**两个方面。
 
 {: .img_middle_mid}
-![binary heap summary](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary heap sorting.png)
+![binary heap summary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/binary heap sorting.png)
 
 ###### 2.3.2.2.4 Build Heap #######
 
@@ -543,7 +543,7 @@ for(int k = N/2; k >=1;k--){
 如下图所示，先处理E，再处理T-R-O-S
 
 {: .img_middle_lg}
-![Heap sorting](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/heap sorting.png)
+![Heap sorting]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/heap sorting.png)
 
 这是一种**自底向上(Bottom up)**的方法，非常的快速，只需要O(2N)的复杂度即可。
 
@@ -588,7 +588,7 @@ public static void sort(Comparable[] pq){
 >8Puzzle: 在3×3的格子中填满1-8的整数，有一个格子是空的。交换空格子和其相邻的格子，以达到最终有序的状态。请给出使得任意N*N（2<N<128）的格子用最少的步数达到有序状态的解。
 
 {: .img_middle_mid}
-![8puzzle](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/8Puzzle.jpg)
+![8puzzle]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/8Puzzle.jpg)
 
 有两个类用来解决这个问题。
 
@@ -664,7 +664,7 @@ private class SearchNode implements Comparable{
 
 
 {: .img_middle_lg}
-![8puzzle](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/8puzzle game tree.png)
+![8puzzle]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/8puzzle game tree.png)
 
 具体code见[这里](https://github.com/shunmian/-01-Algorithm-Princeton)。
 
@@ -673,7 +673,7 @@ private class SearchNode implements Comparable{
 ## 4 总结 ##
 
 {: .img_middle_hg}
-![Sorting algorithm](/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Chapter 2_Sorting Summary.png)
+![Sorting algorithm]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-04_Algorithm(Part II)： Sorting(二)：进阶排序/Chapter 2_Sorting Summary.png)
 
 我们看到比较接近**holy sorting grail**的算法就是归并排序，快速排序和堆排序。这也就是为什么他们三个常常用来相提并论的原因，各有所长，适用于不同的场合。
 

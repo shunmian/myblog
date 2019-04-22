@@ -39,7 +39,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 7. **类内变化(Intra-class Variation)**
 
 {: .img_middle_lg}
-![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
+![Image Classification Challenges]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
 
 
 
@@ -58,7 +58,7 @@ shortinfo: 机器学习(Machine Learning)是通过非显性编程让计算机获
 ### 2.2 Applying kNN in practice ###
 
 {: .img_middle_lg}
-![Image Classification Challenges](/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
+![Image Classification Challenges]({{site.url}}/assets/images/posts/07_Machine Learning/Convolutional Neural Network/2015-06-01-CNN for Visual Recognition Part I：入门(一)：图片分类/Image Classification Challenges.jpeg)
 
 repeat until convergence：
 

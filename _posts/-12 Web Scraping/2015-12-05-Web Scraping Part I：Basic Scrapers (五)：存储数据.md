@@ -163,12 +163,12 @@ finally:
 关于directory，filename,path(absolute,relative)的区别请见下图。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-05/文件系统术语.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-05/文件系统术语.png)
 
 Python文件的打开模式有主要9种，w+表示可读写，先清除原来内容。
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-05/Python file open mode.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-05/Python file open mode.png)
 
 
 
@@ -216,7 +216,7 @@ finally:
 本部分总结成一张小图。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-05/csv module.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-05/csv module.png)
 
 ## 3 MySQL ##
 
@@ -225,7 +225,7 @@ finally:
 
 ### 3.1 安装和入门 ###
 
-[请戳我]({{ site.baseurl}}/database/2015/06/01/MySQL入门.html)。
+[请戳我]({{ site.url}}/database/2015/06/01/MySQL入门.html)。
 
 ### 3.3 Integrating with Python ###
 
@@ -362,7 +362,7 @@ CREATE INDEX definition ON dictionary (id, definition(16));``，这样搜索起�
 
 ### 3.5 "Six Degrees" in MySQL ###
 
-我们之前在[第三篇笔记]({{ site.baseurl}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(三)-BeautifulSoup实战.html)里提到的"Six Degree of Wikipedia"问题，可以在这里利用数据库来存储小于6个点的信息。话不多说，上代码。
+我们之前在[第三篇笔记]({{ site.url}}/web%20scraping/2015/12/03/Web-Scraping-Part-I-Basic-Scrapers-(三)-BeautifulSoup实战.html)里提到的"Six Degree of Wikipedia"问题，可以在这里利用数据库来存储小于6个点的信息。话不多说，上代码。
 
 
 {% highlight python linenos %}
@@ -479,7 +479,7 @@ finally:
 最后将本文总结成下图。
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-05/storing data summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-05/storing data summary.png)
 
 
 ## 5 参考资料 ##

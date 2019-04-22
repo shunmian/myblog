@@ -33,14 +33,14 @@ E-R model are similar to UML model so below is an introduction of UML model. Ple
 #### 1.1.1 UML
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-02-DBMS Concepts 2：Database Design/DBCB_CH3 UML.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-02-DBMS Concepts 2：Database Design/DBCB_CH3 UML.png)
 
 ### 1.2 Relational Database Design
 
 #### 1.2.1 Functional Dependencies and Norm forms
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/-08 Database/DBMS Concepts/2015-07-02-DBMS Concepts 2：Database Design/DBCB_CH3 Database Design.png)
+![regular expression]({{site.url}}/assets/images/posts/-08 Database/DBMS Concepts/2015-07-02-DBMS Concepts 2：Database Design/DBCB_CH3 Database Design.png)
 
 ### 1.3 Application Design and Development
 

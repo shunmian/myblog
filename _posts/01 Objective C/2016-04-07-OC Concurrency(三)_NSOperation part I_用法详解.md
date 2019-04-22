@@ -40,7 +40,7 @@ shortinfo: Objective-C的。
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![NSOperation & NSOperationQueue总结](/assets/images/posts/01 Objectiev C/2016-04-07-OC Concurrency(三)_NSOperation part I_用法详解/NSOperation & NSOperationQueue总结.png)
+![NSOperation & NSOperationQueue总结]({{site.url}}/assets/images/posts/01 Objectiev C/2016-04-07-OC Concurrency(三)_NSOperation part I_用法详解/NSOperation & NSOperationQueue总结.png)
 
 ## 4 Reference ##
 

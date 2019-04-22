@@ -35,19 +35,19 @@ shortinfo: 图是重要的一种数据结构，能巧妙优雅地解决许多其
 > 不确定性：通过程序产生需要的数据这种策略是不确定的，因为这种策略无法移植或提高。
 
 {: .img_middle_lg}
-![Counting Sorting](/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.1.1 Undecidability.png)
+![Counting Sorting]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.1.1 Undecidability.png)
 
 例如上面这幅图我们可以用下面这段简短的程序产生，但是不可能基于这种策略来解决其他bitstream，而且我们也找不到基于这种策略的哪种算法是最好的。
 
 ### 1.2 Run-length Coding ###
 
 {: .img_middle_hg}
-![1.2 Run-length encoding](/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.2 Run-length encoding.png)
+![1.2 Run-length encoding]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.2 Run-length encoding.png)
 
 ### 1.3 Huffman Compression ###
 
 {: .img_middle_lg}
-![Counting Sorting](/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.3 Huffman Coding.png)
+![Counting Sorting]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.3 Huffman Coding.png)
 
 {% highlight java linenos %}
 import edu.princeton.cs.algs4.BinaryStdIn;
@@ -122,7 +122,7 @@ public class HuffmanCoding {
 ### 1.4 LZW Compression ###
 
 {: .img_middle_hg}
-![Counting Sorting](/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.4 LZW Coding.png)
+![Counting Sorting]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-11_Algorithm(Part V)：String(三)：数据压缩/1.4 LZW Coding.png)
 
 
 {% highlight java linenos %}

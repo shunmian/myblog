@@ -119,7 +119,7 @@ shortinfo: Regular Expression(正则表达式)是匹配一系列匹配某个句�
 
 
 {: .img_middle_hg}
-![regular expression](/assets/images/posts/2015-08-01/Regular Expression Summary.png)
+![regular expression]({{site.url}}/assets/images/posts/2015-08-01/Regular Expression Summary.png)
 
 
 

@@ -97,7 +97,7 @@ blurryKitten.show()
 我们现在使用**pytesseract**来OCR一个Well-Formatted的图片，如下。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-11/3.1_Well Formatted Text.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-11/3.1_Well Formatted Text.png)
 
 {% highlight python linenos %}
 
@@ -122,7 +122,7 @@ print(string)
 现在我们将图片压缩后增加了背景渐变，使得OCR难度增加，请看下图。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-11/3.2_Slightly Dirty Text.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-11/3.2_Slightly Dirty Text.png)
 
 {% highlight python linenos %}
 
@@ -143,7 +143,7 @@ print(string)
 这种请看下**Pillow**就派上用场了，可以用一个阈值过滤器(threshold filter)来消除背景的渐变色，使得图片上的文本更clean。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-11/3.3_Cleaned Dirty Text.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-11/3.3_Cleaned Dirty Text.png)
 
 {% highlight python linenos %}
 
@@ -241,7 +241,7 @@ for image in sorted(imageList):
 
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-11/4.1 CAPTCHA.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-11/4.1 CAPTCHA.png)
 
 是什么让这个**CAPTCHA**对人类和机器阅读都如此容易呢？
 
@@ -378,7 +378,7 @@ else:
 最后加本文总结成下图以供参考。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-11/OCR Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-11/OCR Summary.png)
 
 ## 6 参考资料 ##
 

@@ -47,7 +47,7 @@ shortinfo: Objective-C在NSThread的基础上进一步抽象出tasks之间执行
 ## 2 总结 ##
 
 {: .img_middle_hg}
-![Chapter 3.2 Data Processing Summary](/assets/images/posts/01 Objectiev C/2016-04-03-OC Concurrency(二)_GCD part I_用法详解/GCD总结.png)
+![Chapter 3.2 Data Processing Summary]({{site.url}}/assets/images/posts/01 Objectiev C/2016-04-03-OC Concurrency(二)_GCD part I_用法详解/GCD总结.png)
 
 ## 3 Reference ##
 

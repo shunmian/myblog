@@ -148,7 +148,7 @@ public class MST {
 EdgeWeightedGraph和Graph的区别在于前者隐式表示Edge(通过int v，int w)，而后者显示创建了Edge类(int v, int w, int weight)。
 
 {: .img_middle_hg}
-![Kruskal](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/4.3.3 MST API.png)
+![Kruskal]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/4.3.3 MST API.png)
 
 #### 2.3.3 Kruskal MST 算法  ####
 
@@ -163,7 +163,7 @@ EdgeWeightedGraph和Graph的区别在于前者隐式表示Edge(通过int v，int
 
 
 {: .img_middle_lg}
-![Kruskal](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/Kruskal.png)
+![Kruskal]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/Kruskal.png)
 
 {% highlight java linenos %}
 public class KruskalMST{
@@ -200,7 +200,7 @@ Lazy Version.
 
 
 {: .img_middle_lg}
-![Prim lazy](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/prim lazy.png)
+![Prim lazy]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/prim lazy.png)
 
 {% highlight java linenos %}
 public class LazyPrimMST{
@@ -241,7 +241,7 @@ public class LazyPrimMST{
 Eager Version.
 
 {: .img_middle_lg}
-![Prim eager](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/prim eager.png)
+![Prim eager]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/prim eager.png)
 
 {% highlight java linenos %}
 public class EagerPrimMST{
@@ -382,7 +382,7 @@ public class SP {
 #### 2.4.1 Shortest-paths Properties ####
 
 {: .img_middle_hg}
-![Dijkstra](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/4.4.1 shortest-paths properties.png)
+![Dijkstra]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/4.4.1 shortest-paths properties.png)
 
 #### 2.4.2 Dijkstra 算法 ####
 
@@ -390,7 +390,7 @@ public class SP {
 
 
 {: .img_middle_lg}
-![Dijkstra](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/Dijkstra.png)
+![Dijkstra]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/Dijkstra.png)
 
 
 {% highlight java linenos %}
@@ -439,7 +439,7 @@ public class DijkstraSP {
 
 
 {: .img_middle_lg}
-![AcyclicSP](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/AcyclicSP.png)
+![AcyclicSP]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/AcyclicSP.png)
 
 
 {% highlight java linenos %}
@@ -473,7 +473,7 @@ public class AcyclicSP{
 
 
 {: .img_middle_lg}
-![Bellman-ford](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/Bellman-ford.png)
+![Bellman-ford]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/Bellman-ford.png)
 
 
 {% highlight java linenos %}
@@ -515,7 +515,7 @@ public class BellmanFordSP{
 
 
 {: .img_middle_lg}
-![STSummary](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/STSummary.png)
+![STSummary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/STSummary.png)
 
 
 ## 3 Programming assignment ##
@@ -1128,7 +1128,7 @@ public class SeamCarver {
 
 
 {: .img_middle_hg}
-![STSummary](/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/
+![STSummary]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-08_Algorithm(Part IV)：Graph(二)：最小生成树和最短路径/
 Chapter 4 Graph Summary.png)
 
 ## 5 参考资料 ##

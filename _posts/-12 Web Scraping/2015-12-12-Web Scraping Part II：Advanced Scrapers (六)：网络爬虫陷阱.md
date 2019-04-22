@@ -48,7 +48,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 **HTTP**定义了各种**header**类型，大部分都不常见。然而以下几个fields，却是被大部分浏览器广泛使用的。
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-12/Header Summary.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-12/Header Summary.png)
 
 而一个典型的python的**HTTP header**默认的``User-Agent：Python-urllib/3.4``，因此User-Agent的修改非常重要。
 
@@ -169,7 +169,7 @@ print(driver2.get_cookies())
 下图是facebook登录页面的HTML，可以看到输入field只有用户名和密码，但是有很多**hidden fields**存在。
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-12/Facebook Login.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-12/Facebook Login.png)
 
 通常**hidden fields**用来防止**Web Scraping**有两种方式：
 
@@ -263,7 +263,7 @@ for input in inputs:
 下图总结了人类清单，供参考。
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-12/Human Checklist.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-12/Human Checklist.png)
 
 
 ## 5 总结 ##
@@ -289,7 +289,7 @@ for input in inputs:
 
 
 {: .img_middle_hg}
-![web scraping](/assets/images/posts/2015-12-12/Avoid WebScraping Traps.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-12/Avoid WebScraping Traps.png)
 
 
 

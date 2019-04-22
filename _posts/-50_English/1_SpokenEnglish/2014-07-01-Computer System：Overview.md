@@ -25,7 +25,7 @@ shortinfo: 本系列是《American Accent Training》练习的总结。
 
 
 {: .img_middle_hg}
-![Run hello](/assets/images/posts/2014-07-01-Computer System：Overview/Run hello.png)
+![Run hello]({{site.url}}/assets/images/posts/2014-07-01-Computer System：Overview/Run hello.png)
 
 ### Part I: Overview
 

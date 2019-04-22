@@ -37,14 +37,14 @@ shortinfo: runtime是objective-c的operating system，是如何在c的基础上�
 Runtime主要有**Object Model**和**Messaging**两大主题组成，笔者总结成下表，后面的文章会详细介绍。
 
 {: .img_middle_hg}
-![Runtime Object Model & Messaging](/assets/images/posts/01 Objectiev C/2016-03-12-OC Runtime(零)_runtime/Runtime Object Model & Messaging.png)
+![Runtime Object Model & Messaging]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-12-OC Runtime(零)_runtime/Runtime Object Model & Messaging.png)
 
 ### 1.3 Runtime API ###
 
 熟悉runtime的API有助于后面文章的学习，笔者将它总结成下图。
 
 {: .img_middle_hg}
-![Runtime API](/assets/images/posts/01 Objectiev C/2016-03-12-OC Runtime(零)_runtime/Runtime API.png)
+![Runtime API]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-12-OC Runtime(零)_runtime/Runtime API.png)
 
 ### 1.4 Runtime使用场景 ###
 

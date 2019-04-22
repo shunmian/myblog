@@ -26,7 +26,7 @@ shortinfo: 图是重要的一种数据结构，能巧妙优雅地解决许多其
 > **R-way Tries**: **R元树***是Tries的一种具体实现形式。每一个node：有1个node数组，指向R(Radix)个结点指针(指向下一个结点或者null)；以及value(有值或null)。
 
 {: .img_middle_hg}
-![Counting Sorting](/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.1 R-Way Search.png)
+![Counting Sorting]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.1 R-Way Search.png)
 
 {% highlight java linenos %}
 
@@ -76,7 +76,7 @@ public class TrieST<Value>{
 
 
 {: .img_middle_hg}
-![Ternary Search Trie](/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.2.1 Ternary Search Trie.png)
+![Ternary Search Trie]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.2.1 Ternary Search Trie.png)
 
 {% highlight java linenos %}
 
@@ -124,22 +124,22 @@ public class TST<Value>{
 
 
 {: .img_middle_hg}
-![Ternary Search Trie vs Trie & Hash](/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.2.2 Ternary Search Trie vs Trie & Hash.png)
+![Ternary Search Trie vs Trie & Hash]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.2.2 Ternary Search Trie vs Trie & Hash.png)
 
 ### 1.3 Character-Based Operations ###
 
 
 {: .img_middle_hg}
-![Ternary Search Trie vs Trie & Hash](/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.3.1 Character-Based Operation_API.png)
+![Ternary Search Trie vs Trie & Hash]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.3.1 Character-Based Operation_API.png)
 
 {: .img_middle_hg}
-![Ternary Search Trie vs Trie & Hash](/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.3.2 Character-Based Operation_Implementation.png)
+![Ternary Search Trie vs Trie & Hash]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.3.2 Character-Based Operation_Implementation.png)
 
 
 ### 1.4 Tries Summary ###
 
 {: .img_middle_mid}
-![Ternary Search Trie vs Trie & Hash](/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.4 Tries Summary.png)
+![Ternary Search Trie vs Trie & Hash]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-10_Algorithm(Part V)：String(二)：Searching/1.4 Tries Summary.png)
 
 ## 2 Substring Search ##
 

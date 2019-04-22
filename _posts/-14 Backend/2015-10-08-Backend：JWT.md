@@ -20,7 +20,7 @@ shortinfo: JWT介绍。
 ## 1. JWT ##
 
 {: .img_middle_hg}
-![JWT](/assets/images/posts/-14_Backend/2015-10-08-Backend：JWT/JWT.png)
+![JWT]({{site.url}}/assets/images/posts/-14_Backend/2015-10-08-Backend：JWT/JWT.png)
 
 ## 2 参考资料 ##
 

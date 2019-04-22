@@ -233,7 +233,7 @@ Runtime有两个版本，**Legacy**和**Modern**。当编译类的时候，ivar 
 在**Modern**版本。程序启动后，runtime加载MyObject列的收，通过计算基类的大小，runtime动态调整了`PetShowView` ivar的layout，即向后移动了8个字节。于是我们的程序无序编译，就能运行。
 
 {: .img_middle_lg}
-![SendingMessage](/assets/images/posts/01 Objectiev C/2016-03-18-OC Runtime(三)_Category_Part II_Associated Objects/Non-Fragile iVars.png)
+![SendingMessage]({{site.url}}/assets/images/posts/01 Objectiev C/2016-03-18-OC Runtime(三)_Category_Part II_Associated Objects/Non-Fragile iVars.png)
 
 ### 3.2 如何寻址类成员变量 ###
 
@@ -264,5 +264,5 @@ Associated Objects用于扩展类的属性，使得外部在用dot notation存�
 2. 关联类和被关联类在内存中是分开存储的。被关联类的`objc_ivar_list`只存储其本身的iVar和Property。
 3. 这同样体现在用runtime动态创建类中，`class_addIvar(...)`在`objc_registerClassPair`前和后调用时的情况。当`class_addIvar(...)`在`objc_registerClassPair`前调用时，加入的iVar是在类本身的定义中，存储在其`objc_ivar_list`；在`objc_registerClassPair`后调用，`class_addIvar(...)`不可以再动态增加类属性(因为如果可以动态增加，之前创建的类就无效了，data可以有多份，但是procedure只能有一份，ivar的定义在类的单例里，可以看做是procedure，这也解释了为什么不能在分类里添加ivar而只能添加方法或属性(方法的一种)。
 
-全文总结参考[该图]({{site.baseurl}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
+全文总结参考[该图]({{site.url}}/01%20objective-c/2016/03/12/OC-Runtime(零)_Runtime概述.html#runtime-1)。
 

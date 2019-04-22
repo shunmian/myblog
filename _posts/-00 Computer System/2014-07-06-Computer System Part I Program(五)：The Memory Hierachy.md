@@ -21,7 +21,7 @@ shortinfo: 本系列是对《Computer Systems - A Programmer's Perspective》读
 ## 1 总结 ##
 
 {: .img_middle_hg}
-![Chapter 6 Memoery Hierachy](/assets/images/posts/2014-07-06-Computer System Part I Program(五)：Memory Hierachy/Chapter 6 Memoery Hierachy.png)
+![Chapter 6 Memoery Hierachy]({{site.url}}/assets/images/posts/2014-07-06-Computer System Part I Program(五)：Memory Hierachy/Chapter 6 Memoery Hierachy.png)
 
 
 

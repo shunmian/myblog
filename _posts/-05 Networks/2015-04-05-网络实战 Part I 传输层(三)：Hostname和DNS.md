@@ -24,7 +24,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第4
 
 
 {: .img_middle_hg}
-![Hostname](/assets/images/posts/2015-04-05-网络实战(四)：Hostname & DNS/Hostname.png)
+![Hostname]({{site.url}}/assets/images/posts/2015-04-05-网络实战(四)：Hostname & DNS/Hostname.png)
 
 
 #### 1.1.1 Hostname, IP, Domain Name, DNS ####
@@ -176,7 +176,7 @@ if __name__=='__main__':
 ### 2.1 为什么不用原始DNS###
 
 {: .img_middle_mid}
-![DNS request](/assets/images/posts/2015-04-05-网络实战(四)：Hostname & DNS/DNS request.png)
+![DNS request]({{site.url}}/assets/images/posts/2015-04-05-网络实战(四)：Hostname & DNS/DNS request.png)
 
 DNS一次请求的路径：本地DNS->root DNS->top-level DNS(TLD)->Authoritive DNS。
 
@@ -252,14 +252,14 @@ if __name__=='__main__':
 ## 3 总结 ##
 
 {: .img_middle_lg}
-![Hostname & DNS Summary](/assets/images/posts/2015-04-05-网络实战(四)：Hostname & DNS/Hostname & DNS Summary.png)
+![Hostname & DNS Summary]({{site.url}}/assets/images/posts/2015-04-05-网络实战(四)：Hostname & DNS/Hostname & DNS Summary.png)
 
 
 ## 4 参考资料 ##
 
 - [《Foundations of Python Network Programming》](https://www.amazon.com/Foundations-Python-Network-Programming-Brandon/dp/1430258543/ref=sr_1_1/159-7715257-2675343?s=books&ie=UTF8&qid=1474899055&sr=1-1&keywords=foundations+of+python+network+programming);
 
-- [《Web Scraping Part II：Advanced Scrapers (三)：表单和登录》]({{site.baseurl}}/web%20scraping/2015/12/09/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%89)-%E8%A1%A8%E5%8D%95%E5%92%8C%E7%99%BB%E5%BD%95.html);
+- [《Web Scraping Part II：Advanced Scrapers (三)：表单和登录》]({{site.url}}/web%20scraping/2015/12/09/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%89)-%E8%A1%A8%E5%8D%95%E5%92%8C%E7%99%BB%E5%BD%95.html);
 
 
 

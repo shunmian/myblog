@@ -66,7 +66,7 @@ $$
 #### 2.3.1 梯度下降 ####
 
 {: .img_middle_hg}
-![梯度下降](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/data.png)
+![梯度下降]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/data.png)
 
 
 
@@ -107,7 +107,7 @@ $$
 where $\mu_i$是所有$x_i$的平均值，${S_i}$是$x_i$的最大最小值之差。
 
 {: .img_middle_hg}
-![feature scaling](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/feature scaling.png)
+![feature scaling]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/feature scaling.png)
 
 
 #### 2.4.2 Learning Rate ####
@@ -115,7 +115,7 @@ where $\mu_i$是所有$x_i$的平均值，${S_i}$是$x_i$的最大最小值之�
 如何确定梯度下降程序运行正确。主要看$J_\theta$和No. of iteration的关系。
 
 {: .img_middle_hg}
-![feature scaling](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/debug.png)
+![feature scaling]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/debug.png)
 
 ### 2.5 多项式回归 ###
 
@@ -123,7 +123,7 @@ where $\mu_i$是所有$x_i$的平均值，${S_i}$是$x_i$的最大最小值之�
 **线性回归之多变量**来拟合。由于$size$，$size^2$，$size^3$的scale不在同一个数量级上，因此需要通过[Feature Scaling](#feature-scaling)来优化。
 
 {: .img_middle_hg}
-![feature scaling](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/polynomial regression.png)
+![feature scaling]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/polynomial regression.png)
 
 ### 2.6 Normal Equation ###
 
@@ -140,16 +140,16 @@ $$
 for every $j$, solve for $\theta_0,\theta_1,\cdots,\theta_j$
 
 {: .img_middle_hg}
-![feature scaling](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/standard equation.png)
+![feature scaling]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/standard equation.png)
 
 梯度下降和标准方程都是两个求解$\theta$来获取最低$J(\theta)$的方法，但是两者各有优缺点，见下图。
 
 {: .img_middle_hg}
-![feature scaling](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/梯度下降vs标准方程.png)
+![feature scaling]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/梯度下降vs标准方程.png)
 
 ## 3 Matlab and Octave 入门 ##
 
-见[这里]({{ site.baseurl}}/machine%20learning/2015/05/15/Machine-Learning(A1)-MatLab和Octave基础.html)。
+见[这里]({{ site.url}}/machine%20learning/2015/05/15/Machine-Learning(A1)-MatLab和Octave基础.html)。
 
 ## 4 作业 ##
 
@@ -158,7 +158,7 @@ for every $j$, solve for $\theta_0,\theta_1,\cdots,\theta_j$
 附上一张跑分图。
 
 {: .img_middle_lg}
-![assignment1](/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/assignment1.png)
+![assignment1]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-02/assignment1.png)
 
 ## 5 总结 ##
 

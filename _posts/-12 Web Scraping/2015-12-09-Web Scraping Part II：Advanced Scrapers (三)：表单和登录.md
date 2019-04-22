@@ -37,7 +37,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 **Requests**的安装和其他第三方库一样，在terminal输入： ``pip3 install requests``。**Requests**的库主要由以下3个方面构成：**7个主方法**(包括常用的增删改查)，**4个主类**(**Request**，**PreparedRequest**，**Response**和**Session**)以及**Exception**。如下图。
 
 {: .img_middle_lg}
-![Form Format](/assets/images/posts/2015-12-09/Requests Moduel.png)
+![Form Format]({{site.url}}/assets/images/posts/2015-12-09/Requests Moduel.png)
 
 ## 2 Submitting a Form ##
 
@@ -50,7 +50,7 @@ shortinfo: 本文是基于Ryan Mitchell的《Web Scraping With Pyhton》书本�
 3. ``<input>``的``type``可以是``text``，``radio``，``checkbox``，``option``，``file``，``image``等；但最后一个``<input>``的``type``必须是``submit``用来提交表单。
 
 {: .img_middle_lg}
-![Form Format](/assets/images/posts/2015-12-09/Form Format.png)
+![Form Format]({{site.url}}/assets/images/posts/2015-12-09/Form Format.png)
 
 
 ### 2.1 Basic Form ###
@@ -88,7 +88,7 @@ print(r.text)
 
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-09/Chrome Developer Tool.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-09/Chrome Developer Tool.png)
 
 用chrome的开发者工具->Network->action page->header->data。可以清楚地看到``{'firstname': 'Johnson', 'lastname':'Lu'}``。
 
@@ -97,7 +97,7 @@ print(r.text)
 虽然file uploads在互联网上很常见，但是web scraping里用到file uploads并不多见。如果你想写一个包含file uploads的测试程序，则下面内容还是很有用的。我们用本书的另一个[文件上传网页](http://pythonscraping.com/pages/files/form2.html)做例子，它的HTML如下：
 
 {: .img_middle_lg}
-![web scraping](/assets/images/posts/2015-12-09/Fileupload HTML.png)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-09/Fileupload HTML.png)
 
 可以看到和一个基本的form没有本质差别，除了``type='file'``。file uploads的Requests的代码如下。
 
@@ -220,7 +220,7 @@ print(r.text)
 最后将本文总结成下图以供参考。
 
 {: .img_middle_mid}
-![web scraping](/assets/images/posts/2015-12-09/Form and Login Summary.jpg)
+![web scraping]({{site.url}}/assets/images/posts/2015-12-09/Form and Login Summary.jpg)
 
 ## 6 参考资料 ##
 

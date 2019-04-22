@@ -29,7 +29,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 更严格的说，Socket不是计算机网络中的5层模型中的任何一层，它是Application层和Transport层之间的interface。
 
 {: .img_middle_hg}
-![chapter 1 summary](/assets/images/posts/2015-04-02/chapter 1 summary.png)
+![chapter 1 summary]({{site.url}}/assets/images/posts/2015-04-02/chapter 1 summary.png)
 
 有3点需要注意：
 
@@ -40,7 +40,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 3. 在Network中传输的数据主角是bytes。`HTTPResponse的read()`和`socket的recv()`返回都是bytes。
 
 {: .img_middle_hg}
-![bytes](/assets/images/posts/2015-04-02/bytes.png)
+![bytes]({{site.url}}/assets/images/posts/2015-04-02/bytes.png)
 
 第一章[code](https://github.com/shunmian/-8.1-Foundations-of-Python-Networking-Programming)。
 
@@ -54,7 +54,7 @@ shortinfo: 本文是《Foundations of Python Networking Programming》系列第1
 
 - [《Foundations of Python Network Programming》](https://www.amazon.com/Foundations-Python-Network-Programming-Brandon/dp/1430258543/ref=sr_1_1/159-7715257-2675343?s=books&ie=UTF8&qid=1474899055&sr=1-1&keywords=foundations+of+python+network+programming);
 
-- [《Web Scraping Part II：Advanced Scrapers (三)：表单和登录》]({{site.baseurl}}/web%20scraping/2015/12/09/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%89)-%E8%A1%A8%E5%8D%95%E5%92%8C%E7%99%BB%E5%BD%95.html);
+- [《Web Scraping Part II：Advanced Scrapers (三)：表单和登录》]({{site.url}}/web%20scraping/2015/12/09/Web-Scraping-Part-II-Advanced-Scrapers-(%E4%B8%89)-%E8%A1%A8%E5%8D%95%E5%92%8C%E7%99%BB%E5%BD%95.html);
 
 
 

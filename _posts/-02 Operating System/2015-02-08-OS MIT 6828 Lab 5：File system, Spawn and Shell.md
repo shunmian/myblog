@@ -38,7 +38,7 @@ shortinfo: 本文是MIT 6828操作系统课程lab1的笔记。
 ### 3.2 HW6: uthreads
 
 {: .img_middle_lg}
-![cprintf](/assets/images/posts/-02_Operating System/6828/2015-02-04-OS MIT 6828 Part I：Operating system interfaces/cprintf.png)
+![cprintf]({{site.url}}/assets/images/posts/-02_Operating System/6828/2015-02-04-OS MIT 6828 Part I：Operating system interfaces/cprintf.png)
 
 {% highlight c linenos %}
 

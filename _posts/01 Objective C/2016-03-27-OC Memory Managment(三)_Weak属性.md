@@ -22,7 +22,7 @@ shortinfo: Swift 和 Objective-C 内存管理的一个重要问题是防止循�
 
 
 {: .img_middle}
-![面向对象编程](/assets/images/posts/2016-03-07/面向对象编程.png)
+![面向对象编程]({{site.url}}/assets/images/posts/2016-03-07/面向对象编程.png)
 
 ## 2. Retain Cycle 问题及解决 ##
 Retain Cycle 的Apple的定义:

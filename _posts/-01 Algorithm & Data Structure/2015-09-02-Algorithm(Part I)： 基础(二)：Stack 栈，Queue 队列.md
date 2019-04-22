@@ -24,7 +24,7 @@ shortinfo: 包，队列，栈是基本的数据结构，在计算机科学里有
 链表便于增删(O(1))，查找效率低(O(N)); 数组便于查找(用下标O(1)),增删效率低(由于固定长度，增加减少元素时要copy到新的Array。最优算法：items = capacity时，capactiy double; items = 1/4 *capacity时,capacity half。时间复杂度是(O(N))。链表和数组的空间复杂度都是O(N)。
 
 {: .img_middle_mid}
-![LinkedList&Array](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/LinkedList.png)
+![LinkedList&Array]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/LinkedList.png)
 
 ## 3. 队列(Queue)，栈(Stack) ##
 
@@ -49,7 +49,7 @@ class StackOfStrings{
 实现栈只需要实现上述四个API接口即可，维护链表(List)相对简单，处理好指针的赋值即可，内从空间管理比较高效，并且各个操作所小号的时间固定，方差小，因此链表适合快速响应`pop()`和`push(Item item)`的操作场合，比如**实时的通信系统**。
 
 {: .img_middle_lg}
-![Stack](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/stack.png)
+![Stack]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/stack.png)
 
 
 #### 3.1.2 Array实现 ####
@@ -114,7 +114,7 @@ class QueueOfStrings{
 Deque(Double-ended Queue)是双端队列，即允许在队列的两端进行插入和取出，其实相当于两个反向的栈拼接在一起，如下图所示。
 
 {: .img_middle_mid}
-![Deque](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/deque.png)
+![Deque]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/deque.png)
 
 deque的API如下：
 {% highlight java linenos %}
@@ -134,7 +134,7 @@ class Deque{
 **随机化队列**也就是一个增加了删除元素操作的**包(Bag)**(包：只增加元素不能删除元素的无序集合)本质上就是一堆无序的元素，如下所示：
 
 {: .img_middle_mid}
-![Bag](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/bag.png)
+![Bag]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/bag.png)
 
 随机化队列是无序的，需要的API如下：
 {% highlight java linenos %}
@@ -227,7 +227,7 @@ RandomizedQueue的实现用数组很容易想到，用stdRandom.uniform(N)来取
 主要思路如上，其中有一些细节需要读者仔细斟酌。具体code见[这里](https://github.com/shunmian/-01-Algorithm-Princeton)。下面贴一张跑分图。
 
 {: .img_middle_lg}
-![Assessment](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/assessment.png)
+![Assessment]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/assessment.png)
 
 
 
@@ -235,7 +235,7 @@ RandomizedQueue的实现用数组很容易想到，用stdRandom.uniform(N)来取
 
 
 {: .img_middle_hg}
-![Assessment](/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/Chapter 1 Foundamental Summary.png)
+![Assessment]({{site.url}}/assets/images/posts/01_Algorithm/2015-09-02_Algorithm(Part I)： 基础(二)：Stack 栈，Queue 队列/Chapter 1 Foundamental Summary.png)
 
 ## 8 参考资料 ##
 - [Algorithm](http://algs4.cs.princeton.edu/home/);
