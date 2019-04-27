@@ -44,6 +44,15 @@ shortinfo: Computer Networks基础。
 {: .img_middle_hg}
 ![Transport Layer]({{site.url}}/assets/images/posts/2015-04-01/Link Layer.png)
 
+## Appendix
+
+### A1. DNS
+
+`A record`: from `example.com` to `102.121.111.102`.
+`CNAME record`: from `www.example.com` to `example.com`.
+
+Next time if you change the ip only A record needs to be changed.
+
 ## 6 参考资料 ##
 
 - [《Computer Networking: A Top-Down Approach (6th Edition)》](https://www.amazon.com/Computer-Networking-Top-Down-Approach-6th/dp/0132856204);

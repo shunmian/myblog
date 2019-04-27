@@ -25,12 +25,22 @@ shortinfo: AWS介绍。
 
 ## 0 IAM
 
-#### 1.1.3 Role
+### 0.1.3 Role
 
 - Role is used to avoid using user credential in resources such as EC2, which is not secure if it is shared across multiple EC2 and one EC2 leakage will needs you to invalidate that user and create a new user credential. By assign role to EC2, you can use `aws s3 ls` without `aws config` to enter the user credentials.
 
 - Role is global: you cannot create a role for a specific region.
     - One can attach a role to a RUNNING EC2 instance
+
+### 0.E Exam Questions
+
+- Power User Access: Provides full access to AWS services and resources, but does not allow management of Users and groups.
+
+- Root User Access: Power user access + management of users and groups, which is called administrator access
+
+- Users, Policy, Roles all are global
+
+- By default, when you create a new user in the IAM console, it has no access to all AWS services.
 
 ## 1. Storage ##
 
@@ -241,6 +251,28 @@ shortinfo: AWS介绍。
     - Read the S3 FAQ obefore taking the exam. It comes up A LOT!
 
 
+### 1.E Exam Questions
+
+- Durability: the probability that you will eventually be able to get your object back from the storage system from one of the stores and archives.
+
+- Availability: the probability that you will be able to get it back the moment that you ask for it.
+
+- S3 has READ after WRITE consistency for PUTS of new objects. Durability 99.999999999%, availability 99.99%
+
+- S3 has eventual consistency for over-writting PUTS and DELETES. New object or Create Puts is a new object for which that is no replicated object anywhere else. As soon as it is create the metadata is replicated but as no object exists anywhere else until the object is replicated, you can not get an inconsistent Read if it is not there. With an overwrite or Delete, the object is already out there in the replicas, so until the change/delete is fully replicated, you could still read the old version. The replication will happen and the environment will 'eventually' become consistent.
+
+- AWS Storage Gateway: on-premise virtual appliance that can be used to cache S3 locally at a customer site.
+
+- upload 7.5 GB file to S3 however getting error "Your proposed upload exceeds the maximum allowed object size". So you need to design your application to use the multi-part upload API for all objects.
+
+- RRS: Reduced Redundancy Storage. Availability 99.99%, durability 99.99%
+
+- s3 bucket with name `acloudguru1234` in EU west region, the url is: `https://s3-eu-west-1.amazonaws.com/acloudguru1234`
+
+- bucket name is global.
+
+
+
 ## 2 Computing
 
 ### 2.1 EC2
@@ -411,8 +443,17 @@ service httpd start
     - Know your triggers: api gateway, alexa kits.
     - Lambda maximum executing time is 5 min.
 
+### 2.E Exam Questions
 
+- EBS snapshot are stored in S3 incrementally.
 
+- EBS volumes persist independently from the life of an Amazon EC2 instance. If I terminated and EC2 instance, would that EBS volume remain? Yes only if instructed to when created (by default EBS volumes are set to `Delete on Termination`)
+
+- You cannot delete a snapshot of EBS volum that is used as the root device of a registred AMI. In able to do that, you need to deregister the AMI first.
+
+- While creating the snapshots using the command line tools, you should use command `ec2-create-snapshot`.
+
+- You cannot attach an EBS volume to more than one EC2 instance at the same time.
 
 ## 3 Monitoring
 
@@ -443,7 +484,7 @@ service httpd start
 - A name
 - C name
 - alias name
-- mx records
+- mx records: mail exchange records.
 
 #### 4.1.2 Different Routing
 
@@ -567,7 +608,16 @@ service httpd start
 
 ### 4.9 Summary
 
+### 4.E Example Questions
+
 - How many VPC's am I allowed in each AWS Region by default ? 5.
+
+- How many internet gateways can I attach to my custom VPC? 1.
+
+
+### 4.E Exam Questions
+
+- Route53 is so named because DNS port is 53 and Route53 is a DNS service.
 
 
 ## 5 Database
@@ -711,6 +761,14 @@ MariaDB
        - Aurora
        - MariaDB 
 
+### 5.E Example Questions
+
+- When transfer RDS from primary instance to secondary instance, the date transfer charge is free.
+
+- What happens to the I/O operations while you take a database snapshot? The I/O operation are suspended.
+
+- In RDS when using multiple availability zones, can you use the secondary database as an independent read node ?  No. Because the secondary database is to be thought of as a DR(Disaster Recover) site, it will be active only when the primary fails
+
 ## 6 Application Service
 
 ### 6.1 SQS
@@ -795,6 +853,15 @@ MariaDB
         - Kinesis Firehose: can handle data directly using lambda and then upload results to S3 or ElasticSearch. No concern about shard.
         - Kinesis Analytics: using sql language to analysis data in Kinesis streams or Firhose
 
+### 6.E Exam Questions
+
+- SES: Simple Email Service.
+
+- What does a "domain" refer to in Amazon SWF? A collection of related workflows.
+
+- By default, EC2 instances pull SQS messages from an SQS queue on a FIFO (First In First out) basis. FALSE! SQS standard queue doesn't support FIFO.
+
+- Amazon SWF ensures that a task is assigned only once and is never duplicated.
 
 ## 7 The Well Architected Framework
 
@@ -1356,6 +1423,72 @@ Orchestration service that uses chef, chef consists of recipes to maintain a con
     - Security groups operate at the instance level, not a task or container level.
     - IAM with ECS to restrict access.
  
+
+### E
+
+Mega quiz
+
+- Amazon SWF is designed to help users coordinate sync and async tasks.
+
+- In RDS, what is the maximum value I can set for my backup retention period? 35 days
+
+- Automated backups are enabled by default for a new DB Instance? True. The default backup retention period is one day if you create the DB instance using the Amazon RDS API or the AWS CLI, or seven days if you create the DB instance using the AWS Console.
+
+- Amazon RDS does not currently support increasing storage on a **SQL server* Db instance
+
+- In what circumstances would I choose provisioned IOPS in RDS over standard storage
+
+- In a default VPC, all Amazon EC2 instances are assigned 2 IP addresses at launch, what are these? Private IP Address & Public IP Address
+
+- Can I "force" a failover for any RDS instance that has Multi-AZ configured? True.
+
+- You can conduct your own vulnerability scans within your own VPC without alerting AWS first? False.
+
+- Reserved instances are available for multi-AZ deployments. true.
+
+- You can RDP or SSH in to an RDS instance to see what is going on with the operating system. False
+
+- What are the four levels of AWS premium support? Basic, Developer, Business, Enterprise.
+
+- When using a custom VPC and placing an EC2 instance in to a public subnet, it will be automatically internet accessible (ie you do not need to apply an elastic IP address or ELB to the instance). False, you need to assign public ip to the EC2.
+
+- What is the underlying Hypervisor for EC2? Xen.
+
+- The AWS platform is certified PCI DSS 1.0 compliant. true.
+
+- How many copies of my data does RDS - Aurora store by default? Amazon Aurora is designed to offer greater than 99.99% availability, replicating 6 copies of your data across 3 Availability Zones and backing up your data continuously to Amazon S3.
+
+- What is the difference between Elastic Beanstalk & CloudFormation? They're actually pretty different. Elastic Beanstalk is intended to make developers' lives easier. CloudFormation is intended to make systems engineers' lives easier.
+
+Elastic Beanstalk is a PaaS-like layer ontop of AWS's IaaS services which abstracts away the underlying EC2 instances, Elastic Load Balancers, auto scaling groups, etc. This makes it a lot easier for developers, who don't want to be dealing with all the systems stuff, to get their application quickly deployed on AWS. It's very similar to other PaaS products such as Heroku, EngineYard, Google App Engine, etc. With Elastic Beanstalk, you don't need to understand how any of the underlying magic works.
+
+CloudFormation, on the other hand, doesn't automatically do anything. It's simply a way to define all the resources needed for deployment in a huge JSON file. So a CloudFormation template might actually create two ElasticBeanstalk environments (production and staging), a couple of ElasticCache clusters, a DyanmoDB table, and then the proper DNS in Route53. I then upload this template to AWS, walk away, and 45 minutes later everything is ready and waiting. Since it's just a plain-text JSON file, I can stick it in my source control which provides a great way to version my application deployments. It also ensures that I have a repeatable, "known good" configuration that I can quickly deploy in a different region.
+
+- What is the maximum response time for a Business Level Premium Support Case? 1 hour.
+
+- When I create a new security group, all outbound traffic is allowed by default. True.
+
+- Auditing user access/API calls etc across the entire AWS estate can be achieved by using `CloudTrail`
+
+- In RDS what is the maximum size for a Microsoft SQL Server DB Instance with SQL Server Express edition? 10GB per database.
+
+- What are the valid methodologies for encrypting data on S3. Server Side Encryption (SSE)-S3, SSE-C, SSE-KMS or a client library such as Amazon S3 Encryption Client.
+
+- What function of an AWS VPC is stateless? Security groups are stateful, which means that return traffic is automatically allowed, regardless of any outbound rules. A network ACL is applied on a subnet level, and traffic is stateless. You need to allow both inbound and outbound traffic in order for EC2 instances in a network ACL to be able to communicate over a particular protocol.
+
+- Which of the following services allows you root access (ie you can login using SSH)? Elastic Map Reduce.
+
+- When trying to grant an amazon account access to S3 using access control lists what method of identification should you use to identify that account with? The email adrres or canonical account ID
+
+- Which of the following is not supported by AWS Import/Export? Export to Amazon Glacier
+
+- What are the different types of virtualization available on EC2? Para-Virtual (PV) & Hardware Virtual Machine (HVM)
+
+- Which of the following is a valid configuration type for AWS Storage gateway? Gateway-cached volumes, Gateway-stored volumes, Gateway-Virtual Tape Library
+
+- AWS Import/Export allows for the importation of large data sets, using external hard disks which are sent directly to amazon, therefore bypassing the internet
+
+- Amazon’s SNS has the following subscribers; Lambda, SQS, HTTPS, Email, SMS
 
 ## 2 参考资料 ##
 - [《Vim Masterclass》](https://www.udemy.com/vim-commands-cheat-sheet/);
