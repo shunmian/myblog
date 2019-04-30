@@ -1490,6 +1490,70 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 
 - Amazon’s SNS has the following subscribers; Lambda, SQS, HTTPS, Email, SMS
 
+- You have a high performance compute application and you need to minimize network latency between EC2 instances as much as possible. What can you do to achieve this? Place an placement group within that AZ and place EC2 instances within that placement group.
+
+- Placement Groups can be created across 2 or more Availability Zones. False
+
+- You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes. True.
+
+- You are creating your own relational database on an EC2 instance and you need to maximise IOPS performance. What can you do to achieve this goal? add multiple additional volumes with provisioned IOPS and then create a RAID 0 stripe across those volumes.
+
+- Which of the services below do you get root access to? EC2 and Elastic Map Reduce.
+
+- When you create new subnets within a custom VPC, by default they can communicate with each other, across availability zones. True.
+
+- In order to enable encryption at rest using EC2 and Elastic Block Store you need to configure the encryption when creating EBS Volume
+
+- You can select a specific Availability Zone in which to place your DynamoDB Table? False. you can modify the region but cannot specify the availability zone.
+
+- When creating an RDS instance you can select which availability zone in which to deploy your instance. True, only if you did NOT selected a Multi-AZ deployment when creating the RDS instance
+
+- Amazon's Redshift uses which block size for its columnar storage? 1MB.
+
+- Which of the following is the responsibility of Amazon’s under the shared responsibility model? Data center security, Hypervisor patching, OS level patching for RDS.
+
+- In regards to EC2 which of the following is a customers responsibility under the shared responsibility model? Antivirus, OS level patches, application level patches. Customer responsibility will be determined by the AWS Cloud services that a customer selects. This determines the amount of configuration work the customer must perform as part of their security responsibilities. For example, services such as Amazon Elastic Compute Cloud (Amazon EC2), Amazon Virtual Private Cloud (Amazon VPC), and Amazon S3 are categorized as Infrastructure as a Service (IaaS) and, as such, require the customer to perform all of the necessary security configuration and management tasks. If a customer deploys an Amazon EC2 instance, they are responsible for management of the guest operating system (including updates and security patches), any application software or utilities installed by the customer on the instances, and the configuration of the AWS-provided firewall (called a security group) on each instance.
+
+- You are solutions architect working for a busy ecommerce store. Due to your organisations unique security requirements, you decide to utilize EC2 running a MySQL database, rather than using RDS. You need to architect this EC2 instance to maximise your disk IO. Which of the following would give you the best disk performance? RAID0. RAID0 for spped, RAID1 for redundancy, RAID5 for redundancy and speed.
+
+- You are designing an AWS solution for a new customer and they want to use their active directory credentials in order to sign in to the AWS management console. What kind of authentication response is required in order for users to authenticate with the AWS security token service (STS)? Security Addertion Markup Language 2.0 (SAML 2.0)
+
+- You are creating a new VPC with 3 subnets in 3 separate availability zones. You require instances in each subnet to be able to communicate to each other by default. What additional steps should you take in order to achieve this objective? You do not need to do anything, by default all subnets can communicate with each other using the main route table.
+
+- You are designing a web application for a new social media start up and have recommended using DynamoDB for the database due to its superior performance. You need to ensure that your database has redundancy. What additional steps should you do? Nothing, DynamoDB all data is automatically replicated across multiple AZs.
+
+- You are designing an application for a furniture retailer. A component of the application takes pictures of the furniture for sale and generates thumb nail images which then need to be stored persistently. The business can tolerate it if some images are lost as they can be regenerated. The thumbnails will need to be retrieved immediately when the application requests them. What is the cheapest option to do this? Using RRS
+
+- AWS help provide protection against some forms of traditional network attacks, which are they? Port Scanning, Ip Spoofing, Man in the middle Attack
+
+- You have three AWS accounts (A, B & C) which share data.  In an attempt to maximize performance between the accounts, you deploy the instances owned by these three accounts in "eu-west-1b".  During testing, you find inconsistent results in transfer latency between the instances. Transfer between accounts A and B is excellent, but transfers between accounts B and C, and C and A, are slower.  What could be the problem ? The names of the AZs are randomly applied, so `eu-west-1b` is not necessarily the same physical location for all three accounts.
+
+- AWS snowball has replaced the old AWS import/export service
+
+- A client who is using EC2 believes that someone other than approved administrators is trying to gain access to her Linux web app instances, and she asks what sort of network access logging can be added to the system. Which of the following might you recommend? Make usre of OS level logging tools such as iptables and log events to CloudWatch or S3.
+
+- You have a MySQl database running on an EC2 instance in a private subnet. You can connect via SSH, but you are unable to apply updates to the database server via the NAT instance. What might you do to remedy this problem? Ensure that "Source/Destination Checks" is disabled on the NAT instance.
+
+- Amazon SQS keeps track of all tasks and events in an application. False. with SQS, you must implment your own application-level tracking, especially if your application uses multiple queues.
+
+- When editing permissions (policies and ACLs), to whom does the concept of the "Owner" refer? The "Owner" refers to the identity and email address used to create the account AWS account.
+
+- Your company provides an online image recognition service and uses SQS to decouple system components. Your EC2 instances poll the image queue as often as possible to keep end-to-end throughput as high as possible, but you realize that all this polling is resulting in both a large number of CPU cycles and skyrocketing costs. How can you reduce cost without compromising service? Enable long polling by setting the ReceiveMessageWaitTimeSeconds to a number > 0.
+
+- You work for a popular media outlet about to release a story that is expected to go viral. During load testing on the website, you discover that there is read contention on the database tier of your application. Your RDS instance consists of a MySQL database on an extra large instance. Which two of the following approaches would be best to further scale this instance to meet the anticipated increase in traffic your viral story will generate? Use Elasticache to cache the frequently read, static data.
+
+- Following advice from your consultant, you have configured your VPC to use Dedicated hosting tenancy. A subsequent change to your application has rendered the performance gains from dedicated tenancy superfluous, and you would now like to recoup some of these greater costs. How do you revert to Default hosting tenancy?
+
+- You are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release environments. Each version runs on Amazon EC2 with an EBS volume. You use Elastic Load Balancing to manage traffic and Amazon Route 53 to manage your domain. What's the best way to check the health and status of all three groups of services simultaneously? Create a resource group containing each set of resources and view all threee environments from a singple, group dashboard.
+
+- You are a consultant planning to deploy DynamoDB across three AZs. Your lead DBA is concerned about data consistency. Which of the following do you advise the lead DBA to do? To ask the development team to code for strongly consistent reads. As the consultant, you will advise the CTO of the increased cost. Keep in mind DynamoDB maintan the consistency for users.
+
+- You successfully configure VPC Peering between VPC-A  and VPC-B. You then establish an IGW and a Direct-Connect connection in VPC-B. Can instances in VPC-A connect to your corporate office via the Direct-Connect service, and connect to the Internet via the IGW? VPC Peering doesn't support edge to edge routing.
+
+- You're building out a single-region application in us-west-2. However, disaster recovery is a strong consideration, and you need to build the application so that if us-west-2 becomes unavailable, you can fail-over to us-west-1. Your application relies exclusively on pre-built AMI's. In order to share those AMI's with the region you're using as a backup, which process would you follow? TBC. Copy security group, permission manually.
+
+- The combined Value and Name for binary and large text must not excceed 400kb for DynamoDB
+
 ## 2 参考资料 ##
 - [《Vim Masterclass》](https://www.udemy.com/vim-commands-cheat-sheet/);
 
