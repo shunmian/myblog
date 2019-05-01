@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-04-28T23:04:08+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title type="html">CircleCI</title><link href="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html" rel="alternate" type="text/html" title="CircleCI" /><published>2018-05-16T00:00:00+08:00</published><updated>2018-05-16T00:00:00+08:00</updated><id>http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI</id><content type="html" xml:base="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T12:12:14+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title type="html">CircleCI</title><link href="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html" rel="alternate" type="text/html" title="CircleCI" /><published>2018-05-16T00:00:00+08:00</published><updated>2018-05-16T00:00:00+08:00</updated><id>http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI</id><content type="html" xml:base="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#1-circle-ci&quot; id=&quot;markdown-toc-1-circle-ci&quot;&gt;1. Circle CI&lt;/a&gt;    &lt;ul&gt;
@@ -15,7 +15,7 @@
 
 &lt;h3 id=&quot;11-what-is-circle-ci&quot;&gt;1.1 What is Circle CI&lt;/h3&gt;
 
-&lt;p class=&quot;img_middle_lg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-24 Continous Integartion/2018-05-16-CircleCI/What is CircleCI.png&quot; alt=&quot;Vim summary&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_lg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-24 Continous Integartion/2018-05-16-CircleCI/What is CircleCI.png&quot; alt=&quot;Vim summary&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;12-how-to-integrate-circle-ci-to-your-repository&quot;&gt;1.2 How to integrate Circle CI to your repository&lt;/h3&gt;
 
@@ -118,7 +118,7 @@
 
 &lt;h3 id=&quot;11-container&quot;&gt;1.1 Container&lt;/h3&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-26_Container/2018-05-01-Docker/virtual-machine-vs-docker.png&quot; alt=&quot;Virtual Machine vs Docker&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-26_Container/2018-05-01-Docker/virtual-machine-vs-docker.png&quot; alt=&quot;Virtual Machine vs Docker&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;B比A更准确。用户运行在容器里的应用进程，跟宿主机上的其他进程一样，都由宿主机操作系统统一管理，只不过这些被隔离的进程拥有额外设置过的Namespace参数。而Docker项目在这里扮演的角色，更多的是旁路式的辅助和管理工作。在后续分享CRI和容器运行时的时候还会介绍到，像Docker这样的角色甚至可以去。&lt;/p&gt;
 
@@ -150,7 +150,7 @@
 
 &lt;h2 id=&quot;2-summary&quot;&gt;2 Summary&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-26_Container/2018-05-01-Docker/kubernetes-skill-map.jpg&quot; alt=&quot;kubernetes Skill Map&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-26_Container/2018-05-01-Docker/kubernetes-skill-map.jpg&quot; alt=&quot;kubernetes Skill Map&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://time.geekbang.org/column/103&quot;&gt;《软件测试52讲》&lt;/a&gt;&lt;/li&gt;
@@ -479,7 +479,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;p&gt;api性能测试(LoadRunner JMeter).&lt;/p&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-23_Test/2018-04-01-Test Foundation/性能测试.png&quot; alt=&quot;regular expression&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-23_Test/2018-04-01-Test Foundation/性能测试.png&quot; alt=&quot;regular expression&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;6-测试数据准备&quot;&gt;6. 测试数据准备&lt;/h2&gt;
 
@@ -552,7 +552,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;h3 id=&quot;73-大型全球化电商的测试基础架构设计&quot;&gt;7.3 大型全球化电商的测试基础架构设计&lt;/h3&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-23_Test/2018-04-01-Test Foundation/完整的测试架构.png&quot; alt=&quot;regular expression&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-23_Test/2018-04-01-Test Foundation/完整的测试架构.png&quot; alt=&quot;regular expression&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;8-测试新技术&quot;&gt;8. 测试新技术&lt;/h2&gt;
 
@@ -588,7 +588,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;h2 id=&quot;1-vim-总结&quot;&gt;1. Vim 总结&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_lg&quot;&gt;&lt;img src=&quot;/assets/images/posts/20_TextEditor/2017-10-01-Vim/vim-cheat-sheet-advanced.png&quot; alt=&quot;Vim summary&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_lg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/20_TextEditor/2017-10-01-Vim/vim-cheat-sheet-advanced.png&quot; alt=&quot;Vim summary&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 &lt;ul&gt;
@@ -598,7 +598,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#-1-aws-cli&quot; id=&quot;markdown-toc--1-aws-cli&quot;&gt;-1 AWS CLI&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#0-iam&quot; id=&quot;markdown-toc-0-iam&quot;&gt;0 IAM&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#113-role&quot; id=&quot;markdown-toc-113-role&quot;&gt;1.1.3 Role&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#013-role&quot; id=&quot;markdown-toc-013-role&quot;&gt;0.1.3 Role&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#0e-exam-questions&quot; id=&quot;markdown-toc-0e-exam-questions&quot;&gt;0.E Exam Questions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#1-storage&quot; id=&quot;markdown-toc-1-storage&quot;&gt;1. Storage&lt;/a&gt;    &lt;ul&gt;
@@ -629,6 +630,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#17-summary&quot; id=&quot;markdown-toc-17-summary&quot;&gt;1.7 Summary&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#1e-exam-questions&quot; id=&quot;markdown-toc-1e-exam-questions&quot;&gt;1.E Exam Questions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-computing&quot; id=&quot;markdown-toc-2-computing&quot;&gt;2 Computing&lt;/a&gt;    &lt;ul&gt;
@@ -644,6 +646,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#22-lambda&quot; id=&quot;markdown-toc-22-lambda&quot;&gt;2.2 Lambda&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2e-exam-questions&quot; id=&quot;markdown-toc-2e-exam-questions&quot;&gt;2.E Exam Questions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3-monitoring&quot; id=&quot;markdown-toc-3-monitoring&quot;&gt;3 Monitoring&lt;/a&gt;    &lt;ul&gt;
@@ -665,6 +668,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#48-vpc-flow-logs&quot; id=&quot;markdown-toc-48-vpc-flow-logs&quot;&gt;4.8 VPC Flow Logs&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#48-vpc-endpoint&quot; id=&quot;markdown-toc-48-vpc-endpoint&quot;&gt;4.8 VPC Endpoint&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#49-summary&quot; id=&quot;markdown-toc-49-summary&quot;&gt;4.9 Summary&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4e-example-questions&quot; id=&quot;markdown-toc-4e-example-questions&quot;&gt;4.E Example Questions&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4e-exam-questions&quot; id=&quot;markdown-toc-4e-exam-questions&quot;&gt;4.E Exam Questions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#5-database&quot; id=&quot;markdown-toc-5-database&quot;&gt;5 Database&lt;/a&gt;    &lt;ul&gt;
@@ -687,6 +692,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#54-launch-rds-instance-and-connect-to-it-via-ec2-server&quot; id=&quot;markdown-toc-54-launch-rds-instance-and-connect-to-it-via-ec2-server&quot;&gt;5.4 Launch RDS instance and connect to it via EC2 server&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#55-back-ups-multi-az--read-replicas&quot; id=&quot;markdown-toc-55-back-ups-multi-az--read-replicas&quot;&gt;5.5 Back Ups, Multi-AZ &amp;amp; Read Replicas&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5e-example-questions&quot; id=&quot;markdown-toc-5e-example-questions&quot;&gt;5.E Example Questions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#6-application-service&quot; id=&quot;markdown-toc-6-application-service&quot;&gt;6 Application Service&lt;/a&gt;    &lt;ul&gt;
@@ -696,6 +702,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#64-elastic-transcoder&quot; id=&quot;markdown-toc-64-elastic-transcoder&quot;&gt;6.4 Elastic Transcoder&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#65-api-gateway&quot; id=&quot;markdown-toc-65-api-gateway&quot;&gt;6.5 API Gateway&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#66-kinesis&quot; id=&quot;markdown-toc-66-kinesis&quot;&gt;6.6 Kinesis&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6e-exam-questions&quot; id=&quot;markdown-toc-6e-exam-questions&quot;&gt;6.E Exam Questions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#7-the-well-architected-framework&quot; id=&quot;markdown-toc-7-the-well-architected-framework&quot;&gt;7 The Well Architected Framework&lt;/a&gt;    &lt;ul&gt;
@@ -739,6 +746,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#88-active-directory-integration&quot; id=&quot;markdown-toc-88-active-directory-integration&quot;&gt;8.8 Active Directory Integration&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#89-aws-workspaces&quot; id=&quot;markdown-toc-89-aws-workspaces&quot;&gt;8.9 AWS Workspaces&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#810-elastic-container-service-ecs&quot; id=&quot;markdown-toc-810-elastic-container-service-ecs&quot;&gt;8.10 Elastic Container Service (ECS)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#e&quot; id=&quot;markdown-toc-e&quot;&gt;E&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
@@ -756,7 +764,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
 
 &lt;h2 id=&quot;0-iam&quot;&gt;0 IAM&lt;/h2&gt;
 
-&lt;h4 id=&quot;113-role&quot;&gt;1.1.3 Role&lt;/h4&gt;
+&lt;h3 id=&quot;013-role&quot;&gt;0.1.3 Role&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -767,6 +775,23 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
     &lt;ul&gt;
       &lt;li&gt;One can attach a role to a RUNNING EC2 instance&lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;0e-exam-questions&quot;&gt;0.E Exam Questions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Power User Access: Provides full access to AWS services and resources, but does not allow management of Users and groups.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Root User Access: Power user access + management of users and groups, which is called administrator access&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Users, Policy, Roles all are global&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;By default, when you create a new user in the IAM console, it has no access to all AWS services.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1027,7 +1052,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Notes
-    &lt;p&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png&quot; alt=&quot;EBS AMI&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EBS AMI class vs instance.png&quot; alt=&quot;EBS AMI&quot; /&gt;&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;Volumes exist on EBS
@@ -1087,6 +1112,38 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;1e-exam-questions&quot;&gt;1.E Exam Questions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Durability: the probability that you will eventually be able to get your object back from the storage system from one of the stores and archives.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Availability: the probability that you will be able to get it back the moment that you ask for it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;S3 has READ after WRITE consistency for PUTS of new objects. Durability 99.999999999%, availability 99.99%&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;S3 has eventual consistency for over-writting PUTS and DELETES. New object or Create Puts is a new object for which that is no replicated object anywhere else. As soon as it is create the metadata is replicated but as no object exists anywhere else until the object is replicated, you can not get an inconsistent Read if it is not there. With an overwrite or Delete, the object is already out there in the replicas, so until the change/delete is fully replicated, you could still read the old version. The replication will happen and the environment will ‘eventually’ become consistent.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS Storage Gateway: on-premise virtual appliance that can be used to cache S3 locally at a customer site.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;upload 7.5 GB file to S3 however getting error “Your proposed upload exceeds the maximum allowed object size”. So you need to design your application to use the multi-part upload API for all objects.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RRS: Reduced Redundancy Storage. Availability 99.99%, durability 99.99%&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;s3 bucket with name &lt;code&gt;acloudguru1234&lt;/code&gt; in EU west region, the url is: &lt;code&gt;https://s3-eu-west-1.amazonaws.com/acloudguru1234&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;bucket name is global.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;2-computing&quot;&gt;2 Computing&lt;/h2&gt;
 
 &lt;h3 id=&quot;21-ec2&quot;&gt;2.1 EC2&lt;/h3&gt;
@@ -1133,7 +1190,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EC2 instance type.png&quot; alt=&quot;EC2 instance type&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/EC2 instance type.png&quot; alt=&quot;EC2 instance type&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;SOFTWARE&lt;/strong&gt; - AMI
@@ -1347,6 +1404,26 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;2e-exam-questions&quot;&gt;2.E Exam Questions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;EBS snapshot are stored in S3 incrementally.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;EBS volumes persist independently from the life of an Amazon EC2 instance. If I terminated and EC2 instance, would that EBS volume remain? Yes only if instructed to when created (by default EBS volumes are set to &lt;code&gt;Delete on Termination&lt;/code&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You cannot delete a snapshot of EBS volum that is used as the root device of a registred AMI. In able to do that, you need to deregister the AMI first.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;While creating the snapshots using the command line tools, you should use command &lt;code&gt;ec2-create-snapshot&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You cannot attach an EBS volume to more than one EC2 instance at the same time.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;3-monitoring&quot;&gt;3 Monitoring&lt;/h2&gt;
 
 &lt;h3 id=&quot;31-cloudwatch&quot;&gt;3.1 CloudWatch&lt;/h3&gt;
@@ -1385,7 +1462,7 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
   &lt;li&gt;A name&lt;/li&gt;
   &lt;li&gt;C name&lt;/li&gt;
   &lt;li&gt;alias name&lt;/li&gt;
-  &lt;li&gt;mx records&lt;/li&gt;
+  &lt;li&gt;mx records: mail exchange records.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;412-different-routing&quot;&gt;4.1.2 Different Routing&lt;/h4&gt;
@@ -1578,8 +1655,21 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
 
 &lt;h3 id=&quot;49-summary&quot;&gt;4.9 Summary&lt;/h3&gt;
 
+&lt;h3 id=&quot;4e-example-questions&quot;&gt;4.E Example Questions&lt;/h3&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;How many VPC’s am I allowed in each AWS Region by default ? 5.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How many VPC’s am I allowed in each AWS Region by default ? 5.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How many internet gateways can I attach to my custom VPC? 1.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4e-exam-questions&quot;&gt;4.E Exam Questions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Route53 is so named because DNS port is 53 and Route53 is a DNS service.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;5-database&quot;&gt;5 Database&lt;/h2&gt;
@@ -1792,6 +1882,20 @@ MariaDB&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;5e-example-questions&quot;&gt;5.E Example Questions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;When transfer RDS from primary instance to secondary instance, the date transfer charge is free.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What happens to the I/O operations while you take a database snapshot? The I/O operation are suspended.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In RDS when using multiple availability zones, can you use the secondary database as an independent read node ?  No. Because the secondary database is to be thought of as a DR(Disaster Recover) site, it will be active only when the primary fails&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;6-application-service&quot;&gt;6 Application Service&lt;/h2&gt;
 
 &lt;h3 id=&quot;61-sqs&quot;&gt;6.1 SQS&lt;/h3&gt;
@@ -1924,6 +2028,23 @@ MariaDB&lt;/p&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6e-exam-questions&quot;&gt;6.E Exam Questions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;SES: Simple Email Service.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What does a “domain” refer to in Amazon SWF? A collection of related workflows.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;By default, EC2 instances pull SQS messages from an SQS queue on a FIFO (First In First out) basis. FALSE! SQS standard queue doesn’t support FIFO.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon SWF ensures that a task is assigned only once and is never duplicated.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2351,7 +2472,7 @@ MariaDB&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png&quot; alt=&quot;kinesis&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/-21_AWS/2017-10-01-AWS Associate Architect/kinesis.png&quot; alt=&quot;kinesis&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;7-cloud-formation&quot;&gt;7 Cloud Formation&lt;/h2&gt;
 
@@ -2861,6 +2982,203 @@ MariaDB&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;e&quot;&gt;E&lt;/h3&gt;
+
+&lt;p&gt;Mega quiz&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon SWF is designed to help users coordinate sync and async tasks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In RDS, what is the maximum value I can set for my backup retention period? 35 days&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Automated backups are enabled by default for a new DB Instance? True. The default backup retention period is one day if you create the DB instance using the Amazon RDS API or the AWS CLI, or seven days if you create the DB instance using the AWS Console.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon RDS does not currently support increasing storage on a &lt;em&gt;*SQL server&lt;/em&gt; Db instance&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In what circumstances would I choose provisioned IOPS in RDS over standard storage&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In a default VPC, all Amazon EC2 instances are assigned 2 IP addresses at launch, what are these? Private IP Address &amp;amp; Public IP Address&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Can I “force” a failover for any RDS instance that has Multi-AZ configured? True.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can conduct your own vulnerability scans within your own VPC without alerting AWS first? False.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Reserved instances are available for multi-AZ deployments. true.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can RDP or SSH in to an RDS instance to see what is going on with the operating system. False&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What are the four levels of AWS premium support? Basic, Developer, Business, Enterprise.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When using a custom VPC and placing an EC2 instance in to a public subnet, it will be automatically internet accessible (ie you do not need to apply an elastic IP address or ELB to the instance). False, you need to assign public ip to the EC2.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the underlying Hypervisor for EC2? Xen.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The AWS platform is certified PCI DSS 1.0 compliant. true.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How many copies of my data does RDS - Aurora store by default? Amazon Aurora is designed to offer greater than 99.99% availability, replicating 6 copies of your data across 3 Availability Zones and backing up your data continuously to Amazon S3.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the difference between Elastic Beanstalk &amp;amp; CloudFormation? They’re actually pretty different. Elastic Beanstalk is intended to make developers’ lives easier. CloudFormation is intended to make systems engineers’ lives easier.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Elastic Beanstalk is a PaaS-like layer ontop of AWS’s IaaS services which abstracts away the underlying EC2 instances, Elastic Load Balancers, auto scaling groups, etc. This makes it a lot easier for developers, who don’t want to be dealing with all the systems stuff, to get their application quickly deployed on AWS. It’s very similar to other PaaS products such as Heroku, EngineYard, Google App Engine, etc. With Elastic Beanstalk, you don’t need to understand how any of the underlying magic works.&lt;/p&gt;
+
+&lt;p&gt;CloudFormation, on the other hand, doesn’t automatically do anything. It’s simply a way to define all the resources needed for deployment in a huge JSON file. So a CloudFormation template might actually create two ElasticBeanstalk environments (production and staging), a couple of ElasticCache clusters, a DyanmoDB table, and then the proper DNS in Route53. I then upload this template to AWS, walk away, and 45 minutes later everything is ready and waiting. Since it’s just a plain-text JSON file, I can stick it in my source control which provides a great way to version my application deployments. It also ensures that I have a repeatable, “known good” configuration that I can quickly deploy in a different region.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the maximum response time for a Business Level Premium Support Case? 1 hour.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When I create a new security group, all outbound traffic is allowed by default. True.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Auditing user access/API calls etc across the entire AWS estate can be achieved by using &lt;code&gt;CloudTrail&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In RDS what is the maximum size for a Microsoft SQL Server DB Instance with SQL Server Express edition? 10GB per database.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What are the valid methodologies for encrypting data on S3. Server Side Encryption (SSE)-S3, SSE-C, SSE-KMS or a client library such as Amazon S3 Encryption Client.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What function of an AWS VPC is stateless? Security groups are stateful, which means that return traffic is automatically allowed, regardless of any outbound rules. A network ACL is applied on a subnet level, and traffic is stateless. You need to allow both inbound and outbound traffic in order for EC2 instances in a network ACL to be able to communicate over a particular protocol.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the following services allows you root access (ie you can login using SSH)? Elastic Map Reduce.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When trying to grant an amazon account access to S3 using access control lists what method of identification should you use to identify that account with? The email adrres or canonical account ID&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the following is not supported by AWS Import/Export? Export to Amazon Glacier&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What are the different types of virtualization available on EC2? Para-Virtual (PV) &amp;amp; Hardware Virtual Machine (HVM)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the following is a valid configuration type for AWS Storage gateway? Gateway-cached volumes, Gateway-stored volumes, Gateway-Virtual Tape Library&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS Import/Export allows for the importation of large data sets, using external hard disks which are sent directly to amazon, therefore bypassing the internet&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon’s SNS has the following subscribers; Lambda, SQS, HTTPS, Email, SMS&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You have a high performance compute application and you need to minimize network latency between EC2 instances as much as possible. What can you do to achieve this? Place an placement group within that AZ and place EC2 instances within that placement group.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Placement Groups can be created across 2 or more Availability Zones. False&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can add multiple volumes to an EC2 instance and then create your own RAID 5/RAID 10/RAID 0 configurations using those volumes. True.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are creating your own relational database on an EC2 instance and you need to maximise IOPS performance. What can you do to achieve this goal? add multiple additional volumes with provisioned IOPS and then create a RAID 0 stripe across those volumes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the services below do you get root access to? EC2 and Elastic Map Reduce.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When you create new subnets within a custom VPC, by default they can communicate with each other, across availability zones. True.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In order to enable encryption at rest using EC2 and Elastic Block Store you need to configure the encryption when creating EBS Volume&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can select a specific Availability Zone in which to place your DynamoDB Table? False. you can modify the region but cannot specify the availability zone.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When creating an RDS instance you can select which availability zone in which to deploy your instance. True, only if you did NOT selected a Multi-AZ deployment when creating the RDS instance&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon’s Redshift uses which block size for its columnar storage? 1MB.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the following is the responsibility of Amazon’s under the shared responsibility model? Data center security, Hypervisor patching, OS level patching for RDS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In regards to EC2 which of the following is a customers responsibility under the shared responsibility model? Antivirus, OS level patches, application level patches. Customer responsibility will be determined by the AWS Cloud services that a customer selects. This determines the amount of configuration work the customer must perform as part of their security responsibilities. For example, services such as Amazon Elastic Compute Cloud (Amazon EC2), Amazon Virtual Private Cloud (Amazon VPC), and Amazon S3 are categorized as Infrastructure as a Service (IaaS) and, as such, require the customer to perform all of the necessary security configuration and management tasks. If a customer deploys an Amazon EC2 instance, they are responsible for management of the guest operating system (including updates and security patches), any application software or utilities installed by the customer on the instances, and the configuration of the AWS-provided firewall (called a security group) on each instance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are solutions architect working for a busy ecommerce store. Due to your organisations unique security requirements, you decide to utilize EC2 running a MySQL database, rather than using RDS. You need to architect this EC2 instance to maximise your disk IO. Which of the following would give you the best disk performance? RAID0. RAID0 for spped, RAID1 for redundancy, RAID5 for redundancy and speed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are designing an AWS solution for a new customer and they want to use their active directory credentials in order to sign in to the AWS management console. What kind of authentication response is required in order for users to authenticate with the AWS security token service (STS)? Security Addertion Markup Language 2.0 (SAML 2.0)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are creating a new VPC with 3 subnets in 3 separate availability zones. You require instances in each subnet to be able to communicate to each other by default. What additional steps should you take in order to achieve this objective? You do not need to do anything, by default all subnets can communicate with each other using the main route table.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are designing a web application for a new social media start up and have recommended using DynamoDB for the database due to its superior performance. You need to ensure that your database has redundancy. What additional steps should you do? Nothing, DynamoDB all data is automatically replicated across multiple AZs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are designing an application for a furniture retailer. A component of the application takes pictures of the furniture for sale and generates thumb nail images which then need to be stored persistently. The business can tolerate it if some images are lost as they can be regenerated. The thumbnails will need to be retrieved immediately when the application requests them. What is the cheapest option to do this? Using RRS&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS help provide protection against some forms of traditional network attacks, which are they? Port Scanning, Ip Spoofing, Man in the middle Attack&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You have three AWS accounts (A, B &amp;amp; C) which share data.  In an attempt to maximize performance between the accounts, you deploy the instances owned by these three accounts in “eu-west-1b”.  During testing, you find inconsistent results in transfer latency between the instances. Transfer between accounts A and B is excellent, but transfers between accounts B and C, and C and A, are slower.  What could be the problem ? The names of the AZs are randomly applied, so &lt;code&gt;eu-west-1b&lt;/code&gt; is not necessarily the same physical location for all three accounts.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS snowball has replaced the old AWS import/export service&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A client who is using EC2 believes that someone other than approved administrators is trying to gain access to her Linux web app instances, and she asks what sort of network access logging can be added to the system. Which of the following might you recommend? Make usre of OS level logging tools such as iptables and log events to CloudWatch or S3.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You have a MySQl database running on an EC2 instance in a private subnet. You can connect via SSH, but you are unable to apply updates to the database server via the NAT instance. What might you do to remedy this problem? Ensure that “Source/Destination Checks” is disabled on the NAT instance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Amazon SQS keeps track of all tasks and events in an application. False. with SQS, you must implment your own application-level tracking, especially if your application uses multiple queues.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When editing permissions (policies and ACLs), to whom does the concept of the “Owner” refer? The “Owner” refers to the identity and email address used to create the account AWS account.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your company provides an online image recognition service and uses SQS to decouple system components. Your EC2 instances poll the image queue as often as possible to keep end-to-end throughput as high as possible, but you realize that all this polling is resulting in both a large number of CPU cycles and skyrocketing costs. How can you reduce cost without compromising service? Enable long polling by setting the ReceiveMessageWaitTimeSeconds to a number &amp;gt; 0.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You work for a popular media outlet about to release a story that is expected to go viral. During load testing on the website, you discover that there is read contention on the database tier of your application. Your RDS instance consists of a MySQL database on an extra large instance. Which two of the following approaches would be best to further scale this instance to meet the anticipated increase in traffic your viral story will generate? Use Elasticache to cache the frequently read, static data.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Following advice from your consultant, you have configured your VPC to use Dedicated hosting tenancy. A subsequent change to your application has rendered the performance gains from dedicated tenancy superfluous, and you would now like to recoup some of these greater costs. How do you revert to Default hosting tenancy?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release environments. Each version runs on Amazon EC2 with an EBS volume. You use Elastic Load Balancing to manage traffic and Amazon Route 53 to manage your domain. What’s the best way to check the health and status of all three groups of services simultaneously? Create a resource group containing each set of resources and view all threee environments from a singple, group dashboard.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are a consultant planning to deploy DynamoDB across three AZs. Your lead DBA is concerned about data consistency. Which of the following do you advise the lead DBA to do? To ask the development team to code for strongly consistent reads. As the consultant, you will advise the CTO of the increased cost. Keep in mind DynamoDB maintan the consistency for users.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You successfully configure VPC Peering between VPC-A  and VPC-B. You then establish an IGW and a Direct-Connect connection in VPC-B. Can instances in VPC-A connect to your corporate office via the Direct-Connect service, and connect to the Internet via the IGW? VPC Peering doesn’t support edge to edge routing.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You’re building out a single-region application in us-west-2. However, disaster recovery is a strong consideration, and you need to build the application so that if us-west-2 becomes unavailable, you can fail-over to us-west-1. Your application relies exclusively on pre-built AMI’s. In order to share those AMI’s with the region you’re using as a backup, which process would you follow? TBC. Copy security group, permission manually.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The combined Value and Name for binary and large text must not excceed 400kb for DynamoDB&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.udemy.com/vim-commands-cheat-sheet/&quot;&gt;《Vim Masterclass》&lt;/a&gt;;&lt;/li&gt;
@@ -3031,10 +3349,10 @@ MariaDB&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;subclass一个SpriteKit Particles Files ( ctrl + N –&amp;gt; iOS，Resources，SpriteKit Particles Files –&amp;gt; choose 1 of the eight template –&amp;gt; save，你会得到一个.sks 和.png 文件，点击.sks文件:&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/posts/2016-02-20/SKEmitterNode_1.png&quot; alt=&quot;SKEmitterNode_1&quot; /&gt;
- &lt;img src=&quot;/assets/images/posts/2016-02-20/SKEmitterNode_2.png&quot; alt=&quot;SKEmitterNode_2&quot; /&gt;
- &lt;img src=&quot;/assets/images/posts/2016-02-20/SKEmitterNode_3.png&quot; alt=&quot;SKEmitterNode_3&quot; /&gt;
- &lt;img src=&quot;/assets/images/posts/2016-02-20/SKEmitterNode_4.png&quot; alt=&quot;SKEmitterNode_4&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/2016-02-20/SKEmitterNode_1.png&quot; alt=&quot;SKEmitterNode_1&quot; /&gt;
+ &lt;img src=&quot;http://localhost:4000/assets/images/posts/2016-02-20/SKEmitterNode_2.png&quot; alt=&quot;SKEmitterNode_2&quot; /&gt;
+ &lt;img src=&quot;http://localhost:4000/assets/images/posts/2016-02-20/SKEmitterNode_3.png&quot; alt=&quot;SKEmitterNode_3&quot; /&gt;
+ &lt;img src=&quot;http://localhost:4000/assets/images/posts/2016-02-20/SKEmitterNode_4.png&quot; alt=&quot;SKEmitterNode_4&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;在.sks文件右侧调整各参数，例如有粒子平均产生率(BirthRate) 单位是个/秒。右边的range是一个分布，在平均产生率上 ±  range/2 分布。particle texture 是粒子的纹路，你可以选择自己加入的图片文件。&lt;/li&gt;
   &lt;li&gt;调整完成后如何在code中调用.sks文件呢:&lt;/li&gt;
@@ -3320,7 +3638,7 @@ bullet.categoryBitMask = BulletCategory;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/t
 
 &lt;p&gt;###&lt;/p&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/03 Java/2016-11-11-Spring Framework/Spring Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 
@@ -3351,7 +3669,7 @@ bullet.categoryBitMask = BulletCategory;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/t
 
 &lt;h2 id=&quot;1-summary&quot;&gt;1 Summary&lt;/h2&gt;
 
-&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;/assets/images/posts/03 Java/2016-12-09-Distributed System_08_Security/Security Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;img_middle_hg&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/images/posts/03 Java/2016-12-09-Distributed System_08_Security/Security Summary.png&quot; alt=&quot;Spring Summary.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
 
