@@ -350,6 +350,7 @@ shortinfo: AWS介绍。
 - A secruity group can be attached to multiple instances
 - Security Groups are stateful, which means inbound rule http would enable outbound rule http implicitly, though outbound rule doesn't show there is rule http.
 - You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.
+- You can assign up to five security groups to the instance.
 
 
 #### 2.1.5 Elastic Load Balancer
@@ -472,6 +473,8 @@ service httpd start
 - Logs: helps you to aggregate, monitor, and store logs.
 
 - CloudWatch vs CloudTrial: CloudWatch for performance monitoring aws existing resources (EC2 cpu utilization), CloudTrial for auditing what you do to aws (such as create new user, new role, S3 bucket)
+
+- CloudWatch metrics: memory utilization, disk space utilization is not readily available, you need use CloudWatch Monitoring Scripts which is written in Perl or CloudWatch Agent.
 
 ## 4 Network
 
@@ -1168,6 +1171,8 @@ Outputs:
 
 > Change set, allows you to **Preview** the change the updated stack will perform to verify if the change is in line with their expectations and if yes then procceed with the update. For example, rename a RDS will have the change sets of `Create a new one` and `Delete the old one`, this gives the info of poential data loss.
 
+> CloudFormation cost: no additional charge for AWS CloudFormation, you only pay for the AWS resources that are created.
+
 ### 7.1 Intrinsic Functions
 
 > Intrinsic Functions: built-in functions that help you manage your stacks.
@@ -1553,6 +1558,64 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 - You're building out a single-region application in us-west-2. However, disaster recovery is a strong consideration, and you need to build the application so that if us-west-2 becomes unavailable, you can fail-over to us-west-1. Your application relies exclusively on pre-built AMI's. In order to share those AMI's with the region you're using as a backup, which process would you follow? TBC. Copy security group, permission manually.
 
 - The combined Value and Name for binary and large text must not excceed 400kb for DynamoDB
+
+
+### udemy exam set
+
+### S1
+
+- Autoscaling group
+- spot instance
+- Q2: One can use IAM DB authentication to access RDS instance from EC2 instance. With IAM DB authentication, you don't need password, all you need is a authentication token.
+- Q3: 
+    - **AWS Budgets** gives you the ability to set custom budgets that alert you when your costs or usage execced your budgeted amount.
+    - **Cost Explorer** identifies areas that need further inquiry and see trends to understand your costs. 
+    - **Cost Allocation Tags** makes it easier for you to categorize and track your aws costs.
+- Q13: Route Origin AUthorization (ROA) to provision and advertise your application static ip to aws so your customer whitelist doesn't need to change your application static ip.
+
+- Q15: You can use a uniq or pre-built AMI to a specific region only.
+- Q16: Amazon DynamoDB Accelerator(DAX) can cache Amazon DynamoDB and increase reponse time from milliseconds to microseconds.
+
+- Q18: S3 have server-side and client-side encryption for data secuiryt.
+- Q19: transferring data from EC2 to S3, Glacier, DynamoDB, SES, SQS, or SimgpleDB in the same AWS region has no cost at all.
+
+- Q20: when create or modify your DB instance to run as a Multi-AZ deployment, RDS automatically provision and maintains a synchronous `standy` replicat in a different availability Zone. Updates to your DB instance are synchronously replicated across AZ to the standby in order to keep both in sync and protect your latest database updates against DB instance failure.
+    - Read replica provides an asynchronous replication instead of synchronous. Read replica is only available in Aurora, MySQL, MariaDB, and PostgreSQL database engines.
+    - Dynamo DB doesn't have read replica feature.
+
+- Q25: Enhanced Monitoring in RDS give metrics in DB for processes or threads that use DB
+
+- Q29: When an instance fails within an auto scaling group, ELB will stop sending traffic to the EC2 instace and auto scaling group will replace it with a new instance.
+
+- Q30: **SAML**, TBC
+
+- Q32: **Workload management(WLM)**, TBC
+
+- Q34: **Amazon Redshift Enhanced VPC Routing**, TBC
+
+- Q35: EBS can be attached to one EC2 instance at a time.
+
+- Q38: if your spot instance is termianted or stopped by Amazon EC2 in the first instacne hour, you will not be charged for that usage. If the spot price excceeds your maxim spot price config, it will be terminated automatically by AWS.
+
+- Q39: how to protect lambda from traffic spikes: enable throttling limits and result caching in API gateway.
+
+- Q41: One need to install CloudWatch Agent in EC2 in order to collect memory and disk utilization data. enhanced monitoring option is for RDS not for ECs.
+
+- Q44: You can still read and write to the EBS volume while you are taking snapshot of the EBS volume.
+
+- Q48: EC2 instance termination policy. TBC
+
+- Q49: SSD for small random I/O; HDD for large random IO.
+
+- Q52: using Amazon MQ when migrated a previous message service use industry standard messagping API
+
+- Q54: Aurora to direct high capacity instances to low-capacity instances. TBC.
+
+- Q57: high performance key-value storage: DynamoDB and ElastiCache
+
+- Q60: reserverd instance is not a physical instance, but rather a billing discount on on-demand instance.
+
+- Q64: REDIS, TBC.
 
 ## 2 参考资料 ##
 - [《Vim Masterclass》](https://www.udemy.com/vim-commands-cheat-sheet/);

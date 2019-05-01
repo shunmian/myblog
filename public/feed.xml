@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T12:55:28+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title type="html">CircleCI</title><link href="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html" rel="alternate" type="text/html" title="CircleCI" /><published>2018-05-16T00:00:00+08:00</published><updated>2018-05-16T00:00:00+08:00</updated><id>http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI</id><content type="html" xml:base="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T18:10:22+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">SHUNMIAN</title><subtitle>Stylish Jekyll Theme</subtitle><author><name>Shunmian</name><email>shunmian@gmail.com</email></author><entry><title type="html">CircleCI</title><link href="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html" rel="alternate" type="text/html" title="CircleCI" /><published>2018-05-16T00:00:00+08:00</published><updated>2018-05-16T00:00:00+08:00</updated><id>http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI</id><content type="html" xml:base="http://localhost:4000/-24%20continous%20integration/2018/05/16/CircleCI.html">&lt;p class=&quot;article_content_title&quot;&gt;目录&lt;/p&gt;
 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#1-circle-ci&quot; id=&quot;markdown-toc-1-circle-ci&quot;&gt;1. Circle CI&lt;/a&gt;    &lt;ul&gt;
@@ -747,6 +747,8 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
       &lt;li&gt;&lt;a href=&quot;#89-aws-workspaces&quot; id=&quot;markdown-toc-89-aws-workspaces&quot;&gt;8.9 AWS Workspaces&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#810-elastic-container-service-ecs&quot; id=&quot;markdown-toc-810-elastic-container-service-ecs&quot;&gt;8.10 Elastic Container Service (ECS)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#e&quot; id=&quot;markdown-toc-e&quot;&gt;E&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#udemy-exam-set&quot; id=&quot;markdown-toc-udemy-exam-set&quot;&gt;udemy exam set&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#s1&quot; id=&quot;markdown-toc-s1&quot;&gt;S1&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#2-参考资料&quot; id=&quot;markdown-toc-2-参考资料&quot;&gt;2 参考资料&lt;/a&gt;&lt;/li&gt;
@@ -1256,6 +1258,7 @@ Googele等一线互联网巨头主导”去QE(Quality Engineer)， 开发自己�
   &lt;li&gt;A secruity group can be attached to multiple instances&lt;/li&gt;
   &lt;li&gt;Security Groups are stateful, which means inbound rule http would enable outbound rule http implicitly, though outbound rule doesn’t show there is rule http.&lt;/li&gt;
   &lt;li&gt;You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.&lt;/li&gt;
+  &lt;li&gt;You can assign up to five security groups to the instance.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;215-elastic-load-balancer&quot;&gt;2.1.5 Elastic Load Balancer&lt;/h4&gt;
@@ -1447,7 +1450,10 @@ service httpd start&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt
   &lt;li&gt;
     &lt;p&gt;Logs: helps you to aggregate, monitor, and store logs.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;CloudWatch vs CloudTrial: CloudWatch for performance monitoring aws existing resources (EC2 cpu utilization), CloudTrial for auditing what you do to aws (such as create new user, new role, S3 bucket)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CloudWatch vs CloudTrial: CloudWatch for performance monitoring aws existing resources (EC2 cpu utilization), CloudTrial for auditing what you do to aws (such as create new user, new role, S3 bucket)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CloudWatch metrics: memory utilization, disk space utilization is not readily available, you need use CloudWatch Monitoring Scripts which is written in Perl or CloudWatch Agent.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;4-network&quot;&gt;4 Network&lt;/h2&gt;
@@ -2575,6 +2581,10 @@ MariaDB&lt;/p&gt;
   &lt;p&gt;Change set, allows you to &lt;strong&gt;Preview&lt;/strong&gt; the change the updated stack will perform to verify if the change is in line with their expectations and if yes then procceed with the update. For example, rename a RDS will have the change sets of &lt;code&gt;Create a new one&lt;/code&gt; and &lt;code&gt;Delete the old one&lt;/code&gt;, this gives the info of poential data loss.&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;CloudFormation cost: no additional charge for AWS CloudFormation, you only pay for the AWS resources that are created.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h3 id=&quot;71-intrinsic-functions&quot;&gt;7.1 Intrinsic Functions&lt;/h3&gt;
 
 &lt;blockquote&gt;
@@ -3177,6 +3187,86 @@ MariaDB&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;The combined Value and Name for binary and large text must not excceed 400kb for DynamoDB&lt;/p&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;udemy-exam-set&quot;&gt;udemy exam set&lt;/h3&gt;
+
+&lt;h3 id=&quot;s1&quot;&gt;S1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Autoscaling group&lt;/li&gt;
+  &lt;li&gt;spot instance&lt;/li&gt;
+  &lt;li&gt;Q2: One can use IAM DB authentication to access RDS instance from EC2 instance. With IAM DB authentication, you don’t need password, all you need is a authentication token.&lt;/li&gt;
+  &lt;li&gt;Q3:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;AWS Budgets&lt;/strong&gt; gives you the ability to set custom budgets that alert you when your costs or usage execced your budgeted amount.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Cost Explorer&lt;/strong&gt; identifies areas that need further inquiry and see trends to understand your costs.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Cost Allocation Tags&lt;/strong&gt; makes it easier for you to categorize and track your aws costs.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q13: Route Origin AUthorization (ROA) to provision and advertise your application static ip to aws so your customer whitelist doesn’t need to change your application static ip.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Q15: You can use a uniq or pre-built AMI to a specific region only.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q16: Amazon DynamoDB Accelerator(DAX) can cache Amazon DynamoDB and increase reponse time from milliseconds to microseconds.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Q18: S3 have server-side and client-side encryption for data secuiryt.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q19: transferring data from EC2 to S3, Glacier, DynamoDB, SES, SQS, or SimgpleDB in the same AWS region has no cost at all.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Q20: when create or modify your DB instance to run as a Multi-AZ deployment, RDS automatically provision and maintains a synchronous &lt;code&gt;standy&lt;/code&gt; replicat in a different availability Zone. Updates to your DB instance are synchronously replicated across AZ to the standby in order to keep both in sync and protect your latest database updates against DB instance failure.
+    &lt;ul&gt;
+      &lt;li&gt;Read replica provides an asynchronous replication instead of synchronous. Read replica is only available in Aurora, MySQL, MariaDB, and PostgreSQL database engines.&lt;/li&gt;
+      &lt;li&gt;Dynamo DB doesn’t have read replica feature.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q25: Enhanced Monitoring in RDS give metrics in DB for processes or threads that use DB&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q29: When an instance fails within an auto scaling group, ELB will stop sending traffic to the EC2 instace and auto scaling group will replace it with a new instance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q30: &lt;strong&gt;SAML&lt;/strong&gt;, TBC&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q32: &lt;strong&gt;Workload management(WLM)&lt;/strong&gt;, TBC&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q34: &lt;strong&gt;Amazon Redshift Enhanced VPC Routing&lt;/strong&gt;, TBC&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q35: EBS can be attached to one EC2 instance at a time.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q38: if your spot instance is termianted or stopped by Amazon EC2 in the first instacne hour, you will not be charged for that usage. If the spot price excceeds your maxim spot price config, it will be terminated automatically by AWS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q39: how to protect lambda from traffic spikes: enable throttling limits and result caching in API gateway.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q41: One need to install CloudWatch Agent in EC2 in order to collect memory and disk utilization data. enhanced monitoring option is for RDS not for ECs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q44: You can still read and write to the EBS volume while you are taking snapshot of the EBS volume.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q48: EC2 instance termination policy. TBC&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q49: SSD for small random I/O; HDD for large random IO.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q52: using Amazon MQ when migrated a previous message service use industry standard messagping API&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q54: Aurora to direct high capacity instances to low-capacity instances. TBC.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Q57: high performance key-value storage: DynamoDB and ElastiCache&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Q60: reserverd instance is not a physical instance, but rather a billing discount on on-demand instance.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;2-参考资料&quot;&gt;2 参考资料&lt;/h2&gt;
