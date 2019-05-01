@@ -1562,7 +1562,7 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 
 ### udemy exam set
 
-### S1
+### S1 (26)
 
 - Autoscaling group
 - spot instance
@@ -1579,7 +1579,7 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 - Q18: S3 have server-side and client-side encryption for data secuiryt.
 - Q19: transferring data from EC2 to S3, Glacier, DynamoDB, SES, SQS, or SimgpleDB in the same AWS region has no cost at all.
 
-- Q20: when create or modify your DB instance to run as a Multi-AZ deployment, RDS automatically provision and maintains a synchronous `standy` replicat in a different availability Zone. Updates to your DB instance are synchronously replicated across AZ to the standby in order to keep both in sync and protect your latest database updates against DB instance failure.
+- Q20: when create or modify your DB instance to run as a Multi-AZ deployment, RDS automatically provision and maintains a synchronous `standby` replicate in a different availability Zone. Updates to your DB instance are synchronously replicated across AZ to the standby in order to keep both in sync and protect your latest database updates against DB instance failure.
     - Read replica provides an asynchronous replication instead of synchronous. Read replica is only available in Aurora, MySQL, MariaDB, and PostgreSQL database engines.
     - Dynamo DB doesn't have read replica feature.
 
@@ -1587,11 +1587,14 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 
 - Q29: When an instance fails within an auto scaling group, ELB will stop sending traffic to the EC2 instace and auto scaling group will replace it with a new instance.
 
-- Q30: **SAML**, TBC
+- Q30: **SAML**,
+    - setup federation proxy or an identity provider
+    - setup aws security token service to generate temp tokens
+    - config iam role
 
-- Q32: **Workload management(WLM)**, TBC
+- Q32: **Workload management(WLM)**, in amazon redshift, you use workload management (WLM) to define the number of query queues that are available and how queries are routed to those queues for processing.
 
-- Q34: **Amazon Redshift Enhanced VPC Routing**, TBC
+- Q34: **Amazon Redshift Enhanced VPC Routing**, when you use amazon regshift enhanced VPC routing, amazon redshift forces all COPY and UNLOAD traffic between your cluster and your data repositories through your Amazon VPC. By using Enhanced VPC Routing, you can use standard VPC features, such as VPC security groups, network access control lists, VPC endpoint. You can also use VPC flow logs to monitor COPY and UNLOAD traffic.
 
 - Q35: EBS can be attached to one EC2 instance at a time.
 
@@ -1601,9 +1604,13 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 
 - Q41: One need to install CloudWatch Agent in EC2 in order to collect memory and disk utilization data. enhanced monitoring option is for RDS not for ECs.
 
+- Q42: TBC
+
 - Q44: You can still read and write to the EBS volume while you are taking snapshot of the EBS volume.
 
-- Q48: EC2 instance termination policy. TBC
+- Q48: EC2 instance termination policy.
+    - the subnet that has the most number of instances
+    - oldest launch configuration
 
 - Q49: SSD for small random I/O; HDD for large random IO.
 
@@ -1616,6 +1623,99 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 - Q60: reserverd instance is not a physical instance, but rather a billing discount on on-demand instance.
 
 - Q64: REDIS, TBC.
+
+- Q65: AWS shield provides a high level of protection against attack targeting your applications running on EC2, ELB, CloudFront, Route53. The protection include DDOS. 
+
+### S2 (36)
+
+- Q1: AWS OpsWorks (configuration management service to automate configuration of your servers) 3 offering
+    - Chef Automate
+    - Puppet Enterprise
+    - Stacks
+
+- Q7: Lambda deploy strategy
+    - Canary: two customized segments
+    - Linear
+    - All-at-once
+
+- Q8: VPC peering, direct connect VPN: VPC peering connection is not transistive
+
+- Q9: CloudWatch can send alarms that automatically stop, terminate, reboot, or recover the EC2 instance.
+
+- Q12: IAM provide identity providers, with which, you can manage your user identities outside of AWS and give these external user identities permission to use AWS resources in your account.
+
+- Q13: S3 Standard - Infrequent Access storage(Standard - IA): high avaialbility (99.9% vs 99.99% standard S3).
+
+- Q14: TBC
+
+- Q18: EBS RAID backup TBC
+
+- Q21: encryption: AWS Storage Gateway, Amazon Glacier encrypts data at rest by default
+
+- Q23: Perfect Forward Secrecy: CloudFront and Elastic Load Balancing are using perfect forward secrecy encryption.
+
+- Q25: DynamoDB scales capacity automatically.
+
+- Q31: EBS volums can only be attached to EC2 in the same AZ. EBS volumes support live configuration changes while in production which means you can modify the volume type, volume size and IOPS capacity without service interruptions.
+
+- Q34: Application load balancer or cloudFront supports SNI(Service Name Indication) feature.
+
+- Q35: In order to host a static website in S3, you need
+    - The S3 bucket name must be the same as the domain name
+    - A registered domain name
+
+- Q36: SWF and SQS both allow one to create decoupled architecture
+
+- Q37: ENI(elastic network interface) is a virtual network card, you can attach it to an EC2 instance in the following ways
+    - When it is running (hot attach)
+    - When it is stopped (warm attach)
+    - When the instance is being launched (cold attach)
+
+- Q40: Route53 enable failover to a static S3 website bucket or cloudfront distribution.
+
+- Q41: DynamoDB use case
+    - managing web sessions. item has TTL and is deleted automatically in DynamoDB when it TTL expires.
+    - Storing metadata for Amazon S3 Objects
+
+- Q42: AWS Snowball cannot store more than 80TB data while AWS Snowball Edge can.
+
+- Q43: STS(Security Token Service) is the service that you can use to create and provide trusted users with temporary security credentials.
+
+- Q44: Amazon DLM(Data Lifecycle Manager) is used to automate the creation, retention, and deletion of snapshots taken to back up your amazon EBS volumes.
+
+- Q45: TBC
+
+- Q47: Network ACL Rules are evaluated by rule number, from lowest to hightest and executed immediately when a matching allow/deny rule is found.
+
+- Q48: there is a soft limit of 20 EC2 instances per region. Submit an Amazon EC2 instance request form in order to lift this limmit.
+
+- Q49: EBS cannot tolerate an AZ failure since all EBS are stored and replicated in a single AZ only.
+
+- Q50: site-to-site VPN connection require an internet-routable IP address(static) of the customer gateway's external interface for the on-premises network.
+
+- Q51: Bastion host: a special purpose computer on a network specifically designed and configured to withstand attacks. If you have a bastion host in AWS, it is basically just an EC2 instance. It should be in a public subnet with either a public or Elastic IP addrress with sufficient RDP or SSH access defined in the secrurity group. Users log on to the bastion host via SSH or RDP and then use that session to manage other hosts in the private subnets.
+
+- Q52: encryption TBC
+
+- Q54: Security group, subnet, ACL, route table, internet gateway.
+
+- Q56: disaster recovery: Pilot light is used to set up a minimum version of the application that is always available in case of any outages
+
+- Q57: elasticity:
+    - Using Elastic Load Balancer
+    - create a policy in Route53, such as weighted routing policy to evenly distribute the traffic to 2 or more EC22 instances.
+
+- Q58: DNS
+    - A Name: `www.example.com` to ip
+    - CNAME : nameB to `www.example.com`, only subdomain
+    - Alias record: similar to CNAME but can also apply to root domain, like `exmaple.com`
+
+- Q60: Application Load Balancers support TLS termination capabilities, path-based routing, host-based routing and support for containerized applications hence
+
+- Q63: Cognito is for deliver temporary, limited-priviledge credentials to your application so that your users can access AWS resources.
+
+- Q64: TBC
+
 
 ## 2 参考资料 ##
 - [《Vim Masterclass》](https://www.udemy.com/vim-commands-cheat-sheet/);
