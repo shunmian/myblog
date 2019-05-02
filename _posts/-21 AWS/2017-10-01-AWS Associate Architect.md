@@ -1716,6 +1716,35 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 
 - Q64: TBC
 
+### S6
+
+- Q2: scheduled reserved instance
+
+- Q3: Connect VPC to remote network by VPN via
+    - Direct Connect
+    - IPsec VPN
+    - AWS VPN CloudHUb
+    - 3rd party software VPN appliance
+
+    - BTW, AWS Connect is not a VPN connectivity, its a self-service, cloud-based contact center service.
+
+- Q4: cross-zone load balancing can distribute incoming requests evenly across the AZ
+
+- Q9: Storgae Optimized Instances is designed for workloads that require high, sequential read and write access to very large data sets on local storage.
+
+- Q14: Elastic IP cost: there is no cost if the instance is running and it has only one associated EIP.
+
+- Q16: You can use `User data` configuration to setup script that will be running before instance launch to customize your instance.
+
+- Q17, multicast is not supported by VPC, you can create a virtual overlay networking running on the OS level of the instance to achieve that.
+
+- Q18: AWS organisation and service control policy allow certain access to services and actions are properly controlled to comply with the security policy of the compnay.
+
+- Q19: `Cache-Control` and `Expires`, `max-age` controls how cloudFront will cache the object.
+
+- Q20: public datasets such as satellite imagery, geiospatiol is free on AWS.
+
+- codeDeploy vs Beanstalk vs CloudFormation
 
 ## 2 参考资料 ##
 - [《Vim Masterclass》](https://www.udemy.com/vim-commands-cheat-sheet/);
