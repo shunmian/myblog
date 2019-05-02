@@ -1744,6 +1744,44 @@ CloudFormation, on the other hand, doesn't automatically do anything. It's simpl
 
 - Q20: public datasets such as satellite imagery, geiospatiol is free on AWS.
 
+- Q21: enable instances in subnet to fetch software patches from internet but prevent outside network from initiating a connection:
+    - IPV4: NAT gateway
+    - IPV6: egress-only internet gateway
+
+- Q24: S3 Multipart Upload API allows you to upload data to S3 in concurrency.
+
+- Q25: Web Identitfy Federation via AWS Security Token Service allow OpenID Connect-Compatible identity provider.
+
+- Q26: Sticket Session allow Classic Load Balancer to bind user's session to a specific instance.
+
+- Q27: `concurrent connections from multiple EC2 instances in different AZs` via EFS.
+
+- Q28: Remote Desktop connection via port 3389
+
+- Q35: Amazon Kinesis makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information.
+
+- Q37: deployment groups in Code Deploy can help automate code deployments in a consistent manner.
+
+- Q42: Aurora replicas can increase Aurora RDS availability.
+
+- Q48: it is recommended you launch the number of instances that you need in placement group in a single luanch request with same instance type.
+
+- Q50: advantages of Enhanced Networking
+    - higher packet per second performance
+    - lower inter-instance latencies
+
+- Q54: AWS Cloud HSM over KMS for cyour own hardware security.
+
+- Q58: 0499 acount id AWS console login url: `https://0499.signin.aws.amazon.com/console`
+
+- Q59: By default, data records in kinesis are only accessible for 24 hours from the time they are added to a stream.
+
+- Q60: Route 53 can distribute load for latency-based routing accross different AZ.
+
+- Q62: DNSSEC(Domain Name System Security Extensions) is not supported by Route 53.
+
+- Q65: cached volume gateway for aws storage gatway for cache
+
 - codeDeploy vs Beanstalk vs CloudFormation
 
 ## 2 参考资料 ##
