@@ -40,6 +40,8 @@ virtualbox安装centos, 虚拟机与宿主机网络通过`bridge`(桥接，虚�
 
 ### CH7: 网络安全与主机的基本防护: 限制端口，网络升级与SELinux
 
+> SELinux: 权限的主体是process,目标是file, 这样就防止即使黑客或得root，使用不同的程序所取得权限也不一定是root。例如www服务器软件的实现程序是httpd这个程序，而默认情况下httpd只能访问/var/www/这个目录下面访问的文件，如果httpd这个程序想要到其他目录去访问数据时，除了规则设置要开放外，目标目录也需要设置成httpd可读取的模式(Type)才行，限制非常多，所以即使不小心httpd被Cracker取得了控制权，Cracker也无权浏览/etcd/shadow等重要的配置文件。
+
 ### CH8: 路由的概念与路由器设置
 
 ### CH9: 防火墙与NAT服务器
