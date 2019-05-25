@@ -156,6 +156,11 @@ shortinfo: 本文《The Linux Command Line》的笔记。
 - `sftp`: Secure file transfer program
 - `arp`: 查看arp(ip to mac)信息，`arp -a` display all arp cache entry.
 
+- DNS
+    - `host`, DNS lookup utility, `host www.yahoo.com`
+    - `nslookup`, DNS lookup utility, `nslookup www.yahoo.com` 
+
+
 ### C17: Searching for Files
 
 - `locate`: search files by name， ``
