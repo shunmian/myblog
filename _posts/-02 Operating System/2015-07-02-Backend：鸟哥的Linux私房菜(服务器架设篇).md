@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 鸟哥的Linux私房菜(服务器架设篇)
-categories: [-14 Backend]
-tags: [Web Server]
+categories: [-02 Operating System]
+tags: [Operating System, Devops, Linux]
 number: [-2.1]
 fullview: false
 shortinfo: 本书是对《鸟哥的Linux私房菜(服务器架设篇)》的笔记。
@@ -30,7 +30,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(服务器架设篇)》的笔�
 virtualbox安装centos, 虚拟机与宿主机网络通过`bridge`(桥接，虚拟机与宿主机处于平等地位，位于同一个局域网)链接。
 
 {: .img_middle_hg}
-![连接到网络]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Backend：鸟哥私房菜服务器/连接到网络.png)
+![连接到网络]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-02-Backend：鸟哥私房菜服务器/连接到网络.png)
 
 ### CH5: Linux中常用的网络命令
 
@@ -56,11 +56,17 @@ TBC
 
 ### CH11: 远程连接服务器: SSH/XDMCP/VNC/XRDP
 
-TBC
+`ssh user@ip`
+`sftp user@ip`
+`scp user@ip:/pathToRemoteFile /pathToLocalFile`
 
 ### CH12: 网络参数管理者: DHCP服务器
 
+DHCP
+
 ### CH13: 文件服务器之一: NFS服务器
+
+NFS
 
 ### CH14: 账号管理: NIS服务器
 
@@ -83,6 +89,7 @@ TBC
 ### CH21: FTP服务器
 
 ### CH22: 邮件服务器: Postfix
+
 
 ## 2 参考资料 ##
 
