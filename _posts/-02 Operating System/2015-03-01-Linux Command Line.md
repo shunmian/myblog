@@ -31,6 +31,22 @@ shortinfo: 本文《The Linux Command Line》的笔记。
 
 ### C4: Manipulating Files and Directories
 
+disk ---(format)--> filesystem ---(mount)--> directory tree.
+
+/dev/sda9 is the first(a) disk device 9th partion, normally, you need to `mount /dev/sda9 /home`, which mount file system (formatted disk device) in to direcotry tree
+
+- df: disk usage in file system. `df -h`, h for human ßreadable
+- du: TBC
+
+- ln: hard link vs symbolic link
+
+{: .img_middle_lg}
+![cprintf]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/ln.png)
+
+
+
+
+
 ### C5: Working with Commands
 
 ### C6: Redirection
