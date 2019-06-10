@@ -71,6 +71,8 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH4: 首次登陆与在线求助
 
+- `man man` will show you the 9 section of man page
+
 ## Part 2: Linux文件，目录与磁盘格式
 
 ### CH5: Linux的文件权限与目录配置
