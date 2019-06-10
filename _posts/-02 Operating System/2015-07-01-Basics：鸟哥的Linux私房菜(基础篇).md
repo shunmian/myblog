@@ -29,6 +29,44 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH2: 主机规划与磁盘分区
 
+- 硬盘命名: `/dev/sd[a-p]`,若是虚拟机，则`/dev/vd[a-p]`, vd is short for virtual disk.
+
+- 主要分区，扩展分区，逻辑分区定义：
+    - 为什么分区: 高安全性(各个分区生命周期独立，删除1个不会影响其他)和高性能(同一个分区内在硬盘某一区域，读写快)
+    - 主要分区加扩展分区最多4个
+    - 扩展分区最多1个
+    - 逻辑分区是由扩展分区持续划分出来的分区
+    - 能够被格式化后作为数据存取的分区是主要分区与逻辑分区，扩展分区无法格式化
+    - 逻辑分区的数量依据操作系统而不同，在linux系统中SATA硬盘已经可以突破63个以上的分区限制。
+    - an Example, 5分区，采用 P + P + P + E
+        - /dev/sda1
+        - /dev/sda2
+        - /dev/sda3 // sda1-4只供给P
+        - /dev/sda5
+        - /dev/sda6
+
+- MBR (Master Boot Recrod) vs GPT (GUID partion table)
+    - MBR最多只支持2.2TB磁盘。
+    - GPT支持大于2.2TB磁盘，没有主分区和扩展分区区别，你可以视为所有分区都是主分区
+
+- 开机流程: 
+    - BIOS: 认出第一个启动设备
+    - MBR: 获取启动引导代码地址
+    - Boot Loader(引导启动程序): 
+        - 读取内核文件
+        - 转交控制权给其他1引导程序
+        - 安装地点： MBR与引导扇区
+    - 内核文件: 启动操作系统
+    - 操作系统
+- 分区建议: 新手只需`/`和`/swap`
+
+- 挂载：将磁盘连接到目录树的动作，目录树对应挂载的目录称为挂载点。
+
+
+{: .img_middle_hg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/mount.png)
+
+
 ### CH3: 安装Centos 7.x
 
 ### CH4: 首次登陆与在线求助
