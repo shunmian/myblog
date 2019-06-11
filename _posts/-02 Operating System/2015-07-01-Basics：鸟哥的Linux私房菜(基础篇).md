@@ -71,13 +71,65 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH4: 首次登陆与在线求助
 
-- `man man` will show you the 9 section of man page
+- `man man` will show you the 9 section of man page 
 
 ## Part 2: Linux文件，目录与磁盘格式
 
 ### CH5: Linux的文件权限与目录配置
 
 ### CH6: Linux文件与目录管理
+
+`umask`, file default `rw-rw-rw`, directory default `rwxrwxrwx`, `umask` is the minus part. For example, if `umask` return `022`, `touch test1; ll test1` return `rw-r--r--`. `mkdir test2; ll test2` return `rwxr-x-r-x`.
+
+
+- Directory
+    - 增:
+        - `mkdir`: `mkdir testDir`
+    - 删:
+        - `rmdir`: `rmdir emptyDir`
+        - `rm`: `rm -r nonEmptyDir`
+
+    - 改:
+        - `cp`: `cp -r fromDir toDir`
+    - 查: 
+        - `ls -d aDir`
+        - `which`: `which ls`.
+        - `whereis`: `whereis ls`.
+        - `locate`: `locate ls`
+        - `find`
+
+- File
+    - 增:
+        - `touch`: `touch aFile`
+    - 删:
+        - `rm`: `rm aFile`
+    - 改:
+        - `cp`: `cp fromFile toFile`
+    - 查: 
+        - `ls aFile`
+        - `cat`: `cat a.txt`
+        - `tac`: `tac a.txt`
+        - `head`: `head -n 3 a.txt`
+        - `tail`: `tail -n 3 a.txt`
+        - `less`: `less a.txt`
+        - `more`: `more a.txt`
+        - `od`: `od a.txt`
+
+- Path
+    - 改:
+        - `cd`: `cd aPath`
+    - 查: 
+        - `pwd`: `pwd`
+
+- Permission
+    - 改:
+        - `chown`: `chown root a.txt`
+        - `chgrp`: `chown grp a.txt`
+        - `chmod`: `chmod 666 a.txt`
+    - 查: 
+        - `ll a.txt`
+        - `umask`
+ 
 
 ### CH7: Linux磁盘与文件系统管理
 
