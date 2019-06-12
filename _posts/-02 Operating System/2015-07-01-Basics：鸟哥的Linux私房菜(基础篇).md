@@ -65,11 +65,19 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH4: 首次登陆与在线求助
 
+- update man: `yum install man-pages man-db man`
+- terminal google-like cmd:
+    - `makewhatis`, create index
+    - search keyword: 
+        - `man -k sort`; `man -k sort | grep 3`, sort content belong to section 3.
+        - `apropos` = `man -k`, `man -k sort` = `apropos sort`
+- [tldr](https://github.com/tldr-pages/tldr)
+
 - `man man` will show you the 9 section of man page 
 
 ## Part 2: Linux文件，目录与磁盘格式
 
-### CH7,6,5: Blcok Device, Filesystem, Direcotry & File
+### CH7,6,5,8: Blcok Device, Filesystem, Direcotry & File, Compress
 
 `Block Device` --(Partition & Format)--> `Filesystem` --(Mount)--> `Directory tree(Direcotry & File)`---->`Ready for usage`
 
@@ -189,9 +197,23 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
         - `umask`: file default `rw-rw-rw`, directory default `rwxrwxrwx`, `umask` is the minus part. For example, if `umask` return `022`, `touch test1; ll test1` return `rw-r--r--`. `mkdir test2; ll test2` return `rwxr-x-r-x`.
 
 - User
-    - `su`: `su -` change to root; `su lal`, change to lal
+    - 增
+        - `useradd`: `useradd aNewUser`, add aNewUser
+        - `passwd`: `passwd aNewUser`, change password for aNewUser
+    - 改
+        - `su`: `su -` change to root; `su lal`, change to lal
 
-### CH8: 文件与文件系统的压缩
+### CH8: Compress
+
+- `*.Z`:          compress
+- `*.zip`:        zip
+- `*.gz`:         gzip
+- `*.bz2`:        bzip2
+- `*.xz`:         xz
+- `*.tar`:        tar, 将多个文件打包成为一个文件，本身没有压缩功能。without compress。下面是将tar打包和不同压缩算法结合
+- `*.tar.gz`:     tar, compressed with gzip
+- `*.tar.bz2`:    tar, compressed with bzip2
+- `*.tar.xz`:     tar, compressed with xz 
 
 
 ## Part 3: Shell与Shell Script
