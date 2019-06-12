@@ -203,7 +203,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
     - 改
         - `su`: `su -` change to root; `su lal`, change to lal
 
-### CH8: Compress
+#### CH8: Compress
 
 - `*.Z`:          compress
 - `*.zip`:        zip
