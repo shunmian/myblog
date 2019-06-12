@@ -77,11 +77,9 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ## Part 2: Linux文件，目录与磁盘格式
 
-### CH7,6,5,8: Blcok Device, Filesystem, Direcotry & File, Compress
-
 `Block Device` --(Partition & Format)--> `Filesystem` --(Mount)--> `Directory tree(Direcotry & File)`---->`Ready for usage`
 
-#### CH7: Block Devic & Filesystem
+### CH7: Block Device & Filesystem
 
 - 磁盘格式化: 为了形成操作系统要识别的文件格式，例如ext2
     - 格式化现在最小粒度不是分区。LVM的存在可以让同一个分区分成不同的文件格式。我们通常称可被挂载的数据为一个文件系统。
@@ -135,7 +133,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 ![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/inode-for-different-file-system.png)
 
  
-#### CH6: Directory & File
+### CH6: Directory & File
 
 - Directory
     - 增:
@@ -181,7 +179,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
         - `basename`: `basename /etc/sysconfig/network` => `network`
         - `dirname`: `dirname /etc/sysconfig/network` => `/etc/sysconfig`
 
-#### CH5: Permission 
+### CH5: Permission 
 
 {: .img_middle_hg}
 ![mount]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/Files_Directory_杂项.png)
@@ -203,7 +201,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
     - 改
         - `su`: `su -` change to root; `su lal`, change to lal
 
-#### CH8: Compress
+### CH8: Compress
 
 - `*.Z`:          compress
 - `*.zip`:        zip
