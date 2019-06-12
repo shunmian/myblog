@@ -60,12 +60,6 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
     - 操作系统
 - 分区建议: 新手只需`/`和`/swap`
 
-- 挂载：将磁盘连接到目录树的动作，目录树对应挂载的目录称为挂载点。
-
-
-{: .img_middle_hg}
-![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/mount.png)
-
 
 ### CH3: 安装Centos 7.x
 
@@ -75,12 +69,65 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ## Part 2: Linux文件，目录与磁盘格式
 
-### CH5: Linux的文件权限与目录配置
+### CH7,6,5: Blcok Device, Filesystem, Direcotry & File
 
-### CH6: Linux文件与目录管理
+`Block Device` --(Partition & Format)--> `Filesystem` --(Mount)--> `Directory tree(Direcotry & File)`---->`Ready for usage`
 
-`umask`, file default `rw-rw-rw`, directory default `rwxrwxrwx`, `umask` is the minus part. For example, if `umask` return `022`, `touch test1; ll test1` return `rw-r--r--`. `mkdir test2; ll test2` return `rwxr-x-r-x`.
+#### CH7: Block Devic & Filesystem
 
+- 磁盘格式化: 为了形成操作系统要识别的文件格式，例如ext2
+    - 格式化现在最小粒度不是分区。LVM的存在可以让同一个分区分成不同的文件格式。我们通常称可被挂载的数据为一个文件系统。
+
+- block device
+    - 查
+        - `lsblk`: list block device info
+        - `blkid`
+        - `parted`: `parted /dev/sda1 print`
+
+
+- 文件系统要素
+    - superblock
+        - inodes and blocks usage statistics
+            - total size
+            - used
+            - unused
+        - cmd
+            - 查
+                -  `df -h`: disk usage for filesystem; `df -h /etc`; df读取的是superblock的信息，所以读取速度非常快
+                - `du -h`: disk usage for file/directory
+    - inode: file meta data
+        - permission
+        - onwer, group
+        - size
+        - time
+            - ctime
+            - mtime
+            - atime
+        - reference to blocks
+        - note
+            - inode本身不记录文件名，文件名的纪录是在目录的区块当中
+        - cmd
+            - 查
+                - `ls -i afile`
+    - block
+        - data
+
+- 挂载点
+    - 挂载点一定是文件目录。该目录为进入该文件系统的入口。
+
+
+
+{: .img_middle_lg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/mount.png)
+
+
+由于同一个文件系统的inode必对应不同的目录，因此下图显示`/`,`/boot`,`home`为三个文件系统
+
+{: .img_middle_lg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/inode-for-different-file-system.png)
+
+ 
+#### CH6: Directory & File
 
 - Directory
     - 增:
@@ -91,6 +138,9 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
     - 改:
         - `cp`: `cp -r fromDir toDir`
+        - `ln`
+            - Hard Link: `ln sourceFile destinationFile`, 在目录的inode里增加一条文件名到inode的记录，通常不会增加目录大小，也不会消耗额外的inode
+            - Symbolic Link: `ln -s sourceFile destinationFile`, 创建一个新的inode，在目录的inode里增加一条文件名到该新的inode
     - 查: 
         - `ls -d aDir`
         - `which`: `which ls`.
@@ -117,21 +167,29 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 - Path
     - 改:
-        - `cd`: `cd aPath`
+        - `cd`: `cd aPath`; `cd -`, change to previous path
     - 查: 
         - `pwd`: `pwd`
+        - `basename`: `basename /etc/sysconfig/network` => `network`
+        - `dirname`: `dirname /etc/sysconfig/network` => `/etc/sysconfig`
+
+#### CH5: Permission 
+
+{: .img_middle_hg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/Files_Directory_杂项.png)
+
 
 - Permission
     - 改:
         - `chown`: `chown root a.txt`
-        - `chgrp`: `chown grp a.txt`
+        - `chgrp`: `chown grp a.txt`; `chown root:root test.txt`, 同时该拥有者和属组
         - `chmod`: `chmod 666 a.txt`
     - 查: 
         - `ll a.txt`
-        - `umask`
- 
+        - `umask`: file default `rw-rw-rw`, directory default `rwxrwxrwx`, `umask` is the minus part. For example, if `umask` return `022`, `touch test1; ll test1` return `rw-r--r--`. `mkdir test2; ll test2` return `rwxr-x-r-x`.
 
-### CH7: Linux磁盘与文件系统管理
+- User
+    - `su`: `su -` change to root; `su lal`, change to lal
 
 ### CH8: 文件与文件系统的压缩
 
