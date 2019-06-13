@@ -206,12 +206,26 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 - `*.Z`:          compress
 - `*.zip`:        zip
 - `*.gz`:         gzip
+    - `gzip -v aFile`, compress a file and replace original file
+    - `gzip -d aFile.gz`, decompress a file
+    - `gzip -9 -c services > services.gz`, 用最佳压缩比，将services压缩成services.gz且保留services原文件。
+    - `zcat`: print the uncompressed content of compressed file (for example, *.gz), `zcat a.gz`
+    - `zgrep`: `zgrep -n 'http' services.gz`, grep the http in *.gz file and print the keyword line number.
+
 - `*.bz2`:        bzip2
+    - `bzip2 -v aFile`
+    - `bzip2 -d aFile.bz2`, decompress *.bz2
+    - `bzcat`: cat .bz2, `bzcat2 a.bz2`
 - `*.xz`:         xz
+    - `xz -v aFile`
+    - `xz -d services.xz`
+    - `xzcat`: `xzcat services.xz`
+
 - `*.tar`:        tar, 将多个文件打包成为一个文件，本身没有压缩功能。without compress。下面是将tar打包和不同压缩算法结合
 - `*.tar.gz`:     tar, compressed with gzip
 - `*.tar.bz2`:    tar, compressed with bzip2
 - `*.tar.xz`:     tar, compressed with xz 
+
 
 
 ## Part 3: Shell与Shell Script
