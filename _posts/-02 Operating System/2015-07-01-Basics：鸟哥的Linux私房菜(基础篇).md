@@ -232,6 +232,27 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH9: vim程序编辑器
 
+- normal node:
+    - `ctrl`+`f`: next page; `ctrl`+`b`: prev page;
+    - `ZZ`: save and quit. 
+
+- insert mode:
+    - `i`, `I`
+    - `a`, `A`
+    - `o`, `O`
+    - `r`, `R`
+
+- visual mode:
+    - `ctrl`+`v`，矩形选择。
+
+- multi-files
+    - `vim f1 f2`, `:files` show all file, `:n` switch files
+
+- multi-window
+    - `:sp` split window with the same file; `:sp file2` split window witht file2
+    - `ctrl`+`w`, `j`, control window below; `ctrl`+`w`, `k`, control window above;
+    -  `ctrl`+`w`, `q`, control window quit.
+
 ### CH10: 认识与学习BASH
 
 ### CH11: 正则表达式与文件格式化处理
