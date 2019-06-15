@@ -195,11 +195,14 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
         - `umask`: file default `rw-rw-rw`, directory default `rwxrwxrwx`, `umask` is the minus part. For example, if `umask` return `022`, `touch test1; ll test1` return `rw-r--r--`. `mkdir test2; ll test2` return `rwxr-x-r-x`.
 
 - User
+    - 查
+        - `ulimit -a`
     - 增
         - `useradd`: `useradd aNewUser`, add aNewUser
         - `passwd`: `passwd aNewUser`, change password for aNewUser
     - 改
         - `su`: `su -` change to root; `su lal`, change to lal
+
 
 ### CH8: Compress
 
@@ -254,6 +257,73 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
     -  `ctrl`+`w`, `q`, control window quit.
 
 ### CH10: 认识与学习BASH
+
+- `type`: `type ls`, ls is the bash built in cmd.
+- `ctrl`+`u`, delete in cursor to begin; `ctrl`+`e`, delete in curose to end.
+- `ctrl`+`a`, move to begin; `ctrl`+ `e`, move to end;
+- 变量分
+    - 环境变量
+        - 大写
+        - 在子进程自动继承
+        - 可以`unset PATH`
+        - 举例
+            - `$`,美元符号就是一个环境变量，表示当前shell PID, `echo $$`
+            - `?`, 问号就是一个环境变量，表示上一个命令执行的返回值`echo `
+        - 转local`declare +x sum`
+    - local变量
+        - 小写
+        - 在子进程需要父进程eport才能用
+        - 可以`unset PATH`
+        - 转env`export sum`或`declare -x sum`
+- 单引号(text litural) vs 双引号(use variable reference)
+    - `name=linux`, `myname="$name jack"`, `echo myname`输出`linux jack`;
+    - `name=linux`, `myname='$name jack'`, `echo myname`输出`$name jack`;
+
+- 别名
+    - `alias`
+    - `unalias`
+
+- 历史
+    - `history`
+
+- cmd程序寻找可执行顺序
+    - relateive/absolute path, 如`/bin/ls`;
+    - `alias`
+    - shell builtin
+    - `$PATH`
+
+
+{: .img_middle_hg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/shell_config_loading_sequence.png)
+
+- Redirect
+    - `>`, redirect; `>>`, redirect append. 默认是stdout.
+        - `1>`, redirect stdout; `1>>`, redirect append stdout;
+        - `2>`, redirect stderr; `2>>`, redirect append stderr;
+    - separate stdout and stderr
+        - `find /home -name .bashrc > list_right 2 > list_error`
+    - same stdout and stderr
+        - `find /home -name .bashrc  2&>1 list`
+    - 黑洞设备
+        - `find /home -name .bashrc > list_right 2 > /dev/null`
+ 
+- multiple cmds:
+    - `;`
+    - `&&`
+    - `ll`
+
+- text process:
+    - `cut`: `echo $PATH | cut -d ':' -f 5`
+    - `grep`: `last | grep root`, `last | grep -v root`(exclude root)
+    - `sort`
+    - `wc`
+    - `uniq`
+    - `tr`
+    - `col`
+    - `join`
+    - `paste`
+    - `expand`
+    - `split`
 
 ### CH11: 正则表达式与文件格式化处理
 
