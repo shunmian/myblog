@@ -40,8 +40,7 @@ disk ---(format)--> filesystem ---(mount)--> directory tree.
 
 - ln: hard link vs symbolic link
 
-{: .img_middle_lg}
-![cprintf]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/ln.png)
+
 
 
 
