@@ -147,12 +147,17 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
         - `ln`
             - Hard Link: `ln sourceFile destinationFile`, 在目录的inode里增加一条文件名到inode的记录，通常不会增加目录大小，也不会消耗额外的inode
             - Symbolic Link: `ln -s sourceFile destinationFile`, 创建一个新的inode，在目录的inode里增加一条文件名到该新的inode
+
     - 查: 
         - `ls -d aDir`
         - `which`: `which ls`.
         - `whereis`: `whereis ls`.
         - `locate`: `locate ls`
         - `find`
+
+{: .img_middle_lg}
+![ln]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/ln.png)
+
 
 - File
     - 增:
@@ -182,7 +187,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 ### CH5: Permission 
 
 {: .img_middle_hg}
-![mount]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/Files_Directory_杂项.png)
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/Files_Directory_杂项.png)
 
 
 - Permission
@@ -275,9 +280,6 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
         - 在子进程需要父进程eport才能用
         - 可以`unset PATH`
         - 转env`export sum`或`declare -x sum`
-- 单引号(text litural) vs 双引号(use variable reference)
-    - `name=linux`, `myname="$name jack"`, `echo myname`输出`linux jack`;
-    - `name=linux`, `myname='$name jack'`, `echo myname`输出`$name jack`;
 
 - 别名
     - `alias`
@@ -293,8 +295,8 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
     - `$PATH`
 
 
-{: .img_middle_hg}
-![mount]({{site.url}}/assets/images/posts/-02_Operating System/Linux_Command_Line/2015-03-01-Linux Command Line/shell_config_loading_sequence.png)
+{: .img_middle_lg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/shell_config_loading_sequence.png)
 
 - Redirect
     - `>`, redirect; `>>`, redirect append. 默认是stdout.
@@ -328,6 +330,47 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 ### CH11: 正则表达式与文件格式化处理
 
 ### CH12: 学习Shell脚本
+
+- `$()` vs `${}`:
+    - `$(a)`, a is a command
+    - `${a}`, a is a variable
+
+- 单引号(text litural) vs 双引号(use variable reference)
+    - `name=linux`, `myname="$name jack"`, `echo myname`输出`linux jack`;
+    - `name=linux`, `myname='$name jack'`, `echo myname`输出`$name jack`;
+
+- `:-`
+    - `filename=${fileuser:-"filename"}`, if `fileuser` exists, filename=${fileuser}, else `filename`
+
+
+{: .img_middle_lg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/shell_script_execution_diff.png)
+
+- `test`
+    - `test -f name.sh && echo "exist" || echo "not exist"`, 查看文件是否存在
+    - `test -d /root && echo "exist" || echo "not exist"`, 查看目录是否存在
+    - `test aString`, if aString exist, return true
+    - `test -z aString`, if aString not exist, return true
+    - `test str1 == str2`, if str1 == str2, return true
+
+- `[]`
+    - `[ "${name}" == "Jack" ]`, 注意`[`和`]`两边的空格，左右表达式最好用`""`分开； 可以结合or`[ "${name}" == "Jack" ] -o "[ "${name}" == "jack" ]`
+
+- shell 变量, `./test.sh a b c`
+    - `${0}`, output `./test.sh`
+    - `${#}`, output `3`, 即所有parameter的总数。
+
+- `if`: `if elif else fi`
+
+- `switch`
+
+- `function`
+
+- `loop`
+
+- debug
+    - `sh -n file.sh`,打印file.sh的语法错误。
+
 
 
 ## Part 4: Linux使用者管理
