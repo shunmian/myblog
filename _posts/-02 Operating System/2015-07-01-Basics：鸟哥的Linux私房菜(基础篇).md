@@ -199,15 +199,6 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
         - `ll a.txt`
         - `umask`: file default `rw-rw-rw`, directory default `rwxrwxrwx`, `umask` is the minus part. For example, if `umask` return `022`, `touch test1; ll test1` return `rw-r--r--`. `mkdir test2; ll test2` return `rwxr-x-r-x`.
 
-- User
-    - 查
-        - `ulimit -a`
-    - 增
-        - `useradd`: `useradd aNewUser`, add aNewUser
-        - `passwd`: `passwd aNewUser`, change password for aNewUser
-    - 改
-        - `su`: `su -` change to root; `su lal`, change to lal
-
 
 ### CH8: Compress
 
@@ -377,13 +368,27 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH13: Linux账号管理与ACL权限设置
 
-
 {: .img_middle_lg}
 ![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/etc_passwd&group&shadow.pn)
 
-
+- User
+    - 增
+        - `useradd`: `useradd aNewUser`, add aNewUser
+        - `passwd`: `passwd aNewUser`, change password for aNewUser
+    - 删
+        - 
+    - 改
+        - `sudo`
+        - `su`: `su -` change to root; `su lal`, change to lal
+    - 查
+        - `w`, `who`: show who is logged in
+        - `ulimit -a`
+        - `lastlog`
+    
 
 ### CH14: 磁盘配额与高级文件系统管理
+
+TBC
 
 ### CH15: 计划任务
 
