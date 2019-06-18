@@ -377,6 +377,12 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH13: Linux账号管理与ACL权限设置
 
+
+{: .img_middle_lg}
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/etc_passwd&group&shadow.pn)
+
+
+
 ### CH14: 磁盘配额与高级文件系统管理
 
 ### CH15: 计划任务
