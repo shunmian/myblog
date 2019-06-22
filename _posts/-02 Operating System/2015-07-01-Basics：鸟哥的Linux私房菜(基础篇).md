@@ -369,7 +369,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 ### CH13: Linux账号管理与ACL权限设置
 
 {: .img_middle_lg}
-![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/etc_passwd&group&shadow.pn)
+![mount]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/etc_passwd&group&shadow.png)
 
 - User
     - 增
@@ -405,6 +405,30 @@ TBC
     - `crontab -e`: `*/5 * * * * ~/test.sh`
 
 ### CH16: 进程管理与SELinux初探
+
+- 进程权限: 运行任何一个程序时， 运行的用户的权限会被进程继承，之后改进程做任何动作(读取文件，fork另一个进程)，都会以该进程的权限执行。
+
+{: .img_middle_lg}
+![process_permission]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/process_permission.png)
+
+
+- Shell管理PID的中介，job
+
+{: .img_middle_lg}
+![process_permission]({{site.url}}/assets/images/posts/-02_Operating System/2015-07-01-Basics：鸟哥的Linux私房菜(基础篇)/job_control.png)
+
+- cmd
+    - 增
+    - 删
+        - `kill`
+            - `kill signal PID`: `kill -9 1`
+    - 改
+        - `nice`, 更改process优先级
+    - 查
+        - `ps`
+        - `top`
+        - `pstree`
+
 
 
 ## Part 5: Linux系统管理员
