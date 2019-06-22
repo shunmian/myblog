@@ -429,11 +429,14 @@ TBC
         - `top`
         - `pstree`
 
+- `SELniux`: TBC
 
 
 ## Part 5: Linux系统管理员
 
 ### CH17: 认识系统服务(daemon)
+
+- `systemctl`
 
 ### CH18: 认识与分析日志文件
 
