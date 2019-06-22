@@ -135,6 +135,10 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
  
 ### CH6: Directory & File
 
+- NewCommand
+    - [`z`](https://github.com/rupa/z)
+        - `z l` + `tab`, 会填充匹配l的路径，按enter就`cd`进去。
+
 - Directory
     - 增:
         - `mkdir`: `mkdir testDir`
