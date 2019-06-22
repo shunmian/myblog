@@ -392,6 +392,18 @@ TBC
 
 ### CH15: 计划任务
 
+#### Once Task: `at`
+
+- `at`
+    - `at now + 5 minutes`, `at> echo hello > a.txt`, after 5 minutes echo to a.txt.
+
+
+#### Period Task: `crontab`
+
+
+- `crontab`
+    - `crontab -e`: `*/5 * * * * ~/test.sh`
+
 ### CH16: 进程管理与SELinux初探
 
 
