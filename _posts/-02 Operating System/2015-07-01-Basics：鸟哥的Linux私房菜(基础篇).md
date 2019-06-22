@@ -325,6 +325,8 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
     - [jq](https://blog.just4fun.site/command-tool-jq.html), json query, `cat account.json | jq '.'`
 
+    - [fzf](https://github.com/junegunn/fzf). `cd **` + `tab`, 触发， `ctrl`+`j`或`k`上下移动; `ctrl`+`r`list历史命令。
+
 ### CH12: 学习Shell脚本
 
 - `$()` vs `${}`:
