@@ -320,6 +320,11 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
 
 ### CH11: 正则表达式与文件格式化处理
 
+- NewCommand
+    - [ag](https://www.zhihu.com/question/59227720), advanced grep,`ag 'permission'`
+
+    - [jq](https://blog.just4fun.site/command-tool-jq.html), json query, `cat account.json | jq '.'`
+
 ### CH12: 学习Shell脚本
 
 - `$()` vs `${}`:
