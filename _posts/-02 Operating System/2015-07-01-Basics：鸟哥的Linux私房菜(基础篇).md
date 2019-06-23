@@ -300,7 +300,7 @@ shortinfo: 本书是对《鸟哥的Linux私房菜(基础篇)》的笔记。
     - separate stdout and stderr
         - `find /home -name .bashrc > list_right 2 > list_error`
     - same stdout and stderr
-        - `find /home -name .bashrc  2&>1 list`
+        - `find /home -name .bashrc  2>&1 list`
     - 黑洞设备
         - `find /home -name .bashrc > list_right 2 > /dev/null`
  
@@ -462,6 +462,21 @@ TBC
 ### CH21: 软件安装: 源代码与Tarball
 
 ### CH22: 软件安装RPM, SRPM与YUM
+
+- `RPM`: 全称Redhat Package Manager,  用于软件安装管理，但是依赖性问题没有解决
+
+- `YUM`: 全称 Yellow dog Updater Modified, 可看成`RPM`的Shell客户端，增加了依赖性管理这一层。
+    - 增
+        - `yum install a`
+    - 删
+        - `yum remove a`
+    - 改
+        - `yum update a`
+    - 查
+        - `yum list`, 列出yum服务器上所有的软件包名字。或`yum list pam*`，查找yum服务器上以pam开头的软件。
+
+        - `yum search`: `yum search raid`, raid是keyword, 返回A:B字典，A是yum的包名字，B是RPM的报名字。A可用`yum info A`来查询A的具体信息。
+        - `yum info`: `yum info mdadm`
 
 ### CH23: X Windows 设置介绍
 
