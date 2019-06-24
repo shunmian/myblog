@@ -54,6 +54,24 @@ shortinfo: JWT介绍。
 
 ### CH3 Functions
 
+#### 3.3 One Level Abstraction Per Function
+
+要确保函数只做一件事情，且函数中的语句都要在同一抽象层级上。比如`service`里调用`serviceA`, `serviceB`, `serviceC`; `serviceC`调用`daoA`, `daoB`, `daoC`。
+换一种说法，我们想要这样读程序，程序就像一系列TO起头的段落，每一段都描述当前抽象层级，并引用位于下一抽象层级的后续TO起头段落。
+
+- To include the setups and teardowns, we include setups, then we include the test page content, and then we include the teardowns.
+
+- To include the setup if this is a suite, then we include the regular setup.
+
+- To include the suite setup, we search the parent hierarchy for the "SuiteSetup" page and add an include statewment with the path of that page.
+
+- To search the parent ...
+
+#### 3.6 Function arguments
+
+参数个数0>1>2,不要多于3个。
+
+
 ### CH4 Commnets
 
 ### CH5 Formatting
