@@ -69,8 +69,85 @@ shortinfo: JWT介绍。
 
 #### 3.6 Function arguments
 
-参数个数0>1>2,不要多于3个。
+参数个数0>1>2,不要多于3个
 
+#### 3.7 No side effect
+
+
+{% highlight js linenos %}
+
+function findItem(list, key, pool) {
+  const found = _.find(pool, i => i.key == key)
+  if (found) list.push(found)
+}
+{% endhighlight %}
+
+{% highlight python linenos %}
+function findItem(key, pool) {
+  const found = _.find(pool, i => i.key == key)
+  return found
+}
+
+function findAndInsertItem(list, key, pool) {
+  const found = findItem(key, pool)
+  list.push(found)
+}
+
+{% endhighlight %}
+
+#### 3.9 Prefer exception over error code
+
+{% highlight js linenos %}
+
+if(deletePage(page) == E_OK) {
+  if(registry.deleteReference(page.name) == E_OK) {
+    if(configKeys.deleteKey(page.name.makeKey()) == E_OK) {
+      logger.log("page deleted");
+    } else {
+      logger.log("configKey not deleted");
+    }
+  } else {
+    logger.log("deleteReference from Registry failed");
+  }
+} else {
+  logger.log("delete failed")
+  return E_ERROR
+}
+
+{% endhighlight %}
+
+{% highlight js linenos %}
+
+try {
+  deletePage(page);
+  registry.deleteReference(page.name);
+  configKeys.deleteKey(page.name.makeKey());
+} catch (Exception e) {
+  logger.log(e.getMessage());
+}
+
+{% endhighlight %}
+// extract try block from try catch.
+public void delete(Page page) {
+  try {
+    deletePageAndAllReferences(page)
+  } catch(Exception e) {
+    logError(e);
+  }
+}
+
+public void deletePageAndAllReferences(Page page) {
+  deletePage(page);
+  registry.deleteReference(page.name);
+  configKeys.deleteKey(page.name.makeKey());
+}
+
+{% endhighlight %}
+
+#### 3.12 How to write functions like this
+
+- Master programmer think of system as stories to be told rather than code to be written;
+- You start with a draft, and gradually refine it to DRY, separate different level of logic into its own logic.
 
 ### CH4 Commnets
 
