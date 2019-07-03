@@ -127,6 +127,9 @@ try {
 }
 
 {% endhighlight %}
+
+
+{% highlight js linenos %}
 // extract try block from try catch.
 public void delete(Page page) {
   try {
@@ -150,6 +153,71 @@ public void deletePageAndAllReferences(Page page) {
 - You start with a draft, and gradually refine it to DRY, separate different level of logic into its own logic.
 
 ### CH4 Commnets
+
+- comments is the complement to the failure of code expressiveness.
+
+#### 4.2 Use function or variable to replace comment
+
+Example 1
+
+{% highlight js linenos %}
+// Check to see if the employee is eligible for full benefits
+if ((employee.flags & HOURLY_FLAG) && (employee.age > 65))
+{% endhighlight %}
+
+
+{% highlight js linenos %}
+if (employee.isEligibleForFullBenefits())
+{% endhighlight %}
+
+Example 2
+
+{% highlight js linenos %}
+// does the module from the global list depend on the subsystem we are part of?
+if (smodule.getDependSubsystems().contains(subSysMod.getSubSystem()))
+{% endhighlight %}
+
+{% highlight js linenos %}
+ArrayList moduleDependees = smodule.getDependSubsystems();
+String ourSubSystem = subSysMod.getSubSystem();
+if (moduleDependees.contains(ourSubSystem))
+{% endhighlight %}
+
+
+
+#### 4.3 Do not write obvious javadoc
+
+
+{% highlight js linenos %}
+/*
+* @param title The title of the CD
+* @param author The author of the CD
+* @param tracks The number of tracks on the CD
+* @param durationInMinutes The duration of the CD in minutes
+public void addCD(String title, String author, int tracks,
+  int durationInMinutes) {
+    CD cd = new CD();
+    cd.title = title;
+    cd.author = author;
+    cd.tracks = tracks;
+    cd.duration = duration;
+    cdList.add(cd);
+}
+*/
+{% endhighlight %}
+
+
+#### 4.4 Do not keep commented out code
+
+We have VCS like git, just delete the unused code, it will not be lost.
+
+#### 4.5 Do not write unclear comment
+
+comment is to explain code; do not write unclear comment that needs further comment to explain.
+
+#### 4.6 Do not write Javadoc for private method
+
+only write Javadoc for public method
 
 ### CH5 Formatting
 
