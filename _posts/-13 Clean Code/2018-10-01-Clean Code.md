@@ -221,6 +221,11 @@ only write Javadoc for public method
 
 ### CH5 Formatting
 
+#### 5.2 Write code like write a story in newspaper
+
+- abstract -> outline -> detail
+- blank line between different group of concepts; no bank line between similar concepts in one group
+
 ### CH6 Objects and Data Structures
 
 ### CH7 Error Handling
