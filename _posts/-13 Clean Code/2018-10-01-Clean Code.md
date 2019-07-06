@@ -238,6 +238,29 @@ only write Javadoc for public method
 
 ### CH7 Error Handling
 
+#### 7.7 Don't return null
+
+{% highlight js linenos %}
+List<Employee> employees = getEmployees();
+if (employees != null) {
+  for (Employee e : employees) {
+    totalPay += e.getPay();
+  }
+}
+{% endhighlight %}
+
+{% highlight js linenos %}
+public List<Employee> getEmployees() {
+  if(... there are no employees...)
+    return Collections.emptyList();
+}
+
+List<Employee> employees = getEmployees();
+for (Employee e : employees) {
+  totalPay += e.getPay();
+}
+{% endhighlight %}
+
 ### CH8 Boundaries
 
 ### CH9 Unit Tests
