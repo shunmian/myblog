@@ -267,6 +267,25 @@ TBC
 
 ### CH9 Unit Tests
 
+#### 9.1 Unit Test is as important as business code
+
+- 测试代码和生产代码一样重要，它不是二等公民。它必须被思考，设计和照料。它该像生产代码一般保持整洁。
+
+- 测试代码要well organised。 
+  - 比如每个测试分三个部分`resetMocks()`, `mockReturnedValue()`, `doTest()`。这样比三个函数的逻辑全都放在一个函数里就清晰很多。
+  - 测试与测试之间的关系要清晰明了，比如要测1个函数，它有三个param. 那测试的组织应该是
+    - `testParamA(){ resetMocks(); mockReturnedValue(); doTestA();}`
+    - `testParamB(){ resetMocks(); mockReturnedValue(); doTestB();}`
+    - `testParamC(){ resetMocks(); mockReturnedValue(); doTestC();}`
+  - 每个测试的断言概念只有1个。`it('Should return correct date', () => { expect(A.year).toBe(2019); expect(A.month).toBe(9)}; expect(A.day).toBe(11))`
+  - 每个测试的断言数量要最小化，最好1个。`it('Should return correct date', () => { expect(A.).toEqual(new Date(2019-09-11))`
+
+- FIRST原则
+  - Fast
+  - Independent: 每个测试要相互独立，不要有依赖。比如测试`insert`和`query`, `insert`要准备数据->插入->验证->删除数据, `query`要准备数据->插入->验证query->删除数据。`insert`和`query`要有各自插入，删除的操作以保证两个测试时独立的。
+
+- 如果你坐视测试腐坏，那么代码也会跟着腐坏，保持测试整洁吧。
+
 ### CH10 Classes
 
 ### CH11 Systems
