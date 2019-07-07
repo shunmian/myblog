@@ -310,9 +310,15 @@ TBC
 
 ### CH14 Successive Refinement
 
+TBC very important!
+
 ### CH15 JUnit Internals
 
+TBC very important!
+
 ### CH16 Refactoring `SerialDate`
+
+TBC very important!
 
 ### CH17 Smells and Heuristics
 
