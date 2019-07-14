@@ -310,7 +310,7 @@ TBC
 
 ### CH14 Successive Refinement
 
-1. hierachy, parseSchema -> parseSchemaElement; parseArguments -> parseArgument -> parseArgumentElement;
+1. hierarchy, parseSchema -> parseSchemaElement; parseArguments -> parseArgument -> parseArgumentElement;
 2. Extract common part to be a interface and concrete classess that for the interface, BooleanMarshaler, IntMarshaler, StringMarshaler; this part is the most challenge one, do it elegantly needs minimize arguments number and extract commonality.
 
 ### CH15 JUnit Internals
