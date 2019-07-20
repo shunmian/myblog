@@ -324,6 +324,37 @@ TBC very important!
 ### CH17 Smells and Heuristics
 
 
+#### G31: hide calling sequence
+
+{% highlight js linenos %}
+public class MoogDiver {
+  Gradient gradient;
+  List<Spline> splines;
+
+  public void dive(String reason) {
+    saturateGradient();
+    reticulateSplines();
+    diveForMoog(reason)
+  }
+}
+{% endhighlight %}
+
+the calling order of function `saturatedGradient()`, `recitulateSplines()`, `diveForMoog()` is not fully reqiuired.
+Caliing in different order will result unexpected behavior.
+
+{% highlight js linenos %}
+public class MoogDiver {
+  Gradient gradient;
+  List<Spline> splines;
+
+  public void dive(String reason) {
+    Gradient gradient = saturateGradient();
+    List<Spline> splines = reticulateSplines(gradient);
+    diveForMoog(splines, reason);
+  }
+}
+{% endhighlight %}
+
 
 
 
