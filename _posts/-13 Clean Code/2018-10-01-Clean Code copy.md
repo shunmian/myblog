@@ -55,6 +55,14 @@ The importance of clean code: makes a company success or fail. Dirty code is har
 
 8. Whenever you need to go to the implementation detail to figure out what does that name mean, the name is not good.
 
+
+#### V3: Functions
+
+1. Function should be small <= 20 loc
+2. Function in small scope should have long descriptive names
+3. Work with legacy code. Write test first, then refactor should not violate the test, which guard your change.
+4. refactor large function to a class with several small functions
+5. Focus on readability instead of function call overhead.
   
 ## 2 参考资料 ##
 
