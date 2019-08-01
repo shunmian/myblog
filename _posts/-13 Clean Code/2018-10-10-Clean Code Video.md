@@ -101,6 +101,24 @@ The importance of clean code: makes a company success or fail. Dirty code is har
 5. Difference between class and data structures. The former has private instance method and public method; the later have public variable and no public method;
 6. ORM is transform data structure(not object) in DB to data structure (not object) in  momery
 
+#### V6: TDD
+
+TDD advantages:
+
+1. Quality guarantee for refactoring. Changed code must pass the exist test
+
+
+TDD 3 rules:
+
+1. Writing no production code except to pass a failing test;
+
+2. Writing only enough of test to demonstrating a failure;
+
+3. Writing only enough production code to pass the test.
+
+Example:
+
+1. Balling TTD
 
 ## 2 参考资料 ##
 
