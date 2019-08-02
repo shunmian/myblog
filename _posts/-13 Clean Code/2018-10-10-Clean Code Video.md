@@ -56,7 +56,7 @@ The importance of clean code: makes a company success or fail. Dirty code is har
 8. Whenever you need to go to the implementation detail to figure out what does that name mean, the name is not good.
 
 
-#### V3: Functions
+##∂## V3: Functions
 
 1. Function should be small <= 20 loc
 2. Function in small scope should have long descriptive names
@@ -105,14 +105,14 @@ The importance of clean code: makes a company success or fail. Dirty code is har
 
 TDD advantages:
 
-1. Quality guarantee for refactoring. Changed code must pass the exist test
+1. Quality guarantee for refactoring (clean code). Changed code must pass the exist test
 
 
 TDD 3 rules:
 
-1. Writing no production code except to pass a failing test;
+1. Writing no production code until you first writing a failing unit test;
 
-2. Writing only enough of test to demonstrating a failure;
+2. Writing only enough of test to demonstrating a failure; not compiling is a failure;
 
 3. Writing only enough production code to pass the test.
 
@@ -120,6 +120,17 @@ Example:
 
 1. Balling TTD
 
-## 2 参考资料 ##
+#### V7: Architecture, Use Cases and High Level Design
+
+Good Architecture:
+
+0. Focus on **Use Cases**, rather on software environment
+
+1. Allow you to defer the decision about framework and tools. For example, `Fitness`, a wiki page project, delayed the mysql database implementation by using a flat file storage. The flat file storage is used for writing test and it turns out good enough for real usage. In this case, the mysql database is not needed anymore. 
+
+TBC
+
+
+##∂ 2 参考资料 ##
 
 - [The Elements of Programming Style](https://book.douban.com/subject/1470267/); 
