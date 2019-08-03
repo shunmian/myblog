@@ -134,6 +134,12 @@ TBC
 
 TBC
 
+#### V9: Single Responsibility Principle
+
+From a user of class point view, if the user change requirement on class, it shouldn't effect the other users who doesn't care about the new change. Achieving this require decouple design (facade, interface, subclass.)
+
+Case Study Link: `http://dl.dropbox.com/u/4730299/MasterMind.zip`.
+
 ##∂ 2 参考资料 ##
 
 - [The Elements of Programming Style](https://book.douban.com/subject/1470267/); 
