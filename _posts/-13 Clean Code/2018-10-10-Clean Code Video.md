@@ -140,6 +140,17 @@ From a user of class point view, if the user change requirement on class, it sho
 
 Case Study Link: `http://dl.dropbox.com/u/4730299/MasterMind.zip`.
 
+#### V9: Open Close Principle 
+
+This principle is at the moral center of system architecture. Polymorphism to replace if else and switch statements.
+
+  {: .img_middle_lg}
+  ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V10-Open-Close-Principle.png)
+
+
+
+
+
 ##∂ 2 参考资料 ##
 
 - [The Elements of Programming Style](https://book.douban.com/subject/1470267/); 
