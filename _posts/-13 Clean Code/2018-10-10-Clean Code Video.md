@@ -140,7 +140,7 @@ From a user of class point view, if the user change requirement on class, it sho
 
 Case Study Link: `http://dl.dropbox.com/u/4730299/MasterMind.zip`.
 
-#### V9: Open Close Principle 
+#### V10: Open Close Principle 
 
 This principle is at the moral center of system architecture. Polymorphism to replace if else and switch statements.
 
@@ -148,7 +148,27 @@ This principle is at the moral center of system architecture. Polymorphism to re
   ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V10-Open-Close-Principle.png)
 
 
+#### V11: The Liskov Substitution Principle
 
+- type is a bag of methods
+- if you use square as a subtype of rectangle, there would be problem when you setWidth of square, the height is changed, which is not expected in rectangle. It is clear square is a subtype of rectangle in concepts, the oop modeling is not suitable to make square class a subtype of rectangle class.
+- if S is subtype of T, list of S is not a subtype of list of T
+
+  {: .img_middle_mid}
+  ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V11-Liskov-Substitution-Principle.png)
+
+- solution for a unsuitable subtype is to add an adapter. If Ded Modem subtype of Modem interface, it violates Ded Users,who is not happy to add additional function call of dial and hangup; if Ded Modem doesn't subtype of Modem interface, it violates the File Mover to use the Ded Modem as Modem interface. The solution to balance those two violation is to add Adapter
+
+  {: .img_middle_lg}
+  ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V11-Adapter.png)
+
+
+
+
+- [The Annotated Turing](https://book.douban.com/subject/2330016/); 
+- [Refatcoring](https://book.douban.com/subject/1419359/);
+- [Growing Object-Oriented Software, Guided by Tests](https://book.douban.com/subject/4156589/);
+- [https://book.douban.com/subject/1547078/](https://book.douban.com/subject/1547078/) 
 
 
 ##∂ 2 参考资料 ##
