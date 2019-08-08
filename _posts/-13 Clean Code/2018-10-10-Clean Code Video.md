@@ -164,6 +164,7 @@ This principle is at the moral center of system architecture. Polymorphism to re
 
 
 
+Book References
 
 - [The Annotated Turing](https://book.douban.com/subject/2330016/); 
 - [Refatcoring](https://book.douban.com/subject/1419359/);
@@ -171,6 +172,17 @@ This principle is at the moral center of system architecture. Polymorphism to re
 - [https://book.douban.com/subject/1547078/](https://book.douban.com/subject/1547078/) 
 
 
-##∂ 2 参考资料 ##
+#### V12: The Interface Segregation Principle
+
+- interface tights more close to its user than its implementor, which indicates the following picture that `Switchable` interface is a good name and should be packaged together with its user `Switch`.
+
+
+  {: .img_middle_mid}
+  ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V12-Interface-Segregation-Principle-example1.png)
+
+  {: .img_middle_lg}
+  ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V12-Interface-Segregation-Principle-example2.png)
+
+## 2 参考资料 ##
 
 - [The Elements of Programming Style](https://book.douban.com/subject/1470267/); 
