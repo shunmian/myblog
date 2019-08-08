@@ -19,7 +19,7 @@ shortinfo: Clean code video in https://cleancoders.com/videos?series=clean-code�
 
 ## 1. Clean Code Video ##
 
-### 1.1 Clean Code
+### 1.1 Clean Code: Foundamentals
 
 ####  V0: The Last Programming Language
 
@@ -130,6 +130,8 @@ Good Architecture:
 
 TBC
 
+### 1.2 Clean Code: SOLID Principles
+
 #### V8: SOLID Principle
 
 TBC
@@ -182,6 +184,23 @@ Book References
 
   {: .img_middle_lg}
   ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V12-Interface-Segregation-Principle-example2.png)
+
+### 1.3 Clean Code: Component Design
+
+### 1.4 Clean Code: Advanced TDD
+
+### 1.5 Clean Code: Design Patterns
+
+### 1.6 Clean Code: Behavior Driven Development
+
+### 1.7 Clean Code: The Clean Coder
+
+### 1.8 Clean Code: Agile
+
+### 1.9 Clean Code: Functional Programming
+
+
+
 
 ## 2 参考资料 ##
 
