@@ -19,6 +19,18 @@ shortinfo: Agile Software Development：Principles, Patterns, and Practices
 
 ## 1 Agile Development
 
+### CH1 Agile Practices
+
+Deliver software early and often results a higher quality at the end.
+
+Agile development has several implementations:
+
+- SCRUM
+- Extreme Programming
+- Crystal
+- Feature Driven Development
+- Adaptive Software Development(ADp)
+
 ## 2 Agile Design
 
 ## 3 The Payroll Case Study
