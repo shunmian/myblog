@@ -185,6 +185,15 @@ Book References
   {: .img_middle_lg}
   ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V12-Interface-Segregation-Principle-example2.png)
 
+#### V12: The Interface Segregation Principle
+
+Dependency:
+
+1. Compiler time dependency. A reference B, compile A needs compile B first if A is newer than B.
+
+2. Runtime dependency 
+
+
 ### 1.3 Clean Code: Component Design
 
 ### 1.4 Clean Code: Advanced TDD
