@@ -185,13 +185,20 @@ Book References
   {: .img_middle_lg}
   ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V12-Interface-Segregation-Principle-example2.png)
 
-#### V12: The Interface Segregation Principle
+#### V13: The Dependent Inversion Principle
+
+  {: .img_middle_lg}
+  ![JWT]({{site.url}}/assets/images/posts/-13_CleanCode/2018-10-10-CleanCodeVideo/V13-Dependency-Inversion-Principle.png)
+
+
+
+
 
 Dependency:
 
-1. Compiler time dependency. A reference B, compile A needs compile B first if A is newer than B.
+1. Compiler time dependency. A reference B, compile A needs compile B first if B.class is older than B.java
 
-2. Runtime dependency 
+2. Runtime dependency
 
 
 ### 1.3 Clean Code: Component Design
