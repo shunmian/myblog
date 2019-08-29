@@ -356,7 +356,39 @@ public class MoogDiver {
 {% endhighlight %}
 
 
+## A
 
+### 3 function name vs variable name
+
+> function name should be presie and self contained. A function shouldn't be named based on how it is being called.
+
+{% highlight js linenos %}
+// v1 ===============================
+const shouldUpdateRecord = (newRecord, oldRecord) => {
+  return newRecord === oldRecord;
+}
+
+const update = (newRecord, oldRecord) => {
+  if (shouldUpdateRecord(newRecord, oldRecord)) {
+    // do update
+  }
+}
+
+// v2 ===============================
+const isEqual = (newRecord, oldRecord) => {
+  return newRecord === oldRecord;
+}
+
+const update = (newRecord, oldRecord) => {
+  const shouldUpdateRecord = isEqual(newRecord, oldRecord);
+  if (newRecord) {
+    // do update
+  }
+}
+{% endhighlight %}
+
+v2 is better than v1, the `isEqual` preciselly defines what the function is doing and can be reused in other places.
+v1's `shouldUpdateRecord` function is named for how it is being called, didn't reflect the method implementation. 
 
 {: .img_middle_hg}
 ![JWT]({{site.url}}/assets/images/posts/-14_Backend/2015-10-08-Backend：JWT/JWT.png)
