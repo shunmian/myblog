@@ -28,7 +28,7 @@ shortinfo: 本文是对CPP Test Library： googleTest的总结。
 
 ### 1.2 RAII
 
-> RAII (Resource Aquisition Is (in wrapper object) Initilization): resource (an object, an file or an lock) has 3 usecases, creation, usage and deletion, which should happend in wrapper object's constructor, other member functions and destructor. The RAII's foundamental mechanism is that stack object's desctructor would be called when that stack frame is returned (either normal return or by middle exception throw). The RAII applied to stack allocated object `Book b1` and also heap allocated object, which is managed by a stack allocated object called `unique_ptr` for `Book b2`. The RAII name might not be that user friendly, other people prefer to call it `SBMM`(Scope Bound Memory Management). 
+> **RAII (Resource Aquisition Is (in wrapper object) Initilization)**: resource (an object, an file or an lock) has 3 usecases, creation, usage and deletion, which should happend in wrapper object's constructor, other member functions and destructor. The RAII's foundamental mechanism is that stack object's desctructor would be called when that stack frame is returned (either normal return or by middle exception throw). The RAII applied to stack allocated object `Book b1` and also heap allocated object, which is managed by a stack allocated object called `unique_ptr` for `Book b2`. The RAII name might not be that user friendly, other people prefer to call it **SBMM(Scope Bound Memory Management)**. 
 
 {% highlight cpp linenos %}
 // Book.h
@@ -66,7 +66,6 @@ void allocateRawPtr(){
     try {
         Book b1;
         Book *b2 = new Book("C++ primer") ;
-
         throw runtime_error("Trouble"); // b1 destructor being called; b2 destructor being called (nothing happened for raw pointer)
     } catch ( const runtime_error & e){
         cout << "error catched" << endl;
@@ -101,9 +100,10 @@ int main(){
       error catched
     */
 }
-
-
 {% endhighlight %}
+
+Reference:
+- [C++ 05 - RAII ( Resource Acquisition Is Initialization)](https://www.youtube.com/watch?v=IRMiB8YoINs)
 
 ### 1.3 explicit constructor
 
