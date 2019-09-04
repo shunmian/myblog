@@ -78,6 +78,7 @@ shortinfo: 本文是对[10xProgrammer](https://edu.51cto.com/course/19329.html)�
   - `split down`;
   - `split right`;
   - `single`;
+  - switch between spitted window `cmd+}`/`cmd+{`
 - `show minimap`
 - `show breadcrumbs`
 - `render whitespace`
@@ -123,9 +124,15 @@ Skip since the majority usage is use terminal as it is.
 - `R`, replace multiple
 - `/ignore\c`, search `ignore` by case insensitive
 - `:help`, open help; `ctrl+w`, toggle between multiple windows.
+- `V`, visual mode by selecting from the begin of line; `v` visual mode by selecting from current cursor.
+- `vit` or `vat`, `vi}`or `va}`, select inner/append tag/}
+- `ctrl+n`/`ctrl+p`, select next or previous in the opening list.
+- `*`/`#`: 搜索文件中当前cursor下单词，从上(下))往下(上)。
+  - 可以`v`选中单词(可以省略)，然后`*`, 跳至下一个occurrence, 然后`n`/`N`选下(上)一个。
 
+- 结合vscode和neovim
 
-## 3. VSCode + Vim
+## 3. VSCode + Vim optimization
 
 - 设置全局快捷键: 全局指的是VSCode 有无`Vim`插件都有效的快捷键。
   - `Open Default Keyboard Shortcuts (JSON)`
@@ -418,7 +425,7 @@ Skip since the majority usage is use terminal as it is.
   "terminal.integrated.fontSize": 11,
   "eslint.autoFixOnSave": true,
   "files.autoSave": "afterDelay",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula"
   "workbench.statusBar.visible": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.activityBar.visible": false,
@@ -439,7 +446,37 @@ Skip since the majority usage is use terminal as it is.
 {% endhighlight %}
 
 
-
+- File优化
+  - `,rr`: open recent;
+  - `,xf`: quick search and open file;
+  - `,xs`: save file;
+- undo/redo & copy/paste
+  - `u`: undo; `crl+r`: redo;
+  - `y`: copy; `p`: paste;
+- find/replace
+  - single file:
+    - `,ss`: search; no replace optimization
+  - multiple files:
+    - `,qq`: search; no replace optimization
+- comment
+  - line, `,ci`;
+- selection:
+  - `,xx`, expand selection; `,zz`. shrink select
+- view: aaa
+  - `,xm`: open command palette;
+  - `.ff`： zen mode;
+  - `,x1`: single tab; `,x3`, right tab; `,x2`, bottom tab.
+  - `ctrl+w`, switch between split windows.
+- go:
+  - `ctrl+]` go to type definition; `ctrl+t` go back. (Both are defined at (`Open Keyboard Shortcuts (JSON)`).
+  - `,kk`, quick open file.
+  - `a`, go to bracket.
+  - Go to bracket:
+    - install matchit extension for vscode, `extension.matchItJumpItems`(`>`), `extension.matchItSelectItems`(`?`).
+  - `,ii`, go to symbol.
+  - `gd`, go to definition;
+  - `gf`, go to file under cursor.
+  
 
 ## 4. Emacs + Vim
 
