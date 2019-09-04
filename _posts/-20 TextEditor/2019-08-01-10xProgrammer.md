@@ -166,6 +166,42 @@ Skip since the majority usage is use terminal as it is.
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [
+        ">"
+      ],
+      "commands": [
+        "extension.matchitJumpItems"
+      ]
+    },
+    {
+      "before": [
+        "?"
+      ],
+      "commands": [
+        "extension.matchitSelectItems"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x",
+        "x"
+      ],
+      "commands": [
+        "editor.action.smartSelect.expand"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "z",
+        "z"
+      ],
+      "commands": [
+        "editor.action.smartSelect.shrink"
+      ]
+    },
+    {
+      "before": [
         "<leader>",
         "q",
         "q"
@@ -186,6 +222,22 @@ Skip since the majority usage is use terminal as it is.
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "extension.matchitJumpItems"
+      ]
+    },
+    {
+      "before": [
+        "?"
+      ],
+      "commands": [
+        "extension.matchitSelectItems"
+      ]
+    },
     {
       "before": [
         "<leader>",
@@ -239,6 +291,16 @@ Skip since the majority usage is use terminal as it is.
     {
       "before": [
         "<leader>",
+        "c",
+        "i"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
         "t",
         "a"
       ],
@@ -274,16 +336,6 @@ Skip since the majority usage is use terminal as it is.
       ],
       "commands": [
         "actions.find"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "x",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.files.openFile"
       ]
     },
     {
@@ -425,7 +477,7 @@ Skip since the majority usage is use terminal as it is.
   "terminal.integrated.fontSize": 11,
   "eslint.autoFixOnSave": true,
   "files.autoSave": "afterDelay",
-  "workbench.colorTheme": "Dracula"
+  "workbench.colorTheme": "Dracula",
   "workbench.statusBar.visible": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.activityBar.visible": false,
