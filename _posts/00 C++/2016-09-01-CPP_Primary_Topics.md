@@ -107,14 +107,54 @@ Reference:
 
 ### 1.3 explicit constructor
 
+> `explicit` key word: to avoid implicit conversion construtor, which takes only one argument.
+
+see [here](https://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-mean).
+
 {% highlight cpp linenos %}
-class  MutexLock {
- public:
-  explicit MutexLock(Mutex *mu)
-      : mu_(mu)  {
-    this->mu_->Lock();
-  }
-  ~MutexLock() { this->mu_->Unlock(); }
+// Foo.h
+#ifndef CPPTOPICS_FOO_H
+#define CPPTOPICS_FOO_H
+
+#include <iostream>
+using namespace std;
+
+class Foo {
+
+private:
+    int size_;
+public:
+    Foo(int size): size_(size) {
+    }
+
+    int getSize(){
+        return size_;
+    }
+
+    ~Foo(){
+        cout << "Foo destructor being called" << endl;
+    }
+};
+
+#endif //CPPTOPICS_FOO_H
+
+// main.cpp
+
+#include "Foo.h"
+#include <iostream>
+
+using namespace std;
+
+
+void bar(Foo foo) {
+    cout << "bar being called" << endl;
+    cout << foo.getSize() << endl;
+}
+
+int main() {
+  bar(3); // this will convert 3 to Foo(3). Add explicit is to avoid this conversion.
+}
+
 {% endhighlight %}
 
 
