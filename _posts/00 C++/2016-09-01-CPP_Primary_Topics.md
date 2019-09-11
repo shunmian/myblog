@@ -158,14 +158,129 @@ int main() {
 {% endhighlight %}
 
 
-### 1.4 copy constructor and assignment operator private make it uncopiable
+### 1.4 noncopyable
+
+-  将一个类设置为noncopyable: 将拷贝构造函数和拷贝赋值函数声明为private。
+
+{% highlight cpp linenos %}
+// Test.h
+
+#ifndef TUTORIAL_TEST_H
+#define TUTORIAL_TEST_H
+
+
+#include <boost/core/noncopyable.hpp>
+#include <iostream>
+
+using namespace std;
+
+// boost::noncopyable
+class Test {
+
+private:
+    int size_;
+    Test(Test & t1);
+    Test operator=(Test &t1);
+
+public:
+    Test(int size): size_(size) {
+
+    }
+    ~Test(){
+        cout << "Test destructor being called: " << size_ << endl;
+    }
+}; 
+
+#endif //TUTORIAL_TEST_H
+
+// main.cpp
+#include <iostream>
+#include "Test.h"
+
+void run(Test t1) {
+    cout << "do being called" << endl;
+}
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    Test t1(10);
+    Test t2(11);
+//    t1 = t2;      error
+//    Test t3(t1);  error
+//    run(t1);      error
+    return 0;
+}
+
+{% endhighlight %}
+
+- 将一个类设置为noncopyable: 将拷贝构造函数和拷贝赋值函数用delete删除。
+
+{% highlight cpp linenos %}
+
+#ifndef TUTORIAL_TEST_H
+#define TUTORIAL_TEST_H
+
+#include <boost/core/noncopyable.hpp>
+#include <iostream>
+
+using namespace std;
+
+// boost::noncopyable
+class Test {
+
+private:
+    int size_;
+    Test(Test & t1);
+    Test operator=(Test &t1);
+
+public:
+    Test(int size): size_(size) {
+
+    }
+    ~Test(){
+        cout << "Test destructor being called: " << size_ << endl;
+    }
+
+    Test(const Test&) = delete;
+    Test& operator=(const Test&) = delete;
+
+};
+
+#endif //TUTORIAL_TEST_H
+
+{% endhighlight %}
+
+- 将一个类设置为noncopyable: 可以用private 继承自boost::noncopyable。
 
 
 {% highlight cpp linenos %}
 
+#ifndef TUTORIAL_TEST_H
+#define TUTORIAL_TEST_H
+
+#include <boost/core/noncopyable.hpp>
+#include <iostream>
+
+using namespace std;
+
+// boost::noncopyable
+class Test:boost::noncopyable {
+
+private:
+    int size_;
+
+public:
+    Test(int size): size_(size) {
+
+    }
+    ~Test(){
+        cout << "Test destructor being called: " << size_ << endl;
+    }
+};
+
+#endif //TUTORIAL_TEST_H
+
 {% endhighlight %}
-
-
 
 ## 2. 总结 ##
 
