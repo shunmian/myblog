@@ -26,11 +26,11 @@ Two types of multi-task programming
 
 ## 2. The ways to define a thread
 
-> 2 ways to define a thread: extending the `Thread` class, or implementing `Runnable` interface.
+> 2 ways to define a thread: extending the `Thread` class, or implementing `Runnable` interface. Latter is recommended over the former since latter can extends from other class, which is more flexible.
 
 Every java program starts with one thread that is the `main` thread. The thread scheduling is implemented by JVM. So We cannot garantee the order of threads execution order.
 
-
+### 2.1 Extending Thread Class
 
 {% highlight java linenos %}
 
@@ -59,6 +59,53 @@ class MyThreadDemo {
 
 {% endhighlight %}
 
+`thread.start()` responsible for 3 things:
+- Register this thread with thread scheduler;
+- Perform all other mandatory activities;
+- invokde `thread.run()`.
+
+In java there is no other way to create a thread except run `thread.start()`.
+
+If run method is overloaded, `myThread.start()` will call the `run` method without args.
+
+If `MyThread` doesn't override `run` method, the parent class `Thread`'s `run` method will be run, which has empty body by default.
+
+Do not override `start` method, otherwise the default behavior of start will lose.
+
+### 2.2 Implementing Runnable Interface
+
+Runnable(I) -> Thread -> MyThread; or Runnable(I) -> MyRunnable;
+
+{: .img_middle_mid}
+![regular expression]({{site.url}}/assets/images/posts//-11_Concurrency/2019-09-01-Java Concurrency Foundamentals/Runnable Inteface.png)
+
+{% highlight java linenos %}
+
+class MyRunnable implements Runnable {
+  public void run() {
+    for (int i = 0; i < 10; i ++) {
+      System.out.println("Child without args: " + i);
+    }
+  } 
+}
+
+
+class MyRunnableDemo {
+
+  static public void main(String[] args) {
+    MyRunnable myRunnable  = new MyRunnable();
+    Thread t = new Thread(myRunnable); // use myRunnable to instantiate Thread.
+    t.start(); // This will call myRunnable.run();
+    for (int i = 0; i < 10; i ++) {
+      System.out.println("Parent: " + i);
+    }
+
+    System.out.println(Thread.currentThread().setName("MyMain"));
+    System.out.println(Thread.currentThread());
+  }
+}
+
+{% endhighlight %}
 
 ## 3. Getting and Setting name of thread
 
