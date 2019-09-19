@@ -101,7 +101,7 @@ class MyRunnableDemo {
     }
 
     System.out.println(Thread.currentThread().setName("MyMain"));
-    System.out.println(Thread.currentThread());
+    System.out.println(Thread.currentThread().getName());
   }
 }
 
@@ -109,9 +109,108 @@ class MyRunnableDemo {
 
 ## 3. Getting and Setting name of thread
 
+{% highlight java linenos %}
+System.out.println(Thread.currentThread().setName("MyMain"));
+System.out.println(Thread.currentThread().getName());
+{% endhighlight %}
+
 ## 4. Thread priority
 
+> Thread priority ranges from 1(min) to 10(max)
+
+{% highlight java linenos %}
+Thread.MIN_PRIORITY //1
+Thread.NORM_PRIORITY // 5
+Thread.MAX_PRIORITY // 10
+
+Thread.currentThread().getPriority();
+Thread.currentThread().setPriority(8);
+
+Thread t = new Thread();
+t.getPriority() // default to the calling thread's priority, which is 8
+{% endhighlight %}
+
+
 ## 5. The method to prevent thread execution
+
+> `Thread.yield()`: current thread gives up execution.
+
+
+{% highlight java linenos %}
+
+class MyRunnable implements Runnable {
+  public void run() {
+    for (int i = 0; i < 10; i ++) {
+      System.out.println("Child without args: " + i);
+      Thread.yield(); // <- at end of each loop, this Runnable will give up possessing of proccesor and be put in thread waiting set. The thread scheduler will choose the next thread to run based on thread scheduler policy
+    }
+    System.out.println(Thread.currentThread());
+  } 
+}
+
+
+class MyRunnableDemo {
+
+  static public void main(String[] args) {
+    MyRunnable myRunnable  = new MyRunnable();
+    Thread t = new Thread(myRunnable);
+    t.start();;
+    for (int i = 0; i < 10; i ++) {
+      System.out.println("Parent: " + i);
+    }
+    Thread.currentThread().setName("MyMain");
+      System.out.println(Thread.currentThread());
+  }
+}
+
+{% endhighlight %}
+
+> `t1.join()`, calling thread will wait until t1 finish. `t1.join(ms)`, will wait ms milliseconds and will throw exception when time is up.
+
+
+
+
+{% highlight java linenos %}
+
+class MyRunnable implements Runnable {
+  public void run() {
+    for (int i = 0; i < 10; i ++) {
+       System.out.println(Thread.currentThread().getName() +  ": Child without args: " + i);
+       try{
+          Thread.sleep(2000);
+       } catch (InterruptedException e) {
+          System.out.println("interuppted: " + i);
+       }
+    }
+    System.out.println();
+  } 
+}
+
+
+class MyRunnableDemo {
+
+  static public void main(String[] args) {
+    MyRunnable myRunnable  = new MyRunnable();
+    Thread t1 = new Thread(myRunnable);
+    t1.setName("C1");
+    
+     t1.start();
+    try {
+      t1.join();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    for (int i = 0; i < 10; i ++) {
+      System.out.println("Parent: " + i);
+    }
+    Thread.currentThread().setName("MyMain");
+      System.out.println(Thread.currentThread());
+  }
+}
+
+{% endhighlight %}
+
 
 ## 6. Synchronization
 
