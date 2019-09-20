@@ -133,6 +133,21 @@ t.getPriority() // default to the calling thread's priority, which is 8
 
 ## 5. The method to prevent thread execution
 
+{% highlight java linenos %}
+Thread.yield();
+
+Thread.sleep(long ms);
+Thread.sleep(int s);
+
+t1.join();
+t1.join(long ms); // throws InterruptedException
+t1.join(int s); // throws InterruptedException
+
+t1.interrupt(); // put a sleeping or joint thread into execution 
+
+
+{% endhighlight %}
+
 > `Thread.yield()`: current thread gives up execution.
 
 
@@ -171,7 +186,7 @@ class MyRunnableDemo {
 
 
 {% highlight java linenos %}
-
+// main thread wait for child thread
 class MyRunnable implements Runnable {
   public void run() {
     for (int i = 0; i < 10; i ++) {
@@ -209,7 +224,120 @@ class MyRunnableDemo {
   }
 }
 
+// child thread wait for main thread.
+class MyRunnable implements Runnable {
+
+  static Thread mt;
+  public void run() {
+    try {
+    mt.join();
+    }catch (InterruptedException e) {
+    }
+    for (int i = 0; i < 10; i ++) {
+       System.out.println(Thread.currentThread().getName() +  ": Child without args: " + i);
+       try{
+          Thread.sleep(200);
+       } catch (InterruptedException e) {
+          System.out.println("interuppted: " + i);
+       }
+    }
+  } 
+}
+
+
+class MyRunnableDemo {
+
+  static public void main(String[] args) {
+    MyRunnable myRunnable  = new MyRunnable();
+    Thread t1 = new Thread(myRunnable);
+    t1.setName("C1");
+    MyRunnable.mt = Thread.currentThread(); 
+     t1.start();
+   for (int i = 0; i < 10; i ++) {
+      System.out.println("Parent: " + i);
+      try{
+      Thread.sleep(200);
+      }catch (Exception e) {
+
+      }
+    }
+  }
+}
+
 {% endhighlight %}
+
+> `Thread.sleep(long ms)`: wait for ms milliseconds. `Thread.sleep(int s)`: wait for s seconds.
+
+> `t1.interrupt`: wake up sleep or join thread
+
+{% highlight java linenos %}
+class MyRunnable implements Runnable {
+  public void run() {
+    try {
+      for (int i = 0; i < 10; i ++) {
+        System.out.println(Thread.currentThread().getName() +  ": Child without args: " + i);
+        Thread.sleep(200);
+      }
+    } catch(InterruptedException e) {
+      System.out.println("Child thread interuppted");
+    }
+  }
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) {
+    MyRunnable myRunnable  = new MyRunnable();
+    Thread t1 = new Thread(myRunnable);
+    t1.start();
+    t1.interrupt();
+    System.out.println("Parent thread end");
+  }
+}
+{% endhighlight %}
+
+
+{% highlight java linenos %}
+class MyRunnable implements Runnable {
+  public void run() {
+    for (int i = 0; i < 1000; i ++) {
+      System.out.println(Thread.currentThread().getName() +  ": Child without args: " + i);
+    }
+  
+    System.out.println(Thread.currentThread().getName() +  "I'm going to sleep");
+    try {
+      Thread.sleep(1000);
+      System.out.println(Thread.currentThread().getName() +  "I'm sleep");
+    } catch(InterruptedException e) {
+      System.out.println(Thread.currentThread().getName() +  "I'm interrupted");
+    }
+  }
+
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) {
+    MyRunnable myRunnable  = new MyRunnable();
+    Thread t1 = new Thread(myRunnable);
+    t1.start();
+    t1.interrupt();
+    System.out.println("Parent thread end");
+  }
+}
+/* Output:
+Child without args: 1
+...
+Child without args: 999
+                    <- interrupt method will wait until t1 enter into waiting state
+I'm going to sleep
+I'm interrupted
+*/
+{% endhighlight %}
+
+
+{: .img_middle_lg}
+![regular expression]({{site.url}}/assets/images/posts//-11_Concurrency/2019-09-01-Java Concurrency Foundamentals/thread-giveup-methods-summary.png)
 
 
 ## 6. Synchronization
