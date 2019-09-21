@@ -342,6 +342,102 @@ I'm interrupted
 
 ## 6. Synchronization
 
+> `synchronizd`: a modifier only for procedure (function or block of code) not for data (class or variable). synchronization garantuees only one thread can execute the procedure. `synchronized` increase thread waiting overhead to avoid data inconsistent issue. `synchronized` always pair with lock. The lock acquiring and release is performed by the JVM automatically. Each object has just one internal lock that used by all the `synchronized` methods for that object. For method that only read data, no `synchronized` is needed; For that that includes write to data, `synchronized` is needed for data consistency.
+
+
+{% highlight mysql linenos %}
+class Reservation {
+  // synchronized make sure it is only executed by one thread 
+  synchronized void book () {
+    for (int i = 0; i < 100; i ++) {
+      System.out.println(Thread.currentThread().getName() +  ": Child without args: " + i);
+    }
+  }
+}
+
+class MyRunnable implements Runnable {
+  String name;
+  Reservation reservation;
+  
+  MyRunnable(String name, Reservation reservation){
+    this.name = name;
+    this.reservation = reservation;
+  }
+
+  public void run() {
+    this.reservation.book();
+  }
+
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) {
+    Reservation reservation = new Reservation();
+    MyRunnable myRunnable1 = new MyRunnable("r1", reservation);
+    MyRunnable myRunnable2 = new MyRunnable("r2", reservation);
+    Thread t1 = new Thread(myRunnable1);
+    Thread t2 = new Thread(myRunnable2);
+    t1.start();
+    t2.start();
+    System.out.println("Parent thread end");
+  }
+}
+{% endhighlight %}
+
+> `synchronized` block. If a method contains several lines, and only line 9 needs to synchronize. It is not recommended to synchronize the entire funciton, which slow down unnecessary performance due to unnecessary synchronization. In this case, one can use `synchronized` block to only synchronize line 9 to minimize synchronization code.
+
+
+{% highlight mysql linenos %}
+class Reservation {
+  
+  void book () {
+    // a 100 lines of code doesn't require synchronization
+    for (int i = 0; i < 100; i ++) {
+      System.out.println(Thread.currentThread().getName() +  "outside : Child without args: " + i);
+    }
+
+    // only this block needs synchronization
+    synchronized(this) {
+      for (int i = 0; i < 100; i ++) {
+        System.out.println(Thread.currentThread().getName() +  " inside: Child without args: " + i);
+      }
+    }
+  }
+}
+
+class MyRunnable implements Runnable {
+  String name;
+  Reservation reservation;
+  
+  MyRunnable(String name, Reservation reservation){
+    this.name = name;
+    this.reservation = reservation;
+  }
+
+  public void run() {
+    this.reservation.book();
+  }
+
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) {
+    Reservation reservation = new Reservation();
+    MyRunnable myRunnable1 = new MyRunnable("r1", reservation);
+    Thread t1 = new Thread(myRunnable1);
+    t1.setName("Thread A");
+    Thread t2 = new Thread(myRunnable1);
+    t2.setName("Thread B");
+    t1.start();
+    t2.start();
+    System.out.println("Parent thread end");
+  }
+}
+{% endhighlight %}
+
+
 ## 7. Inter threads communication
 
 ## 8. Deadlock
