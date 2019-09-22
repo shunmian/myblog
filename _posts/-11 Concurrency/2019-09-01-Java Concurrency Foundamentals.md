@@ -437,8 +437,211 @@ class MyRunnableDemo {
 }
 {% endhighlight %}
 
+> Get variable's lock instead of this.
+
+
+{% highlight mysql linenos %}
+class Reservation {
+  
+  void book () {
+    // a 100 lines of code doesn't require synchronization
+    for (int i = 0; i < 100; i ++) {
+      System.out.println(Thread.currentThread().getName() +  "outside : Child without args: " + i);
+    }
+
+    // only this block needs synchronization
+    int x = 10;
+    try {
+    synchronized((Object)x) { // can use another object's lock instead of this
+      for (int i = 0; i < 100; i ++) {
+        Thread.sleep(100);
+        System.out.println(Thread.currentThread().getName() +  " inside: Child without args: " + i);
+      }
+    }
+  } catch(Exception e) {
+
+  }
+  }
+}
+
+class MyRunnable implements Runnable {
+  String name;
+  Reservation reservation;
+  
+  MyRunnable(String name, Reservation reservation){
+    this.name = name;
+    this.reservation = reservation;
+  }
+
+  public void run() {
+    this.reservation.book();
+  }
+
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) {
+    Reservation reservation1 = new Reservation();
+    // Reservation reservation2 = new Reservation();
+    MyRunnable myRunnable1 = new MyRunnable("r1", reservation1);
+    // MyRunnable myRunnable2 = new MyRunnable("r2", reservation2);
+    Thread t1 = new Thread(myRunnable1);
+    t1.setName("Thread A");
+    Thread t2 = new Thread(myRunnable1);
+    t2.setName("Thread B");
+    t1.start();
+    t2.start();
+
+    System.out.println("Parent thread end");
+  }
+}
+{% endhighlight %}
+
+
+> `synchronized` class lock. a class variable, shared by all instances of ths class.
+
+
+{% highlight mysql linenos %}
+class Reservation {
+  
+  void book () {
+    // a 100 lines of code doesn't require synchronization
+    for (int i = 0; i < 100; i ++) {
+      System.out.println(Thread.currentThread().getName() +  "outside : Child without args: " + i);
+    }
+
+    // only this block needs synchronization
+    synchronized(this.getClass()) {
+      for (int i = 0; i < 100; i ++) {
+        System.out.println(Thread.currentThread().getName() +  " inside: Child without args: " + i);
+      }
+    }
+  }
+}
+
+class MyRunnable implements Runnable {
+  String name;
+  Reservation reservation;
+  
+  MyRunnable(String name, Reservation reservation){
+    this.name = name;
+    this.reservation = reservation;
+  }
+
+  public void run() {
+    this.reservation.book();
+  }
+
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) {
+    Reservation reservation1 = new Reservation();
+    Reservation reservation2 = new Reservation();
+    MyRunnable myRunnable1 = new MyRunnable("r1", reservation1);
+    MyRunnable myRunnable2 = new MyRunnable("r2", reservation2);
+    Thread t1 = new Thread(myRunnable1);
+    t1.setName("Thread A");
+    Thread t2 = new Thread(myRunnable2);
+    t2.setName("Thread B");
+    t1.start();
+    t2.start();
+
+    System.out.println("Parent thread end");
+  }
+}
+{% endhighlight %}
+
+> Can a thread acquire multiple locks? Yes
+
+{% highlight mysql linenos %}
+
+class MyRunnable implements Runnable {
+  String name;
+  Reservation reservation;
+  
+  MyRunnable(String name, Reservation reservation){
+    this.name = name;
+    this.reservation = reservation;
+  }
+
+  public void run() {
+    int x = 10;
+    synchronized((Object)x) {
+      // now have lock of x
+      int y = 10;
+      synchronized((Object) y) {
+        // now have lock of x,y
+      }
+    }
+  }
+}
+
+{% endhighlight %}
 
 ## 7. Inter threads communication
+
+FIVE conclusion about inter threads communication (`wait`, `notify`, `notifyAl`)
+
+1. 2 threads can communicate via `wait`, `notify`, `notifyAll` methods. 
+
+2. Those 3 methods are presented in object class instead of thread class. 
+
+3. Those 3 methods should be called within `synchronized` area, otherwise one will get `IlligalMonitorState` exception.
+
+4. If `obj.wait()` called in thread t1, t1 release the lock immediately and goes into `wait` state.
+
+5. If `obj.notify()` called in thread t2, it release the lock NOT IMMEDIATELY.
+
+6. `obj.notifyAll()` will make all `wait`的threads resume while `obj.notify()` will make random one resume.
+
+7. make sure `synchronized(obj1)` is the one `obj1.await()` inside the synchronized area.
+
+{% highlight mysql linenos %}
+
+class MyThread extends Thread {
+  int total = 0;  
+
+  public void run() {
+    System.out.println(Thread.currentThread().getName() +  "child thread start to run ");
+    synchronized(this) {
+      for (int i = 0; i < 100; i ++) {
+        total += i;
+      }
+      System.out.println(Thread.currentThread().getName() +  "child thread start to notify ");
+      this.notify();
+      System.out.println(Thread.currentThread().getName() +  "child thread finish to notify ");
+    }
+  }
+}
+
+
+class MyRunnableDemo {
+  static public void main(String[] args) throws Exception{
+    MyThread myThread = new MyThread();
+
+    myThread.start();
+    synchronized(myThread) {
+      System.out.println("Parent thread start to wait");
+      myThread.wait();
+      System.out.println("Parent thread finsh to wait, total:" +  myThread.total);
+    }
+  }
+}
+{% endhighlight %}
+
+
+
+{% highlight mysql linenos %}
+synchronized(obj1) {
+  System.out.println("Parent thread start to wait");
+  obj1.wait(); // cannot be use other obj.await(), must be obj
+  System.out.println("Parent thread finsh to wait, total:" +  myThread.total);
+}
+{% endhighlight %}
+
 
 ## 8. Deadlock
 
