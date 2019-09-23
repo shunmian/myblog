@@ -645,6 +645,93 @@ synchronized(obj1) {
 
 ## 8. Deadlock
 
+{% highlight mysql linenos %}
+interface Book {
+  public void d1();
+}
+
+class A implements Book{
+  B b;
+
+  public void setB(B b) {
+    this.b = b;
+  }
+
+  synchronized public void d1(){
+    try {
+    System.out.println(Thread.currentThread().getName() + "A.d1 about to call b.last");
+    Thread.sleep(6000);
+    this.b.last();
+    System.out.println(Thread.currentThread().getName() + "A.d1 finish to call b.last");
+    } catch (Exception e) {
+
+    }
+  }
+
+  synchronized public void last(){
+
+    System.out.println(Thread.currentThread().getName() + "A.last");
+  }
+
+}
+
+class B implements Book{
+  A a;
+
+  public void setA(A a) {
+    this.a = a;
+  }
+
+  synchronized public void d1(){
+    try {
+    System.out.println(Thread.currentThread().getName() + "b.d1 about to call a.last");
+    Thread.sleep(6000);
+    this.a.last();
+    System.out.println(Thread.currentThread().getName() + "b.d1 finish to call a.last");
+    } catch (Exception e) {
+
+    }
+  }
+  synchronized public void last(){
+
+    System.out.println(Thread.currentThread().getName() + "B.last");
+  }
+}
+
+class MyThread extends Thread {
+  Book o;
+
+  MyThread(Book o) {
+    this.o = o;
+  }
+
+  public void run() {
+    this.o.d1();
+  }
+
+}
+
+class MyRunnableDemo {
+  static public void main(String[] args) throws Exception{
+
+    A a = new A();
+    B b = new B();
+
+    a.setB(b);
+    b.setA(a);
+
+    MyThread myThread1 = new MyThread(a);
+    MyThread myThread2 = new MyThread(b);
+
+    myThread1.start();
+    myThread2.start();
+
+    System.out.println("Parent thread finsh");
+    
+  }
+}
+{% endhighlight %}
+
 ## 9. Daemon Threads
 
 ## 10. Multi-threads enhancements
