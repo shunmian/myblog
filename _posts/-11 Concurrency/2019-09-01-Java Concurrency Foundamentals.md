@@ -734,13 +734,50 @@ class MyRunnableDemo {
 
 ## 9. Daemon Threads
 
+> Daemon Threads: 在Java中有两类线程：用户线程 (User Thread)、守护线程 (Daemon Thread)。所谓守护 线程，是指在程序运行的时候在后台提供一种通用服务的线程，比如垃圾回收线程就是一个很称职的守护者，并且这种线程并不属于程序中不可或缺的部分。因此，当所有的非守护线程结束时，程序也就终止了，同时会杀死进程中的所有守护线程。反过来说，只要任何非守护线程还在运行，程序就不会终止
+
+{% highlight mysql linenos %}
+
+class MyThread extends Thread {
+
+  public void run() {
+    try {
+      System.out.println("From child");
+      for (int i = 0; i < 100; i ++) {
+        Thread.sleep(100);
+        System.out.println(Thread.currentThread().getName() +  "i: " + i);
+      }
+     } catch (Exception e) {
+      System.out.println(Thread.currentThread().getName() +  "Exception" );
+     }
+    }
+ 
+}
+
+class MyRunnableDemo {
+  static public void main(String[] args) throws Exception{
+    System.out.println(Thread.currentThread().isDaemon());
+    MyThread myThread = new MyThread();
+    myThread.setDaemon(true);
+    myThread.start();    
+  }
+}
+
+/* Whenever non daemon thread is completed, the daemon thread will terminates, so myThread.setDaemon(true); will not print out 100 i while myThread.setDaemon(false) will
+
+*/
+{% endhighlight %}
+
+
+
 ## 10. Multi-threads enhancements
 
 ## 3 总结 ##
 
-
 {: .img_middle_hg}
-![regular expression]({{site.url}}/assets/images/posts/2015-06-01/client mysql.jpg)
+![regular expression]({{site.url}}/assets/images/posts//-11_Concurrency/2019-09-01-Java Concurrency Foundamentals/Java thread state machine.png)
+
+
 
 {% highlight mysql linenos %}
 
