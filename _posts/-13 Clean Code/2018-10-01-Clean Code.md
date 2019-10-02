@@ -339,8 +339,8 @@ public class MoogDiver {
 }
 {% endhighlight %}
 
-the calling order of function `saturatedGradient()`, `recitulateSplines()`, `diveForMoog()` is not fully reqiuired.
-Caliing in different order will result unexpected behavior.
+the calling order of function `saturatedGradient()`, `recitulateSplines()`, `diveForMoog()` is not fully required.
+Calling in different order will result unexpected behavior.
 
 {% highlight js linenos %}
 public class MoogDiver {
