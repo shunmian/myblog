@@ -165,6 +165,14 @@ Skip since the majority usage is use terminal as it is.
   "vim.leader": ",",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
+      "before": ["j"],
+      "after": ["j", "z", "z"]
+    },
+    {
+      "before": ["k"],
+      "after": ["k", "z", "z"]
+    },
+    {
       "before": [
         ">"
       ],
@@ -494,6 +502,7 @@ Skip since the majority usage is use terminal as it is.
   "editor.fontFamily": "Source Code Pro",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
+  "editor.lineNumbers": "relative",
 }
 {% endhighlight %}
 
