@@ -772,6 +772,67 @@ class MyRunnableDemo {
 
 ## 10. Multi-threads enhancements
 
+### 10.1 Thread Group
+
+> Thread group has hierarch. The created thread group has parent thread group where this creating code is running
+
+{% highlight mysql linenos %}
+class Test {
+
+  static public void main(String[] args) {
+
+    System.out.println(Thread.currentThread().getName());
+    System.out.println(Thread.currentThread().getThreadGroup().getName());
+    System.out.println(Thread.currentThread().getThreadGroup().getParent().getName());
+    System.out.println(Thread.currentThread().getThreadGroup().getParent().getName());
+
+    ThreadGroup g = new ThreadGroup("A");
+    ThreadGroup g1 = new ThreadGroup(g, "B");
+     Thread t1 = new Thread(g1, "Thread 1");
+
+    System.out.println(g.getParent().getName()); // main
+    System.out.println(g1.getParent().getName()); // A
+
+    /*
+    Thread group hierarchy
+    System Group -----------------------> Main Group ------------------> g ----------------> g1 
+      |                                     |                                                 |
+      |- Finalizer thread,                  |- Main thread                                    |-T1 thread
+      |- Reference handler thread,
+      |- Signal Dispatcher thread,
+      |- Attach Listener thread
+    */
+  }
+}
+{% endhighlight %}
+
+> Thread group's maxPriority will only affect newly created thread
+
+
+{% highlight mysql linenos %}
+class Test {
+
+  static public void main(String[] args) {
+
+    ThreadGroup g1 = new ThreadGroup("Thread group");
+
+    g1.setMaxPriority(10);
+
+    Thread t1 = new Thread(g1, "Thread A");
+    Thread t2 = new Thread(g1, "Thread B");
+
+    g1.setMaxPriority(3);
+
+    Thread t3 = new Thread(g1, "Thread C");
+
+    System.out.println("t1 priority: " + t1.getPriority()); // 5
+    System.out.println("t2 priority: " + t2.getPriority()); // 5
+    System.out.println("t3 priority: " + t3.getPriority()); // 5
+  }
+}
+{% endhighlight %}
+
+
 ## 3 总结 ##
 
 {: .img_middle_hg}
