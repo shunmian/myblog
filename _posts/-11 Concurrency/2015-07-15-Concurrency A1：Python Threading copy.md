@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Concurrency A1：Python Threading
-categories: [Concurrency]
+categories: [-11 Concurrency]
 tags: [Concurrency]
 number: [-7.15]
 fullview: false

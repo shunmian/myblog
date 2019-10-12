@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java Concurrency in Practice 
-categories: [Concurrency]
+categories: [-11 Concurrency]
 tags: [Concurrency]
 number: [-7.15]
 fullview: false
