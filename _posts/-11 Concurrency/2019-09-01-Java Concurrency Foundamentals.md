@@ -1263,6 +1263,15 @@ TBC
 
 [ThreadLocal](https://www.youtube.com/watch?v=4ZLkbWWpkyk&list=PLd3UqWTnYXOkWZUcbW68CbN9fyPFQ0LDk&index=19)
 
+#### 10.5 `Synchronizers`
+
+- `CyclicBarrier`
+- `Phaser`
+- `CountDownLatch`
+- `Exchanger`
+- `Semaphore`
+- `SynchronousQueue`
+
 ## 3 总结 ##
 
 ### 3.1 Thread 状态机 和 基本操作
@@ -1271,7 +1280,7 @@ TBC
 
 ### 3.2 `java.util.concurrency.locks` ReentrantLock
 
-### 3.4 Executors
+### 3.3 Executors
 
 {: .img_middle_hg}
 ![regular expression]({{site.url}}/assets/images/posts//-11_Concurrency/2019-09-01-Java Concurrency Foundamentals/Java thread state machine.png)
