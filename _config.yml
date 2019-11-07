@@ -5,6 +5,7 @@ plugins:
 - jekyll-feed
 
 exclude: ["README.md"] # files to exclude
+exclude: [vendor]
 
 markdown: kramdown
 kramdown:

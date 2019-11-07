@@ -31,10 +31,31 @@ shortinfo: OSTEP Concurrency。
 The shared data access by multiple threads is the origin of concurrency challenge. The pattern of shared data is can be categorized by read/write and consumer/producer point of view
 
 1. P1: (read+write) * multiple identical threads, `counter++` example; solved by lock(atomicity, testAndSet hardware primitive)
-2. P2: (read+write) * multiple unidentical threads (producer + consumer), `buffer produce/consumer`; solved by lock(atomicity,  testAndSet hardware primitiv) and conditional variable(sleep/awake, yield OS primitive support)
+2. P2: (read+write) * multiple unidentical threads (producer + consumer), `buffer produce/consumer`; solved by lock(atomicity,  testAndSet hardware primitiv) and conditional variable(sleep/awake, yield OS primitive support). To use condition, lock is required and while is required
+
+{% highlight java linenos %}
+
+public void transfer(int from, int to, double amount) {
+    lock.lock();
+    try {
+    while (accounts[from] < amount)
+    condition.await();
+    // System.out.print(Thread.currentThread());
+    accounts[from] -= amount;
+    System.out.printf(" %10.2f from %d to %d", amount, from, to);
+    accounts[to] += amount;
+    System.out.printf(" Total Balance: %10.2f%n", getTotalBalance());
+      condition.signalAll();
+    } catch(Exception e) {
+    } finally {
+      lock.unlock();
+    }
+  }
+{% endhighlight %}
+
 
 What is a semaphore? semaphore = lock + conditional variable, in other words
-1. one can implement semaphore based on lock and conditon;
+1. one can implement semaphore based on lock and condition;
 2. one can implement lock and condition based on lock;
 
 ## 2 参考资料 ##
