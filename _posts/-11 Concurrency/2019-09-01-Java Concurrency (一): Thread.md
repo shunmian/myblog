@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Java Concurrency Foundamentals 
-categories: [Concurrency]
+title: Java Concurrency (一)：Thread
+categories: [-11 Concurrency]
 tags: [Concurrency]
-number: [-7.15]
+number: [-11.01]
 fullview: false
-shortinfo: 。
+shortinfo: Java Thread的总结。
 
 ---
 目录

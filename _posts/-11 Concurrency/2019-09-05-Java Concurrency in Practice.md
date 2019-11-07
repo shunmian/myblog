@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java Concurrency in Practice 
-categories: [Concurrency]
+categories: [-11 Concurrency]
 tags: [Concurrency]
 number: [-7.15]
 fullview: false
@@ -114,6 +114,16 @@ public class ThreadUnsafeClass {
 ### C11: Performance and Scalability
 
 ### C12: Testing Concurrent Programs
+
+
+对于生产者消费者的缓存模型的并发测试令人印象深刻，主要讲解了：
+1. 如何让多个线程的交叉时间增加？等待所有线程初始化后再开始让线程进入主要并发逻辑(`cyclicBarrier.wait()`);
+
+2. 如何测试生产的对象和消费的对象等价？
+  1. 用整数作为对象。
+  2. 用满足交换律(多个生产线程之间的生产顺序不会影响最终结果；多个消费线程之间的消费顺序不会影响最终结果)的加法作为reduce的运算符，将生产者的所有生产对象的信息最终用1个sum来表示，消费者的所有生产对象的信息用1个sum来表示。比较两个sum即比较所有生产调度对象和消费的对象等价。
+  3. 如何让每次测试的生产对象不一样？`xorShift`中等质量的随机数产生器。
+
 
 ## Part V: Advanced Topics
 
