@@ -288,6 +288,56 @@ public class Balking {
 
 ### 1.6 Thread-Per-Message模式
 
+> Thread-Per-Message: 每一个请求都会被在主线程里分配一个子线程，然后主线程立即返回。类似于socket建立连接时，服务端的监听socket和处理socket(只不过处理socket的策略可以是多线程或者是单线程策略，例如select, poll)。
+
+{% highlight mysql linenos %}
+
+package divide;
+
+public class ThreadPerMessage {
+  private Worker worker;
+
+  ThreadPerMessage() {
+    this.worker = new Worker();
+  }
+
+  public void handle(int count, String message) {
+   new Thread() {
+     public void run() {
+       worker.handle(count, message);
+     }
+   }.start(); 
+  }
+
+  public static void main(String[] args) {
+    ThreadPerMessage threadPerMessage = new ThreadPerMessage();
+    threadPerMessage.handle(10, "A");
+    threadPerMessage.handle(20, "B");
+    threadPerMessage.handle(30, "C");
+    System.out.println("Finished");
+  }
+}
+
+class Worker {
+  public void handle(int count, String message) {
+    String threadName = Thread.currentThread().getName();
+    System.out.println(threadName +  "        handle(" + count + ", " + message + ") BEGIN");
+    for (int i = 0; i < count; i++) {
+      System.out.println(threadName + ": " + i + ": " + message);
+      this.slowly();
+    }
+    System.out.println(threadName + "        handle(" + count + ", " + message + ") END");
+  }
+  private void slowly() {
+    try {
+        Thread.sleep(100);
+    } catch (InterruptedException e) {
+    }
+  }
+}
+
+{% endhighlight %}
+
 ### 1.7 生产者-消费者模式
 
 ### 1.8 Worker Thread模式
