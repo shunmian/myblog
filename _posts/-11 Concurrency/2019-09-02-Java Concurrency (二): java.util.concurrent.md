@@ -26,7 +26,7 @@ shortinfo: Java java.util.conurrent库的总结。
 
 > Fork/Join: 多线程的divide and conqure思想。`RecursiveTask`递归定义了任务如何divide和conqure， 实例方法`fork`和`join`定义了多线程的如何协作。 `ForkJoinPool`管理`RecursiveTask`的线程池。Fork/Join类似与单机版的Map/Reduce。
 
-{% highlight mysql linenos %}
+{% highlight java linenos %}
 
 package divide;
 
@@ -98,7 +98,7 @@ public class ForkAndJoinAddition extends RecursiveTask<Long> {
 
 > Future, 类似与js的Promise，封装了一个异步过程的返回值或错误。通常与`Callable`结合(`Future<Integer> result = executor.submit(task)`)。
 
-{% highlight mysql linenos %}
+{% highlight java linenos %}
 public class Test {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newCachedThreadPool();
@@ -142,7 +142,7 @@ class Task implements Callable<Integer>{
 
 > Guarede suspension: 获取锁之后需要检查某一条件是否满足，若不满足，则block，直到满足。满足后需要重新检测条件，通过while而不是if来实现。
 
-{% highlight mysql linenos %}
+{% highlight java linenos %}
 
 
 public class Example {
@@ -172,7 +172,7 @@ public class Example {
 
 > Balking: 获取锁后，若条件不满足，立即返回(不像Guarded Suspension，一直等待直到条件满足)。 Balking模式适用与两个线程做同样的动作，若其中一个做完，另一个不做立即返回。比如有个用户线程要手动存储修改的数据到文件，还有个后台线程以每秒一次的频率自动存储数据到文本， 若用户线程已经在1秒的间隔内手动保存，则后台线程1秒到后检查到已存储，则立即返回；若用户线程修改后在1秒的间隔内不存储，则后台线程1秒到后检查到为存储，则执行存储。此后用户线程超常进行存储时，发现修改已存储，则不存储。
 
-{% highlight mysql linenos %}
+{% highlight java linenos %}
 
 // Data.java
 
@@ -290,7 +290,7 @@ public class Balking {
 
 > Thread-Per-Message: 每一个请求都会被在主线程里分配一个子线程，然后主线程立即返回。类似于socket建立连接时，服务端的监听socket和处理socket(只不过处理socket的策略可以是多线程或者是单线程策略，例如select, poll)。
 
-{% highlight mysql linenos %}
+{% highlight java linenos %}
 
 package divide;
 
@@ -339,6 +339,72 @@ class Worker {
 {% endhighlight %}
 
 ### 1.7 生产者-消费者模式
+
+> Producer-Consumer: 3点需要考虑。1）生产者只能在队列不满的时候生产，否则block, 2)消费者只能在队列不空的时候消费，否则block。3）多个生产者之间，和多个消费者之间的race condition要解决。
+
+以下是Semaphore实现的生产者消费者队列。
+
+{% highlight java linenos %}
+package BoundedBufferConcurrent;
+
+import java.util.concurrent.Semaphore;
+
+import net.jcip.annotations.GuardedBy;
+import net.jcip.annotations.ThreadSafe;;
+
+@ThreadSafe
+public class SemaphoreBoundedBuffer<E> {
+  private final Semaphore availableItems, availableSpaces;
+  @GuardedBy("this")
+  private final E[] items;
+  @GuardedBy("this")
+  private int putPosition = 0, takePosition = 0;
+
+  public SemaphoreBoundedBuffer(int capacity) {
+    if (capacity <= 0)
+      throw new IllegalArgumentException();
+    availableItems = new Semaphore(0);
+    availableSpaces = new Semaphore(capacity);
+    items = (E[]) new Object[capacity];
+  }
+
+  public boolean isEmpty() {
+    return availableItems.availablePermits() == 0;
+  }
+
+  public boolean isFull() {
+    return availableSpaces.availablePermits() == 0;
+  }
+
+  public void put(E x) throws InterruptedException {  // <====== point 1
+    availableSpaces.acquire();
+    doInsert(x);
+    availableItems.release();
+  }
+
+  public E take() throws InterruptedException {   // <====== point 2
+    availableItems.acquire();
+    E item = doExtract();
+    availableSpaces.release();
+    return item;
+  }
+
+  private synchronized void doInsert(E x) { // <====== point 3
+    int i = putPosition;
+    items[i] = x;
+    putPosition = (++i == items.length) ? 0 : i;
+  }
+
+  private synchronized E doExtract() {  // <====== point 3
+    int i = takePosition;
+    E x = items[i];
+    items[i] = null;
+    takePosition = (++i == items.length) ? 0 : i;
+    return x;
+  }
+}
+
+{% endhighlight %}
 
 ### 1.8 Worker Thread模式
 
@@ -390,7 +456,7 @@ class Worker {
 
 
 
-{% highlight mysql linenos %}
+{% highlight java linenos %}
 
 {% endhighlight %}
 
