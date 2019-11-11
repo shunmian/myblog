@@ -408,7 +408,104 @@ public class SemaphoreBoundedBuffer<E> {
 
 ### 1.8 Worker Thread模式
 
+> Worker Thread: 类似与Producer和Consumer模式中的Consumer，只不过Worker Thread更加被动，一旦array不为空，自动consume, 完成后等待array里的下一个request。而Producer和Consumer模式中的Consumer是主动的，不会永远等待消费，消费完就结束了。Worker Thread模式也被成为Background Thread（背景线程）模式，另外，如果从保存多个工人线程的场所这一点看，我们也可以称这种模式为Thread Pool模式
+
+{% highlight java linenos %}
+public class WorkerThread extends Thread {
+
+    private static final Random random = new Random(System.currentTimeMillis());
+    private final Channel channel;
+
+    public WorkerThread(String name, Channel channel) {
+        super(name);
+        this.channel = channel;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            channel.take().execute();
+
+            try {
+                Thread.sleep(random.nextInt(1_000));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+{% endhighlight %}
+
 ### 1.9 两阶段终止模式
+
+> Two Phase Termination: 主要解决在线程工作周期中间不要立即中断，否则会引起不可预料后果，比如resource没有释放(db connection). 通过在每个周期
+
+{% highlight java linenos %}
+
+package divide;
+
+class TwoPhaseTermination extends Thread {
+  private boolean isShutdown;
+  private long counter;
+
+  TwoPhaseTermination() {
+    this.isShutdown = false;
+    this.counter = 0;
+  }
+
+  public void setIsShutdown(boolean isShutdown) {
+    this.isShutdown = isShutdown;
+  }
+
+  public boolean getIsShutDown() {
+    return this.isShutdown;
+  }
+
+  public void run() {
+    try {
+      while (!isShutdown) {
+        doWork();
+      }
+    } catch (Exception e) {
+
+    } finally {
+      this.doClean();
+    }
+  }
+
+  void doWork() {
+    System.out.println(Thread.currentThread().getName() + " do work: " + counter);
+    try {
+      Thread.sleep(500);
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    counter++;
+  }
+
+  void doClean() {
+    System.out.println("cleaning during shutdown");
+
+  }
+
+  public static void main(String[] args) {
+    try {
+      TwoPhaseTermination tpt = new TwoPhaseTermination();
+      tpt.start();
+      Thread.sleep(10000);
+      tpt.setIsShutdown(true);
+      System.out.println("ask Shutdown thread to shutdown");
+      tpt.join();
+      System.out.println("Shutdown thread finished");
+    } catch (Exception e) {
+
+
+    }
+  }
+}
+
+{% endhighlight %}
 
 ## 2 协作(sleep-awake)
 
