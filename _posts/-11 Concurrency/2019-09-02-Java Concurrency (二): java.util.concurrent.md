@@ -563,10 +563,193 @@ class CountDownLatchApp {
 
 ### 2.4 回环栏栅(CyclicBarrier)
 
+> CyclicBarrier: 。CyclicBarrier可以译为循环屏障，保证屏障之前的代码一定在屏障之后的代码之前被执行。CyclicBarrier可以在构造时指定需要在屏障前执行await的个数，所有对await的调用都会等待，直到调用await的次数达到预定指，所有等待都会立即被唤醒
+
+{% highlight java linenos %}
+package coordination;
+
+import java.util.concurrent.CyclicBarrier;
+
+class CyclicBarrierApp {
+
+  public static void main(String[] args) throws InterruptedException {
+
+    int totalThreads = 3;
+    CyclicBarrier cyclicBarrier = new CyclicBarrier(totalThreads);
+
+    for (int i = 0; i < totalThreads; i++) {
+      Thread thread = new Thread() {
+        public void run() {
+          try {
+            System.out.println(Thread.currentThread().getName() + " start");
+            Thread.sleep(500);
+            cyclicBarrier.await();
+            System.out.println(Thread.currentThread().getName() + " end");
+          } catch (Exception e) {
+
+          }
+        }
+      };
+      thread.start();
+    }
+  }
+}
+{% endhighlight %}
+
+> CountDownLatch vs CyclicBarrier: 从使用场景上来说，CyclicBarrier是让多个线程互相等待某一事件的发生，然后同时被唤醒。而上文讲的CountDownLatch是让某一线程等待多个线程的状态，然后该线程被唤醒。
 
 ### 2.5 Phaser
 
+> Phaser顾名思义，与阶段相关。Phaser比较适合这样一种场景，一种任务可以分为多个阶段，现希望多个线程去处理该批任务，对于每个阶段，多个线程可以并发进行，但是希望保证只有前面一个阶段的任务完成之后才能开始后面的任务。这种场景可以使用多个CyclicBarrier来实现，每个CyclicBarrier负责等待一个阶段的任务全部完成。但是使用CyclicBarrier的缺点在于，需要明确知道总共有多少个阶段，同时并行的任务数需要提前预定义好，且无法动态修改。而Phaser可同时解决这两个问题。
+
+{% highlight java linenos %}
+
+package coordination;
+
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Phaser;
+
+class PhaserApp {
+
+  public static void main(String[] args) throws InterruptedException {
+
+    int totalThreads = 3;
+    int phases = 5;
+    Phaser phaser = new Phaser(totalThreads) {
+      @Override
+      protected boolean onAdvance(int phase, int registeredParties) {
+        System.out.println("==== phase: " + phase);
+        return super.onAdvance(phase, registeredParties);
+      }
+    };
+
+    for (int i = 0; i < totalThreads; i++) {
+      Thread thread = new Thread() {
+        public void run() {
+
+          for (int i = 0; i < phases; i++) {
+            try {
+              System.out.println(Thread.currentThread().getName() + " start phase: " + phases);
+              Thread.sleep(500);
+            } catch (Exception e) {
+  
+            }
+            phaser.arriveAndAwaitAdvance();
+          }
+        }
+      };
+      thread.start();
+    }
+  }
+}
+
+/*
+Output:
+Thread-1 start phase: 5
+Thread-0 start phase: 5
+Thread-2 start phase: 5
+==== phase: 0
+Thread-0 start phase: 5
+Thread-2 start phase: 5
+Thread-1 start phase: 5
+==== phase: 1
+Thread-0 start phase: 5
+Thread-2 start phase: 5
+Thread-1 start phase: 5
+==== phase: 2
+Thread-1 start phase: 5
+Thread-0 start phase: 5
+Thread-2 start phase: 5
+==== phase: 3
+Thread-1 start phase: 5
+Thread-2 start phase: 5
+Thread-0 start phase: 5
+==== phase: 4
+
+*/
+
+{% endhighlight %}
+
 ### 2.5 Exchanger
+
+> Exchanger: Exchanger可以在两个线程之间交换数据，只能是2个线程，他不支持更多的线程之间互换数据。当线程A调用Exchange对象的exchange()方法后，他会陷入阻塞状态，直到线程B也调用了exchange()方法，然后以线程安全的方式交换数据，之后线程A和B继续运行
+
+{% highlight java linenos %}
+package coordination;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Exchanger;
+import java.util.concurrent.Phaser;
+
+class ExchangerApp {
+
+  public static void main(String[] args) throws InterruptedException {
+    Exchanger exchanger = new Exchanger<ArrayList<Integer>>();
+    Producer producer = new Producer(exchanger);
+    Consumer consumer = new Consumer(exchanger);
+    producer.start();
+    consumer.start();
+  }
+}
+
+class Producer extends Thread {
+  Exchanger exchanger;
+  ArrayList<Integer> list;
+
+  Producer(Exchanger exchanger) {
+    this.exchanger = exchanger;
+    this.list = new ArrayList<Integer>();
+  }
+
+  public void run() {
+    for (int i = 0; i < 3; i++) {
+      this.list.add(i);
+      this.list.add(i);
+      this.list.add(i);
+      try {
+        this.exchanger.exchange(this.list);
+        for (Integer temp : this.list) {
+          System.out.println("From producer: " + temp);
+        }
+        this.list = new ArrayList<Integer>();
+      } catch (Exception e) {
+
+      }
+    }
+  }
+}
+
+class Consumer extends Thread {
+  Exchanger exchanger;
+  ArrayList<Integer> list;
+
+  Consumer(Exchanger exchanger) {
+    this.exchanger = exchanger;
+    this.list = new ArrayList<Integer>();
+  }
+
+  public void run() {
+    for (int i = 0; i < 3; i++) {
+      int j = i * 10;
+      this.list.add(j);
+      this.list.add(j);
+      this.list.add(j);
+      try {
+        this.exchanger.exchange(this.list);
+        for (Integer temp : this.list) {
+          System.out.println("From consumer: " + temp);
+        }
+        this.list = new ArrayList<Integer>();
+
+      } catch (Exception e) {
+
+      }
+    }
+  }
+}
+{% endhighlight %}
 
 ## 3 互斥(Mutex)
 
