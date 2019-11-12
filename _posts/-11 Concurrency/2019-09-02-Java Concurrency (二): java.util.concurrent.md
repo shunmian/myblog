@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java Concurrency (一)：java.util.concurrent
+title: Java Concurrency (二)：java.util.concurrent
 categories: [-11 Concurrency]
 tags: [Concurrency]
 number: [-11.02]
@@ -438,7 +438,7 @@ public class WorkerThread extends Thread {
 
 ### 1.9 两阶段终止模式
 
-> Two Phase Termination: 主要解决在线程工作周期中间不要立即中断，否则会引起不可预料后果，比如resource没有释放(db connection). 通过在每个周期
+> Two Phase Termination: 主要解决在线程工作周期中间不要立即中断，否则会引起不可预料后果，比如resource没有释放(db connection)。 通过在每个周期开始时检查是否终止来决定进行业务逻辑或清理逻辑。
 
 {% highlight java linenos %}
 
@@ -511,11 +511,58 @@ class TwoPhaseTermination extends Thread {
 
 ### 2.1 信号量(Semaphore)
 
+[See 1.7 生产者消费者模式]({{site.url}}/-11 concurrency/2019/09/02/Java-Concurrency-(二)-java.util.concurrent.html#17-生产者-消费者模式)
+
 ### 2.2 管程(Monitor)：Lock & Condition + Synchronized
+
+[See synchronization]({{site.url}}/-11 concurrency/2019/09/01/Java-Concurrency-(一)-Thread.html#6-synchronization)
 
 ### 2.3 倒数计数锁(CountDownLatch)
 
+> CountDownLatch: Java多线程编程中经常会碰到这样一种场景——某个线程需要等待一个或多个线程操作结束（或达到某种状态）才开始执行。比如开发一个并发测试工具时，主线程需要等到所有测试线程均执行完成再开始统计总共耗费的时间，此时可以通过CountDownLatch轻松实现。
+
+{% highlight java linenos %}
+
+package coordination;
+
+import java.util.concurrent.CountDownLatch;
+
+class CountDownLatchApp {
+  CountDownLatchApp(){
+  }
+
+  public static void main(String[] args) throws InterruptedException {
+
+    int totalThreads = 3;
+    CountDownLatch countDownLatch = new CountDownLatch(totalThreads);
+
+    long start = System.currentTimeMillis();
+    for (int i = 0; i < totalThreads; i++) {
+      Thread thread = new Thread() {
+        public void run() {
+          try {
+            System.out.println(Thread.currentThread().getName() + " start");
+            Thread.sleep(500);
+            countDownLatch.countDown();
+          } catch (Exception e) {
+
+          }
+        }
+      };
+      thread.start();
+    }
+    countDownLatch.await();
+    long end = System.currentTimeMillis();
+    System.out.println("total takes: " + (end - start)); 
+  }
+}
+
+{% endhighlight %}
+
+可以看到，主线程等待所有3个线程都执行结束后才开始执行。
+
 ### 2.4 回环栏栅(CyclicBarrier)
+
 
 ### 2.5 Phaser
 
