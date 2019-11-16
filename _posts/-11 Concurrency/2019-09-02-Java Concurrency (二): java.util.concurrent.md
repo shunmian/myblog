@@ -921,11 +921,48 @@ Thread-0 finish set 2: 0.5453606964177355
 
 #### 3.2.3 CAS
 
+> CAS(CompareAndSwap): 当前值等于预期值时(即变量没有在上次读取和这次代码执行之间没有被改变)，则设置新值，返回true；否则什么也不做，返回false
+
+{% highlight java linenos %}
+public class SimulateCAS {
+    private int value;
+    public synchronized int getValue() {
+        return value;
+    }
+    public boolean compareAndSet(int expect, int newValue) {
+        synchronized (this) {
+            if (value == expect) {
+                value = newValue;
+                return true;
+            }
+        }
+        return false;
+    }
+}
+{% endhighlight %}
+
+
 #### 3.2.4 Copy-on-Write
+
+> Copy-on-Write(COW): 当我们往一个容器添加元素的时候，不直接往当前容器添加，而是先将当前容器进行Copy，复制出一个新的容器，然后新的容器里添加元素，添加完元素之后，再将原容器的引用指向新的容器。
+这样做的好处是我们可以对CopyOnWrite容器进行并发的读，而不需要加锁，因为当前容器不会添加任何元素。
+
+{% highlight java linenos %}
+
+{% endhighlight %}
+
 
 #### 3.2.5 原子类
 
-#### 3.2.1 不变模式(Immutable)
+> `java.util.concurrent.atomic`包括了如下原子类: AtomicBoolean，AtomicInteger，AtomicLong，AtomicReference
+AtomicIntegerArray，AtomicLongArray
+AtomicLongFieldUpdater，AtomicIntegerFieldUpdater，AtomicReferenceFieldUpdater
+AtomicMarkableReference，AtomicStampedReference，AtomicReferenceArray
+
+{% highlight java linenos %}
+
+{% endhighlight %}
+
 
 
 ## 3 总结 ##
