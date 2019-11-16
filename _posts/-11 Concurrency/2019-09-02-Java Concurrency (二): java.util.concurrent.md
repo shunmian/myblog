@@ -757,11 +757,109 @@ class Consumer extends Thread {
 
 #### 3.1.1 synchrnozed
 
+[See synchronization]({{site.url}}/-11 concurrency/2019/09/01/Java-Concurrency-(一)-Thread.html#6-synchronization
+
 #### 3.1.2 Lock
+
+[See synchronization]({{site.url}}/-11 concurrency/2019/09/01/Java-Concurrency-(一)-Thread.html#6-synchronization
 
 #### 3.1.3 Write/Read Lock
 
+> Write/Read lock, 是为了解决普通锁读与读之间的互斥可以优化的问题，使用Write/Read lock后，读锁与读锁之间不互斥，读锁与写锁之间互斥，写锁与写锁之间互斥。
+
+{% highlight java linenos %}
+package mutex;
+
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/**
+ * Hello world!
+ */
+public final class ReadWriteApp {
+    /**
+     * Says hello to the world.
+     * @param args The arguments of the program.
+     */
+    public static void main(String[] args) {
+      Data data = new Data();
+
+      for(int i = 0; i < 3; i++) {
+        new Thread() {
+          public void run() {
+            data.get();
+          }
+        }.start();;
+      }
+
+      for(int i = 0; i < 3; i++) {
+        int j = i;
+        new Thread() {
+          public void run() {
+            data.put(j);
+          }
+        }.start();;
+      }
+    }
+}
+
+
+class Data {
+  private Object data = null;
+  private ReentrantReadWriteLock rwl = null;
+
+  Data() {
+    this.data = "A";
+    this.rwl = new ReentrantReadWriteLock(false);
+  }
+
+  public void get() {
+    rwl.readLock().lock();
+    try {
+      System.out.println(Thread.currentThread().getName() + " GET: be ready to read data!");
+      Thread.sleep(5000);
+      System.out.println(Thread.currentThread().getName() + " GET: finished read data: " + this.data);
+    } catch( Exception e) {
+
+    }
+    rwl.readLock().unlock();
+  }
+
+  public void put(Object object) {
+    rwl.writeLock().lock();
+    try {
+      System.out.println(Thread.currentThread().getName() + " PUT: be ready to put data!");
+      Thread.sleep(5000);
+      this.data = object;
+      System.out.println(Thread.currentThread().getName() + " PUT: finished put data: " + this.data);
+    } catch( Exception e) {
+
+    }
+    rwl.writeLock().unlock();
+  }
+}
+
+/* output
+Thread-2 GET: be ready to read data!
+Thread-1 GET: be ready to read data!
+Thread-0 GET: be ready to read data!
+Thread-2 GET: finished read data: A
+Thread-1 GET: finished read data: A
+Thread-0 GET: finished read data: A
+Thread-3 PUT: be ready to put data!
+Thread-3 PUT: finished put data: 0
+Thread-4 PUT: be ready to put data!
+Thread-4 PUT: finished put data: 1
+Thread-5 PUT: be ready to put data!
+Thread-5 PUT: finished put data: 2
+*/
+
+{% endhighlight %}
+
 ### 3.2 without lock
+
+{% highlight java linenos %}
+
+{% endhighlight %}
 
 #### 3.2.1 不变模式(Immutable)
 
