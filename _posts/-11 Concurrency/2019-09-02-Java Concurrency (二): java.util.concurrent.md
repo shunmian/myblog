@@ -865,6 +865,60 @@ Thread-5 PUT: finished put data: 2
 
 #### 3.2.2 线程本地存储(ThreadLocal)
 
+> ThreadLocal: 提供了一个线程本地可见的副本，线程之间无法查看其它线程的变量，起到了隔离的作用。
+
+{% highlight java linenos %}
+package mutex;
+
+public final class ThreadLocalApp {
+
+  public static void main(String[] args) {
+
+    MyRunnable myRunnable = new MyRunnable();
+
+    Thread threadA = new Thread(myRunnable);
+    Thread threadB = new Thread(myRunnable);
+
+    threadA.start();
+    threadB.start();
+ 
+  }
+}
+
+class MyRunnable implements Runnable {
+  private ThreadLocal threadLocal = new ThreadLocal() {
+    protected String initialValue() {
+      return Thread.currentThread().getName();
+    }
+      
+  };
+
+  public void run() {
+    try {
+      System.out.println(Thread.currentThread().getName() + " start set" + threadLocal.get());
+      threadLocal.set(Double.toString(Math.random()));
+      System.out.println(Thread.currentThread().getName() + " finish set: " + threadLocal.get());
+      Thread.sleep(1000);
+      System.out.println(Thread.currentThread().getName() + " finish set 2: " + threadLocal.get());
+    } catch( Exception e) {
+
+    }
+  }
+}
+
+/* output
+Thread-1 start setThread-1
+Thread-0 start setThread-0
+Thread-1 finish set: 0.6876997267669848
+Thread-0 finish set: 0.5453606964177355
+Thread-1 finish set 2: 0.6876997267669848
+Thread-0 finish set 2: 0.5453606964177355
+*/
+
+可以看到同一个MyRunnable实例myRunnalbe在两个线程里启动，但是myRunnable的实例变量threadLocal在不同线程的初始值是不一样的，在两个线程都写之后，再读取到的值也是相互独立的。
+
+{% endhighlight %}
+
 #### 3.2.3 CAS
 
 #### 3.2.4 Copy-on-Write
