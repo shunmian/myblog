@@ -20,9 +20,27 @@ shortinfo: Java并发编程实战的总结。
 
 ## 1. 并发理论基础(13讲)
 
-### 1.1 可见性，原子性，有序性
+### 1.1 可见性，原子性，互斥性，有序性
+
+#### 1.1.1 为什么需要可见性(cpu cache invalidation)，原子性(atomicity)，互斥性(mutual exclusiveness)
+
+{: .img_middle_hg}
+![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Java Memory Model(cache-invalidation & atomicity & mutual-exclusiveness).png)
+
+
+
 
 ### 1.2 Java内存模型: Java如何解决可见性和有序性问题
+
+#### 1.2.1 什么是`volatile`
+
+#### 1.2.2 什么是`synchronized`
+
+#### 1.2.3 什么是`final`
+
+#### 1.2.4 6个Happens Before
+
+
 
 ### 1.3 互斥锁(上): 解决原子性问题
 
