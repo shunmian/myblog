@@ -23,23 +23,124 @@ shortinfo: Java并发编程实战的总结。
 ### 1.1 可见性，原子性，互斥性，有序性
 
 {: .img_middle_hg}
-![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Java Memory Model(cache-invalidation & atomicity & mutual-exclusiveness).png)
+![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Java Memory Model(cache-invalidation & atomicity & mutual-exclusiveness & unreorder).png)
 
 ### 1.2 Java内存模型: Java如何解决可见性和有序性问题
 
-#### 1.2.1 什么是`volatile`
+> Java内存模型: 通过3个关键字`volatile`, `final` 和 `synchronized`, 6条`Happens Before`来确保一定粒度的cache invalidation, aotmicity, mutual exclusiveness and unredorder.
 
-#### 1.2.2 什么是`synchronized`
+#### 1.2.1 3个关键字 `volatile`, `final`, `synchronized`
 
-#### 1.2.3 什么是`final`
+##### 1.2.1.1 对变量`volatile`, `final`
 
-#### 1.2.4 6个Happens Before
+> `volatile`, 对于volatile变量的读写，禁用cpu memory cache。
 
 
+
+> `final`, 对于final的变量，在构造器里确保初始化完全。
+
+##### 1.2.1.2 对函数 `synchronized`
+
+> `synchronized`, 对于synchronized的函数或者代码块(block)，同一个syncrhonized的锁的前提下，不同线程之间的该syncrhonized代码的执行是atomic, mutual exclusive, 涉及到的变量是cache invalidation的，且保证后执行的synchornized代码的线程能看到前面执行完synchornized代码的线程的变量的改变。
+
+#### 1.2.2 6个Happens Before
+
+##### 1.2.2.1 reorder的规则
+
+> RULE 1: 语义顺序性
+
+{% highlight java linenos %}
+int func1() {
+ int i = 0;
+ int j = 1;
+ return i + j;
+}
+
+// 允许代码重排，但是得保证语义的顺序性
+int func2() {
+ int j = 1;
+ int i = 0;
+ return i + j;
+}
+{% endhighlight %}
+
+> RULE 2: Volatile变量的写操作，不会被reorder后放在它的读操作后面
+
+> RULE 3: 传递性
+
+{% highlight java linenos %}
+class VolatileExample {
+ int x = 0;
+ volatile boolean v = false;
+ public void writer() {
+  x = 42;
+  v = true;
+ }
+ public void reader() {
+   if (v == true) { // 这里x会是多少呢？    }  }} // java 1.5 之前的内存模型，x可能是0或42; 1.5之后的内存模型， 由于RULE 1,2,3，x一定是42
+// RULE1 x = 42 先于 v = true
+// RULE2 v = true 先于 v == true
+// RULE3 x = 42 先于 v == true
+{% endhighlight %}
+
+> RULE 4: lock release happens before next lock require (must be same lock)
+
+
+{% highlight java linenos %}
+synchronized (this) { //此处自动加锁 Thread A 先执行， Thread B 后执行
+  // x是共享变量,初始值=10
+  if (this.x < 12) {
+    this.x = 12; 
+  }  
+} //此处自动解锁
+
+// 若x初始值是0， 则Thread A执行完后，Thread B进入syncrhonized块，看到的x一定是12(被Thread A 改过), 但前提是synchronized的锁都是同一个(这里都是this).
+{% endhighlight %}
+
+> RULE 5: 线程start()规则，线程 A 启动子线程 B 后，子线程 B 能够看到主线程在启动子线程 B 前的操作。
+
+
+{% highlight java linenos %}
+Thread B = new Thread(()->{
+  // 主线程调用B.start()之前
+  // 所有对共享变量的修改，此处皆可见
+  // 此例中，var==77
+});
+// 此处对共享变量var修改
+var = 77;
+// 主线程启动子线程
+B.start();
+{% endhighlight %}
+
+
+> RULE 6: 线程start()规则, 线程 A 启动子线程 B 后，线程 A join 等待 子线程 B，那么线程 A 在 join 后 能够看到子线程 B 的操作 
+
+
+{% highlight java linenos %}
+
+Thread B = new Thread(()->{
+  // 此处对共享变量var修改
+  var = 66;
+});
+// 例如此处对共享变量修改，
+// 则这个修改结果对线程B可见
+// 主线程启动子线程
+B.start();
+B.join()
+// 子线程所有对共享变量的修改
+// 在主线程调用B.join()之后皆可见
+// 此例中，var==66
+{% endhighlight %}
 
 ### 1.3 互斥锁(上): 解决原子性问题
 
+{% highlight java linenos %}
+{% endhighlight %}
+
 ### 1.4 互斥锁(下): 如何用一把锁保护多个资源
+
+{% highlight java linenos %}
+{% endhighlight %}
 
 ### 1.5 死锁怎么办
 
