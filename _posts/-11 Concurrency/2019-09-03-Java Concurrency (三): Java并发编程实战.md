@@ -25,6 +25,10 @@ shortinfo: Java并发编程实战的总结。
 {: .img_middle_hg}
 ![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Java Memory Model(cache-invalidation & atomicity & mutual-exclusiveness & unreorder).png)
 
+{: .img_middle_hg}
+![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Multiple CPU & Multiple Threads.png)
+
+
 ### 1.2 Java内存模型: Java如何解决可见性和有序性问题
 
 > Java内存模型: 通过3个关键字`volatile`, `final` 和 `synchronized`, 6条`Happens Before`来确保一定粒度的cache invalidation, aotmicity, mutual exclusiveness and unredorder.
@@ -41,11 +45,9 @@ shortinfo: Java并发编程实战的总结。
 
 ##### 1.2.1.2 对函数 `synchronized`
 
-> `synchronized`, 对于synchronized的函数或者代码块(block)，同一个syncrhonized的锁的前提下，不同线程之间的该syncrhonized代码的执行是atomic, mutual exclusive, 涉及到的变量是cache invalidation的，且保证后执行的synchornized代码的线程能看到前面执行完synchornized代码的线程的变量的改变。
+> `synchronized`, 对于synchronized的函数或者代码块(block)，同一个syncrhonized的锁的前提下，不同线程之间的该syncrhonized代码的执行是atomic, mutual exclusive, 涉及到的变量是cache invalidation的，且保证后执行的synchornized代码的线程能看到前面执完synchornized代码的线程的变量的改变。
 
-#### 1.2.2 6个Happens Before
-
-##### 1.2.2.1 reorder的规则
+#### 1.2.2 6个Happens Before (reorder的规则)
 
 > RULE 1: 语义顺序性
 
