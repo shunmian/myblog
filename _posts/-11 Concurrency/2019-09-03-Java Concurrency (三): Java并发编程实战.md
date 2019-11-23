@@ -26,7 +26,7 @@ shortinfo: Java并发编程实战的总结。
 ![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Java Memory Model(cache-invalidation & atomicity & mutual-exclusiveness & unreorder).png)
 
 {: .img_middle_hg}
-![regular expression]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Multiple CPU & Multiple Threads.png)
+![multithreads procedure summary]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/Multiple CPU & Multiple Threads.png)
 
 
 ### 1.2 Java内存模型: Java如何解决可见性和有序性问题
@@ -37,17 +37,17 @@ shortinfo: Java并发编程实战的总结。
 
 ##### 1.2.1.1 对变量`volatile`, `final`
 
-> `volatile`, 对于volatile变量的读写，禁用cpu memory cache。
-
-
+> `volatile`, 上图的1, cache invalidation，对于volatile变量的读写，禁用cpu memory cache。
 
 > `final`, 对于final的变量，在构造器里确保初始化完全。
 
 ##### 1.2.1.2 对函数 `synchronized`
 
-> `synchronized`, 对于synchronized的函数或者代码块(block)，同一个syncrhonized的锁的前提下，不同线程之间的该syncrhonized代码的执行是atomic, mutual exclusive, 涉及到的变量是cache invalidation的，且保证后执行的synchornized代码的线程能看到前面执完synchornized代码的线程的变量的改变。
+> `synchronized`, 上图的0,1,2, 即mutual exclusive, cache invalidation and atomic. 对于synchronized的函数或者代码块(block)，同一个syncrhonized的锁的前提下，不同线程之间的该syncrhonized代码的执行是atomic, mutual exclusive, 涉及到的变量是cache invalidation的，且保证后执行的synchornized代码的线程能看到前面执完synchornized代码的线程的变量的改变。
 
 #### 1.2.2 6个Happens Before (reorder的规则)
+
+> 6 Happens Before, 即上图中的-1, 编译的顺序保证。
 
 > RULE 1: 语义顺序性
 
@@ -136,15 +136,160 @@ B.join()
 
 ### 1.3 互斥锁(上): 解决原子性问题
 
+即上图中0的保证。
+
 {% highlight java linenos %}
 {% endhighlight %}
 
 ### 1.4 互斥锁(下): 如何用一把锁保护多个资源
 
+Account类，需要转账从accountA到accountB, accountB到accountC, 不同的实例需要用同一个锁
+
 {% highlight java linenos %}
+/* 不可行，因为accountA的sycnrhonized的锁是accountA, accountB的sycnrhonized的锁是accountB
+class Account {
+  private int balance;
+  // 转账
+  synchronized void transfer(
+      Account target, int amt){
+    if (this.balance > amt) {
+      this.balance -= amt;
+      target.balance += amt;
+    }
+  } 
+}
+*/
+
+// 用Account.class类锁，保证每个实例的锁都是Account类，保证了正确性，但是都成了串行，性能在实际应用中不可行。
+class Account {
+  private int balance;
+  // 转账
+  void transfer(Account target, int amt){
+    synchronized(Account.class) {
+      if (this.balance > amt) {
+        this.balance -= amt;
+        target.balance += amt;
+      }
+    }
+  } 
+}
+
 {% endhighlight %}
 
 ### 1.5 死锁怎么办
+
+> 死锁的形成：锁的等待形成有向有环图。A->B->C->D..->N->A
+
+> 细粒度锁： 相比锁Account.class, 锁accountA和accountB，粒度要小，但是代价是可能形成死锁。
+
+{% highlight java linenos %}
+class Account {
+  private int balance;
+  // 转账
+  void transfer(Account target, int amt){
+    // 锁定转出账户
+    synchronized(this) {              
+      // 锁定转入账户
+      synchronized(target) {           
+        if (this.balance > amt) {
+          this.balance -= amt;
+          target.balance += amt;
+        }
+      }
+    }
+  } 
+}
+{% endhighlight %}
+
+解决方案
+1. 互斥，共享资源 X 和 Y 只能被一个线程占用；
+2. 占有且等待，线程 T1 已经取得共享资源 X，在等待共享资源 Y 的时候，不释放共享资源 X；
+3. 不可抢占，其他线程不能强行抢占线程 T1 占有的资源；
+4. 循环等待，线程 T1 等待线程 T2 占有的资源，线程 T2 等待线程 T1 占有的资源，就是循环等待。
+
+{% highlight java linenos %}
+// 破坏2， 占用且等待
+
+class Allocator {
+  private List<Object> als =
+    new ArrayList<>();
+  // 一次性申请所有资源
+  synchronized boolean apply(
+    Object from, Object to){
+    if(als.contains(from) ||
+         als.contains(to)){
+      return false;  
+    } else {
+      als.add(from);
+      als.add(to);  
+    }
+    return true;
+  }
+  // 归还资源
+  synchronized void free(
+    Object from, Object to){
+    als.remove(from);
+    als.remove(to);
+  }
+}
+
+class Account {
+  // actr应该为单例
+  private Allocator actr;
+  private int balance;
+  // 转账
+  void transfer(Account target, int amt){
+    // 一次性申请转出账户和转入账户，直到成功
+    while(!actr.apply(this, target))
+      ；
+    try{
+      // 锁定转出账户
+      synchronized(this){              
+        // 锁定转入账户
+        synchronized(target){           
+          if (this.balance > amt){
+            this.balance -= amt;
+            target.balance += amt;
+          }
+        }
+      }
+    } finally {
+      actr.free(this, target)
+    }
+  } 
+}
+{% endhighlight %}
+
+
+{% highlight java linenos %}
+// 破坏4，循环等待条件，对于“循环等待”这个条件，可以靠按序申请资源来预防。所谓按序申请，是指资源是有线性顺序的，申请的时候可以先申请资源序号小的，再申请资源序号大的，这样线性化后自然就不存在循环了。这个的的代价比破坏2的解决方案小。
+
+class Account {
+  private int id;
+  private int balance;
+  // 转账
+  void transfer(Account target, int amt){
+    Account left = this        ①
+    Account right = target;    ②
+    if (this.id > target.id) { ③
+      left = target;           ④
+      right = this;            ⑤
+    }                          ⑥
+    // 锁定序号小的账户
+    synchronized(left){
+      // 锁定序号大的账户
+      synchronized(right){ 
+        if (this.balance > amt){
+          this.balance -= amt;
+          target.balance += amt;
+        }
+      }
+    }
+  } 
+}
+{% endhighlight %}
+
+
 
 ### 1.6 “等待-通知”优化循环等待
 
