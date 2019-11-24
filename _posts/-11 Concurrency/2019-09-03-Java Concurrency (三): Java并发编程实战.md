@@ -337,6 +337,57 @@ class Allocator {
 
 ### 1.8 管程: 并发编程的万能钥匙
 
+> 管程模型: 锁和条件变量。其做为一个整体和信号量是等价的。只不过管程模型更符合OOP,所以Java选择了它。
+
+{: .img_middle_mid}
+![multithreads procedure summary]({{site.url}}/assets/images/posts/-11_Concurrency/2019-09-03-Java Concurrency (三) Java并发编程实战/管程模型.png)
+
+
+{% highlight java linenos %}
+
+public class BlockedQueue<T>{
+  final Lock lock =
+    new ReentrantLock();
+  // 条件变量：队列不满  
+  final Condition notFull =
+    lock.newCondition();
+  // 条件变量：队列不空  
+  final Condition notEmpty =
+    lock.newCondition();
+
+  // 入队
+  void enq(T x) {
+    lock.lock();
+    try {
+      while (队列已满){
+        // 等待队列不满 
+        notFull.await();
+      }  
+      // 省略入队操作...
+      //入队后,通知可出队
+      notEmpty.signal();
+    }finally {
+      lock.unlock();
+    }
+  }
+  // 出队
+  void deq(){
+    lock.lock();
+    try {
+      while (队列已空){
+        // 等待队列不空
+        notEmpty.await();
+      }
+      // 省略出队操作...
+      //出队后，通知可入队
+      notFull.signal();
+    }finally {
+      lock.unlock();
+    }  
+  }
+}
+{% endhighlight %}
+
 ### 1.9 Java线程(上): 生命周期
 
 ### 1.10 Java线程(中): 创建多少线程才是合适的
