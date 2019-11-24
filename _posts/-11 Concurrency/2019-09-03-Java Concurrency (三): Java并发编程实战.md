@@ -289,9 +289,38 @@ class Account {
 }
 {% endhighlight %}
 
-
-
 ### 1.6 “等待-通知”优化循环等待
+
+> 用sleep-notify模式优化等待: `while(!actr.apply(this, target))；`太耗时，转主动询问为被动等待通知
+
+{% highlight java linenos %}
+
+class Allocator {
+  private List<Object> als;
+  // 一次性申请所有资源
+  synchronized void apply(
+    Object from, Object to){
+    // 经典写法
+    while(als.contains(from) ||
+         als.contains(to)){
+      try{
+        wait();
+      }catch(Exception e){
+      }   
+    } 
+    als.add(from);
+    als.add(to);  
+  }
+  // 归还资源
+  synchronized void free(
+    Object from, Object to){
+    als.remove(from);
+    als.remove(to);
+    notifyAll();
+  }
+}
+{% endhighlight %} 
+
 
 ### 1.7 安全性，活跃性以及性能问题
 
