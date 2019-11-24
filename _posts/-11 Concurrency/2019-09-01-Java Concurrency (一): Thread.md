@@ -1272,7 +1272,7 @@ TBC
 - `Semaphore`
 - `SynchronousQueue`
 
-## 3 总结 ##
+## 3. 查漏补缺 ##
 
 ### 3.1 Thread 状态机 和 基本操作
 
@@ -1281,6 +1281,8 @@ TBC
 ### 3.2 `java.util.concurrency.locks` ReentrantLock
 
 ### 3.3 Executors
+
+## 4. 总结
 
 {: .img_middle_hg}
 ![regular expression]({{site.url}}/assets/images/posts//-11_Concurrency/2019-09-01-Java Concurrency Foundamentals/Java thread state machine.png)
