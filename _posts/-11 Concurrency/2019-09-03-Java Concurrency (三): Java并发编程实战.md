@@ -404,7 +404,28 @@ public class BlockedQueue<T>{
 
 ### 1.12 如何用面向对象思想写好并发程序
 
+1. 封装共享变量 (Allocator)
+2. 识别共享变量间的约束条件 (多个共享变量的关系)
+3. 制定并发访问策略 (避免共享，不变模式，管程及java.util.concurrent包)
+
+注意事项
+1. 优先使用成熟类工具,如`java.uitl.concurrent`;
+2. 迫不得已才使用低级原语， `semaphore`, `lock`等;
+3. 避免过早优化;
+
+
 ### 1.13 理论基础模块热点问题答疑
+
+> 锁的声明和初始化: 参见[Java安全编码标准](https://book.douban.com/subject/24846041/)。锁，应是私有的、不可变的、不可重用的，
+
+{% highlight java linenos %}
+// 普通对象锁
+private final Object 
+  lock = new Object();
+// 静态对象锁
+private static final Object
+  lock = new Object(); 
+{% endhighlight %}
 
 ## 2. 并发工具类(14讲)
 
