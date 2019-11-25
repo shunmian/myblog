@@ -464,9 +464,58 @@ class Account {
 
 ### 2.2 Lock和Condition(下): Dubbo如何用管程实现异步转同步
 
+
+
+
+{% highlight java linenos %}
+
+{% endhighlight %}
+
 ### 2.3 Semaphore: 如何快速实现一个限流器
 
+{% highlight java linenos %}
+class ObjPool<T, R> {
+  final List<T> pool;
+  // 用信号量实现限流器
+  final Semaphore sem;
+  // 构造函数
+  ObjPool(int size, T t){
+    pool = new Vector<T>(){};
+    for(int i=0; i<size; i++){
+      pool.add(t);
+    }
+    sem = new Semaphore(size);
+  }
+  // 利用对象池的对象，调用func
+  R exec(Function<T,R> func) {
+    T t = null;
+    sem.acquire();
+    try {
+      t = pool.remove(0);
+      return func.apply(t);
+    } finally {
+      pool.add(t);
+      sem.release();
+    }
+  }
+}
+// 创建对象池
+ObjPool<Long, String> pool = 
+  new ObjPool<Long, String>(10, 2);
+// 通过对象池获取t，之后执行  
+pool.exec(t -> {
+    System.out.println(t);
+    return t.toString();
+});
+{% endhighlight %}
+
 ### 2.4 ReadWriteLock: 如何快速实现一个完备的缓存
+
+
+
+{% highlight java linenos %}
+
+{% endhighlight %}
 
 ### 2.5 StampedLock: 有没有比读写锁更快的锁
 
