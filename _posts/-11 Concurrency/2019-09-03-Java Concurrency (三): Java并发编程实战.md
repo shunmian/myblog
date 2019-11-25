@@ -431,6 +431,37 @@ private static final Object
 
 ### 2.1 Lock和Condition(上): 隐藏在并发包中的管程
 
+> 为什么需要`java.util.concurrent`里的`Lock`和`Condition`: 因为`synchronized`在获取锁之前，若锁被占用，会一直阻塞。而并发包里的`Lock`实现了若锁获取不了，可以放弃，或者timeout，它有3个主要API, `void tryLock()`, `void tryLock(long time, Timeout unit)`, `void lockInterruptly() throws InterruptedException`。
+
+{% highlight java linenos %}
+// 下面代码会出现死锁吗？不会，但会活锁。
+class Account {
+  private int balance;
+  private final Lock lock
+          = new ReentrantLock();
+  // 转账
+  void transfer(Account tar, int amt){
+    while (true) {
+      if(this.lock.tryLock()) {
+        try {
+          if (tar.lock.tryLock()) {
+            try {
+              this.balance -= amt;
+              tar.balance += amt;
+            } finally {
+              tar.lock.unlock();
+            }
+          }//if
+        } finally {
+          this.lock.unlock();
+        }
+      }//if
+    }//while
+  }//transfer
+}
+{% endhighlight %}
+
+
 ### 2.2 Lock和Condition(下): Dubbo如何用管程实现异步转同步
 
 ### 2.3 Semaphore: 如何快速实现一个限流器
