@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 public
 .vscode
+*/.DS_Store
+./DS_Store
