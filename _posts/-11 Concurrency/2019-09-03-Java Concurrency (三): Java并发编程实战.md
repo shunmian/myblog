@@ -502,7 +502,7 @@ class ObjPool<T, R> {
 // 创建对象池
 ObjPool<Long, String> pool = 
   new ObjPool<Long, String>(10, 2);
-// 通过对象池获取t，之后执行  
+// 通过对象池获取t，之后执行
 pool.exec(t -> {
     System.out.println(t);
     return t.toString();
@@ -511,15 +511,132 @@ pool.exec(t -> {
 
 ### 2.4 ReadWriteLock: 如何快速实现一个完备的缓存
 
+> 互斥锁： 读读互斥，写写互斥，读写互斥； 读写锁：读读不互斥，读写互斥，写写互斥。因此读写锁是在都多写少的情况下多互斥锁的优化。
 
+{% highlight java linenos %}
+
+class Cache<K,V> {
+  final Map<K, V> m =
+    new HashMap<>();
+  final ReadWriteLock rwl =
+    new ReentrantReadWriteLock();
+  // 读锁
+  final Lock r = rwl.readLock();
+  // 写锁
+  final Lock w = rwl.writeLock();
+  // 读缓存
+  V get(K key) {
+    r.lock();
+    try { return m.get(key); }
+    finally { r.unlock(); }
+  }
+  // 写缓存
+  V put(K key, V value) {
+    w.lock();
+    try { return m.put(key, v); }
+    finally { w.unlock(); }
+  }
+}
+{% endhighlight %}
+
+
+懒加载
+{% highlight java linenos %}
+
+class Cache<K,V> {
+  final Map<K, V> m =
+    new HashMap<>();
+  final ReadWriteLock rwl = 
+    new ReentrantReadWriteLock();
+  final Lock r = rwl.readLock();
+  final Lock w = rwl.writeLock();
+ 
+  V get(K key) {
+    V v = null;
+    //读缓存
+    r.lock();         ①
+    try {
+      v = m.get(key); ②
+    } finally{
+      r.unlock();     ③
+    }
+    //缓存中存在，返回
+    if(v != null) {   ④
+      return v;
+    }  
+    //缓存中不存在，查询数据库
+    w.lock();         ⑤
+    try {
+      //再次验证
+      //其他线程可能已经查询过数据库
+      v = m.get(key); ⑥
+      if(v == null){  ⑦
+        //查询数据库
+        v=省略代码无数
+        m.put(key, v);
+      }
+    } finally{
+      w.unlock();
+    }
+    return v; 
+  }
+}
+{% endhighlight %}
+
+
+写锁的降级
+{% highlight java linenos %}
+
+class CachedData {
+  Object data;
+  volatile boolean cacheValid;
+  final ReadWriteLock rwl =
+    new ReentrantReadWriteLock();
+  // 读锁  
+  final Lock r = rwl.readLock();
+  //写锁
+  final Lock w = rwl.writeLock();
+  
+  void processCachedData() {
+    // 获取读锁
+    r.lock();
+    if (!cacheValid) {
+      // 释放读锁，因为不允许读锁的升级
+      r.unlock();
+      // 获取写锁
+      w.lock();
+      try {
+        // 再次检查状态  
+        if (!cacheValid) {
+          data = ...
+          cacheValid = true;
+        }
+        // 释放写锁前，降级为读锁
+        // 降级是可以的
+        r.lock(); ①
+      } finally {
+        // 释放写锁
+        w.unlock(); 
+      }
+    }
+    // 此处仍然持有读锁
+    try {use(data);} 
+    finally {r.unlock();}
+  }
+}
+{% endhighlight %}
+
+读写锁的升降级： 写锁可以降级为读锁(本线程在释放写锁之前，不存在其他线程持有读写锁的情况); 读锁不能升级为写锁(因为其他线程可能持有读锁，可能导致阻塞)。
+
+
+### 2.5 StampedLock: 有没有比读写锁更快的锁
 
 {% highlight java linenos %}
 
 {% endhighlight %}
 
-### 2.5 StampedLock: 有没有比读写锁更快的锁
-
 ### 2.6 CountDownLatch和CyclicBarrier: 如何让多线程步调一致
+
 
 ### 2.7 并发容器: 都有哪些坑需要我们填
 
