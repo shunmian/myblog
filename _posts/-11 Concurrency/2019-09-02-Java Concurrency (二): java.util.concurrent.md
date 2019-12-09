@@ -757,23 +757,212 @@ class Consumer extends Thread {
 
 #### 3.1.1 synchrnozed
 
+[See synchronization]({{site.url}}/-11 concurrency/2019/09/01/Java-Concurrency-(一)-Thread.html#6-synchronization
+
 #### 3.1.2 Lock
+
+[See synchronization]({{site.url}}/-11 concurrency/2019/09/01/Java-Concurrency-(一)-Thread.html#6-synchronization
 
 #### 3.1.3 Write/Read Lock
 
+> Write/Read lock, 是为了解决普通锁读与读之间的互斥可以优化的问题，使用Write/Read lock后，读锁与读锁之间不互斥，读锁与写锁之间互斥，写锁与写锁之间互斥。
+
+{% highlight java linenos %}
+package mutex;
+
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+/**
+ * Hello world!
+ */
+public final class ReadWriteApp {
+    /**
+     * Says hello to the world.
+     * @param args The arguments of the program.
+     */
+    public static void main(String[] args) {
+      Data data = new Data();
+
+      for(int i = 0; i < 3; i++) {
+        new Thread() {
+          public void run() {
+            data.get();
+          }
+        }.start();;
+      }
+
+      for(int i = 0; i < 3; i++) {
+        int j = i;
+        new Thread() {
+          public void run() {
+            data.put(j);
+          }
+        }.start();;
+      }
+    }
+}
+
+
+class Data {
+  private Object data = null;
+  private ReentrantReadWriteLock rwl = null;
+
+  Data() {
+    this.data = "A";
+    this.rwl = new ReentrantReadWriteLock(false);
+  }
+
+  public void get() {
+    rwl.readLock().lock();
+    try {
+      System.out.println(Thread.currentThread().getName() + " GET: be ready to read data!");
+      Thread.sleep(5000);
+      System.out.println(Thread.currentThread().getName() + " GET: finished read data: " + this.data);
+    } catch( Exception e) {
+
+    }
+    rwl.readLock().unlock();
+  }
+
+  public void put(Object object) {
+    rwl.writeLock().lock();
+    try {
+      System.out.println(Thread.currentThread().getName() + " PUT: be ready to put data!");
+      Thread.sleep(5000);
+      this.data = object;
+      System.out.println(Thread.currentThread().getName() + " PUT: finished put data: " + this.data);
+    } catch( Exception e) {
+
+    }
+    rwl.writeLock().unlock();
+  }
+}
+
+/* output
+Thread-2 GET: be ready to read data!
+Thread-1 GET: be ready to read data!
+Thread-0 GET: be ready to read data!
+Thread-2 GET: finished read data: A
+Thread-1 GET: finished read data: A
+Thread-0 GET: finished read data: A
+Thread-3 PUT: be ready to put data!
+Thread-3 PUT: finished put data: 0
+Thread-4 PUT: be ready to put data!
+Thread-4 PUT: finished put data: 1
+Thread-5 PUT: be ready to put data!
+Thread-5 PUT: finished put data: 2
+*/
+
+{% endhighlight %}
+
 ### 3.2 without lock
+
+{% highlight java linenos %}
+
+{% endhighlight %}
 
 #### 3.2.1 不变模式(Immutable)
 
 #### 3.2.2 线程本地存储(ThreadLocal)
 
+> ThreadLocal: 提供了一个线程本地可见的副本，线程之间无法查看其它线程的变量，起到了隔离的作用。
+
+{% highlight java linenos %}
+package mutex;
+
+public final class ThreadLocalApp {
+
+  public static void main(String[] args) {
+
+    MyRunnable myRunnable = new MyRunnable();
+
+    Thread threadA = new Thread(myRunnable);
+    Thread threadB = new Thread(myRunnable);
+
+    threadA.start();
+    threadB.start();
+ 
+  }
+}
+
+class MyRunnable implements Runnable {
+  private ThreadLocal threadLocal = new ThreadLocal() {
+    protected String initialValue() {
+      return Thread.currentThread().getName();
+    }
+      
+  };
+
+  public void run() {
+    try {
+      System.out.println(Thread.currentThread().getName() + " start set" + threadLocal.get());
+      threadLocal.set(Double.toString(Math.random()));
+      System.out.println(Thread.currentThread().getName() + " finish set: " + threadLocal.get());
+      Thread.sleep(1000);
+      System.out.println(Thread.currentThread().getName() + " finish set 2: " + threadLocal.get());
+    } catch( Exception e) {
+
+    }
+  }
+}
+
+/* output
+Thread-1 start setThread-1
+Thread-0 start setThread-0
+Thread-1 finish set: 0.6876997267669848
+Thread-0 finish set: 0.5453606964177355
+Thread-1 finish set 2: 0.6876997267669848
+Thread-0 finish set 2: 0.5453606964177355
+*/
+
+可以看到同一个MyRunnable实例myRunnalbe在两个线程里启动，但是myRunnable的实例变量threadLocal在不同线程的初始值是不一样的，在两个线程都写之后，再读取到的值也是相互独立的。
+
+{% endhighlight %}
+
 #### 3.2.3 CAS
+
+> CAS(CompareAndSwap): 当前值等于预期值时(即变量没有在上次读取和这次代码执行之间没有被改变)，则设置新值，返回true；否则什么也不做，返回false
+
+{% highlight java linenos %}
+public class SimulateCAS {
+    private int value;
+    public synchronized int getValue() {
+        return value;
+    }
+    public boolean compareAndSet(int expect, int newValue) {
+        synchronized (this) {
+            if (value == expect) {
+                value = newValue;
+                return true;
+            }
+        }
+        return false;
+    }
+}
+{% endhighlight %}
+
 
 #### 3.2.4 Copy-on-Write
 
+> Copy-on-Write(COW): 当我们往一个容器添加元素的时候，不直接往当前容器添加，而是先将当前容器进行Copy，复制出一个新的容器，然后新的容器里添加元素，添加完元素之后，再将原容器的引用指向新的容器。
+这样做的好处是我们可以对CopyOnWrite容器进行并发的读，而不需要加锁，因为当前容器不会添加任何元素。
+
+{% highlight java linenos %}
+
+{% endhighlight %}
+
+
 #### 3.2.5 原子类
 
-#### 3.2.1 不变模式(Immutable)
+> `java.util.concurrent.atomic`包括了如下原子类: AtomicBoolean，AtomicInteger，AtomicLong，AtomicReference
+AtomicIntegerArray，AtomicLongArray
+AtomicLongFieldUpdater，AtomicIntegerFieldUpdater，AtomicReferenceFieldUpdater
+AtomicMarkableReference，AtomicStampedReference，AtomicReferenceArray
+
+{% highlight java linenos %}
+
+{% endhighlight %}
+
 
 
 ## 3 总结 ##
