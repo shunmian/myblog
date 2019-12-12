@@ -631,14 +631,60 @@ class CachedData {
 
 ### 2.5 StampedLock: 有没有比读写锁更快的锁
 
+> StampedLock, 写锁(读写锁的写锁一样)，悲观读锁(读写锁的读锁一样)，乐观读(不加锁，仅增加一个版本号，在取完数据后，使用前验证一下版本号，如果不一样就进行悲观读锁获取)
+
 {% highlight java linenos %}
 
+class Point {
+  private int x, y;
+  final StampedLock sl = 
+    new StampedLock();
+  //计算到原点的距离  
+  int distanceFromOrigin() {
+    // 乐观读
+    long stamp = 
+      sl.tryOptimisticRead();
+    // 读入局部变量，
+    // 读的过程数据可能被修改
+    int curX = x, curY = y;
+    //判断执行读操作期间，
+    //是否存在写操作，如果存在，
+    //则sl.validate返回false
+    if (!sl.validate(stamp)){  // <---- a
+      // 升级为悲观读锁
+      stamp = sl.readLock();
+      try {
+        curX = x;
+        curY = y;
+      } finally {
+        //释放悲观读锁
+        sl.unlockRead(stamp);
+      }
+    } 
+    return Math.sqrt( // <---- b
+      curX * curX + curY * curY);
+  }
+}
 {% endhighlight %}
+
+思考题：若a验证成功，在b执行前，数据被修改了，如何处理？
 
 ### 2.6 CountDownLatch和CyclicBarrier: 如何让多线程步调一致
 
 
+{% highlight java linenos %}
+
+
+{% endhighlight %}
+
+
 ### 2.7 并发容器: 都有哪些坑需要我们填
+
+
+{% highlight java linenos %}
+
+
+{% endhighlight %}
 
 ### 2.8 原子类: 无锁工具类的典范
 
