@@ -229,6 +229,10 @@ $$
 
 2. **正则化(Regularization)**，保持所有Feature，但是减小Feature的权重，即$\theta_(j)$。这当我们有很多略有用的Feature时解决的效果很好。
 
+> 正则化的直觉理解： $\lambda$越小，接近0，则有可能高阶$\theta$很大，导致拟合太灵活，test error接近0； $\lambda$越大，接近正无穷，则所有$\theta$太小，导致一条直线，拟合太刚硬，test error太大。适当的$\lambda$可以获得不刚硬又不过分灵活的拟合曲线，比较光滑简单，考虑各个feature，又不放大单一feature的影响。模型test error太大，可能因为模型太呆板，太固执；也可能是因为模型太随性，太无主见： regularizer 提供了一个叫$\lambda$的旋钮，调大能让模型不要太随性，调小能让模型不要呆板。
+
+
+
 
 ### 3.2 成本函数 ###
 
@@ -340,6 +344,7 @@ $$
 
 {: .img_middle_hg}
 ![supervised learning summary.jpg]({{site.url}}/assets/images/posts/07_Machine Learning/Machine Learning/2015-05-03/supervised learning summary.jpg)
+
 
 ## 6 参考资料 ##
 
