@@ -5,7 +5,7 @@ categories: [-20 Text Editor]
 tags: [Emacs]
 number: [-20.1]
 fullview: false
-shortinfo: 《Writing GNU Emacs Extension》简介。
+shortinfo: 《Teach Yourself Emacs in 24 Hours》简介。
 ---
 目录
 {:.article_content_title}
@@ -18,6 +18,10 @@ shortinfo: 《Writing GNU Emacs Extension》简介。
 {:.hr-short-left}
 
 ## 1. Emacs ##
+
+### Hour 3: get started
+
+By default, buffers that do not correspond to files on disk contain stars around their names.
 
 Difference?
 
