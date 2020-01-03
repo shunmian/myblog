@@ -85,7 +85,18 @@ $$A_{M \times N} : rank(A) + nullspace(A) = N$$
 #### 1.2.4 Eignvalues and Eigenvectors 
 
 
-## 2 GDB ##
+## 2 Introduction to Linear Algebra ##
+
+### 2.1 The Geometry of Linear Equations
+
+$$2x - y = 0$$
+$$-x + 2y =3 $$
+
+2 explain
+
+1. Row Vector: equations $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => \begin{bmatrix}2x - y = 0\\-x + 2y =3\end{bmatrix}$$
+
+2. Column Vector: linear combination of column vector $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => x\begin{bmatrix}2 \\-1 \end{bmatrix} + y\begin{bmatrix}-1\\ 2\end{bmatrix} =   \begin{bmatrix}0 \\3 \end{bmatrix} $$
 
 ## 3 总结 ##
 

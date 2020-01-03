@@ -19,9 +19,20 @@ shortinfo: 《Teach Yourself Emacs in 24 Hours》简介。
 
 ## 1. Emacs ##
 
-### Hour 3: get started
+### 3: get started
 
 By default, buffers that do not correspond to files on disk contain stars around their names.
+
+
+#### 3.1 Keyboard layout
+
+- C-c: functions belong to a specific mode
+- C-x: functions that are used less often
+
+#### 3.2 Major mode vs minor mode
+
+
+
 
 Difference?
 
@@ -29,6 +40,18 @@ Difference?
 - emacs function: invoked from other functions or by command of `eval-expression`/`eval-last-sexp`
 - emacs command: mainly invoked interactively by keybindings or with `M-x`; can also be invoked by other function calls. Not all functions are commands but all commands are functions. A function is turn into command by `(interactive)`. `M-x apropos`, `M-x apropos-command`, `M-x aprops-documentation` (search by keyword in function description)
 - emacs keysequence: `M-x describe-key` to check the keysequence binding.
+
+### 11: Editing Utilities 
+
+#### 11.1 ispell: Spell Checker
+
+### 13: Macros
+
+#### 13.1: Simple repeatable macros
+
+`start-kbd-macro`
+`end-kbd-macro`
+`kmacro-end-and-call-macro`
 
 ### 1.1 主要用法
 
