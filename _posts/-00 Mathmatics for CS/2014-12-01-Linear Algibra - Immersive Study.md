@@ -98,6 +98,13 @@ $$-x + 2y =3 $$
 
 2. Column Vector: linear combination of column vector $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => x\begin{bmatrix}2 \\-1 \end{bmatrix} + y\begin{bmatrix}-1\\ 2\end{bmatrix} =   \begin{bmatrix}0 \\3 \end{bmatrix} $$
 
+matrix vector multiplication
+
+$$\begin{bmatrix}a_{11} & a_{12}\\a_{21} & a_{22}\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = x\begin{bmatrix}a_{11} \\a_{21} \end{bmatrix} + y\begin{bmatrix}a_{12}\\ a_{22}\end{bmatrix} vs \begin{bmatrix}a_{11}x+ a_{12}y\\a_{21}x + a_{22}y\end{bmatrix}$$
+
+left is preferred than right
+
+
 ## 3 总结 ##
 
 {: .img_middle_hg}
