@@ -94,7 +94,7 @@ $$-x + 2y =3 $$
 
 2 explain
 
-1. Row Vector: equations $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => \begin{bmatrix}2x - y = 0\\-x + 2y =3\end{bmatrix}$$
+1. Row Vector: interception of 2 lines $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => \begin{bmatrix}2x - y = 0\\-x + 2y =3\end{bmatrix}$$
 
 2. Column Vector: linear combination of column vector $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => x\begin{bmatrix}2 \\-1 \end{bmatrix} + y\begin{bmatrix}-1\\ 2\end{bmatrix} =   \begin{bmatrix}0 \\3 \end{bmatrix} $$
 
@@ -103,6 +103,36 @@ matrix vector multiplication
 $$\begin{bmatrix}a_{11} & a_{12}\\a_{21} & a_{22}\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = x\begin{bmatrix}a_{11} \\a_{21} \end{bmatrix} + y\begin{bmatrix}a_{12}\\ a_{22}\end{bmatrix} vs \begin{bmatrix}a_{11}x+ a_{12}y\\a_{21}x + a_{22}y\end{bmatrix}$$
 
 left is preferred than right
+
+### 2.2 Elimination with Matrix
+
+$$x + 2y + z = 2$$
+$$3x + 8y + z = 12$$
+$$0x + 4y + z = 2$$
+
+Use elimination to get x, y and z:
+
+1. replace 2nd by multiply -3 of 1st and add to 2nd;
+2. replace 3rd by muutiply -2 of 2nd and add to 3rd;
+
+use matrix to represents the elimination step
+
+1. $$\begin{bmatrix}1 & 0 & 0\\-3 & 1 & 0 \\0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 &1 \\3 & 8 & 1 \\0 & 4 & 1 \end{bmatrix} =  E_{21}A = \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 4 & 1 \end{bmatrix} $$
+
+2. $$\begin{bmatrix}1 & 0 & 0\\0 & 1 & 0 \\0 & -2 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 4 & 1 \end{bmatrix} =  E_{32}A = \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 0 & 5 \end{bmatrix} $$
+
+
+combine the above two matrix, one can get the final matrix that does step 1 and 2 at one shot.
+
+$$E_{32}(E_{21}A) = (E_{32}E_{21})A =  \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 0 & 5 \end{bmatrix} = U$$
+
+Note:
+
+1. multiply on right is column linear combination: $$\begin{bmatrix}a & b \\c & d \end{bmatrix} \begin{bmatrix}0 & 1 \\1 & 0 \end{bmatrix} = \begin{bmatrix}b & a \\d & c \end{bmatrix}$$
+
+2. multiply on left is row linear combination: $$\begin{bmatrix}1 & 0 \\0 & 1 \end{bmatrix} \begin{bmatrix}a & b \\c & d \end{bmatrix} = \begin{bmatrix}c & d \\a & b \end{bmatrix}$$
+
+
 
 
 ## 3 总结 ##
