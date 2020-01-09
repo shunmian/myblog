@@ -89,14 +89,15 @@ $$A_{M \times N} : rank(A) + nullspace(A) = N$$
 
 ### 2.1 The Geometry of Linear Equations
 
-$$2x - y = 0$$
-$$-x + 2y =3 $$
+$$\begin{bmatrix} 2x - y = 0 \\ -x + 2y =3 \end{bmatrix}$$
 
-2 explain
+2 different explaination:
 
-1. Row Vector: interception of 2 lines $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => \begin{bmatrix}2x - y = 0\\-x + 2y =3\end{bmatrix}$$
+1. Row Vector: interception of 2 lines
+$$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => \begin{bmatrix}2x - y = 0\\-x + 2y =3\end{bmatrix}$$
 
-2. Column Vector: linear combination of column vector $$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => x\begin{bmatrix}2 \\-1 \end{bmatrix} + y\begin{bmatrix}-1\\ 2\end{bmatrix} =   \begin{bmatrix}0 \\3 \end{bmatrix} $$
+2. Column Vector: linear combination of column vector
+$$\begin{bmatrix}2 & -1\\-1 & 2\end{bmatrix} \begin{bmatrix}x \\y \end{bmatrix} = \begin{bmatrix}0 \\3 \end{bmatrix} => x\begin{bmatrix}2 \\-1 \end{bmatrix} + y\begin{bmatrix}-1\\ 2\end{bmatrix} =   \begin{bmatrix}0 \\3 \end{bmatrix} $$
 
 matrix vector multiplication
 
@@ -106,9 +107,7 @@ left is preferred than right
 
 ### 2.2 Elimination with Matrix
 
-$$x + 2y + z = 2$$
-$$3x + 8y + z = 12$$
-$$0x + 4y + z = 2$$
+$$\begin{bmatrix} x + 2y + z = 2 \\ 3x + 8y + z = 12 \\ 0x + 4y + z = 2 \end{bmatrix}$$
 
 Use elimination to get x, y and z:
 
@@ -117,9 +116,9 @@ Use elimination to get x, y and z:
 
 use matrix to represents the elimination step
 
-1. $$\begin{bmatrix}1 & 0 & 0\\-3 & 1 & 0 \\0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 &1 \\3 & 8 & 1 \\0 & 4 & 1 \end{bmatrix} =  E_{21}A = \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 4 & 1 \end{bmatrix} $$
+$$\begin{bmatrix}1 & 0 & 0\\-3 & 1 & 0 \\0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 &1 \\3 & 8 & 1 \\0 & 4 & 1 \end{bmatrix} =  E_{21}A = \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 4 & 1 \end{bmatrix} $$
 
-2. $$\begin{bmatrix}1 & 0 & 0\\0 & 1 & 0 \\0 & -2 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 4 & 1 \end{bmatrix} =  E_{32}A = \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 0 & 5 \end{bmatrix} $$
+$$\begin{bmatrix}1 & 0 & 0\\0 & 1 & 0 \\0 & -2 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 4 & 1 \end{bmatrix} =  E_{32}A = \begin{bmatrix}1 & 2 &1 \\0 & 2 & -2 \\0 & 0 & 5 \end{bmatrix} $$
 
 
 combine the above two matrix, one can get the final matrix that does step 1 and 2 at one shot.
@@ -131,8 +130,6 @@ Note:
 1. multiply on right is column linear combination: $$\begin{bmatrix}a & b \\c & d \end{bmatrix} \begin{bmatrix}0 & 1 \\1 & 0 \end{bmatrix} = \begin{bmatrix}b & a \\d & c \end{bmatrix}$$
 
 2. multiply on left is row linear combination: $$\begin{bmatrix}1 & 0 \\0 & 1 \end{bmatrix} \begin{bmatrix}a & b \\c & d \end{bmatrix} = \begin{bmatrix}c & d \\a & b \end{bmatrix}$$
-
-
 
 
 ## 3 总结 ##
