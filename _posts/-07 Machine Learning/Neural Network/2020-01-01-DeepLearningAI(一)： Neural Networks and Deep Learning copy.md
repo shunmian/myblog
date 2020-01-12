@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DeepLearningAI(一)： Neural Networks and Deep Learning
+title: DeepLearningAI(一)：Neural Network and Deep Learning Foundamentals
 categories: [-07 Machine Learning]
 tags: [Neural Networks]
 number: [-11.1]
@@ -19,11 +19,13 @@ shortinfo: Cousera Deep Learning 课程。
 {:.hr-short-left}
 
 
-## 1 Summary ##
+## 1 suggestions
 
-{: .img_middle_hg}
-![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-01-DeepLearningAI(一)： Neural Networks and Deep Learning/deeplearningai(一).png)
+1. implement code by yourself instead of using framework
+2. derive things from first principle
+3. build good math foundations in linear algebra, calculus, probability, optimization
 
+## 2 Summary ##
 
 
 ## 参考资料
