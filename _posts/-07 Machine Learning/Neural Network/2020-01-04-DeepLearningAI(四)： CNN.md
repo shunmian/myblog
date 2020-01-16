@@ -24,8 +24,15 @@ Re-implement paper algo and open source on github, you will get noticed.
 
 ## 2 Summary ##
 
+### 2.1 CNN
+
 {: .img_middle_hg}
 ![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-04-DeepLearningAI(四)： CNN/1_CNN.png)
+
+### 2.2 ResNet
+
+{: .img_middle_hg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-04-DeepLearningAI(四)： CNN/2_ResNet.png)
 
 ## 3 TBC
 
