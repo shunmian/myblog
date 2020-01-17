@@ -34,7 +34,15 @@ Re-implement paper algo and open source on github, you will get noticed.
 {: .img_middle_hg}
 ![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-04-DeepLearningAI(四)： CNN/2_ResNet.png)
 
+### 2.3 Object Detection
+
+{: .img_middle_hg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-04-DeepLearningAI(四)： CNN/3_ObjectDetection.png)
+
 ## 3 TBC
+
+
+
 
 CNN backpropagate 推导
 
