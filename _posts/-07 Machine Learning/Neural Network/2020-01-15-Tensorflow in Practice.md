@@ -20,6 +20,13 @@ shortinfo: Tensorflow Tutorial。
 
 ## Week 1: A New Programming Paradigm ##
 
+`keras.Sequential`: a linear stacked structure for NN.
+
+`keras.layers.Dense`: a fully connected NN layer, with each neuron in layer i is connected to every neuron in layer i-1 as input.
+
+{: .img_middle_lg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-15-Tensorflow-in-Practice/tensorflow2.0_structure.png)
+
 ## Week 2: Introduction to Computer Vision ##
 
 ## Week 3: Enhancing Vision with Convolutional Neural Networks ##
