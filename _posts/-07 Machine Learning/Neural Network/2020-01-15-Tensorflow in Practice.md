@@ -288,7 +288,26 @@ os.kill(os.getpid(), signal.SIGKILL)
 
 ## Course: Convolutional Neural Network in tensorflow
 
+### Week2: Data Augamentation
 
+{: .img_middle_lg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-15-Tensorflow-in-Practice/data_augamentation.png)
+
+### Week3: Transfer Learning
+
+{: .img_middle_lg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-15-Tensorflow-in-Practice/transfer_learning.png)
+
+### Week4: Multiple Categories
+
+{: .img_middle_sm}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-15-Tensorflow-in-Practice/multiple-category.png)
+
+
+## Summary
+
+{: .img_middle_hg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-15-Tensorflow-in-Practice/keras_summary.png)
 
 {% highlight py linenos %}
 
