@@ -95,6 +95,11 @@ shortinfo: Tensorflow Tutorial。
 </html>
 {% endhighlight %}
 
+### week 2: visualizing training with `tfjs-vis`
+
+[tfjs-vis example](https://github.com/lmoroney/dlaicourse/tree/master/TensorFlow%20Deployment/Course%201%20-%20TensorFlow-JS/Week%202/Examples).
+
+### week 3: transfer tensorflow trained model from python to js
 
 ## Course 2: Device-based Models with TensorFlow Lite
 
