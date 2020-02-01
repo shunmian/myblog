@@ -103,8 +103,13 @@ shortinfo: Tensorflow Tutorial。
 
 ### Week 3: transfer tensorflow trained model from python to js
 
+
 {: .img_middle_lg}
 ![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-16-Tensorflow Data and Deployments/port-python-model-to-js.png)
+
+### Week 4: tensorflow.js for transfer learning and webcam stream feeding
+
+[code](https://github.com/lmoroney/dlaicourse/tree/master/TensorFlow%20Deployment/Course%201%20-%20TensorFlow-JS/Week%204/Examples)
 
 ## Course 2: Device-based Models with TensorFlow Lite
 
