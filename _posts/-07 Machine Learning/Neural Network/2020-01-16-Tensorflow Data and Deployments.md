@@ -113,6 +113,11 @@ shortinfo: Tensorflow Tutorial。
 
 ## Course 2: Device-based Models with TensorFlow Lite
 
+### Week 1: export TFLITE
+
+{: .img_middle_lg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-16-Tensorflow Data and Deployments/export_TFLITE.png)
+
 ## Course 3: Data Pipelines with TensorFlow Data Services
 
 ## Course 4: Advanced Deployment Scenarios with TensorFlow
