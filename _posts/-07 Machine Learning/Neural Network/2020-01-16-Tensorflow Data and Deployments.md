@@ -20,6 +20,8 @@ shortinfo: Tensorflow Tutorial。
 
 ## Course 1: Browser-based Models with TensorFlow.js
 
+### Week 1: intro to `tensforflow.js` 
+
 {% highlight js linenos %}
 <html>
 
@@ -95,11 +97,14 @@ shortinfo: Tensorflow Tutorial。
 </html>
 {% endhighlight %}
 
-### week 2: visualizing training with `tfjs-vis`
+### Week 2: visualizing training with `tfjs-vis`
 
 [tfjs-vis example](https://github.com/lmoroney/dlaicourse/tree/master/TensorFlow%20Deployment/Course%201%20-%20TensorFlow-JS/Week%202/Examples).
 
-### week 3: transfer tensorflow trained model from python to js
+### Week 3: transfer tensorflow trained model from python to js
+
+{: .img_middle_lg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-16-Tensorflow Data and Deployments/port-python-model-to-js.png)
 
 ## Course 2: Device-based Models with TensorFlow Lite
 
