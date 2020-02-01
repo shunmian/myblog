@@ -120,6 +120,11 @@ shortinfo: Tensorflow Tutorial。
 
 ## Course 3: Data Pipelines with TensorFlow Data Services
 
+### Week 1: use TFDS to extract, transform and load data
+
+{: .img_middle_lg}
+![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-16-Tensorflow Data and Deployments/tfds.png)
+
 ## Course 4: Advanced Deployment Scenarios with TensorFlow
 
 ## Summary
