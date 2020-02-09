@@ -54,37 +54,46 @@ $$ P(B) = P(B|A_1) \times P(A_1) +  P(B|A_2) \times P(A_2) + P(B|A_3) \times P(A
 
 $$ P(A,B) = P(A|B) \times P(B) = P(B|A) \times P(A) $$
 
-giving B happens, how likely A happening;
+giving B happens, how likely A happening; when B happens, the sample space change from $$\omega$$ to $$B$$
 giving A happens, how likely B happening;
+
 
 ### QA
 
 $$y = f(x)$$(函数将x隐射程y) vs $$ p = P(X)$$(样本空间的概率分布):
 
-
 ## 3 Independence
 
+Independence of A and B means:
 
+$$ P(A,B) = P(A) \times P(B) $$ or
+$$ P(B|A) = P(B) $$
 
-#### 1.2.1 Determinants
+{: .img_middle_mid}
+![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/independence.png)
 
-#### 1.2.2 Rank
+## 4 Counting
 
-#### 1.2.3 Linear Mappings
+### 4.1 Principles of counting
 
-#### 1.2.4 Eignvalues and Eigenvectors 
+### 4.2 Eaxamples
 
-## 2 GDB ##
+#### 4.2.1 permutations
+
+#### 4.2.2 k-permutations
+
+#### 4.2.3 combinations
+
+#### 4.2.4 partitions
 
 ## 3 总结 ##
 
 {: .img_middle_hg}
-![gcc & gdb]({{site.url}}/assets/images/posts/2014-06-30-A1 C Tools for Linux/gdb.png)
+![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/independence.png)
 
 ## 4 Reference ##
 
-- [《Probabilistic Systems Analysis and Applied Probability》](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/);
-
+- [《Probabilistic Systems Analysis and Applied Probability》](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/); 
 
 
 
