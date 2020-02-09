@@ -92,7 +92,7 @@ $$ C_k^m =  \frac {m!} {(m-k)!k!} $$
 
 #### 4.2.4 partitions
 
-## 5 Discrete Random Variables I
+## 5, 6 & 7 Discrete Random Variables I
 
 ### 5.1 Random variable
 
@@ -151,6 +151,25 @@ $$P(X=x|Y=y) = \frac {P(X=x, Y = y)} {P(Y=y)}$$
 
 {: .img_middle_mid}
 ![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/Joint PMF.png)
+
+### 5.9 Multiple random variable
+
+#### 5.9.1 Joint PMF
+
+#### 5.9.2 Conditioning
+
+$$PX,Y,Z(x,y,z) = PX(x)PY(y|X=x)PZ(z)Y=y, X=x$$
+
+#### 5.9.3 Independence
+
+$$PX,Y,Z(x,y,z) = PX(x)PY(y)PZ(z)$$
+
+#### 5.9.4 Expectations & Varience
+
+
+{: .img_middle_mid}
+![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/multiple random variable.png)
+
 
 
 
