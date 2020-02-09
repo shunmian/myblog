@@ -96,6 +96,8 @@ $$ C_k^m =  \frac {m!} {(m-k)!k!} $$
 
 ### 5.1 Random variable
 
+Random variable X: function from sample space to the real numbers
+
 {: .img_middle_lg}
 ![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/random variable.jpg)
 
@@ -122,6 +124,35 @@ $$var(X) = E[(X-E(X))^2] = E[X^2] - (E(X))^2$$
 $$var(X) \ge 0 $$
 
 $$var(\alpha X + \beta) = {\alpha}^2 var(X) $$
+
+$$ \sigma (X) = \sqrt{var (X)} $$
+
+### 5.5 Conditional PMF
+
+$$P(X=x| A)$$
+
+$$E(X|A) = \sum_x xP(X=x|A)$$
+
+### 5.6 Geometric PMF
+
+{: .img_middle_mid}
+![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/Geometric PMF.png)
+
+
+### 5.7 Total expectation theorem
+
+$$E[X] = P(A_1)E[X|A_1] + ... + P(A_n)E[X|A_n]$$
+
+### 5.8 Join PMF of two random variables
+
+$$ P(X=x, Y =y) $$
+
+$$P(X=x|Y=y) = \frac {P(X=x, Y = y)} {P(Y=y)}$$
+
+{: .img_middle_mid}
+![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/Joint PMF.png)
+
+
 
 ## 3 总结 ##
 
