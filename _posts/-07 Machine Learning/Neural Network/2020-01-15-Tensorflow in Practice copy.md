@@ -285,8 +285,7 @@ os.kill(os.getpid(), signal.SIGKILL)
 
 {% endhighlight %}
 
-
-## Course: Convolutional Neural Network in tensorflow
+## Course 2: Convolutional Neural Network in tensorflow
 
 ### Week2: Data Augamentation
 
@@ -303,6 +302,9 @@ os.kill(os.getpid(), signal.SIGKILL)
 {: .img_middle_sm}
 ![Image Classification Summary]({{site.url}}/assets/images/posts/-07_Machine Learning/2020-01-15-Tensorflow-in-Practice/multiple-category.png)
 
+## Course 3: Natural Language Processing in TensorFlow
+
+## Course 4: Sequences, Time Series and Prediction
 
 ## Summary
 
