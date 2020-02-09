@@ -92,6 +92,37 @@ $$ C_k^m =  \frac {m!} {(m-k)!k!} $$
 
 #### 4.2.4 partitions
 
+## 5 Discrete Random Variables I
+
+### 5.1 Random variable
+
+{: .img_middle_lg}
+![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/random variable.jpg)
+
+### 5.2 Probability mass function (PMF)
+
+离散随机变量在各特定取值上的概率。
+
+### 5.3 Expectation
+
+$$ E[X] = \sum_{x \in X} xP(x)$$
+
+in general $$E(g(x)) \ne g(E(x))$$;
+
+$$E(\alpha) = \alpha$$
+
+$$E(\alpha X) = \alpha E(X) $$
+
+$$E(\alpha X + \beta) = \alpha E(X) + \beta$$
+
+### 5.4 Variance
+
+$$var(X) = E[(X-E(X))^2] = E[X^2] - (E(X))^2$$
+
+$$var(X) \ge 0 $$
+
+$$var(\alpha X + \beta) = {\alpha}^2 var(X) $$
+
 ## 3 总结 ##
 
 {: .img_middle_hg}
