@@ -69,7 +69,7 @@ Independence of A and B means:
 $$ P(A,B) = P(A) \times P(B) $$ or
 $$ P(B|A) = P(B) $$
 
-{: .img_middle_mid}
+{: .img_middle_lg}
 ![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/independence.png)
 
 ## 4 Counting
@@ -78,11 +78,17 @@ $$ P(B|A) = P(B) $$
 
 ### 4.2 Eaxamples
 
-#### 4.2.1 permutations
+#### 4.2.1 permutations(排列)
 
 #### 4.2.2 k-permutations
 
-#### 4.2.3 combinations
+$$ A! $$
+
+#### 4.2.3 combinations(组合)
+
+choose k items set out of total m item.
+
+$$ C_k^m =  \frac {m!} {(m-k)!k!} $$
 
 #### 4.2.4 partitions
 
