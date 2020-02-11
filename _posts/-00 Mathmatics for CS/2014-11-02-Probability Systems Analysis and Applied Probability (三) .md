@@ -64,6 +64,17 @@ Conditioning & Independencd
 {: .img_middle_hg}
 ![Gaussian normal PDF]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-02-Probability Systems Analysis and Applied Probability (二)/Covariance and correlation.png)
 
+## 12 Ietrated Expectations & Sum of a Random Number Variables
+
+- Conditional Expectation
+  - Law of iterated expactions;
+  - Law of total variance
+- sum of a random number of independent random variables: mean, variance
+
+{: .img_middle_hg}
+![Gaussian normal PDF]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-02-Probability Systems Analysis and Applied Probability (二)/Ietrated Expectations & Sum of a Random Number Variables.png)
+
+
 ## 3 总结 ##
 
 {: .img_middle_hg}
