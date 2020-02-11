@@ -45,6 +45,8 @@ $$F_X(x) = P(X \le x) = \int_{-\infty}x f_X(t)dt $$
 {: .img_middle_lg}
 ![Gaussian normal PDF]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-02-Probability Systems Analysis and Applied Probability (二)/Gaussian normal PDF.png)
 
+
+
 ## 9 Multiple Continuous Random Variable
 
 Conditioning & Independencd
@@ -52,15 +54,15 @@ Conditioning & Independencd
 {: .img_middle_lg}
 ![Gaussian normal PDF]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-02-Probability Systems Analysis and Applied Probability (二)/Multiple random variable.png)
 
+## 10 Continuous Bayes' Rule, Derived Distribution
 
-## 9: 
+{: .img_middle_lg}
+![Gaussian normal PDF]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-02-Probability Systems Analysis and Applied Probability (二)/Continuous Bayes Rule.png)
 
+## 11 Derived Distribution, convolution, Covariance and correlation
 
-{: .img_middle_mid}
-![gcc & gdb]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-01-Probability Systems Analysis and Applied Probability (一)/multiple random variable.png)
-
-
-
+{: .img_middle_hg}
+![Gaussian normal PDF]({{site.url}}/assets/images/posts/-00_Math/Probability/2014-11-02-Probability Systems Analysis and Applied Probability (二)/Covariance and correlation.png)
 
 ## 3 总结 ##
 
