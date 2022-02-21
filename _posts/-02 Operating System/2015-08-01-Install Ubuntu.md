@@ -110,7 +110,17 @@ nvm install 14.15.4
 //install yarn, https://classic.yarnpkg.com
 npm install --global yarn
 
+//install python2
+sudo apt install python2
+
+//install nautilus: nautilus ~/Desktop      will open folder
+sudo apt install nautilus
+
 //install code and chrome from website
+
+// update code default settings and keybindings
+// https://github.com/shunmian/dotfiles/tree/master/Mackup/Library/Application%20Support/Code/User/settings.json
+// https://github.com/shunmian/dotfiles/tree/master/Mackup/Library/Application%20Support/Code/User/keybindings.json
 
 
 
