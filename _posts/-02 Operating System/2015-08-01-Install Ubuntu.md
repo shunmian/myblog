@@ -122,6 +122,10 @@ sudo apt install nautilus
 // https://github.com/shunmian/dotfiles/tree/master/Mackup/Library/Application%20Support/Code/User/settings.json
 // https://github.com/shunmian/dotfiles/tree/master/Mackup/Library/Application%20Support/Code/User/keybindings.json
 
+// installing aws-cli and graphicsmagick
+sudo apt install awscli
+sudo apt-get install graphicsmagick
+
 
 
 {% endhighlight %}
