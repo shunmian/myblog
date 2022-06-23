@@ -126,8 +126,6 @@ sudo apt install nautilus
 sudo apt install awscli
 sudo apt-get install graphicsmagick
 
-
-
 {% endhighlight %}
 
 ## A 参考资料 ##
