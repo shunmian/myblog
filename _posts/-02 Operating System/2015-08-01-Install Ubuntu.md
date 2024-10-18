@@ -21,6 +21,8 @@ shortinfo: 台式机安装Ubuntu。
 
 ## 1: Make Bootable Ubuntu USB
 
+## 1.1: Make Bootable Ubuntu USB
+
 {% highlight bash linenos %}
 //Step 1: Format to Mac OS Extended (Journaled)
 
@@ -46,6 +48,27 @@ sudo dd if=/Path-to-IMG-DMG-file of=/dev/rdisk5 bs=1m
 diskutil eject /dev/diskN
 
 //Done and go to plugin usb to your machine and reboot!
+
+{% endhighlight %}
+
+## 1.2: Make Bootable Ubuntu based Ukylin USB
+
+{% highlight bash linenos %}
+// in Windows to make bootable USB
+//Step 1: Download Ventory software in windows
+
+//Step 2: Download the Uklin iso: https://ubuntukylin.com/downloads/osdownload-cn.html
+
+//Step 3; Format USB
+
+// Step 4: copy Uklin iso to the USB, follow
+// - https://mp.weixin.qq.com/s/h7Lcyb5-PqB0q-pHUINCug
+//  https://ubuntukylin.com/public/pdf/2004.pdf
+
+// Step 5: Done and go to plugin usb to your machine and reboot!
+
+// Step 6: after install Ukylin
+// 为防止休眠后无法唤醒, 在设置 -> 系统 -> 电源 -> 此段时间后休眠 改为“从不”
 
 {% endhighlight %}
 
