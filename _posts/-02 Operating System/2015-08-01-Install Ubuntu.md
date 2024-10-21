@@ -17,8 +17,6 @@ shortinfo: 台式机安装Ubuntu。
 ---
 {:.hr-short-left}
 
-
-
 ## 1: Make Bootable Ubuntu USB
 
 ## 1.1: Make Bootable Ubuntu USB
@@ -64,11 +62,22 @@ diskutil eject /dev/diskN
 // Step 4: copy Uklin iso to the USB, follow
 // - https://mp.weixin.qq.com/s/h7Lcyb5-PqB0q-pHUINCug
 //  https://ubuntukylin.com/public/pdf/2004.pdf
+// 特别需要注意：
+// 分区是，选“自定义分区”（而非快速安装，因这种方式给更目录/分的空间太小了！！！）
+// - efi 2g
+// - /data 20g
+// - /backup 20g
+// - /tmp 20g
+// - /     剩下全部，1TB是约938g 
 
 // Step 5: Done and go to plugin usb to your machine and reboot!
 
 // Step 6: after install Ukylin
 // 为防止休眠后无法唤醒, 在设置 -> 系统 -> 电源 -> 此段时间后休眠 改为“从不”
+
+
+// Chrome installed from ukylin built-in software store
+// if `ls` cannot show chinese correclty: run `export LC_ALL=C.UTF-8`
 
 {% endhighlight %}
 
