@@ -356,5 +356,22 @@ print(f"Model saved as {file_name}")
 
 {% endhighlight %}
 
+
+## 2 Next
+
+- Local Deployment
+
+- RAG
+
+- Model Distillation
+
+- Fine-Tuning and Domain Adaptation
+
+- Reinforcement Learning with Human Feedback (RLHF)
+
+- Multimodal LLMs
+
+
+
 ## 6 参考资料 ##
 - [Deep Learning](https://book.douban.com/subject/26883982/);

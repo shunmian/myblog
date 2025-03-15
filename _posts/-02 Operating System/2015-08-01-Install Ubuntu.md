@@ -47,6 +47,11 @@ diskutil eject /dev/diskN
 
 //Done and go to plugin usb to your machine and reboot!
 
+
+//IMPORTANT!!! 
+- make sure the bios is security boot is set to "Disabled" before install the OS, otherwise, it will show "ERROR: verification failed: (0x1A) security violation". 
+- If the seuciry boot is set to "Enabled" and you install the OS, make sure to do "Secure Erase" under BIOS "Settings" to format the SSD first and then set Security boot to "Disabled", then reinstall the os
+
 {% endhighlight %}
 
 ## 1.2: Make Bootable Ubuntu based Ukylin USB
@@ -65,9 +70,10 @@ diskutil eject /dev/diskN
 // 特别需要注意：
 // 分区是，选“自定义分区”（而非快速安装，因这种方式给更目录/分的空间太小了！！！）
 // - efi 2g
-// - /data 20g
-// - /backup 20g
-// - /tmp 20g
+// - 用于：efi,  挂载点： 无，      大小： 20g 
+// - 用于：ext4, 挂载点： /data，   大小： 20g 
+// - 用于：ext4, 挂载点： /backup， 大小： 20g 
+// - 用于：ext4, 挂载点： /tmp，    大小： 20g 
 // - /     剩下全部，1TB是约938g 
 
 // Step 5: Done and go to plugin usb to your machine and reboot!
@@ -82,6 +88,24 @@ diskutil eject /dev/diskN
 {% endhighlight %}
 
 ## 2 Install software
+
+### 2.1 Install Driver
+
+"ASUS B550M-PLUS WIFI II Motherboard" WIFI driver installation:
+
+```
+sudo apt-get update
+sudo apt-get install make gcc linux-headers-$(uname -r) build-essential git
+git clone https://github.com/HRex39/rtl8852be.git
+
+cd rtl8852be
+make -j8
+sudo make install
+sudo modprobe 8852be
+```
+
+
+### 2.2 Install Application
 
 
 {% highlight bash linenos %}
@@ -148,7 +172,9 @@ sudo apt install python2
 //install nautilus: nautilus ~/Desktop      will open folder
 sudo apt install nautilus
 
-//install code and chrome from website
+//install code and chrome
+sudo apt purge google-chrome-stable && sudo apt install google-chrome-stable
+sudo apt-get install code
 
 // update code default settings and keybindings
 // https://github.com/shunmian/dotfiles/tree/master/Mackup/Library/Application%20Support/Code/User/settings.json
