@@ -187,8 +187,26 @@ sudo apt-get install code
 sudo apt install awscli
 sudo apt-get install graphicsmagick
 
+// install nix
+https://www.cnblogs.com/searchstar/p/18437293
+
+// install clash-verge, in aliyunpan 备份文件/1_产品/工具 download clash-verge_1.7.6_amd64
+sudo dpkg -i clash-verge_1.7.6_amd64
+sudo apt-get install --fix-broken
+sudo apt-get upgrade
+
+
+
 {% endhighlight %}
 
+<!-- ### 2.3 install nvidia driver
+
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+```
+
+go software updates -> additionalDrivers select -->
 ## A 参考资料 ##
 
 - [Making Bootable Ubuntu from USB](https://itsfoss.com/create-bootable-ubuntu-usb-drive-mac-os/);
