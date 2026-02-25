@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+"""Convert Markdown to PDF with good CJK readability.
+
+Usage:
+  md2pdf.python input.md output.pdf
+"""
+
+from __future__ import annotations
+
+import argparse
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+CSS_TEXT = """\
+body { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Microsoft YaHei', Arial, sans-serif; line-height: 1.5; }
+blockquote { color: #555; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #999; padding: 6px; text-align: left; vertical-align: top; }
+h1, h2, h3 { margin-top: 1.2em; }
+code { font-family: Menlo, Monaco, 'Courier New', monospace; }
+"""
+
+CHROME_CANDIDATES = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+]
+
+
+def find_chrome() -> str | None:
+    for path in CHROME_CANDIDATES:
+        if os.path.exists(path):
+            return path
+    # Fallback to PATH lookup
+    return shutil.which("google-chrome") or shutil.which("chromium")
+
+
+def run(cmd: list[str]) -> None:
+    proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    if proc.returncode != 0:
+        raise RuntimeError(proc.stderr.strip() or proc.stdout.strip() or "Command failed")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Convert Markdown to PDF")
+    parser.add_argument("input_md", help="Path to input .md")
+    parser.add_argument("output_pdf", help="Path to output .pdf")
+    args = parser.parse_args()
+
+    input_md = Path(args.input_md).expanduser().resolve()
+    output_pdf = Path(args.output_pdf).expanduser().resolve()
+
+    if not input_md.exists():
+        print(f"Input markdown not found: {input_md}", file=sys.stderr)
+        return 2
+
+    pandoc = shutil.which("pandoc")
+    if not pandoc:
+        print("pandoc not found. Install with: brew install pandoc", file=sys.stderr)
+        return 3
+
+    chrome = find_chrome()
+    if not chrome:
+        print("Google Chrome/Chromium not found. Please install Chrome.", file=sys.stderr)
+        return 4
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpdir_path = Path(tmpdir)
+        css_path = tmpdir_path / "md2pdf.css"
+        html_path = tmpdir_path / "md2pdf.html"
+
+        css_path.write_text(CSS_TEXT, encoding="utf-8")
+
+        # Convert MD -> HTML
+        run([
+            pandoc,
+            str(input_md),
+            "-s",
+            "--metadata",
+            "title=Document",
+            "--css",
+            str(css_path),
+            "-o",
+            str(html_path),
+        ])
+
+        # HTML -> PDF via headless Chrome
+        run([
+            chrome,
+            "--headless",
+            "--disable-gpu",
+            "--no-pdf-header-footer",
+            f"--print-to-pdf={output_pdf}",
+            f"file://{html_path}",
+        ])
+
+    print(f"PDF written to: {output_pdf}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
