@@ -61,6 +61,7 @@ $ clang -rewrite-objc sark.m
 打开生成的文件，发现茫茫多，排除include进来的header，自己的代码都在文件尾部了，看看上面的category被编译器搞成什么样子了。
 
 {% highlight cpp linenos %}
+{% raw %}
 static struct _method_list_t {
     unsigned int entsize;  // sizeof(struct _objc_method)
     unsigned int method_count;
@@ -82,6 +83,7 @@ static struct _prop_list_t {
 };
 
 extern "C" __declspec(dllexport) struct _class_t OBJC_CLASS_$_MyClass;
+{% endraw %}
 
 static struct _category_t _OBJC_$_CATEGORY_MyClass_$_MyAddition __attribute__ ((used, section ("__DATA,__objc_const"))) = 
 {
@@ -445,7 +447,6 @@ for (unsigned int i = 0; i < methodCount; i++){
 - [objc category的秘密](http://blog.sunnyxx.com/2014/03/05/objc_category_secret/);
 
 - [结合 category 工作原理分析 OC2.0 中的 runtime](http://ios.jobbole.com/87623/);
-
 
 
 

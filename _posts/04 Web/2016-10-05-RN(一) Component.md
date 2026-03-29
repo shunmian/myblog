@@ -29,7 +29,7 @@ shortinfo: 本文是对Facebook的React框架的introduction。
 CardSection is the placeholder component, which define the common theme for the inner children, such as padding, background color.
 
 {% highlight js linenos %}
-
+{% raw %}
 const AlbumDetail = ({ album, onPress }) => {
   const { title, artist, url, image, thumbnail_image } = album;
   const {
@@ -63,13 +63,14 @@ const AlbumDetail = ({ album, onPress }) => {
     </Card>
   );
 };
+{% endraw %}
 {% endhighlight %}
 
 
 ### 2.1 `this.props.children`
 
 {% highlight js linenos %}
-
+{% raw %}
 // CardSection.js
 const CardSection = ({ children }) => (<View style={styles.cardSectionStyle}>{children}</View>);
 
@@ -80,8 +81,9 @@ const Card(props) => {
 		<CardSection>
 		 	<Image style={contentImageStyle} source={{ uri: image }} />
 		</CardSection>
-	)
-}
+		)
+	}
+{% endraw %}
 {% endhighlight %}
 
 ### 2.2 HOC(Higher Order Component)

@@ -886,6 +886,7 @@ Inside of our `TodoApp` component, we map each of the todo items into an `<li>`.
 In the UI, we want the todo item to appear as crossed out if it has been completed, so we'll use the `textDecoration` style property.
 
 {% highlight js linenos %}
+{% raw %}
 .
 . // TodoApp component stuff
 .
@@ -911,6 +912,7 @@ In the UI, we want the todo item to appear as crossed out if it has been complet
 .
 . // More TodoApp component stuff
 .
+{% endraw %}
 {% endhighlight %}
 
 
@@ -1116,6 +1118,7 @@ However, it would be nice to differentiate between our filter links by showing w
 We'll start by using ES6 destructuring inside of the `TodoApp` component to extract `todos` and `visibilityFilter` from the props. Now we can access them directly instead of having to type "`this.props.`" every time.
 
 {% highlight js linenos %}
+{% raw %}
 class TodoApp extends Component {
   render() {
     const {
@@ -1272,6 +1275,7 @@ class TodoApp extends Component {
     );
   }
 }
+{% endraw %}
 {% endhighlight %}
 
 
@@ -1285,6 +1289,7 @@ Because we want our list to be a presentational component, we "promote" the `onC
 We also want to be more explicit about what the data is that the component needs to render. Instead of passing a `todo` object, we will pass `completed` and `text` fields as separate props.
 
 {% highlight js linenos %}
+{% raw %}
 const Todo = ({
   onClick,
   completed,
@@ -1302,6 +1307,7 @@ const Todo = ({
     {text}
   </li>
 );
+{% endraw %}
 {% endhighlight %}
 
 Now our `Todo` component is purely presentational. It doesn't specify any behavior, but it knows how to render a single todo item.
@@ -2979,6 +2985,7 @@ We also will use the `activeStyle` prop to style it differently when its `to` pr
 **`FilterLink.js` After**
 
 {% highlight js linenos %}
+{% raw %}
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
@@ -3000,6 +3007,7 @@ FilterLink.propTypes = {
 };
 
 export default FilterLink;
+{% endraw %}
 {% endhighlight %}
 
 **More Cleanup to Do...**
@@ -5203,6 +5211,5 @@ const handleToggle = (state, action) => {
 - [Note: Get Started with Redux](https://github.com/tayiorbeii/egghead.io_redux_course_notes);
 
 - [React Code](https://github.com/shunmian/4.1.1_redux-part-one)
-
 
 
