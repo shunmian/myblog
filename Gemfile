@@ -17,6 +17,9 @@ gem "minima", "~> 2.0"
 
 gem "kramdown-syntax-coderay"
 
+# Fix encoding issues with UTF-8 filenames on macOS
+gem "listen", ">= 3.0.0"
+
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
