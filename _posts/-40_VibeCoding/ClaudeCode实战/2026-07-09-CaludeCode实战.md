@@ -474,7 +474,189 @@ Safely deploys the application with pre-flight and post-flight checks.
 
 ---
 
-## Chapter 4: Sub Agent (Reduce-map)
+## Chapter 4: Sub Agents (Reduce-Map Pattern)
+
+Sub-agents are specialized Claude instances that run independently, enabling parallel processing, diverse perspectives, and scaling of work beyond what a single agent can handle in one context window.
+
+### 4.1 Understanding Sub-Agents
+
+**What is a Sub-Agent?**
+
+A sub-agent is:
+- **Independent Claude instance** with its own system prompt (specialized role)
+- **Isolated from main conversation** — has fresh context window
+- **Capable of parallel execution** — multiple agents run simultaneously  
+- **Focused on specific task** — e.g., security auditor, performance reviewer, style checker
+
+**Why Use Sub-Agents?**
+
+Instead of sequential processing:
+- **Parallel exploration** — Find files, search code, review from multiple angles simultaneously
+- **Protecting context** — Heavy research doesn't pollute main conversation
+- **Specialized perspectives** — Different experts (security, performance, style) review independently
+- **Scaling work** — Process 100 files in parallel instead of sequentially
+- **Independent verification** — Multiple agents verify same finding reduces false positives
+
+### 4.2 Agent Types Available
+
+**General Purpose Agent**
+```
+Role: Open-ended reasoning
+Tools: All available
+Use: Default for most work
+Speed: Moderate (full reasoning)
+```
+
+**Code Explorer Agent**
+```
+Role: Fast file and symbol search
+Tools: Read, grep, find
+Use: Locate code, find references
+Speed: Fast (search-optimized)
+```
+
+**Code Reviewer Agent**
+```
+Role: Audit changes for bugs
+Tools: Diff, file read, analysis
+Use: Security, performance, correctness review
+Speed: Moderate (detailed analysis)
+```
+
+**Architect Agent**
+```
+Role: Design and planning
+Tools: File read, analysis
+Use: Create implementation plans, evaluate trade-offs
+Speed: Moderate (strategic thinking)
+```
+
+### 4.3 Map-Reduce Pattern
+
+The map-reduce pattern parallelizes work across many items:
+
+**Map Phase:** Apply same logic to each item
+```javascript
+const results = await Promise.all(
+  files.map(file => 
+    agent(`Review ${file} for security issues`, {
+      agentType: 'code-reviewer',
+      schema: FINDINGS_SCHEMA
+    })
+  )
+)
+```
+
+**Reduce Phase:** Aggregate and prioritize results
+```javascript
+const criticalIssues = results
+  .flatMap(r => r.issues)
+  .filter(issue => issue.severity === 'critical')
+  .sort((a, b) => b.priority - a.priority)
+```
+
+**Real Example: Parallel Code Review**
+```javascript
+// Traditional: Review 50 files sequentially = 10 minutes
+// Parallel: Review 50 files concurrently = 2 minutes
+
+const reviews = await Promise.all(
+  files.map(file =>
+    agent(`Security review: ${file}`, {
+      agentType: 'code-reviewer',
+      schema: REVIEW_SCHEMA
+    })
+  )
+)
+
+// Consolidate and deduplicate findings
+const allIssues = reviews.flatMap(r => r.issues)
+const uniqueIssues = dedup(allIssues, issue => `${issue.file}:${issue.line}`)
+const prioritized = uniqueIssues.sort((a, b) => 
+  SEVERITY_RANKING[b.severity] - SEVERITY_RANKING[a.severity]
+)
+```
+
+### 4.4 Worktree Isolation
+
+For agents that modify files in parallel, use `isolation: 'worktree'`:
+
+```javascript
+const agents = await Promise.all(
+  files.map(file =>
+    agent(`Migrate ${file} to new API`, {
+      isolation: 'worktree'  // Each agent gets isolated git worktree
+    })
+  )
+)
+```
+
+**Why Worktree Isolation?**
+- Prevents file conflicts when multiple agents edit simultaneously
+- Each agent gets clean, isolated filesystem
+- Changes can be merged safely afterward
+- Automatic cleanup after completion
+- No merge conflicts between parallel agents
+
+### 4.5 Common Advanced Patterns
+
+**Pattern: Dedup + Multi-Lens Verify**
+```javascript
+// 1. Multiple finders search in parallel
+const allFindings = await parallel([
+  agent('Find security issues'),
+  agent('Find performance issues'),
+  agent('Find style violations')
+])
+
+// 2. Dedup across all findings
+const unique = dedup(allFindings.flat())
+
+// 3. Each unique finding reviewed by multiple expert lenses
+const verified = await parallel(
+  unique.map(f => parallel([
+    agent(`Security lens: ${f.title}`),
+    agent(`Performance lens: ${f.title}`),
+    agent(`Correctness lens: ${f.title}`)
+  ]))
+)
+
+// 4. Combine verdicts - majority rules
+const confirmed = unique.filter((f, i) => {
+  const verdicts = verified[i]
+  const positives = verdicts.filter(v => v.real).length
+  return positives >= 2  // 2 out of 3 must verify
+})
+```
+
+**Pattern: Loop Until Dry (Discovery)**
+```javascript
+const bugs = []
+let dry = 0
+
+while (dry < 2) {  // Stop after 2 consecutive rounds with no new findings
+  const found = (await parallel([
+    agent('Find logic errors'),
+    agent('Find API misuses'),
+    agent('Find null pointer issues')
+  ])).flatMap(r => r.bugs)
+  
+  const fresh = found.filter(b => !bugs.some(existing => 
+    isSame(existing, b)
+  ))
+  
+  if (fresh.length === 0) {
+    dry++
+    continue
+  }
+  
+  dry = 0
+  bugs.push(...fresh)
+  console.log(`Found ${bugs.length} bugs total`)
+}
+
+return bugs
+```
 
 ## Chapter 5: Hooks
 
