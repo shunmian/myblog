@@ -9,7 +9,10 @@ shortinfo: 从架构到实战 - 完整掌握Claude Code的核心能力：CLAUDE.
 
 ---
 
+<!-- Test edit to verify hot-reload works -->
 > 🚀 **Complete Guide to Claude Code Agentic Development** - Learn how to build intelligent, autonomous development workflows with Skills, Agents, Hooks, and MCP integration.
+<!-- Hot-reload test at 23:20:53 -->
+<!-- Force polling test 1783610484 -->
 
 ## 📚 Quick Navigation
 
@@ -674,7 +677,6 @@ return bugs
 
 
 ## Conclusion
-
 
 
 
