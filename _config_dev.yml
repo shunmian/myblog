@@ -1,0 +1,12 @@
+# Development configuration
+webrick:
+  headers:
+    Content-Type: text/html; charset=utf-8
+
+# Disable problematic file watching features
+exclude_from_collections:
+  - node_modules
+  - vendor
+
+keep_files:
+  - .DS_Store
