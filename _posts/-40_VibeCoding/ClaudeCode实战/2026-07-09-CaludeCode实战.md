@@ -1,13 +1,36 @@
 ---
 layout: post
-title: Claude Code 实战
+title: Claude Code 实战 - Complete Guide to Agentic Development
 categories: [-40 VibeCoding]
-tags: [VibeCoding, ClaudeCode, Codex]
+tags: [VibeCoding, ClaudeCode, Codex, Agents, Skills, Automation, CLAUDE.md]
 number: [-0.0]
 fullview: false
-shortinfo: 详细了解ClaudeCode Agentic Harness
+shortinfo: 从架构到实战 - 完整掌握Claude Code的核心能力：CLAUDE.md、Skills、Agents、Hooks、MCP、以及生产级工作流
 
 ---
+
+> 🚀 **Complete Guide to Claude Code Agentic Development** - Learn how to build intelligent, autonomous development workflows with Skills, Agents, Hooks, and MCP integration.
+
+## 📚 Quick Navigation
+
+**Part I: Foundations**
+- [Chapter 1: Architecture](#chapter-1-architecture) - System design and components
+- [Chapter 2: Memory (Claude.md)](#chapter-2-memory-claudemd) - Project context and conventions
+
+**Part II: Core Features**
+- [Chapter 3: Skills](#chapter-3-skill-modular-function) - Reusable slash commands
+- [Chapter 4: Sub Agents](#chapter-4-sub-agent-reduce-map) - Parallel processing and map-reduce
+- [Chapter 5: Hooks](#chapter-5-hooks) - Automation triggers
+- [Chapter 6: MCP](#chapter-6-mcp-external-data-access) - External system integration
+
+**Part III: Advanced**
+- [Chapter 7: Headless Mode](#chapter-7-headless-mode-and-cicd) - CI/CD automation
+- [Chapter 8: Agent SDK](#chapter-8-agent-sdk) - Custom agent development
+- [Chapter 9: Plugins](#chapter-9-plugins--packages) - Extensibility
+- [Chapter 10: Integration](#chapter-10-end-to-end-integration) - Real-world workflows
+
+---
+
 目录
 {:.article_content_title}
 
@@ -24,6 +47,38 @@ shortinfo: 详细了解ClaudeCode Agentic Harness
 
 {: .img_middle_hg}
 ![ClaudeCode Overall Structure]({{site.url}}/assets/images/posts/-40_VibeCoding/ClaudeCode实战/C1_ClaudeCodeOverall.jpg)
+
+### System Overview
+
+Claude Code is built on a layered architecture that separates concerns while maintaining tight integration:
+
+```
+┌────────────────────────────────────────┐
+│  User Interface Layer                  │
+│  • CLI, IDE Extensions, Web App        │
+└────────────────────────────────────────┘
+           ↓
+┌────────────────────────────────────────┐
+│  Agent Orchestration Layer             │
+│  • Skills, Workflows, Multi-Agent      │
+└────────────────────────────────────────┘
+           ↓
+┌────────────────────────────────────────┐
+│  Tool Execution Layer                  │
+│  • File I/O, Bash, APIs, MCP Servers   │
+└────────────────────────────────────────┘
+           ↓
+┌────────────────────────────────────────┐
+│  Integration Layer                     │
+│  • Git, Databases, External Systems    │
+└────────────────────────────────────────┘
+```
+
+This separation enables:
+- **Modularity** — Each layer evolves independently
+- **Testability** — Mock layers for testing
+- **Extensibility** — Add new tools without modifying core
+- **Security** — Sandbox at each layer
 
 ## Chapter 2: Memory (Claude.md)
 
