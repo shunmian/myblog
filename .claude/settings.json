@@ -1,0 +1,23 @@
+{
+  "description": "MyBlog — Jekyll site with realtime hot-reload development",
+
+  "permissions": {
+    "bash": "always",
+    "read": "always",
+    "write": "prompt"
+  },
+
+  "hooks": {
+    "startup": {
+      "bash": "bundle install --quiet && echo '✓ Dependencies ready'"
+    },
+    "git-pre-commit": {
+      "bash": "bundle exec jekyll build --incremental --quiet && echo '✓ Build verified'"
+    }
+  },
+
+  "env": {
+    "JEKYLL_ENV": "development",
+    "INCREMENTAL": "true"
+  }
+}
