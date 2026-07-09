@@ -84,6 +84,61 @@ This separation enables:
 
 Claude.md is a markdown file that Claude Code reads automatically at the start of every session. It acts as persistent memory, providing context about your project structure, coding conventions, build commands, and rules.
 
+### 2.0 Why CLAUDE.md Matters
+
+**Without CLAUDE.md:**
+- Claude starts fresh every session with zero context
+- Repeats mistakes (uses wrong file structure, violates conventions)
+- Suggests inappropriate libraries or patterns
+- Takes longer to get up to speed
+- Inconsistent code quality
+
+**With CLAUDE.md:**
+- Claude knows your project immediately
+- Follows established conventions automatically
+- Suggests tools you've already decided against avoiding
+- Faster, more accurate implementations
+- Consistent quality across all sessions
+
+### 2.01 Structure & Format
+
+A well-organized CLAUDE.md has these sections:
+
+```markdown
+# [Project Name]
+
+[One-line description]
+
+## Commands
+- List all CLI commands you use
+- Format: `command` — description
+
+## Structure
+- Explain directory layout
+- Where things live in your project
+- Special folders or files
+
+## Rules
+- Key conventions to follow
+- Anti-patterns to avoid
+- Tech stack decisions
+
+## File Structure
+- ASCII tree diagram
+- Shows actual organization
+
+## Conventions
+- Naming patterns
+- Coding style
+- Test patterns
+```
+
+**Length Target:** 50-200 lines (sweet spot)
+- Under 50 lines: Too vague, missing important context
+- 50-150 lines: Just right, covers essentials
+- 150-200 lines: Comprehensive, project-specific
+- Over 200 lines: Diminishing returns, Claude loses signal
+
 ### 2.1 React Project Example
 
 ```markdown
