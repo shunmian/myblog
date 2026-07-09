@@ -325,88 +325,97 @@ tests/
 
 ## Chapter 3: Skill (Modular Function)
 
-Skills are reusable slash commands that Claude Code can invoke to accomplish specific tasks. They're like CLI tools for Claude — modular functions that encapsulate domain-specific logic.
+Skills are reusable slash commands (`/command`) that Claude Code can invoke to accomplish specific tasks. They encapsulate domain-specific workflows into repeatable, shareable operations.
 
-### 3.1 What Are Skills?
+### 3.1 Understanding Skills
 
-A skill is a self-contained function that:
-- Takes user input (args)
-- Runs independently (in isolation or in the main session)
-- Returns structured output
-- Can be triggered via `/<skill-name>` or invoked programmatically
+**What is a Skill?**
 
-**Built-in Skills** (available by default):
-- `/verify` — test changes end-to-end
-- `/run` — launch and drive the app
-- `/code-review` — review diff for bugs
-- `/simplify` — optimize code for readability
-- `/loop` — run a command on recurring interval
-- `/deep-research` — multi-source fact-checking research
-- `/dataviz` — create charts and visualizations
+A skill is essentially a specialized tool that:
+- Takes input (arguments, context, or interactive prompts)
+- Performs a focused task (validation, deployment, content creation)
+- Returns structured or human-readable output
+- Can be triggered via `/command-name` or programmatically
 
-### 3.2 Creating Custom Skills
+**Why Use Skills?**
 
-Skills are defined in `.claude/skills/` directory as markdown files with frontmatter:
+Instead of repeating complex workflows, skills:
+- **Encode best practices** — Ensure consistency across runs
+- **Save time** — No need to type full commands repeatedly
+- **Reduce errors** — Validated, tested workflows
+- **Enable onboarding** — New team members see available operations
+- **Support automation** — Chain skills in workflows
+
+### 3.2 Built-In Skills
+
+Claude Code provides production-ready skills:
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| **Verify** | `/verify` | Test changes end-to-end (run app, check behavior) |
+| **Run** | `/run` | Launch and drive the application |
+| **Code Review** | `/code-review` | Audit diff for bugs and improvements |
+| **Simplify** | `/simplify` | Optimize code for readability and efficiency |
+| **Loop** | `/loop` | Repeat task on recurring interval |
+| **Deep Research** | `/deep-research` | Multi-source fact-checking research |
+| **Data Visualization** | `/dataviz` | Create charts, dashboards, graphs |
+
+### 3.3 Creating Custom Skills
+
+Custom skills live in `.claude/skills/` as markdown files with frontmatter:
 
 ```markdown
 ---
-name: format-code
-description: Auto-format code using project's linter
-trigger: format
+name: deploy-to-prod
+description: Build and deploy to production with checks
+trigger: deploy
 ---
 
-# Format Code
+# Deploy to Production
 
-This skill runs the project's code formatter and reports results.
+Safely deploys the application with pre-flight and post-flight checks.
 
-## Steps
+## Workflow
 
-1. Run linter with --fix flag
-2. Check for formatting errors
-3. Report summary of changes
+1. Run tests to verify code quality
+2. Build production bundle
+3. Run smoke tests against bundle
+4. Deploy to production server
+5. Run post-deploy health checks
 
-## Example
+## Safety Checks
 
-User types: `/format`
-Result: Code formatted, summary displayed
+- ✓ Tests must pass
+- ✓ No uncommitted changes
+- ✓ Branch is up-to-date
+- ✓ Staging deployment succeeds first
 ```
 
-### 3.3 Skill vs Agent
+### 3.4 Skills vs Agents
 
 | Aspect | Skill | Agent |
 |--------|-------|-------|
 | **Scope** | Single focused task | Multi-step reasoning |
-| **Isolation** | Optional (can run in session) | Full isolation |
-| **Output** | Structured or text | Conversational |
-| **Trigger** | Slash command (`/`) | Programmatic call |
-| **Persistence** | Lives in `.claude/skills/` | Spawned on demand |
-| **Parallelization** | No | Yes (via Workflow) |
+| **Duration** | Seconds to minutes | Minutes to hours |
+| **Output** | Deterministic result | Conversational response |
+| **Trigger** | `/command` slash command | Programmatic call |
+| **Context** | Inherits session context | Can request more context |
+| **Error handling** | Explicit, structured | Reasoning-based recovery |
 
-### 3.4 Common Skill Patterns
+### 3.5 Best Practices
 
-**Linting & Formatting**
-```bash
-# .claude/skills/lint.md
-- Run project linter with --fix
-- Report errors and fixes
-- Suggest code improvements
-```
+**DO:**
+- ✓ Keep skills focused on one task
+- ✓ Validate all inputs explicitly
+- ✓ Provide clear success/failure messages
+- ✓ Make skills idempotent (safe to run twice)
+- ✓ Document assumptions and requirements
 
-**Testing**
-```bash
-# .claude/skills/test.md
-- Run project test suite
-- Report pass/fail
-- Show coverage delta
-```
-
-**Build & Deploy**
-```bash
-# .claude/skills/deploy.md
-- Build production bundle
-- Run smoke tests
-- Deploy to staging/prod
-```
+**DON'T:**
+- ✗ Make skills too complex (use Agents for complex logic)
+- ✗ Assume perfect input (validate everything)
+- ✗ Make skills stateful (they should be independent)
+- ✗ Hide errors (fail loudly and explicitly)
 
 ---
 
