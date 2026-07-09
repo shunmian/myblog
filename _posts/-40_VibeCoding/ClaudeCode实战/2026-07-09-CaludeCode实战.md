@@ -663,18 +663,318 @@ return bugs
 
 ## Chapter 5: Hooks
 
+Hooks are automatic commands that run at specific moments—like when Claude Code starts or before you commit code. They handle repetitive tasks automatically so you don't have to.
+
+### 5.1 What Are Hooks?
+
+Think of hooks like reminders that trigger actions:
+- **Startup hook** — Runs when you start development (install dependencies, start services)
+- **Pre-commit hook** — Runs before git commit (lint code, run tests)
+- **Post-tool hook** — Runs after executing a command (log results, verify output)
+
+### 5.2 Simple Example: Pre-Commit Validation
+
+```yaml
+# .claude/settings.json
+{
+  "hooks": {
+    "git-pre-commit": {
+      "bash": "npm run lint && npm test"
+    }
+  }
+}
+```
+
+What happens:
+1. You run `git commit`
+2. Hook automatically runs: `npm run lint && npm test`
+3. If tests pass → commit succeeds
+4. If tests fail → commit blocked (fix needed)
+
+### 5.3 Common Hook Uses
+
+**Startup Hook** — Install dependencies
+```bash
+npm install
+docker-compose up -d
+```
+
+**Pre-Commit Hook** — Validate before committing
+```bash
+npm run lint
+npm run format
+npm test
+```
+
+**Post-Tool Hook** — Verify command succeeded
+```bash
+if [ $? -eq 0 ]; then
+  echo "✓ Success"
+else
+  echo "✗ Failed"
+fi
+```
+
+### 5.4 Hook Best Practices
+
+**DO:**
+- ✓ Keep hooks fast (under 10 seconds)
+- ✓ Make them simple and focused
+- ✓ Show clear success/failure messages
+- ✓ Use for validation, not complex logic
+
+**DON'T:**
+- ✗ Ask for user input (hooks are automatic)
+- ✗ Make network requests (too slow/unreliable)
+- ✗ Make hooks too complex (use Skills for that)
+- ✗ Ignore failures (always fail loudly if something breaks)
+
+---
+
 ## Chapter 6: MCP (External Data Access)
+
+MCP (Model Context Protocol) lets Claude Code access external systems: databases, APIs, files, git history. It's like giving Claude access to tools outside the sandbox.
+
+### 6.1 What Can MCP Do?
+
+- **Query databases** — Direct SQL access
+- **Access git** — View history, blame, branches  
+- **Read/write files** — Any file on your system
+- **Run commands** — Execute scripts safely
+
+### 6.2 Simple Example
+
+```json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "postgres://user:pass@localhost/db"
+      }
+    }
+  }
+}
+```
+
+### 6.3 Use Cases
+
+**Check database:**
+```sql
+SELECT COUNT(*) FROM orders WHERE status = 'pending'
+```
+
+**View code history:**
+```bash
+git log --since="2026-07-01" --oneline
+```
+
+**Read config files:**
+```bash
+read: config/production.yml
+```
+
+### 6.4 Security
+
+- ✓ Read-only by default
+- ✓ Writes require approval
+- ✓ All operations logged
+- ✓ Credentials secure
+
+---
 
 # Part III: Harness Engineering
 
 ## Chapter 7: Headless Mode and CI/CD
 
+Headless mode runs Claude Code in automated pipelines (like GitHub Actions) without human interaction.
+
+### 7.1 When to Use
+
+- Automated code reviews on PRs
+- Nightly scheduled tasks
+- CI/CD pipeline integration
+- Batch file processing
+
+### 7.2 Running Headless
+
+```bash
+claude code run \
+  --cwd /path/to/project \
+  --prompt "Fix all type errors" \
+  --no-interactive
+```
+
+### 7.3 GitHub Actions Example
+
+```yaml
+name: Auto Review
+on: [pull_request]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          claude code run \
+            --prompt "Review for security issues" \
+            --no-interactive
+```
+
+### 7.4 Best Practices
+
+**DO:**
+- Provide CLAUDE.md context
+- Use structured output (JSON)
+- Break into small tasks
+- Log everything
+
+**DON'T:**
+- Run without context
+- Expect interactive debugging
+- Ask for confirmation
+- Chain many sequential tasks
+
+---
+
 ## Chapter 8: Agent SDK
+
+Build custom AI agents that reason and act on your codebase autonomously.
+
+### 8.1 Agent Loop
+
+```
+1. Read code/files
+   ↓
+2. Reason about task
+   ↓
+3. Execute (edit/command)
+   ↓
+4. Repeat until done
+```
+
+### 8.2 Basic Example
+
+```javascript
+const client = new Anthropic()
+
+async function runAgent(task) {
+  let messages = []
+  
+  while (true) {
+    const response = await client.messages.create({
+      model: 'claude-opus-4-8',
+      system: 'You are a code assistant',
+      tools: [/* ... */],
+      messages
+    })
+    
+    if (response.stop_reason === 'end_turn') {
+      return response
+    }
+    
+    // Process tool calls, continue loop
+  }
+}
+```
+
+### 8.3 Agent vs Skill
+
+| | Agent | Skill |
+|---|---|---|
+| **Reasoning** | Multi-step | Single task |
+| **Tools** | Dynamic | Fixed |
+| **Output** | Conversational | Structured |
+
+---
 
 ## Chapter 9: Plugins & Packages
 
+Extend Claude Code with custom skills, hooks, and MCP servers.
+
+### 9.1 Plugin Types
+
+**Skills** — Slash commands
+```bash
+/my-task
+```
+
+**Hooks** — Automatic triggers
+```json
+{
+  "hooks": {
+    "git-pre-commit": {
+      "bash": "npm test"
+    }
+  }
+}
+```
+
+**MCP Servers** — External access
+```json
+{
+  "mcpServers": {
+    "my-db": { /* ... */ }
+  }
+}
+```
+
+### 9.2 Finding Plugins
+
+- Built-in — Included with Claude Code
+- Community — GitHub, npm
+- Custom — Create your own
+
+---
+
 ## Chapter 10: End-to-End Integration
 
+Complete workflow: develop → validate → commit → deploy.
+
+### 10.1 Real Example: Blog
+
+```bash
+# 1. Start dev
+./start_dev.sh
+
+# 2. Edit post
+vim _posts/my-post.md
+# → Changes live in 3-5 seconds
+
+# 3. Validate
+/validate-posts
+
+# 4. Commit
+git commit -m "Add post"
+# → Pre-commit hook validates
+
+# 5. Deploy
+/deploy-blog
+# → Live on GitHub Pages
+```
+
+### 10.2 Checklist
+
+**Setup:**
+- ✓ CLAUDE.md ready
+- ✓ Settings configured
+- ✓ Skills defined
+- ✓ Hooks enabled
+
+**Development:**
+- ✓ Server with hot-reload
+- ✓ Tests passing
+- ✓ Conventions followed
+
+**Deployment:**
+- ✓ Tests pass
+- ✓ Code reviewed
+- ✓ Docs updated
+- ✓ Git clean
+
+---
 
 ## Conclusion
 
